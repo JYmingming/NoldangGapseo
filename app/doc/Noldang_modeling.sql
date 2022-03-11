@@ -26,7 +26,7 @@ DROP TABLE IF EXISTS companion RESTRICT;
 DROP TABLE IF EXISTS todo RESTRICT;
 
 -- 좋아요
-DROP TABLE IF EXISTS like RESTRICT;
+DROP TABLE IF EXISTS likes RESTRICT;
 
 -- 여행지유형
 DROP TABLE IF EXISTS destinatio_type RESTRICT;
@@ -98,7 +98,7 @@ CREATE UNIQUE INDEX UIX_user4
   );
 
 ALTER TABLE user
-  MODIFY COLUMN id VARCHAR(50) NOT NULL AUTO_INCREMENT COMMENT 'id';
+  MODIFY COLUMN id VARCHAR(50) NOT NULL AUTO_INCREMENT COMMENT '회원번호';
 
 -- 여행지
 CREATE TABLE destination (
@@ -263,15 +263,15 @@ ALTER TABLE todo
   MODIFY COLUMN todo_id INTEGER NOT NULL AUTO_INCREMENT COMMENT 'todo_key';
 
 -- 좋아요
-CREATE TABLE like (
+CREATE TABLE likes (
   destination_id INTEGER NOT NULL COMMENT '여행지번호', -- 여행지번호
   user_id        INTEGER NOT NULL COMMENT '회원번호' -- 회원번호
 )
 COMMENT '좋아요';
 
 -- 좋아요
-ALTER TABLE like
-  ADD CONSTRAINT PK_like -- 좋아요 기본키
+ALTER TABLE likes
+  ADD CONSTRAINT PK_likes -- 좋아요 기본키
     PRIMARY KEY (
       destination_id, -- 여행지번호
       user_id         -- 회원번호
@@ -532,8 +532,8 @@ ALTER TABLE todo
     );
 
 -- 좋아요
-ALTER TABLE like
-  ADD CONSTRAINT FK_destination_TO_like -- 여행지 -> 좋아요
+ALTER TABLE likes
+  ADD CONSTRAINT FK_destination_TO_likes -- 여행지 -> 좋아요
     FOREIGN KEY (
       destination_id -- 여행지번호
     )
@@ -542,8 +542,8 @@ ALTER TABLE like
     );
 
 -- 좋아요
-ALTER TABLE like
-  ADD CONSTRAINT FK_user_TO_like -- 회원 -> 좋아요
+ALTER TABLE likes
+  ADD CONSTRAINT FK_user_TO_likes -- 회원 -> 좋아요
     FOREIGN KEY (
       user_id -- 회원번호
     )
