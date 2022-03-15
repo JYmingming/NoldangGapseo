@@ -16,7 +16,8 @@ repositories {
 dependencies {
   // MariaDB JDBC 드라이버
   implementation 'org.mariadb.jdbc:mariadb-java-client:3.0.3'
-
+implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
   implementation 'org.springframework.boot:spring-boot-starter-web'
   developmentOnly 'org.springframework.boot:spring-boot-devtools'
   testImplementation 'org.springframework.boot:spring-boot-starter-test'
