@@ -10,5 +10,6 @@ public class User {
   String nickName;
   String email;
   String phone;
+  String profileImg;
 
 }
