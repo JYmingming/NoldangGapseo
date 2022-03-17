@@ -13,6 +13,8 @@ public class UserController {
   @Autowired
   UserDao userDao;
 
+  //민수 GIT test
+
   @GetMapping("/user/list")
   public List<User> list(){
     return userDao.findAll();
