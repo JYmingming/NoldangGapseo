@@ -23,4 +23,6 @@ public class UserController {
     return userDao.findNickname(nickName);
   }
 
+
+
 }
