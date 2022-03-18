@@ -10,7 +10,7 @@
 </resultMap>
 
   <select id="findAll" resultMap="userMap">
-   select user_id, id 
+   select *
    from user u 
    where not id = 'admin'
   </select>
