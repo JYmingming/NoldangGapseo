@@ -13,7 +13,7 @@ public class UserController {
   @Autowired
   UserDao userDao;
 
-  //민수 GIT test
+  //jenkins Test
 
   @GetMapping("/user/list")
   public List<User> list(){
