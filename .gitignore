@@ -15,8 +15,6 @@ local.properties
 .loadpath
 .recommenders
 
-#gradlew
-gradlew
 
 # External tool builders
 .externalToolBuilders/
