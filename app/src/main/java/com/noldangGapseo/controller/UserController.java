@@ -13,8 +13,7 @@ public class UserController {
   @Autowired
   UserDao userDao;
 
-  //jenkins Test23
-
+  //유저의 전체 리스트를 가져온다.
   @GetMapping("/user/list")
   public List<User> list(){
     return userDao.findAll();
