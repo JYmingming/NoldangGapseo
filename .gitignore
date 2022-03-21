@@ -5,7 +5,7 @@
 ### Eclipse ###
 .metadata
 bin/
-tmp/trash/
+tmp/
 *.tmp
 *.bak
 *.swp
