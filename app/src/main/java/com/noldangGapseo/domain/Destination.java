@@ -1,11 +1,16 @@
 package com.noldangGapseo.domain;
 
+import org.springframework.stereotype.Repository;
+
 import java.sql.Date;
 
+
+@Repository
 public class Destination {
 
     Integer destinationId;
     Integer userId;
+    Integer destinationTypeId;
     String destinationName;
     String contents;
     String phone;
@@ -15,4 +20,108 @@ public class Destination {
     Date regDate;
     Date updateDate;
 
+    @Override
+    public String toString() {
+        return "Destination{" +
+                "destinationId=" + destinationId +
+                ", userId=" + userId +
+                ", destinationTypeId=" + destinationTypeId +
+                ", destinationName='" + destinationName + '\'' +
+                ", contents='" + contents + '\'' +
+                ", phone='" + phone + '\'' +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", address='" + address + '\'' +
+                ", regDate=" + regDate +
+                ", updateDate=" + updateDate +
+                '}';
+    }
+
+    public Integer getDestinationId() {
+        return destinationId;
+    }
+
+    public void setDestinationId(Integer destinationId) {
+        this.destinationId = destinationId;
+    }
+
+    public Integer getDestinationTypeId() {
+        return destinationTypeId;
+    }
+
+    public void setDestinationTypeId(Integer destinationTypeId) {
+        this.destinationTypeId = destinationTypeId;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public String getDestinationName() {
+        return destinationName;
+    }
+
+    public void setDestinationName(String destinationName) {
+        this.destinationName = destinationName;
+    }
+
+    public String getContents() {
+        return contents;
+    }
+
+    public void setContents(String contents) {
+        this.contents = contents;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public Float getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(Float latitude) {
+        this.latitude = latitude;
+    }
+
+    public Float getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(Float longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Date getRegDate() {
+        return regDate;
+    }
+
+    public void setRegDate(Date regDate) {
+        this.regDate = regDate;
+    }
+
+    public Date getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(Date updateDate) {
+        this.updateDate = updateDate;
+    }
 }
