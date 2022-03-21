@@ -20,7 +20,7 @@ public class DestinationController {
     return "admin Des";
   }
 
-  //유저의 여행지를 모두 가져온다.ㅑㅑㅑ
+  //유저의 여행지를 모두 가져온다.
   @GetMapping("/user/list")
   String userList() {
     return "tavel/list";
