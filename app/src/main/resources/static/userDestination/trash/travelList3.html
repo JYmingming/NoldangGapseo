@@ -1,0 +1,92 @@
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<style type="text/css">
+.img {
+	position: absolute;
+	width: 500px;
+	height: 500px;
+	-webkit-transition: opacity 1s ease-in-out;
+	-moz-transition: opacity 1s ease-in-out;
+	-o-transition: opacity 1s ease-in-out;
+	transition: opacity 1s ease-in-out;
+	opacity: 0;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity = 0);
+}
+
+.img:first-child { /* display: block; */
+	opacity: 1;
+}
+
+#wrap {
+	padding: 20px;
+}
+
+div {
+	margin: 5px 0px
+}
+</style>
+
+</head>
+
+
+<body>
+  <div id=wrap>
+    <!-- 움직일 이미지들 -->
+    <div class=imgBox style="width: 500px; height: 500px;">
+      <!-- free url 사진 -->
+      <img class="img on"
+        src="https://images.unsplash.com/photo-1556034910-07855ebf6606?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+        alt=""> <img class="img"
+        src="https://images.unsplash.com/photo-1556241298-fce5ee86ea48?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+        alt=""> <img class="img"
+        src="https://images.unsplash.com/photo-1556032743-3a694170ef94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+        alt="">
+    </div>
+
+    <div>
+      <!-- 버튼을 실행시 이전, 다음으로 움직이다 -->
+      <button class="prev">prev</button>
+      <button class="next">next</button>
+    </div>
+
+  </div>
+
+</body>
+<script>
+	$(".prev").on("click", function(e) {
+		e.preventDefault(); // 이미지 현재의 위치 
+		var imgOn = $(".imgBox").find(".on").index(); // 이미지 총 개수 
+		var imgLen = $(".imgBox .img").length;
+		console.log(imgOn) // imgBox안의 img 중 imgOn 번째의 on 클래스 삭제 
+		$(".imgBox .img").eq(imgOn).removeClass("on"); // imgBox안의 img 중 imgOn 번째 숨기기 
+		$(".imgBox .img").eq(imgOn).css("opacity", 0); // 이전의 위치로 돌아가야함으로 
+		imgOn = imgOn - 1;
+		if (imgOn < 0) { // 돌아가 위치가 -1일 경우 // 이미지의 마지막으로 돌아간다 
+			$(".imgBox .img").eq(imgLen - 1).css("opacity", 1);
+			$(".imgBox .img").eq(imgLen - 1).addClass("on");
+		} else { // 돌아갈 위치가 -1이 아닌 경우 
+			$(".imgBox .img").eq(imgOn).css("opacity", 1);
+			$(".imgBox .img").eq(imgOn).addClass("on");
+		}
+	});
+	$(".next").on("click", function(e) {
+		e.preventDefault(); // 위에 동일 
+		var imgOn = $(".imgBox").find(".on").index();
+		var imgLen = $(".imgBox .img").length; // 위에 동일 
+		$(".imgBox .img").eq(imgOn).removeClass("on");
+		$(".imgBox .img").eq(imgOn).css("opacity", 0); // 다음의 위치로 알아야 되기 때문에 
+		imgOn = imgOn + 1;
+		if (imgOn === imgLen) { // 다음의 위치가 총 개수보다 클 경우 // 처음의 위치로 돌아간다 
+			$(".imgBox .img").eq(0).css("opacity", 1);
+			$(".imgBox .img").eq(0).addClass("on");
+		} else { // 다음 위치가 있는 경우 
+			$(".imgBox .img").eq(imgOn).css("opacity", 1);
+			$(".imgBox .img").eq(imgOn).addClass("on");
+		}
+	});
+</script>
+
+
+</html>
