@@ -6,8 +6,7 @@
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="$PROJECT_DIR$/../../tools/gradle-7.3" />
-        <option name="gradleJvm" value="adopt-openj9-11" />
+        <option name="gradleHome" value="$USER_HOME$/tools/gradle-7.3" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
