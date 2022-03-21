@@ -15,7 +15,6 @@ public class User {
   Date updateDate;
   String profileImg;
 
-
   @Override
   public String toString() {
     return "User [userId=" + userId + ", id=" + id + ", nickName=" + nickName + ", email=" + email
