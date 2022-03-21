@@ -15,7 +15,7 @@ public class UserController {
   @Autowired
   UserDao userDao;
 
-  //유저의 전체 리스트를 가져온다ㅎㅎ
+  //유저의 전체 리스트를 가져온다
   @GetMapping("/list")
   public List<User> list(){
     return userDao.findAll();
