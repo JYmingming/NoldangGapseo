@@ -1,3 +1,34 @@
-.des-img {
-    width: 20;
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: wheat;
+}
+
+.des-name {
+    font-size: 36px;
+    font-weight: bold;
+    height: 10vh;
+    width: 22vw;
+    text-align: center;
+    margin-top: 70px;
+    align-self: center;
+    justify-self: center;
+}
+
+.like-btn {
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    z-index: 3;
+    color: white;
+    margin-bottom: 8px;
+    margin-left: 8px;
+}
+
+.like-cnt {
+    color: white;
+    z-index: 3;
+    font-size: 25px;
+    margin-left: 5px;
+    margin-bottom: 8px;
 }
