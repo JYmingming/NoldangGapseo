@@ -10,10 +10,12 @@
     </resultMap>
 
     <select id="getUserDesList" resultMap="desMap">
-        select *
-        from destination
-        where not user_id = 1
-        order by reg_date desc
+        SELECT d.destination_id, d.destination_name, address, d.reg_date, u.nick_name , dt.destination_type_name
+        FROM destination d , `user` u , destination_type dt
+        WHERE d.user_id = u.user_id
+        and d.destination_type_id = dt.destination_type_id
+        and not d.user_id = 1
+        ORDER BY reg_date desc;
     </select>
 
     <select id="getAdminDesList" resultMap="desMap">

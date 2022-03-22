@@ -10,22 +10,16 @@ public class Destination {
 
     Integer destinationId;
     Integer userId;
-    Integer destinationTypeId;
-    String destinationName;
-    String contents;
-    String phone;
-    Float latitude;
-    Float longitude;
-    String address;
-    Date regDate;
-    Date updateDate;
+    String nickName;
 
     @Override
     public String toString() {
         return "Destination{" +
                 "destinationId=" + destinationId +
                 ", userId=" + userId +
+                ", nickName='" + nickName + '\'' +
                 ", destinationTypeId=" + destinationTypeId +
+                ", destinationTypeName='" + destinationTypeName + '\'' +
                 ", destinationName='" + destinationName + '\'' +
                 ", contents='" + contents + '\'' +
                 ", phone='" + phone + '\'' +
@@ -36,6 +30,17 @@ public class Destination {
                 ", updateDate=" + updateDate +
                 '}';
     }
+
+    Integer destinationTypeId;
+    String destinationTypeName;
+    String destinationName;
+    String contents;
+    String phone;
+    Float latitude;
+    Float longitude;
+    String address;
+    Date regDate;
+    Date updateDate;
 
     public Integer getDestinationId() {
         return destinationId;
@@ -111,6 +116,22 @@ public class Destination {
 
     public Date getRegDate() {
         return regDate;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public String getDestinationTypeName() {
+        return destinationTypeName;
+    }
+
+    public void setDestinationTypeName(String destinationTypeName) {
+        this.destinationTypeName = destinationTypeName;
     }
 
     public void setRegDate(Date regDate) {
