@@ -3,24 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <title>myPage</title>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="myPageMain.css">
+    <script>
+            $(document).ready(function () {
+                $('.headers').load('../common/header/header.html');
+            });
+    </script>
 </head>
-
-
-<header>
-  
-</header>
 <body>
+    <div class="headers"></div>
     <div class="wrap">
       <div class="first_container">
-          <h3>마이페이지</h3>
+          <h4>마이페이지</h4>
           <div class="contents_box">
               <div class="user">
                   <div class="user_picture">
                   </div>
                   <div class="user_info">
-                      <h3>닉네임</h3>
-                      <h4>email@test.com</h4>
+                      <h5>닉네임</h5>
+                      <h6>email@test.com</h6>
                       <div class="logout">
                           <button>Logout</button>
                       </div>                      
@@ -33,7 +36,7 @@
           </div>
       </div>
       <div class="second_container">
-          <h4>나의 위시리스트</h4>
+          <h5>나의 위시리스트</h5>
           <div class="wishList_box">
               <ul></ul>
               <ul></ul>
@@ -48,6 +51,6 @@
   
   </footer>
 
-
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 </body>
 </html>
