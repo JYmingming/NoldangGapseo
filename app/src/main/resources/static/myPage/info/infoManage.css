@@ -1,0 +1,158 @@
+body{
+    margin: 0px;
+}
+
+.wrap{
+    width: 100vw;
+    display: block;
+}
+
+.first_container{
+    width: 100vw;
+    height: 10vh;
+}
+
+.first_box1{
+    width: 20vw;
+    height: 10vh;
+    float: left;
+    border: solid 1px black
+}
+
+
+.first_box2{
+    width: 20vw;
+    height: 10vh;
+    float: left;
+    border: solid 1px black
+}
+
+.first_box3{
+    width: 40vw;
+    height: 10vh;
+    float: left;
+    border: solid 1px black;
+}
+
+.first_box2 h5 {
+    font-weight: bold;
+    margin-top: 4.7vh;
+}
+
+.first_box3 h5 {
+    margin-top: 5.2vh;
+    margin-left: 1vw;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+.first_box3 h6 {
+    margin-top: 5.5vh;
+    margin-left: 0.5vw;
+    font-weight: normal;
+    font-size: 0.3em;
+}
+
+
+.first_box3 .tag1{
+	   width: 7vw;
+     height: 10vh;
+     border: solid 1px black;
+     float: left;
+}
+
+.first_box3 .tag2 h6{
+    color: #fb9300;
+}
+
+.first_box3 .tag2{
+     width: 7vw;
+     height: 10vh;
+     border: solid 1px black;
+     float: left
+}
+
+.first_box3 .tag3{
+     width: 7vw;
+     height: 10vh;
+     border: solid 1px black;
+     float: left
+}
+
+.first_box3 .tag4{
+     width: 7vw;
+     height: 10vh;
+     border: solid 1px black;
+     float: left
+}
+
+.first_box4{
+    width: 20vw;
+    height: 10vh;
+    border: solid 1px black;
+    float: left
+}
+
+
+
+
+
+.second_container {
+    width: 100vw;
+    height: 60vh;
+    border: solid 1px black;
+    float: left;
+}
+
+.second_box1{
+    width: 20vw;
+    height: 60vh;
+    float: left;
+    border: solid 1px black
+}
+
+
+.second_box2{
+    width: 20vw;
+    height: 60vh;
+    float: left;
+    border: solid 1px black
+}
+
+.second_box3{
+    width: 40vw;
+    height: 60vh;
+    float: left;
+    border: solid 1px black;
+}
+
+.second_box4{
+    width: 19.8vw;
+    height: 60vh;
+    border: solid 1px black;
+    float: left;
+}
+
+.contents_box{
+    width: 20vw;
+    height: 55vh;
+    background-color: rgb(250, 250, 250);
+    box-shadow: 1px 1px 5px 0px;
+    float: left
+}
+
+.third_container {
+    width: 100vw;
+    height: 30vh;
+    border: solid 1px black;
+    float: left;
+}
+
+
+footer{
+    background-color: #2f394d;
+    width: 100vw;
+    height: 20vh;
+    margin-top: 90vh;
+    
+}
