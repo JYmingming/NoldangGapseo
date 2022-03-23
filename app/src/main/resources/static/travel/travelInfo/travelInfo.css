@@ -1,0 +1,73 @@
+.container {
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+}
+.mini-container {
+    display: flex;
+    /* width: 100vw; */
+    justify-content: space-between;
+}
+.left-container {
+    display: flex;
+    flex-direction: column;
+    /* background-color: cadetblue; */
+    align-items: center;
+}
+.right-container {
+    background-color: cornflowerblue;
+}
+.left-container > div {
+    margin-bottom: 20px;
+}
+.travel-name {
+    padding: 5px;
+    border: 1px solid rgb(251, 147, 0);
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.travel-period {
+    border: 1px solid rgb(251, 147, 0);
+    border-radius: 30px;
+    font-weight: bold;
+}
+.travel-companion-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid rgb(251, 147, 0);
+    border-radius: 10px;
+}
+.invite-box {
+    display: flex;
+    justify-content: center;
+}
+.invite-btn {
+    display: flex;
+    /* text-justify: inter-words; */
+    width: 31px;
+    /* height: 30px; */
+    text-align: center;
+    border-radius: 20px;
+    background-color: rgb(251, 147, 0);
+    border-width: 0;
+    font-weight: bold;
+    /* font-size: 30px; */
+    color: white;
+    margin-right: 20px;
+}
+.travel-cost {
+    padding-left: 20px;
+    border: 1px solid rgb(251, 147, 0);
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.travel-weather {
+    border: 1px solid rgb(251, 147, 0);
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}

@@ -12,6 +12,17 @@ public class Destination {
     Integer userId;
     String nickName;
 
+    Integer destinationTypeId;
+
+    String destinationTypeName;
+    String destinationName;
+    String contents;
+    String phone;
+    Float latitude;
+    Float longitude;
+    String address;
+    Date regDate;
+    Date updateDate;
     @Override
     public String toString() {
         return "Destination{" +
@@ -30,17 +41,6 @@ public class Destination {
                 ", updateDate=" + updateDate +
                 '}';
     }
-
-    Integer destinationTypeId;
-    String destinationTypeName;
-    String destinationName;
-    String contents;
-    String phone;
-    Float latitude;
-    Float longitude;
-    String address;
-    Date regDate;
-    Date updateDate;
 
     public Integer getDestinationId() {
         return destinationId;

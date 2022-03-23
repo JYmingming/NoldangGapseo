@@ -4,25 +4,59 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
         <title>travelInfo</title>
-        <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css" />
-        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="../../node_modules/sweetalert2/dist/sweetalert2.min.css" />
+        <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
         <link rel="stylesheet" href="./travelInfo.css" />
         <script>
             $(document).ready(function () {
-                $('.headers').load('../common/header/header.html');
+                $('.headers').load('../../common/header/header.html');
             });
         </script>
-        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
     </head>
     <body>
         <div class="headers"></div>
-        <div class="container flex-row">
-            <div class="left-contain"></div>
-            <div class="rigth-contain"></div>
+        <div class="container">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                fill="currentColor"
+                class="bi bi-arrow-left"
+                viewBox="0 0 16 16"
+                style="margin-bottom: 50px; margin-top: 50px"
+            >
+                <path
+                    fill-rule="evenodd"
+                    d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+                />
+            </svg>
+            <div class="mini-container w-100 row">
+                <div class="left-container col-sm-4">
+                    <div class="travel-name text-center col-sm-6">노답4명</div>
+                    <div class="travel-period text-center col-sm-6">2022-03-26 ~ 2022-03-31</div>
+                    <div class="travel-companion-box col-sm-6">
+                        <div class="invite-box col-sm-8">
+                            <div class="btn-sm btn-warning invite-btn">➕</div>
+                            <div>초대하기</div>
+                        </div>
+                    </div>
+                    <div class="travel-cost align-items-center col-sm-6 row">
+                        <div class="krw-sign col-1">₩</div>
+                        <div class="cost col-sm-2">123,000</div>
+                    </div>
+                    <div class="travel-weather text-center col-sm-6">weather</div>
+                </div>
+
+                <div class="right-container col-sm-8 justify-content-center">
+                    <div class="col">Tag</div>
+                    <div class="col">Root</div>
+                    <div class="col">TODO</div>
+                </div>
+            </div>
         </div>
-        <script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
         <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
     </body>
 </html>
