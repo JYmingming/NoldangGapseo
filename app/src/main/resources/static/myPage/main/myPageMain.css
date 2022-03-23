@@ -44,7 +44,7 @@ body{
     height: 15vh; 
     margin-left:5vw;
     border-bottom: solid 4px #f5e6ca;
-    background-image: url("../img/profile.png");
+    background-image: url("../../img/profile.png");
     background-repeat: no-repeat;
     background-position: center;
     float: left
@@ -91,21 +91,21 @@ body{
 }
 
 .contents .img1{
-    background-image: url("../img/id.png");
+    background-image: url("../../img/id.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 40px 40px;
 }
 
 .contents .img2{
-    background-image: url("../img/tag.png");
+    background-image: url("../../img/tag.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 40px 40px
 }
 
 .contents .img3{
-    background-image: url("../img/wishlist.png");
+    background-image: url("../../img/wishlist.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 40px 40px
