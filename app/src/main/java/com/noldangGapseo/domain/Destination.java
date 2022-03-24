@@ -11,9 +11,7 @@ public class Destination {
     Integer destinationId;
     Integer userId;
     String nickName;
-
     Integer destinationTypeId;
-
     String destinationTypeName;
     String destinationName;
     String contents;
@@ -23,6 +21,7 @@ public class Destination {
     String address;
     Date regDate;
     Date updateDate;
+
     @Override
     public String toString() {
         return "Destination{" +
