@@ -48,7 +48,7 @@ header{
     border-radius: 2.8vw;
     display: flex;
     justify-content: space-evenly;
-
+    overflow: hidden;
 }
 .hosting div{
     margin-top: 1.2vw;
@@ -68,17 +68,32 @@ body{
 }
 
 .wrap{
-    width: 100vm;
+    width: 72vw;
+    margin: 0 auto;
     display: block;
     border: 3px solid red;
-}
-.second_container{
-    margin : 15vh auto 0 auto;
-    width: 72vw;
-    height: 50vh;
-    border: 1px solid black;
 
 }
+#second_container{
+    margin-top: 10vh;
+    border: 1px solid black;
+    display: block;
+}
+#second_container div{
+    border: 1px solid black;
+    padding-bottom: 20%;
+}
+
+.second_container h1{
+   font-size: 2em;
+    border: 1px solid black;
+    margin: 0;
+}
+.second_container div div{
+    border: 1px solid black;
+}
+
+
 
 .third_container{
     margin : 15vh auto 0 auto;
