@@ -1,3 +1,12 @@
+ul{
+    padding: 0;
+    margin: 0;
+}
+li{
+    margin: 0;
+    padding: 0;
+}
+
 
 header{
     background-color: rgb(13,12,25);
@@ -20,6 +29,7 @@ header{
     font-size: 1em;
     text-align: right;
 }
+
 
 .header_logo{
     margin-top: 2.2vh;
@@ -98,13 +108,32 @@ body{
 
 
 
-.third_container{
+#third_container{
     margin : 15vh auto 0 auto;
     width: 72vw;
     height: 60vh;
     border: 1px solid black;
 
 }
+.more_content{
+    margin-top: 20px;
+}
+.img-con{
+    border: 2px solid #4d96ff;
+    padding: 5%;
+}
+
+#travel-list-group{
+    margin: 0;
+    width: 100vm ;
+    padding-top: 15%;
+    border: 1px solid red;
+}
+#travel-text-text{
+    height: 100px;
+}
+
+
 .fourth_container{
     margin : 15vh auto 10vh auto;
     width: 72vw;
