@@ -6,7 +6,10 @@ li{
     margin: 0;
     padding: 0;
 }
-
+a{
+    text-decoration: none;
+    color: black;
+}
 
 header{
     background-color: rgb(13,12,25);
