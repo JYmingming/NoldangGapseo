@@ -106,6 +106,8 @@ body{
     width: 100%;
     padding-bottom: 90%;
 }
+
+
 #second_container span{
     border: 1px solid black;
     text-align: center;
@@ -175,6 +177,10 @@ body{
 .fourth_container{
     margin : 15vh auto 10vh auto;
     width: 72vw;
-    height: 60vh;
+
     border: 1px solid black;
+}
+#map{
+    width:100%;
+    height:50vh;
 }
