@@ -89,13 +89,25 @@ body{
 }
 #second_container{
     margin-top: 10vh;
-    border: 1px solid black;
+    border: 1px solid red;
     display: block;
 }
 #second_container div{
     border: 1px solid black;
-    padding-bottom: 20%;
+    padding: 0px;
 }
+
+#second_container div div div{
+    margin: 0px;
+    border: 1px solid black;
+    width: 100%;
+    padding-bottom: 90%;
+}
+#second_container span{
+    border: 1px solid black;
+    text-align: center;
+}
+
 
 .second_container h1{
    font-size: 2em;
@@ -110,8 +122,6 @@ body{
 
 #third_container{
     margin : 15vh auto 0 auto;
-    width: 72vw;
-    height: 60vh;
     border: 1px solid black;
 
 }
@@ -123,14 +133,39 @@ body{
     padding: 5%;
 }
 
-#travel-list-group{
+.list-group{
     margin: 0;
     width: 100vm ;
-    padding-top: 15%;
     border: 1px solid red;
+    display: block;
+
 }
-#travel-text-text{
-    height: 100px;
+.travel-list{
+    padding-bottom: 1vh;
+    overflow: hidden;
+}
+.img-con{
+    border: 1px solid red;
+    float: left;
+    width: 20%;
+    padding-top: 15%;
+    min-width: 200px;
+    min-height: 200px;
+}
+.travel-text-group{
+    width: 80%;
+    float: left;
+}
+.travel-text-title{
+    border: 1px solid blue;
+}
+.travel-text-text{
+    padding-bottom: 10%;
+    max-height: 20vh;
+    border: 1px solid blue;
+    overflow: hidden;
+
+
 }
 
 
