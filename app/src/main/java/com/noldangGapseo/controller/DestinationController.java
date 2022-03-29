@@ -15,7 +15,7 @@ public class DestinationController {
 
   @Autowired
   DestinationService service;
-
+//re
   //놀당갑서의 여행지를 모두 가져온다. 
   @GetMapping("/admin/list")
   List<Destination> getAdminDesList() {

@@ -7,7 +7,7 @@ import java.sql.Date;
 
 @Repository
 public class NewDestinationComment {
-
+//ddd
     Integer newDestinationId;
     Integer userId;
     Integer destinationId;

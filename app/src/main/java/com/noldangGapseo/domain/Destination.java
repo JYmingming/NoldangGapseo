@@ -7,7 +7,7 @@ import java.sql.Date;
 
 @Repository
 public class Destination {
-
+//ss
     Integer destinationId;
     Integer userId;
     String nickName;
