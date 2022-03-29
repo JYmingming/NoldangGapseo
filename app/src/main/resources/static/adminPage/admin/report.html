@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>어드민</title>
+    <link rel="stylesheet" type="text/css" href="/css/report.css">
+</head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+
+<body>
+
+<div th:replace="/fixed/header :: header"></div>
+<a href="memberList.html"><span id="imgtext1">ADMINSTRATOR</span></a>
+   <a href="memberList.html"><span id="imgtext2">유저관리</span></a>
+                   <a href="index.html"><span id="imgtext3">신고관리</span></a>
+                   <a href="index.html"><span id="imgtext4">게시판관리</span></a>
+                    <a href="index.html"><span id="imgtext5">고객센터</span></a></h1> 
+<hr>
+
+
+
+
+<div class="container">
+    <form action="/report/update" method="POST">
+        <table class="table" id="table">
+           <thead>
+  <tr>
+    <th>타입</th>
+    <th>글번호</th>
+    <th>신고자 아이디</th>
+    <th>닉네임</th>
+    <th>이메일</th>
+    <th>신고사유</th>
+    <th>신고날짜</th>
+    <th>삭제여부</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td a href="#" onclick="location.href='report_detail.html'" span style="color:blue"">게시글</td>
+    <td>12452</td>
+    <td>right9090</td>
+    <td>놀당12</td>
+    <td>area153@naver.com</td>
+    <td>부적절한 이미지</td>
+    <td>2022-03-04</td>
+    <td>삭제완료</td>
+  </tr>
+  <tr>
+     <td a href="#" onclick="location.href='report_detail.html'" span style="color:blue"">게시글</td>
+    <td>12452</td>
+    <td>right9090</td>
+    <td>놀당12</td>
+    <td>area153@naver.com</td>
+    <td>부적절한 이미지</td>
+    <td>2022-03-04</td>
+    <td>삭제완료</td>
+  </tr> <tr>
+     <td a href="#" onclick="location.href='report_detail.html'" span style="color:blue"">게시글</td>
+    <td>12452</td>
+    <td>right9090</td>
+    <td>놀당12</td>
+    <td>area153@naver.com</td>
+    <td>부적절한 이미지</td>
+    <td>2022-03-04</td>
+    <td>삭제완료</td>
+  </tr> <tr>
+    <td a href="#" onclick="location.href='report_detail.html'" span style="color:blue"">게시글</td>
+    <td>12452</td>
+    <td>right9090</td>
+    <td>놀당12</td>
+    <td>area153@naver.com</td>
+    <td>부적절한 이미지</td>
+    <td>2022-03-04</td>
+    <td>삭제완료</td>
+  </tr> <tr>
+     <td a href="#" onclick="location.href='report_detail.html'" span style="color:blue"">댓글</td>
+    <td>12452</td>
+    <td>right9090</td>
+    <td>놀당12</td>
+    <td>area153@naver.com</td>
+    <td>부적절한 이미지</td>
+    <td>2022-03-04</td>
+    <td>삭제완료</td>
+  </tr> <tr>
+       <td a href="#" onclick="location.href='report_detail.html'" span style="color:blue"">댓글</td>
+    <td>12452</td>
+    <td>right9090</td>
+    <td>놀당12</td>
+    <td>area153@naver.com</td>
+    <td>부적절한 이미지</td>
+    <td>2022-03-04</td>
+    <td>삭제완료</td>
+  </tr> <tr>
+      <td a href="#" onclick="location.href='report_detail.html'" span style="color:blue"">게시글</td>
+    <td>12452</td>
+    <td>right9090</td>
+    <td>놀당12</td>
+    <td>area153@naver.com</td>
+    <td>부적절한 이미지</td>
+    <td>2022-03-04</td>
+    <td>삭제완료</td>
+  </tr>
+     <div id="freetext1">
+                    ▷ 총 7개의 신고된 게시물이 있습니다.
+                </div>
+
+                <div id="select">
+
+                    <img id="selectimage" src="img/select_search.gif" alt="">
+
+                    <form id="form" action="">
+                        <select name="type" id="">
+                            <option value="1">제목</option>
+                            <option value="2">내용</option>
+                            <option value="3">아이디</option>
+                        </select>
+                    </form>
+
+                    <input id="selectinput" type="text">
+
+                    <img id="searchimage" src="img/search_button.gif" alt="">
+                </div>
+</tbody>
+</table>
+</div>
+</body>
+</html>
