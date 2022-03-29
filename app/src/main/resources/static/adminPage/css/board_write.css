@@ -18,32 +18,31 @@
 #whole {
     width: 970px;
     height: 897px;
-    /* background-color: black; */
+ 
     margin-left: 20%;
 }
 
 #window1 {
     width: 220px;
     height: 780px;
-    /* background-color: blue; */
     float: left;
 }
 #window2 {
     width: 750px;
     height: 780px;
-    /* background-color: blueviolet; */
+ 
     margin-left: 240px;
 }
 #window3 {
     width: 990px;
     height: 117px;
-    /* background-color: chartreuse; */
+  
 }
 
 
 
 
-/* window1 상단 로고*/
+/*  상단 로고*/
 #window1image {
     width: 230px;
     margin-top: 3%;
@@ -56,7 +55,7 @@
 
 
 
-/* window1 로그인 박스 */
+/*  로그인 박스 */
 #window1login {
     border: 2px solid ghostwhite;
     background-color: gainsboro;
