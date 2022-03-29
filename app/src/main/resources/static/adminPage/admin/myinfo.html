@@ -1,43 +1,47 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>내정보</title>
-    <link rel="stylesheet" type="text/css" href="/css/header.css">
-    <script>
-
-        function introduction(url, name) {
-            var options = 'width = 500, height = 500, top = 100, location = no';
-            window.open(url, name, options);
-        }
-
-    </script>
+    <title>어드민</title>
+    <link rel="stylesheet" type="text/css" href="/css/myinfo.css">
 </head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+
 <body>
+
 <div th:replace="/fixed/header :: header"></div>
-<h1>
-    <span th:text="${session.nickname}"></span>         회원 상세목록 페이지
-</h1>
+<a href="member.html"><span id="imgtext1">ADMINSTRATOR</span></a>
+   <a href="member.html"><span id="imgtext2">유저관리</span></a>
+                   <a href="index.html"><span id="imgtext3">신고관리</span></a>
+                   <a href="index.html"><span id="imgtext4">게시판관리</span></a>
+                    <a href="index.html"><span id="imgtext5">고객센터</span></a></h1> 
 <hr>
 
-<h3> 공개 프로필 </h3>
-
-프로필 사진 : <span th:text="${session.photo}"></span> <br>
-이름 : <span th:text="${session.name}"></span> <br>
-닉네임 : <span th:text="${session.nickname}"></span> <br>
-성별 : <span th:text="${session.gender}"></span> <br>
-나이 : <span th:text="${session.age}"></span> <br>
 
 
 
-<hr>
 
-<h3>활동 내역 </h3>
+<div class="container">
+<div id="circle"><img src="img/profile.jpg" alt=""></div>
 
-작성한 게시글 : <span th:text="${session.location}"></span> <br>
-작성한 댓글 : <span th:text="${session.level}"></span> <br>
-
-
-
+<table class="type02">
+  <tr>
+    <th scope="row">아이디</th>
+    <td>right9292</td>
+  </tr>
+  <tr>
+    <th scope="row">닉네임</th>
+    <td>놀당갑서22</td>
+  </tr>
+  <tr>
+    <th scope="row">전화번호</th>
+    <td>010-1234-5678</td>
+  </tr>
+    <tr>
+    <th scope="row">이메일</th>
+    <td>noldang2022@naver.com</td>
+  </tr>
+</table>
+</div>
 </body>
 </html>
