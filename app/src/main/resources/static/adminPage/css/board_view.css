@@ -1,0 +1,270 @@
+
+
+/* @media (max-width: 1090px) {
+   .whole {
+       width: 545px;
+       height: 406px;
+       margin: auto;
+       
+   }
+} */
+
+.whole {
+    width: 3090px;
+    height: 811px;
+    margin: auto;
+}
+.window1 {
+    float: left;
+    width: 285px;
+    height: 711px;
+    /* background-color: royalblue; */
+    /*margin-left: 400px;*/
+
+}
+.window2 {
+    margin-left: 240px;
+    width: 850px;
+    height: 711px;
+    /*background-color: saddlebrown;*/
+}
+.window3 {
+    width: 1090px;
+    height: 100px;
+    /* background-color: sandybrown; */
+    /*margin-left: 400px;*/
+}
+#mainLogo {
+    margin-left: 20%;
+    margin-bottom: 3%;
+
+}
+#loginbox {
+    border: grey solid 2px;
+    border-radius: 10px;
+    width: 200px;
+    height: 125px;
+    margin-left: 25px;
+    background-color: cornsilk;
+}
+.text_box {
+    height: 45px;
+    display: flex;
+} 
+#loginbox h3 {
+    float: left;
+    margin-left: 5%;
+    color: seagreen;
+}
+#loginbox h4 {
+    margin-left: 3%;
+}
+#idBox {
+    width: 50%;
+    margin-left: 20px;
+}
+#passwordInput {
+    width: 50%;
+    margin-left: 20px;
+}
+#loginImage {
+    float: right;
+    margin-right: 3%;
+}
+#loginbox_join {
+    margin-top: 5%;
+    margin-left: 7%;
+}
+#loginbox_search {
+    margin-top: 5%;
+    margin-left: 2%;
+} 
+#community {
+    margin-top: 10%;
+    margin-left: 8%;
+    position: relative;
+    
+}
+.community_text_box {
+    margin-top: 4%;
+    margin-left: 4%;
+    margin-bottom: none;
+    width: 240px;
+    height: 310px;
+    background-image: url("../img/sub_menu_bg.png"); background-repeat: no-repeat;
+    background-size: 180px;
+    display: flex;
+    flex-direction: column;
+}
+#community_text1 {
+    padding-left: 6%;
+    margin-bottom: 1px;
+    margin-top: 35%;
+    font-size: 15px;
+}
+#community_text1 a {
+    color: black;
+    text-decoration: none;
+}
+#community_text2 {
+    padding-left: 6%;
+    margin-bottom: 1px;
+    font-size: 15px;
+} 
+#community_text3 {
+    padding-left: 6%;
+    margin-bottom: 1px;
+    font-size: 15px;
+} 
+#community_text4 {
+    padding-left: 6%;
+    margin-bottom: 1px;
+    font-size: 15px;
+} 
+#community_text5 {
+    padding-left: 6%;
+    font-size: 15px;
+}
+#else_content {
+    border: 1px solid gray;
+    border-radius: 10%;
+    margin-left: 1%;
+    margin-top: 2%;
+    width: 190px;
+}  
+#else_content1 {
+ margin-left: 3%;
+ margin-top: 4%;  
+}
+#else_content2 {
+ margin-left: 3%;    
+}
+#else_content3 {
+ margin-left: 3%;
+ margin-bottom: 3%;    
+}
+#top_right_menu {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+}
+#top_right_menu div {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#top_right_NOTICE {
+    padding-right: 3%;
+}
+#menu_image_text1 {
+    width: 50%;
+    height: 50%;
+}
+#menu_image_text1 a{
+    color: white;
+    text-decoration: none;
+}
+#main {
+    display: block;
+    background-image: url(../img/main_menu_bg.png);
+    width: 757px;
+    height: 38px;
+    display: flex;
+    text-align: center;
+}
+#main > span {
+    flex: 1;
+}
+#menu_image_text1 {
+ color: white;
+ margin-top : 1%
+}
+#menu_image_text2 {
+ color: white;
+ margin-top : 1%    
+}
+#menu_image_text3 {
+ color: white;
+ margin-top : 1%    
+}
+#menu_image_text4 {
+ color: white;
+ margin-top : 1%    
+}
+#menu_image_text5 {
+ color: white;
+ margin-top : 1%    
+}
+#comm {
+    margin-top: 2%;
+}
+#free_title {
+    border: solid 2px darkgray;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    background-color: lightgrey;
+    width: 756px;
+    box-sizing: 20%;
+    margin-left: 5%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: none;
+}
+#date {
+    margin-left: 23%;
+}
+#content {
+    width: 90%;
+    margin-left: 7%;
+}
+#comments {
+    border: solid 2px grey;
+    background-color: lightgrey;
+    border-right: none;
+    border-left: none;
+    border-bottom: none;
+    width: 756px;
+    height: 15%;
+    margin-left: 6%;
+    display: flex;
+}
+#comments_image {
+    padding: 7px 5px;
+    margin: 7px 5px;
+}
+#comments_text {
+    width: 65%;
+    height: 80%;
+    margin-top: 1%;
+}
+#ripple {
+    padding: 17px;
+}
+#button {
+    width: 756px;
+    height: 3%;
+    margin-left: 6%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+#button1 {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#button2 {
+    margin-right: 5px;
+}
+#last_block {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#logo { 
+    margin-left: 10%;
+    margin-top: 5px;
+}
+#last_block_content {
+    margin-top: 5px;
+}
