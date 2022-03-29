@@ -14,7 +14,7 @@ public class UserController {
 
   @Autowired
   UserDao userDao;
-  //kkk
+
   //유저의 전체 리스트를 가져온다
   @GetMapping("/list")
   public List<User> list(){

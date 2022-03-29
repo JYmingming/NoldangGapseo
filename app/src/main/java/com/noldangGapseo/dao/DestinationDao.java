@@ -7,7 +7,7 @@ import java.util.List;
 
 @Mapper
 public interface DestinationDao {
-//sss
+
  List<Destination> getUserDesList();
 
  List<Destination> getAdminDesList();

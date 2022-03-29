@@ -6,7 +6,7 @@ import java.util.List;
 
 @Repository
 public class UserDestinationResponse {
-//dd
+
     List<Destination> destinationList;
     Destination destination;
     List<NewDestinationComment> newDestinationComments;

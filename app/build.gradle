@@ -3,6 +3,7 @@ plugins {
   id 'io.spring.dependency-management' version '1.0.11.RELEASE'
   id 'java'
   id 'eclipse'
+  id "io.freefair.lombok" version "6.4.1"
 }
 
 group = 'com.noldangGapseo'
@@ -22,6 +23,7 @@ dependencies {
   developmentOnly 'org.springframework.boot:spring-boot-devtools'
   testImplementation 'org.springframework.boot:spring-boot-starter-test'
   implementation 'org.modelmapper:modelmapper:2.3.6'
+  annotationProcessor 'org.projectlombok:lombok'
 }
 
 test {

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class User {
-//ddd
+
   Integer userId;
   String id;
   String nickName;
