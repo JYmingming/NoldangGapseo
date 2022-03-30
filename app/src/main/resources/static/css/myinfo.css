@@ -1,0 +1,163 @@
+#circle {
+
+  width : 300px;
+  height : 300px;
+  border-radius: 50%;
+  background-color: Orange;
+  margin-left:100px;
+  margin-right:-300px;
+  margin-top:100px;
+
+}
+
+
+
+
+table.type02 {
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: center;
+  line-height: 1.5;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  margin : 120px;
+   margin-left : 500px;
+  
+}
+table.type02 th {
+  width: 150px;
+  padding: 20px;
+  font-weight: bold;
+  vertical-align: top;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  background: #eee;
+     background-color: rgb(251, 147, 0);
+ 
+}
+table.type02 td {
+  width: 350px;
+  padding: 20px;
+  vertical-align: top;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  
+}
+
+
+*{
+    padding:0;
+    margin:150;
+    text-decoration: none;
+}
+*:link, *:visited{
+    color:black;
+  
+}
+
+.header{
+	
+    background: rgb(237, 229, 153);
+    height: 70px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 10px 0px #cccccc;
+   
+}
+.title_zone, .login_zone{
+    display: flex;
+    align-items: center;
+    
+}
+.icon{
+    width: 50px;
+    margin-right: 10px;
+    
+}
+.project_title{
+
+    color:rgb(90, 129, 0);
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.menus{
+    font-size: 20px;
+    font-weight: 550;
+}
+.login_control{
+    margin-right: 30px;
+}
+    .table{
+        border:1px solid;
+        width: 1100px;
+    }
+    thead{
+        border-bottom: 1px solid gray;
+    }
+    .member{
+        border:1px solid;
+    }
+    .member:hover{
+        transition: all 0.3s;
+        background:#DED369;
+    }
+    #search{
+        border:1px solid lightgray;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+    }
+    .memberCenter{
+        text-align: center;
+    }
+     
+#imgtext1{
+   
+    margin-left:50px;
+   font-size : xx-large;
+    top: 30px;
+    color: Black;
+    font: bold;
+}
+    
+ 
+ #imgtext2{
+   
+    margin-left:200px;
+  font-size : large;
+    top: 30px;
+    color: Black;
+    font: bold;
+}
+#imgtext3{
+   
+    margin-left:60px;
+   font-size : large;
+    top: 30px;
+    color: Black;
+    font: bold;
+}
+#imgtext4{
+   
+    margin-left:60px;
+   font-size : large;
+    top: 30px;
+    color: Black;
+    font: bold;
+}
+#imgtext5{
+   
+    margin-left:60px;
+   font-size : large;
+    top: 30px;
+    color: Black;
+    font: bold;
+}
+ 
