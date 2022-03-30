@@ -1,9 +1,20 @@
 body{
     margin: 0px;
 }
+ul{
+	margin:0;
+	padding :0;
+	list-style-type: none;
+}
+li{
+	text-decoration: none;
+	margin:0;
+	padding:0;
+}
 
 .wrap{
     width: 100vw;
+    height: 100vh;
     display: block;
 }
 
@@ -13,7 +24,7 @@ body{
 }
 
 .first_box1{
-    width: 20vw;
+    width: 10vw;
     height: 10vh;
     float: left;
     border: solid 1px black
@@ -21,73 +32,59 @@ body{
 
 
 .first_box2{
-    width: 20vw;
+    width: 25vw;
     height: 10vh;
     float: left;
     border: solid 1px black
 }
 
-.first_box3{
-    width: 40vw;
-    height: 10vh;
-    float: left;
-    border: solid 1px black;
-}
-
 .first_box2 h5 {
     font-weight: bold;
     margin-top: 4.7vh;
+    font-size: 1.5em;
 }
 
-.first_box3 h5 {
-    margin-top: 5.2vh;
+.first_box3{
+    width: 55vw;
+    height: 10vh;
+    float: left;
+    border: solid 1px black;
+    text-align: right;
+}
+
+.first_box3 ul{
+    width: 40vw;
+    text-align: center;
+    margin-top: 6vh;
+}
+
+
+.first_box3 ul h5 {
+    text-align: center;
+
     margin-left: 1vw;
     font-weight: bold;
-    font-size: 0.8em;
+    font-size: 0.5em;
 }
 
-.first_box3 h6 {
-    margin-top: 5.5vh;
-    margin-left: 0.5vw;
-    font-weight: normal;
-    font-size: 0.3em;
+#col1 {
+    margin-top: -0.5vh;
+    font-size: 1em;
 }
 
-
-.first_box3 .tag1{
-	   width: 7vw;
-     height: 10vh;
-     border: solid 1px black;
-     float: left;
-}
-
-.first_box3 .tag2 h6{
+#col2 {
     color: #fb9300;
+    font-weight: bolder;
 }
 
-.first_box3 .tag2{
-     width: 7vw;
-     height: 10vh;
-     border: solid 1px black;
-     float: left
+#col3 {
 }
 
-.first_box3 .tag3{
-     width: 7vw;
-     height: 10vh;
-     border: solid 1px black;
-     float: left
-}
-
-.first_box3 .tag4{
-     width: 7vw;
-     height: 10vh;
-     border: solid 1px black;
-     float: left
+#col4 {
 }
 
 .first_box4{
-    width: 20vw;
+    width: 10vw;
     height: 10vh;
     border: solid 1px black;
     float: left
@@ -105,7 +102,7 @@ body{
 }
 
 .second_box1{
-    width: 20vw;
+    width: 10vw;
     height: 60vh;
     float: left;
     border: solid 1px black
@@ -113,32 +110,214 @@ body{
 
 
 .second_box2{
-    width: 20vw;
+    width: 25vw;
     height: 60vh;
     float: left;
     border: solid 1px black
 }
 
 .second_box3{
-    width: 40vw;
+    width: 55vw;
     height: 60vh;
     float: left;
     border: solid 1px black;
 }
 
 .second_box4{
-    width: 19.8vw;
+    width: 10vw;
     height: 60vh;
     border: solid 1px black;
-    float: left;
+    float: both;
 }
+
+.second_box3 table{
+    margin-top: 8.5vh;
+    margin-left: 2.5vw;
+    width: 45vw;
+    border-radius: 1em;
+    background-color: rgb(250, 250, 250);
+    box-shadow: 1px 1px 5px 0px;
+}
+
+.second_box3 table tr {
+    padding: 3vh;
+    text-align: left;
+  }
+
+.second_box3 table td {
+    padding: 4vh;
+    
+  }
+  
+#td-1 {
+    border-top-left-radius: 1em;
+    width: 15vw;
+    height: 12vh;
+    background-color: #eaeaea;
+    text-align: center;
+}
+
+#td-2 {
+    width: 15vw;
+    height: 12vh;
+    background-color: #eaeaea;
+    text-align: center;
+}
+
+#td-3 {
+    width: 15vw;
+    height: 12vh;
+    background-color: #eaeaea;
+    text-align: center;
+}
+
+#td-4 {
+    border-bottom-left-radius: 1em;
+    width: 15vw;
+    height: 12vh;
+    background-color: #eaeaea;
+    text-align: center;
+}
+
+
 
 .contents_box{
     width: 20vw;
-    height: 55vh;
+    height: 57vh;
     background-color: rgb(250, 250, 250);
     box-shadow: 1px 1px 5px 0px;
-    float: left
+    border-radius: 1em;
+    float: left;
+}
+
+
+.con1 {
+    width: 20vw;
+    height: 28.5vh;
+    
+}
+
+.user_photo {
+    margin-top: 6vh;
+    margin-left: 1vw;
+    width: 10vw;
+    height: 20vh;
+    float:left;
+    background-image: url("../../img/profile.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.user_info {
+    margin-top: 5vh;
+    width: 8.5vw;
+    height: 20vh;
+    float:right;
+}
+
+.user_info h5{
+    margin-top: 6vh;
+}
+
+.user_info h6{
+    font-size: 0.7em;
+    margin-top: -1vh;
+}
+
+.logout {
+    width: 8vw;
+    height: 5vh;
+}
+
+#btn1{
+    width: 5vw;
+    height: 3vh;
+    background-color: #fb9300;
+    color: white;
+    margin-right: 3vw;
+    font-size: 0.8em;
+    font-weight: bold;
+    float:right;
+    border-radius: 0.5em;
+    border: 0;
+    outline: 0;
+}
+
+.line {
+    margin-left: 2.5vw;
+    width: 15vw;
+    height: 28.5vh;
+    
+    border-bottom: solid 4px #f5e6ca;
+}
+
+.con2 {
+    width: 20vw;
+    height: 28.5vh;
+    
+}
+
+
+.second_box2 table{
+    margin-top: -0.5vh;
+    width: 20vw;
+    height: 28.5vh;
+    border-radius: 1em;
+}
+
+.second_box2 table td {
+    padding: 3vh;
+    
+  }
+
+#img1 {
+    padding: 1vw, 4vh;
+    background-image: url("../../img/id.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 2vw 4vh;
+}
+
+#img2 {
+    padding: 1vw, 4vh;
+    background-image: url("../../img/tag.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 2vw 4vh;
+}
+
+#img3 {
+    padding: 2vw, 4vh;
+    background-image: url("../../img/wishlist.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 2vw 4vh;
+}
+
+#img4 {
+    padding: 2vw, 4vh;
+}
+
+#img1_text {
+    padding: 1vh;
+    font-size: 0.5em;
+    text-align: center;
+}
+
+#img2_text {
+    padding: 1vh;
+    font-size: 0.5em;
+    text-align: center;
+}
+
+#img3_text {
+    padding: 1vh;
+    font-size: 0.5em;
+    text-align: center;
+}
+
+#img4_text {
+    padding: 1vh;
 }
 
 .third_container {
@@ -148,11 +327,51 @@ body{
     float: left;
 }
 
+.third_box1{
+    width: 10vw;
+    height: 30vh;
+    float: left;
+    border: solid 1px black
+}
+
+
+.third_box2{
+    width: 25vw;
+    height: 30vh;
+    float: left;
+    border: solid 1px black
+}
+
+.third_box3{
+    width: 55vw;
+    height: 30vh;
+    float: left;
+    border: solid 1px black;
+}
+
+.third_box4{
+    width: 10vw;
+    height: 30vh;
+    float: both;
+    border: solid 1px black;
+}
+
+#btn2{
+    width: 7vw;
+    height: 5vh;
+    background-color: #fb9300;
+    color: white;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-left: 40.75vw;
+    border-radius: 0.5em;
+    border: 0;
+    outline: 0;
+}
 
 footer{
     background-color: #2f394d;
     width: 100vw;
-    height: 20vh;
-    margin-top: 90vh;
+    height: 30vh;
     
 }
