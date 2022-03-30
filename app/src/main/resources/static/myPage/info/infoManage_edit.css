@@ -21,7 +21,6 @@ li{
 .first_container{
     width: 100vw;
     height: 10vh;
-    display: block;
 }
 
 .first_box1{
@@ -71,6 +70,7 @@ li{
 #col1 {
     margin-top: -0.5vh;
     font-size: 1em;
+    overflow: hidden;
 }
 
 #col2 {
@@ -144,8 +144,11 @@ li{
     display: block;
 }
 
-.second_box3 span {
-	margin-left: 2vw;
+.second_box3 input {
+  width: 20vw;
+  height: 4vh;
+  margin-left: 2vw;
+  display: flex;
 }
   
 #td-1 {
@@ -182,7 +185,6 @@ li{
     width: 30vw;
     height: 11.25vh;
 }
-
 
 .contents_box{
     margin:0;
@@ -221,7 +223,6 @@ li{
     height: 20vh;
     float:right;
     overflow: hidden;
-    
 }
 
 .user_info h5{
@@ -368,19 +369,39 @@ li{
     border: solid 1px black;
 }
 
+.btn_box {
+    margin-left: 27.5vw;
+    width: 20vw;
+    height: 5vh;
+    float: left;
+    overflow: hidden;
+}
+
 #btn2{
     width: 7vw;
     height: 5vh;
+    margin-left: 5vw;
     background-color: #fb9300;
     color: white;
     font-size: 0.8em;
     font-weight: bold;
-    margin-left: 40.75vw;
     border-radius: 0.5em;
     border: 0;
     outline: 0;
-    overflow: hidden;
 }
+
+#btn3{
+    width: 7vw;
+    height: 5vh;
+    background-color: white;
+    color: black;
+    font-size: 0.8em;
+    font-weight: bold;
+    border-radius: 0.5em;
+    float: right;
+    border: 1px solid #bebebe
+}
+
 
 
 footer{

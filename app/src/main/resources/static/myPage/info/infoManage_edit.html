@@ -5,7 +5,7 @@
 <title>계정관리</title>
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="infoManage.css">
+    <link rel="stylesheet" type="text/css" href="infoManage_edit.css">
     <script>
             $(document).ready(function () {
                 $('.headers').load('../../common/header/header.html');
@@ -81,16 +81,16 @@
               <table>
                 <tbody>
                   <tr>
-                    <td id="td-1">아이디</td><td id="null"><span>kimminSu</span></td>
+                    <td id="td-1">아이디</td><td><input id="id_edit" type="text"></td>
                   </tr>
                   <tr>
-                    <td id="td-2">닉네임</td><td id="null"><span>빙수</span></td>
+                    <td id="td-2">닉네임</td><td><input id="nick_edit" type="text"></td>
                   </tr>
                   <tr>
-                    <td id="td-3">휴대폰 번호</td><td id="null"><span>010-0000-0000</span></td>
+                    <td id="td-3">휴대폰 번호</td><td><input id="phoneNum_edit" type="tel"></td>
                   </tr>
                   <tr>
-                    <td id="td-4">이메일</td><td id="null"><span>test@test.com</span></td>
+                    <td id="td-4">이메일</td><td><input id="email_edit" type="email"></td>
                   </tr>                  
                 </tbody>
               </table>
@@ -102,7 +102,10 @@
           <div class="third_box1"></div>
           <div class="third_box2"></div>
           <div class="third_box3">
-              <button id="btn2">수정하기</button>
+          <div class="btn_box">
+              <button id="btn2">수정완료</button>
+              <button id="btn3">취소</button>
+          </div>
           </div>
           <div class="third_box4"></div>
       </div>
