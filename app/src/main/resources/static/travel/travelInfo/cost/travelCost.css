@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'Cooper';
+    src: url('../../../asset/font/Cooper\ Black\ BT.ttf') format('ttf');
+}
+
+.container {
+    margin-top: 20px;
+    background-color: rgb(251, 147, 0);
+    border-radius: 30px;
+    padding: 4%;
+}
+.inner-box {
+    background-color: white;
+    border-radius: 30px;
+    padding: 2%;
+}
+.cost-content {
+    margin-top: 20px;
+}
+.content-box {
+    margin-bottom: 2em;
+}
+.cost-col {
+    font-size: 1.5em;
+}
+.con-line {
+    margin-top: 1%;
+    border: 0.5px solid #ececec;
+    border-radius: 10px;
+}
+.total-box {
+    margin-top: 8%;
+    margin-bottom: 5%;
+    font-family: 'Cooper';
+    font-size: 3em;
+}
+.cost-input-box {
+    border: 1px solid #dfdfde;
+    border-radius: 30em;
+    height: 4em;
+}
+.x-in {
+    background-color: white;
+    border: 0px;
+    font-size: 1.6em;
+}
+.x-in:focus {
+    outline: none;
+}
