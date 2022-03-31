@@ -139,17 +139,27 @@ border-collapse:collapse;
 .tg {
 	margin-left:560px;
 margin-top : 100px;
+position: absolute;
 }
 
 #rectangle2{
-	margin-top:650px;
+	margin-top:1000px;
 		margin-left : 1080px;
     width : 150px;
   height : 30px;
     background-color: red;
     text-align:center;
-  border-radius: 20px;
+  border-radius: 30px;
   font-size : 15px;
+	
+}
+
+#reportimage{
+	
+	position : relative;
+	right : 720px;
+	top : 50px;
+	
 	
 }
 	
@@ -160,5 +170,3 @@ margin-top : 100px;
 	
 	
 	
-	
-
