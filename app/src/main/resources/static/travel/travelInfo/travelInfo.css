@@ -7,6 +7,7 @@
     display: flex;
     padding: 0;
     flex-direction: column;
+    margin-bottom: 30px;
 }
 .mini-container {
     display: flex;
@@ -55,29 +56,43 @@
     border: 1px solid rgb(251, 147, 0);
     border-radius: 10px;
     margin-top: 10%;
+    justify-content: center;
 }
 .invite-box {
-    display: flex;
     justify-content: center;
     margin-top: 3px;
-    margin-bottom: 3px;
+    margin-bottom: 10px;
 }
 .invite-box > div {
     font-family: 'Comic Sans MS';
 }
 .invite-btn {
-    display: flex;
-    /* text-justify: inter-words; */
-    /* width: 31px; */
-    /* height: 30px; */
+    width: 30px;
+    height: 30px;
     text-align: center;
     border-radius: 20px;
     background-color: rgb(251, 147, 0);
-    border-width: 0;
     font-weight: bold;
-    /* font-size: 30px; */
-    color: white;
-    margin-right: 20px;
+    color: green;
+    padding: 0px;
+    margin-right: 5px;
+}
+.comp-list {
+    margin-bottom: 5px;
+}
+.pro-img {
+    width: 30px;
+    height: 30px;
+    background-color: bisque;
+    border-radius: 50px;
+    margin-right: 5px;
+}
+.user-nic {
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 200px;
 }
 .travel-cost {
     height: 12%;

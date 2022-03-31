@@ -38,21 +38,25 @@
                     <div class="travel-name text-center col-sm-6">노답4명</div>
                     <div class="travel-period text-center col-sm-6">2022-03-26 ~ 2022-03-31</div>
                     <div class="travel-companion-box col-sm-6">
-                        <div class="invite-box col-sm-8">
-                            <div class="invite-btn">➕</div>
+                        <div class="invite-box col-sm-8 d-flex align-items-center">
+                            <div class="invite-btn">+</div>
                             <div>초대하기</div>
                         </div>
-                        <div class="invite-box col-sm-8">
-                            <div class="invite-btn">➕</div>
-                            <div>초대하기</div>
+                        <div class="comp-list col-sm-12 d-flex align-items-center">
+                            <div class="pro-img"></div>
+                            <div class="user-nic">전영민둥머리</div>
                         </div>
-                        <div class="invite-box col-sm-8">
-                            <div class="invite-btn">➕</div>
-                            <div>초대하기</div>
+                        <div class="comp-list col-sm-12 d-flex align-items-center">
+                            <div class="pro-img"></div>
+                            <div class="user-nic">정창성장판안닫혀아직아프다</div>
                         </div>
-                        <div class="invite-box col-sm-8">
-                            <div class="invite-btn">➕</div>
-                            <div>초대하기</div>
+                        <div class="comp-list col-sm-12 d-flex align-items-center">
+                            <div class="pro-img"></div>
+                            <div class="user-nic">사랑해요엄진영</div>
+                        </div>
+                        <div class="comp-list col-sm-12 d-flex align-items-center">
+                            <div class="pro-img"></div>
+                            <div class="user-nic">가나다라마바사안</div>
                         </div>
                     </div>
                     <div class="travel-cost col-sm-6">
@@ -108,6 +112,69 @@
                                 </button>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="modal fade"
+                id="compModal"
+                tabindex="-1"
+                aria-labelledby="compModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="m-header">
+                            <div
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                data-bs-target="#compModal"
+                                aria-label="Close"
+                            ></div>
+                            <div class="box-name" style="margin-left: 20%">
+                                동행자의 닉네임을 적어주세요
+                            </div>
+                        </div>
+                        <div class="modal-body content-box">
+                            <div
+                                class="col-md-10 d-flex"
+                                style="justify-content: space-between; padding: 0px"
+                            >
+                                <input type="text" class="name-input" />
+                                <button
+                                    type="button"
+                                    class="btn btn-sm"
+                                    style="height: 50%; align-self: flex-end; justify-content: end"
+                                >
+                                    Invite
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="modal fade"
+                id="weatherModal"
+                tabindex="-1"
+                aria-labelledby="weatherModalLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="m-header">
+                            <div
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                data-bs-target="#weatherModal"
+                                aria-label="Close"
+                            ></div>
+                        </div>
+                        <div class="modal-body content-box"></div>
                     </div>
                 </div>
             </div>
