@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>어드민</title>
-    <link rel="stylesheet" type="text/css" href="/css/report.css">
+    <link rel="stylesheet" type="text/css" href="/css/TravelBoard.css">
 </head>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 
@@ -16,111 +16,93 @@
                    <a href="TravelBoard.html"><span id="imgtext4">게시판관리</span></a>
                     <a href="index.html"><span id="imgtext5">고객센터</span></a></h1> 
 <hr>
-
+<h1 class ="maintitle">여행지 l 유저여행지 관리</h1>
 
 
 
 <div class="container">
-    <form action="/report/update" method="POST">
+    <form >
         <table class="table" id="table">
            <thead>
   <tr>
-    <th>타입</th>
-    <th>글번호</th>
-    <th>신고자 아이디</th>
-    <th>닉네임</th>
-    <th>이메일</th>
-    <th>신고사유</th>
-    <th>신고날짜</th>
-    <th>삭제여부</th>
+    <th class ="th-1">타입</th>
+    <th class ="th-2">이름</th>
+    <th class ="th-3">주소</th>
+    <th class ="th-4">전화번호</th>
+    <th class ="th-5">태그</th>
+    <th class ="th-6">사진</th>
+    <th class ="th-7">한줄소개</th>
+    <th class ="th-8">업데이트</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td a href="#" onclick="location.href='report_detail.html'" span style="color:blue"">게시글</td>
-    <td>12452</td>
-    <td>right9090</td>
-    <td>놀당12</td>
-    <td>area153@naver.com</td>
-    <td>부적절한 이미지</td>
-    <td>2022-03-04</td>
-    <td>삭제완료</td>
+    <td class ="td-1">맛집</td>
+     <td class ="td-2">이름1</td>
+     <td class ="td-3">서울특별시 강남구 xxxx</td>
+    <td class ="td-4">010-1234-5678</td>
+    <td class ="td-5">#봄 #등산 #맛집 #바다</td>
+    <td class ="td-6">img</td>
+          <td class ="td-7">@한줄소개@</td>
+    <td class ="td-8"><button>update</button></td>
   </tr>
   <tr>
-     <td a href="#" onclick="location.href='report_detail.html'" span style="color:blue"">게시글</td>
-    <td>12452</td>
-    <td>right9090</td>
-    <td>놀당12</td>
-    <td>area153@naver.com</td>
-    <td>부적절한 이미지</td>
-    <td>2022-03-04</td>
-    <td>삭제완료</td>
+   <td class ="td-1">맛집</td>
+     <td class ="td-2">이름2</td>
+     <td class ="td-3">서울특별시 강남구 xxxx</td>
+    <td class ="td-4">010-1234-5678</td>
+    <td class ="td-5">#봄 #등산 #맛집 #바다</td>
+    <td class ="td-6">img</td>
+       <td class ="td-7">@한줄소개@</td>
+   <td class ="td-8"><button>update</button></td>
   </tr> <tr>
-     <td a href="#" onclick="location.href='report_detail.html'" span style="color:blue"">게시글</td>
-    <td>12452</td>
-    <td>right9090</td>
-    <td>놀당12</td>
-    <td>area153@naver.com</td>
-    <td>부적절한 이미지</td>
-    <td>2022-03-04</td>
-    <td>삭제완료</td>
+     <td class ="td-1">맛집</td>
+     <td class ="td-2">이름3</td>
+     <td class ="td-3">서울특별시 강남구 xxxx</td>
+    <td class ="td-4">010-1234-5678</td>
+    <td class ="td-5">#봄 #등산 #맛집 #바다</td>
+       <td class ="td-6">img</td>
+         <td class ="td-7">@한줄소개@</td>
+   <td class ="td-8"><button>update</button></td>
   </tr> <tr>
-    <td a href="#" onclick="location.href='report_detail.html'" span style="color:blue"">게시글</td>
-    <td>12452</td>
-    <td>right9090</td>
-    <td>놀당12</td>
-    <td>area153@naver.com</td>
-    <td>부적절한 이미지</td>
-    <td>2022-03-04</td>
-    <td>삭제완료</td>
+    <td class ="td-1">맛집</td>
+     <td class ="td-2">이름4</td>
+     <td class ="td-3">서울특별시 강남구 xxxx</td>
+    <td class ="td-4">010-1234-5678</td>
+    <td class ="td-5">#봄 #등산 #맛집 #바다</td>
+       <td class ="td-6">img</td>
+       <td class ="td-7">@한줄소개@</td>
+  <td class ="td-8"><button>update</button></td>
   </tr> <tr>
-     <td a href="#" onclick="location.href='report_detail.html'" span style="color:blue"">댓글</td>
-    <td>12452</td>
-    <td>right9090</td>
-    <td>놀당12</td>
-    <td>area153@naver.com</td>
-    <td>부적절한 이미지</td>
-    <td>2022-03-04</td>
-    <td>삭제완료</td>
+    <td class ="td-1">맛집</td>
+     <td class ="td-2">이름5</td>
+     <td class ="td-3">서울특별시 강남구 xxxx</td>
+    <td class ="td-4">010-1234-5678</td>
+    <td class ="td-5">#봄 #등산 #맛집 #바다</td>
+      <td class ="td-6">img</td>
+      <td class ="td-7">@한줄소개@</td>
+   <td class ="td-8"><button>update</button></td>
   </tr> <tr>
-       <td a href="#" onclick="location.href='report_detail.html'" span style="color:blue"">댓글</td>
-    <td>12452</td>
-    <td>right9090</td>
-    <td>놀당12</td>
-    <td>area153@naver.com</td>
-    <td>부적절한 이미지</td>
-    <td>2022-03-04</td>
-    <td>삭제완료</td>
+     <td class ="td-1">맛집</td>
+     <td class ="td-2">이름6</td>
+     <td class ="td-3">서울특별시 강남구 xxxx</td>
+    <td class ="td-4">010-1234-5678</td>
+    <td class ="td-5">#봄 #등산 #맛집 #바다</td>
+    <td class ="td-6">img</td>
+     <td class ="td-7">@한줄소개@</td>
+<td class ="td-8"><button>update</button></td>
   </tr> <tr>
-      <td a href="#" onclick="location.href='report_detail.html'" span style="color:blue"">게시글</td>
-    <td>12452</td>
-    <td>right9090</td>
-    <td>놀당12</td>
-    <td>area153@naver.com</td>
-    <td>부적절한 이미지</td>
-    <td>2022-03-04</td>
-    <td>삭제완료</td>
+   <td class ="td-1">맛집</td>
+     <td class ="td-2">이름7</td>
+     <td class ="td-3">서울특별시 강남구 xxxx</td>
+    <td class ="td-4">010-1234-5678</td>
+    <td class ="td-5">#봄 #등산 #맛집 #바다</td>
+      <td class ="td-6">img</td>
+        <td class ="td-7">@한줄소개@</td>
+  <td class ="td-8"><button>update</button></td>
   </tr>
-     <div id="freetext1">
-                    ▷ 총 7개의 신고된 게시물이 있습니다.
-                </div>
+   
 
-                <div id="select">
-
-                    <img id="selectimage" src="img/select_search.gif" alt="">
-
-                    <form id="form" action="">
-                        <select name="type" id="">
-                            <option value="1">제목</option>
-                            <option value="2">내용</option>
-                            <option value="3">아이디</option>
-                        </select>
-                    </form>
-
-                    <input id="selectinput" type="text">
-
-                    <img id="searchimage" src="img/search_button.gif" alt="">
-                </div>
 </tbody>
 </table>
 </div>

@@ -3,7 +3,7 @@
   width : 300px;
   height : 300px;
   border-radius: 50%;
-  background-color: Orange;
+  background-color: #fb9300;
   margin-left:100px;
   margin-right:-300px;
   margin-top:100px;
@@ -22,6 +22,7 @@ table.type02 {
   border-left: 1px solid #ccc;
   margin : 120px;
    margin-left : 500px;
+    font-family: "Comic Sans MS";
   
 }
 table.type02 th {
@@ -123,10 +124,12 @@ table.type02 td {
     margin-left:50px;
    font-size : xx-large;
     top: 30px;
-    color: Black;
+    color:  #fb9300;
     font: bold;
-}
+     font-family: "Comic Sans MS";
     
+   
+}
  
  #imgtext2{
    
@@ -159,5 +162,9 @@ table.type02 td {
     top: 30px;
     color: Black;
     font: bold;
+}
+
+.maintitle{
+	margin-left : 100px;
 }
  
