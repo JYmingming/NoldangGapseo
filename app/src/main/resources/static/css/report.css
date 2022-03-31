@@ -64,6 +64,11 @@
     .container{
         display: flex;
         justify-content: center;
+          border-radius :10px;
+          background-color: rgb(250, 250, 250);
+ 
+          height: 600px;
+          margin-left:50px;
     }
     .memberCenter{
         text-align: center;
@@ -115,10 +120,11 @@
 }
 
 .table{
+	margin-top : 30px;
 border-collapse:collapse;
 	}
 	
-.table td{background-color:#fff;border-color:#aaa;border-style:solid;border-width:1px;color:#333;
+.table td{ text-align: center;background-color:#fff;border-color:#aaa;border-style:solid;border-width:1px;color:#333;
    font-family: "Comic Sans MS";font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
 	
 	.table th{background-color:#f38630;border-color:#aaa;border-style:solid;border-width:1px;color:#fff;

@@ -18,11 +18,27 @@
                    <a href="TravelBoard.html"><span id="imgtext4">게시판관리</span></a>
                     <a href="index.html"><span id="imgtext5">고객센터</span></a></h1> 
 <hr>
-<h1 class ="maintitle">관리자 l 유저 관리</h1>
+<h1 class ="maintitle" >관리자 l 유저 관리</h1>
 
+<div id="select">
 
+          
+
+                    <form id="form" style ="margin-left : 210px; margin-top : 30px;"   action="">
+                        <select name="type" id="">
+                            <option value="1">아이디</option>
+                            <option value="2">닉네임</option>
+                            <option value="3">이메일</option>
+                              <input id="selectinput" type="text" style ="margin-left :5px;">
+                        </select>
+                          <button class="button1">검색</button>
+                    </form>
+
+             
+                </div>
 
 <div class="container">
+
 
         <table class="table" id="table">
             <thead>
@@ -42,7 +58,8 @@
                 <td th:text="${member.nickname}" class="memberCenter2">푸른하늘12</td>
                 <td th:text="${member.email}" class="memberCenter3">area1253@naver.com</td>
                 <td th:text="${member.regdate}" class="memberCenter4">2022-01-02</td>
-             <td><label><input type="checkbox" name="color" value="blue"> </label></td>
+            <td class="memberCenter5"><label><input type="checkbox" name="color" value="blue"> </label></td>
+         
             </tr>
             
             </tbody>
@@ -53,7 +70,7 @@
                 <td th:text="${member.nickname}" class="memberCenter2">제주구경</td>
                 <td th:text="${member.email}" class="memberCenter3">a568a3@naver.com</td>
                 <td th:text="${member.regdate}" class="memberCenter4">2022-01-12</td>
-            <td><label><input type="checkbox" name="color" value="blue"> </label></td>
+            <td class="memberCenter5"><label><input type="checkbox" name="color" value="blue"> </label></td>
               
             </tr>
             </tbody>
@@ -63,7 +80,7 @@
                 <td th:text="${member.nickname}" class="memberCenter2">놀당놀당</td>
                 <td th:text="${member.email}" class="memberCenter3">fksfn2@naver.com</td>
                 <td th:text="${member.regdate}" class="memberCenter4">2022-01-17</td>
-              <td><label><input type="checkbox" name="color" value="blue"> </label></td>
+              <td class="memberCenter5"><label><input type="checkbox" name="color" value="blue"> </label></td>
             </tr>
             </tbody>
             
@@ -73,7 +90,7 @@
                 <td th:text="${member.nickname}" class="memberCenter2">여행가1</td>
                 <td th:text="${member.email}" class="memberCenter3">lsknflkf@naver.com</td>
                 <td th:text="${member.regdate}" class="memberCenter4">2022-02-02</td>
-           <td><label><input type="checkbox" name="color" value="blue"> </label></td>
+          <td class="memberCenter5"><label><input type="checkbox" name="color" value="blue"> </label></td>
 
            
             </tr>
@@ -85,7 +102,7 @@
                 <td th:text="${member.nickname}" class="memberCenter2">제주바라기</td>
                 <td th:text="${member.email}" class="memberCenter3">aglk34@naver.com</td>
                 <td th:text="${member.regdate}" class="memberCenter4">2022-02-15</td>
-             <td><label><input type="checkbox" name="color" value="blue"> </label></td>
+        <td class="memberCenter5"><label><input type="checkbox" name="color" value="blue"> </label></td>
             </tr>
             </tbody>
             
@@ -95,18 +112,20 @@
                 <td th:text="${member.nickname}" class="memberCenter2">여행좋아</td>
                 <td th:text="${member.email}" class="memberCenter3">afhkln43@naver.com</td>
                 <td th:text="${member.regdate}" class="memberCenter4">2022-02-22</td>
-               <td><label><input type="checkbox" name="color" value="blue"> </label></td>
+                <td class="memberCenter5"><label><input type="checkbox" name="color" value="blue"> </label></td>
             </tr>
             
+             
+            
                        <style>
-button{
+.button{
 all: unset;
 background-color : red;
 color : white;
 border-radius : 5px;
 cursor : pointer;
 margin-left : 1080px;
-margin-top : 300px;
+margin-top : 500px;
 position: absolute;
   text-align: center;
 }
@@ -154,12 +173,20 @@ margin: 0;
 
 </style>
 
-<button id="open"> 탈퇴</button>
+<button id="open" style ="all: unset;
+background-color : red;
+color : white;
+border-radius : 5px;
+cursor : pointer;
+margin-left : 1080px;
+margin-top : 500px;
+position: absolute;
+  text-align: center;"> 탈퇴</button>
 <div class="modal hidden">
 <div class="modal_overlay"></div>
 <div class="modal_content">
 <h1>탈퇴처리 되었습니다.</h1>
-<button>확인</button>
+<button class="button2">확인</button>
 </div>
 
 </div>
