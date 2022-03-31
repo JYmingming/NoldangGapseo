@@ -2,10 +2,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>내정보 수정</title>
+<title>회원탈퇴</title>
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="infoManage_edit.css">
+    <link rel="stylesheet" type="text/css" href="withDrawal.css">
     <script>
             $(document).ready(function () {
                 $('.headers').load('../../common/header/header.html');
@@ -78,20 +78,22 @@
               </div>
           </div>
           <div class="second_box3">
+              <ul>
+                <li>회원탈퇴 처리 후에는 회원님의 개인정보를 복원할 수 없으며, 회원탈퇴 진행 시 해당 아이디는 영구적으로</li>
+                <li id="li-2">삭제되어 재가입이 불가합니다.</li>
+              </ul>
+              <h5>비밀번호 재확인</h5>
+              <div class="extra_text">
+                <h6>별표(*)는 필수입력 항목입니다.</h6>
+              </div>
               <table>
                 <tbody>
                   <tr>
-                    <td id="td-1">아이디</td><td><input id="id_edit" type="text"></td>
+                    <td id="td-1">아이디</td><td id="null"><span>kimminSu</span></td>
                   </tr>
                   <tr>
-                    <td id="td-2">닉네임</td><td><input id="nick_edit" type="text"></td>
+                    <td id="td-2">비밀번호*</td><td id="null"><input id="password" type="password"></td>
                   </tr>
-                  <tr>
-                    <td id="td-3">휴대폰 번호</td><td><input id="phoneNum_edit" type="tel"></td>
-                  </tr>
-                  <tr>
-                    <td id="td-4">이메일</td><td><input id="email_edit" type="email"></td>
-                  </tr>                  
                 </tbody>
               </table>
           </div>
@@ -102,10 +104,10 @@
           <div class="third_box1"></div>
           <div class="third_box2"></div>
           <div class="third_box3">
-          <div class="btn_box">
-              <button id="btn2">수정완료</button>
-              <button id="btn3">취소</button>
-          </div>
+            <div class="btn_box">
+                <button id="btn2">확인</button>
+                <button id="btn3">취소</button>
+            </div>
           </div>
           <div class="third_box4"></div>
       </div>
