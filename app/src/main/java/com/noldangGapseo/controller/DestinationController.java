@@ -19,7 +19,6 @@ public class DestinationController {
   //놀당갑서의 여행지를 모두 가져온다. 
   @GetMapping("/admin/list")
   List<Destination> getAdminDesList() {
-
     return service.getAdminDesList();
   }
 
