@@ -74,7 +74,8 @@ body{
     height: 3vh;
     background-color: #fb9300;
     color: white;
-    font-size: 0.8em;
+    font-size: 0.8vw;
+    font-weight: bold;
     border-radius: 0.5em;
     border: 0;
     outline: 0;
@@ -122,21 +123,21 @@ body{
     background-image: url("../../img/id.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 3vw 6vh;
+    background-size: 10%;
 }
 
 #img2{
     background-image: url("../../img/tag.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 3vw 6vh;
+    background-size: 10%;
 }
 
 #img3{
     background-image: url("../../img/wishlist.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 3vw 6vh;
+    background-size: 10%;
 }
 
 .box2{
