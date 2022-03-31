@@ -21,14 +21,12 @@ li{
 .first_container{
     width: 100vw;
     height: 10vh;
-    display: block;
 }
 
 .first_box1{
     width: 10vw;
     height: 10vh;
     float: left;
-    border: solid 1px black
 }
 
 
@@ -36,7 +34,6 @@ li{
     width: 25vw;
     height: 10vh;
     float: left;
-    border: solid 1px black;
 }
 
 .first_box2 h5 {
@@ -49,7 +46,6 @@ li{
     width: 55vw;
     height: 10vh;
     float: left;
-    border: solid 1px black;
     text-align: right;
 }
 
@@ -62,7 +58,6 @@ li{
 
 .first_box3 ul h5 {
     text-align: center;
-
     margin-left: 1vw;
     font-weight: bold;
     font-size: 0.75vw;
@@ -87,7 +82,6 @@ li{
 .first_box4{
     width: 10vw;
     height: 10vh;
-    border: solid 1px black;
     float: left
 }
 
@@ -98,7 +92,6 @@ li{
 .second_container {
     width: 100vw;
     height: 60vh;
-    border: solid 1px black;
     float: left;
     display: block;
 }
@@ -107,7 +100,6 @@ li{
     width: 10vw;
     height: 60vh;
     float: left;
-    border: solid 1px black
 }
 
 
@@ -115,20 +107,17 @@ li{
     width: 25vw;
     height: 60vh;
     float: left;
-    border: solid 1px black
 }
 
 .second_box3{
     width: 55vw;
     height: 60vh;
     float: left;
-    border: solid 1px black;
 }
 
 .second_box4{
     width: 10vw;
     height: 60vh;
-    border: solid 1px black;
     float: both;
 }
 
@@ -145,8 +134,11 @@ li{
     display: block;
 }
 
-.second_box3 span {
-	margin-left: 2vw;
+.second_box3 input {
+  width: 20vw;
+  height: 4vh;
+  margin-left: 2vw;
+  display: flex;
 }
   
 #td-1 {
@@ -184,7 +176,6 @@ li{
     height: 11.25vh;
 }
 
-
 .contents_box{
     margin:0;
     padding:0;
@@ -217,13 +208,11 @@ li{
 }
 
 .user_info {
-    font-size: 1vw;
     margin-top: 5vh;
     width: 8.5vw;
     height: 20vh;
     float:right;
     overflow: hidden;
-    
 }
 
 .user_info h5{
@@ -336,7 +325,6 @@ li{
 .third_container {
     width: 100vw;
     height: 30vh;
-    border: solid 1px black;
     float: left;
     display: block;
 }
@@ -345,7 +333,6 @@ li{
     width: 10vw;
     height: 30vh;
     float: left;
-    border: solid 1px black
 }
 
 
@@ -353,36 +340,53 @@ li{
     width: 25vw;
     height: 30vh;
     float: left;
-    border: solid 1px black
 }
 
 .third_box3{
     width: 55vw;
     height: 30vh;
     float: left;
-    border: solid 1px black;
 }
 
 .third_box4{
     width: 10vw;
     height: 30vh;
     float: both;
-    border: solid 1px black;
+}
+
+.btn_box {
+    margin-left: 27.5vw;
+    width: 20vw;
+    height: 5vh;
+    float: left;
+    overflow: hidden;
 }
 
 #btn2{
     width: 7vw;
     height: 5vh;
+    margin-left: 5vw;
     background-color: #fb9300;
     color: white;
     font-size: 0.8vw;
     font-weight: bold;
-    margin-left: 40.75vw;
     border-radius: 0.5em;
     border: 0;
     outline: 0;
-    overflow: hidden;
 }
+
+#btn3{
+    width: 7vw; 
+    height: 5vh;
+    background-color: white;
+    color: black;
+    font-size: 0.8vw;
+    font-weight: bold;
+    border-radius: 0.5em;
+    float: right;
+    border: 1px solid #bebebe
+}
+
 
 
 footer{
