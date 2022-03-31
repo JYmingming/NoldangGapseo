@@ -12,16 +12,16 @@
 <div th:replace="/fixed/header :: header"></div>
 <a href="memberList.html"><span id="imgtext1">ADMINSTRATOR</span></a>
    <a href="memberList.html"><span id="imgtext2">유저관리</span></a>
-                   <a href="index.html"><span id="imgtext3">신고관리</span></a>
-                   <a href="index.html"><span id="imgtext4">게시판관리</span></a>
+                  <a href="report.html"><span id="imgtext3">신고관리</span></a>
+                   <a href="TravelBoard.html"><span id="imgtext4">게시판관리</span></a>
                     <a href="index.html"><span id="imgtext5">고객센터</span></a></h1> 
 <hr>
 
-
+<h1 class ="maintitle">관리자 l 신고 관리</h1>
 
 
 <div class="container">
-    <form action="/report/update" method="POST">
+    <form >
         <table class="table" id="table">
            <thead>
   <tr>
@@ -107,7 +107,7 @@
 
                 <div id="select">
 
-                    <img id="selectimage" src="img/select_search.gif" alt="">
+          
 
                     <form id="form" action="">
                         <select name="type" id="">
@@ -119,7 +119,7 @@
 
                     <input id="selectinput" type="text">
 
-                    <img id="searchimage" src="img/search_button.gif" alt="">
+                   <button>검색</button>
                 </div>
 </tbody>
 </table>

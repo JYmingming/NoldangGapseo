@@ -8,6 +8,7 @@
   
 }
 
+
 .header{
 	
     background: rgb(237, 229, 153);
@@ -17,6 +18,7 @@
     align-items: center;
     justify-content: space-between;
     box-shadow: 0px 4px 10px 0px #cccccc;
+    
     
    
 }
@@ -62,15 +64,18 @@
     }
     #search{
         border:1px solid lightgray;
+        
     }
     .container{
         display: flex;
         justify-content: center;
         text-align : center;
+         font-family: "Comic Sans MS";
     }
     .memberCenter{
         text-align: center;
        color:blue;
+        font-family: "Comic Sans MS";
     }
  
 #imgtext1{
@@ -78,8 +83,11 @@
     margin-left:50px;
    font-size : xx-large;
     top: 30px;
-    color: Black;
+    color:  #fb9300;
     font: bold;
+     font-family: "Comic Sans MS";
+    
+   
 }
 
 #imgtext2{
@@ -89,6 +97,7 @@
     top: 30px;
     color: Black;
     font: bold;
+    
 }
 #imgtext3{
    
@@ -155,3 +164,6 @@
         text-indent: -9999px;
     }
 
+.maintitle{
+	margin-left : 100px;
+}

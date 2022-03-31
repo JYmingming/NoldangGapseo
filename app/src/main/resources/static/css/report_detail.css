@@ -74,8 +74,11 @@
     margin-left:50px;
    font-size : xx-large;
     top: 30px;
-    color: Black;
+    color:  #fb9300;
     font: bold;
+     font-family: "Comic Sans MS";
+    
+   
 }
 
 #imgtext2{
@@ -116,12 +119,12 @@ border-collapse:collapse;
 	}
 	
 .table td{background-color:#fff;border-color:#aaa;border-style:solid;border-width:1px;color:#333;
-  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+   font-family: "Comic Sans MS";font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
 	
 	.table th{background-color:#f38630;border-color:#aaa;border-style:solid;border-width:1px;color:#fff;
-  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+   font-family: "Comic Sans MS";font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
 	
-.table .tg-baqh{text-align:center;vertical-align:top}
+.table .tg-baqh{text-align:center;vertical-align:top }
 .table .tg-f8tx{color:#000000;text-align:center;vertical-align:top}
 
 
@@ -129,28 +132,44 @@ border-collapse:collapse;
 	margin-left : 1080px;
     width : 150px;
   height : 30px;
-    background-color: orange;
+    background-color: #fb9300;
     text-align:center;
   border-radius: 20px;
   font-size : 15px;
+  color :white;
  
 }
 
 .tg {
 	margin-left:560px;
 margin-top : 100px;
+position: absolute;
+ font-family: "Comic Sans MS";
+
 }
 
 #rectangle2{
-	margin-top:650px;
+	margin-top:1000px;
 		margin-left : 1080px;
     width : 150px;
   height : 30px;
     background-color: red;
     text-align:center;
-  border-radius: 20px;
+  border-radius: 30px;
   font-size : 15px;
 	
+}
+
+#reportimage{
+	
+	position : relative;
+	right : 720px;
+	top : 50px;
+	
+	
+}
+	.maintitle{
+	margin-left : 100px;
 }
 	
 	
@@ -159,6 +178,3 @@ margin-top : 100px;
 	
 	
 	
-	
-	
-
