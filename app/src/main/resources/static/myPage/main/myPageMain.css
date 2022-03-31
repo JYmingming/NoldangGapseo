@@ -18,6 +18,12 @@ body{
     margin-top: 3vh;
 }
 
+.first_container h4 a {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
 .box1{
     width: 10vW;
     height: 30vh;
@@ -124,6 +130,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: 10%;
+    cursor: pointer;
 }
 
 #img2{
@@ -131,6 +138,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: 10%;
+    cursor: pointer;
 }
 
 #img3{
@@ -138,6 +146,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: 10%;
+    cursor: pointer;
 }
 
 .box2{

@@ -42,6 +42,12 @@ li{
     font-size: 1.5vw;
 }
 
+.first_box2 h5 a {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
 .first_box3{
     width: 55vw;
     height: 10vh;
@@ -68,15 +74,36 @@ li{
     font-size: 1.25vw;
 }
 
-#col2 {
+
+#col2 a{
     color: #fb9300;
-    font-weight: bolder;
+    text-decoration: none;
 }
 
-#col3 {
+#col2 a:hover {
+    cursor: pointer;
+    font-size: 1.1em;
 }
 
-#col4 {
+
+#col3 a{
+    color: black;
+    text-decoration: none;
+}
+
+#col3 a:hover {
+    color: #fb9300;
+    font-size: 1.1em;
+}
+
+#col4 a{
+    color: black;
+    text-decoration: none;
+}
+
+#col4 a:hover {
+    color: #fb9300;
+    font-size: 1.1em;
 }
 
 .first_box4{
@@ -134,11 +161,27 @@ li{
     display: block;
 }
 
+#check-btn {
+    width: 5vw;
+    height: 4vh;
+    background-color: #fb9300 ;
+    color: white;
+    font-size: 0.8vw;
+    font-weight: bold;
+    float: right;
+    border: 0;
+}
+
+#id_edit {
+    width: 16vw;
+    height: 4vh;
+    margin-left: 2vw;
+}
+
 .second_box3 input {
-  width: 20vw;
+  width: 22vw;
   height: 4vh;
   margin-left: 2vw;
-  display: flex;
 }
   
 #td-1 {
@@ -278,6 +321,7 @@ li{
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20%;
+    cursor: pointer;
 }
 
 #img2 {
@@ -286,6 +330,7 @@ li{
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20%;
+    cursor: pointer;
 }
 
 #img3 {
@@ -294,6 +339,7 @@ li{
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20%;
+    cursor: pointer;
 }
 
 #img4 {
@@ -348,6 +394,7 @@ li{
     float: left;
 }
 
+
 .third_box4{
     width: 10vw;
     height: 30vh;
@@ -386,6 +433,85 @@ li{
     float: right;
     border: 1px solid #bebebe
 }
+
+.modal_wrap{
+        display: none;
+        width: 30vw;
+        height: 20vh;
+        position: absolute;
+        top:20%;
+        left: 35%;
+        background:white;
+        box-shadow: 1px 1px 5px 0px;
+        z-index: 2;
+    }
+
+    
+.modal_box2 span {
+	font-size: 0.8vw;
+}
+    
+.modal_box1 {
+    width: 30vw;
+    height: 6.7vh;
+    color: #fb9300 ;
+    background-color: #f5e6ca ;
+    font-weight: bold;
+    font-size: 1vw;
+    padding-top:2vh;
+    padding-left: 1vw;
+}
+
+.modal_box2 {
+    width: 30vw;
+    height: 6.7vh;
+    font-weight: bold;
+    border-bottom: 1px solid #eaeaea;
+    padding-top:2vh;
+    padding-left: 1vw;
+  
+}
+
+.modal_box3 {
+    width: 30vw;
+    height: 6.7vh;
+    padding-top:2vh;
+    padding-right: 1vw;
+    
+  
+}
+
+    .black_bg{
+        display: none;
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color:rgba(0, 0,0, 0.1);
+        top:0;
+        left: 0;
+        z-index: 1;
+    }
+    #modal_close{
+        width: 3.5vw;
+        height: 3vh;
+        float: right;
+        text-align: center;
+        background-color: #fb9300;
+		    color: white;
+		    font-size: 0.8vw;
+		    font-weight: bold;
+		    border-radius: 0.5em;
+		    border: 0;
+		    outline: 0;
+    }
+    .modal_close> a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        background:url(https://img.icons8.com/metro/26/000000/close-window.png);
+        text-indent: -9999px;
+    }
 
 
 
