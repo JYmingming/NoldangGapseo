@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+
+
+    <script>
+        $(document).ready(function () {
+            $('.headers').load('../common/header/header.html');
+        });
+    </script>
+</head>
+<style>
+    .tag-reset{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        padding-inline-start: 0;
+        margin-inline-start: 0;
+
+    }
+
+    #signup_container{
+        height: 60vh;
+    }
+
+    #next_btn{
+        width: 30px;
+    }
+    .signup-form{
+        height: 10vh;
+        min-width: 300px;
+    }
+    .email{
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 2px solid violet;
+        width: 10vw;
+        min-width: 80px;
+        overflow: hidden;
+    }
+    .email2{
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 2px solid violet;
+        width: 12vw;
+        min-width: 80px;
+        overflow: hidden;
+    }
+    #slideShow{
+        overflow: hidden;
+        }
+    .slides {
+        transition: left 0.5s ease-out;
+        position: absolute;
+        overflow: hidden;
+        width: 300vw;
+    }
+    .slides li:first-child{
+        width: 30vw;
+        margin-left: 0;
+        list-style-type: none;
+        float: left;
+    }
+    .right-slide{
+        width: 30vw;
+        margin-left: 50vw;
+        list-style-type: none;
+        float: left;
+    }
+
+    .email-form{
+        width: 10vw;
+        min-width: 100px;
+
+    }
+    .email-check{
+        color: #E0475B;
+        font-size: 1em;
+    }
+
+</style>
+
+<body>
+    <!--헤더영역 -->
+    <div class="headers"></div>
+    <!-- 바디영역-->
+    <div class ="container mt-5" id="signup_container">
+        <div class="col-12 h-25">
+            <!-- 이미지로 교체예정-->
+            X
+        </div>
+        <div class="col-12 h-75  flex-lg-column">
+            <div class="row h-100">
+                <div class="col-4 my-auto">
+                    <div id="prev_btn"><button><</button></div>
+                </div>
+                <!-- 가입폼 영역-->
+                <div class="col-4 my-auto overflow-hidden position-relative m-lg-auto" id="gogo">
+                    <div class ="signup-form">
+                            <form name="form">
+                                <div id="slideShow">
+                                <ul class="tag-reset slides">
+                                   <li class =right-slide>
+                                        <input class="email" name="name" type="text" ><span class="h5"> @ </span>
+                                        <select class="form-select-sm email-form">
+                                            <option value="1">naver.com</option>
+                                            <option value="2">gmail.com</option>
+                                            <option value="3">nate.com</option>
+                                        </select><br>
+                                        <span class="email-check">이미 가입된 이메일이에요 😂</span>
+                                   </li>
+                                    <li class="right-slide">
+                                        <input class="email2" name="name" type="text" >
+                                        <br>
+                                        <span class="email-check">아이디가 중복됐어요 😂</span>
+                                    </li>
+                                    <li class="right-slide">
+                                        <input class="email2" name="name" type="text" >
+                                        <br>
+                                        <span class="email-check">닉네임을 입력해주세요 😂</span>
+                                    </li>
+                                    <li class="right-slide">
+                                        <input class="email2" name="name" type="text" >
+                                        <br>
+                                        <span class="email-check">패스워드를 입력해주세요 😂</span>
+                                    </li>
+
+                                </ul>
+                                </div>
+
+                            </form>
+                     </div>
+                </div>
+                <div class="col-4 my-auto">
+                    <div class="float-end" id="next_btn"><button>></button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const slides = document.querySelector('.slides'); //전체 슬라이드 컨테이너
+    let currentIdx = 0; //현재 슬라이드 index
+    const slideCount = 4; // 슬라이드 개수
+    const prev = document.querySelector('#prev_btn'); //이전 버튼
+    const next = document.querySelector('#next_btn'); //다음 버튼
+    const slideWidth = 30; // 슬라이드 크기
+    let slideMargin = 50; //슬라이드간의 margin 값
+
+
+
+    function moveSlide(num) {
+        slides.style.left = num*-(slideMargin+slideWidth)+"vw";
+        currentIdx = num;
+    }
+
+
+
+    prev.addEventListener('click', function () {
+        /*첫 번째 슬라이드로 표시 됐을때는 이전 버튼 눌러도 아무런 반응 없게 하기 위해
+        currentIdx !==0일때만 moveSlide 함수 불러오기 */
+        if (currentIdx !== 0) moveSlide(currentIdx - 1);
+    });
+
+    next.addEventListener('click', function () {
+        /* 마지막 슬라이드로 표시 됐을때는 다음 버튼 눌러도 아무런 반응 없게 하기 위해
+        currentIdx !==slideCount - 1 일때만 moveSlide 함수 불러오기 */
+        if (currentIdx !== slideCount - 1) { moveSlide(currentIdx + 1);
+        }
+    });
+
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,33 +1,74 @@
-<html lang="en" dir="ltr"><head>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
   <meta charset="utf-8">
   <title>Noldang</title>
+  <style>
+  #header {                         /* 머리 전체  */
+  height: 50px;
+  padding-top: 10px;
+  border-bottom-style: solid;
+  border-color: gray;
+  }
+  #main-btn {
+    color:orange;
+    font-weight:bold;
+    background-color:white;
+    font-size:20px;
+    border:0;
+    outline:0;
+  }
+  #user-btn {
+    float:right;
+    color:orange;
+    background-color:white;
+    font-size:20px;
+    border:0;
+    outline:0;
+  }
+  
+  #container {                        /*고객센터 컨테이너*/
+  width: 550px; 
+  height: 630px;
+  }
+  
+  #Service-center {
+    font-size:20px;
+    color:orange;
+    font-weight:bold;
+  }
+  #all-btn {
+    background-color: white;
+    float:right;
+    border:solid;
+    border-color: gray;
+  }
+
+
+  </style>
 </head>
 <body>
-  <p><span style="color:orange; font-weight:bold">Noldang </span></p>
-<h1 id="x-Title">Noldang </h1>
+<div id="header">                      <!-- 머리 -->
+  <button id="main-btn" type="button">Noldang</button>
+  <button id="user-btn" type="button">user</button>
+</div>
+
+<div id="container">                  <!-- 몸통 전체 -->
+
+  <div id="body">
+    <span id="Service-center" >고객센터</span> 
+    <button id="all-btn" type="button">전체보기</button>
+  </div> 
 
 
 
-<p>고객센터 
-<input id="x-Service-input" type="text">
-</p>
+</div>
 
-<table id="x-announcement-table">
-<thead>
-  <tr>
-    <th>공지사항</th>
-  </tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-
-<input type="text" id="">
 
 <script type="text/javascript">
 
+
 </script>
 
-
-
-</body></html>
+</body>
+</html>
