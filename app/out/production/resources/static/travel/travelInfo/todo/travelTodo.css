@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Cooper';
+    src: url('../../../asset/font/Cooper\ Black\ BT.ttf') format('ttf');
+}
+
+.container {
+    margin-top: 20px;
+    background-color: rgb(251, 147, 0);
+    border-radius: 30px;
+    padding: 4%;
+}
+.inner-box {
+    background-color: white;
+    border-radius: 30px;
+    padding: 2%;
+}
+.todo-content {
+    margin-top: 20px;
+}
+.content-box {
+    margin-bottom: 2em;
+}
+.todo-col {
+    font-size: 1.5em;
+}
+
+.todo-input-box {
+    border: 1px solid #dfdfde;
+    border-radius: 30em;
+    height: 4em;
+}
+.x-in {
+    background-color: white;
+    border: 0px;
+    font-size: 1.6em;
+}
+.x-in:focus {
+    outline: none;
+}

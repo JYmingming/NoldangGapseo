@@ -23,7 +23,6 @@ dependencies {
   developmentOnly 'org.springframework.boot:spring-boot-devtools'
   testImplementation 'org.springframework.boot:spring-boot-starter-test'
   implementation 'org.modelmapper:modelmapper:2.3.6'
-  annotationProcessor 'org.projectlombok:lombok'
 }
 
 test {

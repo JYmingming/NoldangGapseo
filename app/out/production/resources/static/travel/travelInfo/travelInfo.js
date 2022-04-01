@@ -1,4 +1,4 @@
-import { userList } from '../../common/api/apiList.js';
+import { userList } from '/common/api/apiList.js';
 
 // --------모달----------
 
@@ -21,13 +21,9 @@ $('.invite-box').click(function (e) {
 });
 
 // 날씨 모달
-$('.travel-weather').click(async function (e) {
+$('.travel-weather').click(function (e) {
     e.preventDefault();
-    // $('#weatherModal').modal('show');
-    const ddd = await userList();
-    ddd.map((m) => {
-        console.log('response::::', m);
-    });
+    $('#weatherModal').modal('show');
 });
 
 // ---------------------------
