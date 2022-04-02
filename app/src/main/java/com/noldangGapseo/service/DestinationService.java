@@ -2,6 +2,7 @@ package com.noldangGapseo.service;
 
 import com.noldangGapseo.dao.DestinationDao;
 import com.noldangGapseo.domain.Destination;
+import com.noldangGapseo.domain.NoldangDestinationResponse;
 import com.noldangGapseo.domain.UserDestinationResponse;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,11 @@ public class DestinationService {
        return mapper.getUserDesOne(desId);
    }
 
+
+   public NoldangDestinationResponse getNoldangDes(Integer desId){
+        return NoldangDestinationResponse.builder().destination(mapper.getNoldangDes(desId))
+                .destinationCommentList(mapper.getNoldangDesComment(desId)).build();
+   }
 
 
 }

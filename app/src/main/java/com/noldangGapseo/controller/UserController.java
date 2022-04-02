@@ -1,6 +1,9 @@
 package com.noldangGapseo.controller;
 
 import java.util.List;
+
+import com.noldangGapseo.domain.UserResponse;
+import com.noldangGapseo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,18 +16,18 @@ import com.noldangGapseo.domain.User;
 public class UserController {
 
   @Autowired
-  UserDao userDao;
+  UserService service;
 
   //유저의 전체 리스트를 가져온다
   @GetMapping("/list")
-  public List<User> list(){
-    return userDao.findAll();
+  public UserResponse userlist(){
+    return service.userList();
   }
 
-  @GetMapping("/search")
-  public User search(String nickName) {
-    return userDao.findNickname(nickName);
-  }
+//  @GetMapping("/search")
+//  public User search(String nickName) {
+//    return userDao.findNickname(nickName);
+//  }
 
 
 
