@@ -1,16 +1,18 @@
 package com.noldangGapseo.domain;
 
+import lombok.*;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
 
-@Repository
+@Data
 public class DestinationComment {
 
-    Integer commentId;
-    Integer destinationId;
-    Integer userId;
-    String contents;
-    Date regDate;
-    Date updateDate;
+   private Integer commentId;
+   private Integer destinationId;
+   private Integer userId;
+   private String nickName;
+   private  String contents;
+   private Date regDate;
+   private Date updateDate;
 }
