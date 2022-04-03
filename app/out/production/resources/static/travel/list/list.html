@@ -9,6 +9,12 @@
         <link rel="stylesheet" href="../../node_modules/sweetalert2/dist/sweetalert2.min.css" />
         <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css" />
         <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <link
+            href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css"
+            rel="stylesheet"
+        />
+        <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+        <link rel="stylesheet" href="list.css" />
         <script>
             $(document).ready(function () {
                 $('.headers').load('../../common/header/header.html');
@@ -18,30 +24,27 @@
     <body>
         <div class="headers"></div>
         <div class="container">
-            <ul class="nav justify-content-center">
+            <ul class="nav justify-content-around tap-box">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Active</a>
+                    <a class="nav-link" href="/travel/list/list.html">TravelList</a>
+                    <div class="nav-line"></div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
-                        >Disabled</a
-                    >
+                    <a class="nav-link" href="/travel/myboard/myboard.html">Myboard</a>
                 </li>
             </ul>
-            <div class="tab">
-                <div class="tab-content">
-                    <div class="travel-list">travelList</div>
-                    <div class="travel-list">MyBoard</div>
+            <div class="switch-box d-flex"></div>
+            <div class="post-content">
+                <div class="post-box position-relative w-25 d-flex flex-column align-items-center">
+                    <div class="post-head d-flex">
+                        <div class="circle1">1</div>
+                        <div class="circle2">2</div>
+                    </div>
+                    <div class="post-body"></div>
                 </div>
             </div>
-            <div class="posti">pos</div>
         </div>
         <script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+        <script src="list.js" type="modules"></script>
     </body>
 </html>
