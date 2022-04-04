@@ -13,6 +13,7 @@ a{
 
 header{
     background-color: rgb(13,12,25);
+    overflow: hidden;
 }
 .headers {
     height: 10vh;
@@ -21,7 +22,6 @@ header{
     color: rgb(227,146,35);
     display: flex;
     justify-content: space-between;
-
 
 }
 .header_info{
@@ -32,7 +32,10 @@ header{
     font-size: 1em;
     text-align: right;
 }
-
+.header_info a{
+    text-decoration: none;
+    color: rgb(94,94,94);
+}
 
 .header_logo{
     margin-top: 2.2vh;
@@ -75,7 +78,7 @@ header{
     display: block;
     margin-top: 6vw;
     border-radius: 4vw;
-    background-image: url("../img/background.jpeg");
+    background-image: url("../img/background.jpg");
     background-size: 100%;
 }
 
@@ -87,61 +90,56 @@ body{
     width: 72vw;
     margin: 0 auto;
     display: block;
-    border: 3px solid red;
+
 
 }
 #second_container{
     margin-top: 10vh;
-    border: 1px solid red;
+
     display: block;
 }
 #second_container div{
-    border: 1px solid black;
     padding: 0px;
 }
 
 #second_container div div div{
     margin: 0px;
     border: 1px solid black;
+    border-radius: 3vw;
     width: 100%;
-    padding-bottom: 90%;
+    padding-bottom: 100%;
+    margin-bottom: 5px;
 }
 
 
 #second_container span{
-    border: 1px solid black;
-    text-align: center;
+    margin-left: 6vw;
 }
 
 
-.second_container h1{
-   font-size: 2em;
-    border: 1px solid black;
-    margin: 0;
+#second_container h1{
+    margin:0 0 5vh 0;
 }
-.second_container div div{
-    border: 1px solid black;
-}
-
-
 
 #third_container{
     margin : 15vh auto 0 auto;
-    border: 1px solid black;
-
 }
+#third_container h1{
+    margin:0 0 5vh 0;
+}
+
 .more_content{
     margin-top: 20px;
 }
 .img-con{
-    border: 2px solid #4d96ff;
+    border: 1px solid black;
+    border-radius: 2vw;
     padding: 5%;
 }
 
 .list-group{
     margin: 0;
     width: 100vm ;
-    border: 1px solid red;
     display: block;
 
 }
@@ -150,7 +148,7 @@ body{
     overflow: hidden;
 }
 .img-con{
-    border: 1px solid red;
+
     float: left;
     width: 20%;
     padding-top: 15%;
@@ -162,12 +160,12 @@ body{
     float: left;
 }
 .travel-text-title{
-    border: 1px solid blue;
+    margin-left: 1vw;
 }
 .travel-text-text{
     padding-bottom: 10%;
     max-height: 20vh;
-    border: 1px solid blue;
+    margin-left: 1vw;
     overflow: hidden;
 
 
@@ -177,11 +175,9 @@ body{
 .fourth_container{
     margin : 15vh auto 10vh auto;
     width: 72vw;
-
-    border: 1px solid black;
 }
 #map{
     width:100%;
-    height:50vh;
+    height:70vh;
 }
 
