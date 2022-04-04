@@ -1,3 +1,8 @@
+.container {
+    margin: 0px;
+    padding: 0px;
+}
+
 .tap-box {
     margin-top: 3em;
     margin-bottom: 3em;
@@ -12,4 +17,18 @@
     background-color: rgb(251, 147, 0);
     border-radius: 20px;
     margin-top: 6px;
+}
+.card {
+    border-radius: 20px;
+}
+.c-img {
+    object-fit: fill;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.card-text > span {
+    font-size: 20px;
+}
+.card:hover {
+    border: 2px solid orange;
 }
