@@ -1,27 +1,27 @@
-
-
-.col {
-	border-color: black;
-	border-style: solid;
-	border-width: 1px;
-
+.container{
+	margin: 5px;
 }
 
 
-.img {
-	height: 280px;
-	border-color: black;
-	border-style: solid;
-	border-width: 1px;
-	text-align: center;
+.row{
+  margin: 20px;
 }
 
-img {
-  max-width: 100%;
-  max-height: 100%;
+.card{
+  border-color: red;
+  border-style: solid;
+  border-width: 1px;	
 }
 
-.title {
+.card-img-top{
+  padding: 5px;	
+	
+}
+
+
+
+
+.card-title {
   text-align: center
 }
 
@@ -31,3 +31,19 @@ img {
 	color: red;
 }
 
+/*하트 버튼*/
+.btn-like {
+  color: transparent;
+  text-shadow: 0 0 2px rgba(255,255,255,.7), 0 0 0 #000;
+}
+.btn-like:hover {
+  text-shadow: 0 0 0 #ea0;
+}
+.btn-like.done {
+  color: inherit;
+  text-shadow: 0;
+}
+.btn-like.done:hover {
+  color: transparent;
+  text-shadow: 0 0 0 #777;
+}
