@@ -5,7 +5,7 @@
 <title>비밀번호 변경</title>
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="groupTag_contents.css">
+    <link rel="stylesheet" type="text/css" href="groupTag_edit.css">
     <script>
             $(document).ready(function () {
                 $('.headers').load('../../common/header/header.html');
@@ -73,7 +73,8 @@
               <table id="top_table">
                 <tbody>
                   <tr>
-                    <td id="td-1">제목</td><td id="null"><input type="text"></td>
+                    <td id="td-1">제목</td>
+                    <td id="null"><input type="text" value="Tag Title"></td>
                   </tr>
                 </tbody>
               </table>
@@ -111,7 +112,7 @@
           <div class="third_box2"></div>
           <div class="third_box3">
             <div class="btn_box">
-                <button id="btn2" a href="#" onclick="location.href='groupTag.html'">등록하기</button>
+                <button id="btn2" a href="#" onclick="location.href='groupTag.html'">수정완료</button>
                 <button id="btn3" a href="#" onclick="location.href='groupTag.html'">취소</button>
             </div>
           </div>
