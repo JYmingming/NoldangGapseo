@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.noldangGapseo.dao.DestinationDao">
+
+    <resultMap type="destination" id="desMap">
+    </resultMap>
+    <resultMap id="comMap" type="destinationComment"></resultMap>
+    <select id="getUserDesList" resultMap="desMap">
+        SELECT d.destination_id, d.destination_name, address, d.reg_date, u.nick_name , dt.destination_type_name
+        FROM destination d , `user` u , destination_type dt
+        WHERE d.user_id = u.user_id
+        and d.destination_type_id = dt.destination_type_id
+        and not d.user_id = 1
+        ORDER BY reg_date desc;
+    </select>
+
+    <select id="getAdminDesList" resultMap="desMap">
+        select
+        *
+        from
+        destination
+        where
+        user_id = 1
+        order by reg_date desc
+    </select>
+
+    <select id="getUserDesOne" resultMap="desMap" parameterType="Integer">
+        select *
+        from destination
+        where destination_id = #{desId}
+    </select>
+
+    <select id="getNoldangDes" resultMap="desMap" parameterType="Integer">
+        SELECT d.destination_name , d.contents
+        FROM destination d
+        WHERE d.destination_id = #{desId};
+    </select>
+
+    <select id="getNoldangDesComment" resultMap="comMap" parameterType="Integer">
+        SELECT dc.contents , u.nick_name
+        FROM destination_comment dc , `user` u
+        WHERE dc.destination_id = #{desId}
+        and dc.user_id = u.user_id;
+    </select>
+
+</mapper>

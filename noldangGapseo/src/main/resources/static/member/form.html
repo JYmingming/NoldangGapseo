@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+
+
+    <script>
+        $(document).ready(function () {
+            $('.headers').load('../common/header/header.html');
+        });
+    </script>
+</head>
+<style>
+    .tag-reset{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        padding-inline-start: 0;
+        margin-inline-start: 0;
+
+    }
+    #signup_container{
+        height: 60vh;
+    }
+
+    .arrow-prev,
+    .arrow-next {
+        position: relative;
+        float:left;
+        width:30px;
+        height:30px;
+        margin-right:5px;
+    }
+    .arrow-prev::after {
+        position: absolute;
+        top: -10px;
+        content: '';
+        width: 20px; /* 사이즈 */
+        height: 20px; /* 사이즈 */
+        border-top: 3px solid rgb(251, 147, 0); /* 선 두께 */
+        border-right: 3px solid rgb(251, 147, 0); /* 선 두께 */
+        transform: rotate(225deg); /* 각도 */
+        ;
+    }
+    .arrow-next::after {
+        position: absolute;
+        left: 10px;
+        top: -10px;
+        content: '';
+        width: 20px; /* 사이즈 */
+        height: 20px; /* 사이즈 */
+        border-top: 3px solid rgb(251, 147, 0); /* 선 두께 */
+        border-right: 3px solid rgb(251, 147, 0); /* 선 두께 */
+        transform: rotate(45deg); /* 각도 */
+    }
+    #next_btn{
+        width: 30px;
+    }
+    .signup-form{
+        height: 10vh;
+        min-width: 300px;
+    }
+    .slide-item{
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid rgb(251, 147, 0);
+        color: rgb(227,146,35);
+        width: 12vw;
+        min-width: 80px;
+        overflow: hidden;
+    }
+    .slide-item2{
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid rgb(251, 147, 0);
+        color: rgb(227,146,35);
+        width: 22vw;
+        min-width: 80px;
+        overflow: hidden;
+
+    }
+    #slideShow{
+        overflow: hidden;
+        }
+    .slides {
+        transition: left 0.5s ease-out;
+        position: absolute;
+        overflow: hidden;
+        width: 380vw;
+    }
+    .slides li:first-child{
+        width: 30vw;
+        margin-left: 0;
+        list-style-type: none;
+        float: left;
+    }
+    .slides li:first-child span{
+        margin-left: 0;
+    }
+    .right-slide{
+        width: 28vw;
+        margin-left: 50vw;
+        list-style-type: none;
+        float: left;
+    }
+
+    .email-form{
+        width: 10vw;
+        min-width: 100px;
+
+    }
+    .email-check{
+        color: #E0475B;
+        font-size: 0.8em;
+
+    }
+
+</style>
+
+<body>
+    <!--헤더영역 -->
+    <div class="headers"></div>
+    <!-- 바디영역-->
+    <div class ="container mt-5" id="signup_container">
+        <div class="col-12 h-25">
+            <!-- 이미지로 교체예정-->
+            X
+        </div>
+        <div class="col-12 h-75  flex-lg-column">
+            <div class="row h-100">
+                <div class="col-4 my-auto">
+                    <div id="prev_btn"><span class="arrow-prev"></span></div>
+                </div>
+                <!-- 가입폼 영역-->
+                <div class="col-4 my-auto overflow-hidden position-relative m-lg-auto" id="gogo">
+                    <div class ="signup-form">
+                            <form name="form">
+                                <div id="slideShow">
+                                <ul class="tag-reset slides">
+                                   <li class =right-slide>
+                                        <input class="slide-item" name="name" type="text" placeholder="이메일을 입력해주세요" autofocus><span class="h5"> @ </span>
+                                        <select class="form-select-sm email-form">
+                                            <option value="1">naver.com</option>
+                                            <option value="2">gmail.com</option>
+                                            <option value="3">nate.com</option>
+                                        </select><br>
+                                        <span class="email-check">중복 이메일이에요</span>
+                                   </li>
+                                    <li class="right-slide">
+                                        <input class="slide-item2" name="id" type="text"  placeholder="아이디를 입력해주세요">
+                                        <br>
+                                        <span class="email-check" >사용가능한 아이디입니다</span>
+                                    </li>
+                                    <li class="right-slide">
+                                        <input class="slide-item2" name="nickname" type="text"  placeholder="닉네임을 입력해주세요">
+                                        <br>
+                                        <span class="email-check" >사용가능한 닉네입니다</span>
+                                    </li>
+                                    <li class="right-slide">
+                                        <input class="slide-item2" name="name" type="text"  placeholder="핸드폰 번호를 입력해주세요">
+                                        <br>
+                                        <span class="email-check"></span>
+                                    </li>
+                                    <li class="right-slide">
+                                        <input class="slide-item2" name="password" type="password" placeholder="비밀번호를 입력해주세요">
+                                        <br>
+                                        <span class="email-check"></span>
+                                    </li>
+
+
+                                </ul>
+                                </div>
+
+                            </form>
+                     </div>
+                </div>
+                <div class="col-4 my-auto">
+                    <div class="float-end" id="next_btn"><span class="arrow-next"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const slides = document.querySelector('.slides'); //전체 슬라이드 컨테이너
+    let currentIdx = 0; //현재 슬라이드 index
+    const slideCount = 5; // 슬라이드 개수
+    const prev = document.querySelector('#prev_btn'); //이전 버튼
+    const next = document.querySelector('#next_btn'); //다음 버튼
+    const slideWidth = 28; // 슬라이드 크기
+    let slideMargin = 50; //슬라이드간의 margin 값
+
+
+    function moveSlide(num) {
+        slides.style.left = num*-(slideMargin+slideWidth)+"vw";
+        currentIdx = num;
+    }
+
+    prev.addEventListener('click', function () {
+        /* currentIdx !==0일때만 moveSlide 함수 불러오기 */
+        if (currentIdx !== 0) moveSlide(currentIdx - 1);
+    });
+
+    next.addEventListener('click', function () {
+        /*currentIdx !==slideCount - 1 일때만 moveSlide 함수 불러오기 */
+        if (currentIdx !== slideCount - 1) { moveSlide(currentIdx + 1);
+        }
+    });
+
+
+
+</script>
+
+
+</body>
+</html>

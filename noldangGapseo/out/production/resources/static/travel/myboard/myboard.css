@@ -1,0 +1,15 @@
+.tap-box {
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+.nav-link {
+    font-family: 'Comic Sans MS';
+    font-size: 1.3em;
+    color: rgb(251, 147, 0);
+}
+.nav-line {
+    height: 5px;
+    background-color: rgb(251, 147, 0);
+    border-radius: 20px;
+    margin-top: 6px;
+}

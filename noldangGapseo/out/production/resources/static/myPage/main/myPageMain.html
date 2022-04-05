@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>myPage</title>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="myPageMain.css">
+    <script>
+            $(document).ready(function () {
+                $('.headers').load('../../common/header/header.html');
+            });
+    </script>
+</head>
+<body>
+    <div class="headers"></div>
+    <div class="wrap">
+      <div class="first_container">
+          <h4>마이페이지</h4>
+          <div class="box1">
+          </div>
+          <div class="contents_box">
+            
+              <div class="user">
+                  <div class="user_photo">
+                  </div>
+                  <div class="user_info">
+                      <h5>닉네임</h5>
+                      <h6>email@test.com</h6>
+                      <div class="logout">
+                          <button>Logout</button>
+                      </div>
+                  </div>
+               </div>
+                  <div class="contents">
+                    <div class="contents_box1">
+                      <ul class="row">
+                        <li class="col-4" id="img1"></li>
+                        <li class="col-4" id="img2"></li>
+                        <li class="col-4" id="img3"></li>
+                      </ul>
+                    </div>
+                    <div class="contents_box2">
+                      <ul class="row">
+                        <li class="col-4">계정관리</li>
+                        <li class="col-4">그룹태그</li>
+                        <li class="col-4">위시리스트</li>
+                      </ul>
+                    </div>
+                  </div>
+            </div>
+      </div>
+
+      <div class="second_container">
+          <h5>나의 위시리스트</h5>
+          <div class="box2">
+          </div>
+          <div class="wishList_box">
+              <ul></ul>
+              <ul></ul>
+              <ul></ul>
+              <ul></ul>
+          </div>
+      </div>
+    </div>
+
+  <footer>
+  
+  </footer>
+
+  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+</body>
+</html>

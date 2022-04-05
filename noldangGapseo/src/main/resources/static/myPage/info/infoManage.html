@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>계정관리</title>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="infoManage.css">
+    <script>
+            $(document).ready(function () {
+                $('.headers').load('../../common/header/header.html');
+            });
+    </script>
+</head>
+<body>
+    <div class="headers"></div>
+    <div class="wrap">
+      <div class="first_container">
+          <div class="first_box1">
+          </div>
+          <div class="first_box2">
+              <h5 a href="#" onclick="location.href='../main/myPageMain.html'"><a href="#">마이페이지</a></h5>
+          </div>
+          <div class="first_box3">
+              <ul class="row">
+                  <li class ="col-3"">
+                    <h5 id= "col1">계정관리</h5>
+                  </li>
+                  <li class ="col-3">
+                    <h5 id="col2"><a href="#">내 정보</a></h5>
+                  </li>
+                  <li class ="col-3">
+                    <h5 id="col3" a href="#" onclick="location.href='password.html'"><a href="#">비밀번호 변경</a></h5>
+                  </li>
+                  <li class ="col-3">
+                    <h5 id="col4" a href="#" onclick="location.href='withDrawal.html'"><a href="#">회원탈퇴</a></h5>
+                  </li>   
+               </ul>
+               
+          </div>
+          <div class="first_box4">
+          </div>
+      </div>
+      <div class="second_container">
+          <div class="second_box1">
+          </div>
+          <div class="second_box2">
+              <div class="contents_box">
+                <div class="con1">
+                  <div class="user_photo"></div>
+                  <div class="user_info">
+                      <h5>nick</h5>
+                      <h6>email@test.com</h6>
+                      <div class="logout">
+                          <button id="btn1" a href="#" onclick="location.href='../../indexPage/index.html'">Logout</button>
+                      </div>
+                  </div>
+                  <div class="line"></div>
+                </div>
+                <div class="con2">
+                    <table>
+                        <tbody>
+                          <tr>
+                            <td id="img1" a href="#" onclick="location.href='infoManage.html'"></td>
+                            <td id="img2" a href="#" onclick="location.href='../tag/groupTag.html'"></td>
+                          </tr>
+                          <tr>
+                            <td id="img1_text">계정관리</td>
+                            <td id="img2_text">그룹태그</td>
+                          </tr>
+                          <tr>
+                            <td id="img3"></td>
+                            <td id="img4"></td>
+                          </tr>
+                          <tr>
+                            <td id="img3_text">위시리스트</td>
+                            <td id="img4_text"></td>
+                          </tr>
+                        </tbody>
+                    </table>
+                </div>
+              </div>
+          </div>
+          <div class="second_box3">
+              <table>
+                <tbody>
+                  <tr>
+                    <td id="td-1">아이디</td><td id="null"><span>kimminSu</span></td>
+                  </tr>
+                  <tr>
+                    <td id="td-2">닉네임</td><td id="null"><span>빙수</span></td>
+                  </tr>
+                  <tr>
+                    <td id="td-3">휴대폰 번호</td><td id="null"><span>010-0000-0000</span></td>
+                  </tr>
+                  <tr>
+                    <td id="td-4">이메일</td><td id="null"><span>test@test.com</span></td>
+                  </tr>                  
+                </tbody>
+              </table>
+          </div>
+          <div class="second_box4">
+          </div>
+      </div>
+      <div class="third_container">
+          <div class="third_box1"></div>
+          <div class="third_box2"></div>
+          <div class="third_box3">
+            <div class="btn_box">
+                <button id="btn2" a href="#" onclick="location.href='infoManage_edit.html'">수정하기</button>
+            </div>
+          </div>
+          <div class="third_box4"></div>
+      </div>
+    </div>
+      
+  
+    
+  
+
+  
+
+  <footer>
+  
+  </footer>
+  
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+</body>
+</html>

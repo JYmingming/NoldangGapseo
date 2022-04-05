@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Noldang</title>
+  <link rel="stylesheet" type="text/css" href="noticeBoard.css">
+</head>
+<body>
+<div id="header">                      <!-- 머리 -->
+  <button id="main-btn" type="button">Noldang</button>
+   <img id="img-2" src="c2.jpg">
+  <button id="user-btn" type="button">user</button>
+</div>
+
+<div id="container">                  <!-- 몸통 전체 -->
+
+  <div id="body">
+    <div id="body-a">
+      <img id="img-1" src="c1.jpg">
+      <span id="Service-center" >고객센터</span> 
+      <button id="all-btn" type="button" onclick=location.href='announcement.html'>전체보기</button>
+    </div>
+    
+    <div id="body-b">
+       <input id="search" type="search" 
+       placeholder="검색어를 입력해주세요">
+      <img id= "search-img" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
+    </div>
+    
+    <div id="body-c">
+      <table>
+        <tr>
+          <th><input class="a-button" type="button" value="인기 검색어"></th>
+          <th><input class="a-button" type="button" value="임시"></th>
+          <th><input class="a-button" type="button" value="임시"></th>
+          <th><input class="a-button" type="button" value="임시"></th>
+        </tr>
+      </table>
+    </div>
+    
+    <div id="body-d">
+      <table>
+        <tr>
+         <th><input class="b-button" type="button" value="공지사항" onClick="view(1)"></th>
+         <th><input class="b-button" type="button" value="FAQ BEST10" onClick="view(2)"></th>
+        </tr>  
+      </table> 
+    </div>
+    
+  <div id= "body-e">
+  
+    <table id="tb1">
+      <tr><td><input class="c-button" type="button" value="공지사항 1"></td></tr>
+      <tr><td><input class="c-button" type="button" value="공지사항 2"></td></tr>
+      <tr><td><input class="c-button" type="button" value="공지사항 3"></td></tr>
+      <tr><td><input class="c-button" type="button" value="공지사항 4"></td></tr>
+      <tr><td><input class="c-button" type="button" value="공지사항 5"></td></tr>
+    </table>
+    
+    <table id="tb2">
+      <tr><td><input class="c-button" type="button" value="자주 물어보는 질문 BEST 1"></td></tr>
+      <tr><td><input class="c-button" type="button" value="자주 물어보는 질문 BEST 2"></td></tr>
+      <tr><td><input class="c-button" type="button" value="자주 물어보는 질문 BEST 3"></td></tr>
+      <tr><td><input class="c-button" type="button" value="자주 물어보는 질문 BEST 4"></td></tr>
+      <tr><td><input class="c-button" type="button" value="자주 물어보는 질문 BEST 5"></td></tr>
+    </table>
+    
+    <table>
+      <tr></tr>
+    </table>
+    
+  </div>
+    
+    
+  </div>
+  
+</div>
+
+
+<script type="text/javascript">
+//검색어
+var ab = document.getElementsByClassName("a-button");
+
+
+function handleClick(event) {
+  console.log(event.target);
+
+  console.log(event.target.classList);
+
+  if (event.target.classList[1] === "clicked") {
+    event.target.classList.remove("clicked");
+  } else {
+    for (var i = 0; i < ab.length; i++) {
+      ab[i].classList.remove("clicked");
+    }
+
+    event.target.classList.add("clicked");
+  }
+}
+
+function init() {
+  for (var i = 0; i < ab.length; i++) {
+    ab[i].addEventListener("click", handleClick);
+  }
+}
+
+init();
+
+//공지사항//
+var ab = document.getElementsByClassName("b-button");
+
+
+function handleClick(event) {
+  console.log(event.target);
+
+  console.log(event.target.classList);
+
+  if (event.target.classList[1] === "clicked") {
+    event.target.classList.remove("clicked");
+  } 
+  else {
+    for (var i = 0; i < ab.length; i++) {
+      ab[i].classList.remove("clicked");
+    }
+
+    event.target.classList.add("clicked");
+  }
+}
+
+function init() {
+  for (var i = 0; i < ab.length; i++) {
+    ab[i].addEventListener("click", handleClick);
+  }
+}
+
+init();
+
+//공지테이블//
+function view(arg) {
+  var t1 = document.getElementById("tb1");
+  var t2 = document.getElementById("tb2");
+  
+  if(arg == 1) {
+    t1.style.display="block";
+    t2.style.display="none";
+  } 
+  else {
+    t2.style.display="block";
+    t1.style.display="none";
+  }
+}
+
+//공지 세부 사항//
+
+</script>
+
+
+</body>
+</html>
