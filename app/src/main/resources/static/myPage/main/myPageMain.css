@@ -60,11 +60,12 @@ body{
     width: 55vw;
     height: 15vh; 
     border-bottom: solid 4px #f5e6ca;
-    float: left
+    float: left;
 }
 
 .user_info h5{
     margin-top: 3.5vh;
+    font-size: 1em;
 }
 
 .user_info h6{
