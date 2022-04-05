@@ -141,12 +141,6 @@ li{
     float: left;
 }
 
-.extra_text {
-    width: 55vw;
-    height: 5vh;
-    float: left;
-}
-
 .second_box3 li {
     margin-top: 1vw;
     margin-left: 3vw;
@@ -154,7 +148,7 @@ li{
 }
 
 .second_box3 h5 {
-    margin-top: 10vh;
+    margin-top: 14vh;
     margin-left: 2vw;
     font-size: 1.25vw;
     font-weight: bold;
@@ -184,21 +178,8 @@ li{
     overflow: hidden;
 }
 
-
 .second_box3 span {
-  margin-left: 2vw;
-}
-
-.second_box3 p {
-	margin-top: 6vh;
-  margin-left: 2vw;
-  font-weight: bold;
-}
-
-
-#orange {
-	margin: 0 auto;
-	color: orange;
+	margin-left: 2vw;
 }
 
 .second_box3 input {
@@ -209,52 +190,73 @@ li{
 }
   
 #td-1 {
-    width: 15vw;
-    height: 11.25vh;
+    width: 10vw;
+    height: 6vh;
     border-top-left-radius: 1em;
     background-color: #eaeaea;
     text-align: center;
+    border-bottom: solid 2px #cccccc;
 }
 
 #td-2 {
-    width: 15vw;
-    height: 11.25vh;
-    background-color: #eaeaea;
+    width: 10vw;
+    height: 6vh;
     text-align: center;
 }
 
 #td-3 {
     width: 10vw;
-    height: 11.25vh;
-    background-color: #eaeaea;
+    height: 6vh;
     text-align: center;
-    background-image: url("../../img/tip.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 20%;
 }
 
 #td-4 {
-    width: 35vw;
-    height: 11.25vh;
-    background-color: #eaeaea;
+    width: 10vw;
+    height: 6vh;
     text-align: center;
 }
 
-#td-4 li {
-    font-size: 0.6vw;
-    text-align: left;
-    margin-left: -3vw;
-    margin-top: -0.1vh;
-    padding:0 auto
+#td-5 {
+    width: 10vw;
+    height: 6vh;
+    border-bottom-left-radius: 1em;
+    text-align: center;
 }
 
+#td-6 {
+    width: 35vw;
+    height: 6vh;
+    background-color: #eaeaea;
+    text-align: center;
+    border-bottom: solid 2px #cccccc;
+    font-weight: bold;
+}
 
 #null {
-    width: 30vw;
-    height: 11.25vh;
+    width: 40vw;
+    height: 6vh;
+    text-align: center;
 }
 
+#a {
+	width: 2vw;
+	height: 2vh;
+}
+
+#b {
+  width: 2vw;
+  height: 2vh;
+}
+
+#c {
+  width: 2vw;
+  height: 2vh;
+}
+
+#d {
+  width: 2vw;
+  height: 2vh;
+}
 
 .contents_box{
     margin:0;
@@ -384,18 +386,6 @@ li{
     padding: 2vw, 4vh;
 }
 
-
-#img_lock {
-    margin-top: 1vh;
-    width: 150px;
-    height: 100px;
-    background-image: url("../../img/lock.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 40%;
-    float: left;
-}
-
 #img1_text {
     padding: 1vh;
     font-size: 0.5vw;
@@ -462,7 +452,7 @@ li{
     width: 7vw;
     height: 5vh;
     float: right;
-    background-color: #fb9300;
+    background-color: #f54748;
     color: white;
     font-size: 0.8vw;
     font-weight: bold;
@@ -477,15 +467,14 @@ li{
     width: 7vw; 
     height: 5vh;
     margin-right: 1vw;
-    background-color: white;
-    color: black;
+    background-color: #fb9300;
+    color: white;
     font-size: 0.8vw;
     font-weight: bold;
     border-radius: 0.5em;
     float: right;
     border: 1px solid #bebebe
 }
-
 
 footer{
     background-color: #2f394d;
