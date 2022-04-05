@@ -412,7 +412,6 @@ li{
 #btn2{
     width: 7vw;
     height: 5vh;
-    margin-left: 5vw;
     background-color: #fb9300;
     color: white;
     font-size: 0.8vw;
@@ -420,11 +419,13 @@ li{
     border-radius: 0.5em;
     border: 0;
     outline: 0;
+    float: right;
 }
 
 #btn3{
     width: 7vw; 
     height: 5vh;
+    margin-right: 1vw;
     background-color: white;
     color: black;
     font-size: 0.8vw;
