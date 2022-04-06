@@ -184,6 +184,7 @@ body{
     float: left;
     border-radius: 25px;
     display: flex;
+    cursor: pointer;
     
 }
 
