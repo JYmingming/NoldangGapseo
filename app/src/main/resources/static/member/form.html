@@ -56,9 +56,11 @@
                                             <span class="email-check"></span>
                                         </li>
                                         <li class="right-slide">
-                                            <input class="slide-item2" name="password" type="password" placeholder="비밀번호를 입력해주세요"><br>
+                                            <input class="slide-item3" name="password" type="password" placeholder="비밀번호를 입력해주세요">
+                                            <button type="submit" class="sign-summit">회원등록</button>
+                                            <br>
                                             <span class="email-check"></span>
-                                            <button type="submit">회원등록</button>
+
                                         </li>
                                     </ul>
                                 </div>
@@ -134,7 +136,7 @@
                     return response.json();
                 })
                 .then(function(result) {
-                    if (result.status == "success") {
+                    if (result.resStatus == "success") {
                         window.alert("회원가입 완료!");
                         location.href = "../indexPage/index.html";
                     } else {
