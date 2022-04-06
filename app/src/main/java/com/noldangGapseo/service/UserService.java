@@ -1,5 +1,6 @@
 package com.noldangGapseo.service;
 
+import com.noldangGapseo.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.noldangGapseo.dao.UserDao;
@@ -10,6 +11,10 @@ public class UserService {
 
   @Autowired
   UserDao mapper;
+
+  public Integer add(User user) {
+    return mapper.insert(user);
+  }
 
   public UserResponse userList() {
     return new UserResponse().setUserList(mapper.findAll());

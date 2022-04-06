@@ -18,6 +18,15 @@ public class UserController {
   @Autowired
   UserService service;
 
+  @RequestMapping("/signup")
+  public Object signUp(User user){
+    if(service.add(user)==1){
+      return "success";
+    }else{
+      return "fail";
+    }
+  }
+
   //유저의 전체 리스트를 가져온다
   @GetMapping("/list")
   public UserResponse userlist(){

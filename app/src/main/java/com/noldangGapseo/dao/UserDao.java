@@ -6,7 +6,9 @@ import com.noldangGapseo.domain.User;
 
 @Mapper
 public interface UserDao {
-//dddd
+
+  Integer insert(User user);
+
   List<User> findAll();
 
   User findNickname(String nickName);

@@ -15,6 +15,7 @@ public class User {
   Integer userId;
   String id;
   String nickName;
+  String password;
   String email;
   String phone;
   Date regDate;
