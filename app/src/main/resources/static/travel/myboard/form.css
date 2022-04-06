@@ -10,9 +10,20 @@
 .d-file {
     justify-content: center;
 }
+.tag-btn {
+    border-radius: 30px;
+}
+.tag-btn:focus {
+    background-color: #0d6efd;
+    color: white;
+}
 .x-in {
     background-color: white;
     border: 0px;
+    font-size: 1.2em;
+}
+.x-in:focus {
+    outline: none;
 }
 
 .confirm-btn {
@@ -26,4 +37,8 @@
 .d-btn :hover {
     background-color: #fb9300;
     color: white;
+}
+.bi-j :hover {
+    border: 1px solid #fb9300;
+    border-radius: 20px;
 }
