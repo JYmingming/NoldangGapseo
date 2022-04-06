@@ -2,6 +2,7 @@ package com.noldangGapseo.controller;
 
 import java.util.List;
 
+import com.noldangGapseo.domain.ApiResponse;
 import com.noldangGapseo.domain.UserResponse;
 import com.noldangGapseo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,18 @@ public class UserController {
 
   @Autowired
   UserService service;
+
+  @RequestMapping("/signup")
+  public ApiResponse signUp(User user){
+    ApiResponse apires =new ApiResponse();
+    if(service.add(user)==1){
+      return apires;
+    }else{
+      apires.setResCode("0000");
+      apires.setResStatus("fail");
+    }
+    return apires;
+  }
 
   //유저의 전체 리스트를 가져온다
   @GetMapping("/list")

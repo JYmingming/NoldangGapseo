@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 @EqualsAndHashCode(callSuper=false)
 public class User {
 
+
   private Integer userId;
   private String id;
   private String nickName;
@@ -20,5 +21,6 @@ public class User {
   private Date regDate;
   private Date updateDate;
   private String profileImg;
+
 
 }

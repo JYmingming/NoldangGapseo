@@ -9,6 +9,12 @@
     <resultMap type="user" id="userMap">
     </resultMap>
 
+    <insert id="insert" parameterType="user">
+        insert into user(email,id,pwd,nick_name,phone)
+        values(#{email},#{id},password(#{password}),#{nickName},#{phone})
+    </insert>
+
+
     <select id="findAll" resultMap="userMap">
         select *
         from user u
@@ -21,7 +27,10 @@
         from
         user u
         where
-        nick_name = #{nickName}
+            nick_name = #{nickName}
     </select>
+
+
+
 
 </mapper>

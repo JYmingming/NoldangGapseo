@@ -10,10 +10,11 @@ import lombok.*;
 @EqualsAndHashCode(callSuper=false)
 public class ApiResponse {
 // 실패시
-// resCode = "1111"
+// resCode = "0000"
 // resStatus = "fail"
 
 
- private String resCode = "0000";
+ private String resCode = "1111";
  private String resStatus = "success";
+
 }
