@@ -66,8 +66,27 @@
     width: 22vw;
     min-width: 80px;
     overflow: hidden;
-
 }
+.slide-item3{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid rgb(227,146,35);
+    color: rgb(251, 147, 0);
+    width: 18vw;
+    min-width: 80px;
+    overflow: hidden;
+    float: left;
+}
+.sign-summit{
+    border:1px solid rgb(227,146,35);
+    color: rgb(251, 147, 0);
+    border-radius: 0.5vw;
+    float: left;
+    margin-left: 2vw;
+    background-color: white;
+}
+
 #slideShow{
     overflow: hidden;
 }
