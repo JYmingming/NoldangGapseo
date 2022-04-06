@@ -18,6 +18,12 @@ body{
     margin-top: 3vh;
 }
 
+.first_container h4 a {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
 .box1{
     width: 10vW;
     height: 30vh;
@@ -54,11 +60,12 @@ body{
     width: 55vw;
     height: 15vh; 
     border-bottom: solid 4px #f5e6ca;
-    float: left
+    float: left;
 }
 
 .user_info h5{
     margin-top: 3.5vh;
+    font-size: 1em;
 }
 
 .user_info h6{
@@ -124,6 +131,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: 10%;
+    cursor: pointer;
 }
 
 #img2{
@@ -131,6 +139,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: 10%;
+    cursor: pointer;
 }
 
 #img3{
@@ -138,6 +147,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: 10%;
+    cursor: pointer;
 }
 
 .box2{

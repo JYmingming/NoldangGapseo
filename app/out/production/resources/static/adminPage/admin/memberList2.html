@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>어드민</title>
+    <link rel="stylesheet" type="text/css" href="/css/memberList2.css">
+    <style>
+table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-top :60px;}
+ th{font-family: Comic Sans MS;border: thin solid #6495ed;padding: 5px;background-color: #fb9300;}
+ td{font-family: Comic Sans MS;border: thin solid white;padding: 5px;text-align: center;}.odd{background:white;}
+ img{padding:5px; border:solid; border-color: #dddddd #aaaaaa #aaaaaa #dddddd; border-width: 1px 2px 2px 1px; background-color:white;}</style>
+    
+</head>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+
+<body>
+
+<div th:replace="/fixed/header :: header"></div>
+<a href="memberList2.html"><span id="imgtext1">ADMINSTRATOR</span></a>
+   <a href="memberList2.html"><span id="imgtext2">유저관리</span></a>
+                  <a href="report.html"><span id="imgtext3">신고관리</span></a>
+                   <a href="TravelBoard.html"><span id="imgtext4">게시판관리</span></a>
+                    <a href="index.html"><span id="imgtext5">고객센터</span></a></h1> 
+<hr>
+<h1 class ="maintitle" >관리자 l 회원 관리</h1>
+
+<div id="search_box">
+    <form action="/page/board/search_result.php" method="get" >
+      <select name="catgo" style =" margin-left : 210px;>
+        <option value="title">제목</option>
+        <option value="name">글쓴이</option>
+        <option value="content">내용</option>
+      </select>
+      <input type="text" name="search" size="40" required="required" /> <button>검색</button>
+    </form>
+    </div>
+
+<div class="container">
+<table>
+<tr><th colspan="9">회원목록</th></tr><tr><th>user_id</th><th>id</th><th>pwd</th><th>email</th><th>phone</th><th>nick_name</th><th>reg_date</th><th>update_date</th><th>회원탈퇴</th></tr>
+
+<tr class="odd"><td  class="memberCenter" href="#" onclick="location.href='myinfo.html'">1,000</td>
+								<td>tjdgus23</td>
+								<td>1234</td>
+								<td>tjdgus23@naver.com</td>
+								<td>010-1234-5678</td>
+								<td>asd22</td>
+								<td>2022-02-03 02:00:00.000</td>
+								<td>2022-03-03 00:00:00.000</td>
+								<td>&nbsp;</td></tr>
+								
+	<tr>
+							<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,001</td>
+							<td>tnqls112</td>
+							<td>1234</td>
+							<td>tnqls112@gmail.com</td>
+							<td>010-5152-2357</td>
+							<td>제주여행</td>
+							<td>2022-02-03 00:00:00.000</td>
+							<td>2022-02-03 00:00:00.000</td>
+							<td>&nbsp;</td></tr>
+							
+							
+<tr class="odd"><td class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,002</td>
+
+						<td>glsng42</td>
+						<td>1234</td>
+						<td>glsng242@naver.com</td>
+						<td>010-2544-3645</td>
+						<td>봄나들이</td>
+						<td>2022-04-05 21:32:53.000</td>
+						<td>2022-02-03 00:00:00.000</td>
+						<td>&nbsp;</td></tr>
+						
+<tr>
+						<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,003</td>
+						<td>hdfhh</td>
+						<td>1234</td>
+						<td>hdfhh@hanmail.net</td>
+						<td>010-2547-7064</td>
+						<td>bombom2</td>
+						<td>2022-04-05 21:32:57.000</td>
+						<td>2022-02-04 00:00:00.000</td>
+						<td>&nbsp;</td></tr>
+						
+						
+<tr class="odd">
+
+				<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,004</td>
+				<td>kyuk</td>
+				<td>1234</td>
+				<td>kyuk@naver.com</td>
+				<td>010-3856-5869</td>
+				<td>go224</td>
+				<td>2022-04-05 21:33:05.000</td>
+				<td>2022-02-05 00:00:00.000</td>
+				<td>&nbsp;</td></tr>
+				
+<tr>
+				<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,005</td>
+				<td>gdfj53</td>
+				<td>1234</td>
+				<td>gdfj53@naver.com</td>
+				<td>010-8569-2557</td>
+				<td>제주바라기</td>
+				<td>2022-04-05 21:33:05.000</td>
+				<td>2022-02-08 00:00:00.000</td>
+				<td>&nbsp;</td></tr>
+				
+<tr class="odd">
+			<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,006</td>
+			<td>fdsgg4</td>
+			<td>1234</td>
+			<td>fdsgg4@naver.com</td>
+			<td>010-4570-3668</td>
+			<td>ryery463</td>
+			<td>2022-04-05 21:33:23.000</td>
+			<td>2022-02-11 00:00:00.000</td>
+			<td>&nbsp;</td></tr>
+			
+			
+<tr>
+			<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,007</td>
+			<td>hbcbc53</td>
+			<td>1234</td>
+			<td>hbcbc53@gmail.com</td>
+			<td>010-6856-4574</td>
+			<td>wetwet4</td>
+			<td>2022-04-05 21:33:23.000</td>
+			<td>2022-02-13 00:00:00.000</td>
+			<td>&nbsp;</td></tr>
+			
+<tr class="odd">
+			<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,008</td>
+			<td>aasd123</td>
+			<td>1234</td>
+			<td>aasd123@naver.com</td>
+			<td>010-4555-3526</td>
+			<td>ghrthr5</td>
+			<td>2022-04-05 21:33:23.000</td>
+			<td>2022-02-14 00:00:00.000</td>
+			<td>&nbsp;</td></tr>
+			
+<tr>
+			<td class="memberCenter"  a href="#" onclick="location.href='myinfo.html'">1,009</td>
+			<td>ghfhf</td>
+			<td>1234</td>
+			<td>ghfhf@hanmail.net</td>
+			<td>010-9253-1221</td>
+			<td>wewetw4</td>
+			<td>2022-04-05 21:33:23.000</td>
+			<td>2022-02-17 00:00:00.000</td>
+			<td>&nbsp;</td></tr>
+			
+<tr class="odd">
+			<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,010</td>
+			<td>adg53</td>
+			<td>1234</td>
+			<td>adg53@naver.com</td>
+			<td>010-5745-1542</td>
+			<td>rtyrty5</td>
+			<td>2022-04-05 21:33:23.000</td>
+			<td>2022-02-18 00:00:00.000</td>
+			<td>&nbsp;</td></tr>
+			
+<tr>
+			<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,011</td>
+			<td>fdhh52</td>
+			<td>1234</td>
+			<td>fdhh52@gmail.com</td>
+			<td>010-3252-7489</td>
+			<td>wetw6</td>
+			<td>2022-04-05 21:33:23.000</td>
+			<td>2022-02-19 00:00:00.000</td>
+			<td>&nbsp;</td></tr>
+			
+			
+<tr class="odd">
+
+			<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,012</td>
+			<td>fgdfg5</td>
+			<td>1234</td>
+			<td>fgdfg5@gmail.com</td>
+			<td>010-7945-1238</td>
+			<td>한라산24</td>
+			<td>2022-04-05 21:33:23.000</td>
+			<td>2022-02-20 00:00:00.000</td>
+			<td>&nbsp;</td></tr>
+			
+<tr>
+			<td class="memberCenter"  a href="#" onclick="location.href='myinfo.html'">1,013</td>
+			<td>rtuu65</td>
+			<td>1234</td>
+			<td>rtuu65@naver.com</td>
+			<td>010-3463-7543</td>
+			<td>여행가352</td>
+			<td>2022-04-05 21:33:23.000</td>
+			<td>2022-02-22 00:00:00.000</td>
+			<td>&nbsp;</td></tr>
+			
+<tr class="odd">
+			<td class="memberCenter"  a href="#" onclick="location.href='myinfo.html'">1,014</td>
+			<td>5hhrt</td>
+			<td>1234</td>
+			<td>5hhrt@naver.com</td>
+			<td>010-0343-1242</td>
+			<td>rtr57</td>
+			<td>2022-04-05 21:33:23.000</td>
+			<td>2022-02-24 00:00:00.000</td>
+			<td>&nbsp;</td></tr>
+			
+			
+<tr>
+			<td class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,015</td>
+			<td>fdfg67</td>
+			<td>1234</td>
+			<td>fdfg67@naver.com</td>
+			<td>010-8554-2345</td>
+			<td>wrqwrq754</td>
+			<td>2022-04-05 21:33:23.000</td>
+			<td>2022-02-26 00:00:00.000</td>
+			<td>&nbsp;</td></tr>
+			
+<tr class="odd">
+			<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,016</td>
+			<td>hjkku75</td>
+			<td>1234</td>
+			<td>hjkku75@naver.com</td>
+			<td>010-5674-2512</td>
+			<td>twt464</td>
+			<td>2022-04-05 21:33:23.000</td>
+			<td>2022-02-27 00:00:00.000</td>
+			<td>&nbsp;</td></tr>
+			
+<tr>
+			<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,017</td>
+			<td>erff125</td>
+			<td>1234</td>
+			<td>area1234@naver.com</td>
+			<td>010-2345-6789</td>
+			<td>aaa111</td>
+			<td>2022-04-05 21:33:23.000</td>
+			<td>2022-02-28 00:00:00.000</td>
+			<td>&nbsp;</td></tr>
+        </table>
+    </form>
+    
+</div>
+
+
+
+</body>
+</html>

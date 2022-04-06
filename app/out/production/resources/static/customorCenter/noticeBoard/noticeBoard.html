@@ -3,123 +3,12 @@
 <head>
   <meta charset="utf-8">
   <title>Noldang</title>
-  <style>
-  #header {                         /* 머리 전체  */
-  height: 50px;
-  padding-top: 10px;
-  border-bottom-style: solid;
-  border-color: gray;
-  }
-  #main-btn {
-    color:orange;
-    font-weight:bold;
-    background-color:white;
-    font-size:20px;
-    border:0;
-    outline:0;
-  }
-  #user-btn {
-    float:right;
-    color:orange;
-    background-color:white;
-    font-size:20px;
-    border:0;
-    outline:0;
-  }
-  
-  #container {                        /*고객센터 컨테이너*/
-   width:100%;
-    height:100%;
-    background:#000;
-  }
-  #body {
-    width:600px;
-    height:600px;
-    position:absolute;
-    left:50%;
-    top:60%;
-    margin-left:-300px;
-    margin-top:-300px;
-    background-color: #F6F6F6;
-  }
-  
-  #body-a {                       /*고객센터 머리*/
-    position:absolute;
-    width:500px;
-    height:50px;
-    top: 5%;
-    left:10%;
-    border-bottom-style: solid;
-    border-bottom:thick solid;
-    border-color: #F3E3B0;
-  }
-  #Service-center {
-    position:absolute;
-    font-size:20px;
-    font-weight:bold;
-  }
-  #all-btn {
-    background-color: white;
-    float:right;
-    border:solid;
-    border-color: gray;
-  }
-  
-  #body-b {                                 /* 검색창 */
-  position: relative;
-  width: 400px;
-  height: 30px;
-  margin: 10px auto;
-  top: 13%;
-  }
-  #search {
-  border: 1px solid #F1F1F1;
-  border-radius: 50px;
-  width: 100%;
-  height: 150%;
-  padding-left: 60px;
-  }
-  #search-img {
-  position : absolute;
-  width: 20px;
-  height: 20px;
-  top:40%;
-  left:5%;
-  }
-  
-  #body-c {                           /* 인기 검색어 */
-  position: relative;
-  width: 400px;
-  height: 30px;
-  margin: 10px auto;
-  top: 14%;
-  }
-  tr{
-  display: inline-block;
-  }
-  th:hover{
-  background-color: orange;
-    }
-  .s-button {
-  border:0;
-  background-color: #F6F6F6;
-  color: orange;
-  margin: 3px;
-  }
-
-  #body-d {
-  position:relative;
-    width:600px;
-    height:100px;
-    top:15%;
-  background-color: F6F6F6;
-  }
-
-  </style>
+  <link rel="stylesheet" type="text/css" href="noticeBoard.css">
 </head>
 <body>
 <div id="header">                      <!-- 머리 -->
   <button id="main-btn" type="button">Noldang</button>
+   <img id="img-2" src="c2.jpg">
   <button id="user-btn" type="button">user</button>
 </div>
 
@@ -127,8 +16,9 @@
 
   <div id="body">
     <div id="body-a">
+      <img id="img-1" src="c1.jpg">
       <span id="Service-center" >고객센터</span> 
-      <button id="all-btn" type="button">전체보기</button>
+      <button id="all-btn" type="button" onclick=location.href='announcement.html'>전체보기</button>
     </div>
     
     <div id="body-b">
@@ -138,20 +28,48 @@
     </div>
     
     <div id="body-c">
-      <table id="table">
+      <table>
         <tr>
-          <th><input class="s-button" type="button" value="인기 검색어"></th>
-          <th><input class="s-button" type="button" value="임시"></th>
-          <th><input class="s-button" type="button" value="임시"></th>
-          <th><input class="s-button" type="button" value="임시"></th>
+          <th><input class="a-button" type="button" value="인기 검색어"></th>
+          <th><input class="a-button" type="button" value="임시"></th>
+          <th><input class="a-button" type="button" value="임시"></th>
+          <th><input class="a-button" type="button" value="임시"></th>
         </tr>
       </table>
     </div>
     
     <div id="body-d">
-    <input class="b-button" type="button" value="공지사항">     
+      <table>
+        <tr>
+         <th><input class="b-button" type="button" value="공지사항" onClick="view(1)"></th>
+         <th><input class="b-button" type="button" value="FAQ BEST10" onClick="view(2)"></th>
+        </tr>  
+      </table> 
     </div>
     
+  <div id= "body-e">
+  
+    <table id="tb1">
+      <tr><td><input class="c-button" type="button" value="공지사항 1"></td></tr>
+      <tr><td><input class="c-button" type="button" value="공지사항 2"></td></tr>
+      <tr><td><input class="c-button" type="button" value="공지사항 3"></td></tr>
+      <tr><td><input class="c-button" type="button" value="공지사항 4"></td></tr>
+      <tr><td><input class="c-button" type="button" value="공지사항 5"></td></tr>
+    </table>
+    
+    <table id="tb2">
+      <tr><td><input class="c-button" type="button" value="자주 물어보는 질문 BEST 1"></td></tr>
+      <tr><td><input class="c-button" type="button" value="자주 물어보는 질문 BEST 2"></td></tr>
+      <tr><td><input class="c-button" type="button" value="자주 물어보는 질문 BEST 3"></td></tr>
+      <tr><td><input class="c-button" type="button" value="자주 물어보는 질문 BEST 4"></td></tr>
+      <tr><td><input class="c-button" type="button" value="자주 물어보는 질문 BEST 5"></td></tr>
+    </table>
+    
+    <table>
+      <tr></tr>
+    </table>
+    
+  </div>
     
     
   </div>
@@ -160,9 +78,82 @@
 
 
 <script type="text/javascript">
+//검색어
+var ab = document.getElementsByClassName("a-button");
 
+
+function handleClick(event) {
+  console.log(event.target);
+
+  console.log(event.target.classList);
+
+  if (event.target.classList[1] === "clicked") {
+    event.target.classList.remove("clicked");
+  } else {
+    for (var i = 0; i < ab.length; i++) {
+      ab[i].classList.remove("clicked");
+    }
+
+    event.target.classList.add("clicked");
+  }
+}
+
+function init() {
+  for (var i = 0; i < ab.length; i++) {
+    ab[i].addEventListener("click", handleClick);
+  }
+}
+
+init();
+
+//공지사항//
+var ab = document.getElementsByClassName("b-button");
+
+
+function handleClick(event) {
+  console.log(event.target);
+
+  console.log(event.target.classList);
+
+  if (event.target.classList[1] === "clicked") {
+    event.target.classList.remove("clicked");
+  } 
+  else {
+    for (var i = 0; i < ab.length; i++) {
+      ab[i].classList.remove("clicked");
+    }
+
+    event.target.classList.add("clicked");
+  }
+}
+
+function init() {
+  for (var i = 0; i < ab.length; i++) {
+    ab[i].addEventListener("click", handleClick);
+  }
+}
+
+init();
+
+//공지테이블//
+function view(arg) {
+  var t1 = document.getElementById("tb1");
+  var t2 = document.getElementById("tb2");
+  
+  if(arg == 1) {
+    t1.style.display="block";
+    t2.style.display="none";
+  } 
+  else {
+    t2.style.display="block";
+    t1.style.display="none";
+  }
+}
+
+//공지 세부 사항//
 
 </script>
+
 
 </body>
 </html>

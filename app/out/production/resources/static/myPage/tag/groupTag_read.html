@@ -2,10 +2,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원탈퇴</title>
+<title>비밀번호 변경</title>
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="withDrawal.css">
+    <link rel="stylesheet" type="text/css" href="groupTag_read.css">
     <script>
             $(document).ready(function () {
                 $('.headers').load('../../common/header/header.html');
@@ -24,17 +24,8 @@
           <div class="first_box3">
               <ul class="row">
                   <li class ="col-3"">
-                    <h5 id= "col1">계정관리</h5>
+                    <h5 id= "col1">그룹태그</h5>
                   </li>
-                  <li class ="col-3">
-                    <h5 id="col2" a href="#" onclick="location.href='infoManage.html'"><a href="#">내 정보</a></h5>
-                  </li>
-                  <li class ="col-3">
-                    <h5 id="col3" a href="#" onclick="location.href='password.html'"><a href="#">비밀번호 변경</a></h5>
-                  </li>
-                  <li class ="col-3">
-                    <h5 id="col4"><a href="#">회원탈퇴</a></h5>
-                  </li>   
                </ul>
                
           </div>
@@ -61,8 +52,8 @@
                     <table>
                         <tbody>
                           <tr>
-                            <td id="img1" a href="#" onclick="location.href='infoManage.html'"></td>
-                            <td id="img2" a href="#" onclick="location.href='../tag/groupTag.html'"></td>
+                            <td id="img1" a href="#" onclick="location.href='../info/infoManage.html'"></td>
+                            <td id="img2" a href="#" onclick="location.href='groupTag.html'"></td>
                           </tr>
                           <tr>
                             <td id="img1_text">계정관리</td><td id="img2_text">그룹태그</td>
@@ -79,24 +70,38 @@
               </div>
           </div>
           <div class="second_box3">
-              <ul>
-                <li>회원탈퇴 처리 후에는 회원님의 개인정보를 복원할 수 없으며, 회원탈퇴 진행 시 해당 아이디는 영구적으로</li>
-                <li id="li-2">삭제되어 재가입이 불가합니다.</li>
-              </ul>
-              <h5>비밀번호 재확인</h5>
-              <div class="extra_text">
-                <h6>별표(*)는 필수입력 항목입니다.</h6>
-              </div>
-              <table>
+              <table id="top_table">
                 <tbody>
                   <tr>
-                    <td id="td-1">아이디</td><td id="null"><span>kimminSu</span></td>
-                  </tr>
-                  <tr>
-                    <td id="td-2">비밀번호*</td><td id="null"><input id="password" type="password"></td>
+                    <td id="td-1">제목</td><td id="null">Tag Title</td>
                   </tr>
                 </tbody>
               </table>
+                <ul class="row">
+                  <li class="col-3">
+                    <div id="con_top"><span>태그목록</span></div>
+                    <div id="con_bottom">
+                      <div id="tag_list">#산책</div>
+                      <div id="tag_list">#물놀이</div>
+                      <div id="tag_list">#등산</div>
+                      <div id="tag_list">#연인</div>
+                    </div>
+                  </li>
+                  <li class="col-3">
+                    <div id="con_top"><span id="box_like">선호#</span></div>
+                    <div id="con_bottom">
+                      <div id="tag_like">#산책</div>
+                      <div id="tag_like">#연인</div>
+                    </div>
+                  </li>
+                  <li class="col-3">
+                    <div id="con_top"><span id="box_unlike">기피#</span></div>
+                    <div id="con_bottom">
+                      <div id="tag_unlike">#물놀이</div>
+                      <div id="tag_unlike">#등산</div>
+                    </div>
+                  </li>
+                </ul>
           </div>
           <div class="second_box4">
           </div>
@@ -106,14 +111,9 @@
           <div class="third_box2"></div>
           <div class="third_box3">
             <div class="btn_box">
-                <button id="btn2">확인</button>
+                <button id="btn2" a href="#" onclick="location.href='groupTag_edit.html'">수정하기</button>
+                <button id="btn3" a href="#" onclick="location.href='groupTag.html'">뒤로가기</button>
             </div>
-          <div class="black_bg"></div>
-              <div class="modal_wrap">
-                  <div class="modal_box1"><span>오류메세지</span></div>
-                  <div class="modal_box2"><span>비밀번호가 맞지 않습니다.</span></div>
-                  <div class="modal_box3"><button id="modal_close">확인</button></div>
-              </div>
           </div>
           <div class="third_box4"></div>
       </div>
@@ -125,27 +125,5 @@
   </footer>
 
   <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-  
-  <script>
-  window.onload = function() {
-    
-      function onClick() {
-          document.querySelector('.modal_wrap').style.display ='block';
-          document.querySelector('.black_bg').style.display ='block';
-      }   
-      function offClick() {
-          document.querySelector('.modal_wrap').style.display ='none';
-          document.querySelector('.black_bg').style.display ='none';
-      }
-   
-      document.getElementById('btn2').addEventListener('click', onClick);
-      document.querySelector('#modal_close').addEventListener('click', offClick);
-   
-  };
-  
-  
-
-
-  </script>
 </body>
 </html>

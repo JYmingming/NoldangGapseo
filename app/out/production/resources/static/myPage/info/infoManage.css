@@ -28,7 +28,6 @@ li{
     width: 10vw;
     height: 10vh;
     float: left;
-    border: solid 1px black
 }
 
 
@@ -36,7 +35,6 @@ li{
     width: 25vw;
     height: 10vh;
     float: left;
-    border: solid 1px black;
 }
 
 .first_box2 h5 {
@@ -45,11 +43,17 @@ li{
     font-size: 1.5vw;
 }
 
+.first_box2 h5 a {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+
 .first_box3{
     width: 55vw;
     height: 10vh;
     float: left;
-    border: solid 1px black;
     text-align: right;
 }
 
@@ -68,26 +72,48 @@ li{
     font-size: 0.75vw;
 }
 
+
+
 #col1 {
     margin-top: -1vh;
     font-size: 1.25vw;
 }
 
-#col2 {
+
+#col2 a{
     color: #fb9300;
-    font-weight: bolder;
+    text-decoration: none;
 }
 
-#col3 {
+#col2 a:hover {
+    cursor: pointer;
+    font-size: 1.1em;
 }
 
-#col4 {
+
+#col3 a{
+    color: black;
+    text-decoration: none;
+}
+
+#col3 a:hover {
+    color: #fb9300;
+    font-size: 1.1em;
+}
+
+#col4 a{
+    color: black;
+    text-decoration: none;
+}
+
+#col4 a:hover {
+    color: #fb9300;
+    font-size: 1.1em;
 }
 
 .first_box4{
     width: 10vw;
     height: 10vh;
-    border: solid 1px black;
     float: left
 }
 
@@ -98,7 +124,6 @@ li{
 .second_container {
     width: 100vw;
     height: 60vh;
-    border: solid 1px black;
     float: left;
     display: block;
 }
@@ -107,7 +132,6 @@ li{
     width: 10vw;
     height: 60vh;
     float: left;
-    border: solid 1px black
 }
 
 
@@ -115,20 +139,17 @@ li{
     width: 25vw;
     height: 60vh;
     float: left;
-    border: solid 1px black
 }
 
 .second_box3{
     width: 55vw;
     height: 60vh;
     float: left;
-    border: solid 1px black;
 }
 
 .second_box4{
     width: 10vw;
     height: 60vh;
-    border: solid 1px black;
     float: both;
 }
 
@@ -289,7 +310,9 @@ li{
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20%;
+    cursor: pointer;
 }
+
 
 #img2 {
     padding: 1vw, 4vh;
@@ -297,6 +320,7 @@ li{
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20%;
+    cursor: pointer;
 }
 
 #img3 {
@@ -305,6 +329,7 @@ li{
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20%;
+    cursor: pointer;
 }
 
 #img4 {
@@ -336,7 +361,6 @@ li{
 .third_container {
     width: 100vw;
     height: 30vh;
-    border: solid 1px black;
     float: left;
     display: block;
 }
@@ -345,7 +369,6 @@ li{
     width: 10vw;
     height: 30vh;
     float: left;
-    border: solid 1px black
 }
 
 
@@ -353,21 +376,18 @@ li{
     width: 25vw;
     height: 30vh;
     float: left;
-    border: solid 1px black
 }
 
 .third_box3{
     width: 55vw;
     height: 30vh;
     float: left;
-    border: solid 1px black;
 }
 
 .third_box4{
     width: 10vw;
     height: 30vh;
     float: both;
-    border: solid 1px black;
 }
 
 #btn2{
@@ -377,13 +397,12 @@ li{
     color: white;
     font-size: 0.8vw;
     font-weight: bold;
-    margin-left: 40.75vw;
+    margin-left: 40.5vw;
     border-radius: 0.5em;
     border: 0;
     outline: 0;
     overflow: hidden;
 }
-
 
 footer{
     background-color: #2f394d;
@@ -391,3 +410,6 @@ footer{
     height: 30vh;
     
 }
+
+
+

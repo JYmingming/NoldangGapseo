@@ -6,23 +6,29 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="index.css">
 
+    <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css" />
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css" />
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../node_modules/axios/dist/axios.js"></script>
+
+
 </head>
 
 
 <header>
-    <div class="header_info">
-        회원가입  공지사항  Q&A
+    <div class="header_info col-">
+        <a href="/member/form.html">회원가입</a>  공지사항  Q&A
     </div>
     <div class="headers">
-        <div class="header_logo">noldang</div>
-        <div class="header_login">Login</div>
+        <div class="header_logo"> noldang</div>
+        <div class="header_login" id ="login-box" data-bs-toggle="modal" data-bs-target="#loginModal">Login</div>
     </div>
     <div class ="main_container">
         <div class ="hosting">
-            <div>아아아아아</div>
-            <div>졸졸졸졸졸</div>
-            <div>리리리리리</div>
-            <div>다다다다다</div>
+            <div>출발일</div>
+            <div>도착일</div>
+            <div>출발인원</div>
+            <div>테마</div>
 
 
         </div>
@@ -35,24 +41,20 @@
             <h1>설레는 한걸음, 어디로 떠나볼까요?</h1>
             <div class="row">
                 <div class="col-3">
-                    <div>사진1</div>
-                    <span>제목</span>
+                    <div> </div>
+                    <span>제목 입니다</span>
                 </div>
                 <div class="col-3">
-                    <div>사진1</div>
-                    <span>제목</span>
+                    <div></div>
+                    <span>제목 입니다</span>
                 </div>
                 <div class="col-3">
-                    <div>사진1</div>
-                    <ul>
-
-                    </ul>
-
-                    <span>제목</span>
+                    <div></div>
+                    <span>제목 입니다</span>
                 </div>
                 <div class="col-3">
-                    <div>사진1</div>
-                    <span>제목</span>
+                    <div></div>
+                    <span>제목 입니다</span>
                 </div>
             </div>
         </div>
@@ -65,68 +67,113 @@
                 <div><h1>내가 느낀 감동, 공유합니다.</h1></div>
                 <div><h5 class="more_content"><a href="#">더보기</a></h5></div>
             </div>
-
-            <div id ="travel-list">
-                <ul>
-
-                    <li class ="list-group">
-                        <div class="travel-list">
-                            <figure class="img-con"></figure>
-                            <div class ="travel-text-group">
-                                <div class="travel-text-title">
-                                    <h5>제목입니다.</h5>
-                                </div>
-                                <div class="travel-text-text">
-                                    '선데이 아보'는 '일요일 오후'라는 뜻으로, 일요일 오후처럼 느긋하고 편안한 시간을 보내길 바라는 마음이 이름에 담겨 있다. 각종 식물과 원목으로 둘러싸인 아늑한 매장 분위기가 인상적인 곳이다. 언덕에 위치해 있어 올라갈 때 약간의 수고스러움이 있지만 그만큼 풍광과 채광이 좋아서 올라온 보람이 있게 만든다. 브런치를 먹을 시간에 ‘햇살 맛집’으로 불릴 만큼 볕이 예쁘게 들어온다
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class ="list-group">
-                        <div class="travel-list">
-                            <figure class="img-con"></figure>
-                            <div class ="travel-text-group">
-                                <div class="travel-text-title">
-                                    <h5>제목입니다.</h5>
-                                </div>
-                                <div class="travel-text-text">
-                                    '선데이 아보'는 '일요일 오후'라는 뜻으로, 일요일 오후처럼 느긋하고 편안한 시간을 보내길 바라는 마음이 이름에 담겨 있다. 각종 식물과 원목으로 둘러싸인 아늑한 매장 분위기가 인상적인 곳이다. 언덕에 위치해 있어 올라갈 때 약간의 수고스러움이 있지만 그만큼 풍광과 채광이 좋아서 올라온 보람이 있게 만든다. 브런치를 먹을 시간에 ‘햇살 맛집’으로 불릴 만큼 볕이 예쁘게 들어온다
+                <div id ="travel-list">
+                    <ul>
+                        <li class ="list-group">
+                            <div class="travel-list">
+                                <figure class="img-con"></figure>
+                                <div class ="travel-text-group">
+                                    <div class="travel-text-title">
+                                        <h5>제목입니다.</h5>
+                                    </div>
+                                    <div class="travel-text-text">
+                                        '선데이 아보'는 '일요일 오후'라는 뜻으로, 일요일 오후처럼 느긋하고 편안한 시간을 보내길 바라는 마음이 이름에 담겨 있다. 각종 식물과 원목으로 둘러싸인 아늑한 매장 분위기가 인상적인 곳이다. 언덕에 위치해 있어 올라갈 때 약간의 수고스러움이 있지만 그만큼 풍광과 채광이 좋아서 올라온 보람이 있게 만든다. 브런치를 먹을 시간에 ‘햇살 맛집’으로 불릴 만큼 볕이 예쁘게 들어온다
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
+                        </li>
 
-                    <li class ="list-group">
-                        <div class="travel-list">
-                            <figure class="img-con"></figure>
-                            <div class ="travel-text-group">
-                                <div class="travel-text-title">
-                                    <h5>제목입니다.</h5>
-                                </div>
-                                <div class="travel-text-text">
-                                    '선데이 아보'는 '일요일 오후'라는 뜻으로, 일요일 오후처럼 느긋하고 편안한 시간을 보내길 바라는 마음이 이름에 담겨 있다. 각종 식물과 원목으로 둘러싸인 아늑한 매장 분위기가 인상적인 곳이다. 언덕에 위치해 있어 올라갈 때 약간의 수고스러움이 있지만 그만큼 풍광과 채광이 좋아서 올라온 보람이 있게 만든다. 브런치를 먹을 시간에 ‘햇살 맛집’으로 불릴 만큼 볕이 예쁘게 들어온다
+                        <li class ="list-group">
+                            <div class="travel-list">
+                                <figure class="img-con"></figure>
+                                <div class ="travel-text-group">
+                                    <div class="travel-text-title">
+                                        <h5>제목입니다.</h5>
+                                    </div>
+                                    <div class="travel-text-text">
+                                        '선데이 아보'는 '일요일 오후'라는 뜻으로, 일요일 오후처럼 느긋하고 편안한 시간을 보내길 바라는 마음이 이름에 담겨 있다. 각종 식물과 원목으로 둘러싸인 아늑한 매장 분위기가 인상적인 곳이다. 언덕에 위치해 있어 올라갈 때 약간의 수고스러움이 있지만 그만큼 풍광과 채광이 좋아서 올라온 보람이 있게 만든다. 브런치를 먹을 시간에 ‘햇살 맛집’으로 불릴 만큼 볕이 예쁘게 들어온다
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
+                        </li>
 
+                        <li class ="list-group">
+                            <div class="travel-list">
+                                <figure class="img-con"></figure>
+                                <div class ="travel-text-group">
+                                    <div class="travel-text-title">
+                                        <h5>제목입니다.</h5>
+                                    </div>
+                                    <div class="travel-text-text">
+                                        '선데이 아보'는 '일요일 오후'라는 뜻으로, 일요일 오후처럼 느긋하고 편안한 시간을 보내길 바라는 마음이 이름에 담겨 있다. 각종 식물과 원목으로 둘러싸인 아늑한 매장 분위기가 인상적인 곳이다. 언덕에 위치해 있어 올라갈 때 약간의 수고스러움이 있지만 그만큼 풍광과 채광이 좋아서 올라온 보람이 있게 만든다. 브런치를 먹을 시간에 ‘햇살 맛집’으로 불릴 만큼 볕이 예쁘게 들어온다
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
 
-                </ul>
-
-            </div>
+                    </ul>
+                </div>
         </div>
-
-        </div>
-
-
-        <div class ="fourth_container">
-            <div>
-                <h1>모든 관광지를 한눈에 찾아보아요</h1>
+            <div class ="fourth_container">
+                <div>
+                    <h1>모든 관광지를 한눈에 찾아보아요</h1>
+                </div>
+                <div id="map"></div>
             </div>
-            <div id="map"></div>
         </div>
     </div>
+
+
+
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-3" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="container login_container">
+                        <div>
+                            <button type="button" class="" data-bs-dismiss="modal" aria-label="Close">X</button>
+                        </div>
+                        <div class="modal-icon">
+                            <p class="m-auto">Noldang</p>
+                        </div>
+                        <div class="d-flex flex-row-reverse bd-highlight">
+                            <p class="px-5 mb-0"><button type="button" >Id/Pw찾기</button></p>
+                        </div>
+                        <form>
+                            <div class="form-group m-auto">
+                                <input class="form-control " type="text" placeholder="id">
+                            </div>
+                            <div class="form-group m-auto">
+                                <input class="form-control m-auto" type="password" placeholder="Password">
+                            </div>
+                            <div class="d-flex flex-row-reverse bd-highlight">
+                                <p class="px-5 mt-0"><button type="button" onClick="location.href='../member/form.html'">회원가입</button></p>
+                            </div>
+                            <div class="form-group m-auto login-submit">
+                                <input class="form-control" type="submit" value="Iog In">
+                            </div>
+                            <div class="row m-5 sns_container">
+                                <div class="col text-center sns_login"><img src=../img/facebook_icon.png></div>
+                                <div class="col text-center sns_login"><img src=../img/facebook_icon.png></div>
+                                <div class="col text-center sns_login"><img src=../img/facebook_icon.png></div>
+                                <div class="col text-center sns_login"><img src=../img/facebook_icon.png></div>
+                            </div>
+                        </form>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=04d2370bb5a7c0451b3db7bbd723c9d1"></script>
     <script>
         var container = document.getElementById('map');
@@ -134,8 +181,18 @@
             center: new kakao.maps.LatLng(33.374, 126.557),
             level: 10
         };
-
         var map = new kakao.maps.Map(container, options);
+
+
+       /*     // 모달 관련 js
+        var myModal = document.getElementById('myModal')
+        var myInput = document.getElementById('myInput')
+
+        myModal.addEventListener('shown.bs.modal', function () {
+            myInput.focus()
+        })
+*/
+
     </script>
 
 </body>
