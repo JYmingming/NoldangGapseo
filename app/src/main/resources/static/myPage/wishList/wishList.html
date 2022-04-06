@@ -2,10 +2,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>비밀번호 변경</title>
+<title>위시리스트</title>
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="groupTag_edit.css">
+    <link rel="stylesheet" type="text/css" href="wishList.css">
     <script>
             $(document).ready(function () {
                 $('.headers').load('../../common/header/header.html');
@@ -24,7 +24,7 @@
           <div class="first_box3">
               <ul class="row">
                   <li class ="col-3"">
-                    <h5 id= "col1">그룹태그</h5>
+                    <h5 id= "col1">위시리스트</h5>
                   </li>
                </ul>
                
@@ -53,13 +53,13 @@
                         <tbody>
                           <tr>
                             <td id="img1" a href="#" onclick="location.href='../info/infoManage.html'"></td>
-                            <td id="img2" a href="#" onclick="location.href='groupTag.html'"></td>
+                            <td id="img2" a href="#" onclick="location.href='../tag/groupTag.html'"></td>
                           </tr>
                           <tr>
                             <td id="img1_text">계정관리</td><td id="img2_text">그룹태그</td>
                           </tr>
                           <tr>
-                            <td id="img3" a href="#" onclick="location.href='../wishList/wishList.html'"></td>
+                            <td id="img3" a href="#" onclick="location.href='wishList.html'"></td>
                             <td id="img4"></td>
                           </tr>
                           <tr>
@@ -71,39 +71,15 @@
               </div>
           </div>
           <div class="second_box3">
-              <table id="top_table">
-                <tbody>
-                  <tr>
-                    <td id="td-1">제목</td>
-                    <td id="null"><input type="text" value="Tag Title"></td>
-                  </tr>
-                </tbody>
-              </table>
-                <ul class="row">
-                  <li class="col-3">
-                    <div id="con_top"><span>태그목록</span></div>
-                    <div id="con_bottom">
-                      <div id="tag_list">#산책</div>
-                      <div id="tag_list">#물놀이</div>
-                      <div id="tag_list">#등산</div>
-                      <div id="tag_list">#연인</div>
-                    </div>
-                  </li>
-                  <li class="col-3">
-                    <div id="con_top"><span id="box_like">선호#</span></div>
-                    <div id="con_bottom">
-                      <div id="tag_like">#산책</div>
-                      <div id="tag_like">#연인</div>
-                    </div>
-                  </li>
-                  <li class="col-3">
-                    <div id="con_top"><span id="box_unlike">기피#</span></div>
-                    <div id="con_bottom">
-                      <div id="tag_unlike">#물놀이</div>
-                      <div id="tag_unlike">#등산</div>
-                    </div>
-                  </li>
-                </ul>
+              <ul>
+                <li>놀당에서 회원님이 원하시는 위시리스트를 등록하여 가고싶은 곳을 마음껏 둘러보세요.</li>
+              </ul>
+              <h5>등록된 위시리스트</h5>
+              <ul class="row">
+                <li class="col-3" a href="#" onclick="location.href='../../../map/mapDetail.html'"></li>
+                <li class="col-3" a href="#" onclick="location.href='../../../map/mapDetail.html'"></li>
+                <li class="col-3" a href="#" onclick="location.href='../../../map/mapDetail.html'"></li>
+              </ul>
           </div>
           <div class="second_box4">
           </div>
@@ -112,10 +88,6 @@
           <div class="third_box1"></div>
           <div class="third_box2"></div>
           <div class="third_box3">
-            <div class="btn_box">
-                <button id="btn2" a href="#" onclick="location.href='groupTag.html'">수정완료</button>
-                <button id="btn3" a href="#" onclick="location.href='groupTag.html'">취소</button>
-            </div>
           </div>
           <div class="third_box4"></div>
       </div>
