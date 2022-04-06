@@ -20,6 +20,7 @@
 }
 .card {
     border-radius: 20px;
+    margin: 2%;
 }
 .c-img {
     object-fit: fill;

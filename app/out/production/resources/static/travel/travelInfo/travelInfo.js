@@ -25,9 +25,9 @@ $('.travel-weather').click(async function (e) {
     e.preventDefault();
     // $('#weatherModal').modal('show');
     const ddd = await mm();
-   ddd.map((m) => {
-    console.log("mm:::", m.nickName)
-  })
+    ddd.map((m) => {
+        console.log('mm:::', m.nickName);
+    });
 });
 
 // ---------------------------
@@ -50,9 +50,15 @@ export function ddd() {
     console.log('dkdkd');
 }
 
-(async function (){
-  const oo = await userList();
-  oo.map((m) => {
-      console.log("oo:::", m.nickName);   
-  })
-})()
+(async function () {
+    const oo = await userList();
+    oo.map((m) => {
+        console.log('oo:::', m.nickName);
+    });
+})();
+
+// ----뒤로가기 화살표-----
+$('.bi').on('click', function (e) {
+    e.preventDefault();
+    location.href = '/travel/list/list.html';
+});
