@@ -12,8 +12,52 @@
         <link rel="stylesheet" href="form.css" />
     </head>
     <body>
-        <div class="container">
-            <div class="cl">여기는 새로운 여행</div>
+        <div class="container d-flex flex-column">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                fill="currentColor"
+                class="bi bi-arrow-left"
+                viewBox="0 0 16 16"
+                style="margin-bottom: 50px; margin-top: 50px"
+            >
+                <path
+                    fill-rule="evenodd"
+                    d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+                />
+            </svg>
+            <form class="d-form d-flex flex-column align-items-center">
+                <p class="col-text">여행지의 이름을 적어주세요</p>
+                <div class="d-title d-box col-md-7">
+                    <input type="text" name="title" class="w-75 input-group-text x-in" />
+                </div>
+                <p class="col-text">여행지의 종류를 선택해주세요</p>
+                <div class="d-tag d-box col-md-7 justify-content-around">
+                    <button class="tag-btn btn btn-outline-primary" type="button">명소</button>
+                    <button class="tag-btn btn btn-outline-primary" type="button">맛집</button>
+                    <button class="tag-btn btn btn-outline-primary" type="button">카페</button>
+                </div>
+                <p class="col-text">여행지 이야기를 들려주세요</p>
+                <div class="d-contents d-box col-md-7">
+                    <textarea
+                        name="contents"
+                        id=""
+                        cols="30"
+                        rows="10"
+                        class="w-75 input-group-text x-in"
+                        placeholder="제목을 적어주세요."
+                    ></textarea>
+                </div>
+                <p class="col-text">사진의 올려주세요</p>
+                <div class="d-file d-box col-md-7"></div>
+            </form>
+            <div
+                class="d-flex w-75 align-self-center justify-content-center"
+                style="margin-bottom: 10em"
+            >
+                <button class="btn col-md-9 confirm-btn" type="button">완료</button>
+            </div>
         </div>
         <script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
     </body>
