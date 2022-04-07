@@ -8,6 +8,15 @@ const adress = $('.d-adress');
 // ----d-tag에 선택 태그 값 넣기----
 $('.tag-btn').on('click', function (e) {
     e.stopPropagation();
+
+    // tag 색 바꾸기
+    if ($(this).hasClass('active')) {
+        $(this).removeClass('active');
+    } else {
+        $(this).addClass('active');
+    }
+    $('active').css({ 'background-color': '#0d6efd', color: 'white' });
+
     let t = $(e.target).data('val');
     $('.d-tag').attr('tagVal', t);
 });
@@ -31,7 +40,6 @@ $('.confirm-btn').on('click', function (e) {
 });
 
 // ---- 주소 api ----
-
 $('.adress-btn').on('click', function (e) {
     e.preventDefault();
     findAddr();
