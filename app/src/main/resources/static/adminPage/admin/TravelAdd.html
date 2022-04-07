@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+        
     <title>어드민</title>
     <link rel="stylesheet" type="text/css" href="TravelAdd.css">
 </head>
@@ -14,7 +15,7 @@
    <a href="memberList2.html"><span id="imgtext2">유저관리</span></a>
                    <a href="report.html"><span id="imgtext3">신고관리</span></a>
                    <a href="TravelBoard.html"><span id="imgtext4">여행지관리</span></a>
-                    <a href="index.html"><span id="imgtext5">고객센터</span></a></h1> 
+                    <a href="../../customorCenter/noticeBoard/noticeBoard.html"><span id="imgtext5">고객센터</span></a>
 <hr>
 <h1 class ="maintitle">새 여행지 추가</h1>
 
@@ -35,6 +36,8 @@
   </tr>
 </thead>
 <tbody>
+
+
   <tr>
   
     <td class ="td-1"><form>
@@ -46,10 +49,10 @@
   </select>
 </form></td>
       <td class="td-2"><input size="5"></input></td>
-    <td class="td-3"><input size="30"></input></td>
+   <td><input type="text" id="address_kakao" name="address" readonly placeholder="주소검색"/></td>
    <td class="td-4"><input size="10"></input></td>
   <td class="td-5"><input size="15"></input></td>
-    <td class ="td-6"><button>첨부파일</button></td>
+    <td class ="td-6">  <input type="file" multiple class="d-file-up" name="" id="" /></td>
       <td class="td-3"><input size="30"></input></td>
  
   </tr>
@@ -62,4 +65,18 @@
 </div>
 
 </body>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+window.onload = function(){
+    document.getElementById("address_kakao").addEventListener("click", function(){ //주소입력칸을 클릭하면
+        //카카오 지도 발생
+        new daum.Postcode({
+            oncomplete: function(data) { //선택시 입력값 세팅
+                document.getElementById("address_kakao").value = data.address; // 주소 넣기
+                document.querySelector("input[name=address_detail]").focus(); //상세입력 포커싱
+            }
+        }).open();
+    });
+}
+</script>
 </html>
