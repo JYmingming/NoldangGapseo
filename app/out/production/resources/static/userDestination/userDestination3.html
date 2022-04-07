@@ -28,6 +28,7 @@
 
   <div class="container">
     <div class="row">
+
       <div class="col-3">
         <div class="card">
           <img src="/img/SALON de LAVANT3.jpg" class="card-img-top"
@@ -35,13 +36,13 @@
           <div class="card-body">
             <h5 class="card-title">모뉴에트</h5>
             <div class="like">
-              <span class="btn-like">❤️</span>
-              <span class="btn-like-cnt">31</span>
-              🗨20
+              <span class="btn-like">❤️</span> <span
+                class="btn-like-cnt">31</span> 🗨20
             </div>
           </div>
         </div>
       </div>
+
       <div class="col-3">
         <div class="card">
           <img src="/img/SALON de LAVANT3.jpg" class="card-img-top"
@@ -116,6 +117,20 @@
         </div>
       </div>
     </div>
+
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" href="#"
+        aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+      </a></li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#"
+        aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+      </a></li>
+    </ul>
+
+
   </div>
 
 
@@ -128,6 +143,24 @@
 				$(this).toggleClass("done");
 			})
 		</script>
+
+  <script>
+			let a;
+
+			const b = document.querySelectorAll(".card-title")
+
+			fetch("/user/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+
+				console.log(result.userList);
+				for (var i = 0; i < 8; i++) {
+					b[i].innerHTML = result.userList[i].nickName;
+				}
+
+			})
+		</script>
+
 
 </body>
 

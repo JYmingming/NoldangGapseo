@@ -53,7 +53,7 @@
     border-right: none;
     border-bottom: 1px solid rgb(251, 147, 0);
     color: rgb(227,146,35);
-    width: 12vw;
+    width: 10vw;
     min-width: 80px;
     overflow: hidden;
 }
@@ -63,11 +63,30 @@
     border-right: none;
     border-bottom: 1px solid rgb(251, 147, 0);
     color: rgb(227,146,35);
-    width: 22vw;
+    width: 20vw;
     min-width: 80px;
     overflow: hidden;
-
 }
+.slide-item3{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid rgb(227,146,35);
+    color: rgb(251, 147, 0);
+    width: 16vw;
+    min-width: 80px;
+    overflow: hidden;
+    float: left;
+}
+.sign-summit{
+    border:1px solid rgb(227,146,35);
+    color: rgb(251, 147, 0);
+    border-radius: 0.5vw;
+    float: left;
+    margin-left: 2vw;
+    background-color: white;
+}
+
 #slideShow{
     overflow: hidden;
 }
@@ -78,7 +97,7 @@
     width: 380vw;
 }
 .slides li:first-child{
-    width: 30vw;
+    width: 29vw;
     margin-left: 0;
     list-style-type: none;
     float: left;
@@ -87,8 +106,8 @@
     margin-left: 0;
 }
 .right-slide{
-    width: 28vw;
-    margin-left: 50vw;
+    width: 29vw;
+    margin-left: 40vw;
     list-style-type: none;
     float: left;
 }

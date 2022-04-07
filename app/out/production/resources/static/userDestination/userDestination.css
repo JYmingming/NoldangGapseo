@@ -1,28 +1,23 @@
-.container{
+.container {
 	margin: 5px;
 }
 
-
-.row{
-  margin: 20px;
+.row {
+	margin: 20px;
 }
 
-.card{
-  border-color: red;
-  border-style: solid;
-  border-width: 1px;	
+.card {
+	border-color: red;
+	border-style: solid;
+	border-width: 1px;
 }
 
-.card-img-top{
-  padding: 5px;	
-	
+.card-img-top {
+	padding: 5px;
 }
-
-
-
 
 .card-title {
-  text-align: center
+	text-align: center
 }
 
 .like {
@@ -33,12 +28,31 @@
 
 /*하트 버튼*/
 .btn-like {
-  color: transparent;
-  text-shadow: 0 0 2px rgba(255,255,255,.7), 0 0 0 #000;
+	color: transparent;
+	text-shadow: 0 0 2px rgba(255, 255, 255, .7), 0 0 0 #000;
+}
+
+.btn-like:hover {
+	/*  text-shadow: 0 0 0 #ea0; */
+	
 }
 
 .btn-like.done {
-  color: inherit;
-  text-shadow: 0;
+	color: inherit;
+	text-shadow: 0;
 }
 
+.btn-like.done:hover {
+	/* color: transparent;
+  text-shadow: 0 0 0 #777; */
+	
+}
+
+.pagination {
+	 margin: 0 auto; /*가로 가운데 정렬 */
+
+}
+
+.pagination>li>a {
+	float: none;
+}

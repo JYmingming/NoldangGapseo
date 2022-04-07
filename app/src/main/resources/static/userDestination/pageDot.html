@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<title>Insert title here</title>
+
+<!--CSS 가져오기 -->
+<link rel="stylesheet" href="./pageDot.css" />
+
+
+</head>
+<body>
+
+  <!-- ***** page 1 ***** -->
+  <div data-role="page" id="p1">
+    <div data-role="header" data-position="fixed">
+      <h1>Header - Page 1</h1>
+
+    </div>
+    <div data-role="content">
+      <p>Contents</p>
+    </div>
+    <div data-role="footer" data-position="fixed">
+      <span class="ui-title">
+        <div id="navigator">
+          <a href="#p1">1</a> <a href="#p2">2</a> <a href="#p3">3</a> <a
+            href="#p4">4</a>
+        </div>
+      </span>
+
+    </div>
+  </div>
+  <!-- ***** page 2 ***** -->
+  <div data-role="page" id="p2">
+    <div data-role="header" data-position="fixed">
+      <h1>Header - Page 2</h1>
+
+    </div>
+    <div data-role="content">
+      <p>Contents</p>
+    </div>
+    <div data-role="footer" data-position="fixed">
+      <span class="ui-title">
+        <div id="navigator">
+          <a href="#p1">1</a> <a href="#p2">2</a> <a href="#p3">3</a> <a
+            href="#p4">4</a>
+        </div>
+      </span>
+
+    </div>
+  </div>
+  <!-- ***** page 3 ***** -->
+  <div data-role="page" id="p3">
+    <div data-role="header" data-position="fixed">
+      <h1>Header - Page 3</h1>
+
+    </div>
+    <div data-role="content">
+      <p>Contents</p>
+    </div>
+    <div data-role="footer" data-position="fixed">
+      <span class="ui-title">
+        <div id="navigator">
+          <a href="#p1">1</a> <a href="#p2">2</a> <a href="#p3">3</a> <a
+            href="#p4">4</a>
+        </div>
+      </span>
+
+    </div>
+  </div>
+  <!-- ***** page 4 ***** -->
+  <div data-role="page" id="p4">
+    <div data-role="header" data-position="fixed">
+      <h1>Header - Page 4</h1>
+
+    </div>
+    <div data-role="content">
+      <p>Contents</p>
+    </div>
+    <div data-role="footer" data-position="fixed">
+      <span class="ui-title">
+        <div id="navigator">
+          <a href="#p1">1</a> <a href="#p2">2</a> <a href="#p3">3</a> <a
+            href="#p4">4</a>
+        </div>
+      </span>
+
+    </div>
+  </div>
+<script>
+$(document).on("pagebeforeshow", "[data-role=page]", function () {
+    var active = "#" + $.mobile.activePage[0].id;
+    var active_index = $(active).index();
+    $(".activePage").removeClass("activePage");
+    $("#navigator a", this).eq(active_index).addClass("activePage");
+});
+</script>
+
+</body>
+
+</html>
