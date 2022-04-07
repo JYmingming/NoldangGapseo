@@ -16,6 +16,10 @@ public class UserService {
     return mapper.insert(user);
   }
 
+  public User get(String email, String password) {
+    return mapper.findByEmailAndPassword(email, password);
+  }
+
   public UserResponse userList() {
     return new UserResponse().setUserList(mapper.findAll());
   }
