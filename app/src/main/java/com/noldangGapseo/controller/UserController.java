@@ -18,7 +18,7 @@ public class UserController {
   @Autowired
   UserService service;
 
-  @GetMapping("/signup")
+  @RequestMapping("/signup")
   public ApiResponse signUp(User user){
     ApiResponse apires =new ApiResponse();
     if(service.add(user)==1){

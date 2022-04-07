@@ -2,6 +2,7 @@
 const title = $('#in-title');
 const contents = $('#in-contents');
 const tag = $('.d-tag');
+const file = $('.d-file-up');
 
 // ----d-tag에 선택 태그 값 넣기----
 $('.tag-btn').on('click', function (e) {
@@ -12,8 +13,13 @@ $('.tag-btn').on('click', function (e) {
 
 // -----입력값 널체크-----
 $('.confirm-btn').on('click', function (e) {
-    console.log('title::::', $(tag).attr('tagVal'));
-    if ($(title).val() == '' || $(contents).val() == '' || $(tag).attr('tagVal') == undefined) {
+    console.log('title::::', file.val());
+    if (
+        title.val() == '' ||
+        contents.val() == '' ||
+        tag.attr('tagVal') == undefined ||
+        file.val() == ''
+    ) {
         alert('입력값이 빠졌습니다.');
     }
 });

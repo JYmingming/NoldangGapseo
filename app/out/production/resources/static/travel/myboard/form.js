@@ -1,6 +1,31 @@
-const title = $('#in-title').val();
+// ------입력값------
+const title = $('#in-title');
+const contents = $('#in-contents');
+const tag = $('.d-tag');
+const file = $('.d-file-up');
 
+// ----d-tag에 선택 태그 값 넣기----
+$('.tag-btn').on('click', function (e) {
+    e.stopPropagation();
+    let t = $(e.target).data('val');
+    $('.d-tag').attr('tagVal', t);
+});
+
+// -----입력값 널체크-----
 $('.confirm-btn').on('click', function (e) {
+    console.log('title::::', file.val());
+    if (
+        title.val() == '' ||
+        contents.val() == '' ||
+        tag.attr('tagVal') == undefined ||
+        file.val() == ''
+    ) {
+        alert('입력값이 빠졌습니다.');
+    }
+});
+
+// ----뒤로가기 화살표-----
+$('.bi').on('click', function (e) {
     e.preventDefault();
-    console.log(title);
+    location.href = '/travel/myboard/myboard.html';
 });

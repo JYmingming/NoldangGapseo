@@ -38,3 +38,7 @@
     background-color: #fb9300;
     color: white;
 }
+.bi-j :hover {
+    border: 1px solid #fb9300;
+    border-radius: 20px;
+}
