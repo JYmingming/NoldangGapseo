@@ -236,12 +236,18 @@ li{
     width: 40vw;
     height: 6vh;
     text-align: center;
+    cursor: pointer;
 }
 
 #null a {
-    cursor: pointer;
     text-decoration: none;
     color: black;
+}
+
+#null a:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: #0a58ca;
 }
 
 #a {
