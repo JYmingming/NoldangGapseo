@@ -1,3 +1,8 @@
+$('.content-card').on('click', function (e) {
+    e.preventDefault();
+    location.href = '/travel/travelInfo/travelInfo.html';
+});
+
 $('.choice1 .btn1').on('click', function (e) {
     e.preventDefault();
     $('.list1').toggle();
