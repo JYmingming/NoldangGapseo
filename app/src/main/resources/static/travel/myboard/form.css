@@ -25,6 +25,15 @@
 .x-in:focus {
     outline: none;
 }
+.adress-btn {
+    background-color: #fb9300;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+.adress-btn:hover {
+    color: white;
+}
 
 .confirm-btn {
     border: 1px solid #fb9300;
