@@ -44,7 +44,7 @@
 .login_control{
     margin-right: 30px;
 }
-    .table{
+    #tb1{
         border:1px solid;
         width: 1100px;
     }
@@ -119,19 +119,19 @@
     font: bold;
 }
 
-.table{
+#tb1{
 	margin-top : 30px;
 border-collapse:collapse;
 	}
 	
-.table td{background-color:#fff;border-color:#aaa;border-style:solid;border-width:1px;color:#333;
+#tb1 td{background-color:#fff;border-color:#aaa;border-style:solid;border-width:1px;color:#333;
   font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;  text-align: center;}
 	
-	.table th{ text-align: center; background-color:#f38630;border-color:#aaa; border-style:solid;border-width:2px;color:#fff;
+	#tb1 th{ text-align: center; background-color:#f38630;border-color:#aaa; border-style:solid;border-width:2px;color:#fff;
   font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
 	
-.table .tg-baqh{text-align:center;vertical-align:top}
-.table .tg-f8tx{color:#000000;text-align:center;vertical-align:top}
+#tb1 .tg-baqh{text-align:center;vertical-align:top}
+#tb1 .tg-f8tx{color:#000000;text-align:center;vertical-align:top}
 
 .th-1{width : 60px; height: 15px; background-color:#f38630;border-color:#aaa; border-style:solid;border-width:2px;color:#fff;}
 .th-2{width : 120px;}
