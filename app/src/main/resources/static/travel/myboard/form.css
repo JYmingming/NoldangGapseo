@@ -13,10 +13,10 @@
 .tag-btn {
     border-radius: 30px;
 }
-.tag-btn:focus {
+/* .tag-btn:focus {
     background-color: #0d6efd;
     color: white;
-}
+} */
 .x-in {
     background-color: white;
     border: 0px;
