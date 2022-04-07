@@ -125,6 +125,10 @@ li{
     overflow: hidden;
     list-style-type: none;
     cursor: pointer;
+    background-image: url("../../img/wishlist.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 155%;
 }
 
 .second_box3 h5 {

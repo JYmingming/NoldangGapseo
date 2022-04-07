@@ -185,7 +185,10 @@ body{
     border-radius: 25px;
     display: flex;
     cursor: pointer;
-    
+    background-image: url("../../img/wishlist.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 135%;
 }
 
 
