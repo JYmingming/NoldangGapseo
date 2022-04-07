@@ -2,6 +2,19 @@ const PATH = {
     userList: `/user/list`,
 };
 
+export async function dateFormat(colon, date) {
+    let oldDate = await date;
+    let dateOldDate = new Date(oldDate);
+    let year = dateOldDate.getFullYear().toString();
+    let month = dateOldDate.getMonth() + 1;
+    let day = dateOldDate.getDate().toString();
+    let time = dateOldDate.getTime();
+
+    let formatDate = year + colon + month + colon + day;
+
+    return formatDate;
+}
+
 export async function userList() {
     try {
         const response = await axios(PATH.userList);

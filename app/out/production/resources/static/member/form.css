@@ -1,0 +1,123 @@
+.tag-reset{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-inline-start: 0;
+    margin-inline-start: 0;
+
+}
+#signup_container{
+    height: 60vh;
+}
+
+.arrow-prev,
+.arrow-next {
+    position: relative;
+    float:left;
+    width:30px;
+    height:30px;
+    margin-right:5px;
+}
+.arrow-prev::after {
+    position: absolute;
+    top: -10px;
+    content: '';
+    width: 20px; /* 사이즈 */
+    height: 20px; /* 사이즈 */
+    border-top: 3px solid rgb(251, 147, 0); /* 선 두께 */
+    border-right: 3px solid rgb(251, 147, 0); /* 선 두께 */
+    transform: rotate(225deg); /* 각도 */
+;
+}
+.arrow-next::after {
+    position: absolute;
+    left: 10px;
+    top: -10px;
+    content: '';
+    width: 20px; /* 사이즈 */
+    height: 20px; /* 사이즈 */
+    border-top: 3px solid rgb(251, 147, 0); /* 선 두께 */
+    border-right: 3px solid rgb(251, 147, 0); /* 선 두께 */
+    transform: rotate(45deg); /* 각도 */
+}
+#next_btn{
+    width: 30px;
+}
+.signup-form{
+    height: 10vh;
+    min-width: 300px;
+}
+.slide-item{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid rgb(251, 147, 0);
+    color: rgb(227,146,35);
+    width: 10vw;
+    min-width: 80px;
+    overflow: hidden;
+}
+.slide-item2{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid rgb(251, 147, 0);
+    color: rgb(227,146,35);
+    width: 20vw;
+    min-width: 80px;
+    overflow: hidden;
+}
+.slide-item3{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid rgb(227,146,35);
+    color: rgb(251, 147, 0);
+    width: 16vw;
+    min-width: 80px;
+    overflow: hidden;
+    float: left;
+}
+.sign-summit{
+    border:1px solid rgb(227,146,35);
+    color: rgb(251, 147, 0);
+    border-radius: 0.5vw;
+    float: left;
+    margin-left: 2vw;
+    background-color: white;
+}
+
+#slideShow{
+    overflow: hidden;
+}
+.slides {
+    transition: left 0.5s ease-out;
+    position: absolute;
+    overflow: hidden;
+    width: 380vw;
+}
+.slides li:first-child{
+    width: 29vw;
+    margin-left: 0;
+    list-style-type: none;
+    float: left;
+}
+.slides li:first-child span{
+    margin-left: 0;
+}
+.right-slide{
+    width: 29vw;
+    margin-left: 40vw;
+    list-style-type: none;
+    float: left;
+}
+
+.email-form{
+    width: 10vw;
+    min-width: 100px;
+
+}
+.email-check{
+    color: #E0475B;
+    font-size: 0.8em;
+}

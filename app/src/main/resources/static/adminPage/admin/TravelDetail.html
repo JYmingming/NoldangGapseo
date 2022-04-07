@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>어드민</title>
+    <link rel="stylesheet" type="text/css" href="/css/TravelDetail.css">
+</head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+
+<body>
+
+<div th:replace="/fixed/header :: header"></div>
+<a href="memberList2.html"><span id="imgtext1">ADMINSTRATOR</span></a>
+   <a href="memberList2.html"><span id="imgtext2">유저관리</span></a>
+                   <a href="report.html"><span id="imgtext3">신고관리</span></a>
+                   <a href="TravelBoard.html"><span id="imgtext4">여행지관리</span></a>
+                    <a href="index.html"><span id="imgtext5">고객센터</span></a></h1> 
+<hr>
+<h1 class ="maintitle">여행지관리 l 여행지 업데이트</h1>
+
+
+
+<div class="container">
+    <form >
+        <table class="table" id="table">
+           <thead>
+  <tr>
+    <th class ="th-1">타입</th>
+    <th class ="th-2">이름</th>
+    <th class ="th-3">주소</th>
+    <th class ="th-4">전화번호</th>
+    <th class ="th-5">태그</th>
+    <th class ="th-6">사진</th>
+    <th class ="th-7">한줄소개</th>
+
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class ="td-1">명소</td>
+     <td class ="td-2">이름1</td>
+     <td class ="td-3">제주특별시 서귀포구 xxxx</td>
+    <td class ="td-4">010-1234-5678</td>
+    <td class ="td-5">#봄 #등산 #맛집 #바다</td>
+    <td class ="td-6"><img src="img/img2.jpg" width="200" height="100"></td>
+          <td class ="td-7">@한줄소개@</td>
+
+  </tr>
+ 
+
+</tbody>
+
+</table>
+ <button id="btn2"><a href = "TravelBoard.html">업데이트</button></a>
+
+</div>
+
+</body>
+</html>

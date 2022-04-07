@@ -10,15 +10,15 @@
 <body>
 
 <div th:replace="/fixed/header :: header"></div>
-<a href="memberList.html"><span id="imgtext1">ADMINSTRATOR</span></a>
-   <a href="memberList.html"><span id="imgtext2">유저관리</span></a>
+<a href="memberList2.html"><span id="imgtext1">ADMINSTRATOR</span></a>
+   <a href="memberList2.html"><span id="imgtext2">유저관리</span></a>
                    <a href="report.html"><span id="imgtext3">신고관리</span></a>
-                   <a href="TravelBoard.html"><span id="imgtext4">게시판관리</span></a>
+                   <a href="TravelBoard.html"><span id="imgtext4">여행지관리</span></a>
                     <a href="index.html"><span id="imgtext5">고객센터</span></a></h1> 
 <hr>
 <h1 class ="maintitle">여행지 l 유저여행지 관리</h1>
 
-
+ <button id="btn123"><a href = "TravelAdd.html">새 여행지 추가</a></button></a>
 
 <div class="container">
     <form >
@@ -33,9 +33,11 @@
     <th class ="th-6">사진</th>
     <th class ="th-7">한줄소개</th>
     <th class ="th-8">업데이트</th>
+        <th class ="th-9">삭제</th>
   </tr>
 </thead>
 <tbody>
+
   <tr>
     <td class ="td-1">명소</td>
      <td class ="td-2">이름1</td>
@@ -44,17 +46,20 @@
     <td class ="td-5">#봄 #등산 #맛집 #바다</td>
     <td class ="td-6"><img src="img/img2.jpg" width="200" height="100"></td>
           <td class ="td-7">@한줄소개@</td>
-    <td class ="td-8"><button>update</button></td>
+    <td class ="td-8"  ><button id="btn1"><a href = "TravelDetail.html">update</button></a></td>
+      <td class ="td-9"  ><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
   </tr>
   <tr>
    <td class ="td-1">명소</td>
      <td class ="td-2">이름2</td>
     <td class ="td-3">제주특별시 서귀포구 xxxx</td>
     <td class ="td-4">010-1234-5678</td>
-    <td class ="td-5">#봄 #등산 #맛집 #바다</td>
+    <td class ="td-5">#가을 #등산 #맛집 #바다</td>
  <td class ="td-6"><img src="img/img3.jpg" width="200" height="100" ></td>
        <td class ="td-7">@한줄소개@</td>
-   <td class ="td-8"><button>update</button></td>
+     <td class ="td-8"  ><button id="btn1"><a href = "TravelDetail.html">update</button></a></td>
+        <td class ="td-9"  ><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
+      
   </tr> <tr>
      <td class ="td-1">명소</td>
      <td class ="td-2">이름3</td>
@@ -63,7 +68,9 @@
     <td class ="td-5">#봄 #등산 #맛집 #바다</td>
     <td class ="td-6"><img src="img/img4.jpg" width="200" height="100"></td>
          <td class ="td-7">@한줄소개@</td>
-   <td class ="td-8"><button>update</button></td>
+    <td class ="td-8"  ><button id="btn1"><a href = "TravelDetail.html">update</button></a></td>
+       <td class ="td-9"  ><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
+     
   </tr> <tr>
     <td class ="td-1">맛집</td>
      <td class ="td-2">이름4</td>
@@ -72,7 +79,9 @@
     <td class ="td-5">#봄 #등산 #맛집 #바다</td>
        <td class ="td-6">img</td>
        <td class ="td-7">@한줄소개@</td>
-  <td class ="td-8"><button>update</button></td>
+    <td class ="td-8"  ><button id="btn1"><a href = "TravelDetail.html">update</button></a></td>
+      <td class ="td-9"  ><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
+     
   </tr> <tr>
     <td class ="td-1">맛집</td>
      <td class ="td-2">이름5</td>
@@ -81,7 +90,9 @@
     <td class ="td-5">#봄 #등산 #맛집 #바다</td>
       <td class ="td-6">img</td>
       <td class ="td-7">@한줄소개@</td>
-   <td class ="td-8"><button>update</button></td>
+     <td class ="td-8"  ><button id="btn1"><a href = "TravelDetail.html">update</button></a></td>
+  <td class ="td-9"  ><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
+      
   </tr> <tr>
      <td class ="td-1">맛집</td>
      <td class ="td-2">이름6</td>
@@ -90,7 +101,9 @@
     <td class ="td-5">#봄 #등산 #맛집 #바다</td>
     <td class ="td-6">img</td>
      <td class ="td-7">@한줄소개@</td>
-<td class ="td-8"><button>update</button></td>
+  <td class ="td-8"  ><button id="btn1"><a href = "TravelDetail.html">update</button></a></td>
+   <td class ="td-9"  ><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
+   
   </tr> <tr>
    <td class ="td-1">맛집</td>
      <td class ="td-2">이름7</td>
@@ -99,9 +112,17 @@
     <td class ="td-5">#봄 #등산 #맛집 #바다</td>
       <td class ="td-6">img</td>
         <td class ="td-7">@한줄소개@</td>
-  <td class ="td-8"><button>update</button></td>
-  </tr>
+  <td class ="td-8"  ><button id="btn1"><a href = "TravelDetail.html">update</button></a></td>
+  <td class ="td-9"  ><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
    
+  </tr>
+   <script>
+function deleteRow(ths){
+    var ths = $(ths);
+    
+    ths.parents("tr").remove();
+}
+</script>
 
 </tbody>
 </table>

@@ -1,0 +1,170 @@
+ #header {                         /* 머리 전체  */
+  height: 50px;
+  padding-top: 10px;
+  border-bottom-style: solid;
+  border-color: gray;
+  }
+  #main-btn {
+    color:orange;
+    font-weight:bold;
+    background-color:white;
+    font-size:20px;
+    border:0;
+    outline:0;
+    font-size: 1.5em;
+    font-family: "Comic Sans MS";
+  }
+    #img-2 {
+  position: relative;
+  float : right;
+  width: 50px;
+  top: 8%;
+  }
+  #user-btn {
+    float:right;
+    color:orange;
+    background-color:white;
+    font-size:20px;
+    border:0;
+    outline:0;
+    font-size: 1.5em;
+    font-family: "Comic Sans MS";
+  }
+  
+  #container {                        /*고객센터 컨테이너*/
+   width:100%;
+    height:100%;
+    background:#000;
+  }
+  #body {
+    width:600px;
+    height:600px;
+    position:absolute;
+    left:50%;
+    top:60%;
+    margin-left:-300px;
+    margin-top:-300px;
+    background-color: #f9f9f9;
+  }
+  
+  #body-a {                       /*고객센터 머리*/
+    position:absolute;
+    width:500px;
+    height:50px;
+    top: 5%;
+    left:10%;
+    border-bottom-style: solid;
+    border-bottom:thick solid;
+    border-color: #F3E3B0;
+  }
+  #img-1 {
+	  position: relative;
+	  width: 10%;
+	  bottom: 10%;
+	  }
+  
+  #Service-center {
+    position:absolute;
+    font-size:20px;
+    font-weight:bold;
+  }
+  #all-btn {
+    background-color: white;
+    float:right;
+    border:solid;
+    border-color: gray;
+  }
+  
+  #body-b {                                 /* 검색창 */
+  position: relative;
+  width: 400px;
+  height: 30px;
+  margin: 10px auto;
+  top: 13%;
+  }
+  #search {
+  border: 1px solid #F1F1F1;
+  border-radius: 50px;
+  width: 100%;
+  height: 150%;
+  padding-left: 60px;
+  }
+  #search-img {
+  position : absolute;
+  width: 20px;
+  height: 20px;
+  top:40%;
+  left:5%;
+  }
+  
+  #body-c {                           /* 인기 검색어 */
+  position: relative;
+  width: 400px;
+  height: 30px;
+  margin: 10px auto;
+  top: 14%;
+  }
+
+  .a-button {
+  border:0;
+  background-color: #f9f9f9;
+  color: orange;
+  margin: 3px;
+  }
+
+
+  #body-d {                           /* 공지사항 */
+  position:relative;
+  width:500px;
+  height:100px;
+  top:15%;
+  left:10%;
+  background-color: #f9f9f9;
+  border-top-style: solid;
+  border-top:thick solid;
+  border-color: #F3E3B0;
+  }
+  
+  .b-button {
+  width: 200px;
+  height: 30px;
+  border:0;
+  background-color: #f9f9f9;
+  color: black;
+  font-size:15px;
+  font-weight:400;
+  }
+  
+  .clicked {
+  color: white;
+  background-color: orange;
+  }
+  
+  #body-e {
+  position:relative;
+  background-color: #f9f9f9;
+  top: 10%;
+  }
+
+  #tb1 {
+  position: absolute;
+  display: none;
+  left: 10%;
+  }
+  #tb2 {
+  position: absolute;
+  display: none;
+  left: 10%;
+  }
+  
+  .c-button {
+  font-size: 15px;
+  border: 0;
+  background-color: #f9f9f9;
+  margin: 3px;
+  
+  }
+  
+  
+  
+

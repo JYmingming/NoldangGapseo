@@ -12,13 +12,16 @@ import org.springframework.stereotype.Repository;
 @EqualsAndHashCode(callSuper=false)
 public class User {
 
-  Integer userId;
-  String id;
-  String nickName;
-  String email;
-  String phone;
-  Date regDate;
-  Date updateDate;
-  String profileImg;
+
+  private Integer userId;
+  private String id;
+  private String nickName;
+  private String password;
+  private String email;
+  private String phone;
+  private Date regDate;
+  private Date updateDate;
+  private String profileImg;
+
 
 }

@@ -1,0 +1,179 @@
+*{
+    padding:0;
+    margin:150;
+    text-decoration: none;
+}
+*:link, *:visited{
+    color:black;
+  
+}
+
+.header{
+	
+    background: rgb(237, 229, 153);
+    height: 70px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 10px 0px #cccccc;
+   
+}
+.title_zone, .login_zone{
+    display: flex;
+    align-items: center;
+    
+}
+.icon{
+    width: 50px;
+    margin-right: 10px;
+    
+}
+.project_title{
+
+    color:rgb(90, 129, 0);
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.menus{
+    font-size: 20px;
+    font-weight: 550;
+}
+.login_control{
+    margin-right: 30px;
+}
+    .table{
+        border:1px solid;
+        width: 1100px;
+    }
+    thead{
+        border-bottom: 1px solid gray;
+    }
+    .member{
+        border:1px solid;
+    }
+    .member:hover{
+        transition: all 0.3s;
+        background:#DED369;
+    }
+    #search{
+        border:1px solid lightgray;
+    }
+    .container{
+           display: flex;
+        justify-content: center;
+          border-radius :10px;
+          background-color: rgb(250, 250, 250);
+ 
+          height: 800px;
+          margin-left:50px;
+    }
+    .memberCenter{
+        text-align: center;
+    }
+ 
+#imgtext1{
+   
+    margin-left:50px;
+   font-size : xx-large;
+    top: 30px;
+    color:  #fb9300;
+    font: bold;
+     font-family: "Comic Sans MS";
+    
+   
+}
+
+#imgtext2{
+   
+    margin-left:200px;
+  font-size : large;
+    top: 30px;
+    color: Black;
+    font: bold;
+}
+#imgtext3{
+   
+    margin-left:60px;
+   font-size : large;
+    top: 30px;
+    color: Black;
+    font: bold;
+}
+#imgtext4{
+   
+    margin-left:60px;
+   font-size : large;
+    top: 30px;
+    color: Black;
+    font: bold;
+}
+#imgtext5{
+   
+    margin-left:60px;
+   font-size : large;
+    top: 30px;
+    color: Black;
+    font: bold;
+}
+
+.table{
+	margin-top : 30px;
+border-collapse:collapse;
+	}
+	
+.table td{background-color:#fff;border-color:#aaa;border-style:solid;border-width:1px;color:#333;
+  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;  text-align: center;}
+	
+	.table th{ text-align: center; background-color:#f38630;border-color:#aaa; border-style:solid;border-width:2px;color:#fff;
+  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+	
+.table .tg-baqh{text-align:center;vertical-align:top}
+.table .tg-f8tx{color:#000000;text-align:center;vertical-align:top}
+
+.th-1{width : 60px; height: 15px; background-color:#f38630;border-color:#aaa; border-style:solid;border-width:2px;color:#fff;}
+.th-2{width : 120px;}
+.th-3{width : 300px;}
+.th-4{width : 170px;}
+.th-5{width : 380px;}
+.th-6{width : 200px;}
+.th-7{width : 480px;}
+.th-8{width : 60px;}
+
+
+
+#select {
+  
+    justify-content: space-evenly;
+}
+
+.maintitle{
+	margin-left : 100px;
+		margin-top : 20px;
+}
+	
+	
+	#btn2{
+    width: 7vw;
+    height: 5vh;
+    background-color: #fb9300;
+    color: white;
+    font-size: 0.8vw;
+    font-weight: bold;
+    margin-left: 40.75vw;
+    border-radius: 0.5em;
+    border: 0;
+    outline: 0;
+    overflow: hidden;
+    margin-top : 100px;
+    margin-left : 1000px;
+}
+	
+	
+	
+	
+	
+	
+	
