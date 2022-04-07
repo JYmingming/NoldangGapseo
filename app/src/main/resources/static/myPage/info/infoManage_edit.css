@@ -337,6 +337,11 @@ li{
 
 #img4 {
     padding: 2vw, 4vh;
+    background-image: url("../../img/friendslist.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+    cursor: pointer;
 }
 
 #img1_text {
@@ -359,6 +364,8 @@ li{
 
 #img4_text {
     padding: 1vh;
+    font-size: 0.5vw;
+    text-align: center;
 }
 
 .third_container {

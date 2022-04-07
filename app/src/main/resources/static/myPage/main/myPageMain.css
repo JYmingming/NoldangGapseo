@@ -53,7 +53,8 @@ body{
     background-image: url("../../img/profile.png");
     background-repeat: no-repeat;
     background-position: center;
-    float: left
+    float: left;
+    cursor: pointer;
 }
 
 .user_info{
@@ -130,7 +131,7 @@ body{
     background-image: url("../../img/id.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 10%;
+    background-size: 15%;
     cursor: pointer;
 }
 
@@ -138,7 +139,7 @@ body{
     background-image: url("../../img/tag.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 10%;
+    background-size: 15%;
     cursor: pointer;
 }
 
@@ -146,7 +147,15 @@ body{
     background-image: url("../../img/wishlist.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 10%;
+    background-size: 15%;
+    cursor: pointer;
+}
+
+#img4{
+    background-image: url("../../img/friendslist.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15%;
     cursor: pointer;
 }
 
@@ -188,7 +197,11 @@ body{
     background-image: url("../../img/wishlist.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 135%;
+    background-size: 145%;
+}
+
+.wishList_box ul:hover {
+    opacity: 0.5;
 }
 
 

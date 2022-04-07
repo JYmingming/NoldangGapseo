@@ -22,8 +22,8 @@
           <div class="contents_box">
             
               <div class="user">
-                  <div class="user_photo" input type="file" multiple class="d-file-up" name="" id="">
-                    
+                  <div class="user_photo">
+                    <input type="file" class="real-upload" accept="image/*" required multiple style="display: none;">
                   </div>
                   <div class="user_info">
                       <h5>닉네임</h5>
@@ -36,16 +36,18 @@
                   <div class="contents">
                     <div class="contents_box1">
                       <ul class="row">
-                        <li class="col-4" id="img1" a href="#" onclick="location.href='../info/infoManage.html'"></li>
-                        <li class="col-4" id="img2" a href="#" onclick="location.href='../tag/groupTag.html'"></li>
-                        <li class="col-4" id="img3" a href="#" onclick="location.href='../wishList/wishList.html'"></li>
+                        <li class="col-3" id="img1" a href="#" onclick="location.href='../info/infoManage.html'"></li>
+                        <li class="col-3" id="img2" a href="#" onclick="location.href='../tag/groupTag.html'"></li>
+                        <li class="col-3" id="img3" a href="#" onclick="location.href='../wishList/wishList.html'"></li>
+                        <li class="col-3" id="img4" a href="#" onclick="location.href='../wishList/wishList.html'"></li>
                       </ul>
                     </div>
                     <div class="contents_box2">
                       <ul class="row">
-                        <li class="col-4">계정관리</li>
-                        <li class="col-4">그룹태그</li>
-                        <li class="col-4">위시리스트</li>
+                        <li class="col-3">계정관리</li>
+                        <li class="col-3">그룹태그</li>
+                        <li class="col-3">위시리스트</li>
+                        <li class="col-3">동행자 관리</li>
                       </ul>
                     </div>
                   </div>
@@ -70,5 +72,11 @@
   </footer>
 
   <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript">
+  const realUpload = document.querySelector('.real-upload');
+  const upload = document.querySelector('.user_photo');
+
+  upload.addEventListener('click', () => realUpload.click());
+  </script>
 </body>
 </html>
