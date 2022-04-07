@@ -10,8 +10,8 @@
     </resultMap>
 
     <insert id="insert" parameterType="user">
-        insert into user(email,id,pwd,nick_name,phone)
-        values(#{email},#{id},password(#{password}),#{nickName},#{phone})
+        insert into user(email,pwd,nick_name,phone)
+        values(#{email},password(#{password}),#{nickName},#{phone})
     </insert>
 
 
