@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<title>Insert title here</title>
+<!--스위트 얼럿 -->
+<link rel="stylesheet"
+  href="../../node_modules/sweetalert2/dist/sweetalert2.min.css" />
+<!--부트 스트렙 -->
+<link rel="stylesheet"
+  href="../../node_modules/bootstrap/dist/css/bootstrap.css" />
+<script
+  src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<!--CSS 가져오기 -->
+<link rel="stylesheet" href="./userDestinationDtl.css" />
+
+<!--헤더 가져오기 -->
+<script>
+	$(document).ready(function() {
+		$('.headers').load('../../common/header/header.html');
+	});
+</script>
+
+</head>
+<body>
+  <div class="headers"></div>
+
+  <div class="container">
+
+    <div class="travelListDtlCntn">
+      <div class="title">제목</div>
+      <div style="float: left; width: 33%; margin: 4px">nickname</div>
+      <div
+        style="float: right; width: 33%; margin: 4px; text-align: right;">2022-04-04</div>
+
+      <div class="picture" style="text-align: center;">
+        <img src="/img/제주도카페_뷰스트_03.jpg"
+          style="width: 600px; height: 400px; text-align: center;">
+      </div>
+      <div class="page-dot">페이지표시</div>
+      <div data-role="footer" data-position="fixed">
+        <span class="ui-title"> <!-- to have the div centered in footer -->
+          <div id="navigator">
+            <a href="#p1" class="activeSlide">1</a> <a href="#p2">2</a>
+            <a href="#p3">3</a>
+          </div>
+        </span>
+      </div>
+
+
+      <div class="content">content 텍스트</div>
+
+    </div>
+
+
+  </div>
+
+
+
+
+
+  <script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+  <script>
+			$(".btn-like").click(function() {
+				$(this).toggleClass("done");
+			})
+		</script>
+  <script>
+			$(document).on(
+					"pagebeforeshow",
+					"[data-role=page]",
+					function() {
+						var active = "#" + $.mobile.activePage[0].id;
+						var active_index = $(active).index();
+						$(".activePage").removeClass("activePage");
+						$("#navigator a", this).eq(active_index).addClass(
+								"activePage");
+					});
+		</script>
+
+</body>
+
+</html>
