@@ -1,3 +1,9 @@
+// ----뒤로가기 화살표-----
+$('.bi').on('click', function (e) {
+    e.preventDefault();
+    location.href = '/travel/myboard/myboard.html';
+});
+
 // ---- 주소 검색 ----
 $('#in-adress').on('click', function (e) {
     e.preventDefault();
