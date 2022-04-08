@@ -12,7 +12,6 @@
 .signup-massage h2{
     margin: 0;
     color: #2f394d;
-
 }
 .signup-massage h2:nth-child(2){
     color: rgb(227,146,35);
@@ -31,26 +30,38 @@
 }
 
 .signup-form{
-    width: 36%;
+    width: 32%;
 }
+
 .signup-form input{
     width: 100%;
-    height: 46px;
+    height: 40px;
     border-radius: 0.5vw;
     border: 1px solid rgb(227,146,35);
-
 }
+#email{
+    width: 59%;
+}
+.email-checking{
+    width: 39%;
+    height: 40px;
+    border-radius: 0.5vw;
+    border: 1px solid rgb(227,146,35);
+    background-color: rgba(227,146,35,20%);
+    float: right;
+}
+
 .email-check{
     color: #E0475B;
     font-size: 0.7em;
 }
 .sign-summit{
-    margin-top: 3vh;
+    margin-top: 2vh;
     background-color: rgb(227,146,35);
     color: white;
     border-radius: 0.5vw;
     width: 100%;
     height: 50px;
     border: 0px;
-    margin-bottom: 5vh;
+    margin-bottom: 3vh;
 }
