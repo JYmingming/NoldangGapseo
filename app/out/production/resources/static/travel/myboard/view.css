@@ -1,0 +1,36 @@
+.bi-j :hover {
+    border: 2px solid #fb9300;
+    border-radius: 20px;
+}
+
+.content {
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 5%;
+}
+
+.title {
+    margin-bottom: 3em;
+}
+.title > div {
+    border: 1px solid gray;
+}
+.in-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 10px;
+    border: 0px;
+}
+.in-title:focus {
+    outline: none;
+}
+
+.adress {
+    margin: 2em 0px;
+}
+
+.contents {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 2%;
+}

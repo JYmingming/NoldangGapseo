@@ -10,3 +10,6 @@ $('#content-card').on('click', function (e) {
     e.stopPropagation();
     location.href = '/travel/myboard/view.html';
 });
+$('.bi-trash').on('click', function (e) {
+    e.stopPropagation();
+});
