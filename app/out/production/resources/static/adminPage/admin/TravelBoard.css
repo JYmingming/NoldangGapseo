@@ -133,13 +133,13 @@ border-collapse:collapse;
 #tb1 .tg-baqh{text-align:center;vertical-align:top}
 #tb1 .tg-f8tx{color:#000000;text-align:center;vertical-align:top}
 
-.th-1{width : 60px; height: 15px; background-color:#f38630;border-color:#aaa; border-style:solid;border-width:2px;color:#fff;}
-.th-2{width : 120px;}
-.th-3{width : 300px;}
-.th-4{width : 170px;}
-.th-5{width : 380px;}
-.th-6{width : 200px;}
-.th-7{width : 480px;}
+.th-1{width : 50px; height: 15px; background-color:#f38630;border-color:#aaa; border-style:solid;border-width:2px;color:#fff;}
+.th-2{width : 100px;}
+.th-3{width : 200px;}
+.th-4{width : 90px;}
+.th-5{width : 150px;}
+.th-6{width : 150px;}
+.th-7{width : 200px;}
 .th-8{width : 80px;}
 .th-9{width : 60px;}
 
@@ -178,8 +178,4 @@ border-collapse:collapse;
 	#btn2{
 	  background-color: #fb9300;
 	}
-	
-	
-	
-	
-	
+

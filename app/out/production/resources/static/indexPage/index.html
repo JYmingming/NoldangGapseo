@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css" />
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css" />
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../node_modules/axios/dist/axios.js"></script>
 
@@ -21,7 +22,12 @@
     </div>
     <div class="headers">
         <div class="header_logo"> noldang</div>
-        <div class="header_login" id ="login-box" data-bs-toggle="modal" data-bs-target="#loginModal">Login</div>
+        <div class="header_login" id ="login-box" >
+            <button id="login-btn" type="button" class="not-login" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+            <span id="user-name" class="login"></span>
+            <button id="logout-btn" type="button" class="login">LogOut</button>
+        </div>
+
     </div>
     <div class ="main_container">
         <div class ="hosting">
@@ -141,18 +147,21 @@
                         <div class="d-flex flex-row-reverse bd-highlight">
                             <p class="px-5 mb-0"><button type="button" >Id/Pw찾기</button></p>
                         </div>
-                        <form>
+                        <form name="form1">
                             <div class="form-group m-auto">
-                                <input class="form-control " type="text" placeholder="id">
+                                <input class="form-control " type="text" name="email" placeholder="email">
                             </div>
                             <div class="form-group m-auto">
-                                <input class="form-control m-auto" type="password" placeholder="Password">
+                                <input class="form-control m-auto" type="password" name="password" placeholder="Password">
+                            </div>
+                            <div class="form-group m-auto">
+                            <input name="saveEmail" type="checkbox"> 이메일 저장<br>
                             </div>
                             <div class="d-flex flex-row-reverse bd-highlight">
                                 <p class="px-5 mt-0"><button type="button" onClick="location.href='../member/form.html'">회원가입</button></p>
                             </div>
                             <div class="form-group m-auto login-submit">
-                                <input class="form-control" type="submit" value="Iog In">
+                                <input class="form-control" id="x-add-btn" type="submit" value="Iog In">
                             </div>
                             <div class="row m-5 sns_container">
                                 <div class="col text-center sns_login"><img src=../img/facebook_icon.png></div>
@@ -161,15 +170,74 @@
                                 <div class="col text-center sns_login"><img src=../img/facebook_icon.png></div>
                             </div>
                         </form>
-
-
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        css(".login", "display", "none");
 
+        fetch("/user/getLoginUser").then(function(response) {
+            return response.json();
+        }).then(function(result) {
+            if (result.resStatus == "success") {
+                document.querySelector("#user-name").innerHTML = result.data.nickName;
+                css(".login", "display", "");
+                css(".not-login", "display", "none");
+            }
+        });
+
+        document.querySelector("#logout-btn").onclick = function() {
+            fetch("/user/signout").then(function(response) {
+                location.href = "index.html";
+            });
+        };
+
+
+        //css 함수
+        function css(selector, name, value) {
+            var el = document.querySelectorAll(selector);
+            for (var e of el) {
+                e.style[name] = value;
+            }
+        }
+    </script>
+
+    <script>
+        // 로그인
+        var xEmail = document.querySelector("input[name=email]");
+        var xPassword = document.querySelector("input[name=password]");
+
+        document.querySelector("form[name=form1]").onsubmit = function() {
+            if ( xEmail.value == "" ||
+                xPassword.value == "") {
+                window.alert("필수 입력 항목이 비어 있습니다.");
+                return false;
+            }
+            var fd = new FormData(document.forms.namedItem("form1"));
+
+            fetch("/user/signin", {
+                method: "POST",
+                body: new URLSearchParams(fd)
+            })
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(result) {
+                    if (result.resStatus == "success") {
+                        location.href = "/indexPage/index.html";
+                    } else {
+                        window.alert("로그인 실패!")
+                    }
+                });
+            return false;
+        };
+
+
+
+
+    </script>
 
 
 
@@ -181,16 +249,6 @@
             level: 10
         };
         var map = new kakao.maps.Map(container, options);
-
-
-       /*     // 모달 관련 js
-        var myModal = document.getElementById('myModal')
-        var myInput = document.getElementById('myInput')
-
-        myModal.addEventListener('shown.bs.modal', function () {
-            myInput.focus()
-        })
-*/
 
     </script>
 

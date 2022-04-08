@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>어드민</title>
-    <link rel="stylesheet" type="text/css" href="/css/report.css">
+    <link rel="stylesheet" type="text/css" href="report.css">
 </head>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 
@@ -13,8 +13,8 @@
 <a href="memberList2.html"><span id="imgtext1">ADMINSTRATOR</span></a>
    <a href="memberList2.html"><span id="imgtext2">유저관리</span></a>
                   <a href="report.html"><span id="imgtext3">신고관리</span></a>
-                   <a href="TravelBoard.html"><span id="imgtext4">게시판관리</span></a>
-                    <a href="index.html"><span id="imgtext5">고객센터</span></a></h1> 
+                   <a href="TravelBoard.html"><span id="imgtext4">여행지관리</span></a>
+                 <a href="../../customorCenter/noticeBoard/noticeBoard.html"><span id="imgtext5">고객센터</span></a>
 <hr>
 
 <h1 class ="maintitle">관리자 l 신고 관리</h1>
@@ -32,80 +32,83 @@
     <th class ="th-5">이메일</th>
     <th class ="th-6">신고사유</th>
     <th class ="th-7">신고날짜</th>
-        <th class ="th-9">삭제여부</th>
+        <th class ="th-9">페이지로 이동</th>
   </tr>
 </thead>
 <tbody>
-
+<style>table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-top :60px;}
+ th{font-family: Comic Sans MS;border: thin solid #6495ed;padding: 5px;background-color: #fb9300;}
+ td{font-family: Comic Sans MS;border: thin solid white;padding: 5px;text-align: center;}.odd{background:white;}
+ img{padding:5px; border:solid; border-color: #dddddd #aaaaaa #aaaaaa #dddddd; border-width: 1px 2px 2px 1px; background-color:white;}</style>
   <tr>
-    <td class ="td-1" a href="#" onclick="location.href='report_detail.html'" span style="color:blue"">게시글</td>
-    <td class ="td-2">9452</td>
-    <td class ="td-3">dsdlkgn3311</td>
-    <td class ="td-4">trip2022</td>
-    <td class ="td-5">dldlkgn311@naver.com</td>
-    <td class ="td-6">부적절한 이미지</td>
-    <td class ="td-7">2022-03-04</td>
-      <td class ="td-9"  ><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
+    <td >게시글</td>
+    <td >9452</td>
+    <td >dsdlkgn3311</td>
+    <td >trip2022</td>
+    <td >dldlkgn311@naver.com</td>
+    <td >부적절한 이미지</td>
+    <td >2022-03-04</td>
+      <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
   </tr>
   <tr>
-   <td a href="#" onclick="location.href='report_detail.html'" span style="color:blue"">게시글</td>
+   <td >게시글</td>
     <td>17836</td>
-    <td>fgjft86</td>
+    <td>fgj1t86</td>
     <td>가보자제주</td>
     <td>fgjft86@gmail.com</td>
     <td>부적절한 이미지</td>
     <td>2022-03-04</td>
-        <td class ="td-9"  ><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
+          <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
       
   </tr> <tr>
-    <td a href="#" onclick="location.href='report_detail.html'" span style="color:blue"">게시글</td>
+      <td >게시글</td>
     <td>15723</td>
     <td>sknflks212</td>
     <td>여행가11</td>
     <td>sknflks212@naver.com</td>
     <td>부적절한 이미지</td>
     <td>2022-03-04</td>
-       <td class ="td-9"  ><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
+          <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
      
   </tr> <tr>
-   <td a href="#" onclick="location.href='report_detail.html'" span style="color:blue"">게시글</td>
+      <td >댓글</td>
     <td>7490</td>
     <td>chance010</td>
     <td>혼저옵서예</td>
     <td>chance010@naver.com</td>
     <td>부적절한 이미지</td>
     <td>2022-03-04</td>
-      <td class ="td-9"  ><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
+      <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
      
   </tr> <tr>
-    <td a href="#" onclick="location.href='report_detail.html'" span style="color:blue"">댓글</td>
+      <td >게시글</td>
     <td>6822</td>
     <td>hello2163</td>
     <td>놀당갑서22</td>
     <td>hello2163@hanmail.net</td>
     <td>부적절한 댓글</td>
     <td>2022-03-04</td>
-  <td class ="td-9"  ><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
+      <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
       
   </tr> <tr>
-     <td a href="#" onclick="location.href='report_detail.html'" span style="color:blue"">댓글</td>
+        <td >댓글</td>
     <td>7524</td>
     <td>yoyo3019</td>
     <td>제주도가자</td>
     <td>yoyo3019@naver.com</td>
     <td>부적절한 댓글</td>
     <td>2022-03-04</td>
-   <td class ="td-9"  ><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
+         <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
    
   </tr> <tr>
-   <td a href="#" onclick="location.href='report_detail.html'" span style="color:blue"">게시글</td>
+   <td >게시글</td>
     <td>12452</td>
     <td>right9090</td>
     <td>놀당12</td>
     <td>right9090@naver.com</td>
     <td>부적절한 이미지</td>
     <td>2022-03-04</td>
-  <td class ="td-9"  ><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
+       <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
    
   </tr>
     <div id="freetext1">

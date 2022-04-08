@@ -3,18 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>어드민</title>
-    <link rel="stylesheet" type="text/css" href="/css/TravelBoard.css">
+
+    <link rel="stylesheet" type="text/css" href="TravelBoard.css">
+    <style>table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-top :60px;}
+ th{font-family: Comic Sans MS;border: thin solid #6495ed;padding: 2px;background-color: #fb9300;}
+ td{font-family: Comic Sans MS;border: thin solid white;padding: 2px;text-align: center;}.odd{background:white;}
+ img{padding:5px; border:solid; border-color: #dddddd #aaaaaa #aaaaaa #dddddd; border-width: 1px 2px 2px 1px; background-color:white;}</style>
 </head>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+
+
 
 <body>
-
+ 
+        
 <div th:replace="/fixed/header :: header"></div>
 <a href="memberList2.html"><span id="imgtext1">ADMINSTRATOR</span></a>
    <a href="memberList2.html"><span id="imgtext2">유저관리</span></a>
                    <a href="report.html"><span id="imgtext3">신고관리</span></a>
                    <a href="TravelBoard.html"><span id="imgtext4">여행지관리</span></a>
-                    <a href="index.html"><span id="imgtext5">고객센터</span></a></h1> 
+                     <a href="../../customorCenter/noticeBoard/noticeBoard.html"><span id="imgtext5">고객센터</span></a>
 <hr>
 <h1 class ="maintitle">여행지 l 여행지 관리</h1>
 
@@ -33,99 +40,196 @@
     <th class ="th-6">사진</th>
     <th class ="th-7">한줄소개</th>
     <th class ="th-8">업데이트</th>
-        <th class ="th-9">삭제</th>
+    <th class ="th-9">삭제</th>
   </tr>
 </thead>
 <tbody>
 
   <tr>
     <td class ="td-1">명소</td>
-     <td class ="td-2">이름1</td>
-     <td class ="td-3">제주특별시 서귀포구 xxxx</td>
+     <td class ="td-2">카페세바</td>
+     <td class ="td-3">제주 제주시 조천읍 선흘동2길 20-7</td>
     <td class ="td-4">010-1234-5678</td>
     <td class ="td-5">#봄 #등산 #맛집 #바다</td>
-    <td class ="td-6"><img src="img/img2.jpg" width="200" height="100"></td>
-          <td class ="td-7">@한줄소개@</td>
-    <td class ="td-8"  ><button id="btn1"><a href = "TravelDetail.html">update</button></a></td>
+    <td class ="td-6"><img src="img/img5.jpg" width="200" height="100"></td>
+          <td class ="td-7">독특한분위기, 분위기깡패</td>
+   <td class="td-8"><input style="zoom:2.0;" type="checkbox" class="checkbox"></td>
       <td class ="td-9"  ><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
   </tr>
   <tr>
    <td class ="td-1">명소</td>
-     <td class ="td-2">이름2</td>
-    <td class ="td-3">제주특별시 서귀포구 xxxx</td>
-    <td class ="td-4">010-1234-5678</td>
+     <td class ="td-2">신창 풍차해안</td>
+    <td class ="td-3">제주특별자치도 서귀포시 안덕면 사계리</td>
+    <td class ="td-4">064-728-7973</td>
     <td class ="td-5">#가을 #등산 #맛집 #바다</td>
- <td class ="td-6"><img src="img/img3.jpg" width="200" height="100" ></td>
-       <td class ="td-7">@한줄소개@</td>
-     <td class ="td-8"  ><button id="btn1"><a href = "TravelDetail.html">update</button></a></td>
+ <td class ="td-6"><img src="img/img6.jpg" width="200" height="100" ></td>
+       <td class ="td-7">해상풍력단지가 조성되어 있어 해안도로를 따라 줄지어 서 있는 풍차를 만날 수 있는 곳</td>
+      <td class="td-8"><input style="zoom:2.0;" type="checkbox" class="checkbox"></td>
         <td class ="td-9"  ><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
       
   </tr> <tr>
      <td class ="td-1">명소</td>
-     <td class ="td-2">이름3</td>
-       <td class ="td-3">제주특별시 서귀포구 xxxx</td>
-    <td class ="td-4">010-1234-5678</td>
+     <td class ="td-2">사계해안</td>
+       <td class ="td-3">제주 서귀포시 색달동</td>
+    <td class ="td-4">064-760-2772</td>
     <td class ="td-5">#봄 #등산 #맛집 #바다</td>
-    <td class ="td-6"><img src="img/img4.jpg" width="200" height="100"></td>
-         <td class ="td-7">@한줄소개@</td>
-    <td class ="td-8"  ><button id="btn1"><a href = "TravelDetail.html">update</button></a></td>
+    <td class ="td-6"><img src="img/img7.jpg" width="200" height="100"></td>
+         <td class ="td-7">산방산과 형제섬을 즐길 수 있는 해안도로</td>
+     <td class="td-8"><input style="zoom:2.0;" type="checkbox" class="checkbox"></td>
        <td class ="td-9"  ><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
      
   </tr> <tr>
     <td class ="td-1">맛집</td>
-     <td class ="td-2">이름4</td>
-        <td class ="td-3">제주특별시 서귀포구 xxxx</td>
-    <td class ="td-4">010-1234-5778</td>
+     <td class ="td-2">멘도롱돈까스</td>
+        <td class ="td-3">제주 제주시 애월읍 고내리 1039-4</td>
+    <td class ="td-4">064-783-5592</td>
     <td class ="td-5">#봄 #등산 #맛집 #바다</td>
-       <td class ="td-6">img</td>
-       <td class ="td-7">@한줄소개@</td>
-    <td class ="td-8"  ><button id="btn1"><a href = "TravelDetail.html">update</button></a></td>
+         <td class ="td-6"><img src="img/img8.jpg" width="200" height="100"></td>
+       <td class ="td-7">포방터 돈가스 서귀포로 왔는데 왜 가보지 못하나 제주도 돈가스 맛집</td>
+     <td class="td-8"><input style="zoom:2.0;" type="checkbox" class="checkbox"></td>
       <td class ="td-9"  ><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
      
   </tr> <tr>
     <td class ="td-1">맛집</td>
-     <td class ="td-2">이름5</td>
-      <td class ="td-3">제주특별시 서귀포구 xxxx</td>
-    <td class ="td-4">010-1234-5678</td>
+     <td class ="td-2">애월은혜전복</td>
+      <td class ="td-3">제주 제주시 애월읍 애월해안로 454-5</td>
+    <td class ="td-4">064-799-9060</td>
     <td class ="td-5">#봄 #등산 #맛집 #바다</td>
-      <td class ="td-6">img</td>
-      <td class ="td-7">@한줄소개@</td>
-     <td class ="td-8"  ><button id="btn1"><a href = "TravelDetail.html">update</button></a></td>
+       <td class ="td-6"><img src="img/img9.jpg" width="200" height="100"></td>
+      <td class ="td-7">전복돌솥밥, 전복물회, 전복죽, 전복라면 등을 대표메뉴로 파는 전복 전문 식당</td>
+   <td class="td-8"><input style="zoom:2.0;" type="checkbox" class="checkbox"></td>
   <td class ="td-9"  ><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
       
   </tr> <tr>
      <td class ="td-1">맛집</td>
-     <td class ="td-2">이름6</td>
-      <td class ="td-3">제주특별시 서귀포구 xxxx</td>
-    <td class ="td-4">010-1234-5678</td>
+     <td class ="td-2">태광식당</td>
+      <td class ="td-3">제주 서귀포시 일주동로 8143 아서원</td>
+    <td class ="td-4">064-751-1071</td>
     <td class ="td-5">#봄 #등산 #맛집 #바다</td>
-    <td class ="td-6">img</td>
-     <td class ="td-7">@한줄소개@</td>
-  <td class ="td-8"  ><button id="btn1"><a href = "TravelDetail.html">update</button></a></td>
+        <td class ="td-6"><img src="img/img10.jpg" width="200" height="100"></td>
+     <td class ="td-7">한치&돼지고기 주물럭이 맛있는 밥집</td>
+   <td class="td-8"><input style="zoom:2.0;" type="checkbox" class="checkbox"></td>
    <td class ="td-9"  ><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
    
   </tr> <tr>
-   <td class ="td-1">맛집</td>
-     <td class ="td-2">이름7</td>
-   <td class ="td-3">제주특별시 서귀포구 xxxx</td>
-    <td class ="td-4">010-1234-5678</td>
+   <td class ="td-1">명소</td>
+     <td class ="td-2">동백동산</td>
+   <td class ="td-3">제주 제주시 조천읍 선흘리 산12</td>
+    <td class ="td-4">064-784-9446</td>
     <td class ="td-5">#봄 #등산 #맛집 #바다</td>
-      <td class ="td-6">img</td>
-        <td class ="td-7">@한줄소개@</td>
-  <td class ="td-8"  ><button id="btn1"><a href = "TravelDetail.html">update</button></a></td>
+          <td class ="td-6"><img src="img/img11.jpg" width="200" height="100"></td>
+        <td class ="td-7">선흘리 동쪽에 있는 넓은 면적의 상록활엽수 천연림으로, 20여 년생 동백나무 10여만 그루가 숲을 이루고 있어</td>
+  <td class="td-8"><input style="zoom:2.0;" type="checkbox" class="checkbox"></td>
   <td class ="td-9"  ><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
    
   </tr>
-   <script>
-function deleteRow(ths){
-    var ths = $(ths);
-    
-    ths.parents("tr").remove();
-}
-</script>
-
+  
 </tbody>
 </table>
+</form>
 </div>
+<style>
+.button{
+all: unset;
+background-color : red;
+color : white;
+border-radius : 5px;
+cursor : pointer;
+margin-left : 1080px;
+margin-top : 500px;
+position: absolute;
+  text-align: center;
+}
+
+.modal{
+
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+display: flex;
+justify-content:center;
+align-items: center;
+
+}
+
+.modal_overlay {
+background-color : rgba(0,0,0,0.6);
+width: 100%;
+height: 100%;
+position: absolute;
+}
+
+.modal_content {
+	background-color : white;
+	margin-top : 100px;
+	padding : 100px 100px;
+	text-align: center;
+	position: absolute;
+	border-radius : 10px;
+	width: 10%;
+	top: 0px;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+h1{
+margin: 0;
+}
+
+.hidden{
+		display: none;
+}
+
+
+</style>
+
+<button id="open" style ="all: unset;
+background-color : red;
+color : white;
+font-size:1.5em;
+border-radius : 5px;
+cursor : pointer;
+margin-left : 1260px;
+margin-top : 200px;
+position: absolute;
+  text-align: center;"> 업데이트</button>
+<div class="modal hidden">
+<div class="modal_overlay"></div>
+<div class="modal_content">
+<h1>업데이트가 완료되었습니다.</h1>
+<button class="button2">확인</button>
+</div>
+
+</div>
+<script>
+	const openButton=document.getElementById("open");
+	const modal = document.querySelector(".modal");
+	const overlay = modal.querySelector(".modal_overlay")
+	const closeBtn = modal.querySelector("button");
+	const openModal = () =>{
+		modal.classList.remove("hidden");
+	}
+	const closeModal = () =>{
+		modal.classList.add("hidden");
+	}
+	overlay.addEventListener("click", closeModal);
+	closeBtn.addEventListener("click", closeModal);
+	openButton.addEventListener("click", openModal);
+
+	
+	function deleteRow(r) {
+	    var i = r.parentNode.parentNode.rowIndex;
+	    document.getElementById("table").deleteRow(i);
+	}
+	
+//function deleteRow(ths){
+  //  var ths = $(ths);
+    
+    //ths.parents("tr").remove();
+//}
+</script>
+
 </body>
 </html>
+
