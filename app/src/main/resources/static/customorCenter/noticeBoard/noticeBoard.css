@@ -148,7 +148,6 @@
 
   #tb1 {
   position: absolute;
-  display: none;
   left: 10%;
   }
   #tb2 {
@@ -162,7 +161,7 @@
   border: 0;
   background-color: #f9f9f9;
   margin: 3px;
-  
+  border-bottom: 1px solid orange ;
   }
   
   

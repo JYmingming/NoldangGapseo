@@ -45,37 +45,74 @@
       </table> 
     </div>
     
-  <div id= "body-e">
+    <div id= "body-e">
   
+      <div id="view1">
+      <form id="view-box">
+       <p>전체<span style="color: orange;">100</span>건
+        <select name="view" >
+          <option value="up views" selected>조회수 높은순</option>
+          <option value="down views">조회수 낮은순</option>
+          <option value="new date">최신 등록일</option>
+          <option value="old date">예전 등록일</option>
+        </select>
+      </form>
 
-    <table id="tb1">
-      <tbody>
-        <tr><th>No.</th><th>제목</th><th>등록일</th><th>조회수</th></tr>
-        <tr><td>1</td><td>공지사항1</td><td>2022.02.28</td><td>1</td></tr>
-        <tr><td>2</td><td>공지사항2</td><td>2022.03.14</td><td>2</td></tr>
-        <tr><td>3</td><td>공지사항3</td><td>2022.03.25</td><td>3</td></tr>
-        <tr><td>4</td><td>공지사항4</td><td>2022.04.06</td><td>4</td></tr>
-      </tbody>
-    </table>    
+      <table id="tb1">
+        <tbody>
+          <tr><th>No.</th><th>제목</th><th>등록일</th><th>조회수</th></tr>
+          <tr><td>1</td><td>공지사항1</td><td>2022.02.28</td><td>1</td></tr>
+          <tr><td>2</td><td>공지사항2</td><td>2022.03.14</td><td>2</td></tr>
+          <tr><td>3</td><td>공지사항3</td><td>2022.03.25</td><td>3</td></tr>
+          <tr><td>4</td><td>공지사항4</td><td>2022.04.06</td><td>4</td></tr>
+        </tbody>
+      </table> 
+      <button id="back" onclick=location.href='noticeBoard.html'>뒤로가기</button>
+      </div>
 
+
+
+      <div id="view2">
+        <form id="view-box">
+       <p>전체<span style="color: orange;">100</span>건
+        <select name="view" >
+          <option value="all" selected>전체 글</option>
+          <option value="answer">완료된 답변</option>
+          <option value="new date">최신 등록일</option>
+          <option value="old date">예전 등록일</option>
+        </select>
+       </form>
+        <table id="tb2">
+         <tbody>
+          <tr><th>No.</th><th>제목</th><th>작성자</th><th>등록일</th><th>답변상태</th></tr>
+          <tr><td>1</td><td>Q&A 1</td><td>김**</td><td>1</td><td>접수</td></tr>
+          <tr><td>2</td><td>Q&A 2</td><td>이**</td><td>2</td><td>답변완료</td></tr>
+          <tr><td>3</td><td>Q&A 3</td><td>박**</td><td>3</td><td>답변완료</td></tr>
+          <tr><td>4</td><td>Q&A 4</td><td>최**</td><td>4</td><td>답변완료</td></tr>
+         </tbody>
+        </table>
+        <button id="back" onclick=location.href='noticeBoard.html'>뒤로가기</button>
+        <button id="question" onclick=location.href=''>질문하기</button>
+      </div>
+      
+     </div>
     
-    <table id="tb2">
-      <tr><th>No.</th><th>제목</th><th>등록일</th><th>조회수</th></tr>
-      <tr><td>1</td><td>공지사항1</td><td>2022.02.28</td><td>1</td></tr>
-      <tr><td>2</td><td>공지사항2</td><td>2022.03.14</td><td>2</td></tr>
-      <tr><td>3</td><td>공지사항3</td><td>2022.03.25</td><td>3</td></tr>
-      <tr><td>4</td><td>공지사항4</td><td>2022.04.06</td><td>4</td></tr>
-    </table>
     
-    <table>
-      <tr></tr>
-    </table>
+    
+    
+    <div id="page">
+      <a class=page-a href="" type="button">《</a>
+      <a class=page-a href="" type="button">1</a>
+      <a class=page-a href="" type="button">2</a>
+      <a class=page-a href="" type="button">3</a>
+      <a class=page-a href="" type="button">4</a>
+      <a class=page-a href="" type="button">5</a>
+      <a class=page-a href="" type="button">》</a>
+    </div>
+    
+    
     
   </div>
-    
-    
-  </div>
-  
 </div>
 
 
@@ -112,8 +149,8 @@ init();
 
 //공지테이블//
 function view(arg) {
-  var t1 = document.getElementById("tb1");
-  var t2 = document.getElementById("tb2");
+  var t1 = document.getElementById("view1");
+  var t2 = document.getElementById("view2");
   
   if(arg == 1) {
     t1.style.display="block";
@@ -154,6 +191,9 @@ function view(arg) {
        $('#datepicker').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)            
    });
 
+
+
+    
 </script>
 
 
