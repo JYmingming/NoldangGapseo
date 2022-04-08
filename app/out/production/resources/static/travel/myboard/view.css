@@ -1,3 +1,7 @@
+.container {
+    margin-bottom: 20px;
+}
+
 .bi-j :hover {
     border: 2px solid #fb9300;
     border-radius: 20px;
@@ -33,7 +37,7 @@
 #in-adress {
     right: 0px;
     text-align: end;
-    color: #dfdfde;
+    color: #d1d1d1;
 }
 
 .contents {
