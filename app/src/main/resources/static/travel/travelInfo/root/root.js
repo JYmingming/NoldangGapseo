@@ -1,5 +1,3 @@
-$(function () {});
-
 // ---- 뒤로가기 ----
 $('.bi').on('click', function (e) {
     e.preventDefault();
@@ -8,7 +6,7 @@ $('.bi').on('click', function (e) {
 
 var swiper = new Swiper('.swiper', {
     loop: true,
-    slidesPerView: 5,
+    slidesPerView: 3,
     direction: getDirection(),
     navigation: {
         nextEl: '.swiper-button-next',
@@ -28,33 +26,11 @@ function getDirection() {
     return direction;
 }
 
-// $(function () {
-//     $('.center').slick({
-//         centerMode: true,
-//         centerPadding: '60px',
-//         slidesToShow: 3,
-//         prevArrow: $('.prev-c'),
-//         nextArrow: $('.next-c'),
-//         responsive: [
-//             {
-//                 breakpoint: 768,
-//                 settings: {
-//                     arrows: false,
-//                     centerMode: true,
-//                     centerPadding: '40px',
-//                     slidesToShow: 3,
-//                 },
-//             },
-//             {
-//                 breakpoint: 480,
-//                 settings: {
-//                     arrows: false,
-//                     centerMode: true,
-//                     centerPadding: '40px',
-//                     slidesToShow: 1,
-//                 },
-//             },
-//         ],
-//     });
-// });
-// // ---- slick ----
+// ---- map ----
+var container = document.getElementById('map');
+
+var options = {
+    center: new kakao.maps.LatLng(33.374, 126.557),
+    level: 10,
+};
+var map = new kakao.maps.Map(container, options);

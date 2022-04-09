@@ -33,25 +33,27 @@
                     fill-rule="evenodd"
                     d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
                 />            
-            <div class="swiper w-100">
+            <div class="swiper w-75">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">day 1</div>
-                    <div class="swiper-slide">Resize me!</div>
-                    <div class="swiper-slide">Resize !</div>
-                    <div class="swiper-slide">Resize !</div>
-                    <div class="swiper-slide">Resize !</div>
-                    <div class="swiper-slide">Resize !</div>
-                    <div class="swiper-slide">Resize !</div>
-                    <div class="swiper-slide">Resize !</div>
-                    <div class="swiper-slide">Resize !</div>
+                    <div class="swiper-slide">day <span>1</span></div>
+                    <div class="swiper-slide">day <span>2</span></div>
+                    <div class="swiper-slide">day <span>3</span></div>
+                    <div class="swiper-slide">day <span>4</span></div>
                 </div>
                 <div class="swiper-button-next next-c"></div>
                 <div class="swiper-button-prev"></div>
             </div>
-            <div class="map"></div>
-            <div class="root-container"></div>
+            <div class="map w-100" id="map"></div>
+            <div class="root-container w-100 d-flex">
+                <div class="number w-25"></div>
+                <div class="des-container w-75">
+                    <div class="des-box">
+
+                    </div>
+                </div>
+            </div>
         </div>
-        <script src="/node_modules/slick-carousel/slick/slick.js"></script>
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=03ea894305aadede3b9b7340a5655aa5"></script>
         <script src="/node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
         <script src="root.js" type="module"></script>
     </body>
