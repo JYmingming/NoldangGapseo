@@ -110,6 +110,7 @@
   background-color: #f9f9f9;
   color: orange;
   margin: 3px;
+  cursor:pointer
   }
 
 
@@ -133,6 +134,7 @@
   color: black;
   font-size:15px;
   font-weight:400;
+  cursor:pointer
   }
   
   .clicked {
