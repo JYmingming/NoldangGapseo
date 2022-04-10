@@ -24,10 +24,8 @@ $('.invite-box').click(function (e) {
 $('.travel-weather').click(async function (e) {
     e.preventDefault();
     // $('#weatherModal').modal('show');
-    const ddd = await mm();
-    ddd.map((m) => {
-        console.log('mm:::', m.nickName);
-    });
+    const ddd = await userList();
+    ddd?.map(m => dmkl)
 });
 
 // ---------------------------

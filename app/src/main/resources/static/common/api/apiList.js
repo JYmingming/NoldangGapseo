@@ -1,4 +1,7 @@
-const PATH = {
+export const PATH = {
+    USER: {
+        list: `/user/list`,
+    },
     userList: `/user/list`,
 };
 
@@ -15,9 +18,19 @@ export async function dateFormat(colon, date) {
     return formatDate;
 }
 
-export async function userList() {
+const aa = {
+  id : 'aaa',
+  pasw : 'eeee',
+  email : 'aa@test.com'
+}
+
+
+userList(aa)
+
+
+export async function userList(user = {}) {
     try {
-        const response = await axios(PATH.userList);
+        const response = await axios(PATH.USER.list)
         return response.data;
     } catch (e) {
         console.log(e);
@@ -26,7 +39,7 @@ export async function userList() {
 
 export async function mm() {
     try {
-        const response = await fetch(PATH.userList).then(function (res) {
+        const response = await fetch(PATH.USER.list).then(function (res) {
             return res.json();
         });
         return response;
