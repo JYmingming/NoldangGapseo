@@ -1,0 +1,53 @@
+.tag-reset{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-inline-start: 0;
+    margin-inline-start: 0;
+
+}
+#wrap{
+
+}
+.container{
+    border:1px solid black;
+}
+
+.mini-container {
+    border: 1px solid #5a283d;
+}
+.tap-menu{
+    margin: 5vh auto 0 auto;
+
+    width: 30vw;
+    height: 36px;
+    border: 1px solid black;
+}
+.content-title{
+    margin: 6vh auto 0 auto;
+    text-align: center;
+}
+
+
+.search-option{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+.search-value{
+    height: 300px;
+    border: 1px solid black;
+}
+.search{
+    margin-top: 4vh;
+}
+
+
+
+
+.result{
+    margin-top: 10vh;
+    height: 500px;
+    border: 1px solid black;
+}
+
