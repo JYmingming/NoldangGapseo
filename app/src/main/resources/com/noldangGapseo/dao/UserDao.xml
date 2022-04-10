@@ -29,7 +29,7 @@
     <select id="findAll" resultMap="userMap">
         select *
         from user u
-        where not id = 'admin'
+        where not user_id = 1
     </select>
 
     <select id="findNickname" parameterType="String" resultMap="userMap">

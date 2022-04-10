@@ -1,4 +1,4 @@
-import { userList, mm } from '../../common/api/apiList.js';
+import { userList, mm } from '../../common/api/apiList';
 
 // --------모달----------
 
