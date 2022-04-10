@@ -2,7 +2,9 @@ export const PATH = {
     USER: {
         list: `/user/list`,
     },
-    userList: `/user/list`,
+    DESTINATION: {
+        userList: `/destination/user/list`,
+    },
 };
 
 export async function dateFormat(colon, date) {
@@ -18,19 +20,9 @@ export async function dateFormat(colon, date) {
     return formatDate;
 }
 
-const aa = {
-  id : 'aaa',
-  pasw : 'eeee',
-  email : 'aa@test.com'
-}
-
-
-userList(aa)
-
-
-export async function userList(user = {}) {
+export async function userList() {
     try {
-        const response = await axios(PATH.USER.list)
+        const response = await axios(PATH.USER.list);
         return response.data;
     } catch (e) {
         console.log(e);
