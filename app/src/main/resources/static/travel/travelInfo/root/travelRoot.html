@@ -35,21 +35,69 @@
                 />            
             <div class="swiper w-75">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">day <span>1</span></div>
-                    <div class="swiper-slide">day <span>2</span></div>
-                    <div class="swiper-slide">day <span>3</span></div>
-                    <div class="swiper-slide">day <span>4</span></div>
+                    <div class="swiper-slide">Day <span>1</span></div>
+                    <div class="swiper-slide">Day <span>2</span></div>
+                    <div class="swiper-slide">Day <span>3</span></div>
+                    <div class="swiper-slide">Day <span>4</span></div>
                 </div>
                 <div class="swiper-button-next next-c"></div>
-                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-prev prev-c"></div>
             </div>
             <div class="map w-75 align-self-center" id="map"></div>
-            <div class="root-container w-100 d-flex">
-                <div class="number w-25"></div>
-                <div class="des-container w-75">
-                    <div class="des-box">
-
+            <div class="root-container w-75 d-flex align-self-center">
+                <div class="number-container w-25 d-flex flex-column align-items-end">
+                    <div class="number-box w-50 d-flex flex-column align-items-center">
+                        <div class="b-num">1</div>
+                        <div class="b-line"></div>
+                        <div class="b-num">2</div>
+                        <div class="b-line"></div>
                     </div>
+                </div>
+                <div class="des-container w-75 d-flex flex-column justify-content-lg-start">
+                    <!--여행지 박스 s-->
+                    <div class="des-box d-flex w-50">
+                        <div class="d-content-wrap d-flex flex-column w-75 justify-content-around">
+                            <div class="des-header d-flex justify-content-evenly align-items-center">
+                                <div class="d-kinds" data-color="blue" >명소</div>
+                                <h4 class="d-name w-50">아침하늘</h5>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f54748" class="bi bi-trash" viewBox="0 0 16 16">
+                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                </svg>
+                            </div>
+                            <div class="des-body">
+                                <h6 class="w-75" style="margin-left: 5%;">아름다운 하늘과 바다가 있는 곳 제주도가 처음이라면 꼭 가봐야 할 곳</h6>
+                            </div>
+                        </div>
+                        <div class="grap-wrap w-25">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-chevron-bar-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M3.646 10.146a.5.5 0 0 1 .708 0L8 13.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-4.292a.5.5 0 0 0 .708 0L8 2.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708zM1 8a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 8z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <!--여행지 박스 e-->
+                    <!--여행지 박스 s-->
+                    <div class="des-box d-flex w-50">
+                        <div class="d-content-wrap d-flex flex-column w-75 justify-content-around">
+                            <div class="des-header d-flex justify-content-evenly align-items-center">
+                                <div class="d-kinds" data-color="blue" >명소</div>
+                                <h4 class="d-name w-50">아침하늘</h5>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f54748" class="bi bi-trash" viewBox="0 0 16 16">
+                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                </svg>
+                            </div>
+                            <div class="des-body">
+                                <h6 class="w-75" style="margin-left: 5%;">아름다운 하늘과 바다가 있는 곳 제주도가 처음이라면 꼭 가봐야 할 곳</h6>
+                            </div>
+                        </div>
+                        <div class="grap-wrap w-25">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-chevron-bar-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M3.646 10.146a.5.5 0 0 1 .708 0L8 13.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-4.292a.5.5 0 0 0 .708 0L8 2.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708zM1 8a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 8z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <!--여행지 박스 e-->
                 </div>
             </div>
         </div>
