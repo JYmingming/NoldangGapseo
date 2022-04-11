@@ -194,7 +194,7 @@ li{
 
 #second_table{
     font-size: 1vw;
-    margin-top: 5vh;
+    margin-top: 5.8vh;
     margin-left: 2.5vw;
     width: 45vw;
     height: 40vh;
@@ -469,9 +469,18 @@ li{
 .btn_box {
     margin-left: 27.5vw;
     width: 20vw;
-    height: 5vh;
+    height: 7vh;
     float: left;
     overflow: hidden;
+}
+
+.paging {
+    margin-top: 4vh;
+    margin-right: 42vw;
+}
+
+.page-link {
+    color: rgb(251, 147, 0);
 }
 
 #btn2{
