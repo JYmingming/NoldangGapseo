@@ -30,7 +30,7 @@
     <div class="row">
 
       <div class="col-3">
-        <div class="card">
+        <div class="card" onClick =>
           <img src="/img/SALON de LAVANT3.jpg" class="card-img-top"
             alt="...">
           <div class="card-body">
@@ -142,6 +142,14 @@
 			$(".btn-like").click(function() {
 				$(this).toggleClass("done");
 			})
+			
+			     $(".card").click(function() {
+			    	 location.href = "/userDestination/userDestinationDtl2.html"
+			    	 
+      })
+
+			
+			
 		</script>
 
   <script>
@@ -153,7 +161,7 @@
 				return response.json();
 			}).then(function(result) {
 
-				console.log(result.userList);
+			 	console.log(result.userList);
 				for (var i = 0; i < 8; i++) {
 					b[i].innerHTML = result.userList[i].nickName;
 				}

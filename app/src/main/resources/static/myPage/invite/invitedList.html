@@ -2,10 +2,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>계정관리</title>
+<title>그룹태그</title>
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="infoManage.css">
+    <link rel="stylesheet" type="text/css" href="invitedList.css">
     <script>
             $(document).ready(function () {
                 $('.headers').load('../../common/header/header.html');
@@ -24,17 +24,8 @@
           <div class="first_box3">
               <ul class="row">
                   <li class ="col-3"">
-                    <h5 id= "col1">계정관리</h5>
+                    <h5 id= "col1">초대된 목록</h5>
                   </li>
-                  <li class ="col-3">
-                    <h5 id="col2"><a href="#">내 정보</a></h5>
-                  </li>
-                  <li class ="col-3">
-                    <h5 id="col3" a href="#" onclick="location.href='password.html'"><a href="#">비밀번호 변경</a></h5>
-                  </li>
-                  <li class ="col-3">
-                    <h5 id="col4" a href="#" onclick="location.href='withDrawal.html'"><a href="#">회원탈퇴</a></h5>
-                  </li>   
                </ul>
                
           </div>
@@ -61,7 +52,7 @@
                     <table>
                         <tbody>
                           <tr>
-                            <td id="img1" a href="#" onclick="location.href='infoManage.html'"></td>
+                            <td id="img1" a href="#" onclick="location.href='../info/infoManage.html'"></td>
                             <td id="img2" a href="#" onclick="location.href='../tag/groupTag.html'"></td>
                           </tr>
                           <tr>
@@ -69,8 +60,8 @@
                             <td id="img2_text">그룹태그</td>
                           </tr>
                           <tr>
-                            <td id="img3"  a href="#" onclick="location.href='../wishList/wishList.html'"></td>
-                            <td id="img4" a href="#" onclick="location.href='../invite/invitedList.html'"></td>
+                            <td id="img3" a href="#" onclick="location.href='../wishList/wishList.html'"></td>
+                            <td id="img4" a href="#" onclick="location.href='invitedList.html'"></td>
                           </tr>
                           <tr>
                             <td id="img3_text">위시리스트</td>
@@ -82,17 +73,45 @@
               </div>
           </div>
           <div class="second_box3">
-              <table>
+              <table id="first_table">
                 <tbody>
                   <tr>
-                    <td id="td-1">닉네임</td><td id="null"><span>빙수</span></td>
+                    <td id="td-1">초대</td>
+                    <td id="td-2"><input id="invite" type="email" placeholder="초대를 보낼 유저의 이메일이나 닉네임을 입력해주세요."></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table id="second_table">
+                <tbody>
+                  <tr>
+                    <td id="tr-check"></td>
+                    <td id="tr-nick">닉네임</td>
+                    <td id="tr-email">이메일</td>
                   </tr>
                   <tr>
-                    <td id="td-2">휴대폰 번호</td><td id="null"><span>010-0000-0000</span></td>
+                    <td id="td-check">
+                      <input type="checkbox" id="checkbox">
+                    <td id="td-nick">빙수</td>
+                    <td id="td-email">test@test.com</td>
                   </tr>
                   <tr>
-                    <td id="td-3">이메일</td><td id="null"><span>test@test.com</span></td>
-                  </tr>                  
+                    <td id="td-check">
+                      <input type="checkbox" id="checkbox">
+                    <td id="td-nick">null</td>
+                    <td id="td-email">null</td>
+                  </tr>
+                  <tr>
+                    <td id="td-check">
+                      <input type="checkbox" id="checkbox">
+                    <td id="td-nick">null</td>
+                    <td id="td-email">null</td>
+                  </tr>
+                  <tr>
+                    <td id="td-check">
+                      <input type="checkbox" id="checkbox">
+                    <td id="td-nick">null</td>
+                    <td id="td-email">null</td>
+                  </tr>
                 </tbody>
               </table>
           </div>
@@ -104,23 +123,37 @@
           <div class="third_box2"></div>
           <div class="third_box3">
             <div class="btn_box">
-                <button id="btn2" a href="#" onclick="location.href='infoManage_edit.html'">수정하기</button>
+                <button id="btn2" >삭제</button>
+            </div>
+            <div class="paging d-flex justify-content-center">
+                <nav aria-label="Page navigation example" class="paging">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
           </div>
           <div class="third_box4"></div>
       </div>
     </div>
-      
-  
-    
-  
-
   
 
   <footer>
   
   </footer>
-  
-<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+
+  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
 </body>
 </html>

@@ -30,55 +30,69 @@
 
     <div class="travelListDtlCntn">
       <div class="title">제목</div>
-      <div style="float: left; width: 33%; margin: 4px">nickname</div>
+
+      <div style="float: left; width: 33%; margin-left: 25px">nickname</div>
+
       <div
-        style="float: right; width: 33%; margin: 4px; text-align: right;">2022-04-04</div>
+        style="float: right; width: 33%; margin-right: 25px; text-align: right;">2022-04-04</div>
+
 
       <div class="picture" style="text-align: center;">
         <img src="/img/제주도카페_뷰스트_03.jpg"
-          style="width: 600px; height: 400px; text-align: center;">
+          style="width: 600px; text-align: center;">
       </div>
-      <div class="page-dot">페이지표시</div>
-      <div data-role="footer" data-position="fixed">
-        <span class="ui-title"> <!-- to have the div centered in footer -->
-          <div id="navigator">
-            <a href="#p1" class="activeSlide">1</a> <a href="#p2">2</a>
-            <a href="#p3">3</a>
-          </div>
-        </span>
+      <div class="page-dot"; style = "text-align: center;"">
+        <div data-role="footer" data-position="fixed">
+          <span class="ui-title"> <!-- to have the div centered in footer -->
+            <div id="navigator">
+              <a href="#p1" class="activeSlide">1</a> <a href="#p2">2</a>
+              <a href="#p3">3</a>
+            </div>
+          </span>
+        </div>
+      </div>
+
+      <div class="content" style="margin: 25px">여러분~!~!~! 볶음밥 새우밥
+        동치미 국수 다 맛있어요~!~! 근데 사장님 출근이 좀 오락가락 하셔요🥲 그래도 동치미 국수 랑 초벌돼지구이
+        조합이 너무 맛있으니까 꼭 한번 가보셔요~!...</div>
+
+    </div>
+
+    <div class="commentCntn">
+      <div>
+        <span class="icon">icon</span> <span class="nick">nickname</span>
+        <span>commnet</span> <a>수정</a> <a>삭제</a> <a>신고</a>
       </div>
 
 
-      <div class="content">content 텍스트</div>
+
+
+
 
     </div>
 
 
-  </div>
 
 
 
-
-
-  <script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
-  <script>
-			$(".btn-like").click(function() {
-				$(this).toggleClass("done");
-			})
-		</script>
-  <script>
-			$(document).on(
-					"pagebeforeshow",
-					"[data-role=page]",
-					function() {
-						var active = "#" + $.mobile.activePage[0].id;
-						var active_index = $(active).index();
-						$(".activePage").removeClass("activePage");
-						$("#navigator a", this).eq(active_index).addClass(
-								"activePage");
-					});
-		</script>
-
+    <script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script>
+					$(".btn-like").click(function() {
+						$(this).toggleClass("done");
+					})
+				</script>
+    <script>
+					$(document).on(
+							"pagebeforeshow",
+							"[data-role=page]",
+							function() {
+								var active = "#" + $.mobile.activePage[0].id;
+								var active_index = $(active).index();
+								$(".activePage").removeClass("activePage");
+								$("#navigator a", this).eq(active_index)
+										.addClass("activePage");
+							});
+				</script>
 </body>
 
 </html>

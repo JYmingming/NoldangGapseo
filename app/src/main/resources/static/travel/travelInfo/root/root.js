@@ -5,7 +5,7 @@ $('.bi').on('click', function (e) {
 });
 
 var swiper = new Swiper('.swiper', {
-    loop: true,
+    slidesPerGroup: 3,
     slidesPerView: 3,
     direction: getDirection(),
     navigation: {
@@ -31,6 +31,6 @@ var container = document.getElementById('map');
 
 var options = {
     center: new kakao.maps.LatLng(33.374, 126.557),
-    level: 10,
+    level: 9,
 };
 var map = new kakao.maps.Map(container, options);
