@@ -1,7 +1,11 @@
 package com.noldangGapseo.domain;
 
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 @Builder
@@ -11,13 +15,11 @@ import lombok.experimental.Accessors;
 @EqualsAndHashCode(callSuper=false)
 @Accessors(chain = true)
 public class ApiResponse {
-// 실패시
-// resCode = "0000"
-// resStatus = "fail"
+  // 실패시
+  // resCode = "0000"
+  // resStatus = "fail"
+  private String resCode = "1111";
+  private String resStatus = "success";
 
-
- private String resCode = "1111";
- private String resStatus = "success";
-
- private  Object data;
+  private  Object data;
 }
