@@ -2,6 +2,9 @@ export const PATH = {
     USER: {
         list: `/user/list`,
     },
+    DESTINATION: {
+        userList: `/destination/user/list`,
+    },
 };
 
 export async function dateFormat(colon, date) {
