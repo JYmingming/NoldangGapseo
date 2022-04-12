@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <title>Noldang</title>
   <link rel="stylesheet" type="text/css" href="noticeBoard.css">
+  <script src="jquery-1.12.4.min.js"></script>
+  <script src="noticeBoard.js" type="text/javascript"></script>
 </head>
 <body>
 <div id="header">                      <!-- 머리 -->
@@ -41,7 +43,7 @@
     <div id="body-d">
       <table>
         <tr>
-         <th><input class="b-button" type="button" value="공지사항" onClick="view(1)"></th>
+         <th><input class="b-button clicked" type="button" value="공지사항" onClick="view(1)"></th>
          <th><input class="b-button" type="button" value="FAQ BEST10" onClick="view(2)"></th>
         </tr>  
       </table> 
@@ -75,84 +77,6 @@
   </div>
   
 </div>
-
-
-<script type="text/javascript">
-//검색어
-var ab = document.getElementsByClassName("a-button");
-
-
-function handleClick(event) {
-  console.log(event.target);
-
-  console.log(event.target.classList);
-
-  if (event.target.classList[1] === "clicked") {
-    event.target.classList.remove("clicked");
-  } else {
-    for (var i = 0; i < ab.length; i++) {
-      ab[i].classList.remove("clicked");
-    }
-
-    event.target.classList.add("clicked");
-  }
-}
-
-function init() {
-  for (var i = 0; i < ab.length; i++) {
-    ab[i].addEventListener("click", handleClick);
-  }
-}
-
-init();
-
-//공지사항//
-var ab = document.getElementsByClassName("b-button");
-
-
-function handleClick(event) {
-  console.log(event.target);
-
-  console.log(event.target.classList);
-
-  if (event.target.classList[1] === "clicked") {
-    event.target.classList.remove("clicked");
-  } 
-  else {
-    for (var i = 0; i < ab.length; i++) {
-      ab[i].classList.remove("clicked");
-    }
-
-    event.target.classList.add("clicked");
-  }
-}
-
-function init() {
-  for (var i = 0; i < ab.length; i++) {
-    ab[i].addEventListener("click", handleClick);
-  }
-}
-
-init();
-
-//공지테이블//
-function view(arg) {
-  var t1 = document.getElementById("tb1");
-  var t2 = document.getElementById("tb2");
-  
-  if(arg == 1) {
-    t1.style.display="block";
-    t2.style.display="none";
-  } 
-  else {
-    t2.style.display="block";
-    t1.style.display="none";
-  }
-}
-
-//공지 세부 사항//
-
-</script>
 
 
 </body>

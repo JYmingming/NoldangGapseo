@@ -38,12 +38,12 @@
   }
   #body {
     width:600px;
-    height:600px;
+    height:800px;
     position:absolute;
     left:50%;
-    top:60%;
+    top:55%;
     margin-left:-300px;
-    margin-top:-300px;
+    margin-top:-200px;
     background-color: white;  /** 작업 끝나면 흰색으로 **/
   }
   
@@ -115,7 +115,6 @@
   position: relative;
   width: 600px;
   top: 15%;
-
   }
   .b-button {
   position:relative;
@@ -127,6 +126,7 @@
   font-size:15px;
   font-weight:400;
   left: 100px;
+  cursor:pointer;
   }
   
   .clicked {
@@ -137,43 +137,86 @@
   #body-e {                 /* 공지사항 메인 폼*/
   position:relative;
   width: 600px;
-  height: 300px;
+  height: 250px;
   background-color: #f9f9f9;
   color: black;
-  top: 14.5%;
+  top: 12.5%;
   }
  
-
-    #tb1 {                      /*공지테이블*/
-    table-layout:fixed;
-    border-collapse: collapse;
-    display: none;
-    }  
-    #tb1 th {
-      background: #dfdfdf;
-      text-align: center;
-    }
-    #tb1 th, #tb1 td {
-      padding: 3px;
-      width: 600px;
-      border: 1px solid #ddd;
-      border-left: none;
-      border-right: none;
-    }
-
-    #tb1 tr td:first-child{
-      text-align: center;
-    }
-  
-  
-  #tb2 {
-  position: absolute;
+           
+    
+  #view-box {                   /*공지테이블*/
+  position:relative;
+  top:5px;
+  word-spacing:410px;
+  }
+  #view2 {  
+  table-layout:fixed;
+  border-collapse: collapse;
   display: none;
-  left: 10%;
+  } 
+  #tb1 ,#tb2{                      
+  table-layout:fixed;
+  border-collapse: collapse;
+  }  
+  #tb1 th, #tb2 th {
+   background: #dfdfdf;
+   text-align: center;
+  }
+  #tb1 th, #tb1 td, #tb2 th, #tb2 td {
+  padding: 3px;
+  width: 600px;
+  border: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+  text-align: center;
+  }
+
+  #tb1 tr td:first-child, #tb2 tr td:first-child{
+  text-align: center;
   }
   
- 
+  #back {                       /*하단 뒤로가기*/
+  position: relative;
+  float: right; 
+  top: 130px;
+  background-color: white;
+  color: black;
+  font-size:15px;
+  border-color: #dfdfdf;
+  margin: 3px;
+  }
+  #back:focus {
+  background-color: orange;
+  color: white;
+  }
+  #question {
+   position: relative;
+  float: right; 
+  top: 130px;
+  background-color: white;
+  color: black;
+  font-size:15px;
+  border-color: #dfdfdf;
+  margin: 3px;
+  }
+  #question:focus {
+  background-color: orange;
+  color: white;
+  }
   
   
+  #page {
+  position: relative;
+  top: 200px;
+  text-align: center;
+  }
   
-
+  .page-a{
+  padding: 5px;
+  border: 1px solid #ddd;
+  
+  }
+  .page-a:focus {
+  background-color: orange;
+}

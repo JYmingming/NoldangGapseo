@@ -41,7 +41,7 @@
     height:600px;
     position:absolute;
     left:50%;
-    top:60%;
+    top:70%;
     margin-left:-300px;
     margin-top:-300px;
     background-color: #f9f9f9;
@@ -58,10 +58,10 @@
     border-color: #F3E3B0;
   }
   #img-1 {
-	  position: relative;
-	  width: 10%;
-	  bottom: 10%;
-	  }
+    position: relative;
+    width: 10%;
+    bottom: 10%;
+    }
   
   #Service-center {
     position:absolute;
@@ -110,6 +110,7 @@
   background-color: #f9f9f9;
   color: orange;
   margin: 3px;
+  cursor:pointer
   }
 
 
@@ -133,6 +134,7 @@
   color: black;
   font-size:15px;
   font-weight:400;
+  cursor:pointer
   }
   
   .clicked {
@@ -161,9 +163,8 @@
   border: 0;
   background-color: #f9f9f9;
   margin: 3px;
-  
+  border-bottom: 1px solid orange ;
   }
   
   
   
-
