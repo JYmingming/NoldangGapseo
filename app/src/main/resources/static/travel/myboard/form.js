@@ -10,12 +10,8 @@ $('.tag-btn').on('click', function (e) {
     e.stopPropagation();
 
     // tag 색 바꾸기
-    if ($(this).hasClass('active')) {
-        $(this).removeClass('active');
-    } else {
-        $(this).addClass('active');
-    }
-    $('active').css({ 'background-color': '#0d6efd', color: 'white' });
+    $('.tag-btn').removeClass('d-select');
+    $(this).addClass('d-select');
 
     let t = $(e.target).data('val');
     $('.d-tag').attr('tagVal', t);
