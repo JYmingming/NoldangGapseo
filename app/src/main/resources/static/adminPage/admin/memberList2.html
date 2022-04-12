@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>어드민</title>
+    
     <link rel="stylesheet" type="text/css" href="memberList2.css">
     <style>
-table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-top :60px; margin-right :100px;}
- th{font-family: Comic Sans MS;border: thin solid #6495ed;padding: 2px;background-color: #fb9300;}
+table {border: gray; width: 100%;  border-radius :40px; 
+margin-top :60px; margin-right :100px; }
+ th{font-family: Comic Sans MS;border: thin solid #6495ed;padding: 2px;background-color: #fb9300; border-radius :10px; }
  td{font-family: Comic Sans MS;border: thin solid white;padding: 2px;text-align: center;}.odd{background:white;}
  img{padding:5px; border:solid; border-color: #dddddd #aaaaaa #aaaaaa #dddddd; border-width: 1px 2px 2px 1px; background-color:white;}
   </style>
@@ -28,15 +30,43 @@ table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-t
 <h1 class ="maintitle" >관리자 l 유저 관리</h1>
 
 
-<div class="container">
 <div id="input-form">
-            이메일 : <input type="text" id="keyword" />
+<select name="catgo"  >
+        <option value="title">회원번호</option>
+       
+        <option value="name">아이디</option>
+        <option value="content">이메일</option>
+          <option value="phone">전화번호</option>
+      </select>
+          <input type="text" id="keyword" />
         </div>
-  <table id="user-table">
-<tr><th colspan="9">회원목록</th></tr><tr><th>회원번호</th><th>이메일</th><th>전화번호</th><th>닉네임</th><th>회원가입일</th><th>회원탈퇴</th></tr>
+        <div class="container" >
+          <table id="products">
+         <form action="" id="setRows">
+      <span>
+        <input type="text" name="rowPerPage" value="7" size ="1"> 개씩 보기
+        
+      </span>
+    </form>
 
-<tr class="odd"><td  class="memberCenter" href="#" onclick="location.href='myinfo.html'">1,000</td>
-								
+
+
+
+<thead>
+<tr>
+<th>회원번호</th>
+<th>이메일</th>
+<th>전화번호</th>
+<th>닉네임</th>
+<th>회원가입일</th>
+<th>회원탈퇴</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+	<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1000</td>
 								<td>tjdgu22s23@naver.com</td>
 								<td>010-1234-5678</td>
 								<td>asd22</td>
@@ -44,7 +74,7 @@ table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-t
 								<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
 								
 	<tr>
-							<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,001</td>
+							<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1001</td>
 					
 							<td>tnqls112@gmail.com</td>
 							<td>010-5152-3357</td>
@@ -53,7 +83,7 @@ table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-t
 							<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
 							
 							
-<tr class="odd"><td class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,002</td>
+<tr><td class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1002</td>
 
 		
 						<td>glsng242@naver.com</td>
@@ -64,7 +94,7 @@ table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-t
 							<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
 						
 <tr>
-						<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,003</td>
+						<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1003</td>
 						
 						<td>hdfhh@hanmail.net</td>
 						<td>010-2547-7064</td>
@@ -74,9 +104,9 @@ table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-t
 							<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
 						
 						
-<tr class="odd">
+<tr>
 
-				<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,004</td>
+				<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1004</td>
 			
 				<td>kyuk@naver.com</td>
 				<td>010-3856-5869</td>
@@ -86,7 +116,7 @@ table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-t
 					<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
 				
 <tr>
-				<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,005</td>
+				<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1005</td>
 				
 				<td>gdfj53@naver.com</td>
 				<td>010-8569-2557</td>
@@ -94,8 +124,8 @@ table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-t
 				<td>2022-04-05</td>
 					<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
 				
-<tr class="odd">
-			<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,006</td>
+<tr>
+			<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1006</td>
 		
 			<td>fdsgg4@naver.com</td>
 			<td>010-4570-3668</td>
@@ -105,7 +135,7 @@ table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-t
 			
 			
 <tr>
-			<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,007</td>
+			<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1007</td>
 		
 			<td>hbcbc53@gmail.com</td>
 			<td>010-6856-4574</td>
@@ -113,8 +143,8 @@ table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-t
 			<td>2022-04-05 </td>
 				<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
 			
-<tr class="odd">
-			<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,008</td>
+<tr>
+			<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1008</td>
 			
 			<td>aasd123@naver.com</td>
 			<td>010-4555-3526</td>
@@ -123,7 +153,7 @@ table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-t
 				<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
 			
 <tr>
-			<td class="memberCenter"  a href="#" onclick="location.href='myinfo.html'">1,009</td>
+			<td class="memberCenter"  a href="#" onclick="location.href='myinfo.html'">1009</td>
 		
 			<td>ghfhf@hanmail.net</td>
 			<td>010-9253-1221</td>
@@ -131,8 +161,8 @@ table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-t
 			<td>2022-04-05</td>
 				<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
 			
-<tr class="odd">
-			<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,010</td>
+<tr>
+			<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1010</td>
 		
 			<td>adg53@naver.com</td>
 			<td>010-5745-1542</td>
@@ -141,7 +171,7 @@ table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-t
 				<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
 			
 <tr>
-			<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,011</td>
+			<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1011</td>
 		
 			<td>fdhh52@gmail.com</td>
 			<td>010-3252-7489</td>
@@ -150,9 +180,9 @@ table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-t
 				<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
 			
 			
-<tr class="odd">
+<tr>
 
-			<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,012</td>
+			<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1012</td>
 			
 			<td>fgdfg5@gmail.com</td>
 			<td>010-7945-1238</td>
@@ -161,7 +191,7 @@ table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-t
 				<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
 			
 <tr>
-			<td class="memberCenter"  a href="#" onclick="location.href='myinfo.html'">1,013</td>
+			<td class="memberCenter"  a href="#" onclick="location.href='myinfo.html'">1013</td>
 			
 			<td>rtuu65@naver.com</td>
 			<td>010-3463-7543</td>
@@ -169,8 +199,8 @@ table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-t
 			<td>2022-04-05 </td>
 			<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
 			
-<tr class="odd">
-			<td class="memberCenter"  a href="#" onclick="location.href='myinfo.html'">1,014</td>
+<tr>
+			<td class="memberCenter"  a href="#" onclick="location.href='myinfo.html'">1014</td>
 			
 			<td>5hhrt@naver.com</td>
 			<td>010-0343-1242</td>
@@ -180,7 +210,7 @@ table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-t
 			
 			
 <tr>
-			<td class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,015</td>
+			<td class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1015</td>
 	
 			<td>fdfg67@naver.com</td>
 			<td>010-8554-2345</td>
@@ -188,8 +218,8 @@ table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-t
 			<td>2022-04-05 </td>
 				<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
 			
-<tr class="odd">
-			<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,016</td>
+<tr>
+			<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1016</td>
 		
 			<td>hjkku75@naver.com</td>
 			<td>010-5674-2512</td>
@@ -198,7 +228,7 @@ table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-t
 				<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
 			
 <tr>
-			<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1,017</td>
+			<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1017</td>
 	
 			<td>area1234@naver.com</td>
 			<td>010-2345-6789</td>
@@ -210,23 +240,22 @@ table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-t
          
        
        
-       
+               </tbody>
         </table>
-    </form>
+    
     
 </div>
    
 
 
-</div>
+
 
 
 
             
 <div>
-            </tbody>
-        </table>
-    </form>
+    
+   
     
 </div>
 <style>
@@ -291,8 +320,8 @@ color : white;
 font-size:1.5em;
 border-radius : 5px;
 cursor : pointer;
-margin-left : 1400px;
-margin-top : 300px;
+margin-left : 1300px;
+margin-top : 400px;
 position: absolute;
   text-align: center;"> 탈퇴</button>
 <div class="modal hidden">
@@ -324,12 +353,84 @@ position: absolute;
         $(document).ready(function() {
             $("#keyword").keyup(function() {
                 var k = $(this).val();
-                $("#user-table > tbody > tr").hide();
-                var temp = $("#user-table > tbody > tr > td:nth-child(5n+2):contains('" + k + "')");
-
+                $("#products > tbody > tr").hide();
+                var temp = $("#products > tbody > tr > td:nth-child(5n+1):contains('" + k + "')");
+                
                 $(temp).parent().show();
             })
         })
         </script>
+        <script>
+var $setRows = $('#setRows');
+
+$setRows.submit(function (e) {
+  e.preventDefault();
+  var rowPerPage = $('[name="rowPerPage"]').val() * 1;// 1 을  곱하여 문자열을 숫자형로 변환
+
+//    console.log(typeof rowPerPage);
+
+  var zeroWarning = 'Sorry, but we cat\'t display "0" rows page. + \nPlease try again.'
+  if (!rowPerPage) {
+    alert(zeroWarning);
+    return;
+  }
+  $('#nav').remove();
+  var $products = $('#products');
+
+  $products.after('<div id="nav">');
+
+
+  var $tr = $($products).find('tbody tr');
+  var rowTotals = $tr.length;
+//  console.log(rowTotals);
+
+  var pageTotal = Math.ceil(rowTotals/ rowPerPage);
+  var i = 0;
+
+  for (; i < pageTotal; i++) {
+    $('<a href="#"></a>')
+        .attr('rel', i)
+        .html(i + 1)
+        .appendTo('#nav');
+  }
+
+  $tr.addClass('off-screen')
+      .slice(0, rowPerPage)
+      .removeClass('off-screen');
+
+  var $pagingLink = $('#nav a');
+  $pagingLink.on('click', function (evt) {
+    evt.preventDefault();
+    var $this = $(this);
+    if ($this.hasClass('active')) {
+      return;
+    }
+    $pagingLink.removeClass('active');
+    $this.addClass('active');
+
+    // 0 => 0(0*4), 4(0*4+4)
+    // 1 => 4(1*4), 8(1*4+4)
+    // 2 => 8(2*4), 12(2*4+4)
+    // 시작 행 = 페이지 번호 * 페이지당 행수
+    // 끝 행 = 시작 행 + 페이지당 행수
+
+    var currPage = $this.attr('rel');
+    var startItem = currPage * rowPerPage;
+    var endItem = startItem + rowPerPage;
+
+    $tr.css('opacity', '0.0')
+        .addClass('off-screen')
+        .slice(startItem, endItem)
+        .removeClass('off-screen')
+        .animate({opacity: 1}, 300);
+
+  });
+
+  $pagingLink.filter(':first').addClass('active');
+
+});
+
+
+$setRows.submit();</script>
 </body>
 </html>
