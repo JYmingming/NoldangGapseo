@@ -21,18 +21,20 @@
 
 
 <div class="container">
-    <form >
-        <table class="table" id="table">
+<div id="input-form" style="margin-left : 50px;">
+            글번호 : <input type="text" id="keyword" />
+        </div>
+  <table id="user-table">
            <thead>
   <tr>
-    <th class ="th-1">타입</th>
-    <th class ="th-2">글번호</th>
-    <th class ="th-3">신고자아이디</th>
-    <th class ="th-4">닉네임</th>
-    <th class ="th-5">이메일</th>
-    <th class ="th-6">신고사유</th>
-    <th class ="th-7">신고날짜</th>
-        <th class ="th-9">페이지로 이동</th>
+    <th >타입</th>
+    <th >글번호</th>
+    <th>신고자아이디</th>
+    <th>닉네임</th>
+    <th >이메일</th>
+    <th>신고사유</th>
+    <th>신고날짜</th>
+        <th>페이지로 이동</th>
   </tr>
 </thead>
 <tbody>
@@ -111,36 +113,23 @@
        <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
    
   </tr>
-    <div id="freetext1">
-                    ▷ 총 7개의 신고된 게시물이 있습니다.
-                </div>
-
-                <div id="select">
-
-          
-
-                    <form id="form" action="">
-                        <select name="type" id="">
-                            <option value="1">글번호</option>
-                            <option value="2">아이디</option>
-                            <option value="3">닉네임</option>
-                        </select>
-                    </form>
-
-                    <input id="selectinput" type="text">
-
-                   <button>검색</button>
-                </div>
-   <script>
-function deleteRow(ths){
-    var ths = $(ths);
     
-    ths.parents("tr").remove();
-}
-</script>
-
 </tbody>
 </table>
 </div>
+
+<script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script type="text/javascript"> 
+        $(document).ready(function() {
+            $("#keyword").keyup(function() {
+                var k = $(this).val();
+                $("#user-table > tbody > tr").hide();
+                var temp = $("#user-table > tbody > tr > td:nth-child(5n+2):contains('" + k + "')");
+
+                $(temp).parent().show();
+            })
+        })
+        </script>
+
 </body>
 </html>

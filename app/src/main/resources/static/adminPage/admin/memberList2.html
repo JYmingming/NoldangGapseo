@@ -5,11 +5,12 @@
     <title>어드민</title>
     <link rel="stylesheet" type="text/css" href="memberList2.css">
     <style>
-table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-top :60px;}
+table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-top :60px; margin-right :100px;}
  th{font-family: Comic Sans MS;border: thin solid #6495ed;padding: 2px;background-color: #fb9300;}
  td{font-family: Comic Sans MS;border: thin solid white;padding: 2px;text-align: center;}.odd{background:white;}
- img{padding:5px; border:solid; border-color: #dddddd #aaaaaa #aaaaaa #dddddd; border-width: 1px 2px 2px 1px; background-color:white;}</style>
-    
+ img{padding:5px; border:solid; border-color: #dddddd #aaaaaa #aaaaaa #dddddd; border-width: 1px 2px 2px 1px; background-color:white;}
+  </style>
+  
 </head>
 
 
@@ -26,21 +27,12 @@ table {border: medium solid gray;border-collapse: collapse;width: 100%; margin-t
 <hr>
 <h1 class ="maintitle" >관리자 l 유저 관리</h1>
 
-<div id="search_box">
-    <form action="/page/board/search_result.php" method="get" >
-      <select name="catgo" style =" margin-left : 210px; margin-top :30px;"  >
-        <option value="title">회원번호</option>
-       
-        <option value="name">이메일</option>
-        <option value="content">닉네임</option>
-          <option value="phone">전화번호</option>
-      </select>
-      <input type="text" name="search" size="40" required="required" /> <button>검색</button>
-    </form>
-    </div>
 
 <div class="container">
-<table>
+<div id="input-form">
+            이메일 : <input type="text" id="keyword" />
+        </div>
+  <table id="user-table">
 <tr><th colspan="9">회원목록</th></tr><tr><th>회원번호</th><th>이메일</th><th>전화번호</th><th>닉네임</th><th>회원가입일</th><th>회원탈퇴</th></tr>
 
 <tr class="odd"><td  class="memberCenter" href="#" onclick="location.href='myinfo.html'">1,000</td>
@@ -326,5 +318,18 @@ position: absolute;
 	closeBtn.addEventListener("click", closeModal);
 	openButton.addEventListener("click", openModal);
 </script>
+
+<script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script type="text/javascript"> 
+        $(document).ready(function() {
+            $("#keyword").keyup(function() {
+                var k = $(this).val();
+                $("#user-table > tbody > tr").hide();
+                var temp = $("#user-table > tbody > tr > td:nth-child(5n+2):contains('" + k + "')");
+
+                $(temp).parent().show();
+            })
+        })
+        </script>
 </body>
 </html>
