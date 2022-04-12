@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8" />
-        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>어드민</title>
     <link rel="stylesheet" type="text/css" href="TravelAdd.css">
 </head>
@@ -49,7 +49,7 @@
   </select>
 </form></td>
       <td class="td-2"><input size="5"></input></td>
-   <td><input type="text" id="address_kakao" name="address" readonly placeholder="주소검색"/></td>
+   <td><input type="text" id="address_kakao" name="address" readonly size="50"/></td>
    <td class="td-4"><input size="10"></input></td>
   <td class="td-5"><input size="15"></input></td>
     <td class ="td-6">  <input type="file" multiple class="d-file-up" name="" id="" /></td>
@@ -73,7 +73,7 @@ window.onload = function(){
         new daum.Postcode({
             oncomplete: function(data) { //선택시 입력값 세팅
                 document.getElementById("address_kakao").value = data.address; // 주소 넣기
-                document.querySelector("input[name=address_detail]").focus(); //상세입력 포커싱
+               
             }
         }).open();
     });
