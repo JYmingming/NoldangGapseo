@@ -41,7 +41,7 @@
     height:800px;
     position:absolute;
     left:50%;
-    top:45%;
+    top:55%;
     margin-left:-300px;
     margin-top:-200px;
     background-color: white;  /** 작업 끝나면 흰색으로 **/
@@ -126,6 +126,7 @@
   font-size:15px;
   font-weight:400;
   left: 100px;
+  cursor:pointer;
   }
   
   .clicked {

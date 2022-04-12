@@ -40,9 +40,20 @@ function view(arg) {
   var t2 = document.getElementById("view2");
   
   
+  
   if(arg == 1 ) {
     t1.style.display="block";
     t2.style.display="none";
+    
+    $.ajax({ 
+      url: "/notice/list",
+      type:"post",
+       success : function(data) {
+        $.each(data, function(i, dat) { 
+          $("#tb1").append("<tr><td>"+(i+1)+"</td><td>"+dat.title+"</td><td>"+dat.reg_date+"</td><td>"+dat.view_count+"</td></tr>");
+        });
+      },
+    });
   } 
   else {
     t2.style.display="block";
