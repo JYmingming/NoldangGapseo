@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+        <title>Update</title>
+        <link rel="stylesheet" href="../../node_modules/sweetalert2/dist/sweetalert2.min.css" />
+        <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css" />
+        <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="view.css" />
+    </head>
+    <body>
+        <div class="container d-flex flex-column">
+            <div class="bi-j">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    fill="currentColor"
+                    class="bi bi-arrow-left"
+                    viewBox="0 0 16 16"
+                    style="margin-bottom: 50px; margin-top: 50px"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+                    />
+                </svg>
+            </div>
+            <div class="content w-75 align-self-center d-flex flex-column align-items-center">
+                <div class="title w-75 d-flex flex-column align-items-center">
+                    <input type="text" value='{title}' class="in-title input-group-text w-75"></input>
+                    <div class="title-line w-75"></div>
+                </div>
+                <!--image container-s-->
+                <div
+                    id="carouselExampleInterval"
+                    class="carousel slide w-75"
+                    data-bs-ride="carousel"
+                    style="border-radius: 10px"
+                >
+                    <div class="carousel-inner" style="display: flex"> 
+                <!--image content-s-->       
+                        <div class="carousel-item active" data-bs-interval="2000">
+                            <img
+                                src="http://a.cdn-hotels.com/gdcs/production13/d298/6722a536-dc90-49b4-9987-4c0ce03105cc.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
+                                class="d-block h-auto w-100"
+                                alt="..."
+                                style="border-radius: 20px"
+                            />
+                        </div>
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <img
+                                src="http://a.cdn-hotels.com/gdcs/production153/d1329/551a0385-f7e0-4f7c-a407-43bdecddd4d4.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
+                                class="d-block h-auto w-100"
+                                alt="..."
+                                style="border-radius: 20px"
+                            />
+                        </div>
+                        <div class="carousel-item" data-bs-interval="2000">
+                            <img
+                                src="http://a.cdn-hotels.com/gdcs/production18/d313/28d7ddb1-12c5-4b47-b355-515eb4db0870.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
+                                class="d-block h-auto w-100"
+                                alt="..."
+                                style="border-radius: 20px"
+                            />
+                        </div>
+                        <!--image content-e-->
+                    </div>
+                    <button
+                        class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#carouselExampleInterval"
+                        data-bs-slide="prev"
+                    >
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                        class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#carouselExampleInterval"
+                        data-bs-slide="next"
+                    >
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <!--image container-e-->
+                <div class="adress w-75 d-flex justify-content-end">
+                    <input type="text" name="adress" id="in-adress" class="w-75 input-group-text" readonly value="{adress}">
+                </div>
+                <div class="contents w-75">
+                    <textarea name="contents" id="in-contents" cols="30" rows="10" class="w-100 input-group-text" value=`${kkk}`></textarea>
+                </div>
+            </div>
+            <div class="button-container d-flex justify-content-around" style="margin-top: 2em;">
+                <button type="button" class="btn btn-danger w-25">Delete</button>
+                <button type="button" class="btn btn-primary w-25">Update</button>               
+            </div>
+        </div>
+        <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+        <script src="view.js" type="module"></script>
+        <script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    </body>
+</html>

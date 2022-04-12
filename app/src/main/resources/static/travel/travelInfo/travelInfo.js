@@ -23,10 +23,11 @@ $('.invite-box').click(function (e) {
 // 날씨 모달
 $('.travel-weather').click(async function (e) {
     e.preventDefault();
+    console.log('lllll');
     // $('#weatherModal').modal('show');
-    const ddd = await mm();
+    const ddd = await userList();
     ddd.map((m) => {
-        console.log('mm:::', m.nickName);
+        console.log(m);
     });
 });
 

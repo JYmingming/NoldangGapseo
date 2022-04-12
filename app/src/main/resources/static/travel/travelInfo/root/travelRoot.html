@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <title>Root</title>
+        <link rel="stylesheet" href="/node_modules/sweetalert2/dist/sweetalert2.min.css" />
+        <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.css" />
+        <script src="../../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+        <link rel="stylesheet" href="/node_modules/slick-carousel/slick/slick.css">
+        <link rel="stylesheet" href="/node_modules/slick-carousel/slick/slick-theme.css">
+        <script src="https://kit.fontawesome.com/0b4dd5be7a.js" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="./root.css" />
+    </head>
+    <body>
+        <div class="container d-flex flex-column">
+             <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                fill="currentColor"
+                class="bi bi-arrow-left"
+                viewBox="0 0 16 16"
+                style="margin-bottom: 50px; margin-top: 50px"
+            >
+                <path
+                    fill-rule="evenodd"
+                    d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+                />            
+            <div class="swiper w-75">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">Day <span>1</span></div>
+                    <div class="swiper-slide">Day <span>2</span></div>
+                    <div class="swiper-slide">Day <span>3</span></div>
+                    <div class="swiper-slide">Day <span>4</span></div>
+                </div>
+                <div class="swiper-button-next next-c"></div>
+                <div class="swiper-button-prev prev-c"></div>
+            </div>
+            <div class="map w-75 align-self-center" id="map"></div>
+            <div class="root-container w-75 d-flex align-self-center">
+                <div class="number-container w-25 d-flex flex-column align-items-end">
+                    <div class="number-box w-50 d-flex flex-column align-items-center">
+                        <div class="b-num">1</div>
+                        <div class="b-line"></div>
+                        <div class="b-num">2</div>
+                        <div class="b-line"></div>
+                    </div>
+                </div>
+                <div class="des-container w-75 d-flex flex-column justify-content-lg-start">
+                    <!--여행지 박스 s-->
+                    <div class="des-box d-flex w-50">
+                        <div class="d-content-wrap d-flex flex-column w-75 justify-content-around">
+                            <div class="des-header d-flex justify-content-evenly align-items-center">
+                                <div class="d-kinds" data-color="blue" >명소</div>
+                                <h4 class="d-name w-50">아침하늘</h5>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f54748" class="bi bi-trash" viewBox="0 0 16 16">
+                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                </svg>
+                            </div>
+                            <div class="des-body">
+                                <h6 class="w-75" style="margin-left: 5%;">아름다운 하늘과 바다가 있는 곳 제주도가 처음이라면 꼭 가봐야 할 곳</h6>
+                            </div>
+                        </div>
+                        <div class="grap-wrap w-25">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-chevron-bar-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M3.646 10.146a.5.5 0 0 1 .708 0L8 13.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-4.292a.5.5 0 0 0 .708 0L8 2.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708zM1 8a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 8z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <!--여행지 박스 e-->
+                    <!--여행지 박스 s-->
+                    <div class="des-box d-flex w-50">
+                        <div class="d-content-wrap d-flex flex-column w-75 justify-content-around">
+                            <div class="des-header d-flex justify-content-evenly align-items-center">
+                                <div class="d-kinds" data-color="blue" >명소</div>
+                                <h4 class="d-name w-50">아침하늘</h5>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f54748" class="bi bi-trash" viewBox="0 0 16 16">
+                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                </svg>
+                            </div>
+                            <div class="des-body">
+                                <h6 class="w-75" style="margin-left: 5%;">아름다운 하늘과 바다가 있는 곳 제주도가 처음이라면 꼭 가봐야 할 곳</h6>
+                            </div>
+                        </div>
+                        <div class="grap-wrap w-25">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-chevron-bar-expand" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M3.646 10.146a.5.5 0 0 1 .708 0L8 13.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zm0-4.292a.5.5 0 0 0 .708 0L8 2.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708zM1 8a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 8z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <!--여행지 박스 e-->
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=04d2370bb5a7c0451b3db7bbd723c9d1"></script>
+        <script src="/node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+        <script src="root.js" type="module"></script>
+    </body>
+</html>

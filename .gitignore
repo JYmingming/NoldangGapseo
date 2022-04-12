@@ -2,6 +2,9 @@
 # Created by https://www.gitignore.io/api/java,linux,macos,gradle,windows,eclipse,java-web,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=java,linux,macos,gradle,windows,eclipse,java-web,visualstudiocode
 
+##application.porpertise
+application.properties
+
 ### Eclipse ###
 .metadata
 bin/

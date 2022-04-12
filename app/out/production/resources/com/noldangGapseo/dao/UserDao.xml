@@ -10,15 +10,26 @@
     </resultMap>
 
     <insert id="insert" parameterType="user">
-        insert into user(email,id,pwd,nick_name,phone)
-        values(#{email},#{id},password(#{password}),#{nickName},#{phone})
+        insert into user(email,pwd,nick_name,phone)
+        values(#{email},password(#{password}),#{nickName},#{phone})
     </insert>
+
+    <select id="findByEmailAndPassword" resultMap="userMap">
+        select
+            user_id,
+            nick_name,
+            email
+        from
+            user
+        where
+            email=#{email} and pwd=password(#{password})
+    </select>
 
 
     <select id="findAll" resultMap="userMap">
         select *
         from user u
-        where not id = 'admin'
+        where not user_id = 1
     </select>
 
     <select id="findNickname" parameterType="String" resultMap="userMap">

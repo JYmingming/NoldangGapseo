@@ -1,0 +1,47 @@
+.container {
+    margin-bottom: 20px;
+}
+
+.bi-j :hover {
+    border: 2px solid #fb9300;
+    border-radius: 20px;
+}
+
+.content {
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 5%;
+}
+.input-group-text {
+    border: 0px;
+    background-color: white;
+}
+.input-group-text:focus {
+    outline: none;
+}
+.title {
+    margin-bottom: 3em;
+}
+.title > div {
+    border: 1px solid gray;
+}
+.in-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.adress {
+    margin: 2em 0px;
+}
+#in-adress {
+    right: 0px;
+    text-align: end;
+    color: #d1d1d1;
+}
+
+.contents {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 2%;
+}

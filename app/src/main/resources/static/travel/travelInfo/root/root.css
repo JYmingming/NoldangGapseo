@@ -1,0 +1,121 @@
+.map {
+    height: 60vh;
+    margin-top: 5%;
+}
+/* .swiper {
+    width: 100%;
+    height: 100%;
+} */
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+@media (max-width: 760px) {
+    .swiper-button-next {
+        right: 20px;
+        transform: rotate(90deg);
+    }
+
+    .swiper-button-prev {
+        left: 20px;
+        transform: rotate(90deg);
+    }
+}
+.next-c,
+.prev-c {
+    color: rgb(251, 147, 0);
+}
+.root-container {
+    margin-top: 3em;
+    height: 60vh;
+}
+.number-container,
+.des-container {
+    padding: 3%;
+}
+
+.number-box {
+    border: 1px solid white;
+    height: 100%;
+    margin-top: 12%;
+}
+.b-num {
+    width: 2em;
+    height: 2em;
+    background-color: rgb(251, 147, 0);
+    border-radius: 50px;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    line-height: 1.8em;
+    box-shadow: rgba(136, 165, 191, 0.6) 6px 2px 16px 0px,
+        rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+.b-line {
+    width: 10px;
+    height: 20%;
+    background-color: rgba(251, 147, 0, 0.5);
+}
+
+.des-box {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    height: 25%;
+    padding: 1% 0px;
+    margin-bottom: 5%;
+}
+
+.d-kinds {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 20px;
+    padding: 0px 2%;
+}
+
+.d-kinds[data-color='blue'] {
+    border-color: #343f56;
+    color: #343f56;
+}
+.d-kinds[data-color='orange'] {
+    border-color: rgb(251, 147, 0);
+    color: rgb(251, 147, 0);
+}
+.d-kinds[data-color='green'] {
+    color: #a2d5ab;
+    border-color: #a2d5ab;
+}
+
+.d-name {
+    font-weight: bold;
+    margin: 0px;
+}
+.des-body > h6 {
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.grap-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bi-chevron-bar-expand {
+    font-weight: bolder;
+}

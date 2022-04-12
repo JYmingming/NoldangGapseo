@@ -30,15 +30,12 @@
     <div class="row">
 
       <div class="col-3">
-        <div class="card">
+        <div class="card" onClick =>
           <img src="/img/SALON de LAVANT3.jpg" class="card-img-top"
             alt="...">
           <div class="card-body">
             <h5 class="card-title">모뉴에트</h5>
-            <div class="like">
-              <span class="btn-like">❤️</span> <span
-                class="btn-like-cnt">31</span> 🗨20
-            </div>
+            <div class="like">❤️30🗨20</div>
           </div>
         </div>
       </div>
@@ -49,6 +46,7 @@
             alt="...">
           <div class="card-body">
             <h5 class="card-title">모뉴에트</h5>
+         <h5 class="card-title">모뉴에트</h5>
             <div class="like">❤️30🗨20</div>
           </div>
         </div>
@@ -139,9 +137,13 @@
 
   <script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
   <script>
-			$(".btn-like").click(function() {
-				$(this).toggleClass("done");
-			})
+     $(".card").click(function() {
+			    	 location.href = "/userDestination/userDestinationDtl2.html"
+			    	 
+      })
+
+			
+			
 		</script>
 
   <script>
@@ -153,7 +155,7 @@
 				return response.json();
 			}).then(function(result) {
 
-				console.log(result.userList);
+			 	console.log(result.userList);
 				for (var i = 0; i < 8; i++) {
 					b[i].innerHTML = result.userList[i].nickName;
 				}
