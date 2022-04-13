@@ -6,16 +6,10 @@
     margin-inline-start: 0;
 
 }
-#wrap{
-
-}
-.container{
-
+body{
+      overflow: auto;
 }
 
-.mini-container {
-
-}
 .tap-menu{
     margin: 5vh auto 0 auto;
     width: 30vw;
@@ -79,6 +73,7 @@
 }
 .search{
     margin-top: 4vh;
+
 }
 
 
@@ -120,7 +115,6 @@
 }
 
 .result-value{
-
     width: 100%;
     padding-top: 20px;
     border: 1px solid rgb(251, 147, 0);
@@ -135,12 +129,11 @@
 .result-value div img{
     width: 30px;
 }
-.result-container{
-    overflow: auto;
-}
+
 
 .result-container >div{
     padding: 0px 6%;
+
 }
 .sort img{
     height: 20px;

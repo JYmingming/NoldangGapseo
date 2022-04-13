@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>예약페이지</title>
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="reserv2.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css" />
+
+
+  <script>
+    $(document).ready(function () {
+      $('.headers').load('../common/header/header.html');
+    });
+  </script>
+</head>
+
+<body>
+<!--헤더영역 -->
+<div class="headers"></div>
+<!-- 바디영역-->
+  <div class="container w-75" id ="wrap">
+    <div class="mini-container">
+      <div class="tap-menu">
+        <div class="row row-cols-md-3 text-center">
+          <button class ="col-4 tap-uncheck">항공권</button>
+          <button class ="col-4 tap-check">숙박</button>
+          <button class ="col-4 tap-uncheck">렌트카</button>
+        </div>
+      </div>
+      <div class="content-title" >
+        <h2>실시간 숙박시설 가격비교</h2>
+        <p class="mt-3">제주도 내 6천여개 다양한 숙박시설을 한눈에 보고 예약</p>
+      </div>
+      <div class="out-line"></div>
+
+      <div class ="search">
+        <div class="w-100 search-option">
+            <div class="guest-num">
+              <img src="../img/facebook_icon.png"><span>투숙객</span>
+              <br>
+              <select class="float-end">
+                <option>1명</option>
+                <option>2명</option>
+                <option>3명</option>
+                <option>4명</option>
+                <option>5명</option>
+              </select>
+            </div>
+            <div class="room-num">
+              <img src="../img/facebook_icon.png"><span>객실수</span>
+              <br>
+              <select class="float-end">
+                <option>1개</option>
+                <option>2개</option>
+                <option>3개</option>
+                <option>4개</option>
+                <option>5개</option>
+              </select>
+            </div>
+        </div><!--search option-->
+        <div class="search-values">
+          <div class="search-value">
+            <p>(숙박지)</p>
+            <span>제주도</span>
+            <img src="../img/facebook_icon.png">
+          </div>
+          <div class="search-value">
+            <p>(체크인)</p>
+            <span>2022-03-02</span>
+            <img src="../img/facebook_icon.png">
+          </div>
+          <div class="search-value">
+            <p>(체크아웃)</p>
+            <span>2022-03-04</span>
+            <img src="../img/facebook_icon.png">
+          </div>
+          <div class="search-value">
+            <button type="submit">검색하기</button>
+          </div>
+        </div>
+      </div>
+    </div><!--end mini container-->
+    <div class="out-line"></div>
+    <div class="result-container">
+      <div class="tap-menu">
+        <div class="row row-cols-sm-4 text-center">
+          <button class ="col-1 tap-check">전체</button>
+          <button class ="col tap-uncheck">호텔</button>
+          <button class ="col tap-uncheck">펜션</button>
+          <button class ="col tap-uncheck">리조트&콘도</button>
+        </div>
+      </div>
+      <div class="result-box">
+        <ul class="result-list">
+            <li class="result-item">
+                <div class="item-line-1">
+                    <img src="../img/lock.png">
+                </div>
+                <div class="item-line-2">
+                    <img class="" src="../img/facebook_icon.png">
+                    <img class="" src="../img/facebook_icon.png">
+                    <img class="swal2-hide" src="../img/facebook_icon.png">
+                    <img class="swal2-hide" src="../img/facebook_icon.png">
+                    <img class="swal2-hide" src="../img/facebook_icon.png">
+                    <h5>해비치호텔</h5>
+                    <p>
+                      <span>호텔 정보</span><br>
+                      <span>호텔 정보</span><br>
+                      <span>호텔 정보</span><br>
+                      <span>호텔 정보</span><br>
+                    </p>
+                </div>
+                <div class="item-line-3">
+                  <img class="" src="../img/facebook_icon.png">
+                  <button class="review-btn">리뷰보기</button>
+                  <button class="reserv-btn">바로예약</button>
+                </div>
+            </li>
+
+          <li class="result-item">
+            <div class="item-line-1">
+              <img src="../img/lock.png">
+            </div>
+            <div class="item-line-2">
+              <img class="" src="../img/facebook_icon.png">
+              <img class="" src="../img/facebook_icon.png">
+              <img class="swal2-hide" src="../img/facebook_icon.png">
+              <img class="swal2-hide" src="../img/facebook_icon.png">
+              <img class="swal2-hide" src="../img/facebook_icon.png">
+              <h5>해비치호텔</h5>
+              <p>
+                <span>호텔 정보</span><br>
+                <span>호텔 정보</span><br>
+                <span>호텔 정보</span><br>
+                <span>호텔 정보</span><br>
+              </p>
+            </div>
+            <div class="item-line-3">
+              <img class="" src="../img/facebook_icon.png">
+              <button class="review-btn">리뷰보기</button>
+              <button class="reserv-btn">바로예약</button>
+            </div>
+          </li>
+          <li class="result-item">
+            <div class="item-line-1">
+              <img src="../img/lock.png">
+            </div>
+            <div class="item-line-2">
+              <img class="" src="../img/facebook_icon.png">
+              <img class="" src="../img/facebook_icon.png">
+              <img class="swal2-hide" src="../img/facebook_icon.png">
+              <img class="swal2-hide" src="../img/facebook_icon.png">
+              <img class="swal2-hide" src="../img/facebook_icon.png">
+              <h5>해비치호텔</h5>
+              <p>
+                <span>호텔 정보</span><br>
+                <span>호텔 정보</span><br>
+                <span>호텔 정보</span><br>
+                <span>호텔 정보</span><br>
+              </p>
+            </div>
+            <div class="item-line-3">
+              <img class="" src="../img/facebook_icon.png">
+              <button class="review-btn">리뷰보기</button>
+              <button class="reserv-btn">바로예약</button>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+
+
+
+  </div>
+</body>
