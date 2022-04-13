@@ -37,13 +37,15 @@
 
     <!-- 여행 하나를 불러온다 -->
     <select id="getTravel" resultMap="travelMap" parameterType="Integer">
-        SELECT t.travel_name ,cost.total_cost, u.nick_name
-        FROM travel t , `user` u ,
-        (SELECT sum(c.cost) total_cost
-        from cost c
-        WHERE c.travel_id = #{travelId}) as cost
-        where t.travel_id = #{travelId}
-        and t.user_id = u.user_id
+        SELECT   t.travel_name ,cost.total_cost, 
+                 u.nick_name,
+                 CONCAT(t.start_date, '~' ,t.end_date) period
+        FROM     travel t , `user` u ,
+                 (SELECT sum(c.cost) total_cost
+                 from cost c
+                 WHERE c.travel_id = #{travelId}) as cost
+        where    t.travel_id = #{travelId}
+        and      t.user_id = u.user_id
         group by t.travel_name;
     </select>
 

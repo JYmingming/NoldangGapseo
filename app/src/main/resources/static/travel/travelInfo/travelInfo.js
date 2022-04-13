@@ -1,8 +1,7 @@
-import { mm, userList, dateFormat } from '../../common/api/apiList.js';
+import { mm, userList, dateFormat, getTravel } from '../../common/api/apiList.js';
 
 // ---- URLSearchParams ----
 var arr = location.href.split('?');
-console.log(arr);
 
 if (arr.length == 1) {
     alert('요청 형식이 옳바르지 않습니다.');
@@ -10,9 +9,8 @@ if (arr.length == 1) {
 }
 
 var qs = arr[1];
-console.log(qs);
 
-// 2) 쿼리 스트링에서 email 값을 추출한다.
+// 쿼리 스트링에서 email 값을 추출한다.
 var params = new URLSearchParams(qs);
 var no = params.get('travelId');
 
@@ -20,7 +18,29 @@ if (no == null) {
     alert('게시물 번호가 없습니다.');
     throw '파라미터 오류!';
 }
-console.log(no);
+
+// ---- 여행정보 불러오기 ----
+// ---- 화면 렌더링 ----
+(async function () {
+    const response = await getTravel(no);
+    console.log('reponse:::', response);
+    console.log('rep:::', response.travel.travelName);
+    $('.travel-name').html(response.travel.travelName);
+    $('.cost').html(response.travel.totalCost);
+    $('.leader').html(response.travel.nickName);
+    $('.travel-period').html(response.travel.period);
+    response.todoList?.map((m) => {
+        const todo = `<div class="todo">🍊 ${m.name}</div>`;
+        $('.todo-list').append(todo);
+    });
+    response.companionList?.map((m) => {
+        const companion = `<div class="comp-list col-sm-12 d-flex align-items-center">
+                            <div class="pro-img"></div>
+                            <div class="user-nic">${m.nickName}</div>
+                        </div>`;
+        $('.travel-companion-box').append(companion);
+    });
+})();
 
 // --------모달----------
 

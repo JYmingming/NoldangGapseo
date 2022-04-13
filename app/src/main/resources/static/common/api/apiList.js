@@ -1,5 +1,3 @@
-//import axios from 'axios';
-
 export const PATH = {
     USER: {
         list: `/user/list`,
@@ -7,9 +5,11 @@ export const PATH = {
     DESTINATION: {},
     TRAVEL: {
         travelList: '/travel/travelList',
+        info: '/travel/getOne',
     },
 };
 
+// ===== 날짜 포멧 =====
 export async function dateFormat(colon, date) {
     let OldDate = new Date(await date);
     let year = OldDate.getFullYear().toString();
@@ -34,6 +34,16 @@ export async function dateFormat(colon, date) {
 export async function travelList(nickName) {
     try {
         const response = await axios(`${PATH.TRAVEL.travelList}?nickName=${nickName}`);
+        return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- 여행 상세 정보를 가져온다 ----
+export async function getTravel(travelId) {
+    try {
+        const response = await axios(`${PATH.TRAVEL.info}?travelId=${travelId}`);
         return response.data;
     } catch (e) {
         console.log(e);
