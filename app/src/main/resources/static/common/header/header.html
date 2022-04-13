@@ -1,46 +1,67 @@
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <title>HEADER</title>
-        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
-    </head>
-    <style>
-        body{
-            margin: 0px;
-        }
-        .headers {
-            height: 10vh;
-            width: 100vw;
-            color: rgb(227,146,35);
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px #dddddd solid;
-        }
-        .header_logo{
-            margin-top: 2.2vh;
-            margin-left: 10vw;
-            font-size: 1.5em;
-            font-family: "Comic Sans MS";
-        }
-        .header_login{
-            margin-top: 2.2vh;
-            margin-right: 10vw;
-            font-size: 1.5em;
-            font-family: "Comic Sans MS";
-        }
-    </style>
-        <div class="headers">
-            <div class="header_logo">noldang</div>
-            <div class="header_login">Login</div>
-        </div>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <title>HEADER</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="/node_modules//axios/dist/axios.js"></script>
+</head>
+<style>
+    body {
+        margin: 0px;
+    }
+    .headers {
+        height: 10vh;
+        width: 100vw;
+        color: rgb(227, 146, 35);
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px #dddddd solid;
+    }
+    .header_logo {
+        margin-top: 2.2vh;
+        margin-left: 10vw;
+        font-size: 1.5em;
+        font-family: 'Comic Sans MS';
+    }
+    .header_login {
+        margin-top: 2.2vh;
+        margin-right: 10vw;
+        font-size: 1.5em;
+        font-family: 'Comic Sans MS';
+    }
+</style>
+<div class="headers">
+    <div class="header_logo">noldang</div>
+    <div class="header_login">Login</div>
+</div>
 
-        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script>
-        document.querySelector(".header_logo").onclick = function() {
-            window.location.href = "/indexPage/index.html";
-        };
-    </script>
+<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script>
+    document.querySelector('.header_logo').onclick = function () {
+        window.location.href = '/indexPage/index.html';
+    };
 
+    css('.login', 'display', 'none');
 
+    fetch('/user/getLoginUser')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (result) {
+            if (result.resStatus == 'success') {
+                document.querySelector('.header_login').innerHTML = result.data.nickName;
+                css('.login', 'display', '');
+                css('.not-login', 'display', 'none');
+            }
+        });
+
+    //css 함수
+    function css(selector, name, value) {
+        var el = document.querySelectorAll(selector);
+        for (var e of el) {
+            e.style[name] = value;
+        }
+    }
+</script>

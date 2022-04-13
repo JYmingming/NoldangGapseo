@@ -1,4 +1,4 @@
-import { travelList } from '../../common/api/apiList.js';
+import { travelList, getLoginUser } from '../../common/api/apiList.js';
 
 // --- stiky color ---
 const stikyColor = ['blue', 'green', 'brown', 'purple', 'orange'];
@@ -9,9 +9,11 @@ function readomCardColor(arr) {
 }
 // ---- 화면 렌더링 ----
 (async function () {
-    const response = await travelList('정창성장판이안닫혀서성장통이심해');
+    const session = await getLoginUser();
+    //console.log(session);
+    const response = await travelList(session.data.nickName);
     response?.map((m) => {
-        console.log(m);
+        //console.log(m);
         //m => arr[i].name
         let cardColor = readomCardColor(stikyColor);
         let view = ` <div class="col-md-4 col-sm-6 content-card">

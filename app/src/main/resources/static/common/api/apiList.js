@@ -1,6 +1,7 @@
 export const PATH = {
     USER: {
         list: `/user/list`,
+        getLoginUser: '/user/getLoginUser',
     },
     DESTINATION: {},
     TRAVEL: {
@@ -8,6 +9,19 @@ export const PATH = {
         info: '/travel/getOne',
     },
 };
+
+// ===== 유저 =====
+// ---- 유저의 로그인 여부를 확인한다.
+export async function getLoginUser() {
+    try {
+        const response = await fetch(PATH.USER.getLoginUser).then(function (res) {
+            return res.json();
+        });
+        return response;
+    } catch (e) {
+        console.log(e);
+    }
+}
 
 // ===== 날짜 포멧 =====
 export async function dateFormat(colon, date) {
@@ -29,7 +43,6 @@ export async function dateFormat(colon, date) {
 }
 
 // ===== Travel =====
-
 // ---- 회원의 여행리스트 가져오기 ----
 export async function travelList(nickName) {
     try {
