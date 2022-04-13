@@ -19,25 +19,30 @@ margin-top :60px; margin-right :100px; }
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 
 <body>
-
+<header>
 <div th:replace="/fixed/header :: header"></div>
-<a href="memberList2.html"><span id="imgtext1">ADMINSTRATOR</span></a>
-   <a href="memberList2.html"><span id="imgtext2">유저관리</span></a>
+<a href="memberList2.html" ><h1 id="imgtext1">ADMINSTRATOR 
+<nav>
+   <a href="memberList2.html" ><span id="imgtext2">유저관리</span></a>
                   <a href="report.html"><span id="imgtext3">신고관리</span></a>
                    <a href="TravelBoard.html"><span id="imgtext4">여행지관리</span></a>
                     <a href="../../customorCenter/noticeBoard/noticeBoard.html"><span id="imgtext5">고객센터</span></a>
                     <a href="../../indexPage/index.html"><span id="imgtext6">Home</span></a>
+                    </nav>
+</h1></a>
+
+                    </header>
 <hr>
 <h1 class ="maintitle" >관리자 l 유저 관리</h1>
 
 
 <div id="input-form">
 <select name="catgo"  >
-        <option value="title">회원번호</option>
+        <option value="userNum">회원번호</option>
        
-        <option value="name">아이디</option>
-        <option value="content">이메일</option>
-          <option value="phone">전화번호</option>
+        <option value="userID">아이디</option>
+        <option value="userEmail">이메일</option>
+          <option value="userPhone">전화번호</option>
       </select>
           <input type="text" id="keyword" />
         </div>
@@ -55,11 +60,11 @@ margin-top :60px; margin-right :100px; }
 
 <thead>
 <tr>
-<th>회원번호</th>
-<th>이메일</th>
-<th>전화번호</th>
-<th>닉네임</th>
-<th>회원가입일</th>
+<th id="user_id">회원번호</th>
+<th id="email">이메일</th>
+<th id="phone">전화번호</th>
+<th id="nick_name">닉네임</th>
+<th id="reg_date">회원가입일</th>
 <th>회원탈퇴</th>
 </tr>
 </thead>
@@ -68,10 +73,10 @@ margin-top :60px; margin-right :100px; }
 
 <tr>
 	<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1000</td>
-								<td>tjdgu22s23@naver.com</td>
-								<td>010-1234-5678</td>
-								<td>asd22</td>
-								<td>2022-02-03</td>
+								<td id="email">tjdgu22s23@naver.com</td>
+								<td id="phone">010-1234-5678</td>
+								<td id="nick_namee">asd22</td>
+								<td id="reg_date">2022-02-03</td>
 								<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
 								
 	<tr>
@@ -120,7 +125,7 @@ margin-top :60px; margin-right :100px; }
 				<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1005</td>
 				
 				<td>gdfj53@naver.com</td>
-				<td>010-8569-2557</td>
+				<td>010-8539-2557</td>
 				<td>제주바라기</td>
 				<td>2022-04-05</td>
 					<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
