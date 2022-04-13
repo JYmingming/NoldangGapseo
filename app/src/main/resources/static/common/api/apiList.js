@@ -1,9 +1,12 @@
+//import axios from 'axios';
+
 export const PATH = {
     USER: {
         list: `/user/list`,
     },
-    DESTINATION: {
-        userList: `/destination/user/list`,
+    DESTINATION: {},
+    TRAVEL: {
+        travelList: '/travel/travelList',
     },
 };
 
@@ -18,6 +21,19 @@ export async function dateFormat(colon, date) {
     let formatDate = year + colon + month + colon + day;
 
     return formatDate;
+}
+
+// ===== Travel =====
+
+// ---- 회원의 여행리스트 가져오기 ----
+export async function travelList(nickName) {
+    try {
+        const response = await axios(`${PATH.TRAVEL.travelList}?nickName=${nickName}`);
+        console.log(response.data);
+        return response.data;
+    } catch (e) {
+        console.log(e);
+    }
 }
 
 export async function userList() {

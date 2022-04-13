@@ -1,4 +1,4 @@
-import { userList, mm } from '../../common/api/apiList.js';
+import { mm, userList } from '../../common/api/apiList.js';
 
 // --------모달----------
 
@@ -23,12 +23,10 @@ $('.invite-box').click(function (e) {
 // 날씨 모달
 $('.travel-weather').click(async function (e) {
     e.preventDefault();
-    console.log('lllll');
     // $('#weatherModal').modal('show');
+    //const ddd = await travelList('정창성장판이안닫혀서성장통이심해');
     const ddd = await userList();
-    ddd.map((m) => {
-        console.log(m);
-    });
+    console.log(ddd);
 });
 
 // ---------------------------
@@ -51,12 +49,12 @@ export function ddd() {
     console.log('dkdkd');
 }
 
-(async function () {
-    const oo = await userList();
-    oo.map((m) => {
-        console.log('oo:::', m.nickName);
-    });
-})();
+// (async function () {
+//     const oo = await userList();
+//     oo.map((m) => {
+//         console.log('oo:::', m.nickName);
+//     });
+// })();
 
 // ----뒤로가기 화살표-----
 $('.bi').on('click', function (e) {
