@@ -16,6 +16,7 @@
                    <a href="report.html"><span id="imgtext3">신고관리</span></a>
                    <a href="TravelBoard.html"><span id="imgtext4">여행지관리</span></a>
                     <a href="../../customorCenter/noticeBoard/noticeBoard.html"><span id="imgtext5">고객센터</span></a>
+                       <a href="../../indexPage/index.html"><span id="imgtext6">Home</span></a>
 <hr>
 <h1 class ="maintitle">새 여행지 추가</h1>
 
@@ -52,7 +53,15 @@
    <td><input type="text" id="address_kakao" name="address" readonly size="50"/></td>
    <td class="td-4"><input size="10"></input></td>
   <td class="td-5"><input size="15"></input></td>
-    <td class ="td-6">  <input type="file" multiple class="d-file-up" name="" id="" /></td>
+    <td class ="td-6"> <form method="post" action="upload" enctype="multipart/form-data">
+
+  <div>
+ <input type="file" name="file" accept="image/*">
+  </div>
+  
+  <input type="submit">
+
+</form></td>
       <td class="td-3"><input size="30"></input></td>
  
   </tr>

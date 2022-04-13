@@ -119,6 +119,17 @@
     font: bold;
 }
 
+#imgtext6{
+   
+    margin-left:300px;
+   font-size : x-large;
+    top: 30px;
+
+    font: bold;
+      color:  #fb9300;
+       font-family: "Comic Sans MS";
+}
+
 .table{
 	margin-top : 30px;
 border-collapse:collapse;
@@ -139,7 +150,7 @@ border-collapse:collapse;
 .th-4{width : 170px;}
 .th-5{width : 380px;}
 .th-6{width : 500px;}
-.th-7{width : 480px;}
+.th-7{width : 550px;}
 .th-8{width : 60px;}
 
 

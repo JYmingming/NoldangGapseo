@@ -172,6 +172,17 @@ table.type02 td {
     font: bold;
 }
 
+#imgtext6{
+   
+    margin-left:300px;
+   font-size : x-large;
+    top: 30px;
+
+    font: bold;
+      color:  #fb9300;
+       font-family: "Comic Sans MS";
+}
+
 .maintitle{
 	margin-left : 100px;
 		margin-top : 20px;
