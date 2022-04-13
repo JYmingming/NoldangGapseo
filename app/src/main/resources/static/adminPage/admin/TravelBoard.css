@@ -179,3 +179,10 @@ border-collapse:collapse;
 	  background-color: #fb9300;
 	}
 
+.table{
+	border-color: gray;
+	 width: 100%; 
+	 margin-top :60px;
+   border-radius : 10px;
+	
+}
