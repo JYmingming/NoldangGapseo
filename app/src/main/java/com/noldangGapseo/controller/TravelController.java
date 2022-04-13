@@ -25,7 +25,6 @@ public class TravelController {
     public List<Travel> travelList(String nickName) {
         return service.travelList(nickName);
     }
-
     // 여행 정보를 불러온다.
     @GetMapping("/travelOne")
     public TravelResponse getTravel(Integer travelId){

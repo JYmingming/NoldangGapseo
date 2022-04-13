@@ -1,4 +1,4 @@
-import { travelList, userList, userList } from '../../common/api/apiList.js';
+import { travelList } from '../../common/api/apiList.js';
 
 // --- stiky color ---
 const stikyColor = ['blue', 'green', 'brown', 'purple', 'orange'];
@@ -7,14 +7,7 @@ function readomCardColor(arr) {
     const random = Math.floor(Math.random() * arr.length);
     return arr[random];
 }
-
-$('.d-title').on('click', function (e) {
-    e.preventDefault();
-    console.log('jkl;');
-    console.log($('.title').attr('data-id'));
-    //location.href = '/travel/travelInfo/travelInfo.html';
-});
-
+// ---- 화면 렌더링 ----
 (async function () {
     const response = await travelList('정창성장판이안닫혀서성장통이심해');
     response?.map((m) => {
@@ -28,13 +21,14 @@ $('.d-title').on('click', function (e) {
                             data-background="color"
                     data-color=${cardColor}
                             data-radius="true"
+                            data-id=${m.travelId}
                         >
                             <div class="content">
                                 <div class="d-flex justify-content-center align-items-center">
                                     <h4>D-</h4>
                                     <h4 class="card-day">${m.dday}</h4>
                                 </div>
-                                <h4 class="title" data-id=${m.travelId}>
+                                <h4 class="title">
                                     <a class="d-title">${m.travelName}</a>
                                 </h4>
                                 <p class="description">${m.period}</p>
@@ -42,17 +36,11 @@ $('.d-title').on('click', function (e) {
                         </div>`;
         $('.row').append(view);
     });
+    // --- 상세 페이지로 넘어가기 ----
+    $('.card').on('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const id = $(this).attr('data-id');
+        location.href = `/travel/travelInfo/travelInfo.html?travelId=${id}`;
+    });
 })();
-
-$('.choice1 .btn1').on('click', function (e) {
-    e.preventDefault();
-    $('.list1').toggle();
-});
-$('.choice1 .btn2').on('click', function (e) {
-    e.preventDefault();
-    $('.list1').toggle(2000);
-});
-$('.choice1 .btn3').on('click', function (e) {
-    e.preventDefault();
-    $('.list1').toggle('fast');
-});
