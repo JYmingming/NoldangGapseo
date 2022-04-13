@@ -1,4 +1,4 @@
-import { mm, userList } from '../../common/api/apiList.js';
+import { mm, userList, dateFormat } from '../../common/api/apiList.js';
 
 // --------모달----------
 
@@ -25,8 +25,12 @@ $('.travel-weather').click(async function (e) {
     e.preventDefault();
     // $('#weatherModal').modal('show');
     //const ddd = await travelList('정창성장판이안닫혀서성장통이심해');
-    const ddd = await userList();
-    console.log(ddd);
+    // const ddd = await userList();
+    // console.log(ddd);
+    const DATE = '2022-04-08 04:20:43.000';
+
+    const realdate = await dateFormat('-', DATE);
+    console.log('formatDate:::::', realdate);
 });
 
 // ---------------------------

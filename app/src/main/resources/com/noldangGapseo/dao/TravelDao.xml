@@ -22,7 +22,7 @@
         SELECT
         t.travel_id ,
         t.travel_name ,
-        CONCAT(t.start_date, ' ~ ' ,t.end_date) period,
+        CONCAT(t.start_date, '~' ,t.end_date) period,
         DATEDIFF(DATE_FORMAT(t.start_date , '%Y-%m-%d.') , DATE_FORMAT(now() ,'%Y-%m-%d.')) d_day
         FROM
         travel t ,
