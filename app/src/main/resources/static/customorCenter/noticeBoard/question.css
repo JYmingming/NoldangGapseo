@@ -1,0 +1,235 @@
+ #header {                         /* 머리 전체  */
+  height: 50px;
+  padding-top: 10px;
+  border-bottom-style: solid;
+  border-color: gray;
+  }
+  #main-btn {
+    color:orange;
+    font-weight:bold;
+    background-color:white;
+    font-size:20px;
+    border:0;
+    outline:0;
+    font-size: 1.5em;
+    font-family: "Comic Sans MS";
+    cursor:pointer;
+  }
+    #img-2 {
+  position: relative;
+  float : right;
+  width: 50px;
+  top: 8%;
+  }
+  #user-btn {
+    float:right;
+    color:orange;
+    background-color:white;
+    font-size:20px;
+    border:0;
+    outline:0;
+    font-size: 1.5em;
+    font-family: "Comic Sans MS";
+    cursor:pointer;
+  }
+  
+  #container {                        /*question 컨테이너*/
+   width:100%;
+    height:100%;
+    background:#000;
+  }
+  #body {
+    width:600px;
+    height:800px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-left:-300px;
+    margin-top:-200px;
+    background-color: white;  /** 작업 끝나면 흰색으로 **/
+  }
+  
+  #body-a {                       /*질문창 머리*/
+    position:absolute;
+    width:500px;
+    height:50px;
+    left:10%;
+  }
+  #question {
+    position:absolute;
+    font-size:20px;
+    font-weight:bold;
+  }
+  
+  #body-b {                                 /* 안내창 */
+  position: relative;
+  width: 600px;
+  height: 100px;
+  margin: 10px auto;
+  top: 5%;
+  }
+  
+  #s-text {
+  position: absolute;
+  width: 600px;
+  height: 80px;
+  background-color: white;
+  margin: 10px;
+  border-style: solid;
+  border-color: #c5c5c5;
+  border-width: 8px;
+  }
+
+  #body-c {                           /* question 컨텐츠 몸통 */
+  position: relative;
+  width: 600px;
+  height: 400px;
+  top: 15%;
+  background-color: #f9f9f9;
+  }
+  
+  #c-1 {                 /* question 1번 폼*/
+  position:relative;
+  width: 520px;
+  height: 130px;
+  left: 6.5%;
+  top: 10px;
+  background-color: #eeeeee;
+  }
+  
+  #img-1 {
+  position: relative;
+  width: 100px;
+  height: 80px;
+  top: 25px;
+  }
+  
+  #text-1{
+  position: relative;
+  width: 400px;
+  height: 80px;
+  top: 30px;
+  float: right;
+  font-size: 1.2ex;
+  }
+  
+  
+  #c-2 {                 /* question 2번 폼*/
+  position:relative;
+  width: 600px;
+  height: 250px;
+  background-color: #f9f9f9;
+  color: black;
+  top: 10%;
+  }
+  
+  #c-2-head {           /* c-2항목 머리 */
+  position:relative;
+  width: 520px;
+  height: 40px;
+  left: 6.5%;
+  top: 10px;
+  background-color: #eeeeee;
+  border-style: solid;
+  border-width: 3px;
+  border-bottom-style: none;
+  border-color: #e9e9e9;
+  }
+  #c-2-t {
+  position: relative;
+  bottom: 5px;
+  left: 10px;
+  }
+  #title {
+  position: absolute;
+  border: 1px solid #F1F1F1;
+  width: 400px;
+  height: 20px;
+  left: 80px;
+  top: 8px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e9e9e9;
+  }
+  
+  #c-2-body {                   /* c-2항목 몸통 */
+  position: relative;
+  width: 520px;
+  height: 180px;
+  left: 6.5%;
+  top: 10px;
+  background-color: #f9f9f9;
+  border-style: solid;
+  border-width: 3px;
+  border-top-style: none;
+  border-color: #e9e9e9;
+  }
+  
+  #content {
+  width:400px; 
+  height:90px; 
+  font-size:30px;
+  }
+  
+  
+  #registration {                       /*하단 등록*/
+  position: relative;
+  float: right; 
+  background-color: orange;
+  color: white;
+  font-size:15px;
+  margin: 3px;
+  border-style: solid;
+  border-width: thin;
+  border-color: orange;
+  border-radius: 3px;
+  cursor:pointer;
+  }
+  
+  #cancel {
+  position: relative;
+  float: right; 
+  background-color: white;
+  color: black;
+  font-size:15px;
+  margin: 3px;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 3px;
+  cursor:pointer;
+  }
+  
+  
+                                /* 모달창 */
+
+#modal {
+  position:relative;
+  width:100%;
+  height:100%;
+  z-index:1;
+  display: none;
+}
+
+#modal button {
+  display:inline-block;
+  width:100px;
+  margin-left:calc(100% - 100px - 10px);
+}
+
+#modal .modal_content {
+  width:300px;
+  margin:100px auto;
+  padding:20px 10px;
+  background:#fff;
+  border:2px solid #666;
+}
+
+#modal .modal_layer {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0, 0, 0, 0.5);
+  z-index:-1;
+}

@@ -13,6 +13,7 @@
     outline:0;
     font-size: 1.5em;
     font-family: "Comic Sans MS";
+    cursor:pointer;
   }
     #img-2 {
   position: relative;
@@ -29,6 +30,7 @@
     outline:0;
     font-size: 1.5em;
     font-family: "Comic Sans MS";
+    cursor:pointer;
   }
   
   #container {                        /*고객센터 컨테이너*/
@@ -176,6 +178,24 @@
   text-align: center;
   }
   
+  #myquestion {
+  position: absolute;
+	top: 5px;
+	right:120px;
+  background-color: white;
+  color: black;
+  font-size:15px;
+  border-color: #dfdfdf;
+  cursor:pointer;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 3px;
+  }
+  #myquestion:focus {
+  background-color: orange;
+  color: white;
+  }
+  
   #back {                       /*하단 뒤로가기*/
   position: relative;
   float: right; 
@@ -183,22 +203,31 @@
   background-color: white;
   color: black;
   font-size:15px;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 3px;
   border-color: #dfdfdf;
   margin: 3px;
+  cursor:pointer;
   }
   #back:focus {
   background-color: orange;
   color: white;
   }
   #question {
-   position: relative;
+  position: relative;
   float: right; 
   top: 130px;
-  background-color: white;
-  color: black;
+  background-color: orange;
+  color: white;
   font-size:15px;
+  border-style: solid;
+  border-width: thin;
+  border-color: orange;
+  border-radius: 3px;
   border-color: #dfdfdf;
   margin: 3px;
+  cursor:pointer;
   }
   #question:focus {
   background-color: orange;

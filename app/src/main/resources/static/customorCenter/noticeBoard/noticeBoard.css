@@ -13,6 +13,7 @@
     outline:0;
     font-size: 1.5em;
     font-family: "Comic Sans MS";
+    cursor:pointer;
   }
     #img-2 {
   position: relative;
@@ -29,6 +30,7 @@
     outline:0;
     font-size: 1.5em;
     font-family: "Comic Sans MS";
+    cursor:pointer;
   }
   
   #container {                        /*고객센터 컨테이너*/
@@ -73,6 +75,7 @@
     float:right;
     border:solid;
     border-color: gray;
+    cursor:pointer;
   }
   
   #body-b {                                 /* 검색창 */
@@ -164,6 +167,7 @@
   background-color: #f9f9f9;
   margin: 3px;
   border-bottom: 1px solid orange ;
+  cursor:pointer;
   }
   
   
