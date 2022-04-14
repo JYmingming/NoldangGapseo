@@ -23,9 +23,21 @@
     <div class="headers">
         <div class="header_logo"> noldang</div>
         <div class="header_login" id ="login-box" >
+
+            <div class="dropdown login">
+                <button class="dropbtn login">
+                    <span id="user-name" class="login"></span>
+                    <!--             <div><span id="user-name" class="login"></span></divㅋ -->
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">profile</a>
+                    <a href="#">write a post</a>
+                    <a href="#">settings</a>
+                    <a href="#" id="logout-btn">LogOut</a>
+                </div>
+            </div>
             <button id="login-btn" type="button" class="not-login" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
-            <span id="user-name" class="login"></span>
-            <button id="logout-btn" type="button" class="login">LogOut</button>
+
         </div>
 
     </div>

@@ -4,7 +4,7 @@
     text-decoration: none;
 }
 *:link, *:visited{
-    color:black;
+ color:  #fb9300;
   
 }
 
@@ -71,48 +71,69 @@
     }
  
 #imgtext1{
-   
+  
     margin-left:50px;
    font-size : xx-large;
     top: 30px;
     color:  #fb9300;
     font: bold;
      font-family: "Comic Sans MS";
-    
+      height: 75px;
+  padding: 1rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+   
    
 }
 
 #imgtext2{
    
-    margin-left:200px;
-  font-size : large;
+  
+    margin-right:150px;
+   font-size : large;
     top: 30px;
     color: Black;
     font: bold;
+    
 }
 #imgtext3{
+        margin-right:120px;
    
-    margin-left:60px;
    font-size : large;
     top: 30px;
     color: Black;
     font: bold;
+    
 }
 #imgtext4{
-   
-    margin-left:60px;
+        margin-right:120px;
+    
+   font-size : large;
+    top: 30px;
+    color: Black;
+    font: bold;
+    
+}
+#imgtext5{
+     margin-right:120px;
+  
    font-size : large;
     top: 30px;
     color: Black;
     font: bold;
 }
-#imgtext5{
+
+#imgtext6{
    
-    margin-left:60px;
-   font-size : large;
+    margin-left:50px;
+   font-size : x-large;
     top: 30px;
-    color: Black;
+
     font: bold;
+      color:  #fb9300;
+       font-family: "Comic Sans MS";
 }
 
 #tb1{

@@ -36,22 +36,74 @@
       <div
         style="float: right; width: 33%; margin-right: 25px; text-align: right;">2022-04-04</div>
 
-
-      <div class="picture" style="text-align: center;">
-        <img src="/img/제주도카페_뷰스트_03.jpg"
-          style="width: 600px; text-align: center;">
-      </div>
-      <div class="page-dot" ; style="text-align: center;">
-        <div data-role="footer" data-position="fixed">
-          <span class="ui-title"> <!-- to have the div centered in footer -->
-            <div id="navigator">
-              <a href="#p1" class="activeSlide">1</a> <a href="#p2">2</a>
-              <a href="#p3">3</a>
+            <!-- Img caruousel-->
+            <div
+                id="carouselExampleInterval"
+                class="carousel slide w-50 align-self-center"
+                data-bs-ride="carousel"
+                style="border-radius: 10px; "
+            >
+                <div class="carousel-inner" style="display: flex">
+                    <div class="carousel-item active" data-bs-interval="2000">
+                        <img
+                            src="http://a.cdn-hotels.com/gdcs/production13/d298/6722a536-dc90-49b4-9987-4c0ce03105cc.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
+                            class="d-block h-auto w-100"
+                            alt="..."
+                            style="border-radius: 20px"
+                        />
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img
+                            src="http://a.cdn-hotels.com/gdcs/production153/d1329/551a0385-f7e0-4f7c-a407-43bdecddd4d4.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
+                            class="d-block h-auto w-100"
+                            alt="..."
+                            style="border-radius: 20px"
+                        />
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img
+                            src="http://a.cdn-hotels.com/gdcs/production18/d313/28d7ddb1-12c5-4b47-b355-515eb4db0870.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
+                            class="d-block h-auto w-100"
+                            alt="..."
+                            style="border-radius: 20px"
+                        />
+                    </div>
+                    <button class="like-btn align-self-end">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="30"
+                            height="30"
+                            fill="currentColor"
+                            class="bi bi-heart"
+                            viewBox="0 0 16 16"
+                        >
+                            <path
+                                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
+                            />
+                        </svg>
+                    </button>
+                    <span class="like-cnt align-self-end">2000</span>
+                </div>
+                <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="prev"
+                >
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExampleInterval"
+                    data-bs-slide="next"
+                >
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-          </span>
-        </div>
-      </div>
-
+            
       <div class="content" style="margin: 25px">여러분~!~!~! 볶음밥 새우밥
         동치미 국수 다 맛있어요~!~! 근데 사장님 출근이 좀 오락가락 하셔요🥲 그래도 동치미 국수 랑 초벌돼지구이
         조합이 너무 맛있으니까 꼭 한번 가보셔요~!...</div>
