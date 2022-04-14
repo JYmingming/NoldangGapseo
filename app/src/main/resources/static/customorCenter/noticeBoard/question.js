@@ -4,6 +4,6 @@ $(document).ready(function(){ 
     }
    
     document.getElementById("modal_close_btn").onclick = function() {
-        document.getElementById("modal")
+        document.getElementById("modal").style.display="none" ;
     }   
  })
