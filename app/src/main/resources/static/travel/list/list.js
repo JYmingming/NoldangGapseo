@@ -1,7 +1,7 @@
 import { travelList, getLoginUser } from '../../common/api/apiList.js';
 
 // --- stiky color ---
-const stikyColor = ['blue', 'green', 'brown', 'purple', 'orange'];
+const stikyColor = ['blue', 'green', 'brown', 'purple', 'orange', 'yellow'];
 
 function readomCardColor(arr) {
     const random = Math.floor(Math.random() * arr.length);
