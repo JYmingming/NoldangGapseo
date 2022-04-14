@@ -4,6 +4,7 @@
 	border-style: solid;
 	border-width: 1px;
 	margin: 5px auto; /*가로 가운데 정렬 */
+	   border-radius: 8px;
 }
 
 
@@ -14,9 +15,8 @@
 	
 }
 
-.picture{
-	margin: 20px
-
+.carousel slide w-50 align-self-center{
+  text-align: center;
 
   
 }
@@ -83,4 +83,3 @@
 	
 	
 	}
-}
