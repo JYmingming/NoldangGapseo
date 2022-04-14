@@ -29,17 +29,20 @@ public class DestinationController {
     return service.getNoldangDes(desId);
   }
 
-  //유저의 여행지를 모두 가져온다.
-  @GetMapping("/user/list")
-  List<Destination> getUserDesList() {
-    return service.getUserDesList();
+  //유저들의 여행지를 모두 가져온다.
+  @GetMapping("/users/list")
+  List<Destination> getUsersDesList() {
+    return service.getUsersDesList();
   }
 
   //유저의 여행지 하나를 가져온다. 
   @GetMapping("/user/desOne")
   Destination getUserDesOne(Integer desId) {
-    return service.getUserDesOne(desId);
+    return service.getUserDes(desId);
   }
 
+  // 유저의 새로운 여행지 리스트를 가져온다.
+  @GetMapping("/user/list")
+  List<Destination> getUserDesList(Integer userId) {return service.getUserDesList(userId);}
 
 }

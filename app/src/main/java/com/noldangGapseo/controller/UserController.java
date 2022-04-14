@@ -26,7 +26,7 @@ public class UserController {
     if(service.add(user)==1){
       return apires;
     }else{
-      apires.setResCode("0000");
+      apires.setResCode("1111");
       apires.setResStatus("fail");
     }
     return apires;
@@ -37,7 +37,7 @@ public class UserController {
     ApiResponse apires =new ApiResponse();
     User loginUser = service.get(email, password);
     if (loginUser == null) {
-      apires.setResCode("0000");
+      apires.setResCode("1111");
       apires.setResStatus("fail");
       return apires;
     }

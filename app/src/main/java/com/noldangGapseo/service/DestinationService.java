@@ -3,8 +3,6 @@ package com.noldangGapseo.service;
 import com.noldangGapseo.dao.DestinationDao;
 import com.noldangGapseo.domain.Destination;
 import com.noldangGapseo.domain.NoldangDestinationResponse;
-import com.noldangGapseo.domain.UserDestinationResponse;
-import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,21 +19,29 @@ public class DestinationService {
         return  mapper.getAdminDesList();
     }
 
-    // 유저의 여행지 리스트를 가져온다.
-   public List<Destination> getUserDesList() {
-       return mapper.getUserDesList();
+    // 유저들의 여행지 리스트를 가져온다.
+   public List<Destination> getUsersDesList() {
+       return mapper.getUsersDesList();
     }
 
     // 유저의 여행지 하나를 가져온다.
-   public Destination getUserDesOne(Integer desId){
-       return mapper.getUserDesOne(desId);
+   public Destination getUserDes(Integer desId){
+       return mapper.getUserDes(desId);
    }
 
+   // 유저의 새로운 여행지 리스트를 가져온다.
+   public List<Destination> getUserDesList(Integer userId){
+        return mapper.getUserDesList(userId);
+   }
 
+   
+   
    public NoldangDestinationResponse getNoldangDes(Integer desId){
         return NoldangDestinationResponse.builder().destination(mapper.getNoldangDes(desId))
                 .destinationCommentList(mapper.getNoldangDesComment(desId)).build();
    }
+   
+   
 
 
 }

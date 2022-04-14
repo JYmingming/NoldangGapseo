@@ -9,7 +9,7 @@
     <resultMap type="destination" id="desMap">
     </resultMap>
     <resultMap id="comMap" type="destinationComment"></resultMap>
-    <select id="getUserDesList" resultMap="desMap">
+    <select id="getUsersDesList" resultMap="desMap">
         SELECT d.destination_id, d.destination_name, address, d.reg_date, u.nick_name , dt.destination_type_name
         FROM destination d , `user` u , destination_type dt
         WHERE d.user_id = u.user_id
@@ -28,7 +28,7 @@
         order by reg_date desc
     </select>
 
-    <select id="getUserDesOne" resultMap="desMap" parameterType="Integer">
+    <select id="getUserDes" resultMap="desMap" parameterType="Integer">
         select *
         from destination
         where destination_id = #{desId}
@@ -45,6 +45,34 @@
         FROM destination_comment dc , `user` u
         WHERE dc.destination_id = #{desId}
         and dc.user_id = u.user_id;
+    </select>
+
+    <select id="getUserDesList" resultMap="desMap" parameterType="Integer">
+        SELECT   d.destination_name, d.destination_id, lic.likes_cnt, com.comments_cnt
+        FROM     destination d
+        join
+                (
+                SELECT      d2.destination_id, COUNT(l.destination_id) likes_cnt
+                FROM        destination d2
+                left join   likes l
+                on          d2.destination_id = l.destination_id
+                WHERE       d2.user_id = #{userId}
+                group by    d2.destination_id
+                ) as lic
+        on      d.destination_id = lic.destination_id
+        join
+                (
+                SELECT COUNT(ndc.destination_id) comments_cnt , d3.destination_id
+                FROM destination d3
+                left join new_destination_commnet ndc
+                ON d3.destination_id = ndc.destination_id
+                WHERE d3.user_id = #{userId}
+                GROUP by d3.destination_id
+                ) as com
+        on      d.destination_id = com.destination_id
+        WHere   1=1
+        and     d.user_id = #{userId}
+        group by d.destination_id;
     </select>
 
 </mapper>

@@ -9,14 +9,17 @@ import java.util.List;
 @Mapper
 public interface DestinationDao {
 
- List<Destination> getUserDesList();
+ List<Destination> getUsersDesList();
 
  List<Destination> getAdminDesList();
 
- Destination getUserDesOne(Integer desId);
+ Destination getUserDes(Integer desId);
 
  Destination getNoldangDes(Integer desId);
 
  List<DestinationComment> getNoldangDesComment(Integer desId);
+
+ List<Destination> getUserDesList(Integer userId);
+
 
 }

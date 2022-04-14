@@ -4,12 +4,33 @@ export const PATH = {
         getLoginUser: '/user/getLoginUser',
         findByNickName: '/user/search',
     },
-    DESTINATION: {},
+    DESTINATION: {
+        userDesList: '/destination/user/list',
+    },
     TRAVEL: {
         travelList: '/travel/travelList',
         info: '/travel/getOne',
     },
 };
+
+// ===== 날짜 포멧 =====
+export async function dateFormat(colon, date) {
+    let OldDate = new Date(await date);
+    let year = OldDate.getFullYear().toString();
+    let month;
+    if (OldDate.getMonth() + 1 < 10) {
+        month = '0' + (OldDate.getMonth() + 1).toString();
+    }
+    let day;
+    if (OldDate.getDate() < 10) {
+        day = '0' + OldDate.getDate().toString();
+    }
+    let time = OldDate.getTime();
+
+    let formatDate = year + colon + month + colon + day;
+
+    return formatDate;
+}
 
 // ===== 유저 =====
 // ---- 유저의 로그인 여부를 확인한다.
@@ -38,23 +59,15 @@ export async function findByNickName(nickName) {
     }
 }
 
-// ===== 날짜 포멧 =====
-export async function dateFormat(colon, date) {
-    let OldDate = new Date(await date);
-    let year = OldDate.getFullYear().toString();
-    let month;
-    if (OldDate.getMonth() + 1 < 10) {
-        month = '0' + (OldDate.getMonth() + 1).toString();
+// ===== Destination ====
+// ---- 회원이 작성한 여행지 리스트를 가져온다.----
+export async function getUserDesList(userId) {
+    try {
+        const response = await axios(`${PATH.DESTINATION.userDesList}?userId=${userId}`);
+        return response.data;
+    } catch (e) {
+        console.log(e);
     }
-    let day;
-    if (OldDate.getDate() < 10) {
-        day = '0' + OldDate.getDate().toString();
-    }
-    let time = OldDate.getTime();
-
-    let formatDate = year + colon + month + colon + day;
-
-    return formatDate;
 }
 
 // ===== Travel =====
