@@ -1,0 +1,118 @@
+li,ul{
+    list-style: none;
+    margin: 0;
+    padding: 0!important;
+    padding-inline-start: 0;
+    margin-inline-start: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    vertical-align: baseline;
+}
+
+
+.tap-menu{
+    margin: 5vh auto 0 auto;
+    width: 30vw;
+    height: 36px;
+
+}
+.tap-check{
+    height: 36px;
+    color: white;
+    background-color: rgb(251, 147, 0);
+    border-radius: 0.4vw;
+    font-size: 0.9em;
+    border: 0px;
+}
+.tap-uncheck{
+    height: 36px;
+    background-color: white;
+    border: 1px solid rgb(251, 147, 0);
+    border-radius: 0.4vw;
+    font-size: 0.9em
+}
+
+.content-title{
+    margin: 6vh auto 0 auto;
+    text-align: center;
+}
+
+.out-line{
+    border-bottom:1px solid #cccccc;
+    width: 100%;
+}
+
+.detail-container{
+    margin-top: 60px;
+    height: 650px;
+    border: 1px solid black;
+}
+.detail-container h2{
+    margin-bottom: 24px;
+}
+
+.img-box{
+    width: 100%;
+    height: 400px;
+    border: 1px solid black;
+}
+.bic-img{
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+.small-img{
+    float: left;
+}
+.small-img img{
+    width: 100px;
+    height: 100px;
+    margin-left: 3vw;
+    margin-top: 2vh;
+
+}
+.small-img img:nth-child(1){
+    margin-left: 0;
+}
+
+.info-container{
+    margin-top: 14px;
+
+}
+
+.search-values{
+    margin: 0 auto;
+}
+
+.search-value{
+    border: 1px solid rgb(251, 147, 0);
+    width: 14vw;
+    height: 80px;
+    float: left;
+    margin-left: 1vw;
+    border-radius: 1.2vw;
+}
+
+.search-values div:nth-child(4){
+    border: 0px;
+}
+.search-values button{
+    width: 120px;
+    height: 60px;
+    margin-top: 20px;
+    background-color: rgb(251, 147, 0);
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 1vw;
+    border: 0px;
+}
+.search-values p,span{
+    margin-bottom: 6px;
+    margin-left: 1vw;
+}
+.search-value img{
+    width: 20px;
+    float: right;
+    margin-right: 1vw;
+}

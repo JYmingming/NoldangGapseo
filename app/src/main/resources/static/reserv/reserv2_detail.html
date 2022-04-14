@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>예약페이지</title>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="reserv2_detail.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css" />
+
+
+    <script>
+        $(document).ready(function () {
+            $('.headers').load('../common/header/header.html');
+        });
+    </script>
+</head>
+
+<body>
+<!--헤더영역 -->
+<div class="headers"></div>
+<!-- 바디영역-->
+<div class="container w-75" id ="wrap">
+    <div class="mini-container">
+        <div class="tap-menu">
+            <div class="row row-cols-md-3 text-center">
+                <button class ="col-4 tap-uncheck">항공권</button>
+                <button class ="col-4 tap-check">숙박</button>
+                <button class ="col-4 tap-uncheck">렌트카</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="detail-container">
+            <div>
+                <h2>아시아호텔 제주</h2>
+                <span class="fw-bold fs-5">숙박유형</span>&nbsp&nbsp&nbsp<span>호텔</span>&nbsp&nbsp
+                <span class="fw-bold fs-5">주소</span>&nbsp&nbsp&nbsp<span>제주특별자치도 제주시 노연로53</span>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <span class="fw-bold fs-5">체크인</span>&nbsp&nbsp&nbsp<span>15:00</span>&nbsp&nbsp
+                <span class="fw-bold fs-5">체크아웃</span>&nbsp&nbsp&nbsp<span>11:00</span>&nbsp&nbsp
+            </div>
+            <div class="img-container">
+                <div class="img-box">
+                    <div class="bic-img">
+                        <img src="../img/background.jpg">
+                    </div>
+                    <div class ="small-img">
+                        <img src="../img/facebook_icon.png">
+                        <img src="../img/facebook_icon.png">
+                        <img src="../img/facebook_icon.png">
+                        <img src="../img/facebook_icon.png">
+                        <img src="../img/facebook_icon.png">
+                        <img src="../img/facebook_icon.png">
+                        <img src="../img/facebook_icon.png">
+                        </div>
+                    </div>
+                </div>
+            </div><!-- img contianer -->
+            <div class="info-container">
+                <div class="search-values">
+                    <div class="search-value">
+                        <p>(체크인)</p>
+                        <span>2022-03-02</span>
+                        <img src="../img/facebook_icon.png">
+                    </div>
+                    <div class="search-value">
+                        <p>(체크아웃)</p>
+                        <span>2022-03-04</span>
+                        <img src="../img/facebook_icon.png">
+                    </div>
+                    <div class="search-value">
+                        <p>인원 + 0 +</p>
+                    </div>
+                    <div class="search-value">
+                        <button type="submit">검색하기</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    </div>
+</div>
