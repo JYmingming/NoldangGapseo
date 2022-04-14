@@ -203,10 +203,10 @@ li{
     padding:0;
     width: 20vw;
     height: 57vh;
-    background-color: rgb(250, 250, 250);
-    box-shadow: 1px 1px 5px 0px;
+    background-color: white;
     border-radius: 1em;
     float: left;
+    border : 2px solid #fb9300;
 }
 
 
@@ -274,7 +274,7 @@ li{
     width: 15vw;
     height: 28.5vh;
     
-    border-bottom: solid 4px #f5e6ca;
+    border-bottom: solid 3px #fb9300;
 }
 
 .con2 {
@@ -394,7 +394,7 @@ li{
     height: 5vh;
     background-color: #fb9300;
     color: white;
-    font-size: 0.8vw;
+    font-size: 1vw;
     font-weight: bold;
     margin-left: 40.5vw;
     border-radius: 0.5em;

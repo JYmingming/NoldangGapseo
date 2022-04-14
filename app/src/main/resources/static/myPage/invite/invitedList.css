@@ -180,24 +180,13 @@ li{
   display: flex;
 }
 
-#first_table{
-    font-size: 0.8vw;
-    margin-top: 5vh;
-    margin-left: 10vw;
-    width: 30vw;
-    height: 5vh;
-    border-radius: 1em;
-    background-color: rgb(250, 250, 250);
-    box-shadow: 1px 1px 5px 0px;
-    overflow: hidden;
-}
 
-#second_table{
+.second_box3 table{
     font-size: 1vw;
-    margin-top: 5.8vh;
+    margin-top: 11.5vh;
     margin-left: 2.5vw;
     width: 45vw;
-    height: 40vh;
+    height: 45vh;
     border-radius: 1em;
     background-color: rgb(250, 250, 250);
     box-shadow: 1px 1px 5px 0px;
@@ -210,21 +199,6 @@ li{
     background-color: #fafafa;
 }
 
-#td-1 {
-    width: 5vw;
-    height: 6vh;
-    border-top-left-radius: 1em;
-    background-color: #eaeaea;
-    text-align: center;
-    border-bottom: solid 2px #cccccc;
-}
-
-#td-2 {
-    width: 10vw;
-    height: 6vh;
-    text-align: center;
-    border-bottom: solid 2px #cccccc;
-}
 
 #tr-check {
     width: 8vw;
@@ -489,7 +463,7 @@ li{
     float: right;
     background-color: #f54748;
     color: white;
-    font-size: 0.8vw;
+    font-size: 1vw;
     font-weight: bold;
     border-radius: 0.5em;
     border: 0;
