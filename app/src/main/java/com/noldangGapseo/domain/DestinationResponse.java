@@ -13,5 +13,6 @@ import java.util.List;
 public class DestinationResponse {
 
     private Destination destination;
-    private List<Comment> CommentList;
+    private List<Comment> commentList;
+    private List<DestinationImg> destinationImgList;
 }

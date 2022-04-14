@@ -29,7 +29,8 @@ public class DestinationService {
 
         return DestinationResponse.builder()
                 .destination(mapper.getDes(desId))
-                .CommentList(type.equals("N") ? mapper.getNoldangCommentList(desId) : mapper.getUserCommentList(desId))
+                .commentList(type.equals("N") ? mapper.getNoldangCommentList(desId) : mapper.getUserCommentList(desId))
+                .destinationImgList(mapper.getImg(desId))
                 .build();
     }
 

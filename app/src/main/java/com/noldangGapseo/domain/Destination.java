@@ -28,6 +28,7 @@ public class Destination {
     String address;
     Integer likesCnt;
     Integer commentsCnt;
+    String thumbNailImg;
     Date regDate;
     Date updateDate;
 }
