@@ -39,6 +39,7 @@ header {
     margin-left: 14vw;
     font-size: 1.5em;
     font-family: 'Comic Sans MS';
+    cursor: pointer;
 }
 .header_login {
     margin-top: 2.2vh;
@@ -230,9 +231,6 @@ body {
     display: inline-block;
 }
 
-.dropbtn_icon {
-    font-family: 'Material Icons';
-}
 .dropbtn {
     border: 1px solid rgb(37, 37, 37);
     border-radius: 4px;
@@ -244,6 +242,11 @@ body {
     text-align: left;
     cursor: pointer;
     font-size: 12px;
+    text-align: right;
+    overflow: hidden;
+}
+.dropbtn span{
+    font-size: 1.6em;
 }
 .dropdown-content {
     display: none;
@@ -252,6 +255,7 @@ body {
     font-weight: 400;
     background-color: #f9f9f9;
     min-width: 200px;
+    border-radius: 1vw;
 }
 
 .dropdown-content a {
@@ -260,6 +264,7 @@ body {
     color: rgb(37, 37, 37);
     font-size: 12px;
     padding: 12px 20px;
+    border-radius: 1vw;
 }
 
 .dropdown-content a:hover {
