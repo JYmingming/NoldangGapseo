@@ -1,11 +1,12 @@
 package com.noldangGapseo.controller;
 
 import com.noldangGapseo.domain.Destination;
-import com.noldangGapseo.domain.NoldangDestinationResponse;
+import com.noldangGapseo.domain.DestinationResponse;
 import com.noldangGapseo.service.DestinationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -23,26 +24,21 @@ public class DestinationController {
     return service.getAdminDesList();
   }
 
-  //놀당갑서의 여행지 하나를 가져온다.
-  @GetMapping("/admin/desOne")
-  NoldangDestinationResponse getAdminDesOne(Integer desId) {
-    return service.getNoldangDes(desId);
-  }
-
   //유저들의 여행지를 모두 가져온다.
   @GetMapping("/users/list")
   List<Destination> getUsersDesList() {
     return service.getUsersDesList();
   }
 
-  //유저의 여행지 하나를 가져온다. 
-  @GetMapping("/user/desOne")
-  Destination getUserDesOne(Integer desId) {
-    return service.getUserDes(desId);
+  // 여행지 하나를 가져온다.
+  // type : 놀당 여행지 = N , 유저 여행지 = U
+  @GetMapping("/getDes")
+  DestinationResponse getDes(@RequestParam Integer desId, @RequestParam String type) {
+    return service.getDes(desId, type);
   }
 
   // 유저의 새로운 여행지 리스트를 가져온다.
   @GetMapping("/user/list")
-  List<Destination> getUserDesList(Integer userId) {return service.getUserDesList(userId);}
+  List<Destination> getUserDesList(@RequestParam Integer userId) {return service.getUserDesList(userId);}
 
 }

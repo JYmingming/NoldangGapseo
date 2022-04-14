@@ -1,7 +1,7 @@
 package com.noldangGapseo.dao;
 
 import com.noldangGapseo.domain.Destination;
-import com.noldangGapseo.domain.DestinationComment;
+import com.noldangGapseo.domain.Comment;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -13,13 +13,13 @@ public interface DestinationDao {
 
  List<Destination> getAdminDesList();
 
- Destination getUserDes(Integer desId);
-
- Destination getNoldangDes(Integer desId);
-
- List<DestinationComment> getNoldangDesComment(Integer desId);
+ Destination getDes(Integer desId);
 
  List<Destination> getUserDesList(Integer userId);
+
+ List<Comment> getUserCommentList(Integer desId);
+
+ List<Comment> getNoldangCommentList(Integer desId);
 
 
 }

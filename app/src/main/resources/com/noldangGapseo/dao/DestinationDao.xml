@@ -8,7 +8,7 @@
 
     <resultMap type="destination" id="desMap">
     </resultMap>
-    <resultMap id="comMap" type="destinationComment"></resultMap>
+    <resultMap id="comMap" type="Comment"></resultMap>
     <select id="getUsersDesList" resultMap="desMap">
         SELECT d.destination_id, d.destination_name, address, d.reg_date, u.nick_name , dt.destination_type_name
         FROM destination d , `user` u , destination_type dt
@@ -29,22 +29,39 @@
     </select>
 
     <select id="getUserDes" resultMap="desMap" parameterType="Integer">
-        select *
-        from destination
-        where destination_id = #{desId}
+        SELECT  d.destination_id, d.destination_name, d.contents,
+                d.phone , d.address, dt.destination_type_name,
+                u.nick_name , d.reg_date , d.update_date
+        FROM    destination d , destination_type dt, `user` u
+        WHERE   d.destination_id = 249
+        and     d.destination_type_id  = dt.destination_type_id
+        and     d.user_id = u.user_id;
     </select>
 
-    <select id="getNoldangDes" resultMap="desMap" parameterType="Integer">
-        SELECT d.destination_name , d.contents
-        FROM destination d
-        WHERE d.destination_id = #{desId};
+    <select id="getDes" resultMap="desMap" parameterType="Integer">
+        SELECT  d.destination_id, d.destination_name, d.contents,
+                d.phone, d.address, dt.destination_type_name,
+                u.nick_name, d.latitude, d.longitude,
+                d.reg_date, d.update_date
+        FROM    destination d , destination_type dt, `user` u
+        WHERE   d.destination_id = #{desId}
+        and     d.destination_type_id  = dt.destination_type_id
+        and     d.user_id = u.user_id;
+
     </select>
 
-    <select id="getNoldangDesComment" resultMap="comMap" parameterType="Integer">
-        SELECT dc.contents , u.nick_name
-        FROM destination_comment dc , `user` u
-        WHERE dc.destination_id = #{desId}
-        and dc.user_id = u.user_id;
+    <select id="getNoldangCommentList" resultMap="comMap" parameterType="Integer">
+        SELECT  dc.comment_id, dc.contents , u.nick_name
+        FROM    destination_comment dc , `user` u
+        where   dc.destination_id = #{desId}
+        and     dc.user_id = u.user_id;
+    </select>
+
+    <select id="getUserCommentList" resultMap="comMap" parameterType="Integer">
+        SELECT  ndc.new_destination_comment_id comment_id, ndc.contents, u.nick_name
+        FROM    new_destination_commnet ndc, `user` u
+        where   ndc.destination_id = #{desId}
+        and     ndc.user_id = u.user_id ;
     </select>
 
     <select id="getUserDesList" resultMap="desMap" parameterType="Integer">
