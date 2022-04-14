@@ -130,10 +130,15 @@
     font-size: larger;
     font-family: 'Comic Sans MS';
 }
-.travel-root {
+.travel-route {
     border: 1px solid rgb(251, 147, 0);
     border-radius: 10px;
-    height: 70%;
+    height: 47.8%;
+}
+.route-img {
+    object-fit: fill;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 .travel-todo {
     height: 50%;
