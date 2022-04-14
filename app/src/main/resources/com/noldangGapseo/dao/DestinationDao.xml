@@ -10,8 +10,9 @@
     <resultMap id="comMap" type="Comment"></resultMap>
     <resultMap id="imgMap" type="destinationImg"></resultMap>
 
+    <!-- 유저들이 작성한 여행지 리스트를 불러온다. -->
     <select id="getUsersDesList" resultMap="desMap">
-        SELECT d.destination_id, d.destination_name, address, d.reg_date, u.nick_name , dt.destination_type_name
+        SELECT d.destination_id, d.destination_name, address, d.reg_date, u.nick_name, dt.destination_type_name
         FROM destination d , `user` u , destination_type dt
         WHERE d.user_id = u.user_id
         and d.destination_type_id = dt.destination_type_id
@@ -19,6 +20,7 @@
         ORDER BY reg_date desc;
     </select>
 
+    <!-- 놀당의 여행지 리스트를 불러온다. -->
     <select id="getAdminDesList" resultMap="desMap">
         select
         *
@@ -29,16 +31,7 @@
         order by reg_date desc
     </select>
 
-    <select id="getUserDes" resultMap="desMap" parameterType="Integer">
-        SELECT  d.destination_id, d.destination_name, d.contents,
-                d.phone , d.address, dt.destination_type_name,
-                u.nick_name , d.reg_date , d.update_date
-        FROM    destination d , destination_type dt, `user` u
-        WHERE   d.destination_id = #{desId}
-        and     d.destination_type_id  = dt.destination_type_id
-        and     d.user_id = u.user_id;
-    </select>
-
+    <!-- 여행지의 상세항목을 불러온다. -->
     <select id="getDes" resultMap="desMap" parameterType="Integer">
         SELECT  d.destination_id, d.destination_name, d.contents,
                 d.phone, d.address, dt.destination_type_name,
@@ -51,26 +44,32 @@
 
     </select>
 
+    <!-- 놀당 여행지의 댓글을 불러온다. -->
     <select id="getNoldangCommentList" resultMap="comMap" parameterType="Integer">
-        SELECT  dc.comment_id, dc.contents , u.nick_name
-        FROM    destination_comment dc , `user` u
-        where   dc.destination_id = #{desId}
-        and     dc.user_id = u.user_id;
+        SELECT      dc.comment_id, dc.contents , u.nick_name
+        FROM        destination_comment dc , `user` u
+        where       dc.destination_id = #{desId}
+        and         dc.user_id = u.user_id
+        order by    dc.reg_date desc;
     </select>
 
+    <!-- 유저가 작성한 여행지의 댓글을 불러온다. -->
     <select id="getUserCommentList" resultMap="comMap" parameterType="Integer">
-        SELECT  ndc.new_destination_comment_id comment_id, ndc.contents, u.nick_name
-        FROM    new_destination_commnet ndc, `user` u
-        where   ndc.destination_id = #{desId}
-        and     ndc.user_id = u.user_id ;
+        SELECT      ndc.new_destination_comment_id comment_id, ndc.contents, u.nick_name
+        FROM        new_destination_comment ndc, `user` u
+        where       ndc.destination_id = #{desId}
+        and         ndc.user_id = u.user_id
+        order by    ndc.reg_date desc;
     </select>
 
+    <!-- 이미지 리스트를 불러온다. -->
     <select id="getImg" resultMap="imgMap" parameterType="Integer">
         SELECT 	di.destination_img_id, di.img
         FROM 	destination_img di
         WHERE	di.destination_id = #{desId};
     </select>
 
+    <!-- 유저가 작성한 여행지 리스트를 불러온다. -->
     <select id="getUserDesList" resultMap="desMap" parameterType="Integer">
         SELECT  d.destination_id, d.destination_name, dt.destination_type_name,
                 lic.likes_cnt, com.comments_cnt, di.img thumb_nail_img
@@ -89,7 +88,7 @@
                 (
                 SELECT      COUNT(ndc.destination_id) comments_cnt , d3.destination_id
                 FROM        destination d3
-                left join   new_destination_commnet ndc
+                left join   new_destination_comment ndc
                 ON          d3.destination_id = ndc.destination_id
                 WHERE       d3.user_id = #{desId}
                 GROUP by    d3.destination_id
@@ -99,7 +98,8 @@
         WHere       1=1
         and         d.user_id = #{desId}
         and         d.destination_type_id = dt.destination_type_id
-        group by    d.destination_id;
+        group by    d.destination_id
+        order by    d.reg_date desc;
     </select>
 
 </mapper>
