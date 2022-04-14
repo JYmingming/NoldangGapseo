@@ -18,28 +18,24 @@
 
 <header>
     <div class="header_info col-">
-        <a href="../member/form.html">회원가입</a>  공지사항  Q&A
+        <a href="../member/form.html">회원가입</a>  <a href="../customorCenter/noticeBoard/announcement.html">공지사항</a>   <a href="../customorCenter/noticeBoard/noticeBoard.html">Q&A</a> <a href="../adminPage/admin/memberList2.html" class="admin-login">관리자페이지</a>
     </div>
     <div class="headers">
-        <div class="header_logo"> 🍊noldang</div>
+        <div class="header_logo" id="go_home"> 🍊noldang</div>
         <div class="header_login" id ="login-box" >
-
             <div class="dropdown login">
                 <button class="dropbtn login">
-                    <span id="user-name" class="login"></span>
+                    <span id="user-name" class="login">asdasd</span>
                     <!--             <div><span id="user-name" class="login"></span></divㅋ -->
                 </button>
                 <div class="dropdown-content">
-                    <a href="#">profile</a>
-                    <a href="#">write a post</a>
-                    <a href="#">settings</a>
+                    <a href="/myPage/info/infoManage.html">마이페이지</a>
+                    <a href="/travel/list/list.html">내 여행</a>
                     <a href="#" id="logout-btn">LogOut</a>
                 </div>
             </div>
             <button id="login-btn" type="button" class="not-login" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
-
         </div>
-
     </div>
     <div class ="main_container">
         <div class ="hosting">
@@ -83,7 +79,7 @@
         <div class="container" id="third_container">
             <div class="d-flex justify-content-between">
                 <div><h1>내가 느낀 감동, 공유합니다.</h1></div>
-                <div><h5 class="more_content"><a href="#">더보기</a></h5></div>
+                <div><h5 class="more_content"><a href="../userDestination/userDestination3.html">더보기</a></h5></div>
             </div>
                 <div id ="travel-list">
                     <ul>
@@ -176,10 +172,10 @@
                                 <input class="form-control" id="x-add-btn" type="submit" value="Iog In">
                             </div>
                             <div class="row m-5 sns_container">
-                                <div class="col text-center sns_login"><img src=../img/facebook_icon.png></div>
-                                <div class="col text-center sns_login"><img src=../img/facebook_icon.png></div>
-                                <div class="col text-center sns_login"><img src=../img/facebook_icon.png></div>
-                                <div class="col text-center sns_login"><img src=../img/facebook_icon.png></div>
+                                <div class="col text-center sns_login"><img src=/img/facebook_icon.png></div>
+                                <div class="col text-center sns_login"><img src=/img/facebook_icon.png></div>
+                                <div class="col text-center sns_login"><img src=/img/facebook_icon.png></div>
+                                <div class="col text-center sns_login"><img src=/img/facebook_icon.png></div>
                             </div>
                         </form>
                     </div>
@@ -189,6 +185,7 @@
     </div>
     <script type="text/javascript">
         css(".login", "display", "none");
+        css(".admin-login", "display", "none");
 
         fetch("/user/getLoginUser").then(function(response) {
             return response.json();
@@ -197,6 +194,12 @@
                 document.querySelector("#user-name").innerHTML = result.data.nickName;
                 css(".login", "display", "");
                 css(".not-login", "display", "none");
+                console.log("로그인");
+            }
+            if (result.data.userId==1){
+                console.log("어드민 로그인");
+                css(".admin-login", "display", "");
+
             }
         });
 
@@ -205,7 +208,6 @@
                 location.href = "index.html";
             });
         };
-
 
         //css 함수
         function css(selector, name, value) {
@@ -245,9 +247,9 @@
                 });
             return false;
         };
-
-
-
+        document.querySelector("#go_home").onclick = function() {
+            location.href = "/indexPage/index.html";
+        }
 
     </script>
 
@@ -261,7 +263,6 @@
             level: 10
         };
         var map = new kakao.maps.Map(container, options);
-
     </script>
 
 </body>
