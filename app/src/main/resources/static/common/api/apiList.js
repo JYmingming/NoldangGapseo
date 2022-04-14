@@ -2,6 +2,7 @@ export const PATH = {
     USER: {
         list: `/user/list`,
         getLoginUser: '/user/getLoginUser',
+        findByNickName: '/user/search',
     },
     DESTINATION: {},
     TRAVEL: {
@@ -17,6 +18,20 @@ export async function getLoginUser() {
         const response = await fetch(PATH.USER.getLoginUser).then(function (res) {
             return res.json();
         });
+        return response;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- 닉네임으로 유저 정보 가져오기 ----
+export async function findByNickName(nickName) {
+    try {
+        const response = await fetch(`${PATH.USER.findByNickName}?nickName=${nickName}`).then(
+            function (res) {
+                return res.json();
+            }
+        );
         return response;
     } catch (e) {
         console.log(e);

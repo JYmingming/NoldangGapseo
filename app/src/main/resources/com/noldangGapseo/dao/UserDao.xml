@@ -34,7 +34,7 @@
 
     <select id="findNickname" parameterType="String" resultMap="userMap">
         select
-        *
+        user_id, email, phone, nick_Name
         from
         user u
         where
