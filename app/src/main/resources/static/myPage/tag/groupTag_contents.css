@@ -53,14 +53,13 @@ ul{
 .first_box3 ul{
     width: 40vw;
     text-align: center;
-    margin-top: 6vh;
+    margin-top: 6vh !important; 
     list-style-type: none;
 }
 
 
 .first_box3 ul h5 {
     text-align: center;
-    margin-left: 1vw;
     font-weight: bold;
     font-size: 0.75vw;
     overflow: hidden;
@@ -170,13 +169,13 @@ ul{
 }
 
 .second_box3 ul {
-    margin-left: 1vw;
+    margin-left: 1vw !important;
 }
 
 .second_box3 li {
     font-size: 1vw;
-    margin-left: 1.5vw;
-    margin-top: 4vh;
+    margin-left: 1.5vw !important;
+    margin-top: 4vh !important;
     width: 14vw;
     height: 46vh;
     border-radius: 1em;
@@ -225,7 +224,7 @@ ul{
     height: 3vh;
     border-radius: 1em;
     background-color: #fafafa;
-    margin: 1vw 1vw 1vw 1vw;
+    margin: 1vw 1vw 1vw 1.7vw;
     padding: 0 auto;
     float:left;
     border: solid 2px #cccccc;
@@ -237,7 +236,7 @@ ul{
     height: 3vh;
     border-radius: 1em;
     background-color: #fafafa;
-    margin: 1vw 1vw 1vw 1vw;
+    margin: 1vw 1vw 1vw 1.7vw;
     padding: 0 auto;
     float:left;
     border: solid 2px #fb9300;
@@ -250,7 +249,7 @@ ul{
     height: 3vh;
     border-radius: 1em;
     background-color: #fafafa;
-    margin: 1vw 1vw 1vw 1vw;
+    margin: 1vw 1vw 1vw 1.7vw;
     padding: 0 auto;
     float:left;
     border: solid 2px #f54748;

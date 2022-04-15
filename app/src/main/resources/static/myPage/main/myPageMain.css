@@ -108,7 +108,7 @@ body{
 }
 
 .contents_box1 ul{
-    margin-top: -2vh;
+    margin-top: -2vh !important;
     width: 80vw;
     height: 15vh;
 }
@@ -187,7 +187,7 @@ body{
 .wishList_box ul {
     width: 20vw;
     height: 33vh;
-    margin-left: 2vw;
+    margin-left: 2vw !important;
     margin-top: 3vh;
     background-color: #e0e0e0;
     float: left;
