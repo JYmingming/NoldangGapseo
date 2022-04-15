@@ -24,7 +24,7 @@ public class DestinationController {
     return service.getAdminDesList();
   }
 
-  //유저들의 여행지를 모두 가져온다.
+  //유저들이 작성한 여행지 리스트를 가져온다.
   @GetMapping("/users/list")
   List<Destination> getUsersDesList() {
     return service.getUsersDesList();

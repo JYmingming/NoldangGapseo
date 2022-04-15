@@ -80,7 +80,7 @@
                 FROM        destination d2
                 left join   likes l
                 on          d2.destination_id = l.destination_id
-                WHERE       d2.user_id = #{desId}
+                WHERE       d2.user_id = #{userId}
                 group by    d2.destination_id
                 ) as lic
         on      d.destination_id = lic.destination_id
@@ -90,13 +90,13 @@
                 FROM        destination d3
                 left join   new_destination_comment ndc
                 ON          d3.destination_id = ndc.destination_id
-                WHERE       d3.user_id = #{desId}
+                WHERE       d3.user_id = #{userId}
                 GROUP by    d3.destination_id
                 ) as com
         on      d.destination_id = com.destination_id
         left join   destination_img di ON di.destination_id = d.destination_id
         WHere       1=1
-        and         d.user_id = #{desId}
+        and         d.user_id = #{userId}
         and         d.destination_type_id = dt.destination_type_id
         group by    d.destination_id
         order by    d.reg_date desc;
