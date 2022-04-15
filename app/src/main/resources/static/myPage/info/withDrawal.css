@@ -162,7 +162,7 @@ li{
 
 .second_box3 h5 {
     margin-top: 14vh;
-    margin-left: 2vw;
+    margin-left: 2.5vw;
     font-size: 1.25vw;
     font-weight: bold;
 }
@@ -245,8 +245,8 @@ li{
     padding:0;
     width: 20vw;
     height: 57vh;
-    background-color: rgb(250, 250, 250);
-    box-shadow: 1px 1px 5px 0px;
+    background-color: white;
+    border : 2px solid #fb9300;
     border-radius: 1em;
     float: left;
 }
@@ -315,7 +315,7 @@ li{
     width: 15vw;
     height: 28.5vh;
     
-    border-bottom: solid 4px #f5e6ca;
+    border-bottom: solid 3px #f5e6ca;
 }
 
 .con2 {
