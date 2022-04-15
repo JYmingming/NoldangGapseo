@@ -1,16 +1,23 @@
-.myBoard{
-text-align: center;
-margin-left: 870px;
-margin-right: 60px;
-  background-color:#f8941c;
-  color: white;
-  font-weight: bold ;
-   border-radius: 8px;
-
+.board{
+	width: 80%;
+	height: 60px;
+	display: block;
+	margin: auto;
 	
 }
 
-
+.myBoard {
+	width: 200px;
+	height : 40px;
+	text-align: center;
+	float: right; 
+	background-color : #f8941c;
+	color: white;
+	font-weight: bold;
+	border-radius: 8px;
+	background-color: #f8941c;
+	display: block;
+}
 
 .container {
 	margin: 5px;
@@ -39,8 +46,6 @@ margin-right: 60px;
 	font-size: 1.0em;
 	color: red;
 }
-
-
 
 .pagination {
 	text-align: center;

@@ -1,18 +1,16 @@
 package com.noldangGapseo.controller;
 
-import java.util.List;
-
-import com.noldangGapseo.domain.ApiResponse;
-import com.noldangGapseo.domain.UserResponse;
-import com.noldangGapseo.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-import com.noldangGapseo.dao.UserDao;
-import com.noldangGapseo.domain.User;
-
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import com.noldangGapseo.domain.ApiResponse;
+import com.noldangGapseo.domain.User;
+import com.noldangGapseo.domain.UserResponse;
+import com.noldangGapseo.service.UserService;
 
 @RestController
 @RequestMapping("/user")
@@ -28,7 +26,7 @@ public class UserController {
     if(service.add(user)==1){
       return apires;
     }else{
-      apires.setResCode("0000");
+      apires.setResCode("1111");
       apires.setResStatus("fail");
     }
     return apires;
@@ -39,7 +37,7 @@ public class UserController {
     ApiResponse apires =new ApiResponse();
     User loginUser = service.get(email, password);
     if (loginUser == null) {
-      apires.setResCode("0000");
+      apires.setResCode("1111");
       apires.setResStatus("fail");
       return apires;
     }
@@ -66,12 +64,12 @@ public class UserController {
     Object user = session.getAttribute("loginUser");
     if (user != null) {
       return new ApiResponse()
-              .setResStatus("success")
-              .setData(user);
+          .setResStatus("success")
+          .setData(user);
     } else {
       return new ApiResponse()
-              .setResStatus("fail")
-              .setData("로그인 하지 않았습니다.");
+          .setResStatus("fail")
+          .setData("로그인 하지 않았습니다.");
     }
   }
 
@@ -88,10 +86,10 @@ public class UserController {
     return service.userList();
   }
 
-//  @GetMapping("/search")
-//  public User search(String nickName) {
-//    return userDao.findNickname(nickName);
-//  }
+  @GetMapping("/search")
+  public User search(String nickName) {
+    return service.findNickname(nickName);
+  }
 
 
 

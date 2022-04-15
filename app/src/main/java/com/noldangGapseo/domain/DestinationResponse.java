@@ -10,9 +10,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper=false)
-public class NoldangDestinationResponse {
+public class DestinationResponse {
 
     private Destination destination;
-    private DestinationComment destinationComment;
-    private List<DestinationComment> destinationCommentList;
+    private List<Comment> commentList;
+    private List<DestinationImg> destinationImgList;
 }

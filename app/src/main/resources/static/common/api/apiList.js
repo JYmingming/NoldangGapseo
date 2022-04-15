@@ -2,26 +2,16 @@ export const PATH = {
     USER: {
         list: `/user/list`,
         getLoginUser: '/user/getLoginUser',
+        findByNickName: '/user/search',
     },
-    DESTINATION: {},
+    DESTINATION: {
+        userDesList: '/destination/user/list',
+    },
     TRAVEL: {
         travelList: '/travel/travelList',
         info: '/travel/getOne',
     },
 };
-
-// ===== 유저 =====
-// ---- 유저의 로그인 여부를 확인한다.
-export async function getLoginUser() {
-    try {
-        const response = await fetch(PATH.USER.getLoginUser).then(function (res) {
-            return res.json();
-        });
-        return response;
-    } catch (e) {
-        console.log(e);
-    }
-}
 
 // ===== 날짜 포멧 =====
 export async function dateFormat(colon, date) {
@@ -40,6 +30,44 @@ export async function dateFormat(colon, date) {
     let formatDate = year + colon + month + colon + day;
 
     return formatDate;
+}
+
+// ===== 유저 =====
+// ---- 유저의 로그인 여부를 확인한다.
+export async function getLoginUser() {
+    try {
+        const response = await fetch(PATH.USER.getLoginUser).then(function (res) {
+            return res.json();
+        });
+        return response;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- 닉네임으로 유저 정보 가져오기 ----
+export async function findByNickName(nickName) {
+    try {
+        const response = await fetch(`${PATH.USER.findByNickName}?nickName=${nickName}`).then(
+            function (res) {
+                return res.json();
+            }
+        );
+        return response;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ===== Destination ====
+// ---- 회원이 작성한 여행지 리스트를 가져온다.----
+export async function getUserDesList(userId) {
+    try {
+        const response = await axios(`${PATH.DESTINATION.userDesList}?userId=${userId}`);
+        return response.data;
+    } catch (e) {
+        console.log(e);
+    }
 }
 
 // ===== Travel =====

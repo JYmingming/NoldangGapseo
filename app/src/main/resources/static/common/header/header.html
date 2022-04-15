@@ -2,10 +2,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
     <title>HEADER</title>
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
-    <script src="/node_modules//axios/dist/axios.js"></script>
+
+
+    <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css" />
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css" />
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../node_modules/axios/dist/axios.js"></script>
+
+
 </head>
 <style>
     body {
@@ -22,8 +29,9 @@
     .header_logo {
         margin-top: 2.2vh;
         margin-left: 10vw;
-        font-size: 1.5em;
+        font-size: 1.8em;
         font-family: 'Comic Sans MS';
+        cursor: pointer;
     }
     .header_login {
         margin-top: 2.2vh;
@@ -31,31 +39,213 @@
         font-size: 1.5em;
         font-family: 'Comic Sans MS';
     }
+
+    .header_login {
+        margin-top: 2.2vh;
+        margin-right: 14vw;
+        font-size: 1.8em;
+        font-family: 'Comic Sans MS';
+    }
+    .header_login button {
+        border: 0px;
+        background: none;
+        color: rgb(227, 146, 35);
+        font-family: 'Comic Sans MS';
+    }
+
+
+    <!-- -->
+
+    ul,
+    li {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+
+
+    .modal-content {
+        border-radius: 2vw !important;
+    }
+    .login_container {
+        width: 30vw;
+        height: 70vh;
+        overflow: hidden;
+    }
+    .login_container button {
+        margin-top: 1vh;
+        border: 0;
+        outline: 0;
+        background-color: unset;
+        color: rgb(227, 146, 35);
+    }
+    .modal-icon {
+        margin-top: 2vh;
+        height: 10vh;
+    }
+
+    .modal-icon p {
+        text-align: center;
+        color: rgb(227, 146, 35);
+        font-size: 1.6em;
+        font-family: 'Comic Sans MS';
+    }
+
+    .form-group {
+        width: 80%;
+        padding-top: 1vh;
+    }
+    .login-submit input {
+        background-color: rgb(227, 146, 35);
+        color: white;
+        border-radius: 2vw;
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+    }
+    .sns_login img {
+        width: 48px;
+        height: 48px;
+    }
+    @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropbtn {
+        border: 1px solid rgb(37, 37, 37);
+        border-radius: 4px;
+        background-color: #f5f5f5;
+        font-weight: 400;
+        color: rgb(37, 37, 37);
+        padding: 12px;
+        width: 200px;
+        cursor: pointer;
+        font-size: 12px;
+        text-align: right;
+        overflow: hidden;
+    }
+    .dropbtn span{
+        font-size: 1.4em;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        z-index: 1; /*다른 요소들보다 앞에 배치*/
+        font-weight: 400;
+        background-color: #f9f9f9;
+        min-width: 200px;
+        border-radius: 1vw;
+    }
+
+    .dropdown-content a {
+        display: block;
+        text-decoration: none;
+        color: rgb(37, 37, 37);
+        font-size: 12px;
+        padding: 12px 20px;
+        border-radius: 1vw;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #ececec;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+
+
 </style>
 <div class="headers">
-    <div class="header_logo">noldang</div>
-    <div class="header_login">Login</div>
+    <div class="header_logo" id="go_home"> 🍊noldang</div>
+    <div class="header_login" id ="login-box" >
+        <div class="dropdown login">
+            <button class="dropbtn login">
+                <span id="user-name" class="login">asdasd</span>
+                <!--             <div><span id="user-name" class="login"></span></divㅋ -->
+            </button>
+            <div class="dropdown-content">
+                <a href="/myPage/info/infoManage.html">마이페이지</a>
+                <a href="/travel/list/list.html">내 여행</a>
+                <a href="#">여행지 찾기</a>
+                <a href="#" id="logout-btn">LogOut</a>
+            </div>
+        </div>
+        <button id="login-btn" type="button" class="not-login" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+    </div>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="container login_container">
+                <div>
+                    <button type="button" class="" data-bs-dismiss="modal" aria-label="Close">X</button>
+                </div>
+                <div class="modal-icon">
+                    <p class="m-auto">Noldang</p>
+                </div>
+                <div class="d-flex flex-row-reverse bd-highlight">
+                    <p class="px-5 mb-0"><button type="button" >Id/Pw찾기</button></p>
+                </div>
+                <form name="form1">
+                    <div class="form-group m-auto">
+                        <input class="form-control " type="text" name="email" placeholder="email">
+                    </div>
+                    <div class="form-group m-auto">
+                        <input class="form-control m-auto" type="password" name="password" placeholder="Password">
+                    </div>
+                    <div class="form-group m-auto">
+                        <input name="saveEmail" type="checkbox"> 이메일 저장<br>
+                    </div>
+                    <div class="d-flex flex-row-reverse bd-highlight">
+                        <p class="px-5 mt-0"><button type="button" onClick="location.href='../member/form.html'">회원가입</button></p>
+                    </div>
+                    <div class="form-group m-auto login-submit">
+                        <input class="form-control" id="x-add-btn" type="submit" value="Iog In">
+                    </div>
+                    <div class="row m-5 sns_container">
+                        <div class="col text-center sns_login"><img src=/img/facebook_icon.png></div>
+                        <div class="col text-center sns_login"><img src=/img/facebook_icon.png></div>
+                        <div class="col text-center sns_login"><img src=/img/facebook_icon.png></div>
+                        <div class="col text-center sns_login"><img src=/img/facebook_icon.png></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 <script>
-    document.querySelector('.header_logo').onclick = function () {
-        window.location.href = '/indexPage/index.html';
-    };
+    css(".login", "display", "none");
 
-    css('.login', 'display', 'none');
+    fetch("/user/getLoginUser").then(function(response) {
+        return response.json();
+    }).then(function(result) {
+        if (result.resStatus == "success") {
+            document.querySelector("#user-name").innerHTML = result.data.nickName;
+            css(".login", "display", "");
+            css(".not-login", "display", "none");
+        }
+    });
 
-    fetch('/user/getLoginUser')
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (result) {
-            if (result.resStatus == 'success') {
-                document.querySelector('.header_login').innerHTML = result.data.nickName;
-                css('.login', 'display', '');
-                css('.not-login', 'display', 'none');
-            }
+    document.querySelector("#logout-btn").onclick = function() {
+        fetch("/user/signout").then(function(response) {
+            location.href = "/indexPage/index.html";
         });
+    };
 
     //css 함수
     function css(selector, name, value) {
@@ -64,4 +254,39 @@
             e.style[name] = value;
         }
     }
+
+    document.querySelector("#go_home").onclick = function() {
+        location.href = "/indexPage/index.html";
+    }
+
+</script>
+<script>
+    // 로그인
+    var xEmail = document.querySelector("input[name=email]");
+    var xPassword = document.querySelector("input[name=password]");
+
+    document.querySelector("form[name=form1]").onsubmit = function() {
+        if ( xEmail.value == "" ||
+            xPassword.value == "") {
+            window.alert("필수 입력 항목이 비어 있습니다.");
+            return false;
+        }
+        var fd = new FormData(document.forms.namedItem("form1"));
+
+        fetch("/user/signin", {
+            method: "POST",
+            body: new URLSearchParams(fd)
+        })
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(result) {
+                if (result.resStatus == "success") {
+                    location.reload();
+                } else {
+                    window.alert("로그인 실패!")
+                }
+            });
+        return false;
+    };
 </script>

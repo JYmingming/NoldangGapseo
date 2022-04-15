@@ -39,7 +39,7 @@ if (no == null) {
                             <div class="user-nic">${m.nickName}</div>
                         </div>`;
         if (m.state == 'Y') {
-        $('.travel-companion-box').append(companion);
+            $('.travel-companion-box').append(companion);
         }
     });
 })();
@@ -91,6 +91,11 @@ $('.travel-cost').click(function (e) {
 $('.travel-todo').click(function (e) {
     e.preventDefault();
     window.open(`./todo/travelTodo.html?travelId=${no}`);
+});
+
+$('.travel-route').click(function (e) {
+    e.preventDefault();
+    location.href = `./root/travelRoot.html?travelId=${no}`;
 });
 
 export function ddd() {

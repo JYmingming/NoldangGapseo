@@ -2,10 +2,7 @@ package com.noldangGapseo.service;
 
 
 import com.noldangGapseo.dao.TravelDao;
-import com.noldangGapseo.domain.Cost;
-import com.noldangGapseo.domain.Todo;
-import com.noldangGapseo.domain.Travel;
-import com.noldangGapseo.domain.TravelResponse;
+import com.noldangGapseo.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,11 +27,47 @@ public class TravelService {
                 todoList(mapper.todoLength3(travelId)).build();
     }
 
+    public ApiResponse setTravelName(String name, Integer id){
+        Integer status = mapper.setTravelName(name, id);
+        ApiResponse response = new ApiResponse();
+        if(status == 0){
+            return response.setResCode("1111");
+        }
+        return response.setData(name);
+    }
+
     public List<Cost> costList(Integer travelId) {
         return mapper.costList(travelId);
     }
 
     public List<Todo> todoList(Integer travelId){
         return mapper.todoList(travelId);
+    }
+
+    public ApiResponse setTodoStatus(Integer status, Integer todoId){
+       Integer todoStatus = mapper.setTodoStatus(status, todoId);
+       ApiResponse response = new ApiResponse();
+        if(todoStatus == 0){
+           return response.setResCode("1111");
+        }
+        return response;
+    }
+
+    public ApiResponse setTodoName(String name, Integer todoId){
+        Integer todoStatus = mapper.setTodoName(name, todoId);
+        ApiResponse response = new ApiResponse();
+        if(todoStatus == 0){
+            return response.setResCode("1111");
+        }
+        return response;
+    }
+
+    public ApiResponse deleteTodo(Integer todoId){
+        Integer todoStatus = mapper.deleteTodo(todoId);
+        ApiResponse response = new ApiResponse();
+        if(todoStatus == 0){
+            return response.setResCode("1111");
+        }
+        return response;
     }
 }
