@@ -53,7 +53,6 @@
     position:absolute;
     width:500px;
     height:50px;
-    left:10%;
   }
   #question {
     position:absolute;
@@ -65,7 +64,6 @@
   position: relative;
   width: 600px;
   height: 100px;
-  margin: 10px auto;
   top: 5%;
   }
   
@@ -84,7 +82,7 @@
   position: relative;
   width: 600px;
   height: 400px;
-  top: 15%;
+  top: 5%;
   background-color: #f9f9f9;
   }
   
@@ -171,7 +169,10 @@
   font-size:30px;
   }
   
-  
+  #dbt {
+  position: relative;
+  top:20px;
+  }
   #registration {                       /*하단 등록*/
   position: relative;
   float: right; 
@@ -204,9 +205,11 @@
 
 #modal {
   position:relative;
+  text-align: center;
   width:100%;
   height:100%;
   z-index:1;
+  bottom: 500px;
   display: none;
 }
 

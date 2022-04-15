@@ -4,15 +4,17 @@
   <meta charset="utf-8">
   <title>Noldang</title>
   <link rel="stylesheet" type="text/css" href="question.css">
-  <script src="../../node_modules/jquery/src/jquery-1.12.4.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="question.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <script>
+            $(document).ready(function () {
+                $('.headers').load('../../common/header/header.html');
+            });
+    </script>
 </head>
 <body>
-<div id="header">                      <!-- 머리 -->
-  <button id="main-btn" type="button">Noldang</button>
-   <img id="img-2" src="img/c2.jpg">
-  <button id="user-btn" type="button">user</button>
-</div>
+<div class="headers"></div>
 
 <div id="container">                  <!-- 몸통 전체 -->
 
@@ -50,9 +52,10 @@
           *내용 : <input type="text" id="content" >
           <p>
           <span style="color: orange; font-size:1px">내용은 1000byte까지 입력 가능합니다.</span>
-          <span style="color: orange; padding-left:250px; font-size:1px">0 Byte / 1000 Byte</span>
+          <span style="color: orange; padding-left:220px; font-size:1px">0 Byte / 1000 Byte</span>
           </p>
           </from>
+          <div id= dbt>
           <button id="registration" onclick="location.href='announcement.html'">등록</button>
               <div id="modal">
                 <div class="modal_content">
@@ -62,6 +65,7 @@
                <div class="modal_layer"></div>
               </div>
           <button id="cancel" onclick="location.href='announcement.html'">취소</button>
+         </div>
         </div>
       </div>
     </div>
