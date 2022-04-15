@@ -24,15 +24,15 @@
 
 </head>
 <body>
-  <div class="headers"></div> 
+  <div class="headers"></div>
   <br>
-  <div class = "myBoard"  >My Board</div>
+  <div class="myBoard">My Board</div>
 
   <div class="container">
     <div class="row">
 
       <div class="col-3">
-        <div class="card" onClick =>
+        <div class="card" onClick=>
           <img src="/img/SALON de LAVANT3.jpg" class="card-img-top"
             alt="...">
           <div class="card-body">
@@ -138,16 +138,13 @@
 
   <script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
   <script>
-  $(".myBoard").click(function() {
-      location.href = "/travel/myboard/myboard.html"             
-})
+			$(".myBoard").click(function() {
+				location.href = "/travel/myboard/myboard.html"
+			})
 
-     $(".card").click(function() {
-			    	 location.href = "/userDestination/userDestinationDtl3.html"			    	 
-      })
-
-			
-			
+			$(".card").click(function() {
+				location.href = "/userDestination/userDestinationDtl3.html"
+			})
 		</script>
 
   <script>
@@ -155,14 +152,17 @@
 
 			const b = document.querySelectorAll(".card-title")
 
-			fetch("/user/list").then(function(response) {
+
+
+			fetch("/destination/users/list").then(function(response) {
 				return response.json();
 			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 8; i++) {
+		        	b[i].innerHTML =result[i].destinationName;
+		          }
 
-			 	console.log(result.userList);
-				for (var i = 0; i < 8; i++) {
-					b[i].innerHTML = result.userList[i].nickName;
-				}
 
 			})
 		</script>
