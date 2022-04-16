@@ -35,9 +35,14 @@
     <select id="getDes" resultMap="desMap" parameterType="Integer">
         SELECT  d.destination_id, d.destination_name, d.contents,
                 d.phone, d.address, dt.destination_type_name,
-                u.nick_name, d.latitude, d.longitude,
-                d.reg_date, d.update_date
-        FROM    destination d , destination_type dt, `user` u
+                u.nick_name, l.likes_cnt, d.latitude,
+                d.longitude, d.reg_date, d.update_date
+        FROM    destination d , destination_type dt, `user` u ,
+                (
+                SELECT COUNT(l.user_id) likes_cnt
+                FROM likes l
+                WHERE  l.destination_id = #{desId}
+                ) l
         WHERE   d.destination_id = #{desId}
         and     d.destination_type_id  = dt.destination_type_id
         and     d.user_id = u.user_id;
