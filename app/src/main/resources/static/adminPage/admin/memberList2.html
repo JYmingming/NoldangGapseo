@@ -50,7 +50,7 @@ margin-top :60px; margin-right :100px; }
           <table id="products">
          <form action="" id="setRows">
       <span style="  display: inline-block; float : right; margin-bottom : 20px;" >
-        <input type="text" name="rowPerPage" value="7" size ="1"> 개씩 보기
+        <input type="text" name="rowPerPage" value="7" size ="1"> 
         
       </span>
     </form>
@@ -72,11 +72,11 @@ margin-top :60px; margin-right :100px; }
 <tbody>
 
 <tr>
-	<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'">1000</td>
-								<td id="email">tjdgu22s23@naver.com</td>
-								<td id="phone">010-1234-5678</td>
-								<td id="nick_namee">asd22</td>
-								<td id="reg_date">2022-02-03</td>
+	<td  class="memberCenter" a href="#" onclick="location.href='myinfo.html'" th:text="${user_id}"></td>
+								<td id="email" th:text="${email}"></td>
+								<td id="phone" th:text="${phone}"></td>
+									<td id="nick_name" th:text="${nick_name}"></td>
+								<td id="reg_date" th:text="${reg_date}"></td>
 								<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
 								
 	<tr>

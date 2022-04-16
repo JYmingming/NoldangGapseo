@@ -57,7 +57,7 @@ table.type02 td {
     text-decoration: none;
 }
 *:link, *:visited{
- color:  #fb9300;
+color : white;
   
 }
 
@@ -202,7 +202,7 @@ table.type02 td {
     width: 7vw;
     height: 5vh;
     background-color: #fb9300;
-    color: white;
+
     font-size: 0.8vw;
     font-weight: bold;
     margin-left: 40.75vw;

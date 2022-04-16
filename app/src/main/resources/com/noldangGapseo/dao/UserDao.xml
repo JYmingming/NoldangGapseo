@@ -27,9 +27,9 @@
 
 
     <select id="findAll" resultMap="userMap">
-        select *
-        from user u
+       SELECT user_Id , email, phone, nick_name, reg_date FROM user u
         where not user_id = 1
+        
     </select>
 
     <select id="findNickname" parameterType="String" resultMap="userMap">
