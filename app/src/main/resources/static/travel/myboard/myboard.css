@@ -13,6 +13,29 @@
     border-radius: 20px;
     margin-top: 6px;
 }
+.d-tag {
+    display: flex;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 30px;
+    width: 17%;
+    padding: 0px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.d-tag[data-color='blue'] {
+    border-color: #56bbf1;
+    color: #56bbf1;
+}
+.d-tag[data-color='green'] {
+    border-color: #92ba92;
+    color: #92ba92;
+}
+.d-tag[data-color='orange'] {
+    border-color: #ff8f5e;
+    color: #ff8f5e;
+}
 .content-card {
     margin-top: 30px;
 }

@@ -6,6 +6,7 @@ export const PATH = {
     },
     DESTINATION: {
         userDesList: '/destination/user/list',
+        getDes: 'destination/getDes',
     },
     TRAVEL: {
         travelList: '/travel/travelList',
@@ -64,6 +65,17 @@ export async function findByNickName(nickName) {
 export async function getUserDesList(userId) {
     try {
         const response = await axios(`${PATH.DESTINATION.userDesList}?userId=${userId}`);
+        return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- 여행 하나를 가지고 온다  ----
+// type : 놀당 여행지 = N , 유저 여행지 = U
+export async function getDes(id, type) {
+    try {
+        const response = await axios(`${PATH.DESTINATION.getDes}?desId=${travelId}&type=${type}`);
         return response.data;
     } catch (e) {
         console.log(e);
