@@ -31,12 +31,12 @@
     margin-bottom: 10px;
 }
 
-.adress {
+.address {
     margin: 2em 0px;
 }
-#in-adress {
+#in-address {
     right: 0px;
-    text-align: end;
+    text-align: right;
     color: #d1d1d1;
 }
 
@@ -44,4 +44,7 @@
     border: 1px solid black;
     border-radius: 20px;
     padding: 2%;
+}
+#in-contents {
+    text-align: left;
 }

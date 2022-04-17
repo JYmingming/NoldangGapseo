@@ -78,7 +78,7 @@ import { getLoginUser, getUserDesList } from '../../common/api/apiList.js';
         e.preventDefault();
         e.stopPropagation();
         const dId = $(this).attr('data-id');
-        location.href = `/travel/myboard/view.html?desId=${dId}&type=U`;
+        location.href = `/travel/myboard/view.html?desId=${dId}`;
     });
 })();
 
