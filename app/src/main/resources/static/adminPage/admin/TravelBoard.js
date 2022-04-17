@@ -56,22 +56,7 @@
 			
 							let r;
 
-			const s = document.querySelectorAll(".phone")
 
-
-
-			fetch("/destination/users/list").then(function(response) {
-				return response.json();
-			}).then(function(result) {
-				console.log(result);
-				
-		        for (var i = 0; i < 8; i++) {
-		        	s[i].innerHTML =result[i].phone;
-		          }
-
-
-			})
-			
 			//
 			
 									let k;
@@ -94,21 +79,7 @@
 			
 						let g;
 
-			const h = document.querySelectorAll(".contents")
+		
 
 
-
-			fetch("/destination/users/list").then(function(response) {
-				return response.json();
-			}).then(function(result) {
-				console.log(result);
-				
-		        for (var i = 0; i < 8; i++) {
-		        h[i].innerHTML =result[i].contents;
-		          }
-
-
-			})
-			
-			
 		

@@ -16,9 +16,11 @@ FROM noldang.report u
 
 
  where not user_id = 1
+   </select>
+	
 
        
-    </select>
+ 
     
  
    

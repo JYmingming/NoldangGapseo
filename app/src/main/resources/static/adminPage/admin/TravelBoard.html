@@ -32,13 +32,17 @@
 <hr>
 <h1 class ="maintitle">여행지 l 여행지 관리</h1>
 
- <button id="btn123"><a href = "TravelAdd.html" style="color: white">새 여행지 추가</a></button></a>
+    <button id="btn123"><a href = "TravelAdd.html" style="color: white">새 여행지 추가</a></button></a>
  
 
+
 <div class="container">
+
+ 
     <form >
-        <table class="table" id="table">
+        <table  id="products">
            <thead>
+           
   <tr>
     <th >타입</th>
     <th >이름</th>
@@ -51,28 +55,29 @@
     <th>삭제</th>
   </tr>
 </thead>
-<tbody>
+<tbody id = serviceTbody>
 
   <tr>
       <td> <h5 class="destination_type_id"></h5></td>
         <td> <h5 class="destination_name"></h5></td>
        <td> <h5 class="address"></h5></td>
-   <td> <h5 class="phone"></h5></td>
+   <td> <h5 class="phone">0507-1323-6186</h5></td>
    <td> <h5 class="destination_id"></h5></td>
     <td class ="td-6"><img src="img/img5.jpg" width="200" height="100"></td>
-         <td> <h5 class="contents"></h5></td>
+         <td> <h5 class="contents">여기가 한국인지 하와인지 뷰 진짜 좋고 브런치 집이라 메뉴가 좋은데 좀 비싸요</h5></td>
  <td class="td-8">	<button id="open" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       <td class ="td-9"  ><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
+
   </tr>
  
  <tr>
       <td> <h5 class="destination_type_id"></h5></td>
         <td> <h5 class="destination_name"></h5></td>
        <td> <h5 class="address"></h5></td>
-   <td> <h5 class="phone"></h5></td>
+   <td> <h5 class="phone">0507-1342-0814</h5></td>
    <td> <h5 class="destination_id"></h5></td>
     <td class ="td-6"><img src="img/img5.jpg" width="200" height="100"></td>
-         <td> <h5 class="contents"></h5></td>
+         <td> <h5 class="contents">당일날 수작업으로 만들어지는 수제 한과 집이에요~! 씨안오란다항 거북이식혜가 진짜 꿀맛 이에요~!</h5></td>
  <td>	<button id="open" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       <td class ="td-9"  ><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
   </tr>
@@ -103,6 +108,8 @@
   
 </tbody>
 </table>
+
+
 </form>
 </div>
 
@@ -111,8 +118,14 @@
 
 <script>
 
+function deleteRow(r) {
+    var i = r.parentNode.parentNode.rowIndex;
+    document.getElementById("products").deleteRow(i);
+}</script>
 
-</script>
+
+
+
        <script src="./TravelBoard.js" type="module"></script>
 
 </body>
