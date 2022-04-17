@@ -25,5 +25,5 @@ const openButton=document.getElementById("open");
 	overlay.addEventListener("click", closeModal);
 	closeBtn.addEventListener("click", closeModal);
 	openButton.addEventListener("click", openModal);
-	
+	//
 	
