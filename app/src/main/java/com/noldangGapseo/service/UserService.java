@@ -1,5 +1,6 @@
 package com.noldangGapseo.service;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.noldangGapseo.dao.UserDao;
@@ -27,5 +28,14 @@ public class UserService {
   public User findNickname(String nickName) {
     return mapper.findNickname(nickName);
   }
+
+
+  public List<User> findAll() {
+    return mapper.findAll();
+  }
+
+
+
+
 
 }

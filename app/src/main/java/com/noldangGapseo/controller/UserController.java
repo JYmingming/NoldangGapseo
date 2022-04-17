@@ -1,5 +1,6 @@
 package com.noldangGapseo.controller;
 
+import java.util.List;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -90,6 +91,11 @@ public class UserController {
   @GetMapping("/search")
   public User search(String nickName) {
     return service.findNickname(nickName);
+  }
+
+  @GetMapping("/admin/list")
+  List<User> findAll() {
+    return service.findAll();
   }
 
 

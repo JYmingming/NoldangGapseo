@@ -26,8 +26,10 @@
     </select>
 
 
-    <select id="findAll" resultMap="userMap">
-       SELECT user_Id , email, phone, nick_name, reg_date FROM user u
+    <select id="findAll"  resultMap="userMap">
+       SELECT 
+       user_Id , email, phone, nick_name, reg_date 
+       FROM user u
         where not user_id = 1
         
     </select>
@@ -41,7 +43,16 @@
             nick_name = #{nickName}
     </select>
 
-
+ <select id="UserList"  resultMap="userMap">
+       SELECT 
+       user_Id , email, phone, nick_name, reg_date 
+       FROM user u
+        where not user_id = 1
+        
+    </select>
+    
+   
+    
 
 
 </mapper>

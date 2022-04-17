@@ -16,4 +16,12 @@ public interface UserDao {
 
   User findNickname(String nickName);
 
+
+
+
+
+
+
 }
+
+
