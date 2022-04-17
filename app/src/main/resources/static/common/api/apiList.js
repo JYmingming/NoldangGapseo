@@ -6,7 +6,7 @@ export const PATH = {
     },
     DESTINATION: {
         userDesList: '/destination/user/list',
-        getDes: 'destination/getDes',
+        getDes: '/destination/getDes',
     },
     TRAVEL: {
         travelList: '/travel/travelList',
@@ -75,7 +75,7 @@ export async function getUserDesList(userId) {
 // type : 놀당 여행지 = N , 유저 여행지 = U
 export async function getDes(id, type) {
     try {
-        const response = await axios(`${PATH.DESTINATION.getDes}?desId=${travelId}&type=${type}`);
+        const response = await axios(`${PATH.DESTINATION.getDes}?desId=${id}&type=${type}`);
         return response.data;
     } catch (e) {
         console.log(e);
