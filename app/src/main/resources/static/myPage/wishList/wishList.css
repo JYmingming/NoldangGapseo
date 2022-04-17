@@ -57,7 +57,7 @@ li{
 .first_box3 ul{
     width: 40vw;
     text-align: center;
-    margin-left: 1vw !important;
+    margin-left: 0.5vw !important;
     margin-top: 6vh !important;
     list-style-type: none;
 }
@@ -137,7 +137,7 @@ li{
 
 .second_box3 h5 {
     margin-top: 14vh;
-    margin-left: 3vw;
+    margin-left: 2.5vw;
     font-size: 1.25vw;
     font-weight: bold;
 }
