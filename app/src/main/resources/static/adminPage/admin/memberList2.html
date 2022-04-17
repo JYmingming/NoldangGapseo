@@ -78,7 +78,9 @@ margin-top :60px; margin-right :100px; }
 							<td class= "phone"></td>
 							<td class= "nick_name"></td>
 							<td class = "reg_date"></td>
-							<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
+		<td>	<button id="open"  onclick="deleteRow(this);"> 탈퇴</button></td>
+							
+							</tr>
 
            
             </tr>
@@ -90,7 +92,7 @@ margin-top :60px; margin-right :100px; }
 							<td class= "phone"></td>
 							<td class= "nick_name"></td>
 							<td class = "reg_date"></td>
-							<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
+								<td>	<button id="open"  onclick="deleteRow(this);"> 탈퇴</button></td>
 							
 	<tr>
 							<td  class="user_id" a href="#" onclick="location.href='myinfo.html'"></td>
@@ -99,7 +101,7 @@ margin-top :60px; margin-right :100px; }
 							<td class= "phone"></td>
 							<td class= "nick_name"></td>
 							<td class = "reg_date"></td>
-							<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
+									<td>	<button id="open"  onclick="deleteRow(this);"> 탈퇴</button></td>
 								<tr>
 							<td  class="user_id" a href="#" onclick="location.href='myinfo.html'"></td>
 					
@@ -107,7 +109,7 @@ margin-top :60px; margin-right :100px; }
 							<td class= "phone"></td>
 							<td class= "nick_name"></td>
 							<td class = "reg_date"></td>
-							<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
+					<td>	<button id="open"  onclick="deleteRow(this);"> 탈퇴</button></td>
 								<tr>
 							<td  class="user_id" a href="#" onclick="location.href='myinfo.html'"></td>
 					
@@ -115,7 +117,7 @@ margin-top :60px; margin-right :100px; }
 							<td class= "phone"></td>
 							<td class= "nick_name"></td>
 							<td class = "reg_date"></td>
-							<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
+								<td>	<button id="open"  onclick="deleteRow(this);"> 탈퇴</button></td>
 								<tr>
 							<td  class="user_id" a href="#" onclick="location.href='myinfo.html'"></td>
 					
@@ -123,7 +125,7 @@ margin-top :60px; margin-right :100px; }
 							<td class= "phone"></td>
 							<td class= "nick_name"></td>
 							<td class = "reg_date"></td>
-							<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
+								<td>	<button id="open"  onclick="deleteRow(this);"> 탈퇴</button></td>
 								<tr>
 							<td  class="user_id" a href="#" onclick="location.href='myinfo.html'"></td>
 					
@@ -131,7 +133,7 @@ margin-top :60px; margin-right :100px; }
 							<td class= "phone"></td>
 							<td class= "nick_name"></td>
 							<td class = "reg_date"></td>
-							<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
+						<td>	<button id="open"  onclick="deleteRow(this);"> 탈퇴</button></td>
 								<tr>
 							<td  class="user_id" a href="#" onclick="location.href='myinfo.html'"></td>
 					
@@ -139,7 +141,7 @@ margin-top :60px; margin-right :100px; }
 							<td class= "phone"></td>
 							<td class= "nick_name"></td>
 							<td class = "reg_date"></td>
-							<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
+									<td>	<button id="open"  onclick="deleteRow(this);"> 탈퇴</button></td>
 								<tr>
 							<td  class="user_id" a href="#" onclick="location.href='myinfo.html'"></td>
 					
@@ -147,7 +149,7 @@ margin-top :60px; margin-right :100px; }
 							<td class= "phone"></td>
 							<td class= "nick_name"></td>
 							<td class = "reg_date"></td>
-							<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
+								<td>	<button id="open"  onclick="deleteRow(this);"> 탈퇴</button></td>
 								<tr>
 							<td  class="user_id" a href="#" onclick="location.href='myinfo.html'"></td>
 					
@@ -155,7 +157,7 @@ margin-top :60px; margin-right :100px; }
 							<td class= "phone"></td>
 							<td class= "nick_name"></td>
 							<td class = "reg_date"></td>
-							<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>
+						<td>	<button id="open"  onclick="deleteRow(this);"> 탈퇴</button></td>
 								<tr>
 							<td  class="user_id" a href="#" onclick="location.href='myinfo.html'"></td>
 					
@@ -163,7 +165,7 @@ margin-top :60px; margin-right :100px; }
 							<td class= "phone"></td>
 							<td class= "nick_name"></td>
 							<td class = "reg_date"></td>
-							<td><input style="zoom:2.0;" type="checkbox" class="checkbox"></td></tr>						
+									<td>	<button id="open"  onclick="deleteRow(this);"> 탈퇴</button></td>					
        
        
          
@@ -187,72 +189,9 @@ margin-top :60px; margin-right :100px; }
    
     
 </div>
-<style>
-.button{
-all: unset;
-background-color : red;
-color : white;
-border-radius : 5px;
-cursor : pointer;
-margin-left : 1080px;
-margin-top : 500px;
-position: absolute;
-  text-align: center;
-}
-
-.modal{
-
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-display: flex;
-justify-content:center;
-align-items: center;
-
-}
-
-.modal_overlay {
-background-color : rgba(0,0,0,0.6);
-width: 100%;
-height: 100%;
-position: absolute;
-}
-
-.modal_content {
-	background-color : white;
-	margin-top : 100px;
-	padding : 100px 100px;
-	text-align: center;
-	position: absolute;
-	border-radius : 10px;
-	width: 10%;
-	top: 0px;
-	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-}
-
-h1{
-margin: 0;
-}
-
-.hidden{
-		display: none;
-}
 
 
-</style>
 
-<button id="open" style ="all: unset;
-background-color : red;
-color : white;
-font-size:1.5em;
-border-radius : 5px;
-cursor : pointer;
-margin-left : 1400px;
-margin-top : 20px;
-position: absolute;
-  text-align: center;"> 탈퇴</button>
 <div class="modal hidden">
 <div class="modal_overlay"></div>
 <div class="modal_content">
@@ -276,6 +215,8 @@ position: absolute;
 	closeBtn.addEventListener("click", closeModal);
 	openButton.addEventListener("click", openModal);
 </script>
+
+
 
 <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
         <script type="text/javascript"> 
@@ -477,6 +418,19 @@ $setRows.submit();
 			})
 	
 		</script>
-
+		
+		<script>
+		function deleteRow(r) {
+		    var i = r.parentNode.parentNode.rowIndex;
+		    document.getElementById("products").deleteRow(i);
+		}</script>
+	        <script src="memberList2.js" type="module"></script>
+	        
+	        <script>
+        function showPopup(){
+            window.open("Popup.html","팝업 테스트","width=400, height=300, top=10, left=10");
+        }
+        
+    </script>
 </body>
 </html>
