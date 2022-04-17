@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import com.noldangGapseo.dao.UserDao;
 import com.noldangGapseo.domain.User;
 import com.noldangGapseo.domain.UserResponse;
-
 @Service
 public class UserService {
 
@@ -33,6 +32,7 @@ public class UserService {
   public List<User> findAll() {
     return mapper.findAll();
   }
+
 
 
 

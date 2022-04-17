@@ -1,29 +1,23 @@
 package com.noldangGapseo.domain;
 
-import java.util.Date;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 @Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper=false)
-public class User {
+@Accessors(chain = true) 
 
+public class ReportResponse {
 
-  private Integer userId;
-  private String nickName;
-  private String password;
-  private String email;
-  private String phone;
-  private Date regDate;
-  private Date updateDate;
-  private String profileImg;
-
-
-
+  private Report reportuser;
+  private Integer userCnt;
+  private List<Report> reportuserList;
 }

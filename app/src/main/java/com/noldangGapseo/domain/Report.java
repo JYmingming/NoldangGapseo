@@ -12,17 +12,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper=false)
-public class User {
+public class Report {
 
 
-  private Integer userId;
-  private String nickName;
-  private String password;
+  private String postType;
+  private String postId;
+  private String userId;
   private String email;
   private String phone;
   private Date regDate;
-  private Date updateDate;
-  private String profileImg;
+  private String nickname;
+  private String contents;
+  private String reportId;
 
 
 

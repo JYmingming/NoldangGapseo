@@ -30,7 +30,7 @@
 <select name="catgo"  >
         <option value="title">글번호</option>
        
-        <option value="name">신고자아이디</option>
+        <option value="name">신고번호</option>
         <option value="content">닉네임</option>
           <option value="phone">이메일</option>
       </select>
@@ -44,7 +44,7 @@
   <table id="products">
   <form action="" id="setRows">
          <span style="  display: inline-block; float : right; margin-bottom : 20px;" >
-        <input type="text" name="rowPerPage" value="7" size ="1"> 개씩 보기
+        <input type="text" name="rowPerPage" value="7" size ="1"> 
         
       </span>
     </form>
@@ -52,7 +52,7 @@
   <tr>
     <th >타입</th>
     <th >글번호</th>
-    <th>신고자아이디</th>
+    <th>신고번호</th>
     <th>닉네임</th>
     <th >이메일</th>
     <th>신고사유</th>
@@ -65,17 +65,52 @@
   th{font-family: Comic Sans MS;border: thin solid #6495ed;padding: 4px;background-color: #fb9300; border-radius :10px; color : white; }
  td{font-family: Comic Sans MS;border: thin solid white;padding: 4px;text-align: center;}.odd{background:white;}.odd{background:white;}
  img{padding:5px; border:solid; border-color: #dddddd #aaaaaa #aaaaaa #dddddd; border-width: 1px 2px 2px 1px; background-color:white;}</style>
-  <tr>
+ <tr>
     <td class = "postType"></td>
     <td class = "postId"></td>
-    <td  class = "userId"></td>
     <td  class = "reportId"></td>
+     <td  class = "nickname"></td>
     <td  class = "email"></td>
     <td  class = "contents"></td>
     <td  class = "regDate"></td>
       <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
   </tr>
  
+ 
+ <tr>
+    <td class = "postType"></td>
+    <td class = "postId"></td>
+    <td  class = "reportId"></td>
+     <td  class = "nickname"></td>
+    <td  class = "email"></td>
+    <td  class = "contents"></td>
+    <td  class = "regDate"></td>
+      <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
+  </tr>
+  
+   <tr>
+    <td class = "postType"></td>
+    <td class = "postId"></td>
+    <td  class = "reportId"></td>
+     <td  class = "nickname"></td>
+    <td  class = "email"></td>
+    <td  class = "contents"></td>
+    <td  class = "regDate"></td>
+      <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
+  </tr>
+  
+   <tr>
+    <td class = "postType"></td>
+    <td class = "postId"></td>
+    <td  class = "reportId"></td>
+     <td  class = "nickname"></td>
+    <td  class = "email"></td>
+    <td  class = "contents"></td>
+    <td  class = "regDate"></td>
+      <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
+  </tr>
+  
+  
     
 </tbody>
 </table>
@@ -172,18 +207,150 @@ $setRows.submit();</script>
 <script>
 			let a;
 
-			const b = document.querySelectorAll(".email")
+			const b = document.querySelectorAll(".postType")
 		
 
 
 
-		fetch("/report/admin2/list").then(function(response) {
+		fetch("/report/user/list").then(function(response) {
 				return response.json();
 			}).then(function(result) {
 				console.log(result);
 				
 		        for (var i = 0; i < 8; i++) {
-		        	b[i].innerHTML =result[i].email;
+		        	b[i].innerHTML =result[i].postType;
+		          }
+
+
+			})
+	
+		</script>
+		
+		<script>
+			let c;
+
+			const d = document.querySelectorAll(".postId")
+		
+
+
+
+		fetch("/report/user/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 8; i++) {
+		        	d[i].innerHTML =result[i].postId;
+		          }
+
+
+			})
+	
+		</script>
+		
+		<script>
+			let e;
+
+			const f = document.querySelectorAll(".reportId")
+		
+
+
+
+		fetch("/report/user/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 8; i++) {
+		        	f[i].innerHTML =result[i].reportId;
+		          }
+
+
+			})
+	
+		</script>
+		
+		<script>
+			let g;
+
+			const h = document.querySelectorAll(".nickname")
+		
+
+
+
+		fetch("/report/user/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 8; i++) {
+		        	h[i].innerHTML =result[i].nickname;
+		          }
+
+
+			})
+	
+		</script>
+		
+		<script>
+			let k;
+
+			const l = document.querySelectorAll(".email")
+		
+
+
+
+		fetch("/report/user/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 8; i++) {
+		        	l[i].innerHTML =result[i].email;
+		          }
+
+
+			})
+	
+		</script>
+		
+		<script>
+			let m;
+
+			const n = document.querySelectorAll(".contents")
+		
+
+
+
+		fetch("/report/user/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 8; i++) {
+		        	n[i].innerHTML =result[i].contents;
+		          }
+
+
+			})
+	
+		</script>
+		
+		<script>
+			let o;
+
+			const p = document.querySelectorAll(".regDate")
+		
+
+
+
+		fetch("/report/user/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 8; i++) {
+		        	p[i].innerHTML =result[i].regDate;
 		          }
 
 
