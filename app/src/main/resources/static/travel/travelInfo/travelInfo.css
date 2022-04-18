@@ -95,7 +95,7 @@
     width: 200px;
 }
 .travel-cost {
-    height: 12%;
+    height: 2em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,7 +108,7 @@
     font-family: 'Comic Sans MS';
 }
 .travel-weather {
-    height: 12%;
+    height: 2em;
     border: 1px solid rgb(251, 147, 0);
     border-radius: 10px;
     font-weight: bold;
@@ -116,10 +116,13 @@
     padding-top: 5px;
     font-family: 'Comic Sans MS';
 }
-.travel-tag {
+.right-box {
     border: 1px solid rgb(251, 147, 0);
     border-radius: 10px;
-    height: 70%;
+}
+.travel-tag {
+    border-radius: 10px;
+    height: 20em;
 }
 .tag-colum {
     padding-top: 3%;
@@ -131,19 +134,16 @@
     font-family: 'Comic Sans MS';
 }
 .travel-route {
-    border: 1px solid rgb(251, 147, 0);
-    border-radius: 10px;
-    height: 47.8%;
+    height: 20em;
 }
 .route-img {
+    height: 81%;
     object-fit: fill;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
 .travel-todo {
-    height: 50%;
-    border: 1px solid rgb(251, 147, 0);
-    border-radius: 10px;
+    height: 20em;
 }
 .todo {
     margin: 4%;

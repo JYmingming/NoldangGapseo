@@ -29,7 +29,7 @@
 
 
 <div class="container">
-    <form >
+    <form action = "/join_process" method = "post">
         <table class="table" id="table">
            <thead>
   <tr>
@@ -47,28 +47,28 @@
 
   <tr>
   
-    <td class ="td-1"><form>
-  <select name="language" >
+    <td class ="destination_type_id"><form>
+  <select name="type" >
     <option value="none">=== 선택 ===</option>
-    <option value="food">맛집</option>
-    <option value="landscape">명소</option>
-    <option value="cafe">카페</option>
+    <option value="1">맛집</option>
+    <option value="2">명소</option>
+    <option value="3">카페</option>
   </select>
-</form></td>
-      <td class="td-2"><input size="5"></input></td>
-   <td><input type="text" id="address_kakao" name="address" readonly size="50"/></td>
-   <td class="td-4"><input size="10"></input></td>
-  <td class="td-5"><input size="15"></input></td>
-    <td class ="td-6"> <form method="post" action="upload" enctype="multipart/form-data">
 
-  <div>
- <input type="file" name="file" accept="image/*">
-  </div>
-  
-  <input type="submit">
+
 
 </form></td>
-      <td class="td-3"><input size="30"></input></td>
+
+
+      <td class="destination_name"><input type = "text" name = "destination_type_id" size="5"></input></td>
+   <td><input type="address" id="address_kakao" name="address" readonly size="50"/></td>
+   <td class="phone"><input type = "text" name = "phone"  size="10"></input></td>
+  <td class="destination_id"><input type = "text" name = "destination_id"  size="15"></input></td>
+    <td class ="td-6"> <img id="preview" src="" width="200"  alt="">
+<input type="file" id="getfile" accept="image/*">
+</td>
+ 
+      <td class="contents"><input type = "text" name = "contents" size="30"></input></td>
  
   </tr>
 
@@ -78,6 +78,10 @@
  <button id="btn2"><a href = "TravelBoard.html">완료</a></button></a>
 
 </div>
+
+
+
+</form>
 
 </body>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -93,5 +97,22 @@ window.onload = function(){
         }).open();
     });
 }
+</script>
+
+<script>
+var file = document.querySelector('#getfile');
+
+file.onchange = function () { 
+    var fileList = file.files ;
+    
+    // 읽기
+    var reader = new FileReader();
+    reader.readAsDataURL(fileList [0]);
+
+    //로드 한 후
+    reader.onload = function  () {
+        document.querySelector('#preview').src = reader.result ;
+    }; 
+}; 
 </script>
 </html>

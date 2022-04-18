@@ -44,7 +44,7 @@
     </select>
 
     <!-- 여행의 이름을 바꾼다. -->
-    <update id="setTravelName">
+    <update id="updateName">
         UPDATE  travel
         set     travel_name = #{name}
         WHERE   travel_id = #{id};
