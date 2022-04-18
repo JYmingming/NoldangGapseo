@@ -65,7 +65,13 @@
  					margin-top : 20px;
           height: 600px;
           margin-left:50px;
-         
+         z-index : 2;
+    }
+    
+    .rowPerPage{
+    z-index : 1;
+    display: none;
+   
     }
     .memberCenter{
         text-align: center;

@@ -38,20 +38,25 @@ margin-top :60px; margin-right :100px; }
 
 
 <div id="input-form">
-<select name="catgo"  >
-        <option value="userNum">회원번호</option>
+<select name="catgo" style ="  float : left" >
+        <option value="userNum">닉네임</option>
        
         <option value="userID">아이디</option>
         <option value="userEmail">이메일</option>
           <option value="userPhone">전화번호</option>
       </select>
-          <input type="text" id="keyword" />
+   </div>  
+   <div>
+          <input type="text" id="keyword"  style ="width:10%;  float : left; margin-left: 5px;"  />
         </div>
+        
+        
         <div class="container" >
+       
           <table id="products">
          <form action="" id="setRows">
-      <span style="  display: inline-block; float : right; margin-bottom : 20px;" >
-        <input type="text" name="rowPerPage" value="7" size ="1"> 
+      <span style=  "display: none; float : right; margin-bottom : 20px;" >
+        <input  type="text" name="rowPerPage" value="7" size ="1" > 
         
       </span>
     </form>
@@ -227,7 +232,7 @@ margin-top :60px; margin-right :100px; }
             $("#keyword").keyup(function() {
                 var k = $(this).val();
                 $("#products > tbody > tr").hide();
-                var temp = $("#products > tbody > tr > td:nth-child(5n+1):contains('" + k + "')");
+                var temp = $("#products > tbody > tr > td:nth-child(5n+4):contains('" + k + "')");
                 
                 $(temp).parent().show();
             })
