@@ -30,6 +30,22 @@
         user_id = 1
         order by reg_date desc
     </select>
+    
+        <!-- 페이징 연습 객체 8개씩 끊어 보기 -->
+    <select id="getAdminDesList1" resultMap="desMap">
+        select
+        *
+        from
+        destination
+        where
+        user_id = 1
+        order by destination_id desc
+        limit 8
+        offset #{offset}, #{rowCount}
+        
+        
+    </select>
+    
 
     <!-- 여행지의 상세항목을 불러온다. -->
     <select id="getDes" resultMap="desMap" parameterType="Integer">

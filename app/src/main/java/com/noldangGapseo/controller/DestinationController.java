@@ -1,15 +1,14 @@
 package com.noldangGapseo.controller;
 
-import com.noldangGapseo.domain.Destination;
-import com.noldangGapseo.domain.DestinationResponse;
-import com.noldangGapseo.service.DestinationService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
+import com.noldangGapseo.domain.Destination;
+import com.noldangGapseo.domain.DestinationResponse;
+import com.noldangGapseo.service.DestinationService;
 
 @RequestMapping("/destination")
 @RestController
@@ -23,6 +22,13 @@ public class DestinationController {
   List<Destination> getAdminDesList() {
     return service.getAdminDesList();
   }
+
+  //page 만들기 연습
+  @GetMapping("/admin/list1")
+  List<Destination> getAdminDesList1() {
+    return service.getAdminDesList1();
+  }
+
 
   //유저들이 작성한 여행지 리스트를 가져온다.
   @GetMapping("/users/list")
