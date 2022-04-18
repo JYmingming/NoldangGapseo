@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>놀당갑서</title>
+    <link rel="stylesheet" type="text/css" href="map.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css" />
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+            $(document).ready(function () {
+                $('.headers').load('../../common/header/header.html');
+            });
+    </script>
+    
+</head>
+
+<body>
+<div class="headers"></div>
+
+            <div class ="fourth_container">
+                <div>
+                    <h1>검색</h1>
+                </div>
+                <div id="map"></div>
+            </div>
+
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=04d2370bb5a7c0451b3db7bbd723c9d1&libraries=services"></script>
+    <script>
+
+  
+        const mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            mapOption = {
+                center: new kakao.maps.LatLng(33.374, 126.557), // 지도의 중심좌표
+                level: 10, // 지도의 확대 레벨
+                mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
+            }; 
+
+        // 지도를 생성한다 
+        const map = new kakao.maps.Map(mapContainer, mapOption);
+        
+     // 장소 검색 객체를 생성합니다
+        var ps = new kakao.maps.services.Places();
+     
+    </script>
+
+</body>
+</html>

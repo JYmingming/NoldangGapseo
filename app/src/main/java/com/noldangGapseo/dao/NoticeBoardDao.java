@@ -8,6 +8,6 @@ import com.noldangGapseo.domain.NoticeVO;
 public interface NoticeBoardDao {
 
   //@Select("SELECT * FROM noldang.service_center")
-  List<NoticeVO> getNoticeList();
+  List<NoticeVO> getNoticeList(String type);
 
 }

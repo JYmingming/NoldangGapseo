@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <head>
   <meta charset="utf-8">
   <title>Noldang</title>
@@ -18,28 +19,28 @@
 <body>
 <div class="headers"></div>
 
-<div class="container">                  <!-- 몸통 전체 -->
+<div id="container">                  <!-- 몸통 전체 -->
 
-  <div class="body">
-    <div class="body-a">
-      <span class="announcement-center" >공지사항/Q&A</span> 
+  <div id="body">
+    <div id="body-a">
+      <span id="announcement-center" >공지사항/Q&A</span> 
     </div>
     
-    <div class="body-b">
-        <input class="search" type="search" 
+    <div id="body-b">
+        <input id="search" type="search" 
         placeholder="검색어를 입력해주세요">
-        <img class= "search-img" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
-        <img class="img-3" src="img/b1.jpg"> 
-        <div class="s-text">
+        <img id= "search-img" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
+        <img id="img-3" src="img/b1.jpg"> 
+        <div id="s-text">
           <p><span style="color: orange;">궁굼한 점</span>이 있으면 검색해주세요
         </div>
-        <div class="date-box">
+        <div id="date-box">
         <input type="text" id="datepicker1">
         <input type="text" id="datepicker2">
         </div>
     </div>
     
-    <div class="body-d">
+    <div id="body-d">
       <table>
         <tr>
          <th><input class="b-button clicked" type="button" value="공지사항" onClick="view(1)"></th>
@@ -48,10 +49,10 @@
       </table> 
     </div>
     
-    <div class= "body-e">
+    <div id= "body-e">
   
       <div id="view1">
-      <form class="view-box">
+      <form id="view-box">
        <p>전체<span style="color: orange;">100</span>건
         <select name="view" >
           <option value="up views" selected>조회수 높은순</option>
@@ -64,15 +65,22 @@
       <table id="tb1">
         <tbody>
           <tr><th>No.</th><th>제목</th><th>등록일</th><th>조회수</th></tr>
+          <c:forEach var="item" items="${list}">
+          <tr>
+            <td>#{item.title}</td>
+            <td>#{item.regdate}</td>
+            <td>#{item.viewcount}</td>
+          </tr>
+          </c:forEach>
         </tbody>
       </table> 
-      <button class="back" onclick="location.href='noticeBoard.html'">뒤로가기</button>
+      <button id="back" onclick="location.href='noticeBoard.html'">뒤로가기</button>
       </div>
 
 
 
       <div id="view2">
-        <form class="view-box">
+        <form id="view-box">
        <p>전체<span style="color: orange;">100</span>건
         <select name="view" >
           <option value="all" selected>전체 글</option>
@@ -81,14 +89,14 @@
           <option value="old date">예전 등록일</option>
         </select>
        </form>
-       <button class="myquestion" onclick="location.href='myquestion.html'">내질문관리</button>
+       <button id="myquestion" onclick="location.href='myquestion.html'">내질문관리</button>
         <table id="tb2">
          <tbody>
           <tr><th>No.</th><th>제목</th><th>작성자</th><th>등록일</th><th>답변상태</th></tr>
          </tbody>
         </table>
-        <button class="back" onclick="location.href='noticeBoard.html'">뒤로가기</button>
-        <button class="question" onclick="location.href='question.html'">질문하기</button>
+        <button id="back" onclick="location.href='noticeBoard.html'">뒤로가기</button>
+        <button id="question" onclick="location.href='question.html'">질문하기</button>
       </div>
       
      </div>
@@ -96,7 +104,7 @@
     
     
     
-    <div class="page">
+    <div id="page">
       <a class=page-a href="" type="button">《</a>
       <a class=page-a href="" type="button">1</a>
       <a class=page-a href="" type="button">2</a>

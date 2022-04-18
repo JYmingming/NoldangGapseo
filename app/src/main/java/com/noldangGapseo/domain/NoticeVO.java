@@ -17,11 +17,30 @@ public class NoticeVO {
   String contents;
   Integer sevice_senter_id;
   String title;
+  String nickname;
 
-  @Override
-  public String toString() {
-    return "NoticeVO [sevice_senter_id=" + sevice_senter_id + ", title=" + title + ", regdate="
-        + regdate + ", viewcount=" + viewcount + ", contents=" + contents + "]";
+  public Date getRegdate() {
+    return regdate;
+  }
+
+  public void setRegdate(Date regdate) {
+    this.regdate = regdate;
+  }
+
+  public Integer getViewcount() {
+    return viewcount;
+  }
+
+  public void setViewcount(Integer viewcount) {
+    this.viewcount = viewcount;
+  }
+
+  public String getNick_name() {
+    return nickname;
+  }
+
+  public void setNick_name(String nickname) {
+    this.nickname = nickname;
   }
 
   public Integer getSevice_senter_id() {
@@ -42,6 +61,7 @@ public class NoticeVO {
   public void setReg_date(Date regdate) {
     this.regdate = regdate;
   }
+
   public Integer getView_count() {
     return viewcount;
   }
@@ -53,6 +73,13 @@ public class NoticeVO {
   }
   public void setContents(String contents) {
     this.contents = contents;
+  }
+
+  @Override
+  public String toString() {
+    return "NoticeVO [regdate=" + regdate + ", viewcount=" + viewcount + ", contents=" + contents
+        + ", sevice_senter_id=" + sevice_senter_id + ", title=" + title + ", nickname=" + nickname
+        + "]";
   }
 
 }

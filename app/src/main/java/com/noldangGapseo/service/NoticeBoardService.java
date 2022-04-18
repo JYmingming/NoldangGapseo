@@ -14,7 +14,7 @@ public class NoticeBoardService {
   NoticeBoardDao mapper;
 
   // 놀당의 여행지 리스트를 가져온다.
-  public List<NoticeVO> getNoticeList() {
-    return  mapper.getNoticeList();
+  public List<NoticeVO> getNoticeList(String type) {
+    return  mapper.getNoticeList(type);
   }
 }
