@@ -189,7 +189,7 @@ border-collapse:collapse;
     border: 0;
     outline: 0;
     overflow: hidden;
-  
+  cursor : pointer;
     margin-left : 1200px;
 }
 	
@@ -265,3 +265,10 @@ margin: 0;
 	  background-color: #fb9300;
 	}
 
+
+
+
+.wow {
+  
+  visibility:visible;
+}
