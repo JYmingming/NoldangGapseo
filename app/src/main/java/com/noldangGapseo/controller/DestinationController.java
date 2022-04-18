@@ -4,10 +4,7 @@ import com.noldangGapseo.domain.Destination;
 import com.noldangGapseo.domain.DestinationResponse;
 import com.noldangGapseo.service.DestinationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -41,4 +38,15 @@ public class DestinationController {
   @GetMapping("/user/list")
   List<Destination> getUserDesList(@RequestParam Integer userId) {return service.getUserDesList(userId);}
 
+  // 좋아요 추가
+  @PostMapping("/addLike")
+  Integer addLike(Integer desId, Integer userId){
+    return service.addLike(desId, userId);
+  }
+
+  // 좋아요 삭제
+  @DeleteMapping("/deleteLike")
+  Integer deleteLike(Integer desId, Integer userId){
+    return service.deleteLike(desId, userId);
+  }
 }
