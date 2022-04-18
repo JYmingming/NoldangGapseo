@@ -34,7 +34,7 @@
 <table class="type02">
   <tr>
     <th scope="row">이메일</th>
-    <td>tjdgu22s23@naver.com</td>
+   	<td class ="email"  ></td>
   </tr>
   <tr>
     <th scope="row">작성한 게시글 수</th>
@@ -50,10 +50,54 @@
   </tr>
     <tr>
     <th scope="row">주소</th>
-    <td>서울시 강남구 xxx xxxx</td>
+     	<td class ="address"  ></td>
   </tr>
 </table>
 </div>
 <button id = "btn3"><a href = "memberList2.html">목록으로</a></button>
 </body>
+
+<script>
+			let a;
+
+			const b = document.querySelectorAll(".email")
+		
+
+
+
+		fetch("/report/user/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 8; i++) {
+		        	b[i].innerHTML =result[i].email;
+		          }
+
+
+			})
+	
+		</script>
+		
+		<script>
+			let c;
+
+			const d = document.querySelectorAll(".address")
+		
+
+
+
+		fetch("/report/user/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 8; i++) {
+		        	d[i].innerHTML =result[i].address;
+		          }
+
+
+			})
+	
+		</script>
 </html>

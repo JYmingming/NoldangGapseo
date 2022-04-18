@@ -24,7 +24,7 @@ public class Report {
   private String nickname;
   private String contents;
   private String reportId;
-
+  private String address;
 
 
 }

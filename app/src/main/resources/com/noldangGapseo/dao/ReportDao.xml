@@ -11,7 +11,7 @@
 
    
  <select id="reportfindAll"  resultMap="reportMap">
- SELECT report_id, user_id, post_type, post_id, contents, reg_date, nickname, email
+ SELECT report_id, user_id, post_type, post_id, contents, reg_date, nickname, email, address
 FROM noldang.report u
 
 

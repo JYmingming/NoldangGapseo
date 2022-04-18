@@ -13,8 +13,8 @@ const openButton=document.getElementById("open");
 	openButton.addEventListener("click", openModal);
 	
 	const openButton=document.getElementById("wow");
-	const modal = document.querySelector(".modal");
-	const overlay = modal.querySelector(".modal_overlay")
+	const modal = document.querySelector(".modal2");
+	const overlay = modal.querySelector(".modal2_overlay")
 	const closeBtn = modal.querySelector("button");
 	const openModal = () =>{
 		modal.classList.remove("hidden");
@@ -26,4 +26,6 @@ const openButton=document.getElementById("open");
 	closeBtn.addEventListener("click", closeModal);
 	openButton.addEventListener("click", openModal);
 	//
+	
+	
 	
