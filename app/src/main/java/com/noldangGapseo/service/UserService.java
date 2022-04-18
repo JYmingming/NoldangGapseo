@@ -24,7 +24,7 @@ public class UserService {
     return new UserResponse().setUserList(mapper.findAll());
   }
 
-  public User findNickname(String nickName) {
+  public List<User> findNickname(String nickName) {
     return mapper.findNickname(nickName);
   }
 

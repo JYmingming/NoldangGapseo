@@ -2,7 +2,7 @@ export const PATH = {
     USER: {
         list: `/user/list`,
         getLoginUser: '/user/getLoginUser',
-        findByNickName: '/user/search',
+        findByNickName: '/user/search/nickName',
     },
     DESTINATION: {
         userDesList: '/destination/user/list',

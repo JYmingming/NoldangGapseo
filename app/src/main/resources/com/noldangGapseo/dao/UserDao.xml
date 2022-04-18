@@ -40,7 +40,7 @@
         from
         user u
         where
-            nick_name = #{nickName}
+            nick_name like CONCAT('%',#{nickName},'%');
     </select>
 
  <select id="UserList"  resultMap="userMap">

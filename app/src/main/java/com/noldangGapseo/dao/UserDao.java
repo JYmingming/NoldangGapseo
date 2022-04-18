@@ -14,7 +14,7 @@ public interface UserDao {
 
   List<User> findAll();
 
-  User findNickname(String nickName);
+  List<User> findNickname(String nickName);
 
 
 

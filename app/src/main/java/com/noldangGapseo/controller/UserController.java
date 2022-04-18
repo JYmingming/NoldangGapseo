@@ -88,8 +88,8 @@ public class UserController {
     return service.userList();
   }
 
-  @GetMapping("/search")
-  public User search(String nickName) {
+  @GetMapping("/search/nickName")
+  public List<User> search(String nickName) {
     return service.findNickname(nickName);
   }
 
