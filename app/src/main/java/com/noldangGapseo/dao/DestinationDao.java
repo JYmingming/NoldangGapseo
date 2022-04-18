@@ -4,6 +4,7 @@ import com.noldangGapseo.domain.Destination;
 import com.noldangGapseo.domain.Comment;
 import com.noldangGapseo.domain.DestinationImg;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -24,5 +25,7 @@ public interface DestinationDao {
 
  List<DestinationImg> getImg(Integer desId);
 
+ Integer addLike(@Param("desId") Integer desId, @Param("userId") Integer userId);
 
+ Integer deleteLike(@Param("desId") Integer desId, @Param("userId") Integer userId);
 }

@@ -39,5 +39,14 @@ public class DestinationService {
         return mapper.getUserDesList(userId);
     }
 
+    // 좋아요 추가
+    public Integer addLike(Integer desId, Integer userId){
+        return mapper.addLike(desId, userId);
+    }
+
+    // 좋아요 삭제
+    public Integer deleteLike(Integer desId, Integer userId){
+        return mapper.deleteLike(desId, userId);
+    }
 
 }

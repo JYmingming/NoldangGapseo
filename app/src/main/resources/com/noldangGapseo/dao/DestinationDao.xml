@@ -107,4 +107,19 @@
         order by    d.reg_date desc;
     </select>
 
+    <!-- 좋아요 추가 -->
+    <insert id="addLike">
+        INSERT  into likes
+                (destination_id, user_id)
+        values  (#{desId}, #{userId});
+    </insert>
+
+    <!-- 좋아요 삭제 -->
+    <delete id="deleteLike">
+        DELETE
+        FROM    likes
+        WHERE   destination_id = #{desId}
+        and     user_id = #{userId};
+    </delete>
+
 </mapper>
