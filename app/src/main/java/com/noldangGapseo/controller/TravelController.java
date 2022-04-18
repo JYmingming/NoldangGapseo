@@ -28,9 +28,9 @@ public class TravelController {
   }
 
   // 여행의 이름을 바꾼다.
-  @PutMapping("/setTravelName")
-  public ApiResponse setTravelName(@RequestParam String name, Integer id){
-    return service.setTravelName(name,id);
+  @PutMapping("/updateName")
+  public ApiResponse updateName(@RequestParam String name, @RequestParam Integer id){
+    return service.updateName(name,id);
   }
 
   // 여행의 비용 항목을 불러온다.

@@ -27,8 +27,8 @@ public class TravelService {
                 todoList(mapper.todoLength3(travelId)).build();
     }
 
-    public ApiResponse setTravelName(String name, Integer id){
-        Integer status = mapper.setTravelName(name, id);
+    public ApiResponse updateName(String name, Integer id){
+        Integer status = mapper.updateName(name, id);
         ApiResponse response = new ApiResponse();
         if(status == 0){
             return response.setResCode("1111");

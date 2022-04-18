@@ -11,6 +11,7 @@ export const PATH = {
     TRAVEL: {
         travelList: '/travel/travelList',
         info: '/travel/getOne',
+        updateName: '/travel/updateName',
     },
 };
 
@@ -34,7 +35,17 @@ export async function dateFormat(colon, date) {
 }
 
 // ===== 유저 =====
-// ---- 유저의 로그인 여부를 확인한다.
+// ---- 유저리스트를 가져온다. ----
+export async function userList() {
+    try {
+        const response = await axios(PATH.USER.list);
+        return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- 유저의 로그인 여부를 확인한다. ----
 export async function getLoginUser() {
     try {
         const response = await fetch(PATH.USER.getLoginUser).then(function (res) {
@@ -103,21 +114,14 @@ export async function getTravel(travelId) {
     }
 }
 
-export async function userList() {
+// ---- 여행 이름을 변경한다. ----
+export async function updateTravelName(id, name) {
     try {
-        const response = await axios(PATH.USER.list);
-        return response.data;
-    } catch (e) {
-        console.log(e);
-    }
-}
-
-export async function mm() {
-    try {
-        const response = await fetch(PATH.USER.list).then(function (res) {
-            return res.json();
+        const response = await axios({
+            method: 'put',
+            url: `${PATH.TRAVEL.updateName}?id=${id}&name=${name}`,
         });
-        return response;
+        return response.data;
     } catch (e) {
         console.log(e);
     }

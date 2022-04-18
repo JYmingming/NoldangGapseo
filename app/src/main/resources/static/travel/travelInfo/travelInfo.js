@@ -1,4 +1,4 @@
-import { getTravel } from '../../common/api/apiList.js';
+import { getTravel, updateTravelName } from '../../common/api/apiList.js';
 
 // ---- URLSearchParams ----
 var arr = location.href.split('?');
@@ -23,9 +23,12 @@ if (no == null) {
 // ---- 화면 렌더링 ----
 (async function () {
     const response = await getTravel(no);
-    console.log('reponse:::', response);
+    //console.log('reponse:::', response);
     //console.log('rep:::', response.travel.travelName);
     $('.travel-name').html(response.travel.travelName);
+    if (response.travel.travelName.length > 6) {
+        $('.travel-name').css('font-size', 20);
+    }
     $('.cost').html(response.travel?.totalCost);
     $('.leader').html(response.travel.nickName);
     $('.travel-period').html(response.travel.period);
@@ -44,7 +47,7 @@ if (no == null) {
     });
 })();
 
-// --------모달----------
+// ===== 모달 ======
 
 // 모달 닫기
 $('.btn-close').click(function (e) {
@@ -98,16 +101,21 @@ $('.travel-route').click(function (e) {
     location.href = `./root/travelRoot.html?travelId=${no}`;
 });
 
-export function ddd() {
-    console.log('dkdkd');
-}
-
-// (async function () {
-//     const oo = await userList();
-//     oo.map((m) => {
-//         console.log('oo:::', m.nickName);
-//     });
-// })();
+// ==== 여행 이름 바꾸기 ====
+// ---- 이름 바꾸기 함수 ----
+const getNewName = async (id, name) => {
+    const response = await updateTravelName(id, name);
+    return response;
+};
+// ---- 이름 바꾸기 이벤트 ----
+$('.name-btn').on('click', async function (e) {
+    let name = $('.name-input').val();
+    const newName = await getNewName(no, name);
+    if (newName?.resCode == '0000') {
+        $('.travel-name').html(newName?.data);
+        $('#nameModal').modal('hide');
+    }
+});
 
 // ----뒤로가기 화살표-----
 $('.bi').on('click', function (e) {

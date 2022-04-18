@@ -13,7 +13,7 @@ public interface TravelDao {
 
     public Travel getTravel(Integer travelId);
 
-    public Integer setTravelName(@Param("name") String name, @Param("id") Integer id);
+    public Integer updateName(@Param("name") String name, @Param("id") Integer id);
 
     public List<Companion> companionList(Integer travelId);
 
