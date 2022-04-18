@@ -131,21 +131,21 @@ $('#name-input').on('keyup', function (key) {
 // ---- 닉네임 찾기 함수 ----
 const getUser = async (nickName) => {
     const user = await findByNickName(nickName);
+    let searchView;
     user?.map((m) => {
-        let searchView = `<div class="s-nickName"></div>`;
         if (m?.nickName !== 'NoldangAdmin') {
-            $('.search-box').append(searchView);
-            $('.s-nickName').html(m.nickName)
+            searchView = `<div class="s-nickName">${m?.nickName}</div>`;
         }
     });
+    $('.search-box').append(searchView);
     //return user?.nickName;
 };
 // ---- 닉네임 찾기 이벤트 ----
 $('#invite-input').on('input', function (e) {
     let nickName = $(this).val();
-    
-        getUser(nickName);
-    
+
+    getUser(nickName);
+
     //$('#invite-input').toggle();
 });
 

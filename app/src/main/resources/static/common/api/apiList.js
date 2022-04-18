@@ -12,6 +12,7 @@ export const PATH = {
         travelList: '/travel/travelList',
         info: '/travel/getOne',
         updateName: '/travel/updateName',
+        todoList: '/travel/todoList',
     },
 };
 
@@ -122,6 +123,18 @@ export async function updateTravelName(id, name) {
             url: `${PATH.TRAVEL.updateName}?id=${id}&name=${name}`,
         });
         return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- todoList를 가져온다. ----
+export async function todoList(id) {
+    try {
+        const response = fetch(`${PATH.TRAVEL.todoList}?travelId=${id}`).then(function (res) {
+            return res.json();
+        });
+        return response;
     } catch (e) {
         console.log(e);
     }
