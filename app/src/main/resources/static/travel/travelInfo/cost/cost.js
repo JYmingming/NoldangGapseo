@@ -1,4 +1,4 @@
-import { costList } from '../../../common/api/apiList.js';
+import { costList, addCost } from '../../../common/api/apiList.js';
 
 // ---- URLSearchParams ----
 var arr = location.href.split('?');
@@ -18,34 +18,37 @@ if (no == null) {
     alert('게시물 번호가 없습니다.');
     throw '파라미터 오류!';
 }
-let costArr = new Array();
 
+// --- cost Array ---
+let costArr = new Array();
+//--- toLocaleString option ----
 const option = {
     maximumFractionDigits: 4,
 };
-(async function () {
-    // ---- 화면 렌더링 ----
-    const list = await costList(no);
-    console.log(list);
-    list?.map((m) => {
-        const listView = `  <div class="content-box w-100 d-flex flex-column align-items-center">
-                        <div class="cost-col w-75 d-flex justify-content-between" data-id=${
-                            m.costId
-                        }>
-                            <input type="text" class="c-name w-50 c-in" value="${m.name}" />
+
+const costView = (costId, cost, name) => {
+    const view = `  <div class="content-box w-100 d-flex flex-column align-items-center">
+                        <div class="cost-col w-75 d-flex justify-content-between" data-id=${costId}>
+                            <input type="text" class="c-name w-50 c-in" value="${name}" />
                             <input type="text" class="c-cost c-in"
-                            value="${m?.cost?.toLocaleString('ko-KR', option)}"
+                            value="${cost?.toLocaleString('ko-KR', option)}"
                              />
                             <div class="delete-btn">❌</div>
                         </div>
                         <div class="con-line w-75"></div>
                     </div>`;
+    return view;
+};
 
-        $('.cost-content').append(listView);
+(async function () {
+    // ---- list불러오기 ----
+    const list = await costList(no);
+    console.log(list);
+    list?.map((m) => {
+        $('.cost-content').append(costView(m.costId, m.cost, m.name));
         costArr.push(m.cost);
     });
-    console.log(costArr);
-    console.log(sumCost());
+    sumCost();
 })();
 
 // ---- cost 합계 함수 ----
@@ -53,5 +56,60 @@ const sumCost = () => {
     const result = costArr.reduce(function add(sum, currValue) {
         return sum + currValue;
     }, 0);
-    return result.toLocaleString('ko-KR', option);
+    $('.total-cost').html(result.toLocaleString('ko-KR', option));
 };
+
+// ===== cost add =====
+const nameInput = $('.input-name');
+const costInput = $('.input-cost');
+
+const newCost = {
+    travelId: no,
+    name: '',
+    cost: '',
+};
+
+// ---- 항목 작성 후 엔터 => costInput으로 foucus ----
+nameInput.on('keydown', function (e) {
+    if (e.key == 'Enter') {
+        costInput.focus();
+    }
+});
+
+// ---- cost add function ----
+const addNewCost = async (cost = {}) => {
+    if (cost.name == '' || cost.cost == '') {
+        Swal.fire({
+            icon: 'error',
+            title: '항목과 비용을 \n모두 작성해 주세요',
+            text: 'something is missing',
+        });
+        return;
+    } else {
+        const addResponse = await addCost(cost);
+        if (addResponse != null) {
+            $('.cost-content').prepend(
+                costView(addResponse.costId, addResponse.cost, addResponse.name)
+            );
+            costArr.push(addResponse.cost);
+            nameInput.val('');
+            costInput.val('');
+            return;
+        }
+    }
+};
+
+// ---- cost add event ----
+$('.confirm-btn').on('click', function (e) {
+    newCost.name = nameInput.val();
+    newCost.cost = costInput.val();
+    addNewCost(newCost);
+});
+
+costInput.on('keyup', function (e) {
+    newCost.name = nameInput.val();
+    newCost.cost = costInput.val();
+    if (e.key == 'Enter') {
+        addCost(newCost);
+    }
+});

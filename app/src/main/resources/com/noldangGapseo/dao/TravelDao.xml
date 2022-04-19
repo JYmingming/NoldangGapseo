@@ -113,4 +113,11 @@
         order by    c.reg_date desc;
     </select>
 
+    <!-- 비용을 추가한다. -->
+    <insert id="addCost" parameterType="cost" keyProperty="costId" keyColumn="cost_id" useGeneratedKeys="true">
+        INSERT
+        into 	cost (name, cost, travel_id)
+        values 	(#{name}, #{cost}, #{travelId});
+    </insert>
+
 </mapper>

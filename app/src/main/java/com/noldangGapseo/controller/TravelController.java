@@ -39,6 +39,24 @@ public class TravelController {
         return service.costList(travelId);
     }
 
+    // 비용을 추가한다.
+    @PostMapping("/addCost")
+    public Cost addCost(@RequestBody Cost cost) {
+        return service.addCost(cost);
+    }
+
+    // 비용 업데이트한다.
+    @PutMapping("/updateCost")
+    public ApiResponse setCost(@RequestBody Cost cost) {
+        return new ApiResponse();
+    }
+
+    // 비용을 삭제한다.
+    @DeleteMapping("/deleteCost")
+    public ApiResponse deleteCost(@RequestParam Integer id) {
+        return new ApiResponse();
+    }
+
     // 여행의 투두 항목을 불러온다.
     @GetMapping("/todoList")
     public List<Todo> todoList(@RequestParam Integer travelId) {
@@ -68,4 +86,5 @@ public class TravelController {
     public ApiResponse deleteTodo(@RequestParam Integer todoId) {
         return service.deleteTodo(todoId);
     }
+
 }

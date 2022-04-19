@@ -18,6 +18,7 @@ export const PATH = {
         todoName: '/travel/todoName',
         deleteTodo: '/travel/deleteTodo',
         costList: '/travel/costList',
+        addCost: '/travel/addCost',
     },
 };
 // ===== 날짜 포멧 =====
@@ -202,6 +203,20 @@ export async function costList(id) {
     try {
         const response = await axios(`${PATH.TRAVEL.costList}?travelId=${id}`);
         return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- cost 추가 ----
+export async function addCost(cost = {}) {
+    try {
+        const reponse = await axios({
+            method: 'POST',
+            url: PATH.TRAVEL.addCost,
+            data: cost,
+        });
+        return reponse.data;
     } catch (e) {
         console.log(e);
     }

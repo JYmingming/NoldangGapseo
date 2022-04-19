@@ -30,4 +30,10 @@ public interface TravelDao {
     public Integer deleteTodo(Integer todoId);
 
     public List<Cost> costList(Integer travelId);
+
+    public Integer addCost(Cost cost);
+
+    public Integer setCost(Cost cost);
+
+    public Integer deleteCost(Integer costId);
 }
