@@ -17,7 +17,7 @@ export const PATH = {
         setTodoStatus: '/travel/todoStatus',
         todoName: '/travel/todoName',
         deleteTodo: '/travel/deleteTodo',
-        costList: 'travel/costList',
+        costList: '/travel/costList',
     },
 };
 // ===== 날짜 포멧 =====
@@ -191,6 +191,16 @@ export async function deleteTodo(id) {
             method: 'DELETE',
             url: `${PATH.TRAVEL.deleteTodo}?todoId=${id}`,
         });
+        return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- costList를 가져온다. ----
+export async function costList(id) {
+    try {
+        const response = await axios(`${PATH.TRAVEL.costList}?travelId=${id}`);
         return response.data;
     } catch (e) {
         console.log(e);

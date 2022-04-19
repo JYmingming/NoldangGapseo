@@ -16,12 +16,28 @@
 }
 .cost-content {
     margin-top: 20px;
+    height: 44vh;
+    overflow: scroll;
+}
+.cost-content::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
 }
 .content-box {
     margin-bottom: 2em;
 }
 .cost-col {
     font-size: 1.5em;
+}
+.c-in {
+    border: none;
+    border-radius: 10px;
+}
+.delete-btn {
+    cursor: pointer;
+}
+.c-in:focus {
+    outline: none;
+    background-color: #eeeeee;
 }
 .con-line {
     margin-top: 1%;
@@ -40,10 +56,20 @@
     height: 4em;
 }
 .x-in {
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0);
     border: 0px;
     font-size: 1.6em;
 }
 .x-in:focus {
     outline: none;
+}
+.confirm-btn {
+    display: flex;
+    background-color: rgb(251, 147, 0);
+    border-radius: 20px;
+    color: white;
+    width: 15%;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8em;
 }
