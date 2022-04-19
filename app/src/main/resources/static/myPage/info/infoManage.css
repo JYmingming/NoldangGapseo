@@ -245,13 +245,20 @@ li{
 }
 
 .user_info h5{
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     margin-top: 6vh;
 }
 
 .user_info h6{
     font-size: 0.7vw;
     margin-top: -1vh;
+    display: block;
     overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .logout {
