@@ -49,11 +49,12 @@ body{
 .user_photo{
     width: 15vw;
     height: 15vh; 
-    margin-left:5vw;
+    margin-left:2.4vw;
     border-bottom: solid 3px #f5e6ca;
     background-image: url("../../img/profile.png");
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 30%;
     float: left;
     cursor: pointer;
 }
@@ -67,11 +68,12 @@ body{
 
 .user_info h5{
     margin-top: 3.5vh;
-    font-size: 1em;
+    font-size: 1vw;
 }
 
 .user_info h6{
     margin-top: -1vh;
+    font-size: 1vw;
 }
 
 .logout{

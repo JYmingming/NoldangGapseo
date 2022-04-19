@@ -24,5 +24,3 @@ import { getLoginUser, findByNickName } from '../../common/api/apiList.js';
          xInfoNick.innerHTML = user.nickName;
          xInfoEmail.innerHTML = user.email;
       })
-
-

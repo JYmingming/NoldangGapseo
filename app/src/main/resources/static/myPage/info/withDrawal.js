@@ -9,7 +9,8 @@ import { getLoginUser, findByNickName } from '../../common/api/apiList.js';
 
 
     var xNick = document.querySelector("#x-nick");
-    
+    var xInfoNick = document.querySelector("#x-infoNick");
+    var xInfoEmail = document.querySelector("#x-infoEmail");
     
     fetch("/user/getLoginUser")
       .then(function(response) {
@@ -22,6 +23,7 @@ import { getLoginUser, findByNickName } from '../../common/api/apiList.js';
          var user = result.data;
          
          xNick.innerHTML = user.nickName;
+         xInfoNick.innerHTML = user.nickName;
+         xInfoEmail.innerHTML = user.email;
       })
-
 
