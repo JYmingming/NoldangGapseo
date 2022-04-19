@@ -17,7 +17,7 @@
    <a href="memberList2.html" ><span id="imgtext2">유저관리</span></a>
                   <a href="report.html"><span id="imgtext3">신고관리</span></a>
                    <a href="TravelBoard.html"><span id="imgtext4">여행지관리</span></a>
-                    <a href="../../customorCenter/noticeBoard/noticeBoard.html"><span id="imgtext5">고객센터</span></a>
+                    <a href="../../customorCenter/noticeBoard/noticeBoard.html"><span id="imgtext5"></span></a>
                     <a href="../../indexPage/index.html"><span id="imgtext6">Home</span></a>
                     </nav>
 </h1></a>
@@ -26,62 +26,116 @@
 <hr>
 <h1 class ="maintitle">새 여행지 추가</h1>
 
+<script type="text/javascript">
+        $(document).ready(function(){
+            // 옵션추가 버튼 클릭시
+            $("#addItemBtn").click(function(){
+                // item 의 최대번호 구하기
+                var lastItemNo = $("#example tr:last").attr("class").replace("item", "");
+ 
+                var newitem = $("#example tr:eq(1)").clone();
+                newitem.removeClass();
+                newitem.find("td:eq(0)").attr("rowspan", "1");
+                newitem.addClass("item"+(parseInt(lastItemNo)+1));
+ 
+                $("#example").append(newitem);
+            });
+ 
+ 
+            // 항목추가 버튼 클릭시
+            $(".addBtn").live("click", function(){
+                var clickedRow = $(this).parent().parent();
+                var cls = clickedRow.attr("class");
+ 
+                // tr 복사해서 마지막에 추가
+                var newrow = clickedRow.clone();
+                newrow.find("td:eq(0)").remove();
+                newrow.insertAfter($("#example ."+cls+":last"));
+ 
+                // rowspan 조정
+                resizeRowspan(cls);
+            });
+             
+             
+            // 삭제버튼 클릭시
+            $(".delBtn").live("click", function(){
+                var clickedRow = $(this).parent().parent();
+                var cls = clickedRow.attr("class");
+                 
+                // 각 항목의 첫번째 row를 삭제한 경우 다음 row에 td 하나를 추가해 준다.
+                if( clickedRow.find("td:eq(0)").attr("rowspan") ){
+                    if( clickedRow.next().hasClass(cls) ){
+                        clickedRow.next().prepend(clickedRow.find("td:eq(0)"));
+                    }
+                }
+ 
+                clickedRow.remove();
+ 
+                // rowspan 조정
+                resizeRowspan(cls);
+            });
+ 
+            // cls : rowspan 을 조정할 class ex) item1, item2, ...
+            function resizeRowspan(cls){
+                var rowspan = $("."+cls).length;
+                $("."+cls+":first td:eq(0)").attr("rowspan", rowspan);
+            }
+        });
+    </script>
 
 
-<div class="container">
-    <form action = "/join_process" method = "post">
-        <table class="table" id="table">
-           <thead>
-  <tr>
-    <th class ="th-1">타입</th>
-    <th class ="th-2">이름</th>
-    <th class ="th-3">주소</th>
-    <th class ="th-4">전화번호</th>
-    <th class ="th-5">태그</th>
-    <th class ="th-6">사진</th>
-    <th class ="th-7">한줄소개</th>
-  </tr>
-</thead>
-<tbody>
 
+<div>
 
-  <tr>
-  
-    <td class ="destination_type_id"><form>
-  <select name="type" >
-    <option value="none">=== 선택 ===</option>
-    <option value="1">맛집</option>
-    <option value="2">명소</option>
-    <option value="3">카페</option>
-  </select>
+<button id="addItemBtn">여행지 추가</button>
 
-
-
-</form></td>
-
-
-      <td class="destination_name"><input type = "text" name = "destination_type_id" size="5"></input></td>
-   <td><input type="address" id="address_kakao" name="address" readonly size="50"/></td>
-   <td class="phone"><input type = "text" name = "phone"  size="10"></input></td>
-  <td class="destination_id"><input type = "text" name = "destination_id"  size="15"></input></td>
-    <td class ="td-6"> <img id="preview" src="" width="200"  alt="">
+<div class = "container">
+<table id="example" border="1px">
+<thead>
+        <tr>
+   <th >타입</th>
+    <th >이름</th>
+    <th >주소</th>
+    <th>전화번호</th>
+    <th>여행지번호</th>
+    <th >사진</th>
+    <th >한줄소개</th>
+    <th >업데이트</th>
+    <th>삭제</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+        
+        
+        <tr class="item1" >
+            <td><select name="catgo" style ="  float : left" >
+        <option value="userNum">명소</option>
+       
+        <option value="userID">카페</option>
+      
+      </select></td>
+            <td><input type="text" /></td>
+                <td><input type="address" id="address_kakao" name="address" readonly size="50"/></td>
+            <td><input type="text" /></td>
+            <td><input type="text" /></td>
+          <td class ="td-6"> <h3>
+<img id="preview" src="" width="100" alt="이미지">
 <input type="file" id="getfile" accept="image/*">
-</td>
- 
-      <td class="contents"><input type = "text" name = "contents" size="30"></input></td>
- 
-  </tr>
-
-
+					</h3></td>
+            <td><input type="text" /></td>
+            <td><button class="updateBtn" />추가</td>
+            <td><button class="delBtn">삭제</button></td>
+        </tr>
+        
+        
+      
+  
+    
 </tbody>
 </table>
- <button id="btn2"><a href = "TravelBoard.html">완료</a></button></a>
-
 </div>
 
-
-
-</form>
 
 </body>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -115,4 +169,11 @@ file.onchange = function () {
     }; 
 }; 
 </script>
+
+ <style>
+ th{font-family: Comic Sans MS;border: thin solid #6495ed;padding: 2px;background-color: #fb9300;color : white; border-radius : 10px;}
+ td{font-family: Comic Sans MS;border: thin solid white;padding: 2px;text-align: center;}.odd{background:white;}
+ img{padding:5px; border:solid; border-color: white; border-width: 1px 2px 2px 1px; background-color:white;}</style>
+</html> 
+
 </html>
