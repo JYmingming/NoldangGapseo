@@ -14,10 +14,13 @@ public class TravelService {
     @Autowired
     TravelDao mapper;
 
+    // 유저의 여행 리스틑 불러온다.
     public List<Travel> travelList(String nickName) {
         return mapper.travelList(nickName);
     }
 
+    // 여행 하나늘 불러온다.
+    // 동행자와 투두리스트 3개를 불러온다.
     public TravelResponse getTravel(Integer travelId) {
         Travel travelOne = mapper.getTravel(travelId);
 
@@ -27,45 +30,63 @@ public class TravelService {
                 todoList(mapper.todoLength3(travelId)).build();
     }
 
-    public ApiResponse updateName(String name, Integer id){
+    // 여행의 이름 바꾼다.
+    // 성공시 바뀐 이름을 return.
+    public ApiResponse updateName(String name, Integer id) {
         Integer status = mapper.updateName(name, id);
         ApiResponse response = new ApiResponse();
-        if(status == 0){
+        if (status == 0) {
             return response.setResCode("1111");
         }
         return response.setData(name);
     }
 
+    // 비용리스트를 불러온다.
     public List<Cost> costList(Integer travelId) {
         return mapper.costList(travelId);
     }
 
-    public List<Todo> todoList(Integer travelId){
+    // 투두리스트를 불러온다.
+    public List<Todo> todoList(Integer travelId) {
         return mapper.todoList(travelId);
     }
 
-    public ApiResponse setTodoStatus(Integer status, Integer todoId){
-       Integer todoStatus = mapper.setTodoStatus(status, todoId);
-       ApiResponse response = new ApiResponse();
-        if(todoStatus == 0){
-           return response.setResCode("1111");
+    // 투두를 추가한다.
+    public ApiResponse addTodo(Integer id, String name) {
+        Integer todo = mapper.addTodo(id, name);
+        ApiResponse response = new ApiResponse();
+        if (todo == 0) {
+            return response.setResCode("1111");
         }
-        return response;
+        return response.setData(name);
     }
 
-    public ApiResponse setTodoName(String name, Integer todoId){
-        Integer todoStatus = mapper.setTodoName(name, todoId);
+
+    // 투두의 상태를 변경시킨다.
+    public ApiResponse setTodoStatus(Integer status, Integer todoId) {
+        Integer todoStatus = mapper.setTodoStatus(status, todoId);
         ApiResponse response = new ApiResponse();
-        if(todoStatus == 0){
+        if (todoStatus == 0) {
             return response.setResCode("1111");
         }
         return response;
     }
 
-    public ApiResponse deleteTodo(Integer todoId){
+    // 투두 이름을 변경시킨다.
+    public ApiResponse setTodoName(String name, Integer todoId) {
+        Integer todoStatus = mapper.setTodoName(name, todoId);
+        ApiResponse response = new ApiResponse();
+        if (todoStatus == 0) {
+            return response.setResCode("1111");
+        }
+        return response.setData(name);
+    }
+
+    // 투두를 지워준다.
+    public ApiResponse deleteTodo(Integer todoId) {
         Integer todoStatus = mapper.deleteTodo(todoId);
         ApiResponse response = new ApiResponse();
-        if(todoStatus == 0){
+        if (todoStatus == 0) {
             return response.setResCode("1111");
         }
         return response;
