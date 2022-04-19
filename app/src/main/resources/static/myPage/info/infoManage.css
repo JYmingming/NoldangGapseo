@@ -236,7 +236,7 @@ li{
 
 .user_info {
     font-size: 1vw;
-    margin-top: 5vh;
+    margin-top: 5.5vh;
     width: 8.5vw;
     height: 20vh;
     float:right;
@@ -250,6 +250,7 @@ li{
     white-space: nowrap;
     text-overflow: ellipsis;
     margin-top: 6vh;
+    font-size: 1.2vw;
 }
 
 .user_info h6{
