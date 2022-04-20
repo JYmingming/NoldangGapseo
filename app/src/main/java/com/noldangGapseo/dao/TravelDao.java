@@ -21,6 +21,8 @@ public interface TravelDao {
 
     public List<Todo> todoList(Integer travelId);
 
+    public Integer addTodo(@Param("id") Integer id, @Param("name") String name);
+
     public Integer setTodoStatus(@Param("status") Integer status, @Param("todoId") Integer todoId);
 
     public Integer setTodoName(@Param("name") String name, @Param("todoId") Integer todoId);

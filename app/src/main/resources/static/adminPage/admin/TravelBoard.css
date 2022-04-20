@@ -1,8 +1,4 @@
-*{
-    padding:0;
-    margin:150;
-    text-decoration: none;
-}
+
 *:link, *:visited{
     color:  #fb9300;
   
@@ -272,3 +268,7 @@ margin: 0;
   
   visibility:visible;
 }
+
+	 a:link { color: orange ;text-decoration: none;}
+ a:visited { color: orange; text-decoration: none;}
+ a:hover { color:orange; text-decoration: underline;}
