@@ -120,4 +120,18 @@
         values 	(#{name}, #{cost}, #{travelId});
     </insert>
 
+    <!-- 비용을 업데이트한다. -->
+    <update id="setCost" parameterType="cost">
+        UPDATE 	cost
+        set 	cost = #{cost} , name = #{name}
+        WHERE 	cost_id = #{costId};
+    </update>
+
+    <!-- 비용을 삭제한다. -->
+    <delete id="deleteCost">
+        DELETE
+        FROM 	cost
+        WHERE 	cost_id = #{costId};
+    </delete>
+
 </mapper>

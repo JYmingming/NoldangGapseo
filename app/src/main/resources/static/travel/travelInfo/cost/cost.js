@@ -1,4 +1,4 @@
-import { costList, addCost } from '../../../common/api/apiList.js';
+import { costList, addCost, updateCost, deleteCost } from '../../../common/api/apiList.js';
 
 // ---- URLSearchParams ----
 var arr = location.href.split('?');
@@ -20,7 +20,7 @@ if (no == null) {
 }
 
 // --- cost Array ---
-let costArr = new Array();
+let total = 0;
 //--- toLocaleString option ----
 const option = {
     maximumFractionDigits: 4,
@@ -43,20 +43,23 @@ const costView = (costId, cost, name) => {
 (async function () {
     // ---- list불러오기 ----
     const list = await costList(no);
-    console.log(list);
     list?.map((m) => {
         $('.cost-content').append(costView(m.costId, m.cost, m.name));
-        costArr.push(m.cost);
     });
-    sumCost();
+    for (var i = 0; i < list.length; i++) {
+        sumCost(list[i].cost, '+');
+    }
+    //sumCost(costArr, 0);
 })();
 
 // ---- cost 합계 함수 ----
-const sumCost = () => {
-    const result = costArr.reduce(function add(sum, currValue) {
-        return sum + currValue;
-    }, 0);
-    $('.total-cost').html(result.toLocaleString('ko-KR', option));
+const sumCost = (cost, colon) => {
+    if (colon == '+') {
+        total += Number(cost);
+    } else {
+        total -= Number(cost);
+    }
+    $('.total-cost').html(total?.toLocaleString('ko-KR', option));
 };
 
 // ===== cost add =====
@@ -91,7 +94,6 @@ const addNewCost = async (cost = {}) => {
             $('.cost-content').prepend(
                 costView(addResponse.costId, addResponse.cost, addResponse.name)
             );
-            costArr.push(addResponse.cost);
             nameInput.val('');
             costInput.val('');
             return;
@@ -104,12 +106,67 @@ $('.confirm-btn').on('click', function (e) {
     newCost.name = nameInput.val();
     newCost.cost = costInput.val();
     addNewCost(newCost);
+    nameInput.focus();
+    sumCost(costInput.val(), '+');
 });
 
 costInput.on('keyup', function (e) {
     newCost.name = nameInput.val();
     newCost.cost = costInput.val();
     if (e.key == 'Enter') {
-        addCost(newCost);
+        addNewCost(newCost);
+        nameInput.focus();
+        sumCost(costInput.val(), '+');
+    }
+});
+
+// ====== COST UPDATE ======
+
+const setCostObj = {
+    costId: '',
+    name: '',
+    cost: '',
+};
+
+// ---- cost update function ----
+const setCost = async (cost = {}) => {
+    const response = await updateCost(cost);
+    return response;
+};
+
+// ---- cost update event ----
+$(document).on('change', '.c-name', function (e) {
+    setCostObj.cost = Number($(this).next('.c-cost').val().replace(',', ''));
+    setCostObj.name = $(this).val();
+    setCostObj.costId = $(this).parent().attr('data-id');
+    setCost(setCostObj);
+});
+
+$(document).on('change', '.c-cost', async function (e) {
+    if (typeof Number($(this).val().replace(',', '')) != 'number') {
+        Swal.fire({
+            icon: 'error',
+            title: '비용 항목에는 숫자를 적어 주세요!',
+            text: 'something is missing',
+        });
+        return;
+    }
+    setCostObj.cost = Number($(this).val().replace(',', ''));
+    setCostObj.name = $(this).siblings('.c-name').val();
+    setCostObj.costId = $(this).parent().attr('data-id');
+    const updateCost = await setCost(setCostObj);
+    if (updateCost?.name != null) {
+        location.reload();
+    }
+});
+
+// ===== deleteCost =====
+$(document).on('click', '.delete-btn', async function (e) {
+    const costId = $(this).parent().attr('data-id');
+    const response = await deleteCost(costId);
+    console.log(response);
+    if (response.resCode == '0000') {
+        sumCost($(this).siblings('.c-cost').val().replace(',', ''), '-');
+        $(this).closest('.content-box').remove();
     }
 });

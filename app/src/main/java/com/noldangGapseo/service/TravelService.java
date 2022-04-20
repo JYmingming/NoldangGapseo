@@ -50,10 +50,29 @@ public class TravelService {
     // 비용을 추가한다.
     public Cost addCost(Cost cost) {
         Integer mapperCost = mapper.addCost(cost);
-        if(mapperCost == 0) {
+        if (mapperCost == 0) {
             return null;
         }
         return Cost.builder().cost(cost.getCost()).name(cost.getName()).costId(cost.getCostId()).build();
+    }
+
+    // 비용을 업데이트 한다.
+    public Cost setCost(Cost cost) {
+        Integer mapperCost = mapper.setCost(cost);
+        if (mapperCost == 0) {
+            return null;
+        }
+        return Cost.builder().cost(cost.getCost()).name(cost.getName()).build();
+    }
+
+    // 비용을 삭제한다.
+    public ApiResponse deleteCost(Integer costId) {
+        ApiResponse response = new ApiResponse();
+        Integer mapperCost = mapper.deleteCost(costId);
+        if (mapperCost == 0) {
+            return response.setResCode("1111");
+        }
+        return response;
     }
 
     // ==== 투두 ====
