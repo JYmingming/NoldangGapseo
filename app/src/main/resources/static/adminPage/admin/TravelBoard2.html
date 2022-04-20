@@ -125,12 +125,13 @@
             <td><input type="text" /></td>
            
           <td class ="td-6"> <h3>
-<img id="preview" src="" width="100" alt="이미지">
+<img id="preview" src="" width="300" height="200" alt="이미지">
 <input type="file" id="getfile" accept="image/*">
 					</h3></td>
             <td><input type="text" /></td>
             <td >	<button class="updateBtn" a onclick="alert('추가완료 되었습니다.');" style="cursor:pointer"  > 추가완료</button></td>
-            <td><button class="delBtn">삭제</button></td>
+            <td><button class="delBtn" onclick ="removeCheck()">삭제</button></td>
+       
         </tr>
         
         
@@ -175,7 +176,22 @@ file.onchange = function () {
 </script>
 
 
+	
+	<script>
+	function removeCheck() {
 
+		 if (confirm("정말 삭제하시겠습니까??") == true){    //확인
+
+		     document.removefrm.submit();
+
+		 }else{   //취소
+
+		     return false;
+
+		 }
+
+		}
+	</script>
 
 
    <script src="./TravelBoard2.js" type="module"></script>

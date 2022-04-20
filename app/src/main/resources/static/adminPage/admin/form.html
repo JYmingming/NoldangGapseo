@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>여행지 추가하기</title>
+</head>
+<body>
+  <span>소모임 개설</span><br>
+  타입    : <input type="text" class ="destination_type_id"><br>
+ 여행지 이름    : <input type="text" class ="destination_name"><br>
+  주소  : <input type="text" class ="address"><br>
+  전화번호 : <input type="text" class ="phone"><br>
+  사진 : <input type="text" class ="fee"><br>
+  한줄소개 : <input type="text" class ="contants"><br>
+ 
+  <span>여행지추가</span> <br> <textarea type="text" class ="intro" cols="60" rows="10"></textarea> <br>
+  <button type="button" class ="add-btn">입력하기</button>
+  <button type="button" class ="cancel-btn">취소하기</button>
+
+  <script>
+    var xdestinationTypeId = document.querySelector('.destinationTypeId')
+    var xdestinationName = document.querySelector('.destinationName')
+    var xaddress = document.querySelector('.address')
+  
+
+    document.querySelector('.add-btn').addEventListener("click", function() {
+      fetch(`/group/add?destinationTypeId=${xdestinationTypeId.value}&destinationName=${xdestinationName.value}`)
+      .then(function(response) {
+        return response.text();
+      })
+      .then(function(text) {
+        console.log(text)
+        location.href = "index.html"
+      })
+    })
+    document.querySelector('.cancel-btn').addEventListener('click', function() {
+      window.location.href = "index.html"
+    })
+
+  </script>
+  
+</body>
+</html>

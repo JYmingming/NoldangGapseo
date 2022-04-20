@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>모임 정보</title>
+</head>
+<body>
+	<h1>모임 정보</h1>
+	모임 번호 :
+	<span class="no"></span>
+	<br> 활동 지역 :
+	<input type="text" class="actlocalno">
+	<br> 모임 목적 :
+	<input type="text" class="pupsno">
+	<br> 소모임 이름 :
+	<input type="text" class="name">
+	<br> 로고사진 경로 :
+	<input type="text" class="logo">
+	<br> 회비 :
+	<input type="text" class="fee">
+	<br>
+	<p>소개글</p>
+	<textarea text="text" class="intro" cols="60" rows="10"></textarea>
+	<br>
+	<button type="button" class="update-btn">수정하기</button>
+	<button type="button" class="delete-btn">삭제하기</button>
+	<button type="button" class="cancel-btn">취소하기</button>
+
+	<script>
+		var arr = location.href.split("?")
+		console.log(arr)
+
+		if (arr.length == 1) {
+			alert("올바르지 않은 요청입니다")
+			throw "URL 오류!"
+		}
+		var qs = arr[1];
+		console.log(qs)
+
+		var params = new URLSearchParams(qs)
+		var no = params.get('no')
+		var xno = document.querySelector('.no')
+		var xactlocalno = document.querySelector('.actlocalno')
+		var xpupsno = document.querySelector('.pupsno')
+		var xname = document.querySelector('.name')
+		var xlogo = document.querySelector('.logo')
+		var xfee = document.querySelector('.fee')
+		var xintro = document.querySelector('.intro')
+		console.log(no)
+
+		if (no == null) {
+			alert("해당 번호가 없습니다")
+			throw "오류!"
+		}
+
+		fetch(`/group/get?no=${no}`).then(function(response) {
+			return response.json()
+		}).then(function(Group) {
+			xno.innerHTML = Group.no
+			xactlocalno.value = Group.actlocalno
+			xpupsno.value = Group.pupsno
+			xname.value = Group.name
+			xlogo.value = Group.logo
+			xfee.value = Group.fee
+			xintro.value = Group.intro
+		})
+		document
+				.querySelector('.update-btn')
+				.addEventListener(
+						'click',
+						function() {
+							fetch(
+									`/group/update?no=${no}
+									&actlocalno=${xactlocalno.value}
+									&pupsno=${xpupsno.value}
+									&name=${xname.value}
+									&logo=${xlogo.value}
+									&fee=${xfee.value}
+									&intro=${xintro.value}
+									`)
+									.then(function(response) {
+										return response.text()
+									}).then(function(text) {
+										console.log(text)
+										window.location.href = "index.html"
+
+									})
+						})
+		document.querySelector('.delete-btn').addEventListener(
+				'click',
+				function() {
+					fetch(`/group/delete?no=${no}`).then(
+							function(response) {
+								return response.text()
+							}).then(function(text) {
+						console.log(text)
+						window.location.href = "index.html"
+
+					})
+				})
+		document.querySelector('.cancel-btn').addEventListener('click',
+				function() {
+					window.location.href = "index.html"
+				})
+	</script>
+</body>
+</html>
