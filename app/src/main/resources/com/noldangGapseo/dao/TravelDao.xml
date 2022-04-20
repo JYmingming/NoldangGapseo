@@ -113,4 +113,25 @@
         order by    c.reg_date desc;
     </select>
 
+    <!-- 비용을 추가한다. -->
+    <insert id="addCost" parameterType="cost" keyProperty="costId" keyColumn="cost_id" useGeneratedKeys="true">
+        INSERT
+        into 	cost (name, cost, travel_id)
+        values 	(#{name}, #{cost}, #{travelId});
+    </insert>
+
+    <!-- 비용을 업데이트한다. -->
+    <update id="setCost" parameterType="cost">
+        UPDATE 	cost
+        set 	cost = #{cost} , name = #{name}
+        WHERE 	cost_id = #{costId};
+    </update>
+
+    <!-- 비용을 삭제한다. -->
+    <delete id="deleteCost">
+        DELETE
+        FROM 	cost
+        WHERE 	cost_id = #{costId};
+    </delete>
+
 </mapper>
