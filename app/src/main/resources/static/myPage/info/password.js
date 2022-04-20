@@ -27,7 +27,7 @@ import { getLoginUser, findByNickName } from '../../common/api/apiList.js';
          xInfoEmail.innerHTML = user.email;
       })
       
-      // 로그인
+      // 비밀번호 재확인
       
         var xPassword = document.querySelector("#password");
 
