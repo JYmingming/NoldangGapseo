@@ -98,6 +98,16 @@ public class UserController {
     return service.findAll();
   }
 
+  @RequestMapping("/resignin")
+  public Object resignin(String password, HttpServletResponse response, HttpSession session) {
+    ApiResponse apires =new ApiResponse();
+    User loginUser = service.get(password);
+    if (loginUser == null) {
+      apires.setResCode("1111");
+      apires.setResStatus("fail");
+      return apires;
+    }
+    return apires;
 
-
+  }
 }

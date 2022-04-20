@@ -27,7 +27,7 @@ import { getLoginUser, findByNickName } from '../../common/api/apiList.js';
          xInfoEmail.innerHTML = user.email;
       })
       
-      // 로그인
+      // 비밀번호 재확인
       
         var xPassword = document.querySelector("#password");
 
@@ -38,7 +38,7 @@ import { getLoginUser, findByNickName } from '../../common/api/apiList.js';
             }
             var fd = new FormData(document.forms.namedItem("form1"));
 
-            fetch("/user/signin", {
+            fetch("/user/resignin", {
                 method: "POST",
                 body: new URLSearchParams(fd)
             })
