@@ -17,7 +17,10 @@ export const PATH = {
         setTodoStatus: '/travel/todoStatus',
         todoName: '/travel/todoName',
         deleteTodo: '/travel/deleteTodo',
-        costList: 'travel/costList',
+        costList: '/travel/costList',
+        addCost: '/travel/addCost',
+        updateCost: '/travel/updateCost',
+        deleteCost: '/travel/deleteCost',
     },
 };
 // ===== 날짜 포멧 =====
@@ -192,6 +195,57 @@ export async function deleteTodo(id) {
             url: `${PATH.TRAVEL.deleteTodo}?todoId=${id}`,
         });
         return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- costList를 가져온다. ----
+export async function costList(id) {
+    try {
+        const response = await axios(`${PATH.TRAVEL.costList}?travelId=${id}`);
+        return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- cost 추가 ----
+export async function addCost(cost = {}) {
+    try {
+        const reponse = await axios({
+            method: 'POST',
+            url: PATH.TRAVEL.addCost,
+            data: cost,
+        });
+        return reponse.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- cost 업데이트 ----
+export async function updateCost(cost = {}) {
+    try {
+        const response = await axios({
+            method: 'PUT',
+            url: PATH.TRAVEL.updateCost,
+            data: cost,
+        });
+        return response.data;
+    } catch (e) {
+        console(e);
+    }
+}
+
+// ---- cost 삭제 ----
+export async function deleteCost(id) {
+    try {
+        const resopnse = await axios({
+            method: 'DELETE',
+            url: `${PATH.TRAVEL.deleteCost}?id=${id}`,
+        });
+        return resopnse.data;
     } catch (e) {
         console.log(e);
     }

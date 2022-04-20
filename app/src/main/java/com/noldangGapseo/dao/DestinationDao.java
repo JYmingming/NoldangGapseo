@@ -10,8 +10,6 @@ import com.noldangGapseo.domain.DestinationImg;
 @Mapper
 public interface DestinationDao {
 
-
-
   List<Destination> getUsersDesList();
 
   List<Destination> getAdminDesList();
