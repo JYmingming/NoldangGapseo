@@ -12,9 +12,12 @@ public interface UserDao {
 
   User findByEmailAndPassword(@Param("email") String email, @Param("password") String password);
 
+  User findByPassword(@Param("password") String password);
+
   List<User> findAll();
 
   List<User> findNickname(String nickName);
+
 
 
 

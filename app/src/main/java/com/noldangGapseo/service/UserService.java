@@ -20,6 +20,10 @@ public class UserService {
     return mapper.findByEmailAndPassword(email, password);
   }
 
+  public User get(String password) {
+    return mapper.findByPassword(password);
+  }
+
   public UserResponse userList() {
     return new UserResponse().setUserList(mapper.findAll());
   }

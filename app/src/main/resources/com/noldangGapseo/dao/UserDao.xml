@@ -18,11 +18,23 @@
         select
             user_id,
             nick_name,
-            email
+            email,
+            phone
         from
             user
         where
             email=#{email} and pwd=password(#{password})
+    </select>
+    
+    <select id="findByPassword" resultMap="userMap">
+        select
+            user_id,
+            nick_name,
+            email
+        from
+            user
+        where
+             pwd=password(#{password}) 
     </select>
 
 
@@ -51,8 +63,5 @@
         
     </select>
     
-   
-    
-
 
 </mapper>
