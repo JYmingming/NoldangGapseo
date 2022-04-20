@@ -15,3 +15,4 @@ function addRow() {
   newCell1.innerText = '새 과일';
   newCell2.innerText = 'New Fruit';
 }
+//
