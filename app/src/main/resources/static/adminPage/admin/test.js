@@ -93,3 +93,5 @@ $(document).on('click', '.delete-btn', async function (e) {
     const response = await deleteDoto(dotoId);
     $(this).closest('.content-box').remove();
 });
+
+//
