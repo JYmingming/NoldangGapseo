@@ -12,9 +12,14 @@ export const PATH = {
         travelList: '/travel/travelList',
         info: '/travel/getOne',
         updateName: '/travel/updateName',
+        todoList: '/travel/todoList',
+        addTodo: '/travel/addTodo',
+        setTodoStatus: '/travel/todoStatus',
+        todoName: '/travel/todoName',
+        deleteTodo: '/travel/deleteTodo',
+        costList: 'travel/costList',
     },
 };
-
 // ===== 날짜 포멧 =====
 export async function dateFormat(colon, date) {
     let OldDate = new Date(await date);
@@ -120,6 +125,71 @@ export async function updateTravelName(id, name) {
         const response = await axios({
             method: 'put',
             url: `${PATH.TRAVEL.updateName}?id=${id}&name=${name}`,
+        });
+        return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- todoList를 가져온다. ----
+export async function todoList(id) {
+    try {
+        const response = fetch(`${PATH.TRAVEL.todoList}?travelId=${id}`).then(function (res) {
+            return res.json();
+        });
+        return response;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- todo를 추가시킨다. ----
+export async function addTodo(id, name) {
+    try {
+        const response = await axios({
+            method: 'POST',
+            url: `${PATH.TRAVEL.addTodo}?id=${id}&name=${name}`,
+        });
+        return (await response).data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- todo의 상태를 변경한다. ----
+export async function setTodoStatus(id, status) {
+    try {
+        const response = await axios({
+            method: 'PUT',
+            url: `${PATH.TRAVEL.setTodoStatus}?todoId=${id}&status=${status}`,
+        });
+        console.log(response.data);
+        return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- todo이름를 변경한다. ----
+export async function updateTodo(id, name) {
+    try {
+        const response = await axios({
+            method: 'put',
+            url: `${PATH.TRAVEL.todoName}?todoId=${id}&name=${name}`,
+        });
+        return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- todo를 삭제한다. ----
+export async function deleteTodo(id) {
+    try {
+        const response = await axios({
+            method: 'DELETE',
+            url: `${PATH.TRAVEL.deleteTodo}?todoId=${id}`,
         });
         return response.data;
     } catch (e) {

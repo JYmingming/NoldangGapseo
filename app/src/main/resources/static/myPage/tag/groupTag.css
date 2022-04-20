@@ -466,6 +466,15 @@ li{
     overflow: hidden;
 }
 
+.paging {
+    margin-top: 4vh;
+    margin-right: 42vw;
+}
+
+.page-link {
+    color: rgb(251, 147, 0);
+}
+
 #btn2{
     width: 7vw;
     height: 5vh;
