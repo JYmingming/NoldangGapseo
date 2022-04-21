@@ -14,30 +14,6 @@
         $(document).ready(function () {
             $('.headers').load('../common/header/header.html');
         });
-
-
-
-        fetch("/reserve/get?startDate=2022-04-25&endDate=2022-04-26&link=65825")
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(result) {
-                if (result.status == "fail") {
-                    window.alert("서버 요청 오류!");
-                    console.log(result.data);
-                    return;
-                }
-                console.log(result);
-                console.log(result.data);
-
-                /*for (var Hotels of result[1].data) {
-                  console.log(result);
-                  console.log(result.data);
-                }*/
-            });
-
-
-
     </script>
 </head>
 
@@ -58,9 +34,9 @@
     <div class="container">
         <div class="detail-container">
             <div class="w-75 m-auto">
-                <h2 class="">아시아호텔 제주</h2>
+                <h2 id="x-hotelName"></h2>
                 <span class="fw-bold fs-6">숙박유형</span>&nbsp&nbsp&nbsp<span>호텔</span>&nbsp&nbsp
-                <span class="fw-bold fs-6">주소</span>&nbsp&nbsp&nbsp<span>제주특별자치도 제주시 노연로53</span>
+                <span class="fw-bold fs-6">주소</span>&nbsp&nbsp&nbsp<span id="x-hotelLocation">제주특별자치도 제주시 노연로53</span>
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>
                 <span class="fw-bold fs-6">체크인</span>&nbsp&nbsp&nbsp<span>15:00</span>&nbsp&nbsp
                 <span class="fw-bold fs-6">체크아웃</span>&nbsp&nbsp&nbsp<span>11:00</span>&nbsp&nbsp
@@ -81,6 +57,7 @@
                                             class="d-block h-auto w-100"
                                             alt="..."
                                             style="border-radius: 20px"
+                                            id="x-testImg-1"
                                     />
                                 </div>
                                 <div class="carousel-item" data-bs-interval="4000">
@@ -89,6 +66,7 @@
                                             class="d-block h-auto w-100"
                                             alt="..."
                                             style="border-radius: 20px"
+                                            id="x-testImg-2"
                                     />
                                 </div>
                                 <div class="carousel-item" data-bs-interval="4000">
@@ -97,6 +75,7 @@
                                             class="d-block h-auto w-100"
                                             alt="..."
                                             style="border-radius: 20px"
+                                            id="x-testImg-3"
                                     />
                                 </div>
                                 <button class="like-btn align-self-end">
@@ -158,7 +137,8 @@
                          - 0명 + [버튼]
                     </div>
                     <div class="search-value">
-                        <button type="submit">검색하기</button>
+                        <h2 id="x-hotelPrice"></h2>
+                        <button type="submit">결제하기</button>
                     </div>
                 </div>
 
@@ -167,30 +147,10 @@
                     <h5>숙소소개</h5>
                     <div class="out-line"></div>
                     <p>
-                        <h6>소개</h6>
-                        <span>제주시내 중심에 위치한 복합적 특급 비즈니스 호텔</span>
-                    </p>
-                    <p>
-                        <h6>부대시설</h6>
-                        <span>와이파이, 세미나실, 비즈니스센터, 식당(레스토랑) </span>
+                        <span id="x-hotelComment">제주시내 중심에 위치한 복합적 특급 비즈니스 호텔</span>
                     </p>
 
-                    <h5>이용 안내</h5>
-                    <div class="out-line"></div>
-                    <p>
-                        <h6>유의사항</h6>
-                        <span>■ 전객실 금연룸</span>
-                        <span>■ 애완동물 및 인화성 물질 반입 불가</span>
 
-                    </p>
-                    <p>
-                        <h6>이용안내</h6>
-                        <span>■ 객실 비품 : TV, 무료와이파이,개별냉난방조절기  티포트＆물컵 등</span>
-                    </p>
-                    <p>
-                        <h6>추가요금안내</h6>
-                        <span>■ 인원추가 : 1인 10,000원 (48개월이상)/최대인원 초과시 입실불가</span>
-                    </p>
 
 
 
@@ -210,3 +170,62 @@
 
     </div>
 </div>
+</body>
+<script>
+
+    var arr = location.href.split("?");
+    if (arr.length == 1) {
+        alert("요청 형식이 옳바르지 않습니다.")
+        throw "URL 형식 오류!";
+    }
+    var qs = arr[1];
+    console.log(qs);
+    var params = new URLSearchParams(qs);
+    var link = params.get("link");
+    var startDate = params.get("startDate");
+    var endDate = params.get("endDate");
+
+    console.log(link + startDate + endDate)
+
+    //
+    var xHotelPrice =document.querySelector("#x-hotelPrice")
+    var xHotelComment =document.querySelector("#x-hotelComment")
+    var xHotelLocation =document.querySelector("#x-hotelLocation")
+    var xHotelName =document.querySelector("#x-hotelName")
+    var xTestImg1 =document.querySelector("#x-testImg-1")
+    var xTestImg2 =document.querySelector("#x-testImg-2")
+    var xTestImg3 =document.querySelector("#x-testImg-3")
+
+
+    fetch("/reserve/get?startDate="+startDate+"&endDate="+endDate+"&link="+link)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(result) {
+            if (result.status == "fail") {
+                window.alert("서버 요청 오류!");
+                console.log(result.data);
+                return;
+            }
+            console.log(result);
+            console.log(result["hotel"]);
+            console.log(result["hotel"].data);
+            var hotel = result["hotel"];
+
+            xHotelPrice.innerHTML = hotel.hotelPrice+" 원";
+            xHotelComment.innerHTML = hotel.hotelComment;
+            xHotelLocation.innerHTML = hotel.hotelLocation;
+            xHotelName.innerHTML = hotel.hotelName;
+            xTestImg1.setAttribute("src",hotel.imgUrl[0]);
+            xTestImg2.setAttribute("src",hotel.imgUrl[1]);
+            xTestImg3.setAttribute("src",hotel.imgUrl[2]);
+
+
+
+
+        });
+
+
+
+</script>
+</html>
