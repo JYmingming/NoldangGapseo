@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../../../node_modules/jquery/dist/jquery.min.js"></script>
+        <title>Update</title>
+        <script src="../../../node_modules/axios/dist/axios.js"></script>
+        <link rel="stylesheet" href="../../../node_modules/sweetalert2/dist/sweetalert2.min.css" />
+        <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.css" />
+        <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="view4.css" />
+    </head>
+    <body>
+        <div class="container d-flex flex-column">
+            <div class="bi-j">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    fill="currentColor"
+                    class="bi bi-arrow-left"
+                    viewBox="0 0 16 16"
+                    style="margin-bottom: 50px; margin-top: 50px"
+                >
+                    <path onClick="location.href='report.html'"
+                        fill-rule="evenodd"
+                        d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+                    />
+                </svg>
+            </div>
+            
+              <div id=rectangle a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)">
+신고내용 상세보기
+    
+</a></div><div id=rectangle2 style="DISPLAY: none">
+<style type="text/css">
+.tg  {border-spacing:0; border-radius :10px;}
+.tg td{background-color:#fff;border-style:solid;border-width:1px;color:#333;
+  font-family: Comic Sans MS;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal; border-radius :10px;}
+.tg th{background-color:#f38630;border-style:solid;border-width:1px;color:#fff;
+  font-family: Comic Sans MS;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal; border-radius :10px;}
+.tg .tg-r4z0{background-color:#f80303;font-weight:bold;text-align:center;vertical-align:top; border-radius :10px; }
+.tg .tg-af47{background-color:#ffffff;color:#000000;text-align:center;vertical-align:top; border-radius :10px;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top ; border-radius :10px;}
+.tg .tg-i9cw{background-color:#f38630;color:#000000;font-weight:bold;text-align:center;vertical-align:top ; border-radius :10px;}
+.tg .tg-ml2k{background-color:white;color:#000000;text-align:center;vertical-align:top ;border-radius :10px;}
+
+</style>
+<table class="tg" style="table-layout: fixed; width: 378px">
+<colgroup>
+<col style="width: 102px">
+<col style="width: 82px">
+<col style="width: 194px">
+</colgroup>
+<thead>
+  <tr>
+  
+    <th class="tg-i9cw" rowspan="3"><br><br>신고자<br></th>
+    <th class="tg-af47">아이디</th>
+    <th class="tg-af47">aslkf@naver.com(dkng3)</th>
+  </tr>
+  <tr>
+    <th class="tg-ml2k">신고사유</th>
+    <th class="tg-ml2k">사진과 내용 불일치</th>
+  </tr>
+  <tr>
+    <th class="tg-ml2k">신고날짜</th>
+    <th class="tg-ml2k">2022-04-26</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-r4z0" rowspan="2"><br><br>피신고자<br></td>
+    <td class="tg-c3ow">아이디</td>
+    <td class="tg-c3ow">sdf5f@gmail.com(hello2023)</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">작성날짜</td>
+    <td class="tg-c3ow">2022-03-01</td>
+  </tr>
+</tbody>
+</table>
+</div>
+            
+            <div class="content w-75 align-self-center d-flex flex-column align-items-center">
+                <div class="title w-75 d-flex flex-column align-items-center">
+                <h1>망고레이 섭지코지점</h1>
+              
+                   <img src="../img/13.jpg " id=only width="600" height="400" style="border-radius :50px" >
+                    <div class="title-line w-75"></div>
+                </div>
+                <!--image container-s-->
+                <div
+                    id="carouselExampleInterval"
+                    class="carousel slide w-100"
+                    data-bs-ride="carousel"
+                    style="border-radius: 10px"
+                >
+                    <div class="carousel-inner" style="display: flex"> 
+                <!--image content-s--> 
+                      
+                        <!--image content-e-->
+                    </div>
+                    <button
+                        class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#carouselExampleInterval"
+                        data-bs-slide="prev"
+                    >
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                        class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#carouselExampleInterval"
+                        data-bs-slide="next"
+                    >
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <!--image container-e-->
+                <div class="address w-100 d-flex justify-content-end">
+                    <input type="text" name="adress" id="in-address" class="w-75 input-group-text" readonly>
+                </div>
+                <div class="contents w-100">
+                    <tr name="contents" id="in-contents" cols="30" rows="10" class="w-100 input-group-text" maxlength="200">제주 망고레이 필리핀 망고카페 100%망고쉐이 크 동남아 필리핀 망고카페 수제 코코넛아이스크 림</tr>
+                </div>
+            </div>
+            <div class="button-container d-flex justify-content-around" style="margin-top: 2em;">
+                <button type="button" class="btn btn-danger w-25">Delete</button>
+                           
+            </div>
+        </div>
+        <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+        <script src="view4.js" type="module"></script>
+        <script src="../../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    </body>
+</html>

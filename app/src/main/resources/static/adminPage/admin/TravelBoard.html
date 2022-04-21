@@ -26,6 +26,8 @@
 
 <h1 class ="maintitle">여행지 l 여행지 관리</h1>
 
+  <input type="button"  id ="btn123"  style="color: white " value="새 여행지 추가" onClick="location.href='../../travel/myboard/form.html'" />
+
 <div id="input-form">
 <select name="catgo" style ="  float : left" >
         <option value="userNum">닉네임</option>
@@ -44,11 +46,12 @@
 
 
   <table id="products">
-  <form action="" id="setRows">
+ <form action="" id="setRows">
          <span style=  "display: none; float : right; margin-bottom : 20px;" >
         <input type="text" name="rowPerPage" value="7" size ="1"> 
         
       </span>
+    </form>
     </form>
            <thead>
   <tr>
@@ -72,7 +75,7 @@
     <td>서연의집</td>
     <td>제주 서귀포시 남원읍 위미해안로 86</td>
     <td>064-764-7894</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/1.jpg " width="200" height="120" ></td>
     <td>제주 카페 건축학개론 촬영지로 유명한 서연의집</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -83,7 +86,7 @@
     <td>카페세바</td>
     <td>제주 제주시 조천읍 선흘동2길 20-7</td>
     <td></td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/2.jpg " width="200" height="100" ></td>
     <td>독특한분위기, 분위기깡패</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -94,7 +97,7 @@
     <td>카페델문도</td>
     <td>제주 제주시 조천읍 조함해안로 519-10</td>
     <td>064-702-0007</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/3.jpg " width="200" height="100" ></td>
     <td>맛있는 베이커리가 있는 함덕 델문도 카페</td>
     <td>	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -105,7 +108,7 @@
     <td>오드랑베이커리</td>
     <td>제주 제주시 조천읍 조함해안로 552-3</td>
     <td>064-784-5404</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/4.jpg " width="200" height="100" ></td>
     <td>빵지순례에 빠질 수 없는 마농바게트 마늘빵</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -116,7 +119,7 @@
     <td>대수길다방</td>
     <td>제주 제주시 구좌읍 해맞이해안로 1202</td>
     <td>010-7469-7313</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/5.jpg " width="200" height="100" ></td>
     <td>제주 동쪽 평대리 조용한 카페</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -127,7 +130,7 @@
     <td>모뉴에트</td>
     <td>제주 제주시 구좌읍 종달동길 23</td>
     <td>010-5746-5316</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/6.jpg " width="200" height="100" ></td>
     <td>제주 동쪽 끝 마을 종달리. 그 안에 평생을 음악과 함께한 아빠의 감성을</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -138,7 +141,7 @@
     <td>골목카페옥수</td>
     <td>제주 제주시 애월읍 소길리 652-1</td>
     <td>0507-1318-6516</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/7.jpg " width="200" height="100" ></td>
     <td>제주도 애월 소길리에서 만나는 제주감성 레트로카페</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -149,7 +152,7 @@
     <td>도로록</td>
     <td>제주 제주시 조천읍 신북로 494-2</td>
     <td>010-6336-8253</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/8.jpg " width="200" height="100" ></td>
     <td>가는 길에 지나치기 쉬우니 주의하세용! 예약은 그 전날, 당일 아침에 하시는 걸 추천합니당</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -160,7 +163,7 @@
     <td>춘자네쇠소깍</td>
     <td>제주 서귀포시 하효동 995</td>
     <td>064-732-1402</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/9.jpg " width="200" height="100" ></td>
     <td>천혜향 밭은 직접 운영하고 있어 비교적 착한 금액으로 만나볼 수 있는 달달한 천혜향!</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -171,7 +174,7 @@
     <td>SALON de LAVANT</td>
     <td>제주 제주시 애월읍 하가로 146-9</td>
     <td>0507-1328-3708</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/10.jpg " width="200" height="100" ></td>
     <td>입소문 난 팬케이크가 있는 애월읍 카페</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -182,7 +185,7 @@
     <td>구좌상회</td>
     <td>제주 제주시 구좌읍 월정리 417</td>
     <td>010-6600-6648</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/11.jpg " width="200" height="100" ></td>
     <td>구좌 당근케이크 맛있는 제주도 월정리 감성카페</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -193,7 +196,7 @@
     <td>망고레이 천지연폭포점</td>
     <td>제주 서귀포시 남성중로 2-3 1층</td>
     <td>064-733-5425</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/12.jpg " width="200" height="100" ></td>
     <td></td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -204,7 +207,7 @@
     <td>망고레이 섭지코지점</td>
     <td></td>
     <td></td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/13.jpg " width="200" height="100" ></td>
     <td>제주 망고레이 필리핀 망고카페 100%망고쉐이 크 동남아 필리핀 망고카페 수제 코코넛아이스크 림</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -215,7 +218,7 @@
     <td>망고레이제주함덕점</td>
     <td>제주 제주시 조천읍 조함해안로 504 골든튤립제주함덕호텔</td>
     <td>064-784-2443</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/14.jpg " width="200" height="100" ></td>
     <td>재미있는, 분위기있는, 이국적, 화려한</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -226,7 +229,7 @@
     <td>버터모닝</td>
     <td>제주 제주시 애월읍 하광로 279</td>
     <td>064-712-0461</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/15.jpg " width="200" height="100" ></td>
     <td>제주 애월 새벽부터 줄 서는 빵집</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -237,7 +240,7 @@
     <td>망고레이 하귀본점</td>
     <td>제주 제주시 애월읍 하귀9길 34</td>
     <td>0507-1404-2441</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/16.jpg " width="200" height="100" ></td>
     <td>이색 디저트 가득한 제주도 애월 카페</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -248,7 +251,7 @@
     <td>제주 하멜</td>
     <td>제주 제주시 노형2길 51-3</td>
     <td>0507-1311-1653</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/17.jpg " width="200" height="100" ></td>
     <td>제주도 가면 무조건 사야하는 하멜 치즈 케이크</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -259,7 +262,7 @@
     <td>쇠소깍</td>
     <td>제주 서귀포시 남원읍 하례로 378</td>
     <td>064-732-9998</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/18.jpg " width="200" height="100" ></td>
     <td>쇠소깍 테우타러 바닷가로 내려가는 길 바로 맞 은편에 위치한 쇠소깍휴게소입니다</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -270,7 +273,7 @@
     <td>이중섭거리</td>
     <td>제주 서귀포시 서귀동 512-1 이중섭생가</td>
     <td></td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/19.jpg " width="200" height="100" ></td>
     <td>재미있는, 분위기좋은, 작은공간</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -281,7 +284,7 @@
     <td>꽃이다</td>
     <td>제주 서귀포시 서호동 615</td>
     <td>010-5640-7062</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/20.jpg " width="200" height="100" ></td>
     <td>꽃이다입니다. 외부장식 및 수업으로 매장 영업 시간이 유동적일 수 있습니다.</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -292,7 +295,7 @@
     <td>제주베스트힐</td>
     <td>제주 제주시 조천읍 남조로 2109-36</td>
     <td>070-4400-3300</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/21.jpg " width="200" height="100" ></td>
     <td>본 상품은 열기구 비행 상품이 아닙니다. 방탄소 년단의 화보를 촬영한 곳에서 바로 그 열기구와 함께 사진도 찍고 방탄의 자취를</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -303,29 +306,20 @@
     <td>송당나무</td>
     <td>제주 제주시 구좌읍 송당5길 68-140</td>
     <td>010-9364-2819</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/22.jpg " width="200" height="100" ></td>
     <td>인간극장에 소개된 제주 온실 카페</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
   </tr>
   
-   <tr>
-    <td>명소</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
-    <td></td>
-    <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
-      			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
-  </tr>
+
   
    <tr>
   <td>명소</td>
     <td>바다보석</td>
     <td>제주 서귀포시 서귀동 480-6</td>
     <td>064-762-5576</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/23.jpg " width="200" height="100" ></td>
     <td>제주에서 찾은 조개들로 만든 악세사리와 바다,제주를 모티브로한 다양한 상품을 제작하는 브랜드</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -336,7 +330,7 @@
     <td>너는 파라다이스 길리</td>
     <td>제주 제주시 구좌읍 월정1길 65 너는파라다이스길리</td>
     <td>0507-1417-2208</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/24.jpg " width="200" height="100" ></td>
     <td>제주도 동쪽 월정리마을에 있습니다. 월정리해변 에서 마을 안쪽으로 올라오시다보면 찾을수 있습 니다.</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -347,7 +341,7 @@
     <td>산호상점</td>
     <td>제주 서귀포시 성산읍 수산리 669-1</td>
     <td>064-782-7320</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/25.jpg " width="200" height="100" ></td>
     <td>제주 성산읍에 위치한 편집 소품샵입니다. 외관 은 돌창고로 되어있어 제주의 옛 정서를 느낄 수 있으며</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -358,7 +352,7 @@
     <td>차귀도</td>
     <td>제주 제주시 이호일동</td>
     <td>064-772-3224</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/26.jpg " width="200" height="100" ></td>
     <td>차귀도는 면적 0.16km2로 제주시 한경면 고산리에 딸린 무인도이다.</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -369,7 +363,7 @@
     <td>표선해수욕장</td>
     <td>제주 서귀포시 표선면 표선리 40-32</td>
     <td>064-760-4992</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/27.jpg " width="200" height="100" ></td>
     <td>제주특별자치도 서귀포시 표선면 표선리에 있는 해수욕장.</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -380,7 +374,7 @@
     <td>신천목장</td>
     <td>제주 서귀포시 성산읍 신천리 5</td>
     <td></td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/28.jpg " width="200" height="100" ></td>
     <td>좋아요 맛있어요 굿</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -391,7 +385,7 @@
     <td>벨롱장</td>
     <td>제주 제주시 구좌읍 세화리 1500-63</td>
     <td></td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/29.jpg " width="200" height="100" ></td>
     <td>주말의 낮과 밤을 책임질 <제주 플리마켓></td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -402,7 +396,7 @@
     <td>도르멍 쉼팡</td>
     <td>제주 제주시 구좌읍 한동리 8</td>
     <td>0507-1359-7868</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/30.jpg " width="200" height="100" ></td>
     <td>다양한 인센스, 감성소품,별이굿즈를 만나보실 수 있는 특별한 소품샵이에요 :)</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -413,7 +407,7 @@
     <td>서쪽가게</td>
     <td>제주 제주시 한림읍 협재리 1751-6</td>
     <td>064-796-8178</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/31.jpg " width="200" height="100" ></td>
     <td>너무 예쁜 반지랑 목걸이 엄마랑 세트로 득템했어요!! 가게 분위기가 예뻐요</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -424,7 +418,7 @@
     <td>궷물오름</td>
     <td>제주 제주시 애월읍 유수암리</td>
     <td></td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/32.jpg " width="200" height="100" ></td>
     <td>궷물오름, 높지 않아서 걷기 좋은 제주 오름</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -435,7 +429,7 @@
     <td>한담해안산책로</td>
     <td>제주 제주시 애월읍 곽지리 1359</td>
     <td></td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/33.jpg " width="200" height="100" ></td>
     <td>제주도 애월 카페거리 한담해안산책로 주차</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -446,7 +440,7 @@
     <td>안더계곡</td>
     <td>제주 서귀포시 안덕면 감산리 1946</td>
     <td>064-794-9001</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/34.jpg " width="200" height="100" ></td>
     <td>제주 숨은 명소</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -457,7 +451,7 @@
     <td>영추산</td>
     <td>제주 서귀포시 표선면</td>
     <td>064-760-4413</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/35.jpg " width="200" height="100" ></td>
     <td>제주5대 명산 중 하나 영주산 오랫만의 서귀포 나들이</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -468,7 +462,7 @@
     <td>명도암정식</td>
     <td>제주 제주시 명림로 218</td>
     <td>064-723-5254</td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/36.jpg " width="200" height="100" ></td>
     <td>오늘 만든 따끈따끈한 반찬들이 맛이 참 좋았어요 ㅎㅎ 배부른데 건강식으로 챙겨먹은것같아서 뿌듯하고 기분좋네용^^</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -479,7 +473,7 @@
     <td>절물오름</td>
     <td>제주 제주시 봉개동</td>
     <td></td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/37.jpg " width="200" height="100" ></td>
     <td>제주 오름 추천 절물오름,아이와 함께!</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -490,7 +484,7 @@
     <td>비양봉</td>
     <td>제주 제주시 한림읍 협재리 산100-1</td>
     <td></td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/38.jpg " width="200" height="100" ></td>
     <td>한림읍 협재리 앞바다의 비양도에 있는 기생화산으로 비양도는 예전에 대나무가 많아서 대섬(竹島)이라고도 불리었다.</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
@@ -501,12 +495,284 @@
     <td>따라비오름</td>
     <td>제주 서귀포시 표선면 가시리 산62</td>
     <td></td>
-    <td ><img src="img/1.jpg " width="200" height="100" ></td>
+    <td ><img src="img/39.jpg " width="200" height="100" ></td>
     <td>3개의 굼부리가 있는 것이 가장 큰 특징이다. 크고 작은 여러 개의 봉우리가 매끄러운 등성이로 연결되어 한 산체를 이룬다.</td>
     <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>					
   </tr>
  
+  <tr>
+      <td> 명소  </td>
+      <td> 동검은이오름등산로입구  </td>
+      <td> 제주 제주시 구좌읍 송당리  </td>
+      <td>   </td>
+         <td ><img src="img/40.jpg " width="200" height="100" ></td>
+      <td>  202112 겨울 제주여행 - 제주 동백핫플레이스 토평동 그리고 </td>
+   <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
+      			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>				
+  </tr>
+  
+  <tr>
+      <td>  명소 </td>
+      <td> 대포주상절리  </td>
+      <td>  제주 서귀포시 중문동 2757-10 </td>
+      <td> 064-738-1521  </td>
+         <td ><img src="img/41.jpg " width="200" height="100" ></td>
+      <td> 여미지 식물원을 지나 중문민속촌을 거쳐 제주국제컨벤션센터로 우회전하면 대포동 주상절리군을 볼 수 있다.  </td>
+   <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
+      			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>				
+  </tr>
+  
+  <tr>
+      <td> 명소  </td>
+      <td>도두봉  </td>
+      <td> 제주 제주시 도두일동 산1  </td>
+      <td>   </td>
+         <td ><img src="img/42.jpg " width="200" height="100" ></td>
+      <td>도두봉은 제주공항 북쪽 도두동 해안가에 위치해 있으며, 제주도내에서 관입암을 관찰할 수 있는 대표적인 곳이다.   </td>
+
+   <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
+      			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>				
+  </tr>
+  
+  <tr>
+      <td> 명소  </td>
+      <td> 섭지코지  </td>
+      <td> 제주 서귀포시 성산읍 고성리  </td>
+      <td> 064-782-2810  </td>
+         <td ><img src="img/43.jpg " width="200" height="100" ></td>
+      <td>  제주에 첫발을 디딜 때, 운이 좋다면 가장 먼저 눈에 띄는 것은 멀리 한라산이 거대한 덩치를 뽐내며 웅장한 자태로 솟아있는 모습이다. </td>
+
+   <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
+      			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>				
+  </tr>
+  
+  <tr>
+      <td> 명소  </td>
+      <td> 수월봉  </td>
+      <td> 제주 제주시 한경면  </td>
+      <td>   </td>
+ 		  <td ><img src="img/44.jpg " width="200" height="100" ></td>
+      <td>   </td>
+   <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
+      			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>				
+  </tr>
+  
+  <tr>
+      <td> 명소  </td>
+      <td> 군산오름  </td>
+      <td> 제주 서귀포시 안덕면 창천리 564  </td>
+      <td>   </td>
+         <td ><img src="img/45.jpg " width="200" height="100" ></td>
+      <td>  환상적인 360도 파노라마 뷰 오름. </td>
+ 
+   <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
+      			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>				
+  </tr>
+  
+  <tr>
+      <td> 명소  </td>
+      <td> 지미봉  </td>
+      <td> 제주 제주시 구좌읍 종달리 산3-1  </td>
+      <td>   </td>
+         <td ><img src="img/46.jpg " width="200" height="100" ></td>
+      <td> 종달마을 입구 동북방향에 있는 오름으로 산위 등성이는 원뿔모양의 동쪽 봉우리가 주봉  </td>
+      
+   <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
+      			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>				
+  </tr>
+  
+  <tr>
+      <td> 명소  </td>
+      <td> 백약이오름  </td>
+      <td>  제주 서귀포시 표선면 성읍리 산1 </td>
+      <td>  064-760-4451 </td>
+         <td ><img src="img/47.jpg " width="200" height="100" ></td>
+      <td>   </td>
+
+   <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
+      			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>				
+  </tr>
+  
+  <tr>
+      <td>  명소 </td>
+      <td>  산굼부리 </td>
+      <td> 제주 제주시 조천읍 교래리 산38  </td>
+      <td>  064-783-9900 </td>
+         <td ><img src="img/48.jpg " width="200" height="100" ></td>
+      <td>  400m 고지에 발달한 기생화산의 분화구. 천연기념물 제263호 </td>
+
+   <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
+      			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>				
+  </tr>
+  
+  <tr>
+      <td> 명소  </td>
+      <td>  서우봉 </td>
+      <td>  제주 제주시 조천읍 함덕리 169-1 </td>
+      <td>064-783-8014   </td>
+         <td ><img src="img/49.jpg " width="200" height="100" ></td>
+      <td>   </td>
+ 
+   <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
+      			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>				
+  </tr>
+  
+  <tr>
+      <td> 명소  </td>
+      <td> 동백동산  </td>
+      <td> 제주 제주시 조천읍 선흘리 산12  </td>
+      <td> 064-784-9446  </td>
+         <td ><img src="img/50.jpg " width="200" height="100" ></td>
+      <td>  선흘리 동쪽에 있는 넓은 면적의 상록활엽수 천연림으로, 20여 년생 동백나무 10여만 그루가 숲을 이루고 있어 </td>
+   
+   <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
+      			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>				
+  </tr>
+  
+  <tr>
+      <td> 명소  </td>
+      <td> 정방폭포  </td>
+      <td> 제주 서귀포시 동홍동 278  </td>
+      <td> 064-733-1530  </td>
+         <td ><img src="img/51.jpg " width="200" height="100" ></td>
+      <td>   </td>
+
+   <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
+      			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>				
+  </tr>
+  
+  <tr>
+      <td> 명소  </td>
+      <td> 광치기해변  </td>
+      <td>  제주 서귀포시 성산읍 고성리 224-33 </td>
+      <td>   </td>
+         <td ><img src="img/52.jpg " width="200" height="100" ></td>
+      <td>   </td>
+
+   <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
+      			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>				
+  </tr>
+  
+  <tr>
+      <td>  명소 </td>
+      <td> 돈내코유원지  </td>
+      <td> 제주 서귀포시 상효동 1503  </td>
+      <td>  064-733-1584 </td>
+         <td ><img src="img/53.jpg " width="200" height="100" ></td>
+      <td>   </td>
+    
+   <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
+      			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>				
+  </tr>
+  
+  <tr>
+      <td> 명소  </td>
+      <td>  황우지해안 </td>
+      <td> 제주 서귀포시 서홍동  766-1  </td>
+      <td>   </td>
+         <td ><img src="img/54.jpg " width="200" height="100" ></td>
+      <td>   </td>
+
+   <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
+      			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>				
+  </tr>
+  
+  <tr>
+      <td>  명소 </td>
+      <td> 협재해수욕장  </td>
+      <td> 제주 제주시 한림읍 협재리 2497-1  </td>
+      <td> 064-728-3981  </td>
+         <td ><img src="img/55.jpg " width="200" height="100" ></td>
+      <td>   </td>
+
+   <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
+      			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>				
+  </tr>
+  
+  <tr>
+      <td> 명소  </td>
+      <td> 함덕해수욕장  </td>
+      <td> 제주 제주시 조천읍 조함해안로 525  </td>
+      <td> 064-728-3989  </td>
+         <td ><img src="img/56.jpg " width="200" height="100" ></td>
+      <td>   </td>
+
+   <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
+      			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>				
+  </tr>
+  
+  <tr>
+      <td>명소</td>
+      <td>김녕해수욕장   </td>
+      <td> 제주 제주시 구좌읍 김녕리  </td>
+      <td>064-728-3988   </td>
+         <td ><img src="img/57.jpg " width="200" height="100" ></td>
+      <td>   </td>
+ 
+   <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
+      			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>				
+  </tr>
+  
+  <tr>
+      <td> 명소  </td>
+      <td>새별오름   </td>
+      <td>제주 제주시 애월읍 봉성리 산59-8   </td>
+      <td>   </td>
+         <td ><img src="img/58.jpg " width="200" height="100" ></td>
+      <td>   </td>
+ 
+   <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
+      			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>				
+  </tr>
+  
+  <tr>
+      <td> 명소  </td>
+      <td> 금오름  </td>
+      <td> 제주 제주시 한림읍 금악리 산1-1  </td>
+      <td>   </td>
+          <td ><img src="img/59.jpg " width="200" height="100" ></td>
+      <td>   </td>
+  
+   <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
+      			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>				
+  </tr>
+  
+  <tr>
+      <td>명소   </td>
+      <td>다랑쉬오름   </td>
+      <td> 제주 제주시 구좌읍 세화리  </td>
+      <td>   </td>
+          <td ><img src="img/60.jpg " width="200" height="100" ></td>
+      <td>   </td>
+
+   <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
+      			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>				
+  </tr>
+  
+  <tr>
+      <td> 명소  </td>
+      <td> 도민상회  </td>
+      <td> 제주 제주시 한림읍 한림리 1590-6  </td>
+      <td> 0507-1401-0795  </td>
+         <td ><img src="img/61.jpg " width="200" height="100" ></td>
+      <td>도민상회본점은 참숯직화구이로 유명한 한림맛집   </td>
+   
+   <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
+      			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>				
+  </tr>
+  
+  <tr>
+      <td>명소   </td>
+      <td>한라산둘레길   </td>
+      <td>제주 제주시 조천읍 교래리 산137-1   </td>
+      <td> 064-900-8800  </td>
+    <td ><img src="img/62.jpg " width="200" height="100" ></td>
+      <td>   </td>
+   <td >	<button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
+      			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" style="cursor:pointer" > 글삭제</button></td>				
+  </tr>
+  
   
     
 </tbody>

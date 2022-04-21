@@ -151,7 +151,7 @@ border-collapse:collapse;
 
 
 #rectangle {
-	margin-left : 1080px;
+	margin-left : 380px;
     width : 150px;
   height : 30px;
     background-color: #fb9300;
@@ -200,6 +200,16 @@ position: absolute;
  a:hover { color:orange; text-decoration: underline;}
 	
 	
-	
+	#rectangle {
+	margin-left : 1080px;
+    width : 150px;
+  height : 30px;
+    background-color: #fb9300;
+    text-align:center;
+  border-radius: 20px;
+  font-size : 15px;
+  color :white;
+ 
+}
 	
 	
