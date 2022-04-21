@@ -67,18 +67,19 @@ public class DestinationController {
   public ApiResponse addDestination(MultipartFile[] imgs, Destination destination) {
     ApiResponse response = new ApiResponse();
     ArrayList<String> imgList = new ArrayList<>();
-          try{
-            for (int i = 0; i < imgs.length; i++) {
-              imgList.add(saveFile(imgs[i]));
-            }
-            destination.setImgList(imgList);
-            return service.addDestination(destination);
-          } catch (Exception e){
-            StringWriter out = new StringWriter();
-            e.printStackTrace(new PrintWriter(out));
-            log.error(out.toString());
-            return response.setResCode("1111").setResStatus("fail");
-          }
+    try{
+      for (int i = 0; i < imgs.length; i++) {
+        imgList.add(saveFile(imgs[i]));
+      }
+      destination.setImgList(imgList);
+      System.out.println(service.addDestination(destination));
+      return service.addDestination(destination);
+    } catch (Exception e){
+      StringWriter out = new StringWriter();
+      e.printStackTrace(new PrintWriter(out));
+      log.error(out.toString());
+      return response.setResCode("1111").setResStatus("fail");
+    }
 
   }
 
@@ -99,7 +100,6 @@ public class DestinationController {
     if (imgs != null && imgs.getSize() > 0) {
       // 파일을 저장할 때 사용할 파일명을 준비한다.
       String filename = UUID.randomUUID().toString();
-      System.out.printf("filename:::::",filename);
 
       // 파일명의 확장자를 알아낸다.
       int dotIndex = imgs.getOriginalFilename().lastIndexOf(".");

@@ -6,10 +6,12 @@ const contents = $('#in-contents');
 const tag = $('#tag-d');
 const file = $('.d-file-up');
 const adress = $('#in-adress');
+const phone = $('#phone');
 
+// ---- 세션에서 유저 id를 가져온다. ----
 (async function () {
     const userId = await getLoginUser();
-    $("#d-user").val(userId.data.userId);
+    $('#d-user').val(userId.data.userId);
 })();
 
 // ----d-tag에 선택 태그 값 넣기----
@@ -47,7 +49,6 @@ function findAddr() {
             }
         },
     }).open();
-    return;
 }
 
 // ---- 뒤로가기 화살표 -----
@@ -164,13 +165,13 @@ $('.bi').on('click', function (e) {
 
 // -----입력값 널체크-----
 $('.confirm-btn').on('click', async function (e) {
-    console.log('title::::', file.val(), title.val(), contents.val(), tag.val(), adress.val());
     if (
         title.val() == '' ||
         contents.val() == '' ||
         tag.val() == '' ||
         adress.val() == '' ||
-        file.val() == ''
+        file.val() == '' ||
+        phone.val() == ''
     ) {
         Swal.fire({
             icon: 'error',
@@ -181,7 +182,20 @@ $('.confirm-btn').on('click', async function (e) {
     }
     //formdata
     var destination = new FormData(document.forms.namedItem('form-d'));
-    console.log(destination);
     const response = await addDestination(destination);
-    console.log(response);
+    if (response.resCode == '0000') {
+        Swal.fire({
+            icon: 'success',
+            title: '여행지 공유 감사합니다.\n 추가로 작성 하시겠어요?',
+            showCancelButton: true,
+            confirmButtonText: 'YES!',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                location.reload();
+                title.focus();
+            } else if (result.isDenied) {
+                location.href = '/travel/myboard/myboard.html';
+            }
+        });
+    }
 });
