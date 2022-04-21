@@ -108,7 +108,7 @@ public class DestinationController {
       }
 
       // 파일을 지정된 폴더에 저장한다.
-      File photoFile = new File("./upload/" + filename); // App 클래스를 실행하는 프로젝트 폴더
+      File photoFile = new File("./src/main/resources/static/img/destination/userDesImg/" + filename); // App 클래스를 실행하는 프로젝트 폴더
       imgs.transferTo(photoFile.getCanonicalFile()); // 프로젝트 폴더의 전체 경로를 전달한다.
 
       return filename;
