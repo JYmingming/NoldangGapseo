@@ -214,3 +214,6 @@ color : white;
     margin-left : 1400px;
 }
  
+ 	 a:link { color: orange ;text-decoration: none;}
+ a:visited { color: orange; text-decoration: none;}
+ a:hover { color:orange; text-decoration: underline;}

@@ -1,6 +1,5 @@
 package com.noldangGapseo.domain;
 
-import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,7 +19,7 @@ public class Report {
   private String userId;
   private String email;
   private String phone;
-  private Date regDate;
+  private String regDate;
   private String nickname;
   private String contents;
   private String reportId;

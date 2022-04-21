@@ -1,12 +1,11 @@
 import {
-    todoList,
-    addTodo,
-    setTodoStatus,
-    updateTodo,
-    deleteTodo,
-} from '../../../common/api/apiList.js';
+     dotoList,
+    addDoto,
+    setDotoStatus,
+    updateDoto,
+    deleteDoto,
+} from '../../common/api/apiList.js';
 
-// ---- URLSearchParams ----
 var arr = location.href.split('?');
 
 if (arr.length == 1) {
@@ -25,13 +24,14 @@ if (no == null) {
     throw '파라미터 오류!';
 }
 
+
 (async function () {
     // ---- 화면 렌더링 ----
     const list = await todoList(no);
     list?.map((m) => {
-        const todoView = `<div class="content-box w-50 d-flex flex-column align-items-center">
+        const dotoView = `<div class="content-box w-50 d-flex flex-column align-items-center">
             <div class="todo-col w-100 d-flex justify-content-sm-around align-items-center"
-            data-id=${m.todoId}
+            data-id=${m.dotoId}
             >
                 <input type="checkbox" class="form-check-input"
                     ${m.status == 0 ? '' : 'checked'}/>
@@ -39,14 +39,14 @@ if (no == null) {
                 <div class="delete-btn">❌</div>
             </div>
         </div>`;
-        $('.todo-content').append(todoView);
+        $('.todo-content').append(dotoView);
     });
 })();
 // ===== todo 추가 =====
-const newTodo = $('.input-name');
+const newDoto = $('.input-name');
 
 // ---- todo 추가 함수 ----
-const addNewTodo = async (id, newName) => {
+const addNewDoto = async (id, newName) => {
     if (newName == '') {
         Swal.fire({
             icon: 'error',
@@ -54,7 +54,7 @@ const addNewTodo = async (id, newName) => {
             text: 'something is missing',
         });
     } else {
-        const todoRes = await addTodo(id, newName);
+        const todoRes = await addDoto(id, newName);
         if (todoRes?.resCode == '0000') {
             location.reload();
         }
@@ -62,14 +62,14 @@ const addNewTodo = async (id, newName) => {
 };
 
 // ---- todo 추가 이벤트 -----
-newTodo.on('keyup', function (key) {
+newDoto.on('keyup', function (key) {
     if (key.keyCode == 13) {
-        addNewTodo(no, newTodo.val());
+        addNewDoto(no, newDoto.val());
     }
 });
 
 $('.confirm-btn').on('click', function (e) {
-    addNewTodo(no, newTodo.val());
+    addNewDoto(no, newDoto.val());
 });
 
 // ===== todo상태 변경 ====
@@ -77,19 +77,21 @@ $('.confirm-btn').on('click', function (e) {
 $(document).on('click', '.form-check-input', async function (e) {
     const todoId = $(this).closest('div').attr('data-id');
     const status = $(this).is(':checked') ? 1 : 0;
-    setTodoStatus(todoId, status);
+    setDotoStatus(dotoId, status);
 });
 
 // ==== todo 항목 업데이트 ====
 $(document).on('change', '.t-todo', function (e) {
-    const todoId = $(this).closest('div').attr('data-id');
+    const dotoId = $(this).closest('div').attr('data-id');
     const text = $(this).val();
-    updateTodo(todoId, text);
+    updateDoto(dotoId, text);
 });
 
 // ==== todo 지우기 ====
 $(document).on('click', '.delete-btn', async function (e) {
-    const todoId = $(this).closest('.todo-col').attr('data-id');
-    const response = await deleteTodo(todoId);
+    const dotoId = $(this).closest('.todo-col').attr('data-id');
+    const response = await deleteDoto(dotoId);
     $(this).closest('.content-box').remove();
 });
+
+//

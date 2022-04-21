@@ -20,7 +20,7 @@ public class User {
   private String password;
   private String email;
   private String phone;
-  private Date regDate;
+  private String regDate;
   private Date updateDate;
   private String profileImg;
 

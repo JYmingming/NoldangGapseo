@@ -76,6 +76,14 @@
         order by    t2.reg_date desc;
     </select>
 
+    <!-- 투두 추가하기 -->
+    <insert id="addTodo">
+        INSERT
+        into    todo (name, travel_id)
+        values  (#{name},#{id});
+    </insert>
+
+
     <!-- 투두 상태 변경 -->
     <update id="setTodoStatus" parameterType="Integer">
         UPDATE 	todo t
@@ -93,8 +101,8 @@
     <!-- 투두 삭제 -->
     <delete id="deleteTodo">
         DELETE
-        FROM 	todo t
-        WHERE 	t.todo_id = #{todoId};
+        FROM 	todo
+        WHERE 	todo_id = #{todoId};
     </delete>
 
     <!-- 비용 항목을 불러온다. -->
@@ -104,5 +112,26 @@
         WHERE       c.travel_id = 1
         order by    c.reg_date desc;
     </select>
+
+    <!-- 비용을 추가한다. -->
+    <insert id="addCost" parameterType="cost" keyProperty="costId" keyColumn="cost_id" useGeneratedKeys="true">
+        INSERT
+        into 	cost (name, cost, travel_id)
+        values 	(#{name}, #{cost}, #{travelId});
+    </insert>
+
+    <!-- 비용을 업데이트한다. -->
+    <update id="setCost" parameterType="cost">
+        UPDATE 	cost
+        set 	cost = #{cost} , name = #{name}
+        WHERE 	cost_id = #{costId};
+    </update>
+
+    <!-- 비용을 삭제한다. -->
+    <delete id="deleteCost">
+        DELETE
+        FROM 	cost
+        WHERE 	cost_id = #{costId};
+    </delete>
 
 </mapper>

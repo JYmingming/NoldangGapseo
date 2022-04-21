@@ -9,52 +9,41 @@
         <link rel="stylesheet" href="/node_modules/sweetalert2/dist/sweetalert2.min.css" />
         <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.css" />
         <script src="../../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../../../node_modules/axios/dist/axios.js"></script>
         <link rel="stylesheet" href="./travelCost.css" />
     </head>
     <body>
         <div class="container d-flex">
             <div class="inner-box d-flex flex-column align-items-center w-100">
                 <div class="cost-content w-100 d-flex flex-column align-items-center">
-                    <div class="content-box w-100 d-flex flex-column align-items-center">
-                        <div class="cost-col w-100 d-flex justify-content-around">
-                            <div class="c-name">바보비용</div>
-                            <div class="c-cost">200000</div>
-                        </div>
-                        <div class="con-line w-75"></div>
-                    </div>
-                    <div class="content-box w-100 d-flex flex-column align-items-center">
-                        <div class="cost-col w-100 d-flex justify-content-around">
-                            <div class="c-name">바보비용</div>
-                            <div class="c-cost">200000</div>
-                        </div>
-                        <div class="con-line w-75"></div>
-                    </div>
-                    <div class="content-box w-100 d-flex flex-column align-items-center">
-                        <div class="cost-col w-100 d-flex justify-content-around">
-                            <div class="c-name">비용</div>
-                            <div class="c-cost">200000</div>
-                        </div>
-                        <div class="con-line w-75"></div>
-                    </div>
+                    <!-- cost box-->
+
+                    <!-- cost box-->
                 </div>
                 <div class="total-box d-flex justify-content-around w-75">
                     <span style="color: rgb(251, 147, 0)">Total</span>
-                    <span> <span style="margin-right: 5%">₩</span><span>200000</span> </span>
+                    <span>
+                        <span style="margin-right: 5%">₩</span><span class="total-cost"></span>
+                    </span>
                 </div>
-                <div class="cost-input-box d-flex justify-content-around w-75">
-                    <input
-                        class="input-name input-group-text x-in"
-                        type="text"
-                        placeholder="name"
-                    />
-                    <input
-                        class="input-cost input-group-text x-in"
-                        type="number"
-                        placeholder="cost"
-                    />
+                <div class="input-container d-flex justify-content-between w-75">
+                    <div class="cost-input-box d-flex justify-content-around w-75">
+                        <input
+                            class="input-name input-group-text x-in"
+                            type="text"
+                            placeholder="name"
+                        />
+                        <input
+                            class="input-cost input-group-text x-in"
+                            type="number"
+                            placeholder="cost"
+                        />
+                    </div>
+                    <div class="confirm-btn">추가</div>
                 </div>
             </div>
         </div>
         <script src="/node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+        <script src="./cost.js" type="module"></script>
     </body>
 </html>

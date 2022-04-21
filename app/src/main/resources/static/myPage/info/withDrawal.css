@@ -202,6 +202,7 @@ li{
   height: 4vh;
   margin-left: 2vw;
   display: flex;
+  font-size: 0.8vw;
 }
   
 #td-1 {
@@ -272,7 +273,8 @@ li{
 }
 
 .user_info {
-    margin-top: 5vh;
+    font-size: 1vw;
+    margin-top: 5.5vh;
     width: 8.5vw;
     height: 20vh;
     float:right;
@@ -281,13 +283,21 @@ li{
 }
 
 .user_info h5{
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     margin-top: 6vh;
+    font-size: 1.2vw;
 }
 
 .user_info h6{
     font-size: 0.7vw;
     margin-top: -1vh;
+    display: block;
     overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .logout {
