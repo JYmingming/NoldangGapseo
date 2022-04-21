@@ -1,0 +1,130 @@
+
+  .container {                        /*고객센터 컨테이너*/
+   width:100%;
+    height:100%;
+    background:.000;
+  }
+  .body {
+    width:600px;
+    height:800px;
+    position:absolute;
+    left:50%;
+    top:45%;
+    margin-left:-300px;
+    margin-top:-200px;
+    background-color: white;  /** 작업 끝나면 흰색으로 **/
+  }
+  
+  .body-a {                       /*고객센터 머리*/
+    position:absolute;
+    width:500px;
+    height:50px;
+    top: 5%;
+    left:10%;
+  }
+  
+  .myq {
+    position:absolute;
+    font-size:20px;
+    font-weight:bold;
+  }
+    
+
+  .body-b {                                 /* 검색창 */
+  position: relative;
+  width: 600px;
+  height: 100px;
+  margin: 10px auto;
+  top: 13%;
+  background-color: white;
+  }
+  .s-text {
+  position: absolute;
+  width: 600px;
+  height: 80px;
+  background-color: white;
+  margin: 10px;
+  border-style: solid;
+  border-color: #c5c5c5;
+  border-width: 8px;
+  }
+  
+  .body-d {                           /* 공지사항 헤드 */
+  position: relative;
+  width: 600px;
+  top: 12.5%;
+  }
+
+  
+  .body-e {                 /* 공지사항 메인 폼*/
+  position:relative;
+  width: 600px;
+  height: 250px;
+  background-color: #f9f9f9;
+  color: black;
+  top: 12.5%;
+  }
+ 
+    
+  .view-box {                   /*공지테이블*/
+  position:relative;
+  top:5px;
+  word-spacing:380px;
+  }
+  #tb1 {                      
+  table-layout:fixed;
+  border-collapse: collapse;
+  }  
+  #tb1 th {
+   background: #dfdfdf;
+   text-align: center;
+  }
+  #tb1 th, #tb1 td {
+  padding: 3px;
+  width: 600px;
+  border: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+  text-align: center;
+  }
+
+  .tb1 tr td:first-child {
+  text-align: center;
+  }
+  
+  
+  .back {                       /*하단 뒤로가기*/
+  position: relative;
+  float: right; 
+  top: 80px;
+  background-color: white;
+  color: black;
+  font-size:15px;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 3px;
+  border-color: #dfdfdf;
+  margin: 3px;
+  cursor:pointer;
+  z-index:1;
+  }
+  .back:focus {
+  background-color: orange;
+  color: white;
+  }
+  
+  
+  .page {
+  position: relative;
+  top: 200px;
+  text-align: center;
+  }
+  
+  .page-a{
+  padding: 5px;
+  border: 1px solid #ddd;
+  
+  }
+  .page-a:focus {
+  background-color: orange;
+}

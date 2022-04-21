@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>놀당갑서</title>
+    <link rel="stylesheet" type="text/css" href="test.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css" />
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+            $(document).ready(function () {
+                $('.headers').load('../../common/header/header.html');
+            });
+    </script>
+    
+</head>
+
+<body>
+<div class="headers"></div> <!--상단부분-->
+
+    <div style="position: absolute; z-index: 9; padding: 20px;">
+        <button class="allbtn" onclick="viewMarker();">전체보기</button>
+        <button class="food" onclick="foodMarker();"></button>
+        <button class="tourist_destination" onclick="tourist_destinationMarker();"></button>
+        <button class="cafe" onclick="cafeMarker();"></button>
+    </div>
+    <!-- 지도가 표시될 div -->
+    <div id="map"></div>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=04d2370bb5a7c0451b3db7bbd723c9d1&libraries=clusterer""autoload=false></script>
+    <script >
+
+    function zoomIn(){
+        var level = map.getLevel();
+        map.setLevel(level -1);
+    }
+
+        
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            mapOption = {
+                center: new kakao.maps.LatLng(33.374, 126.557), // 지도의 중심좌표
+                level: 10, // 지도의 확대 레벨
+            }; 
+
+        // 지도를 생성한다 
+        var map = new kakao.maps.Map(mapContainer, mapOption);
+
+
+//식당버튼 누르면 식당만 뜨게 해야한다..
+function foodMarker(){
+        $.getJSON("map.json", function(food){
+            $(food).map(function(i, position){
+             var a = new kakao.maps.CustomOverlay({
+            map : map,
+            position : new kakao.maps.LatLng(position.lat, position.lng),
+            content: "<div class='ovr' onclick='zoomIn();'> "+position.name+" </div>"
+        })
+        return a;
+        })
+    });
+}
+
+
+        //마커 클러스터러 생성
+        var clusterer = new kakao.maps.MarkerClusterer({
+        map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체 
+        averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정 
+        minLevel: 10 // 클러스터 할 최소 지도 레벨 
+    });
+//클러스터러로 전체 보기
+function viewMarker(){
+        $(document).ready(function(){
+            $.getJSON("map.json",function(positions) {  
+                var markers = $(positions).map(function(i, position) {
+                    return new kakao.maps.Marker({
+                        position : new kakao.maps.LatLng(position.lat, position.lng)
+                    });
+                });  
+                clusterer.addMarkers(markers);
+            });
+        })
+}
+
+       
+    
+    </script>
+
+</body>
+</html>
