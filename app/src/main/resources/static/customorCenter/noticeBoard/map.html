@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>놀당갑서</title>
-    <link rel="stylesheet" type="text/css" href="map.css">
+    <link rel="stylesheet" type="text/css" href="test.css">
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css" />
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <script>
@@ -15,33 +15,50 @@
 </head>
 
 <body>
-<div class="headers"></div>
+<div class="headers"></div> <!--상단부분-->
 
-            <div class ="fourth_container">
-                <div>
-                    <h1>검색</h1>
-                </div>
-                <div id="map"></div>
-            </div>
+    <div style="position: absolute; z-index: 9; padding: 20px;">
+        <button style="font-size: 1.2em;" onclick="viewMarker();">전체보기</button>
+    </div>
+    <!-- 지도가 표시될 div -->
+    <div id="map"></div>
 
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=04d2370bb5a7c0451b3db7bbd723c9d1&libraries=clusterer""autoload=false></script>
+    <script >
 
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=04d2370bb5a7c0451b3db7bbd723c9d1&libraries=services"></script>
-    <script>
-
-  
-        const mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+        
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
             mapOption = {
                 center: new kakao.maps.LatLng(33.374, 126.557), // 지도의 중심좌표
                 level: 10, // 지도의 확대 레벨
-                mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
             }; 
 
         // 지도를 생성한다 
-        const map = new kakao.maps.Map(mapContainer, mapOption);
-        
-     // 장소 검색 객체를 생성합니다
-        var ps = new kakao.maps.services.Places();
-     
+        var map = new kakao.maps.Map(mapContainer, mapOption);
+
+        //마커 클러스터러 생성
+        var clusterer = new kakao.maps.MarkerClusterer({
+        map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체 
+        averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정 
+        minLevel: 10 // 클러스터 할 최소 지도 레벨 
+    });
+
+
+function viewMarker(){
+        $(document).ready(function(){
+            $.getJSON("map.json",function(positions) {  
+                var markers = $(positions).map(function(i, position) {
+                    return new kakao.maps.Marker({
+                        position : new kakao.maps.LatLng(position.lat, position.lng)
+                    });
+                });  
+                clusterer.addMarkers(markers);
+            });
+        })
+}
+
+       
+    
     </script>
 
 </body>
