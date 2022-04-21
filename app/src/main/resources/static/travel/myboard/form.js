@@ -1,9 +1,16 @@
+import { addDestination, getLoginUser } from '../../common/api/apiList.js';
+
 // ------입력값------
 const title = $('#in-title');
 const contents = $('#in-contents');
-const tag = $('.d-tag');
+const tag = $('#tag-d');
 const file = $('.d-file-up');
-const adress = $('.d-adress');
+const adress = $('#in-adress');
+
+(async function () {
+    const userId = await getLoginUser();
+    $("#d-user").val(userId.data.userId);
+})();
 
 // ----d-tag에 선택 태그 값 넣기----
 $('.tag-btn').on('click', function (e) {
@@ -14,25 +21,7 @@ $('.tag-btn').on('click', function (e) {
     $(this).addClass('d-select');
 
     let t = $(e.target).data('val');
-    $('.d-tag').attr('tagVal', t);
-});
-
-// -----입력값 널체크-----
-$('.confirm-btn').on('click', function (e) {
-    console.log('title::::', file.val());
-    if (
-        title.val() == '' ||
-        contents.val() == '' ||
-        tag.attr('tagVal') == undefined ||
-        adress.val() == '' ||
-        file.val() == ''
-    ) {
-        Swal.fire({
-            icon: 'error',
-            title: '위의 항목들을 모두 입력해주세요',
-            text: 'something is missing',
-        });
-    }
+    tag.val(t);
 });
 
 // ---- 주소 api ----
@@ -58,6 +47,7 @@ function findAddr() {
             }
         },
     }).open();
+    return;
 }
 
 // ---- 뒤로가기 화살표 -----
@@ -171,3 +161,27 @@ $('.bi').on('click', function (e) {
         return div;
     };
 })('att_zone', 'btnAtt');
+
+// -----입력값 널체크-----
+$('.confirm-btn').on('click', async function (e) {
+    console.log('title::::', file.val(), title.val(), contents.val(), tag.val(), adress.val());
+    if (
+        title.val() == '' ||
+        contents.val() == '' ||
+        tag.val() == '' ||
+        adress.val() == '' ||
+        file.val() == ''
+    ) {
+        Swal.fire({
+            icon: 'error',
+            title: '위의 항목들을 모두 입력해주세요',
+            text: 'something is missing',
+        });
+        return;
+    }
+    //formdata
+    var destination = new FormData(document.forms.namedItem('form-d'));
+    console.log(destination);
+    const response = await addDestination(destination);
+    console.log(response);
+});

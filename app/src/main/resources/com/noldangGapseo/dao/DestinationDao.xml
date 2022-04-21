@@ -115,6 +115,13 @@
         order by    d.reg_date desc;
     </select>
 
+    <insert id="addDestination" parameterType="Destination" keyProperty="destinationId" keyColumn="destination_id" useGeneratedKeys="true">
+        INSERT
+        into 	destination (user_id, destination_type_id, destination_name, phone, address, contents)
+        values  (#{userId},#{destinationTypeId},#{destinationName},#{phone},#{address},#{contents})
+    </insert>
+
+
     <!-- 좋아요 추가 -->
     <insert id="addLike">
         INSERT  into likes
