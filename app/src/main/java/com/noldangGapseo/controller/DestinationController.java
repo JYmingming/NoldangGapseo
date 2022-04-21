@@ -1,6 +1,13 @@
 package com.noldangGapseo.controller;
 
+import java.io.File;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,14 +15,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+import com.noldangGapseo.domain.ApiResponse;
 import com.noldangGapseo.domain.Destination;
 import com.noldangGapseo.domain.DestinationResponse;
 import com.noldangGapseo.service.DestinationService;
+
 
 @RequestMapping("/destination")
 @RestController
 public class DestinationController {
 
+  private static final Logger log = LogManager.getLogger();
 
   @Autowired
   DestinationService service;
@@ -47,24 +58,65 @@ public class DestinationController {
 
   // 유저의 새로운 여행지 리스트를 가져온다.
   @GetMapping("/user/list")
-  List<Destination> getUserDesList(@RequestParam Integer userId) {
+  public List<Destination> getUserDesList(@RequestParam Integer userId) {
     return service.getUserDesList(userId);
+  }
+
+  // 여행지를 작성한다.
+  @PostMapping("/add/destination")
+  public ApiResponse addDestination(MultipartFile[] imgs, Destination destination) {
+    ApiResponse response = new ApiResponse();
+    ArrayList<String> imgList = new ArrayList<>();
+          try{
+            for (int i = 0; i < imgs.length; i++) {
+              imgList.add(saveFile(imgs[i]));
+            }
+            destination.setImgList(imgList);
+            return service.addDestination(destination);
+          } catch (Exception e){
+            StringWriter out = new StringWriter();
+            e.printStackTrace(new PrintWriter(out));
+            log.error(out.toString());
+            return response.setResCode("1111").setResStatus("fail");
+          }
+
   }
 
   // 좋아요 추가
   @PostMapping("/addLike")
-  Integer addLike(Integer desId, Integer userId) {
+  public Integer addLike(Integer desId, Integer userId) {
     return service.addLike(desId, userId);
   }
 
   // 좋아요 삭제
   @DeleteMapping("/deleteLike")
-  Integer deleteLike(Integer desId, Integer userId) {
+  public Integer deleteLike(Integer desId, Integer userId) {
     return service.deleteLike(desId, userId);
   }
 
+  // 이미지 추가
+  private String saveFile(MultipartFile imgs) throws Exception {
+    if (imgs != null && imgs.getSize() > 0) {
+      // 파일을 저장할 때 사용할 파일명을 준비한다.
+      String filename = UUID.randomUUID().toString();
+      System.out.printf("filename:::::",filename);
 
+      // 파일명의 확장자를 알아낸다.
+      int dotIndex = imgs.getOriginalFilename().lastIndexOf(".");
+      if (dotIndex != -1) {
+        filename += imgs.getOriginalFilename().substring(dotIndex);
+      }
 
+      // 파일을 지정된 폴더에 저장한다.
+      File photoFile = new File("./upload/" + filename); // App 클래스를 실행하는 프로젝트 폴더
+      imgs.transferTo(photoFile.getCanonicalFile()); // 프로젝트 폴더의 전체 경로를 전달한다.
+
+      return filename;
+
+    } else {
+      return null;
+    }
+  }
 
 }
 
