@@ -7,6 +7,7 @@ export const PATH = {
     DESTINATION: {
         userDesList: '/destination/user/list',
         getDes: '/destination/getDes',
+        get4Des: '/destination/get4Des',
     },
     TRAVEL: {
         travelList: '/travel/travelList',
@@ -95,6 +96,16 @@ export async function getUserDesList(userId) {
 export async function getDes(id, type) {
     try {
         const response = await axios(`${PATH.DESTINATION.getDes}?desId=${id}&type=${type}`);
+        return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- 메인페이지의 4여행지를 가져온다 ----
+export async function get4Des() {
+    try {
+        const response = await axios(PATH.DESTINATION.get4Des);
         return response.data;
     } catch (e) {
         console.log(e);

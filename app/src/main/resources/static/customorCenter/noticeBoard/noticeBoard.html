@@ -4,32 +4,34 @@
   <meta charset="utf-8">
   <title>Noldang</title>
   <link rel="stylesheet" type="text/css" href="noticeBoard.css">
-   <script src="../../node_modules/jquery/src/jquery-1.12.4.min.js"></script>
+   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="noticeBoard.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <script>
+            $(document).ready(function () {
+                $('.headers').load('../../common/header/header.html');
+            });
+    </script>
 </head>
 <body>
-<div id="header">                      <!-- 머리 -->
-  <button id="main-btn" type="button">Noldang</button>
-   <img id="img-2" src="img/c2.jpg">
-  <button id="user-btn" type="button">user</button>
-</div>
+<div class="headers"></div>
 
-<div id="container">                  <!-- 몸통 전체 -->
+<div class="container">                  <!-- 몸통 전체 -->
 
-  <div id="body">
-    <div id="body-a">
-      <img id="img-1" src="img/c1.jpg">
-      <span id="Service-center" >고객센터</span>
-      <button id="all-btn" type="button" onclick="location.href='announcement.html'">전체보기</button>
+  <div class="body">
+    <div class="body-a">
+      <img class="img-1" src="img/c1.jpg">
+      <span class="Service-center" >고객센터</span>
+      <button class="all-btn" type="button" onclick="location.href='announcement.html'">전체보기</button>
     </div>
     
-    <div id="body-b">
-       <input id="search" type="search" 
+    <div class="body-b">
+       <input class="search" type="search" 
        placeholder="검색어를 입력해주세요">
-      <img id= "search-img" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
+      <img class= "search-img" src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png">
     </div>
     
-    <div id="body-c">
+    <div class="body-c">
       <table>
         <tr>
           <th><input class="a-button" type="button" value="인기 검색어"></th>
@@ -40,7 +42,7 @@
       </table>
     </div>
     
-    <div id="body-d">
+    <div class="body-d">
       <table>
         <tr>
          <th><input class="b-button clicked" type="button" value="공지사항" onClick="view(1)"></th>
@@ -49,7 +51,7 @@
       </table> 
     </div>
     
-  <div id= "body-e">
+  <div class= "body-e">
   
     <table id="tb1">
       <tr><td><input class="c-button" type="button" value="공지사항 1"></td></tr>

@@ -1,6 +1,6 @@
 //검색어
 $(document).ready(function(){
-
+  
 //공지사항//
 $(".b-button").click(function(event){
   $(".b-button").removeClass("clicked");
@@ -35,22 +35,25 @@ $(".b-button").click(function(event){
 });
 
 //공지테이블//
+
+
 function view(arg) {
   var t1 = document.getElementById("view1");
   var t2 = document.getElementById("view2");
+  var answer = "접수";
   
-  
-  
-  if(arg == 1 ) {
+  if(arg == 1) {
     t1.style.display="block";
     t2.style.display="none";
     
     $.ajax({ 
       url: "/notice/list",
       type:"post",
+      data:{type:'A'},
        success : function(data) {
-        $.each(data, function(i, dat) { 
-          $("#tb1").append("<tr><td>"+(i+1)+"</td><td>"+dat.title+"</td><td>"+dat.reg_date+"</td><td>"+dat.view_count+"</td></tr>");
+        $("#tb1 td").remove();
+        $.each(data, function(i, dat) {
+          $("#tb1").append("<tr><td>"+(i+1)+"</td><td>"+dat.title+"</td><td>"+dat.reg_date.substring(0, 10)+"</td><td>"+dat.view_count+"</td></tr>");
         });
       },
     });
@@ -58,5 +61,22 @@ function view(arg) {
   else {
     t2.style.display="block";
     t1.style.display="none";
+    
+    $.ajax({ 
+      url: "/notice/list",
+      type:"post",
+      data:{type:'Q'},
+       success : function(data) {
+        $("#tb2 td").remove();
+        $.each(data, function(i, dat) {
+          if (dat.view_count == "0") {
+              answer = "접수";
+            }else {
+              answer = "답변완료"
+            }
+          $("#tb2").append("<tr><td>"+(i+1)+"</td><td>"+dat.title+"</td><td>"+dat.nick_name+"</td><td>"+dat.reg_date.substring(0, 10)+"</td><td>"+answer+"</td></tr>");
+        });
+      },
+    });
   }
 }
