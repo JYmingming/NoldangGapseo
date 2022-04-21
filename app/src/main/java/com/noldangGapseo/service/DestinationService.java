@@ -1,11 +1,15 @@
 package com.noldangGapseo.service;
 
+import java.io.File;
 import java.util.List;
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.noldangGapseo.dao.DestinationDao;
 import com.noldangGapseo.domain.Destination;
 import com.noldangGapseo.domain.DestinationResponse;
+import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class DestinationService {
@@ -54,5 +58,28 @@ public class DestinationService {
     return mapper.deleteLike(desId, userId);
   }
 
+  // 이미지 추가
+  public String saveFile(MultipartFile imgs) throws Exception {
+    if (imgs != null && imgs.getSize() > 0) {
+      // 파일을 저장할 때 사용할 파일명을 준비한다.
+      String filename = UUID.randomUUID().toString();
+      System.out.println(filename);
+
+      // 파일명의 확장자를 알아낸다.
+      int dotIndex = imgs.getOriginalFilename().lastIndexOf(".");
+      if (dotIndex != -1) {
+        filename += imgs.getOriginalFilename().substring(dotIndex);
+      }
+
+      // 파일을 지정된 폴더에 저장한다.
+      File photoFile = new File("/static/img/destination/userDesImg" + filename); // App 클래스를 실행하는 프로젝트 폴더
+      imgs.transferTo(photoFile.getCanonicalFile()); // 프로젝트 폴더의 전체 경로를 전달한다.
+
+      return filename;
+
+    } else {
+      return null;
+    }
+  }
 }
 
