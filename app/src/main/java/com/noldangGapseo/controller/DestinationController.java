@@ -62,12 +62,12 @@ public class DestinationController {
   Integer deleteLike(Integer desId, Integer userId) {
     return service.deleteLike(desId, userId);
   }
-<<<<<<< HEAD
+
 
 
 
 }
-=======
-}
 
->>>>>>> ed540c50dc4e0aa5b0e64303a7e976defe047463
+
+
+

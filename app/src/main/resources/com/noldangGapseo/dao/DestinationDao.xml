@@ -22,13 +22,15 @@
 
     <!-- 놀당의 여행지 리스트를 불러온다. -->
     <select id="getAdminDesList" resultMap="desMap">
-        select
-        *
-        from
-        destination
-        where
-        user_id = 1
-        order by reg_date desc
+        SELECT 		d.destination_id, d.destination_name, address,
+        d.reg_date, u.nick_name, dt.destination_type_name,
+        di.img thumb_nail_img
+        FROM 		destination d , `user` u , destination_type dt, destination_img di
+        WHERE 		d.user_id = u.user_id
+        and 		d.destination_type_id = dt.destination_type_id
+        and  		d.user_id = 1
+        and 		d.destination_id = di.destination_id
+        ORDER BY 	destination_id  ASC;
     </select>
 
     <!-- 여행지의 상세항목을 불러온다. -->
