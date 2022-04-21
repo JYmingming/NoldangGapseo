@@ -48,6 +48,14 @@
         and     d.user_id = u.user_id;
 
     </select>
+    
+    <select id="get4Des" resultMap="desMap">
+        select 		d.destination_id , d.destination_name , di.img thumbNailImg
+        from 		destination d , destination_img di
+        WHERE 		user_id = 1
+        and 		d.destination_id = di.destination_id
+        order by 	rand() limit 4;
+    </select>
 
     <!-- 놀당 여행지의 댓글을 불러온다. -->
     <select id="getNoldangCommentList" resultMap="comMap" parameterType="Integer">

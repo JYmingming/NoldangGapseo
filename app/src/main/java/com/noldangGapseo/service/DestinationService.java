@@ -34,6 +34,12 @@ public class DestinationService {
                 .build();
     }
 
+    // 메인 페이지의 4 여행지를 가져온다.
+    public List<Destination> get4Des(){
+        return mapper.get4Des();
+    }
+
+
     // 유저의 새로운 여행지 리스트를 가져온다.
     public List<Destination> getUserDesList(Integer userId) {
         return mapper.getUserDesList(userId);
