@@ -164,7 +164,6 @@ $(document).on('change', '.c-cost', async function (e) {
 $(document).on('click', '.delete-btn', async function (e) {
     const costId = $(this).parent().attr('data-id');
     const response = await deleteCost(costId);
-    console.log(response);
     if (response.resCode == '0000') {
         sumCost($(this).siblings('.c-cost').val().replace(',', ''), '-');
         $(this).closest('.content-box').remove();

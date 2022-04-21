@@ -16,10 +16,11 @@ import com.noldangGapseo.service.DestinationService;
 @RestController
 public class DestinationController {
 
+
   @Autowired
   DestinationService service;
 
-  //놀당갑서의 여행지를 모두 가져온다. 
+  //놀당갑서의 여행지를 모두 가져온다.
   @GetMapping("/admin/list")
   List<Destination> getAdminDesList() {
     return service.getAdminDesList();
@@ -38,19 +39,28 @@ public class DestinationController {
     return service.getDes(desId, type);
   }
 
+  // 메인 페이지의 4 여행지를 가져온다.
+  @GetMapping("/get4Des")
+  public List<Destination> get4Des() {
+    return service.get4Des();
+  }
+
   // 유저의 새로운 여행지 리스트를 가져온다.
   @GetMapping("/user/list")
-  List<Destination> getUserDesList(@RequestParam Integer userId) {return service.getUserDesList(userId);}
+  List<Destination> getUserDesList(@RequestParam Integer userId) {
+    return service.getUserDesList(userId);
+  }
 
   // 좋아요 추가
   @PostMapping("/addLike")
-  Integer addLike(Integer desId, Integer userId){
+  Integer addLike(Integer desId, Integer userId) {
     return service.addLike(desId, userId);
   }
 
   // 좋아요 삭제
   @DeleteMapping("/deleteLike")
-  Integer deleteLike(Integer desId, Integer userId){
+  Integer deleteLike(Integer desId, Integer userId) {
     return service.deleteLike(desId, userId);
   }
 }
+
