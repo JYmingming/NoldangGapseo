@@ -87,7 +87,13 @@ li,ul{
     border: 0px;
     float: right;
     height: 60px;
-    margin-right: 0;
+    
+}
+.search-values div:nth-child(4) h2{
+    margin: 0;
+}
+.search-values div:nth-child(4) button{
+    margin-top: 20px;
 }
 
 .search-values button{

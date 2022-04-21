@@ -95,85 +95,63 @@
       </div>
       <div class="result-box">
         <ul class="result-list">
-            <li class="result-item">
+            <!--호텔 리스트 -->
+        </ul>
+      </div>
+    </div>
+
+    </div>
+    <div> 끝 </div>
+  </body>
+
+
+
+
+
+<script>
+  var listUl = document.querySelector(".result-list");
+
+  fetch("/reserve/get?startDate=2022-04-25&endDate=2022-04-26&link=L")
+          .then(function(response) {
+            return response.json();
+          })
+          .then(function(result) {
+            if (result.status == "fail") {
+              window.alert("서버 요청 오류!");
+              console.log(result.data);
+              return;
+            }
+            var hotels = result["hotels"];
+            for (var hotel of hotels) {
+              var li = document.createElement("li");
+              li.classList.add('result-item');
+              li.innerHTML=`
                 <div class="item-line-1">
-                    <img src="../img/lock.png">
+                    <img src="${hotel[4]}">
                 </div>
                 <div class="item-line-2">
-                    <img class="" src="../img/facebook_icon.png">
-                    <img class="" src="../img/facebook_icon.png">
-                    <img class="swal2-hide" src="../img/facebook_icon.png">
-                    <img class="swal2-hide" src="../img/facebook_icon.png">
-                    <img class="swal2-hide" src="../img/facebook_icon.png">
-                    <h5>해비치호텔</h5>
+                    <h5>${hotel[0]}</h5>
                     <p>
-                      <span>호텔 정보</span><br>
-                      <span>호텔 정보</span><br>
-                      <span>호텔 정보</span><br>
-                      <span>호텔 정보</span><br>
+                      <br><br>
+                      <span>평점 [ ${hotel[1]} ]</span>
+                      <span>주소 : ${hotel[2]}</span>
                     </p>
                 </div>
                 <div class="item-line-3">
-                  <img class="" src="../img/facebook_icon.png">
-                  <button class="review-btn">리뷰보기</button>
-                  <button class="reserv-btn">바로예약</button>
-                </div>
-            </li>
+                <h4>${hotel[3]}</h4>
+                <button class="reserv-btn" data-no="${hotel[5]}">바로예약</button>
+                </div>`
+                listUl.appendChild(li)
+            }
+          });
+</script>
+<script>
+  $('body').on('click','[class=reserv-btn]', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const dataLink = $(this).attr('data-no');
+    location.href = `/reserv/reserv2_detail.html?startDate=2022-04-25&endDate=2022-04-26&link=${dataLink}`;
+  });
+</script>
 
-          <li class="result-item">
-            <div class="item-line-1">
-              <img src="../img/lock.png">
-            </div>
-            <div class="item-line-2">
-              <img class="" src="../img/facebook_icon.png">
-              <img class="" src="../img/facebook_icon.png">
-              <img class="swal2-hide" src="../img/facebook_icon.png">
-              <img class="swal2-hide" src="../img/facebook_icon.png">
-              <img class="swal2-hide" src="../img/facebook_icon.png">
-              <h5>해비치호텔</h5>
-              <p>
-                <span>호텔 정보</span><br>
-                <span>호텔 정보</span><br>
-                <span>호텔 정보</span><br>
-                <span>호텔 정보</span><br>
-              </p>
-            </div>
-            <div class="item-line-3">
-              <img class="" src="../img/facebook_icon.png">
-              <button class="review-btn">리뷰보기</button>
-              <button class="reserv-btn">바로예약</button>
-            </div>
-          </li>
-          <li class="result-item">
-            <div class="item-line-1">
-              <img src="../img/lock.png">
-            </div>
-            <div class="item-line-2">
-              <img class="" src="../img/facebook_icon.png">
-              <img class="" src="../img/facebook_icon.png">
-              <img class="swal2-hide" src="../img/facebook_icon.png">
-              <img class="swal2-hide" src="../img/facebook_icon.png">
-              <img class="swal2-hide" src="../img/facebook_icon.png">
-              <h5>해비치호텔</h5>
-              <p>
-                <span>호텔 정보</span><br>
-                <span>호텔 정보</span><br>
-                <span>호텔 정보</span><br>
-                <span>호텔 정보</span><br>
-              </p>
-            </div>
-            <div class="item-line-3">
-              <img class="" src="../img/facebook_icon.png">
-              <button class="review-btn">리뷰보기</button>
-              <button class="reserv-btn">바로예약</button>
-            </div>
-          </li>
-
-        </ul>
-      </div>
-
-
-
-
-  </div>
-</body>
+</html>
