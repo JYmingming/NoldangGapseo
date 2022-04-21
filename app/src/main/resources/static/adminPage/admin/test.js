@@ -1,11 +1,10 @@
 import {
-     dotoList,
-    addDoto,
-    setDotoStatus,
-    updateDoto,
-    deleteDoto,
+     boardList,
+    addBoard,
+  
 } from '../../common/api/apiList.js';
 
+// ---- URLSearchParams ----
 var arr = location.href.split('?');
 
 if (arr.length == 1) {
@@ -24,14 +23,13 @@ if (no == null) {
     throw '파라미터 오류!';
 }
 
-
 (async function () {
     // ---- 화면 렌더링 ----
-    const list = await todoList(no);
+    const list = await boardList(no);
     list?.map((m) => {
-        const dotoView = `<div class="content-box w-50 d-flex flex-column align-items-center">
+        const boardView = `<div class="content-box w-50 d-flex flex-column align-items-center">
             <div class="todo-col w-100 d-flex justify-content-sm-around align-items-center"
-            data-id=${m.dotoId}
+            data-id=${m.boardId}
             >
                 <input type="checkbox" class="form-check-input"
                     ${m.status == 0 ? '' : 'checked'}/>
@@ -39,32 +37,32 @@ if (no == null) {
                 <div class="delete-btn">❌</div>
             </div>
         </div>`;
-        $('.todo-content').append(dotoView);
+        $('.todo-content').append(boardView);
     });
 })();
 // ===== todo 추가 =====
-const newDoto = $('.input-name');
+const newBoard = $('.input-name');
 
 // ---- todo 추가 함수 ----
-const addNewDoto = async (id, newName) => {
+const addNewBoard = async (id, newName) => {
     if (newName == '') {
         Swal.fire({
             icon: 'error',
-            title: 'Todo 항목을 작성해 주세요',
+            title: 'Board 항목을 작성해 주세요',
             text: 'something is missing',
         });
     } else {
-        const todoRes = await addDoto(id, newName);
-        if (todoRes?.resCode == '0000') {
+        const boardRes = await addBoard(id, newName);
+        if (boardRes?.resCode == '0000') {
             location.reload();
         }
     }
 };
 
 // ---- todo 추가 이벤트 -----
-newDoto.on('keyup', function (key) {
+newBoard.on('keyup', function (key) {
     if (key.keyCode == 13) {
-        addNewDoto(no, newDoto.val());
+        addNewBoard(no, newBoard.val());
     }
 });
 
@@ -75,7 +73,7 @@ $('.confirm-btn').on('click', function (e) {
 // ===== todo상태 변경 ====
 
 $(document).on('click', '.form-check-input', async function (e) {
-    const todoId = $(this).closest('div').attr('data-id');
+    const boardId = $(this).closest('div').attr('data-id');
     const status = $(this).is(':checked') ? 1 : 0;
     setDotoStatus(dotoId, status);
 });

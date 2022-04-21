@@ -53,4 +53,7 @@ public class DestinationController {
   Integer deleteLike(Integer desId, Integer userId){
     return service.deleteLike(desId, userId);
   }
+
+
+
 }
