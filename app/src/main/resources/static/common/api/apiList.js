@@ -8,6 +8,7 @@ export const PATH = {
         userDesList: '/destination/user/list',
         getDes: '/destination/getDes',
         get4Des: '/destination/get4Des',
+        addDestination: '/destination/add/destination',
     },
     TRAVEL: {
         travelList: '/travel/travelList',
@@ -107,6 +108,20 @@ export async function get4Des() {
     try {
         const response = await axios(PATH.DESTINATION.get4Des);
         return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ----- 여행지 추가 ----
+export async function addDestination(destination) {
+    try {
+        const reponse = await fetch(PATH.DESTINATION.addDestination, {
+            method: 'POST',
+            body: destination,
+        }).then(function (res) {
+            res.json();
+        });
     } catch (e) {
         console.log(e);
     }

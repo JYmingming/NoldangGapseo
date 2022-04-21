@@ -18,6 +18,8 @@ public interface DestinationDao {
 
   List<Destination> get4Des();
 
+  Integer addDestination(Destination destination);
+
   List<Destination> getUserDesList(Integer userId);
 
   List<Comment> getUserCommentList(Integer desId);

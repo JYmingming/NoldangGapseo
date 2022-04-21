@@ -1,11 +1,16 @@
 package com.noldangGapseo.service;
 
+import java.io.File;
 import java.util.List;
+import java.util.UUID;
+
+import com.noldangGapseo.domain.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.noldangGapseo.dao.DestinationDao;
 import com.noldangGapseo.domain.Destination;
 import com.noldangGapseo.domain.DestinationResponse;
+import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class DestinationService {
@@ -53,6 +58,15 @@ public class DestinationService {
   public Integer deleteLike(Integer desId, Integer userId){
     return mapper.deleteLike(desId, userId);
   }
+
+  // 여행지 작성
+  public ApiResponse addDestination(Destination destination){
+
+    mapper.addDestination(destination);
+    return new ApiResponse();
+  }
+
+
 
 }
 
