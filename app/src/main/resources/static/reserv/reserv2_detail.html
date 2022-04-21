@@ -14,6 +14,30 @@
         $(document).ready(function () {
             $('.headers').load('../common/header/header.html');
         });
+
+
+
+        fetch("/reserve/get?startDate=2022-04-25&endDate=2022-04-26&link=65825")
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(result) {
+                if (result.status == "fail") {
+                    window.alert("서버 요청 오류!");
+                    console.log(result.data);
+                    return;
+                }
+                console.log(result);
+                console.log(result.data);
+
+                /*for (var Hotels of result[1].data) {
+                  console.log(result);
+                  console.log(result.data);
+                }*/
+            });
+
+
+
     </script>
 </head>
 

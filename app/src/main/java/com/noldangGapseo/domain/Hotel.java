@@ -15,8 +15,9 @@ import java.util.List;
 @Accessors(chain = true)
 public class Hotel {
     String hotelName; // ok
-    Integer hotelPrice;
+    Integer hotelPrice; // ok
     String hotelLocation; // ok
-    ArrayList<String> imgUrl;
-    ArrayList<String> precautions;
+    String hotelComment; // ok
+    ArrayList<String> imgUrl; // ok
+
 }

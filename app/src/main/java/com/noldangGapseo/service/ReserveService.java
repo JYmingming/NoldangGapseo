@@ -42,9 +42,11 @@ public class ReserveService {
             if (link.equals("L")) {
                 hotels = selTest.listCrawl(startDate, endDate);
                 selTest.driver.close();
+                System.out.println("리스트 크롤링 정상종료");
                 return ReserveResponse.builder().hotels(hotels).build();
             } else {
                 hotel = selTest.hotelCrawl(link, startDate, endDate);
+                System.out.println("호텔 크롤링 정상종료");
                 selTest.driver.close();
                 return ReserveResponse.builder().hotel(hotel).build();
             }
@@ -141,12 +143,15 @@ public class ReserveService {
 
         /*데이터 추출 구간*/
         WebElement hotelName = driver.findElement(By.cssSelector("#content > div.top > div.right > div.info > h2"));
-        //System.out.println(hotelName.getText());
-        WebElement hotelPrice = driver.findElement(By.cssSelector("#product_filter_form > article > div:nth-child(2) > div.info > div > div > div > p:nth-child(2)"));
-
-        //System.out.println(hotelPrice.getText());
         WebElement hotelLocation = driver.findElement(By.cssSelector("#content > div.top > div.right > div.info > p.address"));
-        //System.out.println(hotelLocation.getText());
+        WebElement hotelComment = driver.findElement(By.cssSelector("#content > div.top > div.right > div.comment > div"));
+        WebElement hotelPrice = driver.findElement(By.xpath("//*[@id=\"product_filter_form\"]/article/div[2]/div[3]/div/div/div/p[2]/b"));
+
+        //데이터 변환 및 도메인에 add  ex) 20,000원 -> 20000
+        String strPrice = hotelPrice.getText()
+                .replace(",", "")
+                .replace("원", "")
+                .replace(" ", "");
 
         //이미지 개수를 세어 직접 로딩해줌
         int imgCnt = driver.findElements(By.cssSelector("#content > div.top > div.left > div.gallery_pc > div.swiper-container.gallery-thumbs.swiper-container-horizontal > ul > li")).size();
@@ -154,37 +159,28 @@ public class ReserveService {
             driver.findElement(By.xpath("//*[@id=\"content\"]/div[1]/div[1]/div[2]/div[4]")).click();
             Thread.sleep(175);
         }
+
+        //숙소 이미지 수집
         List<WebElement> hotelImg = driver.findElements(By.cssSelector("#content > div.top > div.left > div.gallery_pc > div.swiper-container.gallery-thumbs.swiper-container-horizontal > ul > li > img"));
-
-        //숙소정보 클릭 및 수집
-        driver.findElement(By.xpath("//*[@id=\"content\"]/div[2]/button[2]")).click();
-        List<WebElement> hotelPrecautions = driver.findElements(By.cssSelector("#content > article.detail_info.on > section.default_info > ul"));
-        /*for (WebElement item: hotelPrecautions) {
-            System.out.println(item.getText());
-        }*/
-        System.out.println(hotelPrecautions.get(7).getText());
-
-
-        /*데이터 변환 및 도메인에 add */
-
-        // ex) 20,000원 -> 20000
-     /*   String strPrice = hotelPrice.getText()
-                .replace(",", "")
-                .replace("원", "")
-                .replace(" ", "");
-
-        System.out.println(strPrice);*/
-        System.out.println(hotelPrice.getText());
-
-        // 이미지 묶음
         ArrayList<String> imgArray = new ArrayList<>();
         for (WebElement item : hotelImg) {
             imgArray.add(item.getAttribute("src"));
         }
 
+        //숙소세부정보 정보 클릭 및 수집
+        /*driver.findElement(By.xpath("//*[@id=\"content\"]/div[2]/button[2]")).click();
+        List<WebElement> hotelPrecautions = driver.findElements(By.cssSelector("#content > article.detail_info.on > section.default_info > ul"));
+        for (WebElement item: hotelPrecautions) {
+            System.out.println(item.getText());
+        }*/
+
+        // 이미지 묶음
+
         //호텔 도메인 데이터셋
         hotel.setHotelName(hotelName.getText())
                 .setHotelLocation(hotelLocation.getText())
+                .setHotelComment(hotelComment.getText())
+                .setHotelPrice(Integer.parseInt(strPrice))
                 .setImgUrl(imgArray);
 
         return hotel;
