@@ -1,16 +1,12 @@
 package com.noldangGapseo.service;
 
-import java.io.File;
 import java.util.List;
-import java.util.UUID;
-
-import com.noldangGapseo.domain.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.noldangGapseo.dao.DestinationDao;
+import com.noldangGapseo.domain.ApiResponse;
 import com.noldangGapseo.domain.Destination;
 import com.noldangGapseo.domain.DestinationResponse;
-import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class DestinationService {
@@ -39,33 +35,42 @@ public class DestinationService {
   }
 
   // 메인 페이지의 4 여행지를 가져온다.
-  public List<Destination> get4Des(){
+  public List<Destination> get4Des() {
     return mapper.get4Des();
   }
 
 
-  // 유저의 새로운 여행지 리스트를 가져온다.
+  // 유저가 작성한 여행지 리스트를 가져온다.
   public List<Destination> getUserDesList(Integer userId) {
     return mapper.getUserDesList(userId);
   }
 
+  // 여행지 작성
+  public ApiResponse addDestination(Destination destination) {
+    ApiResponse apiResponse = new ApiResponse();
+    Integer addResponse = mapper.addDestination(destination);
+    if (addResponse == 0) {
+      return apiResponse.setResCode("1111").setResStatus("fail");
+    }
+    List<String> imgList = destination.getImgList();
+    for (String img : imgList) {
+      mapper.addImgList(destination.getDestinationId(), img);
+    }
+    return apiResponse;
+  }
+
+  // 이미지 넣기
+
+
   // 좋아요 추가
-  public Integer addLike(Integer desId, Integer userId){
+  public Integer addLike(Integer desId, Integer userId) {
     return mapper.addLike(desId, userId);
   }
 
   // 좋아요 삭제
-  public Integer deleteLike(Integer desId, Integer userId){
+  public Integer deleteLike(Integer desId, Integer userId) {
     return mapper.deleteLike(desId, userId);
   }
-
-  // 여행지 작성
-  public ApiResponse addDestination(Destination destination){
-
-    mapper.addDestination(destination);
-    return new ApiResponse();
-  }
-
 
 
 }

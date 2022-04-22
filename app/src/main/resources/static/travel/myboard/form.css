@@ -34,7 +34,9 @@
 .adress-btn:hover {
     color: white;
 }
-
+#in-phone {
+    margin-left: 4em;
+}
 .confirm-btn {
     border: 1px solid #fb9300;
     border-radius: 10px;

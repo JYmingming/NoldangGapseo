@@ -20,6 +20,8 @@ public interface DestinationDao {
 
   Integer addDestination(Destination destination);
 
+  Integer addImgList(@Param("userId") Integer userId, @Param("imgName") String imgName);
+
   List<Destination> getUserDesList(Integer userId);
 
   List<Comment> getUserCommentList(Integer desId);

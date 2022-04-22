@@ -116,12 +116,14 @@ export async function get4Des() {
 // ----- 여행지 추가 ----
 export async function addDestination(destination) {
     try {
-        const reponse = await fetch(PATH.DESTINATION.addDestination, {
+        const response = await fetch(PATH.DESTINATION.addDestination, {
             method: 'POST',
             body: destination,
         }).then(function (res) {
-            res.json();
+            return res.json();
         });
+        console.log(response);
+        return response;
     } catch (e) {
         console.log(e);
     }

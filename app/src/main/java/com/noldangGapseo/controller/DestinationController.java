@@ -1,6 +1,7 @@
 package com.noldangGapseo.controller;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
@@ -9,6 +10,11 @@ import java.util.UUID;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -67,18 +73,18 @@ public class DestinationController {
   public ApiResponse addDestination(MultipartFile[] imgs, Destination destination) {
     ApiResponse response = new ApiResponse();
     ArrayList<String> imgList = new ArrayList<>();
-          try{
-            for (int i = 0; i < imgs.length; i++) {
-              imgList.add(saveFile(imgs[i]));
-            }
-            destination.setImgList(imgList);
-            return service.addDestination(destination);
-          } catch (Exception e){
-            StringWriter out = new StringWriter();
-            e.printStackTrace(new PrintWriter(out));
-            log.error(out.toString());
-            return response.setResCode("1111").setResStatus("fail");
-          }
+    try{
+      for (int i = 0; i < imgs.length; i++) {
+        imgList.add(saveFile(imgs[i]));
+      }
+      destination.setImgList(imgList);
+      return service.addDestination(destination);
+    } catch (Exception e){
+      StringWriter out = new StringWriter();
+      e.printStackTrace(new PrintWriter(out));
+      log.error(out.toString());
+      return response.setResCode("1111").setResStatus("fail");
+    }
 
   }
 
@@ -99,7 +105,6 @@ public class DestinationController {
     if (imgs != null && imgs.getSize() > 0) {
       // 파일을 저장할 때 사용할 파일명을 준비한다.
       String filename = UUID.randomUUID().toString();
-      System.out.printf("filename:::::",filename);
 
       // 파일명의 확장자를 알아낸다.
       int dotIndex = imgs.getOriginalFilename().lastIndexOf(".");
@@ -114,6 +119,36 @@ public class DestinationController {
       return filename;
 
     } else {
+      return null;
+    }
+  }
+
+  // thumbNailImg 가져오기
+  @GetMapping("/img")
+  public ResponseEntity<Resource> getImg(String filename) {
+    try {
+      File downloadFile = new File("./src/main/resources/static/img/destination/userDesImg/" + filename);
+      FileInputStream fileIn = new FileInputStream(downloadFile.getCanonicalPath());
+      InputStreamResource resource = new InputStreamResource(fileIn);
+
+
+      HttpHeaders header = new HttpHeaders();
+      header.add("Cache-Control", "no-cache, no-store, must-revalidate");
+      header.add("Pragma", "no-cache");
+      header.add("Expires", "0");
+
+
+      header.add(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + filename);
+
+
+      return ResponseEntity.ok()
+          .headers(header)
+          .contentLength(downloadFile.length())
+          .contentType(MediaType.APPLICATION_OCTET_STREAM)
+          .body(resource);
+
+    } catch (Exception e) {
+
       return null;
     }
   }

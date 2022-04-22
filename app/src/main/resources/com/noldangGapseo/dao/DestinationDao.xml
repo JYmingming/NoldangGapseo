@@ -117,12 +117,19 @@
         order by    d.reg_date desc;
     </select>
 
+    <!-- 여행지를 작성한다. -->
     <insert id="addDestination" parameterType="Destination" keyProperty="destinationId" keyColumn="destination_id" useGeneratedKeys="true">
         INSERT
         into 	destination (user_id, destination_type_id, destination_name, phone, address, contents)
         values  (#{userId},#{destinationTypeId},#{destinationName},#{phone},#{address},#{contents})
     </insert>
 
+    <!-- 이미지를 추가한다. -->
+    <insert id="addImgList">
+        INSERT
+        into    destination_img (destination_id, img)
+        value   (#{userId},#{imgName})
+    </insert>
 
     <!-- 좋아요 추가 -->
     <insert id="addLike">
