@@ -56,7 +56,6 @@ public class DestinationService {
     for (String img : imgList) {
       mapper.addImgList(destination.getDestinationId(), img);
     }
-    System.out.println(apiResponse);
     return apiResponse;
   }
 

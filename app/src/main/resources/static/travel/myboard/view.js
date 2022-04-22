@@ -35,7 +35,7 @@ let destinationId;
         const firstImgView = `     
         <div class="carousel-item active" data-bs-interval="3000" data-imgId=${m.destinationImgId}>
             <img
-            src=${m.img}
+            src=/destination/img?filename=${m.img}
             class="d-block h-auto w-100"
             alt="..."
             style="border-radius: 20px"
@@ -46,7 +46,7 @@ let destinationId;
         const otherImgView = `     
         <div class="carousel-item" data-bs-interval="3000" data-imgId=${m.destinationImgId}>
             <img
-            src=${m.img}
+            src=/destination/img?filename=${m.img}
             class="d-block h-auto w-100"
             alt="..."
             style="border-radius: 20px"

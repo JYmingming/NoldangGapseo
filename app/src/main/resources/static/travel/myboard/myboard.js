@@ -24,11 +24,11 @@ import { getLoginUser, getUserDesList } from '../../common/api/apiList.js';
                 tagColor = 'orange';
                 break;
         }
-        console.log(m.thumbNailImg)
+        console.log(m.thumbNailImg);
         const view = `<div class="content-card col" data-id="${m.destinationId}">
                     <div class="card">
                         <img
-                        src="/img/destination/userDesImg/${m.thumbNailImg}"
+                        src="/destination/img?filename=${m.thumbNailImg}"
                         class="card-img-top c-img"
                         alt="NO IMAGE"
                         style="height: 13em"

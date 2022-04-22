@@ -183,6 +183,7 @@ $('.confirm-btn').on('click', async function (e) {
     //formdata
     var destination = new FormData(document.forms.namedItem('form-d'));
     const response = await addDestination(destination);
+    console.log(response);
     if (response.resCode == '0000') {
         Swal.fire({
             icon: 'success',
@@ -192,9 +193,10 @@ $('.confirm-btn').on('click', async function (e) {
         }).then((result) => {
             if (result.isConfirmed) {
                 location.reload();
-                title.focus();
-            } else if (result.isDenied) {
+                return;
+            } else {
                 location.href = '/travel/myboard/myboard.html';
+                return;
             }
         });
     }
