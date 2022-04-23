@@ -1,3 +1,4 @@
+
 export const PATH = {
     USER: {
         list: `/user/list`,
@@ -9,6 +10,8 @@ export const PATH = {
         getDes: '/destination/getDes',
         get4Des: '/destination/get4Des',
         addDestination: '/destination/add/destination',
+        deleteDes: '/destination/delete/des',
+        deleteImg: '/destination/delete/img',
     },
     TRAVEL: {
         travelList: '/travel/travelList',
@@ -124,6 +127,32 @@ export async function addDestination(destination) {
         });
         console.log(response);
         return response;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ----- 여행지를 삭제 ----
+export async function deleteDes(id) {
+    try {
+        const response = await axios({
+            method: 'DELETE',
+            url: `${PATH.DESTINATION.deleteDes}?id=${id}`,
+        });
+        return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- 여행지 이미 삭제 ----
+export async function dleteImgs(id) {
+    try {
+        const response = await axios({
+            method: 'DELETE',
+            url: `${PATH.DESTINATION.deleteImg}?id=${id}`,
+        });
+        return response.data;
     } catch (e) {
         console.log(e);
     }

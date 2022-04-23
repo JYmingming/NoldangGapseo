@@ -59,8 +59,24 @@ public class DestinationService {
     return apiResponse;
   }
 
-  // 이미지 넣기
+  // 이미지 삭제
+  public ApiResponse deleteImgs(Integer imgId){
+    ApiResponse apiResponse = new ApiResponse();
+    Integer response = mapper.deleteImg(imgId);
+    if(response == 0) {
+      return  apiResponse.setResCode("1111").setResStatus("fail");
+    }
+    return apiResponse;
+  }
 
+  // 여행지 삭제
+  public ApiResponse deleteDes(Integer desId){
+    ApiResponse apiResponse = new ApiResponse();
+    if(mapper.deleteDes(desId) == 0){
+     return apiResponse.setResStatus("fail").setResCode("1111");
+    }
+    return  apiResponse;
+  }
 
   // 좋아요 추가
   public Integer addLike(Integer desId, Integer userId) {

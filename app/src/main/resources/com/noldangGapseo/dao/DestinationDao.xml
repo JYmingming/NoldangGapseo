@@ -124,12 +124,41 @@
         values  (#{userId},#{destinationTypeId},#{destinationName},#{phone},#{address},#{contents})
     </insert>
 
+    <!-- 여행지를 업데이트 한다. -->
+    <update id="updateDes" parameterType="Destination">
+        UPDATE 	destination
+        set 	destination_type_id = #{destinationTypeId}, destination_name = #{destinationName},
+                phone = #{phone}, address= #{address}, contents =#{contents}
+        WHERE 	destination_id = #{destinationId};
+    </update>
+
+    <!-- 여행지를 삭제한다. -->
+    <delete id="deleteDes" parameterType="Integer">
+        DELETE
+        FROM    destination
+        WHERE   destination_id = #{desId}
+    </delete>
+
     <!-- 이미지를 추가한다. -->
     <insert id="addImgList">
         INSERT
         into    destination_img (destination_id, img)
         value   (#{userId},#{imgName})
     </insert>
+
+    <!-- 이미지 업데이트 -->
+    <update id="updateImgList">
+        UPDATE 	destination_img
+        set 	img = #{imgName}
+        WHERE 	destination_id = #{destinationId};
+    </update>
+
+    <!-- 이미지 삭제 -->
+    <delete id="deleteImg">
+        DELETE
+        FROM    destination_img
+        WHERE   destination_img_id = #{imgId}
+    </delete>
 
     <!-- 좋아요 추가 -->
     <insert id="addLike">
