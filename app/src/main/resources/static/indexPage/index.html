@@ -12,7 +12,9 @@
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../node_modules/axios/dist/axios.js"></script>
 
-
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 
 
@@ -39,12 +41,16 @@
     </div>
     <div class ="main_container">
         <div class ="hosting">
-            <div>출발일</div>
-            <div>도착일</div>
-            <div>출발인원</div>
+            <div>
+                <h6>출발 일자</h6>
+                <input type="text" id="datepicker_start">
+            </div>
+            <div>
+                <h6>도착 일자</h6>
+                <input type="text" id="datepicker_end">
+            </div>
+            <div data-bs-toggle="modal" data-bs-target="#personModal">출발인원</div>
             <div>테마</div>
-
-
         </div>
         <div class ="main_img"></div>
     </div>
@@ -183,88 +189,40 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-        css(".login", "display", "none");
-        css(".admin-login", "display", "none");
 
-        fetch("/user/getLoginUser").then(function(response) {
-            return response.json();
-        }).then(function(result) {
-            if (result.resStatus == "success") {
-                document.querySelector("#user-name").innerHTML = result.data.nickName;
-                css(".login", "display", "");
-                css(".not-login", "display", "none");
-                console.log("로그인");
-            }
-            if (result.data.userId==1){
-                console.log("어드민 로그인");
-                css(".admin-login", "display", "");
 
-            }
-        });
+    <div class="modal fade" id="personModal" tabindex="-4" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                    <div class="personContent">
+                        <h5>인원 설정</h5>
+                        <div class="cnt-box">
+                            <div class="person-text">
+                                <h3>성인</h3>
+                            </div>
+                            <div class="person-cnt">
+                                <img src="../img/minus.png"> <h3>1</h3> <img src="../img/plus.png">
+                            </div>
+                        </div>
+                        <div>
+                            <button id="person-btn">저장하기</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
 
-        document.querySelector("#logout-btn").onclick = function() {
-            fetch("/user/signout").then(function(response) {
-                location.href = "index.html";
-            });
-        };
+    </div>
 
-        //css 함수
-        function css(selector, name, value) {
-            var el = document.querySelectorAll(selector);
-            for (var e of el) {
-                e.style[name] = value;
-            }
-        }
-    </script>
-
-    <script>
-        // 로그인
-        var xEmail = document.querySelector("input[name=email]");
-        var xPassword = document.querySelector("input[name=password]");
-
-        document.querySelector("form[name=form1]").onsubmit = function() {
-            if ( xEmail.value == "" ||
-                xPassword.value == "") {
-                window.alert("필수 입력 항목이 비어 있습니다.");
-                return false;
-            }
-            var fd = new FormData(document.forms.namedItem("form1"));
-
-            fetch("/user/signin", {
-                method: "POST",
-                body: new URLSearchParams(fd)
-            })
-                .then(function(response) {
-                    return response.json();
-                })
-                .then(function(result) {
-                    if (result.resStatus == "success") {
-                        location.href = "/indexPage/index.html";
-                    } else {
-                        window.alert("로그인 실패!")
-                    }
-                });
-            return false;
-        };
-        document.querySelector("#go_home").onclick = function() {
-            location.href = "/indexPage/index.html";
-        }
-
-    </script>
 
 
 
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=04d2370bb5a7c0451b3db7bbd723c9d1"></script>
-    <script>
-        var container = document.getElementById('map');
-        var options = {
-            center: new kakao.maps.LatLng(33.374, 126.557),
-            level: 9
-        };
-        var map = new kakao.maps.Map(container, options);
-    </script>
     <script src="./index.js" type="module"></script>
+
+    <script>
+
+    </script>
 </body>
 
 
