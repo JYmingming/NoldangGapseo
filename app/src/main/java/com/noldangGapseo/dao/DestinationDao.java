@@ -29,4 +29,12 @@ public interface DestinationDao {
   Integer addLike(@Param("desId") Integer desId, @Param("userId") Integer userId);
 
   Integer deleteLike(@Param("desId") Integer desId, @Param("userId") Integer userId);
+
+  //여행지 갯수 카운트
+  Integer countAll();
+
+  List<Destination> findAll(@Param("rowCount") int rowCount, @Param("offset") int offset);
+
+  List<Destination> find8(@Param("rowCount") int rowCount, @Param("offset") int offset);
+
 }

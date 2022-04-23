@@ -54,5 +54,22 @@ public class DestinationService {
     return mapper.deleteLike(desId, userId);
   }
 
+  //여행지 갯수 카운트
+  public Integer countAll() {
+    return mapper.countAll();
+  }
+
+  //여행지 8개씩 페이징
+  public List<Destination> findAll(int rowCount, int offset) {
+    return mapper.findAll(rowCount, offset);
+  }
+
+  //여행지 8개씩 페이징
+  public List<Destination> find8(int rowCount, int offset) {
+    return mapper.find8(rowCount, offset);
+  }
+
+
+
 }
 
