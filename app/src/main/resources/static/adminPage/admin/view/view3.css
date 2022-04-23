@@ -1,0 +1,77 @@
+.container {
+    margin-bottom: 20px;
+}
+
+.bi-j :hover {
+    border: 2px solid #fb9300;
+    border-radius: 20px;
+}
+
+.content {
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 5%;
+}
+.input-group-text {
+    border: 0px;
+    background-color: white;
+}
+.input-group-text:focus {
+    outline: none;
+}
+.title {
+    margin-bottom: 3em;
+}
+.title > div {
+    border: 1px solid gray;
+}
+.in-title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.address {
+    margin: 2em 0px;
+}
+#in-address {
+    right: 0px;
+    text-align: right;
+    color: #d1d1d1;
+}
+
+.contents {
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 2%;
+}
+#in-contents {
+    text-align: left;
+}
+
+#only{
+	margin-top :50px;
+}
+
+#rectangle {
+	margin-left : 680px;
+    width : 150px;
+  height : 30px;
+    background-color: #fb9300;
+    text-align:center;
+  border-radius: 20px;
+  font-size : 15px;
+  color :white;
+ 
+}
+
+#rectangle2 {
+	margin-left : 300px;
+   
+    
+    text-align:center;
+  border-radius: 20px;
+ 
+ 
+ 
+}

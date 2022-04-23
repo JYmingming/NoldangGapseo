@@ -98,6 +98,7 @@ select d.destination_name, di.img thumbNailImg
 		#{offset}, #{rowCount}
 	</select>
 
+<<<<<<< HEAD
 	<!-- 여행지의 상세항목을 불러온다. -->
 	<select id="getDes" resultMap="desMap" parameterType="Integer">
 		SELECT
@@ -119,6 +120,21 @@ select d.destination_name, di.img thumbNailImg
 		and d.destination_type_id = dt.destination_type_id
 		and
 		d.user_id = u.user_id;
+=======
+    <insert id="addDestination" parameterType="Destination" keyProperty="destinationId" keyColumn="destination_id" useGeneratedKeys="true">
+        INSERT
+        into 	destination (user_id, destination_type_id, destination_name, phone, address, contents)
+        values  (#{userId},#{destinationTypeId},#{destinationName},#{phone},#{address},#{contents})
+    </insert>
+
+
+    <!-- 좋아요 추가 -->
+    <insert id="addLike">
+        INSERT  into likes
+                (destination_id, user_id)
+        values  (#{desId}, #{userId});
+    </insert>
+>>>>>>> b273040444956d6a3ea5fcd4584c823e8c40e868
 
 	</select>
 

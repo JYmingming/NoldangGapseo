@@ -24,7 +24,7 @@ import { getLoginUser, getUserDesList } from '../../common/api/apiList.js';
                 tagColor = 'orange';
                 break;
         }
-        const view = `<div class="content-card col" data-id="${m.destinationId}" id="content-card">
+        const view = `<div class="content-card col" data-id="${m.destinationId}">
                     <div class="card">
                         <img
                         src="${m.thumbNailImg}"
@@ -74,10 +74,10 @@ import { getLoginUser, getUserDesList } from '../../common/api/apiList.js';
         $('.content').append(view);
     });
     // ----여행지 수정 페이지 이동-----
-    $('.content-card').on('click', function (e) {
+    $('.card-img-top').on('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
-        const dId = $(this).attr('data-id');
+        const dId = $(this).closest('.content-card').attr('data-id');
         location.href = `/travel/myboard/view.html?desId=${dId}`;
     });
 })();

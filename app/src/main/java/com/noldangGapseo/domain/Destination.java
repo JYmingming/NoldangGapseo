@@ -1,6 +1,8 @@
 package com.noldangGapseo.domain;
 
 import java.sql.Date;
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -27,6 +29,7 @@ public class Destination {
   Integer likesCnt;
   Integer commentsCnt;
   String thumbNailImg;
+  List<String> imgList;
   Date regDate;
   Date updateDate;
 }
