@@ -19,6 +19,7 @@ public class DestinationService {
     return mapper.getAdminDesList();
   }
 
+
   // 유저들의 여행지 리스트를 가져온다.
   public List<Destination> getUsersDesList() {
     return mapper.getUsersDesList();
@@ -28,10 +29,10 @@ public class DestinationService {
   public DestinationResponse getDes(Integer desId, String type) {
 
     return DestinationResponse.builder()
-        .destination(mapper.getDes(desId))
-        .commentList(type.equals("N") ? mapper.getNoldangCommentList(desId) : mapper.getUserCommentList(desId))
-        .destinationImgList(mapper.getImg(desId))
-        .build();
+            .destination(mapper.getDes(desId))
+            .commentList(type.equals("N") ? mapper.getNoldangCommentList(desId) : mapper.getUserCommentList(desId))
+            .destinationImgList(mapper.getImg(desId))
+            .build();
   }
 
   // 메인 페이지의 4 여행지를 가져온다.
@@ -60,34 +61,48 @@ public class DestinationService {
   }
 
   // 이미지 삭제
-  public ApiResponse deleteImgs(Integer imgId){
+  public ApiResponse deleteImgs(Integer imgId) {
     ApiResponse apiResponse = new ApiResponse();
     Integer response = mapper.deleteImg(imgId);
-    if(response == 0) {
-      return  apiResponse.setResCode("1111").setResStatus("fail");
+    if (response == 0) {
+      return apiResponse.setResCode("1111").setResStatus("fail");
     }
     return apiResponse;
   }
 
   // 여행지 삭제
-  public ApiResponse deleteDes(Integer desId){
+  public ApiResponse deleteDes(Integer desId) {
     ApiResponse apiResponse = new ApiResponse();
-    if(mapper.deleteDes(desId) == 0){
-     return apiResponse.setResStatus("fail").setResCode("1111");
+    if (mapper.deleteDes(desId) == 0) {
+      return apiResponse.setResStatus("fail").setResCode("1111");
     }
-    return  apiResponse;
+    return apiResponse;
   }
 
   // 좋아요 추가
   public Integer addLike(Integer desId, Integer userId) {
     return mapper.addLike(desId, userId);
   }
+    //여행지 갯수 카운트
+    public Integer countAll () {
+      return mapper.countAll();
+    }
 
-  // 좋아요 삭제
-  public Integer deleteLike(Integer desId, Integer userId) {
-    return mapper.deleteLike(desId, userId);
+    //여행지 8개씩 페이징
+    public List<Destination> findAll ( int rowCount, int offset){
+      return mapper.findAll(rowCount, offset);
+    }
+
+    //여행지 8개씩 페이징
+    public List<Destination> find8 ( int rowCount, int offset){
+      return mapper.find8(rowCount, offset);
+    }
+
+    // 좋아요 삭제
+    public Integer deleteLike (Integer desId, Integer userId){
+      return mapper.deleteLike(desId, userId);
+    }
+
   }
 
-
-}
 

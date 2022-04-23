@@ -1,17 +1,16 @@
-.board{
+.board {
 	width: 80%;
 	height: 60px;
 	display: block;
 	margin: auto;
-	
 }
 
 .myBoard {
 	width: 200px;
-	height : 40px;
+	height: 40px;
 	text-align: center;
-	float: right; 
-	background-color : #f8941c;
+	float: right;
+	background-color: #f8941c;
 	color: white;
 	font-weight: bold;
 	border-radius: 8px;
@@ -35,6 +34,9 @@
 
 .card-img-top {
 	padding: 5px;
+	width: 300px;
+	height: 200px;
+	object-fit: cover;
 }
 
 .card-title {
