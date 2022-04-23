@@ -1,0 +1,30 @@
+.container {
+    padding: 0px;
+}
+
+.tag-container {
+    height: 50vh;
+    width: 100%;
+}
+
+.sc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    border-radius: 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+}
+
+#favor-box {
+    border-color: #4b7be5;
+}
+
+#hate-box {
+    border-color: #f55353;
+}

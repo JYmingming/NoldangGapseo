@@ -1,28 +1,18 @@
-import { getDes } from '../../common/api/apiList.js';
+import { getDes, getLoginUser, deleteDes } from '../../common/api/apiList.js';
+import { urlSearch } from '../../common/urlSearchParam.js';
 
 // ---- URLSearchParams ----
-var arr = location.href.split('?');
+const no = urlSearch();
+console.log(no);
 
-if (arr.length == 1) {
-    alert('요청 형식이 옳바르지 않습니다.');
-    throw 'URL 형식 오류!';
-}
-
-var qs = arr[1];
-
-// 쿼리 스트링에서 email 값을 추출한다.
-var params = new URLSearchParams(qs);
-var no = params.get('desId');
-
-if (no == null) {
-    alert('게시물 번호가 없습니다.');
-    throw '파라미터 오류!';
-}
+// ---- 회원정보 가져오기 ----
+let user;
 // ---- reponse 변수 ----
 let destinationId;
 
 // ---- 화면 렌더링 ----
 (async function () {
+    user = await getLoginUser();
     const response = await getDes(no, 'N');
     console.log(response);
     destinationId = response.destination.destinationId;
@@ -35,7 +25,7 @@ let destinationId;
         const firstImgView = `     
         <div class="carousel-item active" data-bs-interval="3000" data-imgId=${m.destinationImgId}>
             <img
-            src=${m.img}
+            src=/destination/img?filename=${m.img}
             class="d-block h-auto w-100"
             alt="..."
             style="border-radius: 20px"
@@ -46,7 +36,7 @@ let destinationId;
         const otherImgView = `     
         <div class="carousel-item" data-bs-interval="3000" data-imgId=${m.destinationImgId}>
             <img
-            src=${m.img}
+            src=/destination/img?filename=${m.img}
             class="d-block h-auto w-100"
             alt="..."
             style="border-radius: 20px"
@@ -64,9 +54,11 @@ let destinationId;
     const type = response.destination.destinationTypeName;
     const address = response.destination.address;
     const contents = response.destination.contents;
+    const phone = response.destination.phone;
     $('.in-title').val(title);
     $('#in-address').val(address);
     $('#in-contents').val(contents);
+    $('#in-phone').val(phone);
 })();
 
 // ----뒤로가기 화살표-----
@@ -101,6 +93,16 @@ function findAddr() {
     }).open();
 }
 
+// ---- Delte Destination function ----
+const delDes = async () => {
+    const delteRes = await deleteDes(destinationId);
+    if (delteRes.resCode == '0000') {
+        Swal.fire('삭제되었습니다.', '', 'success');
+        location.href = '/travel/myboard/myboard.html';
+        return;
+    }
+};
+
 // ---- Delete Event ----
 $('.btn-danger').on('click', function (e) {
     Swal.fire({
@@ -108,12 +110,12 @@ $('.btn-danger').on('click', function (e) {
         showCancelButton: true,
         confirmButtonText: 'Delete',
     }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
-            Swal.fire('삭제되었습니다.', '', 'success');
+            delDes();
         }
     });
 });
+
 // ---- Update Event ----
 $('#update-btn').on('click', function (e) {
     e.preventDefault();

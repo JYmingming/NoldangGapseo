@@ -52,3 +52,9 @@ var options = {
     level: 9,
 };
 var map = new kakao.maps.Map(container, options);
+
+// ---- 여행지 sort ----
+
+(function () {
+    $('.des-box').draggable();
+})();

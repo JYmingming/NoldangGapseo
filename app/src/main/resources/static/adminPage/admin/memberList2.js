@@ -11,7 +11,7 @@ const openButton=document.getElementById("open");
 	overlay.addEventListener("click", closeModal);
 	closeBtn.addEventListener("click", closeModal);
 	openButton.addEventListener("click", openModal);
-	
+
 	const openButton=document.getElementById("wow");
 	const modal = document.querySelector(".modal2");
 	const overlay = modal.querySelector(".modal2_overlay")
@@ -25,7 +25,7 @@ const openButton=document.getElementById("open");
 	overlay.addEventListener("click", closeModal);
 	closeBtn.addEventListener("click", closeModal);
 	openButton.addEventListener("click", openModal);
+
+
+
 	
-	
-	
-	//

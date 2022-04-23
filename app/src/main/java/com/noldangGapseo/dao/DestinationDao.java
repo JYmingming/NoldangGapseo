@@ -15,14 +15,17 @@ public interface DestinationDao {
 
   List<Destination> getAdminDesList();
 
-
   Destination getDes(Integer desId);
 
   List<Destination> get4Des();
 
-
   Integer addDestination(Destination destination);
 
+  Integer addImgList(@Param("userId") Integer userId, @Param("imgName") String imgName);
+
+  Integer deleteImg(Integer desId);
+
+  Integer deleteDes(Integer desId);
 
   List<Destination> getUserDesList(Integer userId);
 
@@ -30,9 +33,7 @@ public interface DestinationDao {
 
   List<Comment> getNoldangCommentList(Integer desId);
 
-
   List<DestinationImg> getImg(Integer desId);
-
 
   Integer addLike(@Param("desId") Integer desId, @Param("userId") Integer userId);
 
