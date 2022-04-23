@@ -5,13 +5,10 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
-<<<<<<< HEAD
 import java.util.Map;
-=======
 import java.util.UUID;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
->>>>>>> b273040444956d6a3ea5fcd4584c823e8c40e868
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -119,18 +116,18 @@ public class DestinationController {
   public ApiResponse addDestination(MultipartFile[] imgs, Destination destination) {
     ApiResponse response = new ApiResponse();
     ArrayList<String> imgList = new ArrayList<>();
-          try{
-            for (int i = 0; i < imgs.length; i++) {
-              imgList.add(saveFile(imgs[i]));
-            }
-            destination.setImgList(imgList);
-            return service.addDestination(destination);
-          } catch (Exception e){
-            StringWriter out = new StringWriter();
-            e.printStackTrace(new PrintWriter(out));
-            log.error(out.toString());
-            return response.setResCode("1111").setResStatus("fail");
-          }
+    try{
+      for (int i = 0; i < imgs.length; i++) {
+        imgList.add(saveFile(imgs[i]));
+      }
+      destination.setImgList(imgList);
+      return service.addDestination(destination);
+    } catch (Exception e){
+      StringWriter out = new StringWriter();
+      e.printStackTrace(new PrintWriter(out));
+      log.error(out.toString());
+      return response.setResCode("1111").setResStatus("fail");
+    }
 
   }
 

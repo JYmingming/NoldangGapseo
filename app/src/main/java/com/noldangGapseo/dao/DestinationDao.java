@@ -20,11 +20,9 @@ public interface DestinationDao {
 
   List<Destination> get4Des();
 
-<<<<<<< HEAD
 
-=======
   Integer addDestination(Destination destination);
->>>>>>> b273040444956d6a3ea5fcd4584c823e8c40e868
+
 
   List<Destination> getUserDesList(Integer userId);
 
