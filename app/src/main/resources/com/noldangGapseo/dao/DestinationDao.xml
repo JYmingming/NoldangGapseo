@@ -25,7 +25,7 @@
 		ORDER BY reg_date desc;
 	</select>
 
-<<<<<<< HEAD
+
 	<!-- 놀당의 여행지 리스트를 불러온다. -->
 	<select id="getAdminDesList" resultMap="desMap">
 		SELECT d.destination_id,
@@ -44,7 +44,7 @@
 		ORDER BY
 		destination_id ASC;
 	</select>
-=======
+
     <!-- 놀당의 여행지 리스트를 불러온다. -->
     <select id="getAdminDesList" resultMap="desMap">
         select
@@ -71,7 +71,7 @@
         
     </select>
     
->>>>>>> 755a86a62d12e4fc22b4e891d273cfa578f06a08
+
 
 	<!-- 놀당의 여행지 리스트 갯수를 불러온다. -->
 
@@ -98,7 +98,7 @@ select d.destination_name, di.img thumbNailImg
 		#{offset}, #{rowCount}
 	</select>
 
-<<<<<<< HEAD
+
 	<!-- 여행지의 상세항목을 불러온다. -->
 	<select id="getDes" resultMap="desMap" parameterType="Integer">
 		SELECT
@@ -120,7 +120,8 @@ select d.destination_name, di.img thumbNailImg
 		and d.destination_type_id = dt.destination_type_id
 		and
 		d.user_id = u.user_id;
-=======
+  </select>
+  
     <insert id="addDestination" parameterType="Destination" keyProperty="destinationId" keyColumn="destination_id" useGeneratedKeys="true">
         INSERT
         into 	destination (user_id, destination_type_id, destination_name, phone, address, contents)
@@ -134,9 +135,9 @@ select d.destination_name, di.img thumbNailImg
                 (destination_id, user_id)
         values  (#{desId}, #{userId});
     </insert>
->>>>>>> b273040444956d6a3ea5fcd4584c823e8c40e868
 
-	</select>
+
+
 
 	<select id="get4Des" resultMap="desMap">
 		select d.destination_id ,
