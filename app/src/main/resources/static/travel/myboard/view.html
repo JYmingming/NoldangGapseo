@@ -70,12 +70,15 @@
                 <div class="address w-100 d-flex justify-content-end">
                     <input type="text" name="adress" id="in-address" class="w-75 input-group-text" readonly>
                 </div>
+                <div class="phone w-100 d-flex justify-content-end align-items-end">
+                    <input type="text" name="phone" id="in-phone" class="w-25 input-group-text">
+                </div>
                 <div class="contents w-100">
                     <textarea name="contents" id="in-contents" cols="30" rows="10" class="w-100 input-group-text" maxlength="200"></textarea>
                 </div>
             </div>
             <div class="button-container d-flex justify-content-around" style="margin-top: 2em;">
-                <button type="button" class="btn btn-danger w-25">Delete</button>
+                <button type="button" class="btn btn-danger w-25" id="delete-btn">Delete</button>
                 <button type="button" class="btn btn-primary w-25" id="update-btn">Update</button>               
             </div>
         </div>
