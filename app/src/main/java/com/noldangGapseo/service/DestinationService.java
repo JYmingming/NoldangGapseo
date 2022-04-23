@@ -6,6 +6,10 @@ import org.springframework.stereotype.Service;
 import com.noldangGapseo.dao.DestinationDao;
 import com.noldangGapseo.domain.Destination;
 import com.noldangGapseo.domain.DestinationResponse;
+<<<<<<< HEAD
+=======
+import com.noldangGapseo.paging.Criteria;
+>>>>>>> 755a86a62d12e4fc22b4e891d273cfa578f06a08
 
 @Service
 public class DestinationService {
@@ -18,6 +22,7 @@ public class DestinationService {
     return mapper.getAdminDesList();
   }
 
+<<<<<<< HEAD
   // 유저들의 여행지 리스트를 가져온다.
   public List<Destination> getUsersDesList() {
     return mapper.getUsersDesList();
@@ -69,6 +74,33 @@ public class DestinationService {
     return mapper.find8(rowCount, offset);
   }
 
+=======
+  // 페이징 연습
+  public List<Destination> getAdminDesList1(Criteria criteria) {
+    return mapper.getAdminDesList1(criteria);
+  }
+
+
+  // 유저들의 여행지 리스트를 가져온다.
+  public List<Destination> getUsersDesList() {
+    return mapper.getUsersDesList();
+  }
+
+  // 여행지 하나를 가져온다.
+  public DestinationResponse getDes(Integer desId, String type) {
+
+    return DestinationResponse.builder()
+        .destination(mapper.getDes(desId))
+        .commentList(type.equals("N") ? mapper.getNoldangCommentList(desId) : mapper.getUserCommentList(desId))
+        .destinationImgList(mapper.getImg(desId))
+        .build();
+  }
+
+  // 유저의 새로운 여행지 리스트를 가져온다.
+  public List<Destination> getUserDesList(Integer userId) {
+    return mapper.getUserDesList(userId);
+  }
+>>>>>>> 755a86a62d12e4fc22b4e891d273cfa578f06a08
 
 
 }

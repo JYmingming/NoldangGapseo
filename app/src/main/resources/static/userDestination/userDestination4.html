@@ -33,6 +33,7 @@
 
 
   <div class="container">
+<<<<<<< HEAD
     <div class="row">
 
       <div class="col-3">
@@ -138,6 +139,10 @@
       class="page" >3</a> <a class="page" >4</a> <a
       class="page" >5</a>
 
+=======
+
+    <div class="row"></div>
+>>>>>>> 755a86a62d12e4fc22b4e891d273cfa578f06a08
 
 
 
@@ -149,6 +154,7 @@
 
 
   <script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+<<<<<<< HEAD
   <script>
 			$(".myBoard").click(function() {
 				location.href = "/travel/myboard/myboard.html"
@@ -184,6 +190,94 @@
 
 			}
 		</script>
+=======
+
+  <script>
+  
+
+  
+  
+			//컨테이너 안에 row 선택
+            let row = document.querySelector(".row");
+
+			//card 생성
+			function create_card() {
+
+				let new_card = document.createElement("div");
+				new_card.setAttribute('class', 'col-3');
+
+				new_card.innerHTML = `      
+				
+			        <div class="card">
+			          <img src="/img/SALON de LAVANT3.jpg" class="card-img-top"
+			            alt="...">
+			          <div class="card-body">
+			            <h5 class="card-title">모뉴에트</h5>
+			            <div class="like">
+			              <span>❤️30 </span><span>🗨20</span>
+			            </div>
+			          </div>
+			        </div>
+			      `;
+
+				row.appendChild(new_card);
+
+			}
+
+			create_card();
+
+	          
+
+
+	          //모든 제목 선택
+	          const title = document.querySelectorAll(".card-title")
+
+	          fetch("/destination/admin/list").then(function(response) {
+	            return response.json();
+	          }).then(function(result) {
+
+
+	            for (var i = 0; i < 8; i++) {  
+	                let new_card = document.createElement("div");
+	                new_card.setAttribute('class', 'col-3');
+
+	                new_card.innerHTML = `      
+	                
+	                      <div class="card">
+	                        <img src="/img/SALON de LAVANT3.jpg" class="card-img-top"
+	                          alt="...">
+	                        <div class="card-body">
+	                          <h5 class="card-title">모뉴에트</h5>
+	                          <div class="like">
+	                            <span>❤️30 </span><span>🗨20</span>
+	                          </div>
+	                        </div>
+	                      </div>
+	                    `;
+
+
+	              title[i].innerHTML = result[i].destinationName;
+                  row.appendChild(new_card);
+
+	            }
+
+	          })    
+		      
+		      
+		      
+
+		</script>
+  <script>
+      $(".myBoard").click(function() {
+        location.href = "/travel/myboard/myboard.html"
+      })
+
+      $(".card").click(function() {
+        location.href = "/userDestination/userDestinationDtl3.html"
+      })
+    </script>
+
+>>>>>>> 755a86a62d12e4fc22b4e891d273cfa578f06a08
 
 
 </body>

@@ -25,6 +25,7 @@
 		ORDER BY reg_date desc;
 	</select>
 
+<<<<<<< HEAD
 	<!-- 놀당의 여행지 리스트를 불러온다. -->
 	<select id="getAdminDesList" resultMap="desMap">
 		SELECT d.destination_id,
@@ -43,6 +44,34 @@
 		ORDER BY
 		destination_id ASC;
 	</select>
+=======
+    <!-- 놀당의 여행지 리스트를 불러온다. -->
+    <select id="getAdminDesList" resultMap="desMap">
+        select
+        *
+        from
+        destination
+        where
+        user_id = 1
+        order by reg_date desc
+    </select>
+    
+        <!-- 페이징 연습 객체 8개씩 끊어 보기 -->
+    <select id="getAdminDesList1" resultMap="desMap">
+        select
+        *
+        from
+        destination
+        where
+        user_id = 1
+        order by destination_id desc
+        limit 8
+        offset #{offset}, #{rowCount}
+        
+        
+    </select>
+    
+>>>>>>> 755a86a62d12e4fc22b4e891d273cfa578f06a08
 
 	<!-- 놀당의 여행지 리스트 갯수를 불러온다. -->
 
