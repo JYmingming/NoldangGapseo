@@ -50,9 +50,7 @@
 }
 
 .pagination {
-	text-align: center;
+	margin-left: 500px
+
 }
 
-.pagination>li>a {
-	float: none;
-}

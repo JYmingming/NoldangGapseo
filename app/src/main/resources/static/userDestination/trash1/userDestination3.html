@@ -17,9 +17,9 @@
 
 <!--헤더 가져오기 -->
 <script>
-  $(document).ready(function() {
-    $('.headers').load('../../common/header/header.html');
-  });
+	$(document).ready(function() {
+		$('.headers').load('../../common/header/header.html');
+	});
 </script>
 
 </head>
@@ -27,9 +27,9 @@
   <div class="headers"></div>
   <br>
 
-  <div class="board">
-    <div class="myBoard">My Board</div>
-  </div>
+<div class = "board">
+  <div class="myBoard">My Board</div>
+</div>
 
 
   <div class="container">
@@ -120,7 +120,7 @@
         </div>
       </div>
     </div>
-    <!--
+
     <ul class="pagination">
       <li class="page-item"><a class="page-link" href="#"
         aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
@@ -132,13 +132,6 @@
         aria-label="Next"> <span aria-hidden="true">&raquo;</span>
       </a></li>
     </ul>
--->
-    <a class="page" >1</a> <a class="page" >2</a> <a
-      class="page" >3</a> <a class="page" >4</a> <a
-      class="page" >5</a>
-
-
-
 
 
   </div>
@@ -149,42 +142,36 @@
 
   <script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
   <script>
-      $(".myBoard").click(function() {
-        location.href = "/travel/myboard/myboard.html"
-      })
+			$(".myBoard").click(function() {
+				location.href = "/travel/myboard/myboard.html"
+			})
 
-      $(".card").click(function() {
-        location.href = "/userDestination/userDestinationDtl3.html"
-      })
+			$(".card").click(function() {
+				location.href = "/userDestination/userDestinationDtl3.html"
+			})
+		</script>
+
+  <script>
+			let a;
+
+			const b = document.querySelectorAll(".card-title")
 
 
-      $(".page").click(function() {
-        a(event.currentTarget.innerText);
-      })
+
+			fetch("/destination/admin/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 8; i++) {
+		        	b[i].innerHTML =result[i].destinationName;
+		          }
 
 
-    a(1)      
-      function a(dv) {
-        const b = document.querySelectorAll(".card-title")
-        const c = document.querySelectorAll(".card-img-top")
-        console.log(c);
-        fetch(`/destination/admin/pagelist?pageNo=${dv}&pageSize=8`)
-
-        .then(function(response) {
-          return response.json();
-        }).then(function(result) {
-          console.log(result);
-
-          for (var i = 0; i < 8; i++) {
-            b[i].innerHTML = result[i].destinationName;
-            c[i].src = result[i].thumbNailImg;
-          }
-        })
-
-      }
-    </script>
+			})
+		</script>
 
 
 </body>
 
-</html> 
+</html>
