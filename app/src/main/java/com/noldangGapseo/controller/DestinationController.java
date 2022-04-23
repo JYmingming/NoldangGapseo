@@ -1,10 +1,7 @@
 package com.noldangGapseo.controller;
 
 import java.util.List;
-<<<<<<< HEAD
 import java.util.Map;
-=======
->>>>>>> 755a86a62d12e4fc22b4e891d273cfa578f06a08
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,7 +27,7 @@ public class DestinationController {
     return service.getAdminDesList();
   }
 
-<<<<<<< HEAD
+
   //유저 여행지 페이징 관련
   @GetMapping("/admin/pagelist")
   List<Destination> getAdminDesList1(
@@ -74,13 +71,8 @@ public class DestinationController {
 
     System.out.println(totalPageSize);
     return destinations;
-=======
-  //page 만들기 연습
-  @GetMapping("/admin/list1")
-  List<Destination> getAdminDesList1() {
-    return service.getAdminDesList1();
->>>>>>> 755a86a62d12e4fc22b4e891d273cfa578f06a08
   }
+
 
 
   //유저들이 작성한 여행지 리스트를 가져온다.
