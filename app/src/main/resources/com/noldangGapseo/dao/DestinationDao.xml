@@ -45,16 +45,7 @@
 		destination_id ASC;
 	</select>
 
-    <!-- 놀당의 여행지 리스트를 불러온다. -->
-    <select id="getAdminDesList" resultMap="desMap">
-        select
-        *
-        from
-        destination
-        where
-        user_id = 1
-        order by reg_date desc
-    </select>
+
     
         <!-- 페이징 연습 객체 8개씩 끊어 보기 -->
     <select id="getAdminDesList1" resultMap="desMap">
@@ -230,7 +221,7 @@ select d.destination_name, di.img thumbNailImg
 	</select>
 
 	<!-- 좋아요 추가 -->
-	<insert id="addLike">
+	<insert id="addLike1">
 		INSERT into likes
 		(destination_id, user_id)
 		values
