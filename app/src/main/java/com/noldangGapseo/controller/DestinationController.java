@@ -69,6 +69,7 @@ public class DestinationController {
   }
 
   // 여행지를 작성한다.
+
   @PostMapping("/add/destination")
   public ApiResponse addDestination(MultipartFile[] imgs, Destination destination) {
     ApiResponse response = new ApiResponse();
@@ -86,6 +87,18 @@ public class DestinationController {
       return response.setResCode("1111").setResStatus("fail");
     }
 
+  }
+
+  // 여행지 이미지를 삭제한다.
+  @DeleteMapping("/delete/img")
+  public ApiResponse deleteImgs(@RequestParam Integer id){
+    return service.deleteImgs(id);
+  }
+
+  // 여행지를 삭제한다.
+  @DeleteMapping("/delete/des")
+  public ApiResponse deleteDes(@RequestParam Integer id){
+    return service.deleteDes(id);
   }
 
   // 좋아요 추가
@@ -123,7 +136,8 @@ public class DestinationController {
     }
   }
 
-  // thumbNailImg 가져오기
+
+  // img 가져오기
   @GetMapping("/img")
   public ResponseEntity<Resource> getImg(String filename) {
     try {

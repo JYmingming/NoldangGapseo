@@ -1,11 +1,12 @@
-import { getDes, getLoginUser } from '../../common/api/apiList.js';
+import { getDes, getLoginUser, deleteDes } from '../../common/api/apiList.js';
 import { urlSearch } from '../../common/urlSearchParam.js';
 
 // ---- URLSearchParams ----
 const no = urlSearch();
+console.log(no);
 
 // ---- 회원정보 가져오기 ----
-const user = '';
+let user;
 // ---- reponse 변수 ----
 let destinationId;
 
@@ -92,6 +93,16 @@ function findAddr() {
     }).open();
 }
 
+// ---- Delte Destination function ----
+const delDes = async () => {
+    const delteRes = await deleteDes(destinationId);
+    if (delteRes.resCode == '0000') {
+        Swal.fire('삭제되었습니다.', '', 'success');
+        location.href = '/travel/myboard/myboard.html';
+        return;
+    }
+};
+
 // ---- Delete Event ----
 $('.btn-danger').on('click', function (e) {
     Swal.fire({
@@ -100,10 +111,11 @@ $('.btn-danger').on('click', function (e) {
         confirmButtonText: 'Delete',
     }).then((result) => {
         if (result.isConfirmed) {
-            Swal.fire('삭제되었습니다.', '', 'success');
+            delDes();
         }
     });
 });
+
 // ---- Update Event ----
 $('#update-btn').on('click', function (e) {
     e.preventDefault();

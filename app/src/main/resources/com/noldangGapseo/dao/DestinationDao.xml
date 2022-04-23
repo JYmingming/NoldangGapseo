@@ -157,7 +157,7 @@
     <delete id="deleteImg">
         DELETE
         FROM    destination_img
-        WHERE   destination_id = #{destinationId}
+        WHERE   destination_img_id = #{imgId}
     </delete>
 
     <!-- 좋아요 추가 -->
