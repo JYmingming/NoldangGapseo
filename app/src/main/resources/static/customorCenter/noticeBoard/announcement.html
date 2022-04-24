@@ -42,7 +42,7 @@
     <div class="body-d">
       <table>
         <tr>
-         <th><input class="b-button" type="button" value="공지사항" onClick="view(1)"></th>
+         <th><input class="b-button clicked" type="button" value="공지사항" onClick="view(1)"></th>
          <th><input class="b-button" type="button" value="Q&A" onClick="view(2)"></th>
         </tr>  
       </table> 
@@ -52,8 +52,8 @@
   
       <div id="view1">
       <form class="view-box">
-       <p>전체<span style="color: orange;">100</span>건
-        <select name="view" >
+       <p>전체<span style="color: orange;">100</span>건</p>
+        <select class="view" >
           <option value="up views" selected>조회수 높은순</option>
           <option value="down views">조회수 낮은순</option>
           <option value="new date">최신 등록일</option>
@@ -73,10 +73,9 @@
 
       <div id="view2">
         <form class="view-box">
-       <p>전체<span style="color: orange;">100</span>건
-        <select name="view" >
-          <option value="all" selected>전체 글</option>
-          <option value="answer">완료된 답변</option>
+       <p>전체<span style="color: orange;">100</span>건</p>
+        <select class="view" >
+          <option value="all" selected>완료된 답변</option>
           <option value="new date">최신 등록일</option>
           <option value="old date">예전 등록일</option>
         </select>

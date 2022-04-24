@@ -1,5 +1,6 @@
 //검색어
 $(document).ready(function(){
+  $(".clicked").trigger('click')
   
 //공지사항//
 $(".b-button").click(function(event){

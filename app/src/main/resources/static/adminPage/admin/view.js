@@ -15,7 +15,7 @@ let destinationId;
 
     imgList?.map((m, index) => {
         // ---- 첫번째 사진 ----
-        const firstImgView = `     
+        const firstImgView = `
         <div class="carousel-item active" data-bs-interval="3000" data-imgId=${m.destinationImgId}>
             <img
             src=${m.img}
@@ -25,9 +25,9 @@ let destinationId;
             />
         </div>
         `;
-       
 
-     
+
+
     });
 
     const title = response.destination.destinationName;
@@ -61,4 +61,4 @@ $('.btn-danger').on('click', function (e) {
         }
     });
 });
-
+//
