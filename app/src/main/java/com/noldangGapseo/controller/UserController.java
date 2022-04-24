@@ -21,6 +21,7 @@ public class UserController {
 
   @Autowired
   UserService service;
+  private Integer userId;
 
   @RequestMapping("/signup")
   public ApiResponse signUp(User user){
@@ -109,5 +110,34 @@ public class UserController {
     }
     return apires;
 
+  }
+
+  @RequestMapping("/get")
+  public Object get(int userId) {
+    User user = service.get(userId);
+    if (user == null) {
+      return new ApiResponse().setResStatus("fail").setData("해당 번호의 게시글이 없습니다.");
+    }
+    return new ApiResponse().setResStatus("success").setData(user);
+  }
+
+
+  @RequestMapping("/update")
+  public Object update(User user, HttpSession session) {
+    User userUpdate = (User) session.getAttribute("loginUser");
+    user.setUserId(userId);
+    int count = service.update(userUpdate);
+
+
+    if (count == 1) {
+      return new ApiResponse().setResStatus("success");
+    } else {
+      return new ApiResponse().setResStatus("fail").setData("게시글 번호가 유효하지 않거나 게시글 작성자가 아닙니다.");
+    }
+  }
+
+  @RequestMapping("/checkNickname")
+  public Object checkNickname(String nickname) {
+    return service.checkNickname(nickname);
   }
 }

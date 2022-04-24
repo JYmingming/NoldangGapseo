@@ -12,6 +12,8 @@ import { getLoginUser, findByNickName } from '../../common/api/apiList.js';
     var xInfoNick = document.querySelector("#x-infoNick");
     var xInfoEmail = document.querySelector("#x-infoEmail");
     
+    var CBtn = document.querySelector("#btn2");
+    
     fetch("/user/getLoginUser")
       .then(function(response) {
         return response.json();
@@ -37,7 +39,9 @@ import { getLoginUser, findByNickName } from '../../common/api/apiList.js';
                 return false;
             }
             var fd = new FormData(document.forms.namedItem("form1"));
-
+            
+            CBtn.onclick = function() { 
+            
             fetch("/user/resignin", {
                 method: "POST",
                 body: new URLSearchParams(fd)
@@ -47,12 +51,12 @@ import { getLoginUser, findByNickName } from '../../common/api/apiList.js';
                 })
                 .then(function(result) {
                     if (result.resStatus == "success") {
-                        location.href = "../info/password_change.html";
+                        location.href = "password_change.html";
                     } else {
                         window.alert("비밀번호가 맞지 않습니다!")
                     }
                 });
             return false;
         };
-
+}
 

@@ -84,7 +84,7 @@
           </div>
           <div class="second_box3">
               <table>
-                <tbody>
+                <tbody id="">
                   <tr>
                     <td id="td-1">닉네임</td>
                     <td id="null"><span id="x-nick"></span></td>
@@ -108,7 +108,7 @@
           <div class="third_box2"></div>
           <div class="third_box3">
             <div class="btn_box">
-                <button id="btn2" a href="#" onclick="location.href='infoManage_edit.html'">수정하기</button>
+                <button id="btn2">수정하기</button>
             </div>
           </div>
           <div class="third_box4"></div>
@@ -127,5 +127,50 @@
   
 <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
 <script src="./infoManage.js" type="module"></script>
+<script type="text/javascript">
+var xNick = document.querySelector("#x-nick");
+var xPhoneNumber = document.querySelector("#x-phoneNumber");
+var xEmail = document.querySelector("#x-email");
+var xInfoNick = document.querySelector("#x-infoNick");
+var xInfoEmail = document.querySelector("#x-infoEmail");
+
+fetch("/user/getLoginUser")
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(result) {
+    console.log(result.data);
+    
+     
+     var user = result.data;
+     
+     xNick.innerHTML = user.nickName;
+     xPhoneNumber.innerHTML = user.phone;
+     xEmail.innerHTML = user.email;
+     xInfoNick.innerHTML = user.nickName;
+     xInfoEmail.innerHTML = user.email;
+     
+
+
+
+var arr = location.href.split('?');
+
+if (arr.length == 1) {
+}
+
+var qs = arr[1];
+
+// 쿼리 스트링에서 email 값을 추출한다.
+var params = new URLSearchParams(qs);
+var no = user.userId;
+
+console.log(no);
+
+$('#btn2').click(function (e) {
+    e.preventDefault();
+    window.location.href=`infoManage_edit.html?userId=${no}`;
+});
+})
+</script>
 </body>
 </html>
