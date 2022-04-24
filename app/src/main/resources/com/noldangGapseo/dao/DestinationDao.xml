@@ -134,6 +134,12 @@
 		#{offset}, #{rowCount}
 	</select>
 
+  <select id="countAll" resultType="int">
+    select count(*) from
+    destination
+  </select>
+
+
 	<!-- 여행지를 작성한다. -->
 	<insert id="addDestination" parameterType="Destination"
 		keyProperty="destinationId" keyColumn="destination_id"
