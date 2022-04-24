@@ -1,12 +1,10 @@
 package com.noldangGapseo.dao;
 
 import java.util.List;
+
+import com.noldangGapseo.domain.*;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import com.noldangGapseo.domain.Companion;
-import com.noldangGapseo.domain.Cost;
-import com.noldangGapseo.domain.Todo;
-import com.noldangGapseo.domain.Travel;
 
 @Mapper
 public interface TravelDao {
@@ -14,6 +12,10 @@ public interface TravelDao {
   public List<Travel> travelList(String nickName);
 
   public Travel getTravel(Integer travelId);
+
+  public Integer addTravel(Travel travel);
+
+  public Integer addTag(Integer travelId, Integer tagId);
 
   public Integer updateName(@Param("name") String name, @Param("id") Integer id);
 

@@ -2,7 +2,7 @@ import { getDes, getLoginUser, deleteDes } from '../../common/api/apiList.js';
 import { urlSearch } from '../../common/urlSearchParam.js';
 
 // ---- URLSearchParams ----
-const no = urlSearch(desId);
+const no = urlSearch('desId');
 
 // ---- 회원정보 가져오기 ----
 let user;
@@ -67,7 +67,7 @@ $('.bi').on('click', function (e) {
 });
 
 // ---- 주소 검색 ----
-$('#in-adress').on('click', function (e) {
+$('#in-address').on('click', function (e) {
     e.preventDefault();
     findAddr();
 });

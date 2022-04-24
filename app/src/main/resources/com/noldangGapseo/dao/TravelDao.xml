@@ -27,6 +27,20 @@
         ORDER BY    t.start_date ASC;
     </select>
 
+    <!-- 여행을 생성한다. -->
+    <insert id="addTravel" parameterType="Travel">
+        INSERT
+        INTO    travel 	(user_id, travel_name, start_date, end_date)
+        values  		(#{userId}, #{travelName}, #{startDate}, #{endDate})
+    </insert>
+
+    <!-- 여행 태그 설정 -->
+    <insert id="addTag">
+        INSERT
+        INTO    travel_tag_list     (tag_id, travel_id)
+        values 				        (#{tagId}, #{travelId} )
+    </insert>
+
     <!-- 여행을 루트를 생성한다. -->
     <insert id="">
         INSERT
@@ -51,7 +65,9 @@
                 and         dtl.destination_id = d.destination_id
                 and         ts.travel_id = 1
                 and         ts.destination_id  != d.destination_id
-                and         t.tag_name in ('#동물')
+        <foreach collection="list" item="tagList" index="index" open="(" close=")" separator=",">
+                and         t.tag_name in #{tagList}
+        </foreach>
                 group by    d.destination_id, t.tag_name
                 order by    rand() limit 4
                 ) A

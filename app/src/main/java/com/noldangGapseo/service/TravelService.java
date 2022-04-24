@@ -30,6 +30,30 @@ public class TravelService {
                 todoList(mapper.todoLength3(travelId)).build();
     }
 
+    // 여행을 생성한다.
+    public ApiResponse addTravel(Travel travel){
+        ApiResponse apiResponse = new ApiResponse();
+        Integer addResponse = mapper.addTravel(travel);
+        if(addResponse == 0){
+            apiResponse.setResCode("1111").setResStatus("fail");
+        }
+        return apiResponse;
+    }
+
+    // 여행 태그 설정
+    public ApiResponse addTag(Integer travelId, List<Tag> tagList){
+        Integer response = null;
+        for(Tag tag : tagList) {
+            response = mapper.addTag(travelId, tag.getTagId());
+        }
+        if(response == 0){
+          return new ApiResponse("1111", "fail", null);
+        }
+        return new ApiResponse();
+    }
+
+
+
     // 여행의 이름 바꾼다.
     // 성공시 바뀐 이름을 return.
     public ApiResponse updateName(String name, Integer id) {
