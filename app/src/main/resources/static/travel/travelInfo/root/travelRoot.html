@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="/node_modules/jquery/dist/jquery.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/jquery-sortablejs@latest/jquery-sortable.js"></script> -->
         <!-- <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
         <title>Root</title>
         <link rel="stylesheet" href="/node_modules/sweetalert2/dist/sweetalert2.min.css" />
@@ -12,8 +14,6 @@
         <script src="../../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
         <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-        <link rel="stylesheet" href="/node_modules/slick-carousel/slick/slick.css">
-        <link rel="stylesheet" href="/node_modules/slick-carousel/slick/slick-theme.css">
         <script src="https://kit.fontawesome.com/0b4dd5be7a.js" crossorigin="anonymous"></script>
 
         <link rel="stylesheet" href="./root.css" />
@@ -53,7 +53,7 @@
                         <div class="b-line"></div>
                     </div>
                 </div>
-                <div class="des-container w-75 d-flex flex-column justify-content-lg-start">
+                <div class="des-container w-75 d-flex flex-column justify-content-lg-start" id="des-container">
                     <!--여행지 박스 s-->
                     <div class="des-box d-flex w-50">
                         <div class="d-content-wrap d-flex flex-column w-75 justify-content-around">
@@ -81,7 +81,7 @@
                         <div class="d-content-wrap d-flex flex-column w-75 justify-content-around">
                             <div class="des-header d-flex justify-content-evenly align-items-center">
                                 <div class="d-kinds" data-color="blue" >명소</div>
-                                <h4 class="d-name w-50">아침하늘</h5>
+                                <h4 class="d-name w-50">아침먹어 이자식아</h5>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#f54748" class="bi bi-trash" viewBox="0 0 16 16">
                                     <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                                     <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>

@@ -1,4 +1,4 @@
-export function urlSearch() {
+export function urlSearch(id) {
     // ---- URLSearchParams ----
     var arr = location.href.split('?');
 
@@ -11,10 +11,9 @@ export function urlSearch() {
 
     // 쿼리 스트링에서 email 값을 추출한다.
     var params = new URLSearchParams(qs);
-    var no = params.get('desId');
+    var no = params.get(id);
 
     if (no == null) {
-        alert('게시물 번호가 없습니다.');
         throw '파라미터 오류!';
     }
     return no;
