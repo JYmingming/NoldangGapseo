@@ -5,73 +5,64 @@
     background:.000;
   }
   .body {
-    width:600px;
+    width:90%;
     height:600px;
     position:absolute;
-    left:50%;
-    top:70%;
-    margin-left:-300px;
-    margin-top:-300px;
-    background-color: #f9f9f9;
+    background-color: white;  /** 작업 끝나면 흰색으로 **/
   }
   
   .body-a {                       /*고객센터 머리*/
-    position:absolute;
-    width:500px;
+    width:70%;
     height:50px;
-    top: 5%;
-    left:10%;
-    border-bottom-style: solid;
+    margin: auto;
+    background-color: #f1f1f170;
     border-bottom:thick solid;
     border-color: #F3E3B0;
   }
   .img-1 {
     position: relative;
-    width: 10%;
-    bottom: 10%;
+    width: 50px;
     }
   
   .Service-center {
     position:absolute;
     font-size:20px;
     font-weight:bold;
+    margin: 8px;
   }
   .all-btn {
     background-color: white;
     float:right;
     border:solid;
     border-color: gray;
-    cursor:pointer;
+    margin: 8px;
   }
   
   .body-b {                                 /* 검색창 */
-  position: relative;
-  width: 400px;
-  height: 30px;
-  margin: 10px auto;
-  top: 13%;
+		position: relative;
+		width: 70%;
+		height: 120px;
+		margin: auto;
+		background-color: #f1f1f170;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .search {
-  border: 1px solid #F1F1F1;
-  border-radius: 50px;
-  width: 100%;
-  height: 150%;
-  padding-left: 60px;
-  }
-  .search-img {
-  position : absolute;
-  width: 20px;
-  height: 20px;
-  top:40%;
-  left:5%;
-  }
-  
-  .body-c {                           /* 인기 검색어 */
-  position: relative;
-  width: 400px;
-  height: 30px;
-  margin: 10px auto;
-  top: 14%;
+    border: 1px solid #F1F1F1;
+    border-radius: 50px;
+    width: 70%;
+    height: 40px;
+    padding-left: 60px;
+    left: 150px;
+    margin: 15px;
+    background:url("https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png" )no-repeat;
+
+    }
+  .s-img{
+    background-color: white;
+    background-size: 30px 30px;
+    background-position: 10px;
   }
 
   .a-button {
@@ -79,20 +70,25 @@
   background-color: #f9f9f9;
   color: orange;
   margin: 3px;
-  cursor:pointer
   }
-
+  
+  .a-tb {
+    caption-side: bottom;
+    border-collapse: collapse;
+    display: flex;
+    justify-content: center;
+}
 
   .body-d {                           /* 공지사항 */
   position:relative;
-  width:500px;
-  height:100px;
-  top:15%;
-  left:10%;
+  width:70%;
+  height:50px;
   background-color: #f9f9f9;
-  border-top-style: solid;
   border-top:thick solid;
   border-color: #F3E3B0;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
   }
   
   .b-button {
@@ -103,7 +99,8 @@
   color: black;
   font-size:15px;
   font-weight:400;
-  cursor:pointer
+  border: 3px;
+  border-style: ridge;
   }
   
   .clicked {
@@ -114,7 +111,9 @@
   .body-e {
   position:relative;
   background-color: #f9f9f9;
-  top: 10%;
+  width: 70%;
+  height: 400px;
+  margin: auto;
   }
 
   #tb1 {
@@ -128,12 +127,15 @@
   }
   
   .c-button {
-  font-size: 15px;
-  border: 0;
-  background-color: #f9f9f9;
-  margin: 3px;
-  border-bottom: 1px solid orange ;
-  cursor:pointer;
+   font-size: 15px;
+   width: 530px;
+   background-color: #f9f9f9;
+   margin: 3px;
+   display: flex;
+   border-bottom: 1px solid orange;
+   border-top: 0;
+   border-right: 0;
+   border-left: 0;
   }
   
   

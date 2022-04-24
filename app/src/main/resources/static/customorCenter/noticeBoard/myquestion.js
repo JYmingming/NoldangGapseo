@@ -3,7 +3,7 @@ $(document).ready(function(){
     $.ajax({ 
       url: "/notice/list",
       type:"post",
-      data:{type:'Z'},
+      data:{type:'Q'},
        success : function(data) {
         $.each(data, function(i, dat) {
           if (dat.view_count == "0") {

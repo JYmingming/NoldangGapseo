@@ -5,36 +5,28 @@
     background:.000;
   }
   .body {
-    width:600px;
-    height:800px;
+    width:90%;
+    height:600px;
     position:absolute;
-    left:50%;
-    top:45%;
-    margin-left:-300px;
-    margin-top:-200px;
     background-color: white;  /** 작업 끝나면 흰색으로 **/
   }
   
   .body-a {                       /*고객센터 머리*/
-    position:absolute;
     width:500px;
-    height:50px;
-    top: 5%;
-    left:10%;
+    height:30px;
+    margin: auto;
   }
   
   .announcement-center {
-    position:absolute;
     font-size:20px;
     font-weight:bold;
   }
   
   .body-b {                                 /* 검색창 */
   position: relative;
-  width: 600px;
+  width: 70%;
   height: 100px;
-  margin: 10px auto;
-  top: 13%;
+  margin: auto;
   background-color: #f9f9f9;
   }
   .search {
@@ -82,7 +74,8 @@
   .body-d {                           /* 공지사항 헤드 */
   position: relative;
   width: 600px;
-  top: 12.5%;
+  padding-top: 10px;
+  margin: auto;
   }
   .b-button {
   position:relative;
@@ -104,11 +97,11 @@
   
   .body-e {                 /* 공지사항 메인 폼*/
   position:relative;
-  width: 600px;
+  width: 70%;
   height: 250px;
   background-color: #f9f9f9;
   color: black;
-  top: 12.3%;
+  margin: auto;
   }
  
            
@@ -116,7 +109,11 @@
   .view-box {                   /*공지테이블*/
   position:relative;
   top:5px;
-  word-spacing:380px;
+  display: flex;
+  justify-content: space-between;
+  }
+  .view {
+  height: 30px;
   }
   #view2 {  
   table-layout:fixed;
@@ -147,7 +144,7 @@
   .myquestion {
   position: absolute;
 	top: 5px;
-	right:150px;
+	right:120px;
   background-color: white;
   color: black;
   font-size:15px;
@@ -165,7 +162,7 @@
   .back {                       /*하단 뒤로가기*/
   position: relative;
   float: right; 
-  top: 130px;
+  top: 30px;
   background-color: white;
   color: black;
   font-size:15px;
