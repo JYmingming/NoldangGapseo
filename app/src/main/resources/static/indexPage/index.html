@@ -50,7 +50,7 @@
                 <input type="text" id="datepicker_end">
             </div>
             <div data-bs-toggle="modal" data-bs-target="#personModal">출발인원</div>
-            <div>테마</div>
+            <div data-bs-toggle="modal" data-bs-target="#themaModal">여행명</div>
         </div>
         <div class ="main_img"></div>
     </div>
@@ -212,11 +212,30 @@
         </div>
     </div>
 
+    <div class="modal fade" id="themaModal" tabindex="-4" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="personContent">
+                    <h5>여행이름 설정</h5>
+                    <div class="cnt-box">
+                        <div class="person-text">
+                            <h3>테마이름</h3>
+                        </div>
+                        <div class="thema-input">
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div>
+                        <button id="thema-btn">저장하기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
 
-
+    </div>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=04d2370bb5a7c0451b3db7bbd723c9d1"></script>
     <script src="./index.js" type="module"></script>
 

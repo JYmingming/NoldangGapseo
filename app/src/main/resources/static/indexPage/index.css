@@ -402,12 +402,12 @@ body {
     font-size: 1.2em;
     border-radius: 1vw;
     border: 0px;
-
 }
 
-.person-cnt h3{
-    display: inline-block;
 
+
+.person-cnt h4,h3{
+    display: inline-block;
 }
 .person-cnt img{
     width: 30px;
@@ -415,4 +415,22 @@ body {
     margin: 0 20px 10px 20px;
 }
 
-
+#thema-btn{
+    margin-top: 10px;
+    margin-right: 40px;
+    float: right;
+    width: 120px;
+    height: 44px;
+    background-color: rgb(251, 147, 0);
+    color: white;
+    font-size: 1.2em;
+    border-radius: 1vw;
+    border: 0px;
+}
+.thema-input input{
+    width: 240px;
+    height: 32px;
+    margin-right: 32px;
+    border-radius: 0.4vw;
+    border: 1px solid rgb(251, 147, 0);
+}
