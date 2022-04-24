@@ -15,3 +15,4 @@ import { get4Des } from '../common/api/apiList.js';
         $('.col-3').children('div').eq(i).append(imageView);
     }
 })();
+//
