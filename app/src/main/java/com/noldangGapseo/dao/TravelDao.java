@@ -15,7 +15,9 @@ public interface TravelDao {
 
   public Integer addTravel(Travel travel);
 
-  public Integer addTag(Integer travelId, Integer tagId);
+  public Integer addTag(@Param("travelId") Integer travelId, @Param("tagId") Integer tagId);
+
+  public Integer setRoute(@Param("travelId") Integer travelId, @Param("day") Integer day, @Param("tagList") List<Integer> tagList);
 
   public Integer updateName(@Param("name") String name, @Param("id") Integer id);
 

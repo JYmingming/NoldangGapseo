@@ -10,5 +10,7 @@ public interface TagDao {
 
     public List<Tag> defaultTagList();
 
+    public List<Tag> travelTagList(Integer id);
+
 
 }

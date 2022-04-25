@@ -22,6 +22,6 @@ import com.noldangGapseo.interceptor.AuthInterceptor;
             // 이 메서드가 정의되어 있다면,
             // 스프링부트는 이 메서드를 호출하여 추가할 인터셉터의 정보를 InterceptorRegistry로 받는다.
             registry.addInterceptor(new AuthInterceptor())
-                    .addPathPatterns("/**/add*","/**/update*","/**/delete*");
+                    .addPathPatterns("/**/add*","/**/update*","/**/delete*","/**/set*");
         }
 }

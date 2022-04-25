@@ -149,7 +149,7 @@ document.querySelector('#datepicker_start').onchange = function () {
     console.log(travel.startDate);
 };
 document.querySelector('#datepicker_end').onchange = function () {
-    travel.endDate = document.querySelector('#datepicker_start').value;
+    travel.endDate = document.querySelector('#datepicker_end').value;
     console.log(travel.endDate);
 };
 
@@ -177,12 +177,12 @@ document.querySelector('#makeDec-btn').onclick = async function () {
         return;
     }
     console.log('만들기 성공!');
-    const response = await addTravel(travel);
-    console.log('response.data:::::', response);
-    if (response.resCode == '0000') {
-        location.href = `/tag/tag.html?travelId=${response.data}`;
-    }
-    return;
+    // const response = await addTravel(travel);
+    // console.log('response.data:::::', response);
+    // if (response.resCode == '0000') {
+    //     location.href = `/tag/tag.html?travelId=${response.data}`;
+    // }
+    // return;
 };
 // 여행 이름을 설정 하고 확인 버튼을 누르면
 // travel.startDate = startDate.value;

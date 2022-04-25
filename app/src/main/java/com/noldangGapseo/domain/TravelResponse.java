@@ -13,6 +13,7 @@ import java.util.List;
 @Builder
 public class TravelResponse {
     private Travel travel;
+    private List<Tag> tagList;
     private List<Companion> companionList;
     private List<Todo> todoList;
     private List<Cost> costList;
