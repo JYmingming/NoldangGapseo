@@ -1,0 +1,16 @@
+메인
+ localhost:8443/indexPage/index.html 
+
+고객센터
+ localhost:8443/customorCenter/noticeBoard/noticeBoard.html
+
+마이페이지
+ localhost:8443/myPage/main/myPageMain.html 
+
+관리자페이지
+http://localhost:8443/adminPage/admin/memberList2.html
+
+유저여행지
+localhost:8443/userDestination/userDestination3.html 
+여행
+localhost:8443/travel/list/list.html

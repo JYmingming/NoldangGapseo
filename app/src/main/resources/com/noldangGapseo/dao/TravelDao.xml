@@ -27,6 +27,53 @@
         ORDER BY    t.start_date ASC;
     </select>
 
+    <!-- 여행을 생성한다. -->
+    <insert id="addTravel" parameterType="Travel">
+        INSERT
+        INTO    travel 	(user_id, travel_name, start_date, end_date)
+        values  		(#{userId}, #{travelName}, #{startDate}, #{endDate})
+    </insert>
+
+    <!-- 여행 태그 설정 -->
+    <insert id="addTag">
+        INSERT
+        INTO    travel_tag_list     (tag_id, travel_id)
+        values 				        (#{tagId}, #{travelId} )
+    </insert>
+
+    <!-- 여행을 루트를 생성한다. -->
+    <insert id="">
+        INSERT
+        into    travel_schedule (travel_id, destination_id, `day`, route_index)
+        select  1 as travel_id,
+                A.destination_id ,
+                A.day,
+                @rownum:=@rownum+1 as route_index,
+                A.tag_name
+        from    (
+                SELECT      1,
+                            d.destination_id,
+                            1 as day,
+                            t.tag_name
+                FROM        destination d,
+                            travel_schedule ts,
+                            destiantion_tag_list dtl,
+                            tag t,
+                            (SELECT @rownum:=0) TMP
+                where       d.user_id =1
+                and         dtl.tag_id = t.tag_id
+                and         dtl.destination_id = d.destination_id
+                and         ts.travel_id = 1
+                and         ts.destination_id  != d.destination_id
+        <foreach collection="list" item="tagList" index="index" open="(" close=")" separator=",">
+                and         t.tag_name in #{tagList}
+        </foreach>
+                group by    d.destination_id, t.tag_name
+                order by    rand() limit 4
+                ) A
+    </insert>
+
+
     <!-- 여행 하나를 불러온다 -->
     <select id="getTravel" resultMap="travelMap" parameterType="Integer">
         SELECT      t.travel_name ,cost.total_cost,

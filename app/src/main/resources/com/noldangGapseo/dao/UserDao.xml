@@ -32,7 +32,7 @@
             nick_name,
             email
         from
-            user
+            user u
         where
              pwd=password(#{password}) 
     </select>
@@ -63,5 +63,25 @@
         
     </select>
     
-
+    <update id="update" parameterType="user">
+    update user set 
+        email=#{email},
+        phone=#{phone},
+        nick_name=#{nickName}
+    where user_id=#{userId}
+    </update>
+    
+    <select id="findByNo" resultMap="userMap" parameterType="int">
+    select 
+      user_id,
+      email,
+      phone,
+      nick_name
+    from 
+      user u
+    where 
+      user_id=#{userId}
+  </select>
+  
+  
 </mapper>

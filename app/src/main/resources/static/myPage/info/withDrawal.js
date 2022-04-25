@@ -38,7 +38,7 @@ import { getLoginUser, findByNickName } from '../../common/api/apiList.js';
             }
             var fd = new FormData(document.forms.namedItem("form1"));
 
-            fetch("/user/signin", {
+            fetch("/user/resignin", {
                 method: "POST",
                 body: new URLSearchParams(fd)
             })
@@ -47,7 +47,7 @@ import { getLoginUser, findByNickName } from '../../common/api/apiList.js';
                 })
                 .then(function(result) {
                     if (result.resStatus == "success") {
-                        location.href = "../info/password_change.html";
+                        location.href = "../info/infoManage.html";
                     } else {
                         window.alert("비밀번호가 맞지 않습니다!")
                     }

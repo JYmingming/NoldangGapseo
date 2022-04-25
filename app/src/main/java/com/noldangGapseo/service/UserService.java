@@ -38,8 +38,18 @@ public class UserService {
   }
 
 
+  public int update(User user) {
+    return mapper.update(user);
+  }
 
+  public User get(int userId) {
+    User user = mapper.findByNo(userId);
+    return user;
+  }
 
+  public int checkNickname(String nickname) {
+    return mapper.checkNickname(nickname);
+  }
 
 
 }

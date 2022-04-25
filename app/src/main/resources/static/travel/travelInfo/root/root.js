@@ -1,21 +1,6 @@
-var arr = location.href.split('?');
+import { urlSearch } from '../../../common/urlSearchParam.js';
 
-if (arr.length == 1) {
-    alert('요청 형식이 옳바르지 않습니다.');
-    throw 'URL 형식 오류!';
-}
-
-var qs = arr[1];
-
-// 쿼리 스트링에서 email 값을 추출한다.
-var params = new URLSearchParams(qs);
-var no = params.get('travelId');
-
-if (no == null) {
-    alert('게시물 번호가 없습니다.');
-    throw '파라미터 오류!';
-}
-
+const no = urlSearch('travelId');
 // ---- 뒤로가기 ----
 $('.bi').on('click', function (e) {
     e.preventDefault();
@@ -54,7 +39,25 @@ var options = {
 var map = new kakao.maps.Map(container, options);
 
 // ---- 여행지 sort ----
+//(function () {
+$('#des-container').sortable({
+    //group: 'list',
+    //animation: 200,
+    //ghostClass: 'ghost',
+    //onSort: reportActivity,
+    items: '.des-box',
+    start: function (event, ui) {
+        console.log('sortStart!');
+        ui.item.data('start_pos', ui.item.index());
+        console.log(ui.item.data('start_pos'));
+    },
+});
+//})();
 
-(function () {
-    $('.des-box').draggable();
-})();
+const response = await getRoute();
+
+response = ['A', 'B', 'C', 'D'];
+
+function reportActivity() {
+    console.log('The sort order has changed');
+}

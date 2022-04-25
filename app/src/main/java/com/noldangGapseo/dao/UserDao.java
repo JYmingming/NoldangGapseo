@@ -18,8 +18,13 @@ public interface UserDao {
 
   List<User> findNickname(String nickName);
 
+  int update(User user);
 
+  User get(int userId);
 
+  User findByNo(int userId);
+
+  int checkNickname(String nickname);
 
 
 

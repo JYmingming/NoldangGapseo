@@ -58,6 +58,7 @@
                   <div class="line"></div>
                 </div>
                 <div class="con2">
+                    <form name="form1">
                     <table>
                         <tbody>
                           <tr>
@@ -78,6 +79,7 @@
                           </tr>
                         </tbody>
                     </table>
+                    </form>
                 </div>
               </div>
           </div>
@@ -129,21 +131,6 @@
   <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
   <script src="./infoManage_edit.js" type="module"></script>
   <script>
-  window.onload = function() {
-    
-      function onClick() {
-          document.querySelector('.modal_wrap').style.display ='block';
-          document.querySelector('.black_bg').style.display ='block';
-      }   
-      function offClick() {
-          document.querySelector('.modal_wrap').style.display ='none';
-          document.querySelector('.black_bg').style.display ='none';
-      }
-   
-      document.getElementById('check-btn').addEventListener('click', onClick);
-      document.querySelector('#modal_close').addEventListener('click', offClick);
-   
-  };
   
   
 

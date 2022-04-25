@@ -6,6 +6,9 @@
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="wishList.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="../node_modules/axios/dist/axios.js"></script>
     <script>
             $(document).ready(function () {
                 $('.headers').load('../../common/header/header.html');
@@ -77,11 +80,18 @@
                 <li>놀당에서 회원님이 원하시는 위시리스트를 등록하여 가고싶은 곳을 마음껏 둘러보세요.</li>
               </ul>
               <h5>등록된 위시리스트</h5>
-              <ul class="row">
-                <li class="col-3" a href="#" onclick="location.href='../../../map/mapDetail.html'"></li>
-                <li class="col-3" a href="#" onclick="location.href='../../../map/mapDetail.html'"></li>
-                <li class="col-3" a href="#" onclick="location.href='../../../map/mapDetail.html'"></li>
-              </ul>
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                        <div class="swiper-slide"><div class="d-flex"></div></div>
+                        <div class="swiper-slide"><div class="d-flex"></div></div>
+                        <div class="swiper-slide"><div class="d-flex"></div></div>
+                        <div class="swiper-slide"><div class="d-flex"></div></div>
+                        <div class="swiper-slide"><div class="d-flex"></div></div>
+                        <div class="swiper-slide"><div class="d-flex"></div></div>
+                 </div>
+                 <div class="swiper-button-next next-c"></div>
+                 <div class="swiper-button-prev prev-c"></div>
+              </div>
           </div>
           <div class="second_box4">
           </div>
@@ -99,7 +109,12 @@
   <footer>
   
   </footer>
-
+  
   <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="wishList.js" type="module"></script>
+  <script type="text/javascript">
+  
+  
+  </script>
 </body>
 </html>

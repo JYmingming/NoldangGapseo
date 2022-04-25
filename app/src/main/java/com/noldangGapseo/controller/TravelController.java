@@ -1,6 +1,7 @@
 package com.noldangGapseo.controller;
 
 
+import java.util.Arrays;
 import java.util.List;
 
 import com.noldangGapseo.domain.*;
@@ -27,10 +28,16 @@ public class TravelController {
         return service.getTravel(travelId);
     }
 
-    // 여행의 이름을 바꾼다.
-    @PutMapping("/updateName")
-    public ApiResponse updateName(@RequestParam String name, @RequestParam Integer id) {
-        return service.updateName(name, id);
+    // 여행 하나를 생성한다.
+    @PostMapping("/add/travel")
+    public ApiResponse addTravel(@RequestBody Travel travel) {
+        return service.addTravel(travel);
+    }
+
+    // 여행 태그 설정
+    @PostMapping("/add/tag")
+    public ApiResponse addTag(@RequestParam Integer travelId, @RequestBody List<Tag> tagList) {
+        return service.addTag(travelId, tagList);
     }
 
     // 여행의 비용 항목을 불러온다.
