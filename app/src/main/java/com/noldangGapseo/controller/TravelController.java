@@ -4,6 +4,7 @@ package com.noldangGapseo.controller;
 import java.util.List;
 
 import com.noldangGapseo.domain.*;
+import com.noldangGapseo.service.DestinationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.noldangGapseo.service.TravelService;
@@ -14,7 +15,7 @@ public class TravelController {
 
   @Autowired
   TravelService service;
-
+  
   // 유저의 여행 리스트를 불러온다.
   @GetMapping("/travelList")
   public List<Travel> travelList(@RequestParam String nickName) {

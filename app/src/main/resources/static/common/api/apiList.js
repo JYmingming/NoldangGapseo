@@ -239,6 +239,16 @@ export async function getRoutes(id, day) {
     }
 }
 
+// ---- 여행 기간을 가져온다. ----
+export async function getPeriod(id) {
+    try {
+        const response = await axios(`${PATH.TRAVEL.getPeriod}?id=${id}`);
+        return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
 // ---- 여행 이름을 변경한다. ----
 export async function updateTravelName(id, name) {
     try {

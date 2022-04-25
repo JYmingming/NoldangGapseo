@@ -44,7 +44,7 @@
 }
 .root-container {
     margin-top: 3em;
-    height: 60vh;
+    height: 70vh;
 }
 .number-container,
 .des-container {
@@ -76,9 +76,12 @@
 
 .des-box {
     border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-    height: 25%;
+    height: 30%;
     padding: 1% 0px;
-    margin-bottom: 5%;
+    margin-bottom: 8%;
+}
+.des-header {
+    margin-bottom: 30px;
 }
 
 .d-kinds {
