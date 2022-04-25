@@ -1,3 +1,4 @@
+import axios from 'axios';
 
 export const PATH = {
     USER: {
@@ -16,6 +17,7 @@ export const PATH = {
     TRAVEL: {
         travelList: '/travel/travelList',
         info: '/travel/getOne',
+        addTravel: '/travel/add/travel',
         updateName: '/travel/updateName',
         todoList: '/travel/todoList',
         addTodo: '/travel/addTodo',
@@ -26,6 +28,9 @@ export const PATH = {
         addCost: '/travel/addCost',
         updateCost: '/travel/updateCost',
         deleteCost: '/travel/deleteCost',
+    },
+    TAG: {
+        defaultTagList: '/tag/list',
     },
 };
 // ===== 날짜 포멧 =====
@@ -179,6 +184,20 @@ export async function getTravel(travelId) {
     }
 }
 
+// ---- 여행 하나를 생성한다. ----
+export async function addTravel(travel = {}) {
+    try {
+        const response = await axios({
+            method: 'POST',
+            url: PATH.TRAVEL.addTravel,
+            data: travel,
+        });
+        return response;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
 // ---- 여행 이름을 변경한다. ----
 export async function updateTravelName(id, name) {
     try {
@@ -303,6 +322,20 @@ export async function deleteCost(id) {
             url: `${PATH.TRAVEL.deleteCost}?id=${id}`,
         });
         return resopnse.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ====== Tag ======
+
+// ----- 놀당갑서 태그 리스트 ----
+export async function defaultTagList() {
+    try {
+        const response = await fetch(PATH.TAG.defaultTagList).then(function (res) {
+            return res.json();
+        });
+        return response;
     } catch (e) {
         console.log(e);
     }
