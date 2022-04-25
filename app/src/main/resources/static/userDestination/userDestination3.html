@@ -49,7 +49,9 @@
             alt="...">
           <div class="card-body">
             <h5 class="card-title">모뉴에트</h5>
-            <div class="like">❤️30🗨20</div>
+            <span>❤️</span> <span class="likesCnt">30</span> <span>🗨</span>
+            <span class="commentsCnt">20</span>
+
           </div>
         </div>
       </div>
@@ -60,7 +62,8 @@
             alt="...">
           <div class="card-body">
             <h5 class="card-title">모뉴에트</h5>
-            <div class="like">❤️30🗨20</div>
+            <span>❤️</span> <span class="likesCnt">30</span> <span>🗨</span>
+            <span class="commentsCnt">20</span>
           </div>
         </div>
       </div>
@@ -70,7 +73,8 @@
             alt="...">
           <div class="card-body">
             <h5 class="card-title">모뉴에트</h5>
-            <div class="like">❤️30🗨20</div>
+            <span>❤️</span> <span class="likesCnt">30</span> <span>🗨</span>
+            <span class="commentsCnt">20</span>
           </div>
         </div>
       </div>
@@ -80,7 +84,8 @@
             alt="...">
           <div class="card-body">
             <h5 class="card-title">모뉴에트</h5>
-            <div class="like">❤️30🗨20</div>
+            <span>❤️</span> <span class="likesCnt">30</span> <span>🗨</span>
+            <span class="commentsCnt">20</span>
           </div>
         </div>
       </div>
@@ -93,7 +98,8 @@
             alt="...">
           <div class="card-body">
             <h5 class="card-title">모뉴에트</h5>
-            <div class="like">❤️30🗨20</div>
+            <span>❤️</span> <span class="likesCnt">30</span> <span>🗨</span>
+            <span class="commentsCnt">20</span>
           </div>
         </div>
       </div>
@@ -103,7 +109,8 @@
             alt="...">
           <div class="card-body">
             <h5 class="card-title">모뉴에트</h5>
-            <div class="like">❤️30🗨20</div>
+            <span>❤️</span> <span class="likesCnt">30</span> <span>🗨</span>
+            <span class="commentsCnt">20</span>
           </div>
         </div>
       </div>
@@ -113,7 +120,8 @@
             alt="...">
           <div class="card-body">
             <h5 class="card-title">모뉴에트</h5>
-            <div class="like">❤️30🗨20</div>
+            <span>❤️</span> <span class="likesCnt">30</span> <span>🗨</span>
+            <span class="commentsCnt">20</span>
           </div>
         </div>
       </div>
@@ -123,7 +131,8 @@
             alt="...">
           <div class="card-body">
             <h5 class="card-title">모뉴에트</h5>
-            <div class="like">❤️30🗨20</div>
+            <span>❤️</span> <span class="likesCnt">30</span> <span>🗨</span>
+            <span class="commentsCnt">20</span>
           </div>
         </div>
       </div>
@@ -619,7 +628,11 @@
 			function a(dv) {
 				const b = document.querySelectorAll(".card-title")
 				const c = document.querySelectorAll(".card-img-top")
+				const d = document.querySelectorAll(".likesCnt")
+				const e = document.querySelectorAll(".commentsCnt")
 				console.log(c);
+				console.log(d);
+				console.log(e);
 				fetch(`/destination/admin/pagelist?pageNo=${dv}&pageSize=8`)
 
 				.then(function(response) {
@@ -630,6 +643,8 @@
 					for (var i = 0; i < 8; i++) {
 						b[i].innerHTML = result[i].destinationName;
 						c[i].src = result[i].thumbNailImg;
+						d[i].innerHTML = result[i].likesCnt;
+						e[i].innerHTML = result[i].commentsCnt;
 					}
 				})
 

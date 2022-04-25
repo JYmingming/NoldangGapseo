@@ -123,17 +123,24 @@
 		order by d.reg_date desc;
 	</select>
 
+
+  <!-- 조원석: 유저여행지 객체 8개씩 받기 -->
 	<select id="find8" resultMap="desMap">
-		select d.destination_name, di.img thumbNailImg
+		select d.destination_name, di.img thumbNailImg, 0 likesCnt, 10 commentsCnt 
 		from destination d
 		inner join
 		destination_img di
+
+<!--     inner join
+    likes l  -->
 		on d.destination_id = di.destination_id
 		where 0 = di.destination_img_id % 3
 		limit
 		#{offset}, #{rowCount}
 	</select>
 
+
+  <!-- 조원석: 유저여행지 갯수 카운트 -->
   <select id="countAll" resultType="int">
     select count(*) from
     destination
