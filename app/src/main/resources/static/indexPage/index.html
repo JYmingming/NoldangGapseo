@@ -48,8 +48,8 @@
                 <h6>도착 일자</h6>
                 <input type="text" id="datepicker_end">
             </div>
-            <div data-bs-toggle="modal" data-bs-target="#personModal">출발인원</div>
-            <div data-bs-toggle="modal" data-bs-target="#themaModal">여행명</div>
+            <div data-bs-toggle="modal" data-bs-target="#themaModal">여행이름설정</div>
+            <div><button id="makeDec-btn">여행하기<img src="../img/makebtn.png"></button></div>
         </div>
         <div class ="main_img"></div>
     </div>
@@ -190,38 +190,17 @@
     </div>
 
 
-    <div class="modal fade" id="personModal" tabindex="-4" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                    <div class="personContent">
-                        <h5>인원 설정</h5>
-                        <div class="cnt-box">
-                            <div class="person-text">
-                                <h3>성인</h3>
-                            </div>
-                            <div class="person-cnt">
-                                <img src="../img/minus.png"> <h3>1</h3> <img src="../img/plus.png">
-                            </div>
-                        </div>
-                        <div>
-                            <button id="person-btn">저장하기</button>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </div>
-
     <div class="modal fade" id="themaModal" tabindex="-4" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="personContent">
+                <div class="themaContent">
                     <h5>여행이름 설정</h5>
                     <div class="cnt-box">
-                        <div class="person-text">
-                            <h3>테마이름</h3>
+                        <div class="thema-text">
+                            <h5>여행이름</h5>
                         </div>
                         <div class="thema-input">
-                            <input type="text">
+                            <input type="text" id="thema-input">
                         </div>
                     </div>
                     <div>

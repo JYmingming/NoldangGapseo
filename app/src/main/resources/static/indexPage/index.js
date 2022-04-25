@@ -144,6 +144,31 @@ const travel = {
     uesrId: '',
 };
 
+document.querySelector('#datepicker_start').onchange = function () {
+    travel.startDate =document.querySelector('#datepicker_start').value;
+    console.log(travel.startDate);
+};
+document.querySelector('#datepicker_end').onchange = function () {
+    travel.endDate =document.querySelector('#datepicker_start').value;
+    console.log(travel.endDate);
+};
+
+document.querySelector('#thema-btn').onclick = function () {
+    travel.travelName =document.querySelector('#thema-input').value;
+    console.log(travel.travelName);
+};
+
+document.querySelector('#makeDec-btn').onclick = function () {
+    console.log("시작일:"+travel.startDate+"종료일 :"+travel.endDate+"여행이름"+travel.travelName+"아이디번호"+travel.uesrId);
+    if (travel.uesrId==""){
+        alert("로그인이 필요합니다.")
+        return;
+    }else if(travel.startDate==""||travel.endDate==""||travel.travelName==""){
+        alert("값을 입력해주세요.")
+        return;
+    }
+    console.log("만들기 성공!")
+};
 // 여행 이름을 설정 하고 확인 버튼을 누르면
 // travel.startDate = startDate.value;
 // travel.endDate = enddate.value;
