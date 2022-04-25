@@ -24,7 +24,6 @@ span {
 }
 
 .box {
-    padding: 5%;
     border-radius: 20px;
     border-width: 2px;
     border-style: solid;
@@ -46,6 +45,8 @@ span {
     border-radius: 20px;
     border: 1px solid black;
     text-align: center;
+    margin: 5px;
+    height: 25px;
 }
 .favor {
     border-color: rgb(251, 147, 0);
@@ -61,5 +62,5 @@ span {
     font-size: 20px;
     padding: 5px;
     float: right;
-    margin-right: 10%;
+    margin-right: 1%;
 }

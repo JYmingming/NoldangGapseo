@@ -16,6 +16,7 @@ export const PATH = {
         travelList: '/travel/travelList',
         info: '/travel/getOne',
         addTravel: '/travel/add/travel',
+        addTag: '/travel/add/tag',
         updateName: '/travel/updateName',
         todoList: '/travel/todoList',
         addTodo: '/travel/addTodo',
@@ -191,6 +192,20 @@ export async function addTravel(travel = {}) {
             data: travel,
         });
         console.log('response:::::', response);
+        return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- 여행의 태그를 설정한다. ----
+export async function addTravelTag(id, tags) {
+    try {
+        const response = await axios({
+            method: 'POST',
+            url: `${PATH.TRAVEL.addTag}?travelId=${id}`,
+            data: tags,
+        });
         return response.data;
     } catch (e) {
         console.log(e);

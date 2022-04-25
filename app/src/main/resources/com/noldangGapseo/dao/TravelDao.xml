@@ -42,31 +42,31 @@
     </insert>
 
     <!-- 여행을 루트를 생성한다. -->
-    <insert id="">
+    <insert id="setRoute">
         INSERT
         into    travel_schedule (travel_id, destination_id, `day`, route_index)
-        select  1 as travel_id,
+        select  #{travelId} as travel_id,
                 A.destination_id ,
                 A.day,
-                @rownum:=@rownum+1 as route_index,
-                A.tag_name
+                @rownum:=@rownum+1 as route_index
         from    (
-                SELECT      1,
+                SELECT      #{travelId},
                             d.destination_id,
-                            1 as day,
+                            #{day} as day,
                             t.tag_name
                 FROM        destination d,
                             travel_schedule ts,
                             destiantion_tag_list dtl,
                             tag t,
                             (SELECT @rownum:=0) TMP
-                where       d.user_id =1
+                where       d.user_id = 1
                 and         dtl.tag_id = t.tag_id
                 and         dtl.destination_id = d.destination_id
-                and         ts.travel_id = 1
+<!--                and         ts.travel_id = #{travelId}-->
                 and         ts.destination_id  != d.destination_id
-        <foreach collection="list" item="tagList" index="index" open="(" close=")" separator=",">
-                and         t.tag_name in #{tagList}
+                and         t.tag_id in
+        <foreach collection="tagList" item="tagList" index="index" open="(" close=")" separator=",">
+                 #{tagList}
         </foreach>
                 group by    d.destination_id, t.tag_name
                 order by    rand() limit 4
@@ -78,7 +78,8 @@
     <select id="getTravel" resultMap="travelMap" parameterType="Integer">
         SELECT      t.travel_name ,cost.total_cost,
                     u.nick_name,
-                    CONCAT(t.start_date, '~' ,t.end_date) period
+                    CONCAT(t.start_date, '~' ,t.end_date) period,
+                    DATEDIFF(DATE_FORMAT(t.end_date , '%Y-%m-%d.') , DATE_FORMAT(t.start_date ,'%Y-%m-%d.')) d_day
         FROM        travel t , `user` u ,
                     (
                     SELECT sum(c.cost) total_cost

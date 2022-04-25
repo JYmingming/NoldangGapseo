@@ -11,8 +11,14 @@
 
     <select id="defaultTagList" resultMap="TagMap">
         SELECT  *
-        FROM    tag t ;
+        FROM    tag t
     </select>
 
+    <select id="travelTagList" resultMap="TagMap">
+        SELECT  tl.tag_id, t.tag_name
+        FROM    tag t, travel_tag_list tl
+        WHERE   tl.travel_id = #{travelId}
+        and     t.tag_id = tl.tag_id
+    </select>
 
 </mapper>

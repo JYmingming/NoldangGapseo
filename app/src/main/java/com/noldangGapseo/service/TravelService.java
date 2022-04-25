@@ -1,18 +1,29 @@
 package com.noldangGapseo.service;
 
 
-import com.noldangGapseo.dao.TravelDao;
-import com.noldangGapseo.domain.*;
+import java.util.AbstractList;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
+import com.noldangGapseo.dao.TagDao;
+import com.noldangGapseo.dao.TravelDao;
+import com.noldangGapseo.domain.ApiResponse;
+import com.noldangGapseo.domain.Cost;
+import com.noldangGapseo.domain.Tag;
+import com.noldangGapseo.domain.Todo;
+import com.noldangGapseo.domain.Travel;
+import com.noldangGapseo.domain.TravelResponse;
 
 @Service
 public class TravelService {
 
     @Autowired
     TravelDao mapper;
+
+    @Autowired
+    TagDao tagMapper;
 
     // 유저의 여행 리스틑 불러온다.
     public List<Travel> travelList(String nickName) {
@@ -27,31 +38,49 @@ public class TravelService {
         return TravelResponse.builder().
                 travel(travelOne).
                 companionList(mapper.companionList(travelId)).
-                todoList(mapper.todoLength3(travelId)).build();
+                todoList(mapper.todoLength3(travelId)).
+                tagList(tagMapper.travelTagList(travelId))
+                .build();
     }
 
     // 여행을 생성한다.
-    public ApiResponse addTravel(Travel travel){
+    public ApiResponse addTravel(Travel travel) {
         ApiResponse apiResponse = new ApiResponse();
         Integer addResponse = mapper.addTravel(travel);
-        if(addResponse == 0){
+        if (addResponse == 0) {
             apiResponse.setResCode("1111").setResStatus("fail");
         }
         return apiResponse.setData(travel.getTravelId());
     }
 
     // 여행 태그 설정
-    public ApiResponse addTag(Integer travelId, List<Tag> tagList){
+    public ApiResponse addTag(Integer travelId, List<Tag> tagList) {
         Integer response = null;
-        for(Tag tag : tagList) {
+        for (Tag tag : tagList) {
             response = mapper.addTag(travelId, tag.getTagId());
         }
-        if(response == 0){
-          return new ApiResponse("1111", "fail", null);
+        if (response == 0) {
+            return new ApiResponse("1111", "fail", null);
         }
         return new ApiResponse();
     }
 
+    // 여행 루트 설정
+    public ApiResponse setRoute(Integer travelId, Integer days, List<Tag> list) {
+        System.out.println(list);
+        ArrayList<Integer> tagList = new ArrayList<>();
+        for(Tag tag : list){
+            tagList.add(tag.getTagId());
+        }
+        System.out.println(tagList);
+                Integer response = null;
+                for (int i = 0; i < days; i++) {
+                    Integer day = i+1;
+                  response = mapper.setRoute(travelId, day, tagList);
+                }
+                System.out.println(response);
+        return new ApiResponse();
+    }
 
 
     // 여행의 이름 바꾼다.
