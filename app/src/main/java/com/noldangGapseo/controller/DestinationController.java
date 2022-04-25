@@ -49,7 +49,7 @@ public class DestinationController {
   @GetMapping("/admin/pagelist")
   List<Destination> getAdminDesList1(
       @RequestParam(value="pageNo", defaultValue="1") int pageNo, 
-      @RequestParam(value="pageSize", defaultValue="5") int pageSize, 
+      @RequestParam(value="pageSize", defaultValue="8") int pageSize, 
       Map<String,Object> model) throws Exception {
 
     int totalPageSize = 0;
@@ -65,6 +65,7 @@ public class DestinationController {
     Integer destinationSize = service.countAll(); 
 
     totalPageSize = destinationSize / pageSize; // 예: 게시글개수 / 페이지당개수 = 16 / 5 = 3 
+    System.out.println(totalPageSize);
     if ((destinationSize % pageSize) > 0) {
       totalPageSize++;
     }

@@ -12,52 +12,70 @@
 
 	<!-- 유저들이 작성한 여행지 리스트를 불러온다. -->
 	<select id="getUsersDesList" resultMap="desMap">
-		SELECT d.destination_id, d.destination_name, address, d.reg_date,
-		u.nick_name, dt.destination_type_name
-		FROM destination d , `user` u , destination_type dt
+		SELECT d.destination_id,
+		d.destination_name, address, d.reg_date,
+		u.nick_name,
+		dt.destination_type_name
+		FROM destination d , `user` u ,
+		destination_type dt
 		WHERE d.user_id = u.user_id
-		and d.destination_type_id = dt.destination_type_id
+		and
+		d.destination_type_id = dt.destination_type_id
 		and not d.user_id = 1
 		ORDER BY reg_date desc;
 	</select>
 
 	<!-- 놀당의 여행지 리스트를 불러온다. -->
 	<select id="getAdminDesList" resultMap="desMap">
-		SELECT d.destination_id, d.destination_name, address, d.phone, d.contents,
-		d.reg_date, u.nick_name, dt.destination_type_name,
+		SELECT d.destination_id,
+		d.destination_name, address, d.phone, d.contents,
+		d.reg_date,
+		u.nick_name, dt.destination_type_name,
 		di.img thumbNailImg
-		FROM destination d , `user` u , destination_type dt, destination_img di
+		FROM
+		destination d , `user` u , destination_type dt, destination_img di
 		WHERE d.user_id = u.user_id
-		and d.destination_type_id = dt.destination_type_id
+		and d.destination_type_id =
+		dt.destination_type_id
 		and d.user_id = 1
-		and d.destination_id = di.destination_id
+		and d.destination_id =
+		di.destination_id
 		ORDER BY destination_id ASC;
 	</select>
 
 	<!-- 여행지의 상세항목을 불러온다. -->
 	<select id="getDes" resultMap="desMap" parameterType="Integer">
-		SELECT d.destination_id, d.destination_name, d.contents,
-		d.phone, d.address, dt.destination_type_name,
+		SELECT
+		d.destination_id, d.destination_name, d.contents,
+		d.phone, d.address,
+		dt.destination_type_name,
 		u.nick_name, l.likes_cnt, d.latitude,
 		d.longitude, d.reg_date, d.update_date
-		FROM destination d , destination_type dt, `user` u ,
+		FROM destination d ,
+		destination_type dt, `user` u ,
 		(
 		SELECT COUNT(l.user_id) likes_cnt
-		FROM likes l
+		FROM
+		likes l
 		WHERE l.destination_id = #{desId}
 		) l
-		WHERE d.destination_id = #{desId}
+		WHERE d.destination_id =
+		#{desId}
 		and d.destination_type_id = dt.destination_type_id
-		and d.user_id = u.user_id;
+		and
+		d.user_id = u.user_id;
 
 	</select>
 
 	<!-- 메인페이지 4여행지를 가져온다 -->
 	<select id="get4Des" resultMap="desMap">
-		select d.destination_id , d.destination_name , di.img thumbNailImg
-		from destination d , destination_img di
+		select d.destination_id ,
+		d.destination_name , di.img thumbNailImg
+		from destination d ,
+		destination_img di
 		WHERE user_id = 1
-		and d.destination_id = di.destination_id
+		and d.destination_id =
+		di.destination_id
 		order by rand() limit 4;
 	</select>
 
@@ -65,7 +83,8 @@
 	<select id="getNoldangCommentList" resultMap="comMap"
 		parameterType="Integer">
 		SELECT dc.comment_id, dc.contents , u.nick_name
-		FROM destination_comment dc , `user` u
+		FROM
+		destination_comment dc , `user` u
 		where dc.destination_id = #{desId}
 		and dc.user_id = u.user_id
 		order by dc.reg_date desc;
@@ -75,76 +94,107 @@
 	<!-- 유저가 작성한 여행지의 댓글을 불러온다. -->
 	<select id="getUserCommentList" resultMap="comMap"
 		parameterType="Integer">
-		SELECT ndc.new_destination_comment_id comment_id, ndc.contents, u.nick_name
+		SELECT ndc.new_destination_comment_id comment_id,
+		ndc.contents, u.nick_name
 		FROM new_destination_comment ndc, `user` u
 		where ndc.destination_id = #{desId}
 		and ndc.user_id = u.user_id
-		order by ndc.reg_date desc;
+		order by
+		ndc.reg_date desc;
 	</select>
 
 	<!-- 이미지 리스트를 불러온다. -->
 	<select id="getImg" resultMap="imgMap" parameterType="Integer">
-		SELECT di.destination_img_id, di.img
+		SELECT
+		di.destination_img_id, di.img
 		FROM destination_img di
-		WHERE di.destination_id = #{desId};
+		WHERE
+		di.destination_id = #{desId};
 	</select>
 
 	<!-- 유저가 작성한 여행지 리스트를 불러온다. -->
 	<select id="getUserDesList" resultMap="desMap"
 		parameterType="Integer">
-		SELECT d.destination_id, d.destination_name, dt.destination_type_name,
-		lic.likes_cnt, com.comments_cnt, di.img thumb_nail_img
+		SELECT d.destination_id, d.destination_name,
+		dt.destination_type_name,
+		lic.likes_cnt, com.comments_cnt, di.img
+		thumb_nail_img
 		FROM destination_type dt ,destination d
 		join
 		(
-		SELECT d2.destination_id, COUNT(l.destination_id) likes_cnt
-		FROM destination d2
+		SELECT
+		d2.destination_id, COUNT(l.destination_id) likes_cnt
+		FROM destination
+		d2
 		left join likes l
 		on d2.destination_id = l.destination_id
-		WHERE d2.user_id = #{userId}
+		WHERE
+		d2.user_id = #{userId}
 		group by d2.destination_id
 		) as lic
-		on d.destination_id = lic.destination_id
+		on
+		d.destination_id = lic.destination_id
 		join
 		(
-		SELECT COUNT(ndc.destination_id) comments_cnt , d3.destination_id
-		FROM destination d3
+		SELECT
+		COUNT(ndc.destination_id) comments_cnt , d3.destination_id
+		FROM
+		destination d3
 		left join new_destination_comment ndc
-		ON d3.destination_id = ndc.destination_id
+		ON
+		d3.destination_id = ndc.destination_id
 		WHERE d3.user_id = #{userId}
 		GROUP by d3.destination_id
 		) as com
-		on d.destination_id = com.destination_id
-		left join destination_img di ON di.destination_id = d.destination_id
+		on d.destination_id =
+		com.destination_id
+		left join destination_img di ON di.destination_id =
+		d.destination_id
 		WHere 1=1
 		and d.user_id = #{userId}
-		and d.destination_type_id = dt.destination_type_id
-		group by d.destination_id
+		and
+		d.destination_type_id = dt.destination_type_id
+		group by
+		d.destination_id
 		order by d.reg_date desc;
 	</select>
 
 
-  <!-- 조원석: 유저여행지 객체 8개씩 받기 -->
+	<!-- 조원석: 유저여행지 객체 8개씩 받기 -->
 	<select id="find8" resultMap="desMap">
-		select d.destination_name, di.img thumbNailImg, 0 likesCnt, 10 commentsCnt 
-		from destination d
-		inner join
-		destination_img di
+		select
+    d.destination_id,
+		d.destination_name,
+		di.img
+		thumbNailImg,
+		(select
+		count(*)
+		from
+		likes
+		where destination_id =
+		d.destination_id) likesCnt,
+		(select
+		count(*)
+		from
+		destination_comment
+		where destination_id = d.destination_id) commentsCnt
 
-<!--     inner join
-    likes l  -->
-		on d.destination_id = di.destination_id
+
+		from
+		destination d
+		inner join destination_img di on (d.destination_id =
+		di.destination_id)
 		where 0 = di.destination_img_id % 3
-		limit
-		#{offset}, #{rowCount}
+		limit #{offset},
+		#{rowCount}
 	</select>
 
 
-  <!-- 조원석: 유저여행지 갯수 카운트 -->
-  <select id="countAll" resultType="int">
-    select count(*) from
-    destination
-  </select>
+	<!-- 조원석: 유저여행지 갯수 카운트 -->
+	<select id="countAll" resultType="int">
+		select count(*) from
+		destination
+	</select>
 
 
 	<!-- 여행지를 작성한다. -->
@@ -152,7 +202,8 @@
 		keyProperty="destinationId" keyColumn="destination_id"
 		useGeneratedKeys="true">
 		INSERT
-		into destination (user_id, destination_type_id, destination_name, phone,
+		into destination (user_id, destination_type_id,
+		destination_name, phone,
 		address, contents)
 		values
 		(#{userId},#{destinationTypeId},#{destinationName},#{phone},#{address},#{contents})
@@ -161,9 +212,11 @@
 	<!-- 여행지를 업데이트 한다. -->
 	<update id="updateDes" parameterType="Destination">
 		UPDATE destination
-		set destination_type_id = #{destinationTypeId}, destination_name =
+		set
+		destination_type_id = #{destinationTypeId}, destination_name =
 		#{destinationName},
-		phone = #{phone}, address= #{address}, contents =#{contents}
+		phone = #{phone}, address= #{address}, contents
+		=#{contents}
 		WHERE destination_id = #{destinationId};
 	</update>
 
@@ -185,21 +238,24 @@
 	<update id="updateImgList">
 		UPDATE destination_img
 		set img = #{imgName}
-		WHERE destination_id = #{destinationId};
+		WHERE
+		destination_id = #{destinationId};
 	</update>
 
 	<!-- 이미지 삭제 -->
 	<delete id="deleteImg">
 		DELETE
 		FROM destination_img
-		WHERE destination_img_id = #{imgId}
+		WHERE destination_img_id =
+		#{imgId}
 	</delete>
 
 	<!-- 좋아요 추가 -->
 	<insert id="addLike">
 		INSERT into likes
 		(destination_id, user_id)
-		values (#{desId}, #{userId});
+		values
+		(#{desId}, #{userId});
 	</insert>
 
 	<!-- 좋아요 삭제 -->
@@ -207,7 +263,8 @@
 		DELETE
 		FROM likes
 		WHERE destination_id = #{desId}
-		and user_id = #{userId};
+		and
+		user_id = #{userId};
 	</delete>
 
 

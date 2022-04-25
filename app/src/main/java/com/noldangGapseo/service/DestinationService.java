@@ -29,10 +29,10 @@ public class DestinationService {
   public DestinationResponse getDes(Integer desId, String type) {
 
     return DestinationResponse.builder()
-            .destination(mapper.getDes(desId))
-            .commentList(type.equals("N") ? mapper.getNoldangCommentList(desId) : mapper.getUserCommentList(desId))
-            .destinationImgList(mapper.getImg(desId))
-            .build();
+        .destination(mapper.getDes(desId))
+        .commentList(type.equals("N") ? mapper.getNoldangCommentList(desId) : mapper.getUserCommentList(desId))
+        .destinationImgList(mapper.getImg(desId))
+        .build();
   }
 
   // 메인 페이지의 4 여행지를 가져온다.
@@ -83,26 +83,26 @@ public class DestinationService {
   public Integer addLike(Integer desId, Integer userId) {
     return mapper.addLike(desId, userId);
   }
-    //여행지 갯수 카운트
-    public Integer countAll () {
-      return mapper.countAll();
-    }
-
-    //여행지 8개씩 페이징
-    public List<Destination> findAll ( int rowCount, int offset){
-      return mapper.findAll(rowCount, offset);
-    }
-
-    //여행지 8개씩 페이징
-    public List<Destination> find8 ( int rowCount, int offset){
-      return mapper.find8(rowCount, offset);
-    }
-
-    // 좋아요 삭제
-    public Integer deleteLike (Integer desId, Integer userId){
-      return mapper.deleteLike(desId, userId);
-    }
-
+  //여행지 갯수 카운트
+  public Integer countAll () {
+    return mapper.countAll();
   }
+
+  //여행지 8개씩 페이징
+  public List<Destination> findAll ( int rowCount, int offset){
+    return mapper.findAll(rowCount, offset);
+  }
+
+  //여행지 8개씩 페이징
+  public List<Destination> find8 ( int rowCount, int offset){
+    return mapper.find8(rowCount, (offset-1)*8+1); //여행지가 1개씩 이동하는 문제 때문에 작성
+  }
+
+  // 좋아요 삭제
+  public Integer deleteLike (Integer desId, Integer userId){
+    return mapper.deleteLike(desId, userId);
+  }
+
+}
 
 
