@@ -1,16 +1,10 @@
 package com.noldangGapseo.domain;
 
-import java.util.Date;
+import java.sql.Date;
 import org.springframework.stereotype.Repository;
 
-/* 번호 : service_senter_id
- * 제목 : title
- * 등록일 : reg_date
- * 조회수 : view_count
- * 게시글 : contents
- */
-
 @Repository
+
 public class NoticeVO {
   Date regdate;
   Integer viewcount;

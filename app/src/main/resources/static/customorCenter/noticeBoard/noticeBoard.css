@@ -138,5 +138,26 @@
    border-left: 0;
   }
   
+    #tb1 ,#tb2{                      
+  table-layout:fixed;
+  border-collapse: collapse;
+  }  
+  #tb1 th, #tb2 th {
+   background: #dfdfdf;
+   text-align: center;
+  }
+  #tb1 th, #tb1 td, #tb2 th, #tb2 td {
+  padding: 3px;
+  width: 250px;
+  border: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+  text-align: center;
+  }
+
+  .tb1 tr td:first-child, .tb2 tr td:first-child{
+  text-align: center;
+  }
+  
   
   
