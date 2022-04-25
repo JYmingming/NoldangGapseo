@@ -17,6 +17,7 @@ export const PATH = {
         info: '/travel/getOne',
         addTravel: '/travel/add/travel',
         addTag: '/travel/add/tag',
+        setRoute: '/travel/set/route',
         updateName: '/travel/updateName',
         todoList: '/travel/todoList',
         addTodo: '/travel/addTodo',
@@ -204,6 +205,20 @@ export async function addTravelTag(id, tags) {
         const response = await axios({
             method: 'POST',
             url: `${PATH.TRAVEL.addTag}?travelId=${id}`,
+            data: tags,
+        });
+        return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- 여행 루트를 설정 한다. ----
+export async function setRoute(id, period, tags) {
+    try {
+        const response = await axios({
+            method: 'POST',
+            url: `${PATH.TRAVEL.setRoute}?travelId=${id}&day=${period}`,
             data: tags,
         });
         return response.data;

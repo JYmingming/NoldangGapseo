@@ -1,11 +1,10 @@
-import { defaultTagList, addTravelTag, getTravel } from '../common/api/apiList.js';
+import { defaultTagList, addTravelTag, getTravel, setRoute } from '../common/api/apiList.js';
 import { urlSearch } from '../common/urlSearchParam.js';
 
 var no = urlSearch('travelId');
 
 // ----- 선택한 태그들 배열 ----
 let selectTagIds = [];
-let selectTagName = [];
 
 // ---- tag renderin View ----
 const makeTagView = (id, name) => {
@@ -13,17 +12,14 @@ const makeTagView = (id, name) => {
     return tagView;
 };
 
-const period = '';
+let period = '';
 const travelId = no;
 
 // ---- 기본 태그를 불러온다. ----
 (async function () {
     const travelRes = await getTravel(no);
-    travelRes?.tagList?.map((m) => {
-        selectTagName.push(m.tagName);
-    });
-    console.log(travelRes);
-    console.log(selectTagName);
+    period = travelRes?.travel?.dday;
+    console.log(period);
     const response = await defaultTagList();
     response?.map((m) => {
         $('#default-box').append(makeTagView(m.tagId, m.tagName));
@@ -51,7 +47,19 @@ $('.confirm-btn').on('click', async function (e) {
         selectTagIds.push(tag);
     }
     console.log(selectTagIds);
-
-    // const response = await addTravelTag(no, selectTags);
-    // console.log(response);
+    if (selectTagIds == undefined) {
+        alert('태그를 설정해 주세요');
+        return;
+    }
+    const tagResponse = await addTravelTag(no, selectTagIds);
+    console.log(tagResponse);
+    if (tagResponse.resCode == '0000') {
+        const routeResponse = await setRoute(no, period, selectTagIds);
+        console.log(routeResponse);
+        if (routeResponse.resCode == '0000') {
+            location.href = '/travel/list/list.html';
+            return;
+        }
+    }
+    return;
 });

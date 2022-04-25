@@ -62,7 +62,8 @@
                 where       d.user_id = 1
                 and         dtl.tag_id = t.tag_id
                 and         dtl.destination_id = d.destination_id
-<!--                and         ts.travel_id = #{travelId}-->
+                and        ( ts.travel_id = #{travelId}
+                            or  ts.destination_id  != d.destination_id)
                 and         ts.destination_id  != d.destination_id
                 and         t.tag_id in
         <foreach collection="tagList" item="tagList" index="index" open="(" close=")" separator=",">
