@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 export const PATH = {
     USER: {
         list: `/user/list`,
@@ -192,7 +190,8 @@ export async function addTravel(travel = {}) {
             url: PATH.TRAVEL.addTravel,
             data: travel,
         });
-        return response;
+        console.log('response:::::', response);
+        return response.data;
     } catch (e) {
         console.log(e);
     }

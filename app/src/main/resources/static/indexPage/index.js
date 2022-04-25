@@ -1,3 +1,4 @@
+import { get4Des, addTravel } from '../common/api/apiList.js';
 // 로그인 세션 확인
 css('.login', 'display', 'none');
 css('.admin-login', 'display', 'none');
@@ -12,7 +13,7 @@ fetch('/user/getLoginUser')
             css('.login', 'display', '');
             css('.not-login', 'display', 'none');
             console.log('로그인');
-            travel.uesrId = result.data.userId;
+            travel.userId = result.data.userId;
         }
         if (result.data.userId == 1) {
             console.log('어드민 로그인');
@@ -120,7 +121,6 @@ $(function () {
 });
 
 // 4여행지
-import { get4Des } from '../common/api/apiList.js';
 
 (async function () {
     const fourDes = await get4Des();
@@ -141,33 +141,48 @@ const travel = {
     startDate: '',
     endDate: '',
     travelName: '',
-    uesrId: '',
+    userId: '',
 };
 
 document.querySelector('#datepicker_start').onchange = function () {
-    travel.startDate =document.querySelector('#datepicker_start').value;
+    travel.startDate = document.querySelector('#datepicker_start').value;
     console.log(travel.startDate);
 };
 document.querySelector('#datepicker_end').onchange = function () {
-    travel.endDate =document.querySelector('#datepicker_start').value;
+    travel.endDate = document.querySelector('#datepicker_start').value;
     console.log(travel.endDate);
 };
 
 document.querySelector('#thema-btn').onclick = function () {
-    travel.travelName =document.querySelector('#thema-input').value;
+    travel.travelName = document.querySelector('#thema-input').value;
     console.log(travel.travelName);
 };
 
-document.querySelector('#makeDec-btn').onclick = function () {
-    console.log("시작일:"+travel.startDate+"종료일 :"+travel.endDate+"여행이름"+travel.travelName+"아이디번호"+travel.uesrId);
-    if (travel.uesrId==""){
-        alert("로그인이 필요합니다.")
+document.querySelector('#makeDec-btn').onclick = async function () {
+    console.log(
+        '시작일:' +
+            travel.startDate +
+            '종료일 :' +
+            travel.endDate +
+            '여행이름' +
+            travel.travelName +
+            '아이디번호' +
+            travel.userId
+    );
+    if (travel.userId == '') {
+        alert('로그인이 필요합니다.');
         return;
-    }else if(travel.startDate==""||travel.endDate==""||travel.travelName==""){
-        alert("값을 입력해주세요.")
+    } else if (travel.startDate == '' || travel.endDate == '' || travel.travelName == '') {
+        alert('값을 입력해주세요.');
         return;
     }
-    console.log("만들기 성공!")
+    console.log('만들기 성공!');
+    const response = await addTravel(travel);
+    console.log('response.data:::::', response);
+    if (response.resCode == '0000') {
+        location.href = `/tag/tag.html?travelId=${response.data}`;
+    }
+    return;
 };
 // 여행 이름을 설정 하고 확인 버튼을 누르면
 // travel.startDate = startDate.value;

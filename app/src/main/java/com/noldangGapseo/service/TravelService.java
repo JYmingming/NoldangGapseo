@@ -37,7 +37,7 @@ public class TravelService {
         if(addResponse == 0){
             apiResponse.setResCode("1111").setResStatus("fail");
         }
-        return apiResponse;
+        return apiResponse.setData(travel.getTravelId());
     }
 
     // 여행 태그 설정

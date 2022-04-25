@@ -28,7 +28,7 @@
     </select>
 
     <!-- 여행을 생성한다. -->
-    <insert id="addTravel" parameterType="Travel">
+    <insert id="addTravel" parameterType="Travel" keyProperty="travelId" keyColumn="travel_id" useGeneratedKeys="true">
         INSERT
         INTO    travel 	(user_id, travel_name, start_date, end_date)
         values  		(#{userId}, #{travelName}, #{startDate}, #{endDate})
