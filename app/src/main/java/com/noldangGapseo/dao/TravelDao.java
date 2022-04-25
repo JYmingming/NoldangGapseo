@@ -19,6 +19,10 @@ public interface TravelDao {
 
   public Integer setRoute(@Param("travelId") Integer travelId, @Param("day") Integer day, @Param("tagList") List<Integer> tagList);
 
+  public List<Schedule> getRoute(@Param("travelId") Integer travelId, @Param("day") Integer day);
+
+  public Integer getPeriod(Integer travelId);
+
   public Integer updateName(@Param("name") String name, @Param("id") Integer id);
 
   public List<Companion> companionList(Integer travelId);

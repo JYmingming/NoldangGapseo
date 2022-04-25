@@ -2,21 +2,10 @@ package com.noldangGapseo.controller;
 
 
 import java.util.List;
+
+import com.noldangGapseo.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import com.noldangGapseo.domain.ApiResponse;
-import com.noldangGapseo.domain.Cost;
-import com.noldangGapseo.domain.Tag;
-import com.noldangGapseo.domain.Todo;
-import com.noldangGapseo.domain.Travel;
-import com.noldangGapseo.domain.TravelResponse;
+import org.springframework.web.bind.annotation.*;
 import com.noldangGapseo.service.TravelService;
 
 @RestController
@@ -54,6 +43,18 @@ public class TravelController {
   @PostMapping("/set/route")
   public ApiResponse setRoute(@RequestParam Integer travelId,@RequestParam Integer day,@RequestBody List<Tag> tagList){
     return  service.setRoute(travelId, day, tagList);
+  }
+
+  // 여행 루트를 날짜별로 가져온다.
+  @GetMapping("/get/routes")
+  public List<Schedule> getRoute(@RequestParam Integer id, @RequestParam Integer day){
+    return service.getRoute(id, day);
+  }
+
+  // 여행 기간을 가져온다.
+  @GetMapping("/get/period")
+  public Integer getPeriod(@RequestParam Integer id){
+    return service.getPeriod(id);
   }
 
   // 여행의 비용 항목을 불러온다.

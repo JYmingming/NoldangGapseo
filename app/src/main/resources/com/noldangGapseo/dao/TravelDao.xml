@@ -17,6 +17,8 @@
 
     <resultMap id="costMap" type="cost"></resultMap>
 
+    <resultMap id="scheduleMap" type="Schedule"></resultMap>
+
     <!-- 유저의 여행 리스트를 불러온다 -->
     <select id="travelList" resultMap="travelMap" parameterType="String">
         SELECT      t.travel_id , t.travel_name , CONCAT(t.start_date, '~' ,t.end_date) period,
@@ -90,6 +92,31 @@
         where       t.travel_id = #{travelId}
         and         t.user_id = u.user_id
         group by    t.travel_name;
+    </select>
+
+    <!-- 여행 루트를 불러온다. -->
+    <select id="getRoute" resultMap="scheduleMap">
+        SELECT 		ts.schedule_id,
+                    ts.destination_id,
+                    d.destination_name,
+                    d.contents,
+                    dt.destination_type_name type_name,
+                    d.latitude,
+                    d.longitude,
+                    ts.route_index
+        FROM 		travel_schedule ts , destination d , destination_type dt
+        WHERE 		ts.travel_id = #{travelId}
+        and 		ts.`day` = #{day}
+        and 		ts.destination_id = d.destination_id
+        and 		d.destination_type_id = dt.destination_type_id
+        GROUP by 	route_index
+    </select>
+
+    <!-- 여행의 기간을 가져온다. -->
+    <select id="getPeriod" resultType="Integer" parameterType="Integer">
+        SELECT 	DATEDIFF(DATE_FORMAT(t.end_date , '%Y-%m-%d.') , DATE_FORMAT(t.start_date ,'%Y-%m-%d.')) period
+        FROM 	travel t
+        WHERE 	t.travel_id = #{travelId}
     </select>
 
     <!-- 여행의 이름을 바꾼다. -->

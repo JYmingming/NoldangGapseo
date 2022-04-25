@@ -1,4 +1,4 @@
-import { urlSearch } from '../../../common/urlSearchParam.js';
+import { urlSearch, getRoutes } from '../../../common/urlSearchParam.js';
 
 const no = urlSearch('travelId');
 // ---- 뒤로가기 ----
@@ -28,6 +28,12 @@ function getDirection() {
 
     return direction;
 }
+
+// ---- route 가져오기 ----
+(async function () {
+    const route = await getRoutes(no, 1);
+    console.log(route);
+});
 
 // ---- map ----
 var container = document.getElementById('map');

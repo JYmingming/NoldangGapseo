@@ -5,16 +5,11 @@ import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.noldangGapseo.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.noldangGapseo.dao.TagDao;
 import com.noldangGapseo.dao.TravelDao;
-import com.noldangGapseo.domain.ApiResponse;
-import com.noldangGapseo.domain.Cost;
-import com.noldangGapseo.domain.Tag;
-import com.noldangGapseo.domain.Todo;
-import com.noldangGapseo.domain.Travel;
-import com.noldangGapseo.domain.TravelResponse;
 
 @Service
 public class TravelService {
@@ -69,19 +64,28 @@ public class TravelService {
     public ApiResponse setRoute(Integer travelId, Integer days, List<Tag> list) {
         System.out.println(list);
         ArrayList<Integer> tagList = new ArrayList<>();
-        for(Tag tag : list){
+        for (Tag tag : list) {
             tagList.add(tag.getTagId());
         }
         System.out.println(tagList);
-                Integer response = null;
-                for (int i = 0; i < days; i++) {
-                    Integer day = i+1;
-                  response = mapper.setRoute(travelId, day, tagList);
-                }
-                System.out.println(response);
+        Integer response = null;
+        for (int i = 0; i < days; i++) {
+            Integer day = i + 1;
+            response = mapper.setRoute(travelId, day, tagList);
+        }
+        System.out.println(response);
         return new ApiResponse();
     }
 
+    // 여행의 루트를 날짜별로 가져온다.
+    public List<Schedule> getRoute(Integer travelId, Integer day) {
+        return mapper.getRoute(travelId, day);
+    }
+
+    // 여행의 기간을 가져온다.
+    public Integer getPeriod(Integer travelId) {
+        return mapper.getPeriod(travelId);
+    }
 
     // 여행의 이름 바꾼다.
     // 성공시 바뀐 이름을 return.

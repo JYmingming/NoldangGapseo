@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export const PATH = {
     USER: {
         list: `/user/list`,
@@ -18,6 +20,8 @@ export const PATH = {
         addTravel: '/travel/add/travel',
         addTag: '/travel/add/tag',
         setRoute: '/travel/set/route',
+        getRoutes: '/travel/get/routes',
+        getPeriod: '/travel/get/period',
         updateName: '/travel/updateName',
         todoList: '/travel/todoList',
         addTodo: '/travel/addTodo',
@@ -221,6 +225,16 @@ export async function setRoute(id, period, tags) {
             url: `${PATH.TRAVEL.setRoute}?travelId=${id}&day=${period}`,
             data: tags,
         });
+        return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- 여행 날짜별 루트를 가져온다. ----
+export async function getRoutes(id, day) {
+    try {
+        const response = await axios(`${PATH.TRAVEL.getRoutes}?id=${id}&day=${day}`);
         return response.data;
     } catch (e) {
         console.log(e);
