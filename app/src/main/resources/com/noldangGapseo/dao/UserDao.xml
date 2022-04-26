@@ -8,6 +8,9 @@
 
     <resultMap type="user" id="userMap">
     </resultMap>
+    
+    <resultMap type="invite" id="inviteMap" >
+    </resultMap>
 
     <insert id="insert" parameterType="user">
         insert into user(email,pwd,nick_name,phone)
@@ -32,7 +35,7 @@
             nick_name,
             email
         from
-            user u
+            user 
         where
              pwd=password(#{password}) 
     </select>
@@ -41,7 +44,7 @@
     <select id="findAll"  resultMap="userMap">
        SELECT 
        user_Id , email, phone, nick_name, reg_date 
-       FROM user u
+       FROM user 
         where not user_id = 1
         
     </select>
@@ -78,10 +81,22 @@
       phone,
       nick_name
     from 
-      user u
+      user 
     where 
       user_id=#{userId}
   </select>
+  
+  <select id="inviteList" resultMap="inviteMap" parameterType="String">
+        SELECT      i.invited_nickName, i.travel_name 
+        FROM        invite i , user u
+        WHERE       i.user_nickName = u.nick_name
+        and         u.nick_name = #{nickName}
+    </select>
+  
+  <delete id="delete" parameterType="int">
+    delete from user 
+    where user_id=#{userId}
+  </delete>
   
   
 </mapper>

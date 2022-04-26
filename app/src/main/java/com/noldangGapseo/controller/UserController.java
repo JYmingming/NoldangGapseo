@@ -4,11 +4,14 @@ import java.util.List;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.noldangGapseo.domain.ApiResponse;
+import com.noldangGapseo.domain.Invite;
 import com.noldangGapseo.domain.User;
 import com.noldangGapseo.domain.UserResponse;
 import com.noldangGapseo.service.UserService;
@@ -18,10 +21,10 @@ import com.noldangGapseo.service.UserService;
 @RequestMapping("/user")
 public class UserController {
 
+  private static final org.slf4j.Logger log = LoggerFactory.getLogger(UserController.class);
 
   @Autowired
   UserService service;
-  private Integer userId;
 
   @RequestMapping("/signup")
   public ApiResponse signUp(User user){
@@ -121,13 +124,34 @@ public class UserController {
     return new ApiResponse().setResStatus("success").setData(user);
   }
 
+  @GetMapping("/inviteList")
+  public List<Invite> inviteList(@RequestParam String invitedNick, @RequestParam String travelName ) {
+    return service.inviteList(invitedNick, travelName);
+  }
 
   @RequestMapping("/update")
   public Object update(User user, HttpSession session) {
-    User userUpdate = (User) session.getAttribute("loginUser");
-    user.setUserId(userId);
-    int count = service.update(userUpdate);
+    log.debug(user.toString());
+    User loginUser = (User) session.getAttribute("loginUser");
+    user.setUserId(loginUser.getUserId());
 
+    int count = service.update(user);
+
+
+    if (count == 1) {
+      return new ApiResponse().setResStatus("success");
+    } else {
+      return new ApiResponse().setResStatus("fail").setData("게시글 번호가 유효하지 않거나 게시글 작성자가 아닙니다.");
+    }
+  }
+
+  @RequestMapping("/delete")
+  public Object delete(User user, HttpSession session) {
+    User loginUser = (User) session.getAttribute("loginUser");
+    User delUser = new User();
+    user.setUserId(loginUser.getUserId());
+
+    int count =service.delete(user);
 
     if (count == 1) {
       return new ApiResponse().setResStatus("success");

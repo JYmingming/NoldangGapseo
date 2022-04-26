@@ -6,6 +6,8 @@
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="myPageMain.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script>
             $(document).ready(function () {
                 $('.headers').load('../../common/header/header.html');
@@ -56,16 +58,24 @@
 
       <div class="second_container">
           <h5>나의 위시리스트</h5>
-          <div class="box2">
-          </div>
-          <div class="wishList_box">
-              <ul a href="#" onclick="location.href='../../../map/mapDetail.html'"></ul>
-              <ul a href="#" onclick="location.href='../../../map/mapDetail.html'"></ul>
-              <ul a href="#" onclick="location.href='../../../map/mapDetail.html'"></ul>
-              <ul a href="#" onclick="location.href='../../../map/mapDetail.html'"></ul>
-          </div>
+          <div class="box2"></div>
+            <div class="wishList_box">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                        <div class="swiper-slide"><div class="d-flex"></div></div>
+                        <div class="swiper-slide"><div class="d-flex"></div></div>
+                        <div class="swiper-slide"><div class="d-flex"></div></div>
+                        <div class="swiper-slide"><div class="d-flex"></div></div>
+                        <div class="swiper-slide"><div class="d-flex"></div></div>
+                        <div class="swiper-slide"><div class="d-flex"></div></div>
+                 </div>
+              
+                 <div class="swiper-button-next next-c"></div>
+                 <div class="swiper-button-prev prev-c"></div>
+              </div>
+             </div>
+          
       </div>
-    </div>
 
   <footer>
   

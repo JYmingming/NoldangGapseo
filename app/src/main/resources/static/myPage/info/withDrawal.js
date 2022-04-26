@@ -6,37 +6,57 @@ import { getLoginUser, findByNickName } from '../../common/api/apiList.js';
     const response = await findByNickName(session.data.nickName);
     console.log(response);
 })();
+var arr = location.href.split('?');
+
+if (arr.length == 1) {
+    alert('요청 형식이 옳바르지 않습니다.');
+    throw 'URL 형식 오류!';
+}
+
+var qs = arr[1];
+
+// 쿼리 스트링에서 email 값을 추출한다.
+var params = new URLSearchParams(qs);
+var no = params.get("userId");
+
+if (no == null) {
+    alert('게시물 번호가 없습니다.');
+    throw '파라미터 오류!';
+}
 
 
-    var xNick = document.querySelector("#x-nick");
-    var xInfoNick = document.querySelector("#x-infoNick");
-    var xInfoEmail = document.querySelector("#x-infoEmail");
+var xNick = document.querySelector("#x-nick");
+var xInfoNick = document.querySelector("#x-infoNick");
+var xInfoEmail = document.querySelector("#x-infoEmail");
     
-    fetch("/user/getLoginUser")
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(result) {
-        console.log(result.data);
-        
-        
-         var user = result.data;
+fetch(`/user/get?userId=${no}`)
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(result) {
+    if (result.status == "fail") {
+      window.alert("서버 요청 오류!");
+      console.log(result.data);
+      return;
+    }
+  
+    var user = result.data;
          
-         xNick.innerHTML = user.nickName;
-         xInfoNick.innerHTML = user.nickName;
-         xInfoEmail.innerHTML = user.email;
-      })
+    xNick.innerHTML = user.nickName;
+    xInfoNick.innerHTML = user.nickName;
+    xInfoEmail.innerHTML = user.email;
+  });
 
         // 비밀번호 재확인
       
-        var xPassword = document.querySelector("#password");
+       /* var xPassword = document.querySelector("#password");
 
-        document.querySelector("form[name=form1]").onsubmit = function() {
+        document.querySelector("form[name=form2]").onsubmit = function() {
             if ( xPassword.value == "" ) {
                 window.alert("필수 입력 항목이 비어 있습니다.");
                 return false;
             }
-            var fd = new FormData(document.forms.namedItem("form1"));
+            var fd = new FormData(document.forms.namedItem("form2"));
 
             fetch("/user/resignin", {
                 method: "POST",
@@ -52,6 +72,23 @@ import { getLoginUser, findByNickName } from '../../common/api/apiList.js';
                         window.alert("비밀번호가 맞지 않습니다!")
                     }
                 });
-            return false;
-        };
+            return false;*/
+document.querySelector("#btn2").onclick = function() {
+fetch(`/user/delete?userId=${no}`)
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(result) {
+    
+    if (result.resStatus == "success") {
+      window.alert("회원탈퇴가 정상적으로 이루어졌습니다!");
+      fetch("/user/signout").then(function(response) {
+            location.href = "../../indexPage/index.html";
+      });
+    } else {
+      window.alert("회원탈퇴 실패!");
+      console.log(result.data);
+      }
+    });
+};
 

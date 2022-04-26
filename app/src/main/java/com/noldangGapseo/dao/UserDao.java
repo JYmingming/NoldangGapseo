@@ -3,6 +3,7 @@ package com.noldangGapseo.dao;
 import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import com.noldangGapseo.domain.Invite;
 import com.noldangGapseo.domain.User;
 
 @Mapper
@@ -20,14 +21,15 @@ public interface UserDao {
 
   int update(User user);
 
+  int delete(User user);
+
   User get(int userId);
 
   User findByNo(int userId);
 
   int checkNickname(String nickname);
 
-
-
+  List<Invite> inviteList(String invitedNick, String travelName);
 
 }
 

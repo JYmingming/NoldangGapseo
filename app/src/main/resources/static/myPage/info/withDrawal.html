@@ -27,10 +27,10 @@
                     <h5 id= "col1">계정관리</h5>
                   </li>
                   <li class ="col-3">
-                    <h5 id="col2" a href="#" onclick="location.href='infoManage.html'"><a href="#">내 정보</a></h5>
+                    <h5 id="col2" onclick="location.href='infoManage.html'"><a href="#">내 정보</a></h5>
                   </li>
                   <li class ="col-3">
-                    <h5 id="col3" a href="#" onclick="location.href='password.html'"><a href="#">비밀번호 변경</a></h5>
+                    <h5 id="col3" onclick="location.href='password.html'"><a href="#">비밀번호 변경</a></h5>
                   </li>
                   <li class ="col-3">
                     <h5 id="col4"><a href="#">회원탈퇴</a></h5>
@@ -90,14 +90,14 @@
               <div class="extra_text">
                 <h6>별표(*)는 필수입력 항목입니다.</h6>
               </div>
-              <form name="form1">
+              <form name="form2">
                 <table>
                   <tbody>
                     <tr>
                       <td id="td-1">닉네임</td><td id="null"><span id="x-nick"></span></td>
                     </tr>
                     <tr>
-                      <td id="td-2">비밀번호*</td><td id="null"><input id="password" type="password" placeholder="비밀번호를 입력해주세요."></td>
+                      <td id="td-2">비밀번호*</td><td id="null"><input id="password" type="password" name="password" placeholder="비밀번호를 입력해주세요."></td>
                     </tr>
                   </tbody>
                 </table>
@@ -132,7 +132,9 @@
   <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
   <script src="./withDrawal.js" type="module"></script>
   <script>
-  window.onload = function() {
+  
+  /* -----모달--------- */
+  /* window.onload = function() {
     
       function onClick() {
           document.querySelector('.modal_wrap').style.display ='block';
@@ -148,7 +150,7 @@
    
   };
   
-  
+   */
 
 
   </script>

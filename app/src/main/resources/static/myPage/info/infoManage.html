@@ -20,7 +20,7 @@
           <div class="first_box1">
           </div>
           <div class="first_box2">
-              <h5 a href="#" onclick="location.href='../main/myPageMain.html'"><a href="#">마이페이지</a></h5>
+              <h5  onclick="location.href='../main/myPageMain.html'"><a href="#">마이페이지</a></h5>
           </div>
           <div class="first_box3">
               <ul class="row">
@@ -28,13 +28,13 @@
                     <h5 id= "col1">계정관리</h5>
                   </li>
                   <li class ="col-3">
-                    <h4 id="col2"><a href="#">내 정보</a></h4>
+                    <h4 id="col2"><a>내 정보</a></h4>
                   </li>
                   <li class ="col-3">
-                    <h4 id="col3" a href="#" onclick="location.href='password.html'"><a href="#">비밀번호 변경</a></h4>
+                    <h4 id="col3" onclick="location.href='password.html'"><a href="#">비밀번호 변경</a></h4>
                   </li>
                   <li class ="col-3">
-                    <h4 id="col4" a href="#" onclick="location.href='withDrawal.html'"><a href="#">회원탈퇴</a></h4>
+                    <h4 id="col4"><a href="#">회원탈퇴</a></h4>
                   </li>   
                </ul>
                
@@ -53,7 +53,7 @@
                       <h5 id="x-infoNick"></h5>
                       <h6 id="x-infoEmail"></h6>
                       <div class="logout">
-                          <button id="btn1" a href="#" onclick="location.href='../../indexPage/index.html'">Logout</button>
+                          <button id="btn1"  onclick="location.href='../../indexPage/index.html'">Logout</button>
                       </div>
                   </div>
                   <div class="line"></div>
@@ -62,16 +62,16 @@
                     <table>
                         <tbody>
                           <tr>
-                            <td id="img1" a href="#" onclick="location.href='infoManage.html'"></td>
-                            <td id="img2" a href="#" onclick="location.href='../tag/groupTag.html'"></td>
+                            <td id="img1"  onclick="location.href='infoManage.html'"></td>
+                            <td id="img2"  onclick="location.href='../tag/groupTag.html'"></td>
                           </tr>
                           <tr>
                             <td id="img1_text">계정관리</td>
                             <td id="img2_text">그룹태그</td>
                           </tr>
                           <tr>
-                            <td id="img3"  a href="#" onclick="location.href='../wishList/wishList.html'"></td>
-                            <td id="img4" a href="#" onclick="location.href='../invite/invitedList.html'"></td>
+                            <td id="img3"  onclick="location.href='../wishList/wishList.html'"></td>
+                            <td id="img4"  onclick="location.href='../invite/invitedList.html'"></td>
                           </tr>
                           <tr>
                             <td id="img3_text">위시리스트</td>
@@ -95,7 +95,7 @@
                   </tr>
                   <tr>
                     <td id="td-3">이메일</td>
-                    <td id="null"><span id="x-email">test@test.com</span></td>
+                    <td id="null"><span id="x-email"></span></td>
                   </tr>                  
                 </tbody>
               </table>
@@ -128,49 +128,7 @@
 <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
 <script src="./infoManage.js" type="module"></script>
 <script type="text/javascript">
-var xNick = document.querySelector("#x-nick");
-var xPhoneNumber = document.querySelector("#x-phoneNumber");
-var xEmail = document.querySelector("#x-email");
-var xInfoNick = document.querySelector("#x-infoNick");
-var xInfoEmail = document.querySelector("#x-infoEmail");
 
-fetch("/user/getLoginUser")
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(result) {
-    console.log(result.data);
-    
-     
-     var user = result.data;
-     
-     xNick.innerHTML = user.nickName;
-     xPhoneNumber.innerHTML = user.phone;
-     xEmail.innerHTML = user.email;
-     xInfoNick.innerHTML = user.nickName;
-     xInfoEmail.innerHTML = user.email;
-     
-
-
-
-var arr = location.href.split('?');
-
-if (arr.length == 1) {
-}
-
-var qs = arr[1];
-
-// 쿼리 스트링에서 email 값을 추출한다.
-var params = new URLSearchParams(qs);
-var no = user.userId;
-
-console.log(no);
-
-$('#btn2').click(function (e) {
-    e.preventDefault();
-    window.location.href=`infoManage_edit.html?userId=${no}`;
-});
-})
 </script>
 </body>
 </html>

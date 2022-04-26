@@ -25,78 +25,72 @@ if (no == null) {
     throw '파라미터 오류!';
 }
 
-    var xNick = document.querySelector("#id_edit");
-    var xPhoneNumber = document.querySelector("#phoneNum_edit");
-    var xEmail = document.querySelector("#email_edit");
+var xNick = document.querySelector("#id_edit");
+var xPhoneNumber = document.querySelector("#phoneNum_edit");
+var xEmail = document.querySelector("#email_edit");
+
+var UBtn = document.querySelector("#btn2");
     
-    var UBtn = document.querySelector("#btn2");
-    var CBtn = document.querySelector("#check-btn");
     
+fetch(`/user/get?userId=${no}`)
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(result) {
+    if (result.status == "fail") {
+      window.alert("서버 요청 오류!");
+      console.log(result.data);
+      return;
+    }
     
-    fetch(`/user/get?userId=${no}`)
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(result) {
-      if (result.status == "fail") {
-        window.alert("서버 요청 오류!");
-        console.log(result.data);
-        return;
-      }
-        
-         var user = result.data;
-         
-         xNick.value = user.nickName;
-         xPhoneNumber.value = user.phone;
-         xEmail.value = user.email;
-      })
+    var user = result.data;
      
-     UBtn.onclick = function() {
+    xNick.value = user.nickName;
+    xPhoneNumber.value = user.phone;
+    xEmail.value = user.email;
+  });
+     
+UBtn.onclick = function() {
+  
+  document.querySelector("#update-form").onsubmit = function() {
+            if ( xNick.value == "" || xPhoneNumber.value == "" ) {
+                return false;
+            }
+    }
+  
+  var fd = new FormData(document.querySelector("#update-form"));
+  //if (xReadDate.value == "") { // 독서일을 지정하지 않았으면 서버에 보내지 않는다.
+   // fd.delete("readDate");
+  //}
     
-    
-    var fd = new FormData(document.forms.namedItem("form1"));
-      
-    //if (xReadDate.value == "") { // 독서일을 지정하지 않았으면 서버에 보내지 않는다.
-     // fd.delete("readDate");
-    //}
-    
-    // 변경할 독서록 데이터의 PK 값을 FormData에 추가한다.
-    
-    fetch("/user/update", {
-        method: "POST",
-        body: new URLSearchParams(fd)
-      }).then(function(response) {
-        return response.json();
-      })
-      .then(function(result) {
-        if (result.resStatus == "success") {
-          window.alert("내 정보 변경 완료!");
-          location.href = "infoManage.html";
-        } else {
-          window.alert("내 정보 변경 실패!");
-          console.log(result.data);
-          console.log(result.resStatus);
-        }
-      });
-      }
-      
-      CBtn.onclick = function() {  
-    fetch("/user/checkNickname")
-    
+  // 변경할 독서록 데이터의 PK 값을 FormData에 추가한다.
+  fetch("/user/update", {
+      method: "POST",
+      body: new URLSearchParams(fd)
+    })
     .then(function(response) {
       return response.json();
     })
     .then(function(result) {
-      if (xNick.value ==""){
-      window.alert("중복확인을 하려면 닉네임을 입력해주세요");
-      return;
-      } else if(result.data.ncikName == 0){
-      window.alert("사용가능한 닉네임입니다");
-      return;
-      } else if (result.data.ncikName == 1){
-      window.alert("이미 사용중인 닉네임입니다");
-      return;
+      
+      if (result.resStatus == "success") {
+        window.alert("내 정보 수정이 완료되었으니 다시 로그인해 주세요!");
+        fetch("/user/signout").then(function(response) {
+            location.href = "../../indexPage/index.html";
+        });
+      } else {
+        window.alert("모든 항목을 입력해 주세요!");
+        console.log(result.data);
+        console.log(result.resStatus);
       }
+      
     });
-   
-  }
+    
+    
+};
+
+$('#col4').on('click', function (e) {
+    e.preventDefault();
+    location.href = `withDrawal.html?userId=${no}`;
+});
+      

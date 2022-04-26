@@ -1,6 +1,5 @@
 package com.noldangGapseo.domain;
 
-import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,16 +11,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper=false)
-public class User {
+public class Invite {
 
 
-  private Integer userId;
-  private String nickName;
-  private String password;
-  private String email;
-  private String phone;
-  private String regDate;
-  private Date updateDate;
-  private String profileImg;
-
+  private Integer inviteId;
+  private String userNick;
+  private String invitedNick;
+  private String travelName;
 }

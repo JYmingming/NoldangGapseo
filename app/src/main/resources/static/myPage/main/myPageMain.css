@@ -185,12 +185,13 @@ body{
     height: 30vh;
     display: flex;
     text-align: center;
+    margin-right: 50vw;
 }
 
-.wishList_box ul {
-    width: 20vw;
+.d-flex {
+    width: 19vw;
     height: 33vh;
-    margin-left: 2vw !important;
+    margin-left: 0.5vw !important;
     margin-top: 3vh;
     background-color: #e0e0e0;
     float: left;
@@ -215,3 +216,46 @@ footer{
     margin-top: 8vh;
     
 }
+
+/* swiper start */
+        .swiper {
+        /* border: 1px solid black; */  
+        width: 80vw;
+        height: 38vh;
+      }
+
+      .swiper-slide {
+        /* border: 1px solid black; */ 
+        text-align: center;
+        font-size: 18px;
+        
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      @media (max-width: 760px) {
+        .swiper-button-next {
+          right: 20px;
+          transform: rotate(90deg);
+          
+        }
+
+        .swiper-button-prev {
+          left: 20px;
+          transform: rotate(90deg);
+        }
+        
+      }
+  /* swiper end */
