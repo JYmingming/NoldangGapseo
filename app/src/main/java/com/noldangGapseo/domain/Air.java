@@ -13,6 +13,7 @@ import java.util.ArrayList;
 @Accessors(chain = true)
 public class Air {
   String AirType;
+  String AirUrl;
   Integer AirPrice;
   String AirStartTime;
   String AirEndTime;

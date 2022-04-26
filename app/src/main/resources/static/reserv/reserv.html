@@ -41,73 +41,50 @@
                     <p>항공권검색</p>
                     <div>
                         <button class="view-clicked" onclick="view(1)">왕복</button>
-                        <button class="view-click" onclick="view(2)">편도</button>
                     </div>
                 </div>
                 <div class="search-values">
                     <div class="row row-cols-2">
-                        <div class="col text-center search-value">
-                            <div class="value-box">
-                                <span>출발지</span><br>
-                                <select>
-                                    <option>인천공항</option>
-                                </select>
+                        <form id="air-search-form">
+                            <div class="col text-center search-value">
+                                <div class="value-box">
+                                    <span>출발지</span><br>
+                                    <select id="start-location">
+                                        <option>김포</option>
+                                        <option>서울</option>
+                                        <option>부산</option>
+                                    </select>
+                                </div>
+                                <div class="value-box">
+                                    <span>도착지</span><br>
+                                    <select>
+                                        <option>제주도</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="value-box">
-                                <span>출발지</span><br>
-                                <select>
-                                    <option>인천공항</option>
-                                </select>
+                            <div class="col text-center search-value">
+                                <div class="value-box">
+                                    <span>인원</span><br>
+                                    <select id="people-num">
+                                        <option>0명</option>
+                                        <option>1명</option>
+                                        <option>2명</option>
+                                        <option>3명</option>
+                                        <option>4명</option>
+                                    </select>
+                                </div>
+                                <div class="value-box">
+                                    <span>항공구분</span><br>
+                                    <select id="end-location-d">
+                                        <option>왕복</option>
+                                    </select>
+                                </div>
                             </div>
-
-                        </div>
-                        <div class="col text-center search-value">
-                            <div class="value-box">
-                                <span>가는날</span><br>
-                                <select>
-                                    <option>인천공항</option>
-                                </select>
-                            </div>
-                            <div class="value-box">
-                                <span>오는날</span><br>
-                                <select>
-                                    <option>인천공항</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col text-center search-value">
-                            <div class="value-box">
-                                <span>성인</span><br>
-                                <select>
-                                    <option>인천공항</option>
-                                </select>
-                            </div>
-                            <div class="value-box">
-                                <span>유아</span><br>
-                                <select>
-                                    <option>인천공항</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col search-value text-center">
-                            <div class="value-box">
-                                <span>항공사선택</span><br>
-                                <select>
-                                    <option>좌석선택</option>
-                                </select>
-                            </div>
-                            <div class="value-box">
-                                <span>출발지</span><br>
-                                <select>
-                                    <option>인천공항</option>
-                                </select>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
-
-                <div class="search-submit">
-                    <button>항공권 검색</button>
+                <div id="search-submit" >
+                    <button id="search-submit-btn">항공권 검색</button>
                 </div>
                 </form>
             </div>
@@ -120,15 +97,14 @@
                             <span>제주</span>
                         </div>
                         <div class="col-4">
-                            <img src="../img/facebook_icon.png">
-                            <span>2022 03 02(수)</span>
-                            <span>2022 03 04(금)</span>
+                            <span id="start-date">2022-05-02</span>
+                            <span>~</span>
+                            <span id="end-date">2022-05-04</span>
                         </div>
                         <div class="col-4">
                             <img src="../img/facebook_icon.png">
-                            <span>성인 1명</span>
-                            <span>유아 0명</span>
-                            <button>재검색</button>
+                            <span>인원</span>
+                            <span id="people-cnt"> 0명</span>
                         </div>
                     </div>
                     <div class="row row-cols-2 result-container">
@@ -160,31 +136,22 @@
                                 <table class="table">
                                     <thead>
                                     <tr>
+                                        <th scope="col">구분</th>
                                         <th scope="col">항공사</th>
                                         <th scope="col">출발</th>
                                         <th scope="col">도착</th>
-                                        <th scope="col">좌석구분</th>
-                                        <th scope="col">잔여석</th>
                                         <th scope="col">1인요금</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>대한항공</td>
-                                        <td>19:30</td>
-                                        <td>20:40</td>
-                                        <td>일반석</td>
-                                        <td>16</td>
-                                        <td>81,500</td>
-                                    </tr>
-                                    <tr>
-                                        <td>대한항공</td>
-                                        <td>19:30</td>
-                                        <td>20:40</td>
-                                        <td>맥반석</td>
-                                        <td>16</td>
-                                        <td>81,500</td>
-                                    </tr>
+                                        <tr>
+                                            <td><img src=""></td>
+                                            <td>대한항공</td>
+                                            <td>19:30</td>
+                                            <td>20:40</td>
+                                            <td>81,500</td>
+                                        </tr>
+
 
                                     </tbody>
                                 </table>
@@ -219,31 +186,21 @@
                                 <table class="table">
                                     <thead>
                                     <tr>
+                                        <th scope="col"></th>
                                         <th scope="col">항공사</th>
                                         <th scope="col">출발</th>
                                         <th scope="col">도착</th>
-                                        <th scope="col">좌석구분</th>
-                                        <th scope="col">잔여석</th>
                                         <th scope="col">1인요금</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>대한항공</td>
-                                        <td>19:30</td>
-                                        <td>20:40</td>
-                                        <td>일반석</td>
-                                        <td>16</td>
-                                        <td>81,500</td>
-                                    </tr>
-                                    <tr>
-                                        <td>대한항공</td>
-                                        <td>19:30</td>
-                                        <td>20:40</td>
-                                        <td>맥반석</td>
-                                        <td>16</td>
-                                        <td>81,500</td>
-                                    </tr>
+                                        <tr>
+                                            <td><img></td>
+                                            <td>대한항공</td>
+                                            <td>19:30</td>
+                                            <td>20:40</td>
+                                            <td>81,500</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -276,19 +233,33 @@
 
 </body>
     <script>
-        function view(arg) {
-            var t1 = document.getElementById("tb1");
-            var t2 = document.getElementById("tb2");
+        const searchParam = {
+            startDate: '',
+            endDate: '',
+            startLocation: '',
+        };
 
-            if(arg == 1) {
-                t1.style.display="block";
-                t2.style.display="none";
-            }
-            else {
-                t2.style.display="block";
-                t1.style.display="none";
-            }
-        }
+
+        document.querySelector("#search-submit-btn").onclick = function() {
+            searchParam.startDate= document.querySelector("#start-date").innerHTML;
+            searchParam.endDate= document.querySelector("#end-date").innerHTML;
+            searchParam.startLocation= document.querySelector("#start-location").value;
+            console.log(searchParam);
+            fetch("/reserve/getAir",{
+                method: "POST",
+                body: searchParam
+                })
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(result) {
+                    console.log(result)
+                })
+
+
+        };
     </script>
+
+
 
 </html>
