@@ -31,9 +31,10 @@
     <div class="travelListDtlCntn">
       <div class="title">뷰맛집</div>
 
-      <div style="float: left; width: 33%; margin-left: 25px">nickname</div>
+      <div class="nickName"
+        style="float: left; width: 33%; margin-left: 25px">nickname</div>
 
-      <div
+      <div class="regDate"
         style="float: right; width: 33%; margin-right: 25px; text-align: right;">2022-04-04</div>
 
       <!-- Img caruousel-->
@@ -93,7 +94,9 @@
     <div class="commentCntn">
       <a class="copy" style="float: right;">복사</a> <span class="address"
         style="float: right;">제주시 제주읍</span> <span class="btn-like">❤️</span>
-      <span class="btn-like-cnt">31</span> 🗨20
+      <span class="btn-like-cnt">31</span> <span>🗨</span> <span
+        class="btnCommentCnt">10</span>
+
       <svg style="float: right;" xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink" width="20"
         height="20" viewBox="0 0 32 32" fill="#000000"
@@ -194,11 +197,95 @@
 
     <script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
     <script>
+					// 1) URL에서 쿼리스트링(query string)을 추출한다.
+					var arr = location.href.split("?");
+					console.log(arr);
+
+					if (arr.length == 1) {
+						alert("요청 형식이 옳바르지 않습니다.")
+						throw "URL 형식 오류!";
+					}
+
+					var qs = arr[1];
+					console.log(qs);
+
+					//2) 쿼리 스트링에서 desId 값을 추출한다.
+					var params = new URLSearchParams(qs);
+					var no = params.get("desId");
+					console.log(no);
+
+					//동적으로 변화줄 elements 선택		
+					//제목
+					var title = document.querySelector(".title");
+					//아이디
+					var nickName = document.querySelector(".nickName");
+					//등록일  
+					var regDate = document.querySelector(".regDate");
+					//이미지 경로 1, 2, 3,
+					var img = document
+							.querySelectorAll(".d-block.h-auto.w-100");
+
+					var content = document.querySelector(".content");
+
+					//좋아요 수
+					var btnLikeCnt = document.querySelector(".btn-like-cnt");
+					console.log(btnLikeCnt)
+					//댓글 수   
+					var btnCommentCnt = document
+							.querySelector(".btnCommentCnt");
+					//주소
+					var address = document.querySelector(".address");
+
+					// 3) 서버에서 데이터 가져오기
+					fetch(`/destination/getDes?desId=${no}&type=N`)
+							.then(function(response) {
+								return response.json();
+							})
+							.then(
+									function(result) {
+										var getDes = result;
+
+										title.innerHTML = getDes.destination.destinationName;
+										nickName.innerHTML = getDes.destination.nickName;
+										regDate.innerHTML = getDes.destination.regDate;
+										console.log(img)
+										img[0]
+												.setAttribute(
+														"src",
+														getDes.destinationImgList[0].img)
+										img[1]
+												.setAttribute(
+														"src",
+														getDes.destinationImgList[1].img)
+										img[2]
+												.setAttribute(
+														"src",
+														getDes.destinationImgList[2].img)
+
+										content.innerHTML = getDes.destination.contents;
+										btnLikeCnt.innerHTML = getDes.destination.likesCnt
+										btnCommentCnt.innerHTML = getDes.destination.likesCnt
+	
+
+										//              console.log(getDes.destinationImgList[2].img)
+										//						console.log(img[0].src)
+										//						img[0].src.value = 
+										//		getDes.destinationList[0]
+										//.src = getDes.destinationList[0]
+										//			            console.log(getDes.destinationList[0])
+
+									})
+				</script>
+
+
+    <script>
+					//likes 버튼
 					$(".btn-like").click(function() {
 						$(this).toggleClass("done");
 					})
 				</script>
     <script>
+					//carouseol 동작
 					$(document).on(
 							"pagebeforeshow",
 							"[data-role=page]",

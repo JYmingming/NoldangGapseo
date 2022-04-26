@@ -44,7 +44,7 @@
     <div class="row">
 
       <div class="col-3">
-        <div class="card" data-idx="">
+        <div class="card">
           <img src="/img/SALON de LAVANT3.jpg" class="card-img-top"
             alt="...">
           <div class="card-body">
@@ -57,7 +57,7 @@
       </div>
 
       <div class="col-3">
-        <div class="card" data-idx="">
+        <div class="card">
           <img src="/img/SALON de LAVANT3.jpg" class="card-img-top"
             alt="...">
           <div class="card-body">
@@ -137,23 +137,7 @@
         </div>
       </div>
     </div>
-    <!--
-    <ul class="pagination">
-      <li class="page-item"><a class="page-link" href="#"
-        aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
-      </a></li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item"><a class="page-link" href="#"
-        aria-label="Next"> <span aria-hidden="true">&raquo;</span>
-      </a></li>
-    </ul>
--->
-    <!-- 
-    <a class="page">1</a> <a class="page">2</a> <a class="page">3</a> <a
-      class="page">4</a> <a class="page">5</a>
- -->
+
 
     <div class="pagination">
       <section>
@@ -897,18 +881,22 @@
 
   <script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
   <script>
-      // myBoard 버튼 클릭시 발생 이벤트
+			// myBoard 버튼 클릭시 발생 이벤트
 			$(".myBoard").click(function() {
 				location.href = "/travel/myboard/myboard.html"
 			})
 
-			//카드 클릭시 발생 이벤트
+			//카드 클릭시 data-idx 값을 구한다.
 			$(".card").on("click", function(e) {
-				console.log(e.target.parentNode["className"]);
-				
-//				location.href = "/userDestination/userDestinationDtl3.html"
+				let a =e.target.parentNode.getAttribute("data-idx");
+
+//              location.href = `/destination/getDes?desId=${a}&type=N`
+                  location.href = `/userDestination/userDestinationDtl3.html?desId=${a}`
 			})
-      //하단에 페이지 번호 클릭시 발생 이벤트 
+
+
+
+			//하단에 페이지 번호 클릭시 발생 이벤트 
 			$("body").on("click", ".paginationjs-page.J-paginationjs-page",
 					function(e) {
 						a(e.target.innerText)
@@ -916,20 +904,20 @@
 
 			a(1) //userDestination.html이 로드 되면 우선 a(1) 함수(1 page를 로드 하는 기능)를 실행한다.
 			function a(dv) {
-    	  //각각의 카드에 업체명 요소 선택
+				//각각의 카드에 업체명 요소 선택
 				const b = document.querySelectorAll(".card-title")
-        //각각의 카드에 이미지(사진) 요소 선택
+				//각각의 카드에 이미지(사진) 요소 선택
 				const c = document.querySelectorAll(".card-img-top")
-        //각각의 카드에 좋아요 갯수 요소 선택
+				//각각의 카드에 좋아요 갯수 요소 선택
 				const d = document.querySelectorAll(".likesCnt")
-        //각각의 카드에 댓글 갯수 요소 선택
+				//각각의 카드에 댓글 갯수 요소 선택
 				const e = document.querySelectorAll(".commentsCnt")
-        //각각의 카드에 data-idx 설정을 위해서 카드 요소 선택
+				//각각의 카드에 data-idx 설정을 위해서 카드 요소 선택
 				const f = document.querySelectorAll(".card");
 				console.log(c);
 				console.log(d);
 				console.log(e);
-				
+
 				console.log(f[0]);
 				fetch(`/destination/admin/pagelist?pageNo=${dv}&pageSize=8`)
 
