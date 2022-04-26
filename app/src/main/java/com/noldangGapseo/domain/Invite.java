@@ -15,7 +15,8 @@ public class Invite {
 
 
   private Integer inviteId;
-  private String userNick;
-  private String invitedNick;
+  private String userNickName;
+  private String invitedNickName;
   private String travelName;
+  private String nickName;
 }

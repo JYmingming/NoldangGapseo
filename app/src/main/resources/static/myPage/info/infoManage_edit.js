@@ -28,6 +28,9 @@ if (no == null) {
 var xNick = document.querySelector("#id_edit");
 var xPhoneNumber = document.querySelector("#phoneNum_edit");
 var xEmail = document.querySelector("#email_edit");
+var xProfile = document.querySelector(".user_photo");
+var xInfoNick = document.querySelector("#x-infoNick");
+var xInfoEmail = document.querySelector("#x-infoEmail");
 
 var UBtn = document.querySelector("#btn2");
     
@@ -48,6 +51,9 @@ fetch(`/user/get?userId=${no}`)
     xNick.value = user.nickName;
     xPhoneNumber.value = user.phone;
     xEmail.value = user.email;
+    xProfile.src = user.profileImg;
+    xInfoNick.innerHTML = user.nickName;
+    xInfoEmail.innerHTML = user.email;
   });
      
 UBtn.onclick = function() {

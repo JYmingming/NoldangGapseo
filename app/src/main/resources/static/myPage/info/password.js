@@ -11,6 +11,7 @@ import { getLoginUser, findByNickName } from '../../common/api/apiList.js';
     var xNick = document.querySelector("#x-nick");
     var xInfoNick = document.querySelector("#x-infoNick");
     var xInfoEmail = document.querySelector("#x-infoEmail");
+    var xProfile = document.querySelector(".user_photo");
     
     
     fetch("/user/getLoginUser")
@@ -26,6 +27,7 @@ import { getLoginUser, findByNickName } from '../../common/api/apiList.js';
          xNick.innerHTML = user.nickName;
          xInfoNick.innerHTML = user.nickName;
          xInfoEmail.innerHTML = user.email;
+         xProfile.src = user.profileImg;
       
 /*      // 비밀번호 재확인
         var xPassword = document.querySelector("#password");
@@ -55,9 +57,15 @@ import { getLoginUser, findByNickName } from '../../common/api/apiList.js';
             
 };*/
 var no = user.userId;
+var name = user.nickName;
  
 $('#col4').on('click', function (e) {
     e.preventDefault();
     location.href = `withDrawal.html?userId=${no}`;
+});
+
+$('#img4').on('click', function (e) {
+    e.preventDefault();
+    location.href = `../invite/invitedList.html?nickName=${name}`;
 });
 })

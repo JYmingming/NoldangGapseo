@@ -7,6 +7,24 @@ import { getLoginUser, findByNickName } from '../../common/api/apiList.js';
     console.log(response);
 })();
 
+var xProfile = document.querySelector(".user_photo");
+var xInfoNick = document.querySelector("#x-infoNick");
+var xInfoEmail = document.querySelector("#x-infoEmail");
+
+fetch("/user/getLoginUser")
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(result) {
+    console.log(result.data);
+
+ var user = result.data;
+
+ xProfile.src = user.profileImg;
+ xInfoNick.innerHTML = user.nickName;
+ xInfoEmail.innerHTML = user.email;
+     
+
 var arr = location.href.split('?');
 
 if (arr.length == 1) {
@@ -24,3 +42,53 @@ if (no == null) {
     alert('게시물 번호가 없습니다.');
     throw '파라미터 오류!';
 }
+
+let a;
+
+const inviteNick = document.querySelectorAll("#td-nick")
+
+fetch(`/user/inviteList?nickName=${no}`)
+  .then(function(response) {
+        return response.json();
+      })
+      .then(function(result) {
+        console.log(result);
+        
+            for (var i = 0; i < 5; i++) {
+              inviteNick[i].innerHTML =result[i].invitedNickName;
+              }
+})
+
+let c;
+
+const InviteTravel = document.querySelectorAll("#td-travel")
+
+fetch(`/user/inviteList?nickName=${no}`)
+  .then(function(response) {
+        return response.json();
+      })
+      .then(function(result) {
+        console.log(result);
+        
+            for (var i = 0; i < 5; i++) {
+              InviteTravel[i].innerHTML =result[i].travelName;
+              }
+      })
+
+$('#btn2').click(function removeCheck() {
+
+     if (confirm("정말로 삭제 하시겠습니까??") == true){    //확인
+
+         document.removefrm.submit();
+
+     }else{   //취소
+
+         return false;
+
+     }
+
+    }
+);
+
+
+});

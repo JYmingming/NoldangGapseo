@@ -22,11 +22,14 @@
           <div class="box1">
           </div>
           <div class="contents_box">
-            
               <div class="user">
-                  <div class="user_photo">
-                    <input type="file" class="real-upload" accept="image/*" required multiple style="display: none;">
-                  </div>
+                <div class="user_img">
+                    <form id="imgForm">
+                      <input class="real-upload"  id="myFile" type="file" accept="image/*" required multiple style="display: none;">
+                      <img class="user_photo" id="View" src="#" >
+                      </img>
+                    </form>
+                </div>
                   <div class="user_info">
                       <h5 id="x-infoNick"></h5>
                       <h6 id="x-infoEmail"></h6>
@@ -87,6 +90,22 @@
   const upload = document.querySelector('.user_photo');
 
   upload.addEventListener('click', () => realUpload.click());
+  
+  $(function() {
+	    $("#myFile").on('change', function(){
+	    readURL(this);
+	    });
+	});
+  
+	function readURL(input) {
+	    if (input.files && input.files[0]) {
+	        var reader = new FileReader();
+	        reader.onload = function (e) {
+	        $('#View').attr('src', e.target.result);
+	        }
+	        reader.readAsDataURL(input.files[0]);
+	    }
+	}
   </script>
   <script src="./myPageMain.js" type="module"></script>
 </body>

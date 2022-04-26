@@ -31,9 +31,10 @@ function getDirection() {
     return direction;
 }
 /*swiper end*/
-
+    
     var xInfoNick = document.querySelector("#x-infoNick");
     var xInfoEmail = document.querySelector("#x-infoEmail");
+    var xProfile = document.querySelector(".user_photo");
     
     fetch("/user/getLoginUser")
       .then(function(response) {
@@ -47,4 +48,5 @@ function getDirection() {
          
          xInfoNick.innerHTML = user.nickName;
          xInfoEmail.innerHTML = user.email;
+         xProfile.src = user.profileImg;
       })

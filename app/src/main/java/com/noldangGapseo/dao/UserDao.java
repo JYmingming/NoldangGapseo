@@ -21,6 +21,8 @@ public interface UserDao {
 
   int update(User user);
 
+  int updateImg(User user);
+
   int delete(User user);
 
   User get(int userId);
@@ -29,7 +31,7 @@ public interface UserDao {
 
   int checkNickname(String nickname);
 
-  List<Invite> inviteList(String invitedNick, String travelName);
+  List<Invite> inviteList(String nickName);
 
 }
 

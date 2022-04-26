@@ -22,7 +22,8 @@
             user_id,
             nick_name,
             email,
-            phone
+            phone,
+            profile_img
         from
             user
         where
@@ -79,7 +80,8 @@
       user_id,
       email,
       phone,
-      nick_name
+      nick_name,
+      profile_img
     from 
       user 
     where 
@@ -97,6 +99,5 @@
     delete from user 
     where user_id=#{userId}
   </delete>
-  
   
 </mapper>

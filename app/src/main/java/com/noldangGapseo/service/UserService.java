@@ -12,7 +12,6 @@ public class UserService {
 
   @Autowired
   UserDao mapper;
-  private User user;
 
   public Integer add(User user) {
     return mapper.insert(user);
@@ -44,6 +43,10 @@ public class UserService {
     return mapper.update(user);
   }
 
+  public int updateImg(User user) {
+    return mapper.update(user);
+  }
+
   public int delete(User user) {
     return mapper.delete(user);
   }
@@ -57,8 +60,8 @@ public class UserService {
     return mapper.checkNickname(nickname);
   }
 
-  public List<Invite> inviteList(String invitedNick, String travelName) {
-    return mapper.inviteList(invitedNick, travelName);
+  public List<Invite> inviteList(String nickName) {
+    return mapper.inviteList(nickName);
   }
 
 }
