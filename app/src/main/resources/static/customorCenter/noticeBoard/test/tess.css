@@ -1,0 +1,203 @@
+
+  .container {                        /*고객센터 컨테이너*/
+   width:100%;
+    height:100%;
+    background:.000;
+  }
+  .body {
+    margin-top: 10px;
+    width:90%;
+    height:600px;
+    position:absolute;
+    background-color: white;  /** 작업 끝나면 흰색으로 **/
+  }
+  
+  .body-a {                       /*고객센터 머리*/
+    width:70%;
+    height:30px;
+    margin: auto;
+  }
+  
+  .announcement-center {
+    font-size:20px;
+    font-weight:bold;
+  }
+  
+  .body-b {                                 /* 검색창 */
+  position: relative;
+  width: 70%;
+  height: 100px;
+  margin: auto;
+  background-color: #f9f9f9;
+  }
+  .search {
+  position: absolute;
+  border: 1px solid #F1F1F1;
+  border-radius: 50px;
+  width: 40%;
+  height: 30%;
+  padding-left: 50px;
+  left: 55%;
+  }
+  .search-img {
+  position : absolute;
+  width: 20px;
+  height: 20px;
+  top: 5%;
+  left:57%;
+  }
+  .img-3 {
+  position: relative;
+  width: 65px;
+  height: 50px;
+  top: 30%
+  }
+  .s-text {
+  position: relative;
+  width: 140px;
+  height: 10px;
+  bottom: 40px;
+  left: 80px;
+  }
+  .date-box {
+  position: relative;
+  float: right;
+  right: 50px;
+  bottom: 20%;
+  }
+  #datepicker1 {
+  width: 70px;
+  }
+  #datepicker2 {
+  width: 70px;
+  }
+
+  .body-d {                           /* 공지사항 헤드 */
+  position: relative;
+  width: 600px;
+  padding-top: 10px;
+  margin: auto;
+  }
+  .b-button {
+  position:relative;
+  width: 200px;
+  height: 30px;
+  border:0;
+  background-color: #f9f9f9;
+  color: black;
+  font-size:15px;
+  font-weight:400;
+  left: 100px;
+  cursor:pointer;
+  }
+  
+  .clicked {
+  color: white;
+  background-color: orange;
+  }
+  
+  .body-e {                 /* 공지사항 메인 폼*/
+  position:relative;
+  width: 70%;
+  height: 250px;
+  background-color: #f9f9f9;
+  color: black;
+  margin: auto;
+  }
+ 
+           
+    
+  .view-box {                   /*공지테이블*/
+  position:relative;
+  top:5px;
+  display: flex;
+  justify-content: space-between;
+  }
+  .view {
+  height: 30px;
+  }
+  #view2 {  
+  table-layout:fixed;
+  border-collapse: collapse;
+  display: none;
+  } 
+  #tb1 ,#tb2{                      
+  table-layout:fixed;
+  border-collapse: collapse;
+  }  
+  #tb1 th, #tb2 th {
+   background: #dfdfdf;
+   text-align: center;
+  }
+  #tb1 th, #tb1 td, #tb2 th, #tb2 td {
+  padding: 3px;
+  width: 600px;
+  border: 1px solid #ddd;
+  border-left: none;
+  border-right: none;
+  text-align: center;
+  }
+
+  .tb1 tr td:first-child, .tb2 tr td:first-child{
+  text-align: center;
+  }
+  
+  .myquestion {
+  position: absolute;
+  top: 5px;
+  right:120px;
+  background-color: white;
+  color: black;
+  font-size:15px;
+  border-color: #dfdfdf;
+  cursor:pointer;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 3px;
+  }
+  .myquestion:focus {
+  background-color: orange;
+  color: white;
+  }
+  
+  .back {                       /*하단 뒤로가기*/
+  position: relative;
+  float: right; 
+  top: 30px;
+  background-color: white;
+  color: black;
+  font-size:15px;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 3px;
+  border-color: #dfdfdf;
+  margin: 3px;
+  cursor:pointer;
+  z-index:1;
+  }
+  .back:focus {
+  background-color: orange;
+  color: white;
+  }
+  .question {
+  position: relative;
+  float: right; 
+  top: 30px;
+  background-color: orange;
+  color: white;
+  font-size:15px;
+  border-style: solid;
+  border-width: thin;
+  border-color: orange;
+  border-radius: 3px;
+  border-color: #dfdfdf;
+  margin: 3px;
+  cursor:pointer;
+  z-index:1;
+  }
+  .question:focus {
+  background-color: orange;
+  color: white;
+  }
+  
+  

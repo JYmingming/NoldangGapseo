@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.noldangGapseo.dao.NoticeBoardDao;
+import com.noldangGapseo.domain.Destination;
 import com.noldangGapseo.domain.NoticeVO;
 
 @Service
@@ -17,4 +18,6 @@ public class NoticeBoardService {
   public List<NoticeVO> getNoticeList(String type) {
     return  mapper.getNoticeList(type);
   }
+
+
 }

@@ -10,4 +10,6 @@ public interface NoticeBoardDao {
   //@Select("SELECT * FROM noldang.service_center")
   List<NoticeVO> getNoticeList(String type);
 
+
+
 }
