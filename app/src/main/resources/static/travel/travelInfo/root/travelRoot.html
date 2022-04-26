@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="/node_modules/sweetalert2/dist/sweetalert2.min.css" />
         <link rel="stylesheet" href="../../../node_modules/bootstrap/dist/css/bootstrap.css" />
         <script src="../../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
         <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
         <script src="https://kit.fontawesome.com/0b4dd5be7a.js" crossorigin="anonymous"></script>
 
@@ -21,28 +21,12 @@
     </head>
     <body>
         <div class="container d-flex flex-column">
-             <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="30"
-                height="30"
-                fill="currentColor"
-                class="bi bi-arrow-left"
-                viewBox="0 0 16 16"
-                style="margin-bottom: 50px; margin-top: 50px"
-            >
-                <path
-                    fill-rule="evenodd"
-                    d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
-                />            
             <div class="swiper w-75">
-                <div class="swiper-wrapper">
-                    
-                
-                </div>
+                <div class="swiper-wrapper"></div>
                 <div class="swiper-button-next next-c"></div>
                 <div class="swiper-button-prev prev-c"></div>
             </div>
-            <div class="map w-75 align-self-center" id="map"></div>
+            <div class="map w-100 align-self-center" id="map"></div>
             <div class="root-container w-75 d-flex align-self-center">
                 <div class="number-container w-25 d-flex flex-column align-items-end">
                     <div class="number-box w-50 d-flex flex-column align-items-center">
@@ -55,13 +39,19 @@
                         <div class="b-num">4</div>
                     </div>
                 </div>
-                <div class="des-container w-100 d-flex flex-column justify-content-lg-start" id="des-container">
+                <div
+                    class="des-container w-100 d-flex flex-column justify-content-lg-start"
+                    id="des-container"
+                >
                     <!--여행지 박스 s-->
                     <!--여행지 박스 e-->
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=04d2370bb5a7c0451b3db7bbd723c9d1"></script>
+        <script
+            type="text/javascript"
+            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=04d2370bb5a7c0451b3db7bbd723c9d1"
+        ></script>
         <script src="/node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
         <script src="root.js" type="module"></script>
     </body>
