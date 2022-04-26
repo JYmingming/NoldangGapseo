@@ -1,5 +1,9 @@
+.container {
+    padding-top: 10%;
+}
+
 .map {
-    height: 60vh;
+    height: 80vh;
     margin-top: 5%;
 }
 /* .swiper {
@@ -25,6 +29,12 @@
     -webkit-align-items: center;
     align-items: center;
     cursor: pointer;
+}
+.dayNum {
+    color: rgb(251, 147, 0);
+}
+.swiper-slide:hover {
+    color: rgb(251, 147, 0);
 }
 
 @media (max-width: 760px) {
@@ -121,4 +131,12 @@
 }
 .bi-chevron-bar-expand {
     font-weight: bolder;
+}
+.marker {
+    background-color: #f1c40f;
+    width: 25px;
+    height: 25px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
 }

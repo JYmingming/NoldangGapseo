@@ -12,18 +12,12 @@ var options = {
 };
 var map = new kakao.maps.Map(container, options);
 
-// var markerPosition = new kakao.maps.LatLng(33.450701, 126.570667);
+// 마커 이미지
+var markerSrc = '../../../asset/img/travel/map_marker_icon.png';
+var markerSize = new kakao.maps.Size(64, 69);
+var markerOption = { offset: new kakao.maps.Point(27, 69) };
 
-// var marker = new kakao.maps.Marker({
-//     position: markerPosition,
-// });
-// marker.setMap(map);
-
-// ---- 뒤로가기 ----
-$('.bi').on('click', function (e) {
-    e.preventDefault();
-    location.href = `/travel/travelInfo/travelInfo.html?travelId=${no}`;
-});
+var markerImage = new kakao.maps.MarkerImage(markerSrc, markerSize, markerOption);
 
 // ---- day View -----
 const dayView = (day) => {
@@ -52,70 +46,69 @@ const schedule = (index, desId, si, type, name, content, lat, lon) => {
 
     return view;
 };
-var marker, markerPosition;
+
+//maker배열
+var markerList = [];
+var CustomOverlayList = [];
+
+// 루트 배열
+let routeList;
+function showMarker(routes) {
+    // 마커 배열 map 초기화
+    for (let i = 0; i < markerList.length; i++) {
+        markerList[i].setMap(null);
+    }
+
+    for (let i = 0; i < CustomOverlayList.length; i++) {
+        CustomOverlayList[i].setMap(null);
+    }
+    // 마커 표시
+    for (let i = 0; i < routes.length; i++) {
+        const route = routes[i];
+        const latLng = new kakao.maps.LatLng(route.longitude, route.latitude);
+        const marker = new kakao.maps.Marker({
+            map: map,
+            position: latLng,
+            image: markerImage,
+            content: `<div class="marker">${route.routeIndex}<div>`,
+        });
+        markerList.push(marker);
+        var content = `<div class="marker">${route.routeIndex}<div>`;
+
+        // 커스텀 오버레이가 표시될 위치입니다
+        // var position = new kakao.maps.LatLng(33.450701, 126.570667);
+
+        // 커스텀 오버레이를 생성합니다
+        const customOverlay = new kakao.maps.CustomOverlay({
+            position: latLng,
+            content: content,
+        });
+
+        // 커스텀 오버레이를 지도에 표시합니다
+        customOverlay.setMap(map);
+        CustomOverlayList.push(customOverlay);
+    }
+}
+
 async function getSchedule(i) {
     const route = await getRoutes(no, i);
-
-    for (var i = 0; i < route.length; i++) {
-        markerPosition = new kakao.maps.LatLng(route[i].latitude, route[i].longitude);
-        console.log(markerPosition);
-
-        marker = new kakao.maps.Marker({
-            position: markerPosition,
-        });
-
-        // var marker = new kakao.maps.Marker({
-        //     map: map, // 마커를 표시할 지도
-        //     position: positions[i].latlng, // 마커를 표시할 위치
-        //     title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-        // });
-        marker.setMap(map);
-    }
-    //console.log(route);
-
-    if (i == 1) {
-        route?.map((m) => {
-            $('#des-container').append(
-                schedule(
-                    m.routeIndex,
-                    m.destinationId,
-                    m.scheduleId,
-                    m.typeName,
-                    m.destinationName,
-                    m.contents,
-                    m.latitude,
-                    m.longitude
-                )
-            );
-        });
-    } else {
-        $('#des-container').children().remove();
-        route?.map((m) => {
-            // markerPosition = new kakao.maps.LatLng(m.latitude, m.longitude);
-            // console.log(markerPosition);
-
-            // marker = new kakao.maps.Marker({
-            //     position: markerPosition,
-            // });
-
-            // // var marker = new kakao.maps.Marker({
-            // //     map: map, // 마커를 표시할 지도
-            // //     position: positions[i].latlng, // 마커를 표시할 위치
-            // //     title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-            // // });
-            // marker.setMap(map);
-            $('#des-container').append(
-                schedule(
-                    m.routeIndex,
-                    m.destinationId,
-                    m.scheduleId,
-                    m.typeName,
-                    m.destinationName,
-                    m.contents
-                )
-            );
-        });
-    }
+    routeList = route;
+    showMarker(routeList);
+    $('#des-container').children().remove();
+    route?.map((m) => {
+        $('#des-container').append(
+            schedule(
+                m.routeIndex,
+                m.destinationId,
+                m.scheduleId,
+                m.typeName,
+                m.destinationName,
+                m.contents,
+                m.latitude,
+                m.longitude
+            )
+        );
+    });
 }
 
 var swiper = new Swiper('.swiper', {
@@ -156,9 +149,14 @@ function getDirection() {
 $('#des-container').sortable({
     items: '.des-box',
     start: function (event, ui) {
-        console.log('sortStart!');
+        //console.log('sortStart!');
         //ui.item.data('start_pos', ui.item.index());
-        console.log(ui.item.attr('data-routeIndex'));
+        console.log('start:::', ui.item.attr('data-routeIndex'));
+        //console.log('Index', ui.item.index());
+        //console.log('start point : ' + ui.item.position().top);
+    },
+    stop: function (event, ui) {
+        console.log('end point : ', ui.item.next().attr('data-routeIndex'));
     },
 });
 //})();
@@ -169,5 +167,8 @@ function reportActivity() {
 
 $(document).on('click', '.swiper-slide', function (e) {
     console.log($(this).children('span').text());
+    $('.swiper-slide').removeClass('dayNum');
+    $(this).addClass('dayNum');
     getSchedule($(this).children('span').text());
+    showMarker(routeList);
 });
