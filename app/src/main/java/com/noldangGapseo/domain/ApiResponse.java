@@ -14,10 +14,9 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class ApiResponse {
   // 실패시
-  // resCode = "0000"
+  // resCode = "1111"
   // resStatus = "fail"
-  private String resCode = "1111";
+  private String resCode = "0000";
   private String resStatus = "success";
-
   private  Object data;
 }

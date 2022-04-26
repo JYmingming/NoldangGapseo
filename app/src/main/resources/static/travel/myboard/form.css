@@ -13,10 +13,7 @@
 .tag-btn {
     border-radius: 30px;
 }
-/* .tag-btn:focus {
-    background-color: #0d6efd;
-    color: white;
-} */
+
 .x-in {
     background-color: white;
     border: 0px;
@@ -24,6 +21,9 @@
 }
 .x-in:focus {
     outline: none;
+}
+#in-contents {
+    text-align: left;
 }
 .adress-btn {
     background-color: #fb9300;
@@ -34,7 +34,9 @@
 .adress-btn:hover {
     color: white;
 }
-
+#in-phone {
+    margin-left: 4em;
+}
 .confirm-btn {
     border: 1px solid #fb9300;
     border-radius: 10px;

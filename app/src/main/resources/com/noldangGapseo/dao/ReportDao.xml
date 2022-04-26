@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.noldangGapseo.dao.ReportDao">
+
+    <resultMap type="report" id="reportMap">
+    </resultMap>
+
+   
+ <select id="reportfindAll"  resultMap="reportMap">
+ SELECT report_id, user_id, post_type, post_id, contents, reg_date, nickname, email, address
+FROM noldang.report u
+
+
+ where not user_id = 1
+   </select>
+	
+
+       
+ 
+    
+ 
+   
+    
+
+
+</mapper>

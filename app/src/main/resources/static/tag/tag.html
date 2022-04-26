@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="../node_modules/axios/dist/axios.js"></script>
+        <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css" />
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css" />
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="tag.css" />
+        <title>TAG</title>
+    </head>
+    <body>
+        <div class="container">
+            <!-- 선택할 태그 박스-->
+            <div class="tag-container" id="default-tag-container">
+                <div class="default-box sc w-75">
+                    <span>태그</span>
+                    <div class="box w-100" id="default-box">
+                        <div class="tag">#1111</div>
+                    </div>
+                </div>
+            </div>
+            <!-- 선택한 태그 박스 -->
+            <div class="tag-container" id="client-tag-container">
+                <!--좋아요 태그 박스-->
+                <div class="select-box sc w-75">
+                    <span>좋아요</span>
+                    <div class="box" id="favor-box">
+                        <div class="tag favor">
+                            <div class="tag">#1111</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+        <script src="tag.js"></script>
+    </body>
+</html>

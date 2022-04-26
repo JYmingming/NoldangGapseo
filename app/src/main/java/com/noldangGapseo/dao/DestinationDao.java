@@ -1,22 +1,49 @@
 package com.noldangGapseo.dao;
 
-import com.noldangGapseo.domain.Destination;
-import com.noldangGapseo.domain.DestinationComment;
-import org.apache.ibatis.annotations.Mapper;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import com.noldangGapseo.domain.Comment;
+import com.noldangGapseo.domain.Destination;
+import com.noldangGapseo.domain.DestinationImg;
+
 
 @Mapper
 public interface DestinationDao {
 
- List<Destination> getUserDesList();
+  List<Destination> getUsersDesList();
 
- List<Destination> getAdminDesList();
+  List<Destination> getAdminDesList();
 
- Destination getUserDesOne(Integer desId);
+  Destination getDes(Integer desId);
 
- Destination getNoldangDes(Integer desId);
+  List<Destination> get4Des();
 
- List<DestinationComment> getNoldangDesComment(Integer desId);
+  Integer addDestination(Destination destination);
+
+  Integer addImgList(@Param("userId") Integer userId, @Param("imgName") String imgName);
+
+  Integer deleteImg(Integer desId);
+
+  Integer deleteDes(Integer desId);
+
+  List<Destination> getUserDesList(Integer userId);
+
+  List<Comment> getUserCommentList(Integer desId);
+
+  List<Comment> getNoldangCommentList(Integer desId);
+
+  List<DestinationImg> getImg(Integer desId);
+
+  Integer addLike(@Param("desId") Integer desId, @Param("userId") Integer userId);
+
+  Integer deleteLike(@Param("desId") Integer desId, @Param("userId") Integer userId);
+
+  //여행지 갯수 카운트
+  Integer countAll();
+
+  List<Destination> findAll(@Param("rowCount") int rowCount, @Param("offset") int offset);
+
+  List<Destination> find8(@Param("rowCount") int rowCount, @Param("offset") int offset);
 
 }

@@ -16,7 +16,7 @@
    <a href="memberList2.html" ><span id="imgtext2">유저관리</span></a>
                   <a href="report.html"><span id="imgtext3">신고관리</span></a>
                    <a href="TravelBoard.html"><span id="imgtext4">여행지관리</span></a>
-                    <a href="../../customorCenter/noticeBoard/noticeBoard.html"><span id="imgtext5">고객센터</span></a>
+                    <a href="../../customorCenter/noticeBoard/noticeBoard.html"><span id="imgtext5"></span></a>
                     <a href="../../indexPage/index.html"><span id="imgtext6">Home</span></a>
                     </nav>
 </h1></a>
@@ -27,14 +27,16 @@
 <h1 class ="maintitle">관리자 l 신고 관리</h1>
 
 <div id="input-form">
-<select name="catgo"  >
-        <option value="title">글번호</option>
+<select name="catgo" style ="  float : left" >
+        <option value="userNum">닉네임</option>
        
-        <option value="name">신고자아이디</option>
-        <option value="content">닉네임</option>
-          <option value="phone">이메일</option>
+        <option value="userID">아이디</option>
+        <option value="userEmail">이메일</option>
+          <option value="userPhone">전화번호</option>
       </select>
-          <input type="text" id="keyword" />
+   </div>  
+   <div>
+          <input type="text" id="keyword"  style ="width:10%;  float : left; margin-left: 5px;"  />
         </div>
         
          
@@ -42,9 +44,9 @@
 
 
   <table id="products">
-  <form action="" id="setRows">
-         <span style="  display: inline-block; float : right; margin-bottom : 20px;" >
-        <input type="text" name="rowPerPage" value="7" size ="1"> 개씩 보기
+  <form action="" id="setRows">	
+         <span style=  "display: none; float : right; margin-bottom : 20px;" >
+        <input type="text" name="rowPerPage" value="7" size ="1"> 
         
       </span>
     </form>
@@ -52,12 +54,13 @@
   <tr>
     <th >타입</th>
     <th >글번호</th>
-    <th>신고자아이디</th>
+    <th>신고번호</th>
     <th>닉네임</th>
     <th >이메일</th>
     <th>신고사유</th>
     <th>신고날짜</th>
-        <th>페이지로 이동</th>
+        <th>게시글보기</th>
+              <th>삭제하기</th>
   </tr>
 </thead>
 <tbody>
@@ -65,217 +68,134 @@
   th{font-family: Comic Sans MS;border: thin solid #6495ed;padding: 4px;background-color: #fb9300; border-radius :10px; color : white; }
  td{font-family: Comic Sans MS;border: thin solid white;padding: 4px;text-align: center;}.odd{background:white;}.odd{background:white;}
  img{padding:5px; border:solid; border-color: #dddddd #aaaaaa #aaaaaa #dddddd; border-width: 1px 2px 2px 1px; background-color:white;}</style>
-  <tr>
-    <td >게시글</td>
-    <td >2000</td>
-    <td >dsdlkgn3311</td>
-    <td >trip2022</td>
-    <td >dldlkgn311@naver.com</td>
-    <td >부적절한 이미지</td>
-    <td >2022-03-04</td>
-      <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
+ <tr>
+    <td class = "postType"></td>
+    <td class = "postId"></td>
+    <td  class = "reportId"></td>
+     <td  class = "nickname"></td>
+    <td  class = "email"></td>
+    <td  class = "contents"></td>
+    <td  class = "regDate"></td>
+      <td   ><button id=btn2 onclick="window.open('view.html','detail','width=1000px, height=1000px,left=150,top=150');">상세보기</button></td>
+      			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 글삭제</button></td>					
   </tr>
-  <tr>
-    <td >게시글</td>
-    <td >2001</td>
-    <td >dsdlkgn3311</td>
-    <td >trip2022</td>
-    <td >dldlkgn311@naver.com</td>
-    <td >부적절한 이미지</td>
-    <td >2022-03-04</td>
-      <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
+ 
+ 
+ <tr>
+    <td class = "postType"></td>
+    <td class = "postId"></td>
+    <td  class = "reportId"></td>
+     <td  class = "nickname"></td>
+    <td  class = "email"></td>
+    <td  class = "contents"></td>
+    <td  class = "regDate"></td>
+        <td   ><button id=btn2 onclick="window.open('view/view2.html','detail','width=1000px, height=1000px,left=150,top=150');">상세보기</button></td>
+        	<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 글삭제</button></td>					
   </tr>
-  <tr>
-    <td >게시글</td>
-    <td >2002</td>
-    <td >dsdlkgn3311</td>
-    <td >trip2022</td>
-    <td >dldlkgn311@naver.com</td>
-    <td >부적절한 이미지</td>
-    <td >2022-03-04</td>
-      <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
+  
+   <tr>
+    <td class = "postType"></td>
+    <td class = "postId"></td>
+    <td  class = "reportId"></td>
+     <td  class = "nickname"></td>
+    <td  class = "email"></td>
+    <td  class = "contents"></td>
+    <td  class = "regDate"></td>
+ <td   ><button id=btn2 onclick="window.open('view/view3.html','detail','width=1000px, height=1000px,left=150,top=150');">상세보기</button></td>
+ 	<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 글삭제</button></td>					
   </tr>
-  <tr>
-    <td >게시글</td>
-    <td >2003</td>
-    <td >dsdlkgn3311</td>
-    <td >trip2022</td>
-    <td >dldlkgn311@naver.com</td>
-    <td >부적절한 이미지</td>
-    <td >2022-03-04</td>
-      <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
+  
+   <tr>
+    <td class = "postType"></td>
+    <td class = "postId"></td>
+    <td  class = "reportId"></td>
+     <td  class = "nickname"></td>
+    <td  class = "email"></td>
+    <td  class = "contents"></td>
+    <td  class = "regDate"></td>
+ <td   ><button id=btn2 onclick="window.open('view/view4.html','detail','width=1000px, height=1000px,left=150,top=150');">상세보기</button></td>
+ 	<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 글삭제</button></td>					
   </tr>
-  <tr>
-    <td >게시글</td>
-    <td >2004</td>
-    <td >dsdlkgn3311</td>
-    <td >trip2022</td>
-    <td >dldlkgn311@naver.com</td>
-    <td >부적절한 이미지</td>
-    <td >2022-03-04</td>
-      <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
+  
+     <tr>
+    <td class = "postType"></td>
+    <td class = "postId"></td>
+    <td  class = "reportId"></td>
+     <td  class = "nickname"></td>
+    <td  class = "email"></td>
+    <td  class = "contents"></td>
+    <td  class = "regDate"></td>
+ <td   ><button id=btn2 onclick="window.open('view/view5.html','detail','width=1000px, height=1000px,left=150,top=150');">상세보기</button></td>
+ 	<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 글삭제</button></td>					
   </tr>
-  <tr>
-    <td >게시글</td>
-    <td >2005</td>
-    <td >dsdlkgn3311</td>
-    <td >trip2022</td>
-    <td >dldlkgn311@naver.com</td>
-    <td >부적절한 이미지</td>
-    <td >2022-03-04</td>
-      <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
+  
+     <tr>
+    <td class = "postType"></td>
+    <td class = "postId"></td>
+    <td  class = "reportId"></td>
+     <td  class = "nickname"></td>
+    <td  class = "email"></td>
+    <td  class = "contents"></td>
+    <td  class = "regDate"></td>
+ <td   ><button id=btn2 onclick="window.open('view/view6.html','detail','width=1000px, height=1000px,left=150,top=150');">상세보기</button></td>
+ 	<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 글삭제</button></td>					
   </tr>
-  <tr>
-    <td >게시글</td>
-    <td >2006</td>
-    <td >dsdlkgn3311</td>
-    <td >trip2022</td>
-    <td >dldlkgn311@naver.com</td>
-    <td >부적절한 이미지</td>
-    <td >2022-03-04</td>
-      <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
-  </tr>
-  <tr>
-    <td >게시글</td>
-    <td >2007</td>
-    <td >dsdlkgn3311</td>
-    <td >trip2022</td>
-    <td >dldlkgn311@naver.com</td>
-    <td >부적절한 이미지</td>
-    <td >2022-03-04</td>
-      <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
-  </tr>
-  <tr>
-    <td >게시글</td>
-    <td >2008</td>
-    <td >dsdlkgn3311</td>
-    <td >trip2022</td>
-    <td >dldlkgn311@naver.com</td>
-    <td >부적절한 이미지</td>
-    <td >2022-03-04</td>
-      <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
-  </tr>
-  <tr>
-    <td >게시글</td>
-    <td >2009</td>
-    <td >dsdlkgn3311</td>
-    <td >trip2022</td>
-    <td >dldlkgn311@naver.com</td>
-    <td >부적절한 이미지</td>
-    <td >2022-03-04</td>
-      <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
-  </tr>
-  <tr>
-    <td >게시글</td>
-    <td >2010</td>
-    <td >dsdlkgn3311</td>
-    <td >trip2022</td>
-    <td >dldlkgn311@naver.com</td>
-    <td >부적절한 이미지</td>
-    <td >2022-03-04</td>
-      <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
-  </tr>
-  <tr>
-    <td >게시글</td>
-    <td >2011</td>
-    <td >dsdlkgn3311</td>
-    <td >trip2022</td>
-    <td >dldlkgn311@naver.com</td>
-    <td >부적절한 이미지</td>
-    <td >2022-03-04</td>
-      <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
-  </tr>
-  <tr>
-    <td >게시글</td>
-    <td >2012</td>
-    <td >dsdlkgn3311</td>
-    <td >trip2022</td>
-    <td >dldlkgn311@naver.com</td>
-    <td >부적절한 이미지</td>
-    <td >2022-03-04</td>
-      <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
-  </tr>
-  <tr>
-    <td >게시글</td>
-    <td >2013</td>
-    <td >dsdlkgn3311</td>
-    <td >trip2022</td>
-    <td >dldlkgn311@naver.com</td>
-    <td >부적절한 이미지</td>
-    <td >2022-03-04</td>
-      <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
-  </tr>
-  <tr>
-    <td >게시글</td>
-    <td >2014</td>
-    <td >dsdlkgn3311</td>
-    <td >trip2022</td>
-    <td >dldlkgn311@naver.com</td>
-    <td >부적절한 이미지</td>
-    <td >2022-03-04</td>
-      <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
-  </tr>
-  <tr>
-   <td >게시글</td>
-    <td>17833</td>
-    <td>fgj1t86</td>
-    <td>가보자제주</td>
-    <td>fgjft86@gmail.com</td>
-    <td>부적절한 이미지</td>
-    <td>2022-03-04</td>
-          <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
-      
-  </tr> <tr>
-      <td >게시글</td>
-    <td>15723</td>
-    <td>sknflks212</td>
-    <td>여행가11</td>
-    <td>sknflks212@naver.com</td>
-    <td>부적절한 이미지</td>
-    <td>2022-03-04</td>
-          <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
+  
+     <tr>
      
-  </tr> <tr>
-      <td >댓글</td>
-    <td>7490</td>
-    <td>chance010</td>
-    <td>혼저옵서예</td>
-    <td>chance010@naver.com</td>
-    <td>부적절한 이미지</td>
-    <td>2022-03-04</td>
-      <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
+    
      
-  </tr> <tr>
-      <td >게시글</td>
-    <td>6822</td>
-    <td>hello2163</td>
-    <td>놀당갑서22</td>
-    <td>hello2163@hanmail.net</td>
-    <td>부적절한 댓글</td>
-    <td>2022-03-04</td>
-      <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
-      
-  </tr> <tr>
-        <td >댓글</td>
-    <td>7524</td>
-    <td>yoyo3019</td>
-    <td>제주도가자</td>
-    <td>yoyo3019@naver.com</td>
-    <td>부적절한 댓글</td>
-    <td>2022-03-04</td>
-         <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
-   
-  </tr> <tr>
-   <td >게시글</td>
-    <td>12452</td>
-    <td>right9090</td>
-    <td>놀당12</td>
-    <td>right9090@naver.com</td>
-    <td>부적절한 이미지</td>
-    <td>2022-03-04</td>
-       <td   ><button id="btn2"><a href = "report_detail.html">이동</button></a></td>
-   
+    
+    <td class = "postType"></td>
+    <td class = "postId"></td>
+    <td  class = "reportId"></td>
+     <td  class = "nickname"></td>
+    <td  class = "email"></td>
+    <td  class = "contents"></td>
+    <td  class = "regDate"></td>
+ <td   ><button id=btn2 onclick="window.open('view/view4.html','detail','width=1000px, height=1000px,left=150,top=150');">상세보기</button></td>
+ 	<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 글삭제</button></td>					
   </tr>
+  
+  
+   <td class = "postType"></td>
+    <td class = "postId"></td>
+    <td  class = "reportId"></td>
+     <td  class = "nickname"></td>
+    <td  class = "email"></td>
+    <td  class = "contents"></td>
+    <td  class = "regDate"></td>
+ <td   ><button id=btn2 onclick="window.open('view/view5.html','detail','width=1000px, height=1000px,left=150,top=150');">상세보기</button></td>
+ 	<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 글삭제</button></td>					
+  </tr>
+  
+  
+     <tr>
+    <td >댓글</td>
+    <td >16</td>
+    <td >49</td>
+     <td >asked0323</td>
+    <td>asked0323@naver.com</td>
+    <td>비속어사용</td>
+    <td >2022-04-28</td>
+ <td   ><button id=btn2 onclick="window.open('view/view6.html','detail','width=1000px, height=1000px,left=150,top=150');">상세보기</button></td>
+ 	<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 글삭제</button></td>					
+  </tr>
+  
+         <tr>
+    <td >게시글</td>
+    <td >17</td>
+    <td >50</td>
+     <td >ggabdoll0327</td>
+    <td>ggabdoll0327@naver.com</td>
+    <td>내용미입력</td>
+    <td >2022-04-28</td>
+ <td   ><button id=btn2 onclick="window.open('view/view1.html','detail','width=1000px, height=1000px,left=150,top=150');">상세보기</button></td>
+ 	<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 글삭제</button></td>					
+  </tr>
+  
+      
+     
     
 </tbody>
 </table>
@@ -283,18 +203,30 @@
 
 </div>
 
+
+
+
+
+</div>
+
+
 <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
-        <script type="text/javascript"> 
+
+
+    
+ <script type="text/javascript"> 
         $(document).ready(function() {
             $("#keyword").keyup(function() {
                 var k = $(this).val();
                 $("#products > tbody > tr").hide();
-                var temp = $("#products > tbody > tr > td:nth-child(5n+2):contains('" + k + "')");
-
+                var temp = $("#products > tbody > tr > td:nth-child(5n+4):contains('" + k + "')");
+                
                 $(temp).parent().show();
             })
         })
         </script>
+       
+       
 
 <script>
 var $setRows = $('#setRows');
@@ -368,5 +300,182 @@ $setRows.submit(function (e) {
 
 
 $setRows.submit();</script>
+
+<script>
+			let a;
+
+			const b = document.querySelectorAll(".postType")
+		
+
+
+
+		fetch("/report/user/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 8; i++) {
+		        	b[i].innerHTML =result[i].postType;
+		          }
+
+
+			})
+	
+		</script>
+		
+		<script>
+			let c;
+
+			const d = document.querySelectorAll(".postId")
+		
+
+
+
+		fetch("/report/user/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 8; i++) {
+		        	d[i].innerHTML =result[i].postId;
+		          }
+
+
+			})
+	
+		</script>
+		
+		<script>
+			let e;
+
+			const f = document.querySelectorAll(".reportId")
+		
+
+
+
+		fetch("/report/user/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 8; i++) {
+		        	f[i].innerHTML =result[i].reportId;
+		          }
+
+
+			})
+	
+		</script>
+		
+		<script>
+			let g;
+
+			const h = document.querySelectorAll(".nickname")
+		
+
+
+
+		fetch("/report/user/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 8; i++) {
+		        	h[i].innerHTML =result[i].nickname;
+		          }
+
+
+			})
+	
+		</script>
+		
+		<script>
+			let k;
+
+			const l = document.querySelectorAll(".email")
+		
+
+
+
+		fetch("/report/user/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 8; i++) {
+		        	l[i].innerHTML =result[i].email;
+		          }
+
+
+			})
+	
+		</script>
+		
+		<script>
+			let m;
+
+			const n = document.querySelectorAll(".contents")
+		
+
+
+
+		fetch("/report/user/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 8; i++) {
+		        	n[i].innerHTML =result[i].contents;
+		          }
+
+
+			})
+	
+		</script>
+		
+		<script>
+			let o;
+
+			const p = document.querySelectorAll(".regDate")
+		
+
+
+
+		fetch("/report/user/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 8; i++) {
+		        	p[i].innerHTML =result[i].regDate;
+		          }
+
+
+			})
+	
+		</script>
+		
+	<script>
+	function removeCheck() {
+
+		 if (confirm("정말 삭제하시겠습니까??") == true){    //확인
+
+		     document.removefrm.submit();
+
+		 }else{   //취소
+
+		     return false;
+
+		 }
+
+		}
+	</script>
+	
+	<script>
+		function deleteRow(r) {
+		    var i = r.parentNode.parentNode.rowIndex;
+		    document.getElementById("products").deleteRow(i);
+		}</script>
+		
 </body>
 </html>

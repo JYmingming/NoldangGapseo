@@ -1,7 +1,10 @@
+import { urlSearch } from '../../../common/urlSearchParam.js';
+
+const no = urlSearch('travelId');
 // ---- 뒤로가기 ----
 $('.bi').on('click', function (e) {
     e.preventDefault();
-    location.href = '/travel/travelInfo/travelInfo.html';
+    location.href = `/travel/travelInfo/travelInfo.html?travelId=${no}`;
 });
 
 var swiper = new Swiper('.swiper', {
@@ -34,3 +37,27 @@ var options = {
     level: 9,
 };
 var map = new kakao.maps.Map(container, options);
+
+// ---- 여행지 sort ----
+//(function () {
+$('#des-container').sortable({
+    //group: 'list',
+    //animation: 200,
+    //ghostClass: 'ghost',
+    //onSort: reportActivity,
+    items: '.des-box',
+    start: function (event, ui) {
+        console.log('sortStart!');
+        ui.item.data('start_pos', ui.item.index());
+        console.log(ui.item.data('start_pos'));
+    },
+});
+//})();
+
+const response = await getRoute();
+
+response = ['A', 'B', 'C', 'D'];
+
+function reportActivity() {
+    console.log('The sort order has changed');
+}

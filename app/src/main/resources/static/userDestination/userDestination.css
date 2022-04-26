@@ -1,16 +1,22 @@
-.myBoard{
-text-align: center;
-margin-left: 870px;
-margin-right: 60px;
-  background-color:#f8941c;
-  color: white;
-  font-weight: bold ;
-   border-radius: 8px;
-
-	
+.board {
+	width: 80%;
+	height: 60px;
+	display: block;
+	margin: auto;
 }
 
-
+.myBoard {
+	width: 200px;
+	height: 40px;
+	text-align: center;
+	float: right;
+	background-color: #f8941c;
+	color: white;
+	font-weight: bold;
+	border-radius: 8px;
+	background-color: #f8941c;
+	display: block;
+}
 
 .container {
 	margin: 5px;
@@ -28,6 +34,9 @@ margin-right: 60px;
 
 .card-img-top {
 	padding: 5px;
+	width: 300px;
+	height: 200px;
+	object-fit: cover;
 }
 
 .card-title {
@@ -40,12 +49,8 @@ margin-right: 60px;
 	color: red;
 }
 
-
-
 .pagination {
-	text-align: center;
+	margin-left: 500px
+
 }
 
-.pagination>li>a {
-	float: none;
-}

@@ -1,97 +1,125 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>어드민</title>
-    <link rel="stylesheet" type="text/css" href="TravelAdd.css">
-</head>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
-
-<body>
-
-<header>
-<div th:replace="/fixed/header :: header"></div>
-<a href="memberList2.html" ><h1 id="imgtext1">ADMINSTRATOR 
-<nav>
-   <a href="memberList2.html" ><span id="imgtext2">유저관리</span></a>
-                  <a href="report.html"><span id="imgtext3">신고관리</span></a>
-                   <a href="TravelBoard.html"><span id="imgtext4">여행지관리</span></a>
-                    <a href="../../customorCenter/noticeBoard/noticeBoard.html"><span id="imgtext5">고객센터</span></a>
-                    <a href="../../indexPage/index.html"><span id="imgtext6">Home</span></a>
-                    </nav>
-</h1></a>
-
-                    </header>
-<hr>
-<h1 class ="maintitle">새 여행지 추가</h1>
-
-
-
-<div class="container">
-    <form >
-        <table class="table" id="table">
-           <thead>
-  <tr>
-    <th class ="th-1">타입</th>
-    <th class ="th-2">이름</th>
-    <th class ="th-3">주소</th>
-    <th class ="th-4">전화번호</th>
-    <th class ="th-5">태그</th>
-    <th class ="th-6">사진</th>
-    <th class ="th-7">한줄소개</th>
-  </tr>
-</thead>
-<tbody>
-
-
-  <tr>
-  
-    <td class ="td-1"><form>
-  <select name="language" >
-    <option value="none">=== 선택 ===</option>
-    <option value="food">맛집</option>
-    <option value="landscape">명소</option>
-    <option value="cafe">카페</option>
-  </select>
-</form></td>
-      <td class="td-2"><input size="5"></input></td>
-   <td><input type="text" id="address_kakao" name="address" readonly size="50"/></td>
-   <td class="td-4"><input size="10"></input></td>
-  <td class="td-5"><input size="15"></input></td>
-    <td class ="td-6"> <form method="post" action="upload" enctype="multipart/form-data">
-
-  <div>
- <input type="file" name="file" accept="image/*">
-  </div>
-  
-  <input type="submit">
-
-</form></td>
-      <td class="td-3"><input size="30"></input></td>
- 
-  </tr>
-
-
-</tbody>
-</table>
- <button id="btn2"><a href = "TravelBoard.html">완료</a></button></a>
-
-</div>
-
-</body>
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script>
-window.onload = function(){
-    document.getElementById("address_kakao").addEventListener("click", function(){ //주소입력칸을 클릭하면
-        //카카오 지도 발생
-        new daum.Postcode({
-            oncomplete: function(data) { //선택시 입력값 세팅
-                document.getElementById("address_kakao").value = data.address; // 주소 넣기
-               
-            }
-        }).open();
-    });
-}
-</script>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+        <title>List</title>
+        <link rel="stylesheet" href="../../node_modules/sweetalert2/dist/sweetalert2.min.css" />
+        <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css" />
+        <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../../node_modules/axios/dist/axios.js"></script>
+        <link rel="stylesheet" href="TravelAdd.css" />
+    </head>
+    <body>
+        <div class="container d-flex flex-column">
+            <div class="bi-j">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    fill="currentColor"
+                    class="bi bi-arrow-left"
+                    viewBox="0 0 16 16"
+                    style="margin-bottom: 50px; margin-top: 50px"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+                    />
+                </svg>
+            </div>
+            <form class="d-form d-flex flex-column align-items-center" name="form-d">
+                <input type="hidden" name="userId" id="d-user" />
+                <p class="col-text">여행지의 이름을 적어주세요</p>
+                <div class="d-title d-box col-md-7">
+                    <input
+                        type="text"
+                        name="destinationName"
+                        id="in-title"
+                        class="w-75 input-group-text x-in"
+                        placeholder="여기에 작성해주세요"
+                    />
+                </div>
+                <p class="col-text">
+                    여행지의 주소를 적어주세요
+                    <button type="button" class="btn adress-btn">주소 검색</button>
+                </p>
+                <div class="d-adress col-md-7 d-box">
+                    <input
+                        type="text"
+                        name="address"
+                        id="in-adress"
+                        class="w-75 input-group-text x-in"
+                        style="margin-left: 4em"
+                        readonly
+                    />
+                </div>
+                <p class="col-text">여행지의 전화번호를 적어주세요</p>
+                <div class="d-phone col-md-7 d-box">
+                    <input
+                        type="text"
+                        class="w-75 input-group-text x-in"
+                        name="phone"
+                        id="in-phone"
+                        placeholder="여기에 작성해주세요"
+                    />
+                </div>
+                <p class="col-text">여행지의 종류를 선택해주세요</p>
+                <div class="d-tag d-box col-md-7 justify-content-evenly">
+                    <input type="hidden" name="destinationTypeId" id="tag-d" />
+                    <button
+                        class="tag-btn btn btn-outline-primary col-sm-2"
+                        data-val="1"
+                        id="tag1"
+                        type="button"
+                    >
+                        명소
+                    </button>
+                    <button
+                        class="tag-btn btn btn-outline-primary col-sm-2"
+                        data-val="2"
+                        type="button"
+                        id="tag2"
+                    >
+                        맛집
+                    </button>
+                    <button
+                        class="tag-btn btn btn-outline-primary col-sm-2"
+                        data-val="3"
+                        type="button"
+                        id="tag3"
+                    >
+                        카페
+                    </button>
+                </div>
+                <p class="col-text">여행지 이야기를 들려주세요</p>
+                <div class="d-contents d-box col-md-7">
+                    <textarea
+                        name="contents"
+                        id="in-contents"
+                        cols="30"
+                        rows="10"
+                        class="w-75 input-group-text x-in"
+                        placeholder="여기에 작성해주세요"
+                    ></textarea>
+                </div>
+                <p class="col-text">
+                    사진의 올려주세요
+                    <input type="file" multiple class="d-file-up" name="imgs" id="" />
+                </p>
+                <div class="d-file d-box col-md-7"></div>
+            </form>
+            <div
+                class="d-flex w-75 align-self-center justify-content-center d-btn"
+                style="margin-bottom: 10em"
+            >
+                <button class="btn col-md-9 confirm-btn" type="button">완료</button>
+            </div>
+        </div>
+        <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+        <script src="TravelAdd.js" type="module"></script>
+        <script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    </body>
 </html>

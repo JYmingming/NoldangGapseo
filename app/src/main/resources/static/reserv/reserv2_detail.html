@@ -33,33 +33,95 @@
     </div>
     <div class="container">
         <div class="detail-container">
-            <div>
-                <h2>아시아호텔 제주</h2>
-                <span class="fw-bold fs-5">숙박유형</span>&nbsp&nbsp&nbsp<span>호텔</span>&nbsp&nbsp
-                <span class="fw-bold fs-5">주소</span>&nbsp&nbsp&nbsp<span>제주특별자치도 제주시 노연로53</span>
-                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <span class="fw-bold fs-5">체크인</span>&nbsp&nbsp&nbsp<span>15:00</span>&nbsp&nbsp
-                <span class="fw-bold fs-5">체크아웃</span>&nbsp&nbsp&nbsp<span>11:00</span>&nbsp&nbsp
+            <div class="w-75 m-auto">
+                <h2 id="x-hotelName"></h2>
+                <span class="fw-bold fs-6">숙박유형</span>&nbsp&nbsp&nbsp<span>호텔</span>&nbsp&nbsp
+                <span class="fw-bold fs-6">주소</span>&nbsp&nbsp&nbsp<span id="x-hotelLocation">제주특별자치도 제주시 노연로53</span>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<br>
+                <span class="fw-bold fs-6">체크인</span>&nbsp&nbsp&nbsp<span>15:00</span>&nbsp&nbsp
+                <span class="fw-bold fs-6">체크아웃</span>&nbsp&nbsp&nbsp<span>11:00</span>&nbsp&nbsp
             </div>
             <div class="img-container">
                 <div class="img-box">
                     <div class="bic-img">
-                        <img src="../img/background.jpg">
-                    </div>
-                    <div class ="small-img">
-                        <img src="../img/facebook_icon.png">
-                        <img src="../img/facebook_icon.png">
-                        <img src="../img/facebook_icon.png">
-                        <img src="../img/facebook_icon.png">
-                        <img src="../img/facebook_icon.png">
-                        <img src="../img/facebook_icon.png">
-                        <img src="../img/facebook_icon.png">
+                        <div
+                                id="carouselExampleInterval"
+                                class="carousel slide w-75 align-self-center m-auto"
+                                data-bs-ride="carousel"
+                                style="border-radius: 10px"
+                        >
+                            <div class="carousel-inner" style="display: flex">
+                                <div class="carousel-item active" data-bs-interval="4000">
+                                    <img
+                                            src="http://a.cdn-hotels.com/gdcs/production13/d298/6722a536-dc90-49b4-9987-4c0ce03105cc.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
+                                            class="d-block h-auto w-100"
+                                            alt="..."
+                                            style="border-radius: 20px"
+                                            id="x-testImg-1"
+                                    />
+                                </div>
+                                <div class="carousel-item" data-bs-interval="4000">
+                                    <img
+                                            src="http://a.cdn-hotels.com/gdcs/production153/d1329/551a0385-f7e0-4f7c-a407-43bdecddd4d4.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
+                                            class="d-block h-auto w-100"
+                                            alt="..."
+                                            style="border-radius: 20px"
+                                            id="x-testImg-2"
+                                    />
+                                </div>
+                                <div class="carousel-item" data-bs-interval="4000">
+                                    <img
+                                            src="http://a.cdn-hotels.com/gdcs/production18/d313/28d7ddb1-12c5-4b47-b355-515eb4db0870.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
+                                            class="d-block h-auto w-100"
+                                            alt="..."
+                                            style="border-radius: 20px"
+                                            id="x-testImg-3"
+                                    />
+                                </div>
+                                <button class="like-btn align-self-end">
+                                    <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="30"
+                                            height="30"
+                                            fill="currentColor"
+                                            class="bi bi-heart"
+                                            viewBox="0 0 16 16"
+                                    >
+                                        <path
+                                                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
+                                        />
+                                    </svg>
+                                </button>
+                                <span class="like-cnt align-self-end">2000</span>
+                            </div>
+                            <button
+                                    class="carousel-control-prev"
+                                    type="button"
+                                    data-bs-target="#carouselExampleInterval"
+                                    data-bs-slide="prev"
+                            >
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button
+                                    class="carousel-control-next"
+                                    type="button"
+                                    data-bs-target="#carouselExampleInterval"
+                                    data-bs-slide="next"
+                            >
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
                     </div>
+
                 </div>
             </div><!-- img contianer -->
-            <div class="info-container">
-                <div class="search-values">
+
+            <div class="info-container w-75 m-auto">
+                <div class="out-line"></div>
+                <div class="search-values w-100">
+
                     <div class="search-value">
                         <p>(체크인)</p>
                         <span>2022-03-02</span>
@@ -71,16 +133,36 @@
                         <img src="../img/facebook_icon.png">
                     </div>
                     <div class="search-value">
-                        <p>인원 + 0 +</p>
+                        <p>인원</p>
+                         - 0명 + [버튼]
                     </div>
                     <div class="search-value">
-                        <button type="submit">검색하기</button>
+                        <h2 id="x-hotelPrice"></h2>
+                        <button type="submit">결제하기</button>
                     </div>
                 </div>
+
+
+                <div class = "result-info w-100">
+                    <h5>숙소소개</h5>
+                    <div class="out-line"></div>
+                    <p>
+                        <span id="x-hotelComment">제주시내 중심에 위치한 복합적 특급 비즈니스 호텔</span>
+                    </p>
+
+
+
+
+
+
+
                 </div>
             </div>
 
         </div>
+
+
+    </div>
 
     </div>
 
@@ -88,3 +170,62 @@
 
     </div>
 </div>
+</body>
+<script>
+
+    var arr = location.href.split("?");
+    if (arr.length == 1) {
+        alert("요청 형식이 옳바르지 않습니다.")
+        throw "URL 형식 오류!";
+    }
+    var qs = arr[1];
+    console.log(qs);
+    var params = new URLSearchParams(qs);
+    var link = params.get("link");
+    var startDate = params.get("startDate");
+    var endDate = params.get("endDate");
+
+    console.log(link + startDate + endDate)
+
+    //
+    var xHotelPrice =document.querySelector("#x-hotelPrice")
+    var xHotelComment =document.querySelector("#x-hotelComment")
+    var xHotelLocation =document.querySelector("#x-hotelLocation")
+    var xHotelName =document.querySelector("#x-hotelName")
+    var xTestImg1 =document.querySelector("#x-testImg-1")
+    var xTestImg2 =document.querySelector("#x-testImg-2")
+    var xTestImg3 =document.querySelector("#x-testImg-3")
+
+
+    fetch("/reserve/get?startDate="+startDate+"&endDate="+endDate+"&link="+link)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(result) {
+            if (result.status == "fail") {
+                window.alert("서버 요청 오류!");
+                console.log(result.data);
+                return;
+            }
+            console.log(result);
+            console.log(result["hotel"]);
+            console.log(result["hotel"].data);
+            var hotel = result["hotel"];
+
+            xHotelPrice.innerHTML = hotel.hotelPrice+" 원";
+            xHotelComment.innerHTML = hotel.hotelComment;
+            xHotelLocation.innerHTML = hotel.hotelLocation;
+            xHotelName.innerHTML = hotel.hotelName;
+            xTestImg1.setAttribute("src",hotel.imgUrl[0]);
+            xTestImg2.setAttribute("src",hotel.imgUrl[1]);
+            xTestImg3.setAttribute("src",hotel.imgUrl[2]);
+
+
+
+
+        });
+
+
+
+</script>
+</html>

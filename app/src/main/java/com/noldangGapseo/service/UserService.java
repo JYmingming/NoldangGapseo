@@ -1,11 +1,11 @@
 package com.noldangGapseo.service;
 
-import com.noldangGapseo.domain.User;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.noldangGapseo.dao.UserDao;
+import com.noldangGapseo.domain.User;
 import com.noldangGapseo.domain.UserResponse;
-
 @Service
 public class UserService {
 
@@ -20,8 +20,36 @@ public class UserService {
     return mapper.findByEmailAndPassword(email, password);
   }
 
+  public User get(String password) {
+    return mapper.findByPassword(password);
+  }
+
   public UserResponse userList() {
     return new UserResponse().setUserList(mapper.findAll());
   }
+
+  public List<User> findNickname(String nickName) {
+    return mapper.findNickname(nickName);
+  }
+
+
+  public List<User> findAll() {
+    return mapper.findAll();
+  }
+
+
+  public int update(User user) {
+    return mapper.update(user);
+  }
+
+  public User get(int userId) {
+    User user = mapper.findByNo(userId);
+    return user;
+  }
+
+  public int checkNickname(String nickname) {
+    return mapper.checkNickname(nickname);
+  }
+
 
 }

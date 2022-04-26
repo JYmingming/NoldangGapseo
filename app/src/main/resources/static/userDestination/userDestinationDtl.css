@@ -4,82 +4,71 @@
 	border-style: solid;
 	border-width: 1px;
 	margin: 5px auto; /*가로 가운데 정렬 */
-	   border-radius: 8px;
+	border-radius: 8px;
+
 }
 
-
-.title{
+.title {
 	font-size: 40px;
 	text-align: center;
-
-	
 }
-
-.carousel slide w-50 align-self-center{
-  text-align: center;
-
-  
-}
-
 
 #navigator {
-    width: 100%;
-    padding: 0;
-    height: 14px;
-    z-index: 999;
-}
-#navigator a {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    text-indent: -999em;
-    background: #fff;
-    border-radius: 10px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    box-shadow: 0 0 1px 1px #707173;
-    margin-right: 10px;
-}
-#navigator a {
-    background: #00ffff;
-}
-#navigator a.activeSlide {
-    background: #ff8000;
+	width: 100%;
+	padding: 0;
+	height: 14px;
+	z-index: 999;
 }
 
+#navigator a {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	text-indent: -999em;
+	background: #fff;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	box-shadow: 0 0 1px 1px #707173;
+	margin-right: 10px;
+}
+
+#navigator a {
+	background: #00ffff;
+}
+
+#navigator a.activeSlide {
+	background: #ff8000;
+}
 
 .commentCntn {
-  width: 650px;
-  border-width: 1px;
-  margin: 5px auto; /*가로 가운데 정렬 */
+	width: 650px;
+	border-width: 1px;
+	margin: 5px auto; /*가로 가운데 정렬 */
 }
-
-
 
 /*하트 버튼*/
 .btn-like {
-  color: transparent;
-  text-shadow: 0 0 2px rgba(255, 255, 255, .7), 0 0 0 #000;
+	color: transparent;
+	text-shadow: 0 0 2px rgba(255, 255, 255, .7), 0 0 0 #000;
 }
 
 .btn-like:hover {
-  /*  text-shadow: 0 0 0 #ea0; */
-  
+	/*  text-shadow: 0 0 0 #ea0; */
+	
 }
 
 .btn-like.done {
-  color: inherit;
-  text-shadow: 0;
+	color: inherit;
+	text-shadow: 0;
 }
 
 .btn-like.done:hover {
-  /* color: transparent;
+	/* color: transparent;
   text-shadow: 0 0 0 #777; */
-  
+	
 }
 
-.nick{
-	font-weight:bold;
-	
-	
-	}
+.nick {
+	font-weight: bold;
+}

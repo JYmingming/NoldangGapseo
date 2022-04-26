@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+<title>Insert title here</title>
+<!--스위트 얼럿 -->
+<link rel="stylesheet"
+  href="../../node_modules/sweetalert2/dist/sweetalert2.min.css" />
+<!--부트 스트렙 -->
+<link rel="stylesheet"
+  href="../../node_modules/bootstrap/dist/css/bootstrap.css" />
+<script
+  src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<!--CSS 가져오기 -->
+<link rel="stylesheet" href="./userDestination.css" />
+
+<!--헤더 가져오기 -->
+<script>
+	$(document).ready(function() {
+		$('.headers').load('../../common/header/header.html');
+	});
+</script>
+
+</head>
+<body>
+  <div class="headers"></div>
+  <br>
+
+<div class = "board">
+  <div class="myBoard">My Board</div>
+</div>
+
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-3">
+        <div class="card" onClick=>
+          <img src="/img/SALON de LAVANT3.jpg" class="card-img-top"
+            alt="...">
+          <div class="card-body">
+            <h5 class="card-title">모뉴에트</h5>
+            <div class="like">❤️30🗨20</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-3">
+        <div class="card">
+          <img src="/img/SALON de LAVANT3.jpg" class="card-img-top"
+            alt="...">
+          <div class="card-body">
+            <h5 class="card-title">모뉴에트</h5>
+            <div class="like">❤️30🗨20</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="card">
+          <img src="/img/SALON de LAVANT3.jpg" class="card-img-top"
+            alt="...">
+          <div class="card-body">
+            <h5 class="card-title">모뉴에트</h5>
+            <div class="like">❤️30🗨20</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="card">
+          <img src="/img/SALON de LAVANT3.jpg" class="card-img-top"
+            alt="...">
+          <div class="card-body">
+            <h5 class="card-title">모뉴에트</h5>
+            <div class="like">❤️30🗨20</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-3">
+        <div class="card">
+          <img src="/img/SALON de LAVANT3.jpg" class="card-img-top"
+            alt="...">
+          <div class="card-body">
+            <h5 class="card-title">모뉴에트</h5>
+            <div class="like">❤️30🗨20</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="card">
+          <img src="/img/SALON de LAVANT3.jpg" class="card-img-top"
+            alt="...">
+          <div class="card-body">
+            <h5 class="card-title">모뉴에트</h5>
+            <div class="like">❤️30🗨20</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="card">
+          <img src="/img/SALON de LAVANT3.jpg" class="card-img-top"
+            alt="...">
+          <div class="card-body">
+            <h5 class="card-title">모뉴에트</h5>
+            <div class="like">❤️30🗨20</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="card">
+          <img src="/img/SALON de LAVANT3.jpg" class="card-img-top"
+            alt="...">
+          <div class="card-body">
+            <h5 class="card-title">모뉴에트</h5>
+            <div class="like">❤️30🗨20</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" href="#"
+        aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+      </a></li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#"
+        aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+      </a></li>
+    </ul>
+
+
+  </div>
+
+
+
+
+
+  <script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+  <script>
+			$(".myBoard").click(function() {
+				location.href = "/travel/myboard/myboard.html"
+			})
+
+			$(".card").click(function() {
+				location.href = "/userDestination/userDestinationDtl3.html"
+			})
+		</script>
+
+  <script>
+			let a;
+
+			const b = document.querySelectorAll(".card-title")
+
+
+
+			fetch("/destination/admin/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 8; i++) {
+		        	b[i].innerHTML =result[i].destinationName;
+		          }
+
+
+			})
+		</script>
+
+
+</body>
+
+</html>

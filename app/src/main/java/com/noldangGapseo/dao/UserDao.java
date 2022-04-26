@@ -2,8 +2,8 @@ package com.noldangGapseo.dao;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
-import com.noldangGapseo.domain.User;
 import org.apache.ibatis.annotations.Param;
+import com.noldangGapseo.domain.User;
 
 @Mapper
 public interface UserDao {
@@ -12,8 +12,23 @@ public interface UserDao {
 
   User findByEmailAndPassword(@Param("email") String email, @Param("password") String password);
 
+  User findByPassword(@Param("password") String password);
+
   List<User> findAll();
 
-  User findNickname(String nickName);
+  List<User> findNickname(String nickName);
+
+  int update(User user);
+
+  User get(int userId);
+
+  User findByNo(int userId);
+
+  int checkNickname(String nickname);
+
+
+
 
 }
+
+

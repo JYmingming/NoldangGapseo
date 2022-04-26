@@ -26,8 +26,8 @@
                     <input type="file" class="real-upload" accept="image/*" required multiple style="display: none;">
                   </div>
                   <div class="user_info">
-                      <h5>닉네임</h5>
-                      <h6>email@test.com</h6>
+                      <h5 id="x-infoNick"></h5>
+                      <h6 id="x-infoEmail"></h6>
                       <div class="logout">
                           <button a href="#" onclick="location.href='../../indexPage/index.html'">Logout</button>
                       </div>
@@ -78,5 +78,6 @@
 
   upload.addEventListener('click', () => realUpload.click());
   </script>
+  <script src="./myPageMain.js" type="module"></script>
 </body>
 </html>

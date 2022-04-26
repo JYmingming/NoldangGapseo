@@ -33,9 +33,10 @@ body{
 .contents_box{
     width: 80vw;
     height: 30vh;
-    background-color: rgb(250, 250, 250);
+    background-color: white;
     margin-top: 1vh;
-    box-shadow: 1px 1px 5px 0px;
+    border : 2px solid #fb9300; 
+    border-radius: 1em;
     float: left
 }
 
@@ -48,11 +49,12 @@ body{
 .user_photo{
     width: 15vw;
     height: 15vh; 
-    margin-left:5vw;
-    border-bottom: solid 4px #f5e6ca;
+    margin-left:2.4vw;
+    border-bottom: solid 3px #f5e6ca;
     background-image: url("../../img/profile.png");
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 30%;
     float: left;
     cursor: pointer;
 }
@@ -60,17 +62,18 @@ body{
 .user_info{
     width: 55vw;
     height: 15vh; 
-    border-bottom: solid 4px #f5e6ca;
+    border-bottom: solid 3px #f5e6ca;
     float: left;
 }
 
 .user_info h5{
     margin-top: 3.5vh;
-    font-size: 1em;
+    font-size: 1vw;
 }
 
 .user_info h6{
     margin-top: -1vh;
+    font-size: 1vw;
 }
 
 .logout{
@@ -108,7 +111,7 @@ body{
 }
 
 .contents_box1 ul{
-    margin-top: -2vh;
+    margin-top: -2vh !important;
     width: 80vw;
     height: 15vh;
 }
@@ -187,7 +190,7 @@ body{
 .wishList_box ul {
     width: 20vw;
     height: 33vh;
-    margin-left: 2vw;
+    margin-left: 2vw !important;
     margin-top: 3vh;
     background-color: #e0e0e0;
     float: left;
