@@ -87,3 +87,8 @@ function closeLoadingWithMask() {
     $('#mask, #loadingImg').remove();
 }
 
+
+document.querySelector("#hotel-link-btn").onclick = function (){
+        location.href="./reserv2.html"
+}
+

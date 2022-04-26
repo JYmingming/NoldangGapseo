@@ -21,7 +21,7 @@
     var xTestImg2 =document.querySelector("#x-testImg-2")
     var xTestImg3 =document.querySelector("#x-testImg-3")
 
-    LoadingWithMask() // 로딩화면
+    //LoadingWithMask() // 로딩화면
     fetch("/reserve/get?startDate="+startDate+"&endDate="+endDate+"&link="+link)
     .then(function(response) {
     return response.json();
@@ -81,4 +81,9 @@
     function closeLoadingWithMask() {
     $('#mask, #loadingImg').hide();
     $('#mask, #loadingImg').remove();
+}
+
+
+document.querySelector("#air-link-btn").onclick = function (){
+        location.href="./reserv.html"
 }

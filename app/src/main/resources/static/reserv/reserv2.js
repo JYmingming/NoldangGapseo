@@ -43,3 +43,8 @@ document.querySelector("#search-btn").onclick =function (){
     const dataLink = $(this).attr('data-no');
     location.href = `/reserv/reserv2_detail.html?startDate=2022-04-25&endDate=2022-04-26&link=${dataLink}`;
 });
+
+
+document.querySelector("#air-link-btn").onclick = function (){
+    location.href="./reserv.html"
+}
