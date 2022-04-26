@@ -157,6 +157,8 @@ body{
     height: 400px;
     border-radius: 1.4vw;
     border: #dddddd 1px solid;
+    width: 400px;
+    overflow: auto;
 }
 .table{
     overflow: auto;
@@ -187,3 +189,7 @@ body{
     border-radius: 1vw;
 }
 
+#air-code1 img,#air-code2 img{
+    width: 28px;
+    height: 28px;
+}
