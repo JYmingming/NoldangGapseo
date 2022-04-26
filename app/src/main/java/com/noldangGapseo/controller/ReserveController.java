@@ -6,6 +6,7 @@ import com.noldangGapseo.service.AirReserveService;
 import com.noldangGapseo.service.ReserveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,7 +29,7 @@ public class ReserveController {
     }
     @GetMapping("/getAir")
     public List<Air> getAir(String startDate, String endDate,String startLocation) throws Exception {
-        return airService.airCrawl(startDate,endDate,startLocation);
+      return airService.airCrawl(startDate,endDate,startLocation);
     }
 
 
