@@ -9,5 +9,6 @@
         select * from noldang.service_center a , noldang.user b 
         where a.user_id = b.user_id and a.service_type = #{type} 
         
+        
     </select>
 </mapper>

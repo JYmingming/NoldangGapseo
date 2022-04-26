@@ -5,6 +5,7 @@
     background:.000;
   }
   .body {
+    margin-top: 10px;
     width:90%;
     height:600px;
     position:absolute;
