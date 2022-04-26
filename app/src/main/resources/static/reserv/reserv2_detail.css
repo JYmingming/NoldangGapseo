@@ -82,6 +82,9 @@ li,ul{
     border-radius: 1.2vw;
     margin-top: 2vh;
 }
+.search-value div:nth-child(3){
+    border: 0px;
+}
 
 .search-values div:nth-child(4){
     border: 0px;

@@ -44,47 +44,33 @@ li,ul{
 .mini-container{
     height: 360px;
 }
-
+.search{
+    margin:auto;
+}
 .search-option{
-    display: block;
-    height: 80px;
+    height: 40px;
     margin-top: 10px;
 }
 
-.search-option >div{
-    float: right;
-    margin-right: 4vw;
-}
-.search-option img{
-    width: 20px;
-}
-.search-option span{
-    font-size: 1.2em;
-    margin-left: 6px;
-}
-
-.search-option select{
-    width: 86px;
-    height: 36px;
-    text-align: center;
-    color: black;
-    border: 1px solid rgb(251, 147, 0);
-    border-radius: 1vw;
-}
 .search-values{
     margin: 0 auto;
+    height: 100px;
+    overflow: visible;
+    display: inline;
 }
 
 .search-value{
     border: 1px solid rgb(251, 147, 0);
-    width: 14vw;
+    width: 160px;
     height: 80px;
     float: left;
-    margin-left: 1vw;
+    margin-left: 0.6vw;
     border-radius: 1.2vw;
+
 }
 .search-values div:nth-child(1){
-    margin-left: 8vw;
+    width: 160px;
+    margin-left: 15vw;
 }
 .search-values div:nth-child(4){
     border: 0px;

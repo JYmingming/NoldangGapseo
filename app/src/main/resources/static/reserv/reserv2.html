@@ -24,10 +24,9 @@
   <div class="container w-75" id ="wrap">
     <div class="mini-container">
       <div class="tap-menu">
-        <div class="row row-cols-md-3 text-center">
+        <div class="row row-cols-md-2 text-center">
           <button class ="col-4 tap-uncheck">항공권</button>
           <button class ="col-4 tap-check">숙박</button>
-          <button class ="col-4 tap-uncheck">렌트카</button>
         </div>
       </div>
       <div class="content-title" >
@@ -38,28 +37,6 @@
 
       <div class ="search">
         <div class="w-100 search-option">
-            <div class="guest-num">
-              <img src="../img/facebook_icon.png"><span>투숙객</span>
-              <br>
-              <select class="float-end">
-                <option>1명</option>
-                <option>2명</option>
-                <option>3명</option>
-                <option>4명</option>
-                <option>5명</option>
-              </select>
-            </div>
-            <div class="room-num">
-              <img src="../img/facebook_icon.png"><span>객실수</span>
-              <br>
-              <select class="float-end">
-                <option>1개</option>
-                <option>2개</option>
-                <option>3개</option>
-                <option>4개</option>
-                <option>5개</option>
-              </select>
-            </div>
         </div><!--search option-->
         <div class="search-values">
           <div class="search-value">
@@ -78,7 +55,7 @@
             <img id="plus" src="../img/facebook_icon.png">
           </div>
           <div class="search-value">
-            <button type="submit">검색하기</button>
+            <button id="search-btn">검색하기</button>
           </div>
         </div>
       </div>
@@ -86,11 +63,9 @@
     <div class="out-line"></div>
     <div class="result-container">
       <div class="tap-menu">
-        <div class="row row-cols-sm-4 text-center">
+        <div class="row row-cols-sm-2 text-center">
           <button class ="col-1 tap-check">전체</button>
           <button class ="col tap-uncheck">호텔</button>
-          <button class ="col tap-uncheck">펜션</button>
-          <button class ="col tap-uncheck">리조트&콘도</button>
         </div>
       </div>
       <div class="result-box">
@@ -99,59 +74,10 @@
         </ul>
       </div>
     </div>
-
     </div>
-    <div> 끝 </div>
+    <div> </div>
   </body>
+<script src="./reserv2.js" type="module"></script>
 
-
-
-
-
-<script>
-  var listUl = document.querySelector(".result-list");
-
-  fetch("/reserve/get?startDate=2022-04-25&endDate=2022-04-26&link=L")
-          .then(function(response) {
-            return response.json();
-          })
-          .then(function(result) {
-            if (result.status == "fail") {
-              window.alert("서버 요청 오류!");
-              console.log(result.data);
-              return;
-            }
-            var hotels = result["hotels"];
-            for (var hotel of hotels) {
-              var li = document.createElement("li");
-              li.classList.add('result-item');
-              li.innerHTML=`
-                <div class="item-line-1">
-                    <img src="${hotel[4]}">
-                </div>
-                <div class="item-line-2">
-                    <h5>${hotel[0]}</h5>
-                    <p>
-                      <br><br>
-                      <span>평점 [ ${hotel[1]} ]</span>
-                      <span>주소 : ${hotel[2]}</span>
-                    </p>
-                </div>
-                <div class="item-line-3">
-                <h4>${hotel[3]}</h4>
-                <button class="reserv-btn" data-no="${hotel[5]}">바로예약</button>
-                </div>`
-                listUl.appendChild(li)
-            }
-          });
-</script>
-<script>
-  $('body').on('click','[class=reserv-btn]', function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    const dataLink = $(this).attr('data-no');
-    location.href = `/reserv/reserv2_detail.html?startDate=2022-04-25&endDate=2022-04-26&link=${dataLink}`;
-  });
-</script>
 
 </html>
