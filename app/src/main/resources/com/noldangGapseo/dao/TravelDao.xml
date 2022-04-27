@@ -19,6 +19,8 @@
 
     <resultMap id="scheduleMap" type="Schedule"></resultMap>
 
+    <resultMap id="tagMap" type="tag"></resultMap>
+
     <!-- 유저의 여행 리스트를 불러온다 -->
     <select id="travelList" resultMap="travelMap" parameterType="String">
         SELECT      t.travel_id , t.travel_name , CONCAT(t.start_date, '~' ,t.end_date) period,
@@ -208,6 +210,13 @@
         DELETE
         FROM 	cost
         WHERE 	cost_id = #{costId};
+    </delete>
+
+    <!-- 여행을 삭제 한다. -->
+    <delete id="deleteTravel">
+        DELETE
+        FROM 	travel
+        WHERE 	travel_id = #{travelId}
     </delete>
 
 </mapper>

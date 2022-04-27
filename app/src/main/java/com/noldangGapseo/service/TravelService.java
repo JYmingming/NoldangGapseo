@@ -178,4 +178,13 @@ public class TravelService {
         }
         return response;
     }
+
+    // 여행을 지운다.
+    public ApiResponse deleteTravel(Integer traveId){
+        Integer response = mapper.deleteTravel(traveId);
+        if(response == 0){
+            return new ApiResponse("1111", "fail", null);
+        }
+        return new ApiResponse();
+    }
 }
