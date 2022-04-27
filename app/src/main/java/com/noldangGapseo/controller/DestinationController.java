@@ -119,7 +119,6 @@ public class DestinationController {
   }
 
   // 여행지를 작성한다.
-
   @PostMapping("/add/destination")
   public ApiResponse addDestination(MultipartFile[] imgs, Destination destination) {
     ApiResponse response = new ApiResponse();

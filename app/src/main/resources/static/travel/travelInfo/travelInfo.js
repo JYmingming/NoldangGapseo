@@ -1,29 +1,23 @@
-import { getTravel, updateTravelName, findByNickName } from '../../common/api/apiList.js';
+import {
+    getTravel,
+    updateTravelName,
+    findByNickName,
+    deleteTravel,
+} from '../../common/api/apiList.js';
+import { urlSearch } from '../../common/urlSearchParam.js';
 
-// ---- URLSearchParams ----
-var arr = location.href.split('?');
+var no = urlSearch('travelId');
 
-if (arr.length == 1) {
-    alert('요청 형식이 옳바르지 않습니다.');
-    throw 'URL 형식 오류!';
-}
-
-var qs = arr[1];
-
-// 쿼리 스트링에서 email 값을 추출한다.
-var params = new URLSearchParams(qs);
-var no = params.get('travelId');
-
-if (no == null) {
-    alert('게시물 번호가 없습니다.');
-    throw '파라미터 오류!';
-}
-
+let startDate;
+let endDate;
 // ---- 여행정보 불러오기 ----
 // ---- 화면 렌더링 ----
 (async function () {
     const response = await getTravel(no);
     //console.log('reponse:::', response);
+    startDate = response?.travel.startDate;
+    endDate = response?.travel.endDate;
+    //console.log('date:::', startDate, endDate);
     //console.log('rep:::', response.travel.travelName);
     $('.travel-name').html(response.travel.travelName);
     if (response.travel.travelName.length > 6) {
@@ -147,6 +141,28 @@ $('#invite-input').on('input', function (e) {
     getUser(nickName);
 
     //$('#invite-input').toggle();
+});
+
+const delTravel = async () => {
+    const delRes = await deleteTravel(no);
+    console.log(delRes);
+    if (delRes?.resCode == '0000') {
+        location.href = '/travel/list/list.html';
+        return;
+    }
+};
+
+//---- 여행 지우기 이벤트 ----
+$('.delete-btn').on('click', async function (e) {
+    Swal.fire({
+        title: '정말로 삭제 할까요?',
+        showCancelButton: true,
+        confirmButtonText: 'Delete',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            delTravel();
+        }
+    });
 });
 
 // ----뒤로가기 화살표-----

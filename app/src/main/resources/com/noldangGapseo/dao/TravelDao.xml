@@ -84,7 +84,9 @@
         SELECT      t.travel_name ,cost.total_cost,
                     u.nick_name,
                     CONCAT(t.start_date, '~' ,t.end_date) period,
-                    DATEDIFF(DATE_FORMAT(t.end_date , '%Y-%m-%d.') , DATE_FORMAT(t.start_date ,'%Y-%m-%d.')) d_day
+                    DATEDIFF(DATE_FORMAT(t.end_date , '%Y-%m-%d.') , DATE_FORMAT(t.start_date ,'%Y-%m-%d.')) d_day,
+                    t.start_date,
+                    t.end_date
         FROM        travel t , `user` u ,
                     (
                     SELECT sum(c.cost) total_cost

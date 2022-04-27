@@ -21,7 +21,7 @@ function readomCardColor(arr) {
                         <div
                             class="card card-just-text"
                             data-background="color"
-                    data-color=${cardColor}
+                            data-color=${cardColor}
                             data-radius="true"
                             data-id=${m.travelId}
                         >
