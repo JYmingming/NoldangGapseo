@@ -21,6 +21,9 @@
 		$('.headers').load('../../common/header/header.html');
 	});
 </script>
+<!--댓글 CSS 가져오기 -->
+<link rel="stylesheet" href="/userDestination/index.css">
+<script src="/userDestination/index.js"></script>
 
 </head>
 <body>
@@ -110,7 +113,32 @@
 
       <hr>
 
-      <div>
+<p>댓글 <input id="x-todo-input" type="text"></p>
+<table id="x-todo-table" border="1" class="table table-hover">
+<thead>
+  <tr>
+    <th></th>
+    <th>        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+          viewBox="0 0 48 48" data-svg-content="true" fill="#000000">
+          <path
+            d="M29.39 34.21C27.9 35.36 25.99 36 24 36s-3.9-.64-5.39-1.79c-.43-.34-1.06-.26-1.4.18-.34.44-.26 1.06.18 1.4C19.22 37.21 21.57 38 24 38s4.78-.79 6.61-2.21c.44-.34.52-.97.18-1.4-.34-.44-.97-.52-1.4-.18z"></path>
+          <circle cx="17" cy="25" r="2"></circle>
+          <path
+            d="M24 0C10.75 0 0 10.75 0 24s10.75 24 24 24 24-10.75 24-24S37.25 0 24 0zm15.92 29.64c-2.18 7.48-8.54 12.91-16.08 12.91-7.55 0-13.92-5.45-16.09-12.95-2.38-.2-4.25-2.36-4.25-5.02 0-2.54 1.71-4.63 3.93-4.99v-.01c4.18-2.93 7.61-6.98 8.19-10.1l.01.01v-.03c2.71 5.25 12.6 10.38 23.65 10.12.2-.03.39-.07.59-.07 2.55 0 4.62 2.27 4.62 5.07.01 2.78-2.04 5.04-4.57 5.06z"></path>
+          <circle cx="31" cy="25" r="2"></circle></svg></th>
+          <th class="loginUser">댓글</th>
+    <th>댓글</th>
+    <th><a>수정</a><a>삭제</a><a>신고</a></th>
+  </tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+<input type="text" id="x-title-input">
+
+      <!--  
+
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
           viewBox="0 0 48 48" data-svg-content="true" fill="#000000">
           <path
@@ -120,7 +148,7 @@
             d="M24 0C10.75 0 0 10.75 0 24s10.75 24 24 24 24-10.75 24-24S37.25 0 24 0zm15.92 29.64c-2.18 7.48-8.54 12.91-16.08 12.91-7.55 0-13.92-5.45-16.09-12.95-2.38-.2-4.25-2.36-4.25-5.02 0-2.54 1.71-4.63 3.93-4.99v-.01c4.18-2.93 7.61-6.98 8.19-10.1l.01.01v-.03c2.71 5.25 12.6 10.38 23.65 10.12.2-.03.39-.07.59-.07 2.55 0 4.62 2.27 4.62 5.07.01 2.78-2.04 5.04-4.57 5.06z"></path>
           <circle cx="31" cy="25" r="2"></circle></svg>
 
-        <span class="nick">조원석</span> <span>개ㅁㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㅁㅇㄻㅁㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹㄻㄴㅇㄻㄴㅇㄻㄹㄴㅇㄻㄴㅇㄻㄴㅇㄻㅇㄴ꿀맛</span>
+        <span class="nick">조원석</span> <span>개ㅁㅇㄻㅇㄴ꿀맛</span>
 
         <div
           style="float: right; width: 33%; margin-right: 25px; text-align: right;">
@@ -163,6 +191,8 @@
         </div>
       </div>
 
+
+-->
       <svg xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink" width="32"
         height="32" viewBox="0 0 32 32" fill="rgb(0, 0, 0)"
@@ -196,6 +226,7 @@
 
 
     <script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="/userDestination/userDestinationDtl3.js" type="module"></script>
     <script>
 					// 1) URL에서 쿼리스트링(query string)을 추출한다.
 					var arr = location.href.split("?");
@@ -264,15 +295,8 @@
 
 										content.innerHTML = getDes.destination.contents;
 										btnLikeCnt.innerHTML = getDes.destination.likesCnt
-										btnCommentCnt.innerHTML = getDes.destination.likesCnt
-	
-
-										//              console.log(getDes.destinationImgList[2].img)
-										//						console.log(img[0].src)
-										//						img[0].src.value = 
-										//		getDes.destinationList[0]
-										//.src = getDes.destinationList[0]
-										//			            console.log(getDes.destinationList[0])
+										btnCommentCnt.innerHTML = getDes.commentList.length
+										address.innerHTML = getDes.destination.address
 
 									})
 				</script>
