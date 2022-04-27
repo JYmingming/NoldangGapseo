@@ -142,7 +142,16 @@ const travel = {
     endDate: '',
     travelName: '',
     userId: '',
+    color: '',
 };
+
+// ---- 여행 포스트잇 색 랜덤으로 정하기 -----
+const stikyColor = ['blue', 'green', 'brown', 'purple', 'orange', 'yellow'];
+
+function readomCardColor(arr) {
+    const random = Math.floor(Math.random() * arr.length);
+    return arr[random];
+}
 
 document.querySelector('#datepicker_start').onchange = function () {
     travel.startDate = document.querySelector('#datepicker_start').value;
@@ -169,6 +178,7 @@ document.querySelector('#makeDec-btn').onclick = async function () {
             '아이디번호' +
             travel.userId
     );
+    travel.color = readomCardColor(stikyColor);
     if (travel.userId == '') {
         alert('로그인이 필요합니다.');
         return;

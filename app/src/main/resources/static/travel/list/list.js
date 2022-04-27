@@ -1,12 +1,5 @@
 import { travelList, getLoginUser } from '../../common/api/apiList.js';
 
-// --- stiky color ---
-const stikyColor = ['blue', 'green', 'brown', 'purple', 'orange', 'yellow'];
-
-function readomCardColor(arr) {
-    const random = Math.floor(Math.random() * arr.length);
-    return arr[random];
-}
 // ---- 화면 렌더링 ----
 (async function () {
     const session = await getLoginUser();
@@ -15,13 +8,12 @@ function readomCardColor(arr) {
     response?.map((m) => {
         //console.log(m);
         //m => arr[i].name
-        let cardColor = readomCardColor(stikyColor);
         let view = ` <div class="col-md-4 col-sm-6 content-card">
                     <div class="card-big-shadow">
                         <div
                             class="card card-just-text"
                             data-background="color"
-                            data-color=${cardColor}
+                            data-color=${m.color}
                             data-radius="true"
                             data-id=${m.travelId}
                         >
