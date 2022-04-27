@@ -30,6 +30,7 @@ export const PATH = {
         addCost: '/travel/addCost',
         updateCost: '/travel/updateCost',
         deleteCost: '/travel/deleteCost',
+        deleteTravel: '/travel/delete',
     },
     TAG: {
         defaultTagList: '/tag/list',
@@ -371,6 +372,19 @@ export async function deleteCost(id) {
         const resopnse = await axios({
             method: 'DELETE',
             url: `${PATH.TRAVEL.deleteCost}?id=${id}`,
+        });
+        return resopnse.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- 여행 delete ----
+export async function deleteTravel(id) {
+    try {
+        const resopnse = await axios({
+            method: 'DELETE',
+            url: `${PATH.TRAVEL.deleteTravel}?id=${id}`,
         });
         return resopnse.data;
     } catch (e) {
