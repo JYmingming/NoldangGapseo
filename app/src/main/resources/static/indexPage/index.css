@@ -148,6 +148,8 @@ body {
     border: 1px solid black;
     border-radius: 2vw;
     padding: 5%;
+    background-size: 200px;
+    background-repeat: no-repeat;
 }
 
 .list-group {
