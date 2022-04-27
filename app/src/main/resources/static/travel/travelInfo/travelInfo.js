@@ -170,3 +170,9 @@ $('.bi').on('click', function (e) {
     e.preventDefault();
     location.href = '/travel/list/list.html';
 });
+
+
+$('#travel-reserve-btn').on('click',function (e){
+    e.preventDefault();
+    window.open(`/reserv/reserv.html?startDate=${startDate}&endDate=${endDate}&travelNo=${no}`);
+});
