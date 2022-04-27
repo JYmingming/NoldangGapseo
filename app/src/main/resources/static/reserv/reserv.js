@@ -14,10 +14,13 @@ const searchParam = {
         searchParam.startDate= document.querySelector("#start-date").innerHTML;
         searchParam.endDate= document.querySelector("#end-date").innerHTML;
         searchParam.startLocation= document.querySelector("#start-location").value;
-
         peopleCnt.innerHTML= document.querySelector("#people-num").value;
         locationText1.innerHTML = document.querySelector("#start-location").value;
         locationText2.innerHTML = document.querySelector("#start-location").value;
+        if(peopleCnt.innerHTML=="0명"){
+            alert("인원을 선택해주세요");
+            return;
+        }
 
         LoadingWithMask();
         fetch(`/reserve/getAir?startDate=${searchParam.startDate}&endDate=${searchParam.endDate}&startLocation=${searchParam.startLocation}`)
@@ -28,6 +31,13 @@ const searchParam = {
             for (var air of result){
                 if (air.airFlag==1){
                     var tr = document.createElement("tr")
+                    tr.classList.add('result-tr');
+                    tr.setAttribute("data-type",`${air.airType}`);
+                    tr.setAttribute("data-startTime",`${air.airStartTime}`);
+                    tr.setAttribute("data-endTime",`${air.airEndTime}`);
+                    tr.setAttribute("data-price",`${air.airPrice}`);
+                    tr.setAttribute("data-flag",`0`);
+
                     tr.innerHTML= `
                                    <td><img src="${air.airUrl}"></td>
                                    <td>${air.airType}</td>
@@ -38,6 +48,12 @@ const searchParam = {
                     tbodyCode1.appendChild(tr);
                 }else{
                     var tr = document.createElement("tr")
+                    tr.classList.add('result-tr2');
+                    tr.setAttribute("data-type",`${air.airType}`);
+                    tr.setAttribute("data-startTime",`${air.airStartTime}`);
+                    tr.setAttribute("data-endTime",`${air.airEndTime}`);
+                    tr.setAttribute("data-Price",`${air.airPrice}`);
+                    tr.setAttribute("data-flag",`0`);
                     tr.innerHTML= `
                                    <td><img src="${air.airUrl}"></td>
                                    <td>${air.airType}</td>
@@ -51,6 +67,89 @@ const searchParam = {
             closeLoadingWithMask();
         })
 };
+
+
+
+let clickParam = {
+    type:'',
+    price: 0,
+    startTime: '',
+    endTime: '',
+    people: 0
+};
+let clickParam2 = {
+    type:'',
+    price: 0,
+    startTime: '',
+    endTime: '',
+    people: 0
+};
+
+let startFlag =0;
+let endFlag =0;
+
+
+
+document.querySelector("#people-num").value;
+
+$('body').on('click','[class=result-tr]', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (startFlag==0){
+        $(this).attr("data-flag","1");
+        $(this).css('background-color','#f2f2f2');
+        clickParam.type = $(this).attr('data-type');
+        clickParam.startTime = $(this).attr('data-startTime');
+        clickParam.endTime = $(this).attr('data-endTime');
+        clickParam.price = $(this).attr('data-price');
+        clickParam.people = (document.querySelector("#people-cnt").innerHTML).replace("명","");
+        startFlag=1;
+    }else if (startFlag==1 && $(this).attr('data-flag')==1){
+        $(this).attr("data-flag","0");
+        $(this).css('background-color','');
+        clickParam.type = '';
+        clickParam.startTime = '';
+        clickParam.endTime = '';
+        clickParam.price = 0;
+        clickParam.people = (document.querySelector("#people-cnt").innerHTML).replace("명","");
+        startFlag=0;
+    }
+    if(startFlag==1&&endFlag==1){
+        document.querySelector("#price-sum").innerHTML=((parseInt(clickParam.price)+parseInt(clickParam2.price))*clickParam.people)+"원";
+    }else{
+        document.querySelector("#price-sum").innerHTML="0원";
+    }
+    console.log(clickParam);
+});
+
+$('body').on('click','[class=result-tr2]', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (endFlag==0){
+        clickParam2.type = $(this).attr('data-type');
+        clickParam2.startTime = $(this).attr('data-startTime');
+        clickParam2.endTime = $(this).attr('data-endTime');
+        clickParam2.price = $(this).attr('data-price');
+        $(this).attr("data-flag","1");
+        $(this).css('background-color','#f2f2f2');
+        endFlag=1;
+    }else if (endFlag==1 && $(this).attr('data-flag')==1){
+        clickParam2.type = '';
+        clickParam2.startTime = '';
+        clickParam2.endTime = '';
+        clickParam2.price = 0;
+        $(this).attr("data-flag","0");
+        $(this).css('background-color','');
+        endFlag=0;
+    }
+    if(startFlag==1&&endFlag==1){
+        document.querySelector("#price-sum").innerHTML=((parseInt(clickParam.price)+parseInt(clickParam2.price))*clickParam.people)+"원";
+    }else{
+        document.querySelector("#price-sum").innerHTML="0원";
+    }
+    console.log(clickParam2);
+});
+
 
 function LoadingWithMask() {
     //화면의 높이와 너비를 구합니다.
@@ -87,8 +186,6 @@ function closeLoadingWithMask() {
     $('#mask, #loadingImg').remove();
 }
 
-
 document.querySelector("#hotel-link-btn").onclick = function (){
-        location.href="./reserv2.html"
+    location.href="./reserv2.html"
 }
-
