@@ -58,6 +58,12 @@ public class TravelController {
     return service.getPeriod(id);
   }
 
+  // 여행을 삭제한다.
+  @DeleteMapping("/delete")
+  public ApiResponse deleteTravel(@RequestParam Integer id){
+    return service.deleteTravel(id);
+  }
+
   // 여행의 비용 항목을 불러온다.
   @GetMapping("/costList")
   public List<Cost> costList(@RequestParam Integer travelId) {
@@ -111,5 +117,8 @@ public class TravelController {
   public ApiResponse deleteTodo(@RequestParam Integer todoId) {
     return service.deleteTodo(todoId);
   }
+
+
+
 
 }
