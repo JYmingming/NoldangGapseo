@@ -195,7 +195,7 @@ $('.confirm-btn').on('click', async function (e) {
                 location.reload();
                 return;
             } else {
-                location.href = '/travel/myboard/myboard.html';
+                location.href = '/adminPage/admin/TravelAddBoard.html';
                 return;
             }
         });
