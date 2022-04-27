@@ -191,6 +191,7 @@ body {
 
 .modal-content {
     border-radius: 2vw !important;
+    width: 30vw;
 }
 .login_container {
     width: 30vw;
