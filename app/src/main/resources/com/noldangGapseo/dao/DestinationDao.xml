@@ -15,12 +15,15 @@
 		SELECT d.destination_id,
 		d.destination_name, address, d.reg_date,
 		u.nick_name,
-		dt.destination_type_name
+		dt.destination_type_name,
+		d.contents,
+		di.img thumb_nail_img
 		FROM destination d , `user` u ,
-		destination_type dt
+		destination_type dt, destination_img di
 		WHERE d.user_id = u.user_id
 		and
 		d.destination_type_id = dt.destination_type_id
+		and d.destination_id = di.destination_id
 		and not d.user_id = 1
 		ORDER BY reg_date desc;
 	</select>

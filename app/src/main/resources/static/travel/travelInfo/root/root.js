@@ -8,7 +8,7 @@ var container = document.getElementById('map');
 
 var options = {
     center: new kakao.maps.LatLng(33.374, 126.557),
-    level: 9,
+    level: 10,
 };
 var map = new kakao.maps.Map(container, options);
 
