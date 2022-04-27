@@ -39,6 +39,11 @@ let endDate;
             $('.travel-companion-box').append(companion);
         }
     });
+    response.tagList?.map((m) => {
+        console.log(m);
+        const tagView = `<div class="tag col-3">${m.tagName}</div>`;
+    $('.tagList').append(tagView);
+    });
 })();
 
 // ===== 모달 ======
