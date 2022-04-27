@@ -188,3 +188,16 @@
 .name-input:focus {
     outline: none;
 }
+
+.delete-btn {
+    background-color: rgb(245, 71, 72);
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Comic Sans MS';
+    color: white;
+    cursor: pointer;
+}
+.col-sm-6 {
+    cursor: pointer;
+}

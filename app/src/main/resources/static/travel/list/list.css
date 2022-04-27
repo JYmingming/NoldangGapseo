@@ -163,3 +163,6 @@ a:focus {
 .card[data-color='orange'] .category {
     color: #e95e37;
 }
+.content-card * {
+    cursor: pointer;
+}

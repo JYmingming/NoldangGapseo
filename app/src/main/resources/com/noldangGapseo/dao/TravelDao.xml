@@ -24,7 +24,8 @@
     <!-- 유저의 여행 리스트를 불러온다 -->
     <select id="travelList" resultMap="travelMap" parameterType="String">
         SELECT      t.travel_id , t.travel_name , CONCAT(t.start_date, '~' ,t.end_date) period,
-                    DATEDIFF(DATE_FORMAT(t.start_date , '%Y-%m-%d.') , DATE_FORMAT(now() ,'%Y-%m-%d.')) d_day
+                    DATEDIFF(DATE_FORMAT(t.start_date , '%Y-%m-%d.') , DATE_FORMAT(now() ,'%Y-%m-%d.')) d_day,
+                    t.color
         FROM        travel t , `user` u
         WHERE       t.user_id = u.user_id
         and         u.nick_name = #{nickName}
@@ -34,8 +35,8 @@
     <!-- 여행을 생성한다. -->
     <insert id="addTravel" parameterType="Travel" keyProperty="travelId" keyColumn="travel_id" useGeneratedKeys="true">
         INSERT
-        INTO    travel 	(user_id, travel_name, start_date, end_date)
-        values  		(#{userId}, #{travelName}, #{startDate}, #{endDate})
+        INTO    travel 	(user_id, travel_name, start_date, end_date, color)
+        values  		(#{userId}, #{travelName}, #{startDate}, #{endDate}, #{color})
     </insert>
 
     <!-- 여행 태그 설정 -->
@@ -84,7 +85,9 @@
         SELECT      t.travel_name ,cost.total_cost,
                     u.nick_name,
                     CONCAT(t.start_date, '~' ,t.end_date) period,
-                    DATEDIFF(DATE_FORMAT(t.end_date , '%Y-%m-%d.') , DATE_FORMAT(t.start_date ,'%Y-%m-%d.')) d_day
+                    DATEDIFF(DATE_FORMAT(t.end_date , '%Y-%m-%d.') , DATE_FORMAT(t.start_date ,'%Y-%m-%d.')) d_day,
+                    t.start_date,
+                    t.end_date
         FROM        travel t , `user` u ,
                     (
                     SELECT sum(c.cost) total_cost

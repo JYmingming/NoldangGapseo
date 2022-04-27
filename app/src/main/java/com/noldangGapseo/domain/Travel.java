@@ -18,4 +18,5 @@ public class Travel {
     private String nickName;
     private String startDate;
     private String endDate;
+    private String color;
 }
