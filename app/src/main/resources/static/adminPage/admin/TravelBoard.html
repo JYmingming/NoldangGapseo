@@ -797,7 +797,7 @@
             $("#keyword").keyup(function() {
                 var k = $(this).val();
                 $("#products > tbody > tr").hide();
-                var temp = $("#products > tbody > tr > td:nth-child(5n+2):contains('" + k + "')");
+                var temp = $("#products > tbody > tr > td:nth-child(n):contains('" + k + "')");
                 
                 $(temp).parent().show();
             })
