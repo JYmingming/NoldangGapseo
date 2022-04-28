@@ -33,21 +33,6 @@
             email=#{email} and pwd=password(#{password})
     </select>
     
-<<<<<<< HEAD
-=======
-    <select id="findByPassword" resultMap="userMap">
-        select
-            user_id,
-            nick_name,
-            email
-        from
-            user
-        where
-             pwd=password(#{password}) 
-    </select>
-
-
->>>>>>> main
     <select id="findAll"  resultMap="userMap">
        SELECT 
        user_Id , email, phone, nick_name, reg_date , profile_img
