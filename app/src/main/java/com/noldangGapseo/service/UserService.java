@@ -22,8 +22,6 @@ public class UserService {
     return mapper.findByEmailAndPassword(email, password);
   }
 
-
-
   public UserResponse userList() {
     return new UserResponse().setUserList(mapper.findAll());
   }
