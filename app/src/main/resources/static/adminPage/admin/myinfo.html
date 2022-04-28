@@ -29,7 +29,7 @@
 
 
 <div class="container">
-<div id="circle"><img src="img/profile.jpg" alt=""></div>
+<div id="circle"><img class="profile_img"></div>
 
 <table class="type02">
   <tr>
@@ -98,6 +98,28 @@
 				
 		        for (var i = 0; i < 8; i++) {
 		        	d[i].innerHTML =result[i].address;
+		          }
+
+
+			})
+	
+		</script>
+		
+				<script>
+			let e;
+
+			const f = document.querySelectorAll(".profile_img")
+		
+
+
+
+		fetch("/user/admin/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 8; i++) {
+		        	f[i].src =result[i].profileImg;
 		          }
 
 

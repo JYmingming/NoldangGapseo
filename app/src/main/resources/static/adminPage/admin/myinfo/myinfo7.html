@@ -9,15 +9,14 @@
 
 <body>
 
-<header>
 <div th:replace="/fixed/header :: header"></div>
-<a href="memberList2.html" ><h1 id="imgtext1">ADMINSTRATOR 
+<a href="../memberList2.html" ><h1 id="imgtext1">ADMINSTRATOR 
 <nav>
-   <a href="memberList2.html" ><span id="imgtext2">유저관리</span></a>
-                  <a href="report.html"><span id="imgtext3">신고관리</span></a>
-                   <a href="TravelBoard3.html"><span id="imgtext4">여행지관리</span></a>
+   <a href="../memberList2.html" ><span id="imgtext2">유저관리</span></a>
+                  <a href="../report.html"><span id="imgtext3">신고관리</span></a>
+                   <a href="../TravelBoard3.html"><span id="imgtext4">여행지관리</span></a>
                     <a href="../../customorCenter/noticeBoard/noticeBoard.html"><span id="imgtext5"></span></a>
-                    <a href="../../indexPage/index.html"><span id="imgtext6">Home</span></a>
+                    <a href="../../../../indexPage/index.html"><span id="imgtext6">Home</span></a>
                     </nav>
 </h1></a>
 
@@ -29,7 +28,7 @@
 
 
 <div class="container">
-<div id="circle"><img src="img/profile.jpg" alt=""></div>
+<div id="circle"><img class="profile_img"></div>
 
 <table class="type02">
   <tr>
@@ -38,15 +37,15 @@
   </tr>
   <tr>
     <th scope="row">작성한 게시글 수</th>
-    <td>18개</td>
+    <td>6개</td>
   </tr>
   <tr>
     <th scope="row">작성한 댓글 수</th>
-    <td>12개</td>
+    <td>11개</td>
   </tr>
   <tr>
     <th scope="row">받은 좋아요 수</th>
-    <td>51개</td>
+    <td>42개</td>
   </tr>
     <tr>
     <th scope="row">주소</th>
@@ -58,7 +57,7 @@
   
 </table>
 </div>
-<button id = "btn3"><a href = "memberList2.html">목록으로</a></button>
+<button id = "btn3"><a href = "../memberList2.html">목록으로</a></button>
 </body>
 
 <script>
@@ -75,7 +74,7 @@
 				console.log(result);
 				
 		        for (var i = 0; i < 8; i++) {
-		        	b[i].innerHTML =result[i+4].email;
+		        	b[i].innerHTML =result[i+6].email;
 		          }
 
 
@@ -97,7 +96,29 @@
 				console.log(result);
 				
 		        for (var i = 0; i < 8; i++) {
-		        	d[i].innerHTML =result[i+5].address;
+		        	d[i].innerHTML =result[i+6].address;
+		          }
+
+
+			})
+	
+		</script>
+		
+					<script>
+			let e;
+
+			const f = document.querySelectorAll(".profile_img")
+		
+
+
+
+		fetch("/user/admin/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 8; i++) {
+		        	f[i].src =result[i+6].profileImg;
 		          }
 
 
