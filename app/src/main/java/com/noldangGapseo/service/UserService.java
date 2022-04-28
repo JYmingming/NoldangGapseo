@@ -7,6 +7,7 @@ import com.noldangGapseo.dao.UserDao;
 import com.noldangGapseo.domain.Invite;
 import com.noldangGapseo.domain.User;
 import com.noldangGapseo.domain.UserResponse;
+import com.noldangGapseo.domain.likes;
 @Service
 public class UserService {
 
@@ -62,6 +63,10 @@ public class UserService {
 
   public List<Invite> inviteList(String nickName) {
     return mapper.inviteList(nickName);
+  }
+
+  public List<likes> likesImg(int userId) {
+    return mapper.likesImg(userId);
   }
 
 }

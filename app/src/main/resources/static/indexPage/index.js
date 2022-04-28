@@ -19,6 +19,13 @@ fetch('/user/getLoginUser')
             console.log('어드민 로그인');
             css('.admin-login', 'display', '');
         }
+        var user = result.data;
+            var no = user.userId
+            
+            $('#myPage').on('click', function (e) {
+                e.preventDefault();
+                location.href = `../myPage/main/myPageMain.html?userId=${no}`;
+              });
     });
 
 document.querySelector('#logout-btn').onclick = function () {

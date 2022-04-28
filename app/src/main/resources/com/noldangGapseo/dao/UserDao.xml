@@ -11,6 +11,9 @@
     
     <resultMap type="invite" id="inviteMap" >
     </resultMap>
+    
+    <resultMap type="likes" id="likesMap" >
+    </resultMap>
 
     <insert id="insert" parameterType="user">
         insert into user(email,pwd,nick_name,phone)
@@ -30,18 +33,6 @@
             email=#{email} and pwd=password(#{password})
     </select>
     
-    <select id="findByPassword" resultMap="userMap">
-        select
-            user_id,
-            nick_name,
-            email
-        from
-            user 
-        where
-             pwd=password(#{password}) 
-    </select>
-
-
     <select id="findAll"  resultMap="userMap">
        SELECT 
        user_Id , email, phone, nick_name, reg_date 
@@ -93,6 +84,13 @@
         FROM        invite i , user u
         WHERE       i.user_nickName = u.nick_name
         and         u.nick_name = #{nickName}
+    </select>
+    
+    <select id="likesImg" resultMap="likesMap">
+        SELECT      l.img, l.destination_id
+        FROM        likes l , user u
+        WHERE       l.user_id = u.user_id
+        and         u.user_id = #{userId}
     </select>
   
   <delete id="delete" parameterType="int">

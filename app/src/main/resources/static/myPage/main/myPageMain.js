@@ -51,7 +51,36 @@ function getDirection() {
          xInfoNick.innerHTML = user.nickName;
          xInfoEmail.innerHTML = user.email;
          xProfile.src = user.profileImg;
+         
+         
+         var no = user.userId
+ 
+       const WishListImg = document.querySelectorAll(".myImg")
+       
+       fetch(`/user/likesImg?userId=${no}`)
+        .then(function(response) {
+              return response.json();
+            })
+            .then(function(result) {
+              console.log(result);
+              
+              for (var i = 0; i < 5; i++) {
+                    WishListImg[i].src =result[i].img;
+                    var no1 = result[0].destinationId;
+                    $(".d-flex1").on("click", function(e) {
+
+                  location.href = `/userDestination/userDestinationDtl3.html?desId=${no1}`
+                  })
+                }
+                    
+            })
+            
+            
+            
+       
       })
+              
+         
       
       
 

@@ -110,19 +110,6 @@ public class UserController {
     return service.findAll();
   }
 
-  @RequestMapping("/resignin")
-  public Object resignin(String password, HttpServletResponse response, HttpSession session) {
-    ApiResponse apires =new ApiResponse();
-    User loginUser = service.get(password);
-    if (loginUser == null) {
-      apires.setResCode("1111");
-      apires.setResStatus("fail");
-      return apires;
-    }
-    return apires;
-
-  }
-
   @RequestMapping("/get")
   public Object get(int userId) {
     User user = service.get(userId);
@@ -171,6 +158,11 @@ public class UserController {
   @RequestMapping("/checkNickname")
   public Object checkNickname(String nickname) {
     return service.checkNickname(nickname);
+  }
+
+  @RequestMapping("/likesImg")
+  public Object likesImg(int userId) {
+    return service.likesImg(userId);
   }
 
   /*--------------- 사진업로드 ----------------*/
