@@ -18,7 +18,7 @@
 <div class="headers"></div> <!--상단부분-->
 
     <div style="position: absolute; z-index: 9; padding: 20px;">
-        <button style="font-size: 1.2em;" onclick="viewMarker();">전체보기</button>
+        <button id="all" style="font-size: 1.2em;" onclick="viewMarker();">전체보기</button>
     </div>
     <!-- 지도가 표시될 div -->
     <div id="map"></div>
@@ -42,6 +42,9 @@
         averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정 
         minLevel: 10 // 클러스터 할 최소 지도 레벨 
     });
+        
+
+$("#all").trigger("click"); //마커 자동
 
 
 function viewMarker(){
