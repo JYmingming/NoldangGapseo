@@ -65,3 +65,12 @@
     border: 0px;
     margin-bottom: 3vh;
 }
+
+.nickName-check-ok{
+    color: forestgreen;
+    font-size: 0.7em;
+}
+.nickName-check-no{
+    color: #E0475B;
+    font-size: 0.7em;
+}
