@@ -99,7 +99,6 @@
   .body-e {                 /* 공지사항 메인 폼*/
   position:relative;
   width: 70%;
-  height: 250px;
   background-color: #f9f9f9;
   color: black;
   margin: auto;
@@ -113,14 +112,14 @@
   display: flex;
   justify-content: space-between;
   }
-  .view {
-  height: 30px;
-  }
   #view2 {  
   table-layout:fixed;
   border-collapse: collapse;
   display: none;
   } 
+  .view {
+  height: 30px;
+  }
   #tb1 ,#tb2{                      
   table-layout:fixed;
   border-collapse: collapse;
