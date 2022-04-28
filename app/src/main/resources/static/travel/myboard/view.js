@@ -14,7 +14,7 @@ let desTypeId;
 // ---- 화면 렌더링 ----
 (async function () {
     user = await getLoginUser();
-    const response = await getDes(no, 'N');
+    const response = await getDes(no, 'U');
 
     destinationId = response.destination.destinationId;
 

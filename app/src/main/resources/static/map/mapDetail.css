@@ -1,6 +1,26 @@
+@font-face {
+    font-family: 'SuncheonR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/SuncheonR.woff')
+        format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 .container {
-    display: flex;
-    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#carouselExampleInterval {
+    margin-top: 10%;
+    border-radius: 20px;
+}
+
+.carousel-item {
+    height: 40vh;
+    overflow: hidden;
+    border-radius: 20px;
+}
+img {
+    overflow: hidden;
 }
 
 .des-info {
