@@ -1,3 +1,17 @@
+var arr = location.href.split("?");
+if (arr.length == 1) {
+    alert("요청 형식이 옳바르지 않습니다.")
+    throw "URL 형식 오류!";
+}
+var qs = arr[1];
+console.log(qs);
+var params = new URLSearchParams(qs);
+var travelNo = params.get("travelNo");
+var startDate = params.get("startDate");
+var endDate = params.get("endDate");
+
+document.querySelector("#start-date").innerHTML = startDate;
+document.querySelector("#end-date").innerHTML = endDate;
 
 const searchParam = {
     startDate: '',
@@ -187,5 +201,5 @@ function closeLoadingWithMask() {
 }
 
 document.querySelector("#hotel-link-btn").onclick = function (){
-    location.href="./reserv2.html"
+    location.href=`./reserv2.html?startDate=${startDate}&endDate=${endDate}&travelNo=${travelNo}`
 }

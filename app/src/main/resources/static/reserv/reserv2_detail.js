@@ -2,7 +2,7 @@
     if (arr.length == 1) {
     alert("요청 형식이 옳바르지 않습니다.")
     throw "URL 형식 오류!";
-}
+    }
     var qs = arr[1];
     console.log(qs);
     var params = new URLSearchParams(qs);
@@ -21,7 +21,7 @@
     var xTestImg2 =document.querySelector("#x-testImg-2")
     var xTestImg3 =document.querySelector("#x-testImg-3")
 
-    //LoadingWithMask() // 로딩화면
+    LoadingWithMask() // 로딩화면
     fetch("/reserve/get?startDate="+startDate+"&endDate="+endDate+"&link="+link)
     .then(function(response) {
     return response.json();
