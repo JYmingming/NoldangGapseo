@@ -20,6 +20,8 @@ public interface UserDao {
 
   List<User> findNicknameCall(String nickName);
 
+  List<User> findEmail(String email);
+
   int update(User user);
 
   int updateImg(User user);

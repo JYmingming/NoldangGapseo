@@ -22,9 +22,7 @@ public class UserService {
     return mapper.findByEmailAndPassword(email, password);
   }
 
-  public User get(String password) {
-    return mapper.findByPassword(password);
-  }
+
 
   public UserResponse userList() {
     return new UserResponse().setUserList(mapper.findAll());
@@ -35,6 +33,9 @@ public class UserService {
   }
   public List<User> findNicknameCall(String nickName) {
     return mapper.findNicknameCall(nickName);
+  }
+  public List<User> findEmail(String email) {
+    return mapper.findEmail(email);
   }
 
 

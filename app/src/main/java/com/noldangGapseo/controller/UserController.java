@@ -109,6 +109,11 @@ public class UserController {
   public List<User> nicknameSearch(String nickName) {
     return service.findNicknameCall(nickName);
   }
+  @GetMapping("/search/email")
+  public List<User> emailSearch(String email) {
+    return service.findEmail(email);
+  }
+
   @GetMapping("/admin/list")
   List<User> findAll() {
     return service.findAll();
