@@ -1,5 +1,10 @@
+
+
+
+
 //검색어
 $(document).ready(function(){
+  
   $(".clicked").trigger('click')
   $(".a-button").click(function(event){
   $(".a-button").removeClass("clicked");
@@ -21,6 +26,16 @@ function contentView(i){
     }
     else {
       $("#a_"+i).hide();
+    }
+}
+
+function contentView2(i){
+  
+    if($("#b_"+i).css('display') === 'none'){
+      $("#b_"+i).show();
+    }
+    else {
+      $("#b_"+i).hide();
     }
 }
 
@@ -63,7 +78,7 @@ function view(arg) {
             }else {
               answer = "답변완료"
             }
-          $("#tb2").append("<tr><td>"+(i+1)+"</td><td>"+dat.title+"</td></tr>");
+          $("#tb2").append("<tr><td>"+(i+1)+"</td><td onclick='contentView2("+i+")'>"+dat.title+"</td></tr><tr><td class='content' id='b_"+i+"' colspan='2'>"+dat.contents+"</td></tr>");
         });
       },
     });
