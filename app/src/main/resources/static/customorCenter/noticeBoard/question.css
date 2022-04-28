@@ -30,8 +30,6 @@
   }
   
   .s-text {
-  width: 80%;
-  height: 80px;
   background-color: white;
   margin: auto;
   border-style: solid;
@@ -41,7 +39,6 @@
 
   .body-c {                           /* question 컨텐츠 몸통 */
   width: 100%;
-  height: 450px;
   margin: auto;
   padding-top: 20px;
   background-color: #f9f9f9;
@@ -74,7 +71,6 @@
   
   .c-2 {                 /* question 2번 폼*/
   width: 80%;
-  height: 250px;
   margin: auto;
   background-color: #f9f9f9;
   color: black;
@@ -134,6 +130,12 @@
   position: relative;
   top:20px;
   }
+  
+  
+  .c-3{
+  width: 100%;
+  margin-top: 20px;
+  }
   #registration {                       /*하단 등록*/
   position: relative;
   float: right; 
@@ -148,7 +150,11 @@
   cursor:pointer;
   }
   
-  .cancel {
+  .sp{
+  display: flex;
+  justify-content: space-between;
+  }
+  #cancel {
   position: relative;
   float: right; 
   background-color: white;
@@ -197,3 +203,8 @@
   background:rgba(0, 0, 0, 0.5);
   z-index:-1;
 }
+.content{
+	font-size: 15px;
+	
+}
+

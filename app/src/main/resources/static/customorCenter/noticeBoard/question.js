@@ -1,13 +1,14 @@
-$(document).ready(function(){  
-  document.getElementById("registration").onclick = function() {
-        document.getElementById("modal").style.display="block";
-        $("#regist").submit();
-    }
-   
-    document.getElementById("modal_close_btn").onclick = function() {
-        document.getElementById("modal").style.display="none" ;
-    }
-    document.getElementById("modal_close_btn").addEventListener('click',e=>{
-  window.location = 'http://localhost:8443/customorCenter/noticeBoard/announcement.html';
- 	})
-})
+
+ 
+function login(){
+            var loginForm = document.loginForm;
+            var content = loginForm.content.value;
+            var title = loginForm.title.value;
+            
+            if(!content || !title){
+                alert("제목과 내용을 모두 입력해주세요.")
+            }else{
+            loginForm.submit();
+            document.getElementById("modal").style.display="block";
+            }
+        }
