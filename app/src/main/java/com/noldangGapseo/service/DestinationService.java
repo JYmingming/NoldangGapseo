@@ -14,6 +14,16 @@ public class DestinationService {
   @Autowired
   DestinationDao mapper;
 
+  // 페이지 계산
+  public Integer calculPage(Integer limit, Integer nextPage) {
+    Integer page = 0;
+    if (nextPage == 1) {
+      return page = ((nextPage - 1) * (limit + 1));
+    } else {
+      return page = ((nextPage - 1) * (limit + 1)) - 1;
+    }
+  }
+
   // 놀당의 여행지 리스트를 가져온다.
   public List<Destination> getAdminDesList() {
     return mapper.getAdminDesList();
@@ -42,8 +52,10 @@ public class DestinationService {
 
 
   // 유저가 작성한 여행지 리스트를 가져온다.
-  public List<Destination> getUserDesList(Integer userId) {
-    return mapper.getUserDesList(userId);
+  public List<Destination> getUserDesList(Integer userId, Integer limit, Integer nextPage) {
+    nextPage = calculPage(limit, nextPage);
+
+    return mapper.getUserDesList(userId, limit, nextPage);
   }
 
   // 여행지 작성
@@ -58,6 +70,14 @@ public class DestinationService {
       mapper.addImgList(destination.getDestinationId(), img);
     }
     return apiResponse;
+  }
+
+  public ApiResponse updateDes(Destination destination){
+    Integer updateRes = mapper.updateDes(destination);
+    if(updateRes == 0){
+      return  new ApiResponse("1111", "fail", null);
+    }
+    return new ApiResponse();
   }
 
   // 이미지 삭제
@@ -101,6 +121,11 @@ public class DestinationService {
   // 좋아요 삭제
   public Integer deleteLike (Integer desId, Integer userId){
     return mapper.deleteLike(desId, userId);
+  }
+
+  // 게시글 수
+  public Integer userDesCnt(Integer userId){
+    return mapper.userDesCnt(userId);
   }
 
 }

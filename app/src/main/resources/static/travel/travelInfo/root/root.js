@@ -65,7 +65,7 @@ function showMarker(routes) {
     // 마커 표시
     for (let i = 0; i < routes.length; i++) {
         const route = routes[i];
-        const latLng = new kakao.maps.LatLng(route.longitude, route.latitude);
+        const latLng = new kakao.maps.LatLng(route.latitude, route.longitude);
         const marker = new kakao.maps.Marker({
             map: map,
             position: latLng,

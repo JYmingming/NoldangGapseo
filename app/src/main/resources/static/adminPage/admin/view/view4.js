@@ -58,6 +58,8 @@ $('.btn-danger').on('click', function (e) {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
             Swal.fire('삭제되었습니다.', '', 'success');
+               window.close();
+             return;
         }
     });
 });
