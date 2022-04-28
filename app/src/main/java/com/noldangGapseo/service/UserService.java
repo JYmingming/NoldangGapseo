@@ -35,6 +35,9 @@ public class UserService {
   public List<User> findEmail(String email) {
     return mapper.findEmail(email);
   }
+  public List<User> findPhone(String phone) {
+    return mapper.findPhone(phone);
+  }
 
 
   public List<User> findAll() {

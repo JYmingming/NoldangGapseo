@@ -68,6 +68,15 @@
             email = #{email};
     </select>
 
+    <select id="findPhone" parameterType="String" resultMap="userMap">
+        select
+            user_id, email, phone, nick_Name
+        from
+            user u
+        where
+            phone = #{phone};
+    </select>
+
  <select id="UserList"  resultMap="userMap">
        SELECT 
        user_Id , email, phone, nick_name, reg_date 

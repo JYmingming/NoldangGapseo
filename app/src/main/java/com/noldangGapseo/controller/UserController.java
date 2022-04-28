@@ -113,6 +113,10 @@ public class UserController {
   public List<User> emailSearch(String email) {
     return service.findEmail(email);
   }
+  @GetMapping("/search/phone")
+  public List<User> phoneSearch(String phone) {
+    return service.findPhone(phone);
+  }
 
   @GetMapping("/admin/list")
   List<User> findAll() {
