@@ -36,6 +36,8 @@ function getDirection() {
     var xInfoEmail = document.querySelector("#x-infoEmail");
     var xProfile = document.querySelector(".user_photo");
     
+    var UBtn = document.querySelector("#View");
+    
     fetch("/user/getLoginUser")
       .then(function(response) {
         return response.json();
@@ -50,3 +52,17 @@ function getDirection() {
          xInfoEmail.innerHTML = user.email;
          xProfile.src = user.profileImg;
       })
+      
+      
+
+
+UBtn.onclick = function() { 
+  if (confirm("프로필 사진을 변경하시겠습니까??") == true) {    //확인
+      
+     } else{   
+
+         return false;
+
+     }
+     
+}
