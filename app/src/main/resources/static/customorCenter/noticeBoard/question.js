@@ -1,6 +1,7 @@
 $(document).ready(function(){  
   document.getElementById("registration").onclick = function() {
         document.getElementById("modal").style.display="block";
+        $("#regist").submit();
     }
    
     document.getElementById("modal_close_btn").onclick = function() {

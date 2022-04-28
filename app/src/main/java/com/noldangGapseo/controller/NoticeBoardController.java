@@ -1,5 +1,6 @@
 package com.noldangGapseo.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -28,4 +29,16 @@ public class NoticeBoardController {
     return list;
   }
 
+  @PostMapping("/regist")
+  public void regist(HttpServletRequest request, HttpServletResponse response) {
+
+    String title = request.getParameter("title");
+    String content = request.getParameter("content");
+
+    HashMap <String, String> map = new HashMap<String, String>();
+    map.put("title", title);
+    map.put("content", content);
+    service.regist(map);
+
+  }
 }

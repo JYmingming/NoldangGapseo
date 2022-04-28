@@ -14,6 +14,16 @@ $(".b-button").click(function(event){
  
 });
 
+function contentView(i){
+  
+    if($("#a_"+i).css('display') === 'none'){
+      $("#a_"+i).show();
+    }
+    else {
+      $("#a_"+i).hide();
+    }
+}
+
 //공지테이블//
 function view(arg) {
   var t1 = document.getElementById("tb1");
@@ -31,7 +41,7 @@ function view(arg) {
        success : function(data) {
         $("#tb1 td").remove();
         $.each(data, function(i, dat) {
-          $("#tb1").append("<tr><td>"+(i+1)+"</td><td>"+dat.title+"</td><td>"+dat.contents+"</td></tr>");
+          $("#tb1").append("<tr><td>"+(i+1)+"</td><td onclick='contentView("+i+")'>"+dat.title+"</td></tr><tr><td class='content' id='a_"+i+"' colspan='2'>"+dat.contents+"</td></tr>");
                     
         });
       },

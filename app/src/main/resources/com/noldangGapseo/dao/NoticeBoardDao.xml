@@ -10,10 +10,13 @@
         where a.user_id = b.user_id and a.service_type = #{type}  
     </select>
     
-    <insert id="addQ"> <!-- 질문등록 -->
-        
-insert into noldang.service_center (service_center_id, user_id, service_type, title, contents, view_count, reg_date, update_date)
-values( service_center_id ,5 , 'Q', #{title}, #{content} , 0 , now(), now())
-        
+    <insert id="regist" parameterType = "map"> <!-- 질문등록 -->    
+    insert into noldang.service_center (user_id, service_type, title, contents, view_count, reg_date, update_date)
+    values(5 , 'Q', #{title}, #{content} , 0 , now(), now())        
     </insert>
+    
+    <delete id="del"> <!-- 질문삭제 -->
+    DELETE FROM  noldang.service_center  WHERE service_center_id in (#{service_id})
+    </delete>
+    
 </mapper>

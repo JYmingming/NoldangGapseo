@@ -39,22 +39,23 @@
         배포하면 정보통신망 이용촉진 및 정보보호 등에 관한 법률 제74조에
         의거 1년 이하의 징역 또는 1천만원 이하의 벌금에 처해질 수 있습니다.</p>
       </div>
-
+      <form action="/notice/regist" method="post" id="regist">
       <div class= "c-2">
         <div class=c-2-head>
-          <p class= c-2-t>*제목:</p> <input class="title" type="text">
+          <p class= c-2-t>*제목:</p> <input class="title" type="text" name = "title">
         </div>
         
         <div class=c-2-body>
           <from>
           개인 정보 : <input type="radio" name="info" checked> 공개
                       <input type="radio" name="info"> 비공개 <br><br>
-          *내용 : <input type="text" class="content" >
+          *내용 : <input type="text" class="content" name="content">
           <p>
           <span style="color: orange; font-size:1px">내용은 1000byte까지 입력 가능합니다.</span>
           <span style="color: orange; padding-left:220px; font-size:1px">0 Byte / 1000 Byte</span>
           </p>
           </from>
+          </form>
           <div class= dbt>
           <button id="registration">등록</button>
               <div id="modal">
@@ -64,7 +65,7 @@
                 </div>
                <div class="modal_layer"></div>
               </div>
-          <button class="cancel" onclick="location.href='announcement.html'">취소</button>
+          <button type="button" class="cancel" onclick="location.href='announcement.html'">취소</button>
          </div>
         </div>
       </div>

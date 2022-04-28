@@ -159,5 +159,11 @@
   text-align: center;
   }
   
+  .content {
+    background-color:orange;
+    display:none;
+    height:150px;
+  }
+  
   
   
