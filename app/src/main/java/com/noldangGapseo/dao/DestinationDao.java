@@ -27,7 +27,7 @@ public interface DestinationDao {
 
   Integer deleteDes(Integer desId);
 
-  List<Destination> getUserDesList(Integer userId);
+  List<Destination> getUserDesList(@Param("userId") Integer userId, @Param("limit") Integer limit, @Param("offset") Integer offset);
 
   List<Comment> getUserCommentList(Integer desId);
 
@@ -45,5 +45,7 @@ public interface DestinationDao {
   List<Destination> findAll(@Param("rowCount") int rowCount, @Param("offset") int offset);
 
   List<Destination> find8(@Param("rowCount") int rowCount, @Param("offset") int offset);
+
+  Integer userDesCnt(Integer userId);
 
 }
