@@ -160,9 +160,9 @@
   }
   
   .content {
-    background-color:orange;
+    background-color:rgb(255, 210, 128);
     display:none;
-    height:150px;
+    height:30px;
   }
   
   
