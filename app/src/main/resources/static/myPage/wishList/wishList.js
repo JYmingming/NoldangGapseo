@@ -33,15 +33,40 @@ fetch("/user/getLoginUser")
  const WishListImg = document.querySelectorAll(".myImg")
  
  fetch(`/user/likesImg?userId=${no}`)
-  .then(function(response) {
-        return response.json();
-      })
-      .then(function(result) {
-        console.log(result);
-        
-        for (var i = 0; i < 5; i++) {
-              WishListImg[i].src =result[i].img;
-              }
+        .then(function(response) {
+              return response.json();
+            })
+            .then(function(result) {
+              console.log(result);
+              
+              for (var i = 0; i < 5; i++) {
+                    WishListImg[i].src =result[i].img;
+                    var no1 = result[0].destinationId;
+                    var no2 = result[1].destinationId;
+                    var no3 = result[2].destinationId;
+                    var no4 = result[3].destinationId;
+                    var no5 = result[4].destinationId;
+                  $("#d-flex1").on("click", function(e) {
+
+                  location.href = `/userDestination/userDestinationDtl3.html?desId=${no1}`
+                  })
+                  $("#d-flex2").on("click", function(e) {
+
+                  location.href = `/userDestination/userDestinationDtl3.html?desId=${no2}`
+                  })
+                  $("#d-flex3").on("click", function(e) {
+
+                  location.href = `/userDestination/userDestinationDtl3.html?desId=${no3}`
+                  })
+                  $("#d-flex4").on("click", function(e) {
+
+                  location.href = `/userDestination/userDestinationDtl3.html?desId=${no4}`
+                  })
+                  $("#d-flex5").on("click", function(e) {
+
+                  location.href = `/userDestination/userDestinationDtl3.html?desId=${no5}`
+                  })
+                }
       })
         
 })
