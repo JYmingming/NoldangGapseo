@@ -99,6 +99,28 @@ async function renderView(userId, limit, nextPage) {
     });
 }
 
+var swiper = new Swiper('.swiper', {
+    slidesPerGroup: 3,
+    slidesPerView: 3,
+    direction: getDirection(),
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    on: {
+        resize: function () {
+            swiper.changeDirection(getDirection());
+        },
+    },
+});
+
+function getDirection() {
+    var windowWidth = window.innerWidth;
+    var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
+
+    return direction;
+}
+
 (async function () {
     // ---- 세션(userId)가져오기 ----
     const userId = await getLoginUser().then(function (res) {
@@ -106,8 +128,8 @@ async function renderView(userId, limit, nextPage) {
     });
     id = userId;
     const cnt = await userDesCnt(userId);
-    desCnt = Math.round(cnt / 7);
-    console.log(desCnt);
+    desCnt = Math.ceil(cnt / 7);
+    console.log(cnt);
 
     renderView(id, 7, 1);
     // ----여행지 수정 페이지 이동-----
@@ -117,13 +139,13 @@ async function renderView(userId, limit, nextPage) {
         const dId = $(this).closest('.content-card').attr('data-id');
         location.href = `/travel/myboard/view.html?desId=${dId}`;
     });
+
+    for (var i = 0; i < desCnt; i++) {
+        const pageView = `<div class="swiper-slide"><span>${i + 1}</span></div>`;
+
+        $('.swiper-wrapper').append(pageView);
+    }
 })();
-
-for (var i = 0; i < desCnt; i++) {
-    const pageView = `<li class="page-item"><a class="page-link" href="#">${i + 1}</a></li>`;
-
-    $('.pagination').children('.page-item').next().append(pageView);
-}
 
 // -----새로운 여행지 추가-----
 $('.add-des').on('click', function (e) {
