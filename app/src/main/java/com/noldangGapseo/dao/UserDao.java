@@ -22,6 +22,8 @@ public interface UserDao {
 
   List<User> findEmail(String email);
 
+  List<User> findPhone(String phone);
+
   int update(User user);
 
   int updateImg(User user);
