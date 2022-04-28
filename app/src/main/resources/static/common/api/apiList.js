@@ -12,6 +12,7 @@ export const PATH = {
         deleteDes: '/destination/delete/des',
         deleteImg: '/destination/delete/img',
         userDesCnt: '/destination/user/cnt',
+        updateDes: '/destination/update/des',
     },
     TRAVEL: {
         travelList: '/travel/travelList',
@@ -148,6 +149,20 @@ export async function addDestination(destination) {
         });
         console.log(response);
         return response;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- 여행지 업데이트 ---
+export async function updateDes(destination = {}) {
+    try {
+        const response = await axios({
+            method: 'PUT',
+            url: PATH.DESTINATION.updateDes,
+            data: destination,
+        });
+        return response.data;
     } catch (e) {
         console.log(e);
     }

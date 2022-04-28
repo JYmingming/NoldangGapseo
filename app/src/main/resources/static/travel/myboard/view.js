@@ -1,4 +1,4 @@
-import { getDes, getLoginUser, deleteDes } from '../../common/api/apiList.js';
+import { getDes, getLoginUser, deleteDes, updateDes } from '../../common/api/apiList.js';
 import { urlSearch } from '../../common/urlSearchParam.js';
 
 // ---- URLSearchParams ----
@@ -9,12 +9,16 @@ let user;
 // ---- reponse 변수 ----
 let destinationId;
 
+let desTypeId;
+
 // ---- 화면 렌더링 ----
 (async function () {
     user = await getLoginUser();
     const response = await getDes(no, 'N');
-    console.log(response);
+
     destinationId = response.destination.destinationId;
+
+    desTypeId = response.destination.destinationTypeId;
     // ---- 사진 리스트 ----
     const imgList = response.destinationImgList;
     //const firstImg = response.destinationImList[0];
@@ -84,9 +88,9 @@ function findAddr() {
             // 우편번호와 주소 정보를 해당 필드에 넣는다.
             //document.querySelector('member_post').value = data.zonecode;
             if (roadAddr !== '') {
-                document.querySelector('#in-adress').value = roadAddr;
+                document.querySelector('#in-address').value = roadAddr;
             } else if (jibunAddr !== '') {
-                document.querySelector('#in-adress').value = jibunAddr;
+                document.querySelector('#in-address').value = jibunAddr;
             }
         },
     }).open();
@@ -111,13 +115,31 @@ $('.btn-danger').on('click', function (e) {
     }).then((result) => {
         if (result.isConfirmed) {
             delDes();
+            return;
         }
     });
 });
 
+const des = {
+    destinationId: destinationId,
+    destinationName: $('.in-title').val(),
+    address: $('.in-address').val(),
+    phone: $('.in-phone').val(),
+    contents: $('.in-contents').val(),
+    destinationTypeId: '',
+};
 // ---- Update Event ----
-$('#update-btn').on('click', function (e) {
+$('#update-btn').on('click', async function (e) {
+    des.destinationId = destinationId;
+    des.destinationName = $('.in-title').val();
+    des.address = $('#in-address').val();
+    des.phone = $('#in-phone').val();
+    des.contents = $('#in-contents').val();
+    des.destinationTypeId = desTypeId;
     e.preventDefault();
     e.stopPropagation();
-    console.log(destinationId);
+    const updateRes = await updateDes(des);
+    if (updateRes.resCode == '0000') {
+        location.href = '/travel/myboard/myboard.html';
+    }
 });

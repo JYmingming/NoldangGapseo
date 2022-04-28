@@ -72,6 +72,14 @@ public class DestinationService {
     return apiResponse;
   }
 
+  public ApiResponse updateDes(Destination destination){
+    Integer updateRes = mapper.updateDes(destination);
+    if(updateRes == 0){
+      return  new ApiResponse("1111", "fail", null);
+    }
+    return new ApiResponse();
+  }
+
   // 이미지 삭제
   public ApiResponse deleteImgs(Integer imgId) {
     ApiResponse apiResponse = new ApiResponse();

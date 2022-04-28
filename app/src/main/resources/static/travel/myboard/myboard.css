@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'SuncheonR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/SuncheonR.woff')
+        format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 .tap-box {
     margin-top: 3em;
     margin-bottom: 3em;
@@ -52,6 +59,14 @@
 }
 .card:hover {
     border: 3px solid orange;
+}
+.card-title {
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-family: 'SuncheonR';
+    font-weight: bold;
 }
 
 .paging {
