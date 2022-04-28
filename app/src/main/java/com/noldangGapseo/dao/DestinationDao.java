@@ -21,6 +21,8 @@ public interface DestinationDao {
 
   Integer addDestination(Destination destination);
 
+  Integer updateDes(Destination destination);
+
   Integer addImgList(@Param("userId") Integer userId, @Param("imgName") String imgName);
 
   Integer deleteImg(Integer desId);

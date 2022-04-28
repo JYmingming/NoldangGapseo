@@ -20,7 +20,7 @@ const viewRender = (
                         />
                         <div class="card-body">
                             <div class="title d-flex justify-content-between">
-                                <h5 class="card-title">${destinationName}</h5>
+                                <h5 class="card-title w-75">${destinationName}</h5>
                               <div class="d-tag" data-color=${tagColor}>${destinationTypeName}</div>
                             </div>
                             <div
@@ -69,7 +69,7 @@ let desCnt;
 // ---- 화면 렌더링 function ----
 async function renderView(userId, limit, nextPage) {
     const list = await getUserDesList(userId, limit, nextPage);
-    $('.content').children('.add-des').next().remove();
+    $('.content').children('.add-des').nextAll().remove();
     list?.map((m) => {
         //--- 태그 색 ----
         let tagColor;
@@ -132,13 +132,6 @@ function getDirection() {
     console.log(cnt);
 
     renderView(id, 7, 1);
-    // ----여행지 수정 페이지 이동-----
-    $('.card-img-top').on('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        const dId = $(this).closest('.content-card').attr('data-id');
-        location.href = `/travel/myboard/view.html?desId=${dId}`;
-    });
 
     for (var i = 0; i < desCnt; i++) {
         const pageView = `<div class="swiper-slide"><span>${i + 1}</span></div>`;
@@ -151,4 +144,19 @@ function getDirection() {
 $('.add-des').on('click', function (e) {
     e.preventDefault();
     location.href = '/travel/myboard/form.html';
+});
+
+// ----여행지 수정 페이지 이동-----
+$(document).on('click', '.card-img-top', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const dId = $(this).closest('.content-card').attr('data-id');
+    location.href = `/travel/myboard/view.html?desId=${dId}`;
+});
+
+// ---- 페이징 -----
+$(document).on('click', '.swiper-slide', function (e) {
+    const num = $(this).children('span').text();
+    console.log(num);
+    renderView(id, 7, num);
 });
