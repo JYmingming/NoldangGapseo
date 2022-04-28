@@ -116,50 +116,45 @@
 	</select>
 
 	<!-- 유저가 작성한 여행지 리스트를 불러온다. -->
-	<select id="getUserDesList" resultMap="desMap"
-		parameterType="Integer">
-		SELECT d.destination_id, d.destination_name,
-		dt.destination_type_name,
-		lic.likes_cnt, com.comments_cnt, di.img
-		thumb_nail_img
-		FROM destination_type dt ,destination d
+	<select id="getUserDesList" resultMap="desMap" parameterType="Integer">
+		SELECT 		d.destination_id,
+					d.destination_name,
+					dt.destination_type_name,
+					lic.likes_cnt,
+					com.comments_cnt,
+					di.img thumb_nail_img
+		FROM 		destination_type dt,
+					destination d
 		join
-		(
-		SELECT
-		d2.destination_id, COUNT(l.destination_id) likes_cnt
-		FROM destination
-		d2
-		left join likes l
-		on d2.destination_id = l.destination_id
-		WHERE
-		d2.user_id = #{userId}
-		group by d2.destination_id
-		) as lic
-		on
-		d.destination_id = lic.destination_id
+					(
+					SELECT 		d2.destination_id,
+								COUNT(l.destination_id) likes_cnt
+					FROM 		destination d2
+					left join 	likes l
+					on 			d2.destination_id = l.destination_id
+					WHERE 		d2.user_id = #{userId}
+					group by 	d2.destination_id
+					) as lic
+		on 			d.destination_id = lic.destination_id
 		join
-		(
-		SELECT
-		COUNT(ndc.destination_id) comments_cnt , d3.destination_id
-		FROM
-		destination d3
-		left join new_destination_comment ndc
-		ON
-		d3.destination_id = ndc.destination_id
-		WHERE d3.user_id = #{userId}
-		GROUP by d3.destination_id
-		) as com
-		on d.destination_id =
-		com.destination_id
-		left join destination_img di ON di.destination_id =
-		d.destination_id
-		WHere 1=1
-		and d.user_id = #{userId}
-		and
-		d.destination_type_id = dt.destination_type_id
-		group by
-		d.destination_id
-		order by d.reg_date desc;
+					(
+					SELECT 		COUNT(ndc.destination_id) comments_cnt,
+								d3.destination_id
+					FROM 		destination d3
+					left join 	new_destination_comment ndc
+					ON 			d3.destination_id = ndc.destination_id
+					WHERE 		d3.user_id = #{userId}
+					GROUP by 	d3.destination_id
+					) as com
+		on 			d.destination_id = com.destination_id
+		left join 	destination_img di
+		ON 			di.destination_id = d.destination_id
+		WHERE 		1=1
+		and 		d.user_id = #{userId}
+		and 		d.destination_type_id = dt.destination_type_id
+		group by 	d.destination_id
+		order by 	d.reg_date desc
+		limit 		#{offset}, #{limit}
 	</select>
 
 
@@ -269,6 +264,13 @@
 		and
 		user_id = #{userId};
 	</delete>
+
+	<!-- 게시글 수 -->
+	<select id="userDesCnt" resultType="Integer">
+		SELECT 	count(d.destination_id) desCnt
+		FROM 	destination d
+		WHERE 	d.user_id = #{userId};
+	</select>
 
 
 </mapper>
