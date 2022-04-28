@@ -19,6 +19,8 @@ public interface UserDao {
 
   List<User> findNickname(String nickName);
 
+  List<User> findNicknameCall(String nickName);
+
   int update(User user);
 
   int updateImg(User user);

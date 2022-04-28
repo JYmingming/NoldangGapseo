@@ -32,6 +32,9 @@ public class UserService {
   public List<User> findNickname(String nickName) {
     return mapper.findNickname(nickName);
   }
+  public List<User> findNicknameCall(String nickName) {
+    return mapper.findNicknameCall(nickName);
+  }
 
 
   public List<User> findAll() {

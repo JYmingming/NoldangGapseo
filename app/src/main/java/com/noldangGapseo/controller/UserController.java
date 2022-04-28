@@ -104,7 +104,10 @@ public class UserController {
   public List<User> search(String nickName) {
     return service.findNickname(nickName);
   }
-
+  @GetMapping("/search/nickNameCall")
+  public List<User> nicknameSearch(String nickName) {
+    return service.findNicknameCall(nickName);
+  }
   @GetMapping("/admin/list")
   List<User> findAll() {
     return service.findAll();

@@ -167,6 +167,8 @@ body {
     padding-top: 15%;
     min-width: 200px;
     min-height: 200px;
+    background-size: 110%;
+
 }
 .travel-text-group {
     width: 80%;
@@ -580,5 +582,7 @@ body {
     margin: 0;
 }
 .hosting div:nth-child(3){
-    margin-top: 28px;
+    margin-top: 0px;
+    align-self: center;
+
 }

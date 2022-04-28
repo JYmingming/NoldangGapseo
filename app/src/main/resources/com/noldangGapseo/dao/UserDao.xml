@@ -36,7 +36,7 @@
             nick_name,
             email
         from
-            user 
+            user
         where
              pwd=password(#{password}) 
     </select>
@@ -57,6 +57,15 @@
         user u
         where
             nick_name like CONCAT('%',#{nickName},'%');
+    </select>
+
+    <select id="findNicknameCall" parameterType="String" resultMap="userMap">
+        select
+            user_id, email, phone, nick_Name
+        from
+            user u
+        where
+            nick_name = #{nickName};
     </select>
 
  <select id="UserList"  resultMap="userMap">

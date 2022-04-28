@@ -164,7 +164,7 @@ document.querySelector('#datepicker_end').onchange = function () {
 
 document.querySelector('#thema-btn').onclick = function () {
     travel.travelName = document.querySelector('#thema-input').value;
-    console.log(travel.travelName);
+    $('#themaModal').modal("hide");
 };
 
 document.querySelector('#makeDec-btn').onclick = async function () {
