@@ -5,8 +5,10 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import com.noldangGapseo.domain.NoticeVO;
 import com.noldangGapseo.service.NoticeBoardService;
@@ -25,7 +27,6 @@ public class NoticeBoardController {
     String type = request.getParameter("type");
     List<NoticeVO> list = service.getNoticeList(type);
 
-
     return list;
   }
 
@@ -39,6 +40,14 @@ public class NoticeBoardController {
     map.put("title", title);
     map.put("content", content);
     service.regist(map);
+  }
+
+
+
+  @DeleteMapping("/delete")
+  @RequestMapping(method={RequestMethod.GET, RequestMethod.POST})
+  public void delete(HttpServletRequest request, HttpServletResponse response, Integer service_center_id) throws Exception {
+    service.delete(service_center_id);
 
   }
 }

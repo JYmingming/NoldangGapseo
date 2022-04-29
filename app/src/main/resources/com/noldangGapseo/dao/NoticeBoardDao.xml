@@ -15,8 +15,13 @@
     values(5 , 'Q', #{title}, #{content} , 0 , now(), now())        
     </insert>
     
-    <delete id="del"> <!-- 질문삭제 -->
-    DELETE FROM  noldang.service_center  WHERE service_center_id in (#{service_id})
+    <update id="update"  parameterType="String"> <!-- 질문수정 -->
+    UPDATE noldang.service_center SET title = #{title}, contents = #{contents}  WHERE service_center_id = #{service_center_id}
+    </update>
+    
+    <delete id="delete" parameterType="Integer"> <!-- 질문삭제 -->
+    DELETE FROM  noldang.service_center  WHERE service_center_id = #{service_center_id}
     </delete>
     
+
 </mapper>

@@ -24,4 +24,9 @@ public class NoticeBoardService {
   }
 
 
+  public void delete(Integer service_center_id) throws Exception {
+    mapper.delete(service_center_id);
+  }
+
+
 }
