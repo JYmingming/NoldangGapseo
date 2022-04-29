@@ -50,4 +50,6 @@ public interface TravelDao {
   public Integer deleteCost(Integer costId);
 
   public Integer deleteTravel(Integer travelId);
+
+  public Integer invite(@Param("travelId") Integer travelId, @Param("companionId") Integer companionId);
 }

@@ -3,6 +3,7 @@ import {
     updateTravelName,
     findByNickName,
     deleteTravel,
+    invite,
 } from '../../common/api/apiList.js';
 import { urlSearch } from '../../common/urlSearchParam.js';
 
@@ -131,16 +132,13 @@ $('#name-input').on('keyup', function (key) {
 const getUser = async (nickName) => {
     $('.search-box').children().remove();
     const user = await findByNickName(nickName);
-    //console.log(user);
     let searchView;
     user?.map((m) => {
-        console.log('search::::', m);
         if (m?.nickName !== 'NoldangAdmin') {
             searchView = `<div class="s-nickName w-100" data-id=${m.userId}>🍊 ${m?.nickName}</div>`;
         }
         $('.search-box').append(searchView);
     });
-    //return user?.nickName;
 };
 // ---- 닉네임 찾기 이벤트 ----
 $('#invite-input').on('input', function (e) {
@@ -148,12 +146,10 @@ $('#invite-input').on('input', function (e) {
     if ($('#invite-input').val() != '') {
         getUser(nickName);
     }
-    //$('#invite-input').toggle();
 });
 
 const delTravel = async () => {
     const delRes = await deleteTravel(no);
-    //console.log(delRes);
     if (delRes?.resCode == '0000') {
         location.href = '/travel/list/list.html';
         return;
@@ -173,9 +169,11 @@ $('.delete-btn').on('click', async function (e) {
     });
 });
 
-$(document).on('click', '.s-nickName', function (e) {
-    let n = $(this).text().split(' ');
-    console.log(n[1], $(this).attr('data-id'));
+$(document).on('click', '.s-nickName', async function (e) {
+    const invited = await invite(Number(no), Number($(this).attr('data-id')));
+    if (invited.resCode == '0000') {
+        $('#invite-input').val('');
+    }
 });
 
 $('#travel-reserve-btn').on('click', function (e) {

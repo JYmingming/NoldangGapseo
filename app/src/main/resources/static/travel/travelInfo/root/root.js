@@ -1,4 +1,4 @@
-import { getRoutes, getPeriod, updateRoute } from '../../../common/api/apiList.js';
+import { getRoutes, getPeriod, updateRoute, invite } from '../../../common/api/apiList.js';
 import { urlSearch } from '../../../common/urlSearchParam.js';
 
 const no = urlSearch('travelId');
@@ -150,24 +150,16 @@ let ids = [];
 $('#des-container').sortable({
     items: '.des-box',
     start: function (event, ui) {
-        //console.log('sortStart!');
-        //ui.item.data('start_pos', ui.item.index());
         console.log('start:::', day);
-        //console.log('Index', ui.item.index());
-        //console.log('start point : ' + ui.item.position().top);
     },
     stop: async function (event, ui) {
         console.log('end point : ', ui.item.attr('data-routeIndex'));
         ids.splice(0);
         $('.des-box').each(function (i, tag) {
-            //console.log($(tag).attr('data-id'));
             ids.push($(tag).attr('data-id'));
         });
-        console.log('ids:::', ids);
         idList = `${ids[0]},${ids[1]},${ids[2]},${ids[3]}`;
-        console.log('idList::::', idList);
         const update = await updateRoute(idList);
-        console.log(update);
         if (update.resCode == '0000') {
             getSchedule(day);
             showMarker(routeList);

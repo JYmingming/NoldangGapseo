@@ -229,4 +229,11 @@
         WHERE 	travel_id = #{travelId}
     </delete>
 
+    <!-- 여행 초대하기 -->
+    <insert id="invite">
+        INSERT
+        into 	companion (travel_id, companion_id)
+        values 	(#{travelId}, #{companionId})
+    </insert>
+
 </mapper>

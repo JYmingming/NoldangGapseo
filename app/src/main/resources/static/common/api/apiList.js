@@ -34,6 +34,7 @@ export const PATH = {
         updateCost: '/travel/updateCost',
         deleteCost: '/travel/deleteCost',
         deleteTravel: '/travel/delete',
+        invite: '/travel/invite',
     },
     TAG: {
         defaultTagList: '/tag/list',
@@ -429,6 +430,19 @@ export async function deleteTravel(id) {
             url: `${PATH.TRAVEL.deleteTravel}?id=${id}`,
         });
         return resopnse.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- 여행초대 ----
+export async function invite(travelId, companionId) {
+    try {
+        const response = await axios({
+            method: 'POST',
+            url: `${PATH.TRAVEL.invite}?travelId=${travelId}&companionId=${companionId}`,
+        });
+        return response.data;
     } catch (e) {
         console.log(e);
     }

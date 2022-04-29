@@ -201,4 +201,13 @@ public class TravelService {
         }
         return new ApiResponse();
     }
+
+    // 여행 초대 하기
+    public ApiResponse invite(Integer travelId, Integer companionId){
+        Integer response = mapper.invite(travelId, companionId);
+        if(response == 0){
+            return new ApiResponse("1111", "fail", null);
+        }
+        return new ApiResponse();
+    }
 }
