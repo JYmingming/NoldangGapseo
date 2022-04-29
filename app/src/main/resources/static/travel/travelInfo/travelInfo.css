@@ -2,6 +2,20 @@
     font-family: 'Cooper';
     src: url('../../asset/font/Cooper\ Black\ BT.ttf') format('ttf');
 }
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+* {
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue',
+        'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+
+@font-face {
+    font-family: 'SuncheonR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/SuncheonR.woff')
+        format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 .container {
     display: flex;
@@ -39,7 +53,7 @@
     border-radius: 10px;
     font-size: 30px;
     font-weight: bold;
-    font-family: 'Comic Sans MS';
+    font-family: 'SuncheonR';
 }
 .travel-period {
     border: 1px solid rgb(251, 147, 0);
@@ -64,7 +78,8 @@
     margin-bottom: 10px;
 }
 .invite-box > div {
-    font-family: 'Comic Sans MS';
+    font-family: 'SuncheonR';
+    font-weight: bold;
 }
 .invite-btn {
     width: 30px;
@@ -93,6 +108,8 @@
     text-overflow: ellipsis;
     overflow: hidden;
     width: 200px;
+    font-family: 'SuncheonR';
+    font-weight: bold;
 }
 .travel-cost {
     height: 2em;
@@ -187,4 +204,36 @@
 }
 .name-input:focus {
     outline: none;
+}
+
+.delete-btn {
+    background-color: rgb(245, 71, 72);
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Comic Sans MS';
+    color: white;
+    cursor: pointer;
+}
+.col-sm-6 {
+    cursor: pointer;
+}
+.tagList {
+    overflow: scroll;
+    height: 100%;
+    padding: 5px;
+}
+.tagList::-webkit-scrollbar {
+    display: none;
+}
+
+.tag {
+    border: 1px solid rgb(251, 147, 0);
+    border-radius: 10px;
+    font-size: 13px;
+    height: 10%;
+    margin: 3px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'SuncheonR';
 }

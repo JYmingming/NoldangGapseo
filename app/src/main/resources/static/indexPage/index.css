@@ -148,6 +148,8 @@ body {
     border: 1px solid black;
     border-radius: 2vw;
     padding: 5%;
+    background-size: 200px;
+    background-repeat: no-repeat;
 }
 
 .list-group {
@@ -165,6 +167,8 @@ body {
     padding-top: 15%;
     min-width: 200px;
     min-height: 200px;
+    background-size: 110%;
+
 }
 .travel-text-group {
     width: 80%;
@@ -191,6 +195,7 @@ body {
 
 .modal-content {
     border-radius: 2vw !important;
+    width: 30vw;
 }
 .login_container {
     width: 30vw;
@@ -577,5 +582,7 @@ body {
     margin: 0;
 }
 .hosting div:nth-child(3){
-    margin-top: 28px;
+    margin-top: 0px;
+    align-self: center;
+
 }

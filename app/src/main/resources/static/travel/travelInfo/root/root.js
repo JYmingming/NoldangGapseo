@@ -8,7 +8,7 @@ var container = document.getElementById('map');
 
 var options = {
     center: new kakao.maps.LatLng(33.374, 126.557),
-    level: 9,
+    level: 10,
 };
 var map = new kakao.maps.Map(container, options);
 
@@ -65,7 +65,7 @@ function showMarker(routes) {
     // 마커 표시
     for (let i = 0; i < routes.length; i++) {
         const route = routes[i];
-        const latLng = new kakao.maps.LatLng(route.longitude, route.latitude);
+        const latLng = new kakao.maps.LatLng(route.latitude, route.longitude);
         const marker = new kakao.maps.Marker({
             map: map,
             position: latLng,

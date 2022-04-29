@@ -260,16 +260,16 @@ li{
 }
 
 .user_photo {
-    margin-top: 6vh;
-    margin-left: 1vw;
+    margin-top: 7vh;
+    margin-left: 1.3vw;
     width: 10vw;
-    height: 20vh;
+    height: 18vh;
     float:left;
-    background-image: url("../../img/profile.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
     overflow: hidden;
+    border-radius: 70%;
 }
 
 .user_info {
@@ -358,7 +358,7 @@ li{
 
 #img2 {
     padding: 1vw, 4vh;
-    background-image: url("../../img/tag.png");
+    background-image: url("../../img/friendslist.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20%;

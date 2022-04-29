@@ -148,7 +148,10 @@ public class ReserveService {
     String strPrice = hotelPrice.getText()
         .replace(",", "")
         .replace("원", "")
-        .replace(" ", "");
+        .replace(" ", "")
+        .replace("/", "")
+        .replace("1박", "")
+        .replace("2박", "");
 
     //이미지 개수를 세어 직접 로딩해줌
     int imgCnt = driver.findElements(By.cssSelector("#content > div.top > div.left > div.gallery_pc > div.swiper-container.gallery-thumbs.swiper-container-horizontal > ul > li")).size();

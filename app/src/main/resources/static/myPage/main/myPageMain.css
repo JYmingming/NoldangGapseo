@@ -46,33 +46,44 @@ body{
     float: left
 }
 
-.user_photo{
-    width: 15vw;
-    height: 15vh; 
-    margin-left:2.4vw;
+.user_img{
+    width: 10vw;
+    height: 16vh;
+    margin-left:3.5vw;
     border-bottom: solid 3px #f5e6ca;
-    background-image: url("../../img/profile.png");
+    float:left;
+}
+
+
+.user_photo{
+    width: 9vw;
+    height: 13vh; 
+    margin-top: 1vh;
+    margin-left: 5vw;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 30%;
     float: left;
     cursor: pointer;
+    border-radius: 70%;
 }
 
 .user_info{
-    width: 55vw;
-    height: 15vh; 
+    width: 63vw;
+    height: 16vh; 
     border-bottom: solid 3px #f5e6ca;
     float: left;
 }
 
 .user_info h5{
     margin-top: 3.5vh;
+    margin-left: 5vw;
     font-size: 1vw;
 }
 
 .user_info h6{
     margin-top: -1vh;
+    margin-left: 5vw;
     font-size: 1vw;
 }
 
@@ -83,6 +94,7 @@ body{
 .logout button{
     width: 5vw;
     height: 3vh;
+    margin-left: 5vw;
     background-color: #fb9300;
     color: white;
     font-size: 0.8vw;
@@ -189,22 +201,32 @@ body{
 }
 
 .d-flex {
-    width: 19vw;
+	width: 19vw;
     height: 33vh;
     margin-left: 0.5vw !important;
-    margin-top: 3vh;
-    background-color: #e0e0e0;
     float: left;
     border-radius: 25px;
     display: flex;
     cursor: pointer;
-    background-image: url("../../img/wishlist.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 145%;
+    background-color: #faf3e5;
 }
 
-.wishList_box ul:hover {
+.myImg {
+	 width: 19vw;
+    height: 33vh;
+    margin-left: 0.5vw !important;
+    float: left;
+    border-radius: 25px;
+    display: flex;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fdf9f2;
+}
+
+.wishList_box .d-flex:hover {
     opacity: 0.5;
 }
 

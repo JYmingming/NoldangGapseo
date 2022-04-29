@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>예약페이지</title>
+    <title>항공권 예약페이지</title>
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" type="text/css" href="reserv.css">
@@ -24,10 +24,9 @@
     <div class="container w-75" id ="wrap">
         <div class="mini-container">
             <div class="tap-menu">
-                <div class="row row-cols-md-3 text-center">
+                <div class="row row-cols-md-2 text-center">
                     <button class ="col-4 tap-check">항공권</button>
-                    <button class ="col-4 tap-uncheck">숙박</button>
-                    <button class ="col-4 tap-uncheck">렌트카</button>
+                    <button class ="col-4 tap-uncheck" id="hotel-link-btn">숙박</button>
                 </div>
             </div>
 
@@ -91,9 +90,9 @@
                 <div class="result">
                     <div class="row result-value">
                         <div class="col-4">
-                            <img src="../img/facebook_icon.png">
-                            <span>인천</span>
-                            <img src="../img/facebook_icon.png">
+                            <h5>🛫 </h5>
+                            <span>인천</span> ➟︎
+                            <h5> 🛩</h5>
                             <span>제주</span>
                         </div>
                         <div class="col-4">
@@ -102,8 +101,7 @@
                             <span id="end-date">2022-05-04</span>
                         </div>
                         <div class="col-4">
-                            <img src="../img/facebook_icon.png">
-                            <span>인원</span>
+                            👤 ️<span> 인원</span>
                             <span id="people-cnt"> 0명</span>
                         </div>
                     </div>
@@ -112,8 +110,7 @@
                             <!-- 가는 편   -->
                             <div class="d-flex justify-content-between sort">
                                 <div>
-                                    <img src="../img/facebook_icon.png">
-                                    <h5>가는편</h5>
+                                    <span class="fly-img">🛫</span><h5>가는편</h5>
                                 </div>
                                 <div>
                                     <select>
@@ -124,7 +121,7 @@
                             </div>
 
                             <div class="d-flex justify-content-between sort">
-                                <div style="font-weight: bold">
+                                <div style="font-weight: bold" class="sort-title">
                                     제주 -> <span id ="location-s">선택</span>
                                 </div>
 
@@ -152,8 +149,7 @@
                         <div class="col">
                             <div class="d-flex justify-content-between sort">
                                 <div>
-                                    <img src="../img/facebook_icon.png">
-                                    <h5>오는편</h5>
+                                    <span class="fly-img">🛩</span> <h5> 오는편</h5>
                                 </div>
                                 <div>
                                     <select>
@@ -196,7 +192,7 @@
                         <div class="position-relative">
                             <div class="float-lg-start">
                                 <span>총결제 예정금액</span>
-                                <h3>179,500원</h3>
+                                <h3 id="price-sum">0원</h3>
                             </div>
                             <div class="float-lg-end">
                                  <button>결제하기</button>

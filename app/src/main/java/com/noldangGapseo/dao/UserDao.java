@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import com.noldangGapseo.domain.Invite;
 import com.noldangGapseo.domain.User;
+import com.noldangGapseo.domain.likes;
 
 @Mapper
 public interface UserDao {
@@ -13,13 +14,19 @@ public interface UserDao {
 
   User findByEmailAndPassword(@Param("email") String email, @Param("password") String password);
 
-  User findByPassword(@Param("password") String password);
-
   List<User> findAll();
 
   List<User> findNickname(String nickName);
 
+  List<User> findNicknameCall(String nickName);
+
+  List<User> findEmail(String email);
+
+  List<User> findPhone(String phone);
+
   int update(User user);
+
+  int updateImg(User user);
 
   int delete(User user);
 
@@ -29,8 +36,9 @@ public interface UserDao {
 
   int checkNickname(String nickname);
 
-  List<Invite> inviteList(String invitedNick, String travelName);
+  List<Invite> inviteList(String nickName);
 
+  List<likes> likesImg(int userId);
 }
 
 

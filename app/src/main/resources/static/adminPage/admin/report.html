@@ -29,10 +29,9 @@
 <div id="input-form">
 <select name="catgo" style ="  float : left" >
         <option value="userNum">닉네임</option>
-       
-        <option value="userID">아이디</option>
-        <option value="userEmail">이메일</option>
-          <option value="userPhone">전화번호</option>
+        <option value="userID">이메일</option>
+        <option value="userEmail">타입</option>
+
       </select>
    </div>  
    <div>
@@ -218,7 +217,7 @@
             $("#keyword").keyup(function() {
                 var k = $(this).val();
                 $("#products > tbody > tr").hide();
-                var temp = $("#products > tbody > tr > td:nth-child(5n+4):contains('" + k + "')");
+                var temp = $("#products > tbody > tr > td:nth-child(n):contains('" + k + "')");
                 
                 $(temp).parent().show();
             })

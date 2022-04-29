@@ -24,10 +24,9 @@
 <div class="container w-75" id ="wrap">
     <div class="mini-container">
         <div class="tap-menu">
-            <div class="row row-cols-md-3 text-center">
-                <button class ="col-4 tap-uncheck">항공권</button>
+            <div class="row row-cols-md-2 text-center">
+                <button class ="col-4 tap-uncheck" id="air-link-btn">항공권</button>
                 <button class ="col-4 tap-check">숙박</button>
-                <button class ="col-4 tap-uncheck">렌트카</button>
             </div>
         </div>
     </div>
@@ -125,16 +124,14 @@
                     <div class="search-value">
                         <p>(체크인)</p>
                         <span>2022-03-02</span>
-                        <img src="../img/facebook_icon.png">
+
                     </div>
                     <div class="search-value">
                         <p>(체크아웃)</p>
                         <span>2022-03-04</span>
-                        <img src="../img/facebook_icon.png">
                     </div>
                     <div class="search-value">
-                        <p>인원</p>
-                         - 0명 + [버튼]
+
                     </div>
                     <div class="search-value">
                         <h2 id="x-hotelPrice"></h2>
@@ -147,85 +144,16 @@
                     <h5>숙소소개</h5>
                     <div class="out-line"></div>
                     <p>
-                        <span id="x-hotelComment">제주시내 중심에 위치한 복합적 특급 비즈니스 호텔</span>
+                        <span id="x-hotelComment"></span>
                     </p>
-
-
-
-
-
-
-
                 </div>
             </div>
-
         </div>
-
-
     </div>
-
     </div>
-
-
-
     </div>
 </div>
 </body>
-<script>
+<script src="./reserv2_detail.js" type="module"></script>
 
-    var arr = location.href.split("?");
-    if (arr.length == 1) {
-        alert("요청 형식이 옳바르지 않습니다.")
-        throw "URL 형식 오류!";
-    }
-    var qs = arr[1];
-    console.log(qs);
-    var params = new URLSearchParams(qs);
-    var link = params.get("link");
-    var startDate = params.get("startDate");
-    var endDate = params.get("endDate");
-
-    console.log(link + startDate + endDate)
-
-    //
-    var xHotelPrice =document.querySelector("#x-hotelPrice")
-    var xHotelComment =document.querySelector("#x-hotelComment")
-    var xHotelLocation =document.querySelector("#x-hotelLocation")
-    var xHotelName =document.querySelector("#x-hotelName")
-    var xTestImg1 =document.querySelector("#x-testImg-1")
-    var xTestImg2 =document.querySelector("#x-testImg-2")
-    var xTestImg3 =document.querySelector("#x-testImg-3")
-
-
-    fetch("/reserve/get?startDate="+startDate+"&endDate="+endDate+"&link="+link)
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(result) {
-            if (result.status == "fail") {
-                window.alert("서버 요청 오류!");
-                console.log(result.data);
-                return;
-            }
-            console.log(result);
-            console.log(result["hotel"]);
-            console.log(result["hotel"].data);
-            var hotel = result["hotel"];
-
-            xHotelPrice.innerHTML = hotel.hotelPrice+" 원";
-            xHotelComment.innerHTML = hotel.hotelComment;
-            xHotelLocation.innerHTML = hotel.hotelLocation;
-            xHotelName.innerHTML = hotel.hotelName;
-            xTestImg1.setAttribute("src",hotel.imgUrl[0]);
-            xTestImg2.setAttribute("src",hotel.imgUrl[1]);
-            xTestImg3.setAttribute("src",hotel.imgUrl[2]);
-
-
-
-
-        });
-
-
-
-</script>
 </html>

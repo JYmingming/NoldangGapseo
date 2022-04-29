@@ -46,4 +46,6 @@ public interface TravelDao {
   public Integer setCost(Cost cost);
 
   public Integer deleteCost(Integer costId);
+
+  public Integer deleteTravel(Integer travelId);
 }

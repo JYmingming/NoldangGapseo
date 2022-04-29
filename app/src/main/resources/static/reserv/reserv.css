@@ -126,8 +126,9 @@ body{
     border-radius: 2vw;
     height: 48px;
 }
-.result-value div img{
-    width: 30px;
+.result-value div h5{
+    display: inline;
+    font-size: 1.4em;
 }
 
 
@@ -135,8 +136,8 @@ body{
     padding: 0px 6%;
 
 }
-.sort img{
-    height: 20px;
+.fly-img{
+    font-size: 1.8em;
 }
 
 .sort{
@@ -146,6 +147,7 @@ body{
     display: inline-block;
 }
 .sort select{
+    margin-top: 10px;
     border: 1px solid rgb(251, 147, 0);
     border-radius: 0.6vw;
     width: 100px;
@@ -153,8 +155,8 @@ body{
     padding-left: 5px;
 }
 .result-table{
-    margin-top: 34px;
-    height: 400px;
+    margin-top: 10px;
+    height: 460px;
     border-radius: 1.4vw;
     border: #dddddd 1px solid;
     width: 400px;

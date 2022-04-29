@@ -38,10 +38,10 @@
           <div class="second_box2">
               <div class="contents_box">
                 <div class="con1">
-                  <div class="user_photo"></div>
+                  <img class="user_photo"></img>
                   <div class="user_info">
-                      <h5>nick</h5>
-                      <h6>email@test.com</h6>
+                      <h5 id="x-infoNick"></h5>
+                      <h6 id="x-infoEmail"></h6>
                       <div class="logout">
                           <button id="btn1" a href="#" onclick="location.href='../../indexPage/index.html'">Logout</button>
                       </div>
@@ -53,19 +53,17 @@
                         <tbody>
                           <tr>
                             <td id="img1" a href="#" onclick="location.href='../info/infoManage.html'"></td>
-                            <td id="img2" a href="#" onclick="location.href='../tag/groupTag.html'"></td>
+                            <td id="img2" a href="#" onclick="location.href='invitedList.html'"></td>
                           </tr>
                           <tr>
                             <td id="img1_text">계정관리</td>
-                            <td id="img2_text">그룹태그</td>
+                            <td id="img2_text">초대된 목록</td>
                           </tr>
                           <tr>
                             <td id="img3" a href="#" onclick="location.href='../wishList/wishList.html'"></td>
-                            <td id="img4" a href="#" onclick="location.href='invitedList.html'"></td>
                           </tr>
                           <tr>
                             <td id="img3_text">위시리스트</td>
-                            <td id="img4_text">초대된 목록</td>
                           </tr>
                         </tbody>
                     </table>
@@ -74,36 +72,51 @@
           </div>
           <div class="second_box3">
               <table id="second_table">
-                <tbody>
+                  <thead>
                   <tr>
-                    <td id="tr-check"></td>
-                    <td id="tr-nick">닉네임</td>
-                    <td id="tr-email">초대된 여행</td>
+                    <th id="tr-check"></th>
+                    <th id="tr-nick">닉네임</th>
+                    <th id="tr-travel">초대된 여행</th>
+                  </tr>
+                  <thead>
+                  <tbody>
+                  <tr>
+                    <td id="td-check">
+                      <input type="checkbox" id="checkbox">
+                    <td id="td-nick"></td>
+                    <td id="td-travel"></td>
                   </tr>
                   <tr>
                     <td id="td-check">
                       <input type="checkbox" id="checkbox">
-                    <td id="td-nick">null</td>
-                    <td id="td-email">null</td>
+                    <td id="td-nick"></td>
+                    <td id="td-travel"></td>
                   </tr>
                   <tr>
                     <td id="td-check">
                       <input type="checkbox" id="checkbox">
-                    <td id="td-nick">null</td>
-                    <td id="td-email">null</td>
+                    <td id="td-nick"></td>
+                    <td id="td-travel"></td>
                   </tr>
                   <tr>
                     <td id="td-check">
                       <input type="checkbox" id="checkbox">
-                    <td id="td-nick">null</td>
-                    <td id="td-email">null</td>
+                    <td id="td-nick"></td>
+                    <td id="td-travel"></td>
                   </tr>
                   <tr>
                     <td id="td-check">
                       <input type="checkbox" id="checkbox">
-                    <td id="td-nick">null</td>
-                    <td id="td-email">null</td>
+                    <td id="td-nick"></td>
+                    <td id="td-travel"></td>
                   </tr>
+                  <tr>
+                    <td id="td-check">
+                      <input type="checkbox" id="checkbox">
+                    <td id="td-nick"></td>
+                    <td id="td-travel"></td>
+                  </tr>
+                  
                 </tbody>
               </table>
           </div>
@@ -115,7 +128,8 @@
           <div class="third_box2"></div>
           <div class="third_box3">
             <div class="btn_box">
-                <button id="btn2" >삭제</button>
+                <button id="btn2" onclick="javascript: deleteRow(this); removeCheck();">수락</button>
+                <button id="btn3" onclick="javascript: deleteRow(this); removeCheck();">거절</button>
             </div>
             <div class="paging d-flex justify-content-center">
                 <nav aria-label="Page navigation example" class="paging">
@@ -148,5 +162,42 @@
 
   <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
   <script src="./invitedList.js" type="module"></script>
+  <script type="text/javascript">
+$('#btn3').click(function removeCheck() {
+
+   if (confirm("정말로 거절 하시겠습니까??") == true){    //확인
+
+       document.removefrm.submit();
+
+   }else{   //취소
+
+       return false;
+
+   }
+  }
+);
+$('#btn2').click(function removeCheck() {
+
+	   if (confirm("초대를 수락 하시겠습니까??") == true){    //확인
+
+		   window.alert("수락되었습니다!");
+
+	   }else{   //취소
+
+	       return false;
+
+	   }
+	   
+	  }
+	);
+  
+  </script>
+  <script type="text/javascript">
+  function deleteRow(r) {
+      var i = r.parentNode.parentNode.rowIndex;
+      document.getElementById("second_table").deleteRow(-1);
+  }
+
+  </script>
 </body>
 </html>

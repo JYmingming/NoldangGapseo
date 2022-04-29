@@ -28,6 +28,9 @@ if (no == null) {
 var xNick = document.querySelector("#id_edit");
 var xPhoneNumber = document.querySelector("#phoneNum_edit");
 var xEmail = document.querySelector("#email_edit");
+var xProfile = document.querySelector(".user_photo");
+var xInfoNick = document.querySelector("#x-infoNick");
+var xInfoEmail = document.querySelector("#x-infoEmail");
 
 var UBtn = document.querySelector("#btn2");
     
@@ -44,11 +47,57 @@ fetch(`/user/get?userId=${no}`)
     }
     
     var user = result.data;
+    var name = user.nickName;
      
     xNick.value = user.nickName;
     xPhoneNumber.value = user.phone;
     xEmail.value = user.email;
+    xProfile.src = user.profileImg;
+    xInfoNick.innerHTML = user.nickName;
+    xInfoEmail.innerHTML = user.email;
+    
+    $('#img2').on('click', function (e) {
+    e.preventDefault();
+    location.href = `../invite/invitedList.html?nickName=${name}`;
+});
   });
+  
+function css(selector, name, value) {
+    var el = document.querySelectorAll(selector);
+    for (var e of el) {
+        e.style[name] = value;
+    }
+}
+  
+css('.nickName-check-ok','visibility','hidden');
+css('.nickName-check-no',`visibility`,'hidden');
+let nickNameCheck = 0; //닉네임 중복 여부
+$('input[name=nickName]').keyup(function() {
+    let nickNameKeyup = $(this).val();
+    console.log(nickNameKeyup);
+    fetch("/user/search/nickNameCall?nickName="+nickNameKeyup)
+        .then(function (response) {
+            return response.json();
+        }).then(function (result) {
+        if (result.status == "fail") {
+            window.alert("서버 요청 오류!");
+            console.log(result.data);
+            return;
+        }
+        if(result.length==0){
+            css('.nickName-check-ok','display','');
+            css('.nickName-check-no','display','none');
+            css('.nickName-check-ok','visibility','');
+            css('.nickName-check-no','visibility','');
+            nickNameCheck = 0;
+        }else{
+            css('.nickName-check-ok','display','none');
+            css('.nickName-check-no',`display`,'');
+            nickNameCheck = 1;
+        }
+    })
+})
+  
      
 UBtn.onclick = function() {
   
@@ -79,7 +128,7 @@ UBtn.onclick = function() {
             location.href = "../../indexPage/index.html";
         });
       } else {
-        window.alert("모든 항목을 입력해 주세요!");
+        window.alert("닉네임이 중복되었습니다! 다른 닉네임을 사용해주세요.");
         console.log(result.data);
         console.log(result.resStatus);
       }
@@ -93,4 +142,6 @@ $('#col4').on('click', function (e) {
     e.preventDefault();
     location.href = `withDrawal.html?userId=${no}`;
 });
+
+
       

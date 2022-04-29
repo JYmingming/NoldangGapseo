@@ -19,6 +19,13 @@ fetch('/user/getLoginUser')
             console.log('어드민 로그인');
             css('.admin-login', 'display', '');
         }
+        var user = result.data;
+            var no = user.userId
+            
+            $('#myPage').on('click', function (e) {
+                e.preventDefault();
+                location.href = `../myPage/main/myPageMain.html?userId=${no}`;
+              });
     });
 
 document.querySelector('#logout-btn').onclick = function () {
@@ -142,7 +149,16 @@ const travel = {
     endDate: '',
     travelName: '',
     userId: '',
+    color: '',
 };
+
+// ---- 여행 포스트잇 색 랜덤으로 정하기 -----
+const stikyColor = ['blue', 'green', 'brown', 'purple', 'orange', 'yellow'];
+
+function readomCardColor(arr) {
+    const random = Math.floor(Math.random() * arr.length);
+    return arr[random];
+}
 
 document.querySelector('#datepicker_start').onchange = function () {
     travel.startDate = document.querySelector('#datepicker_start').value;
@@ -155,7 +171,7 @@ document.querySelector('#datepicker_end').onchange = function () {
 
 document.querySelector('#thema-btn').onclick = function () {
     travel.travelName = document.querySelector('#thema-input').value;
-    console.log(travel.travelName);
+    $('#themaModal').modal("hide");
 };
 
 document.querySelector('#makeDec-btn').onclick = async function () {
@@ -169,6 +185,7 @@ document.querySelector('#makeDec-btn').onclick = async function () {
             '아이디번호' +
             travel.userId
     );
+    travel.color = readomCardColor(stikyColor);
     if (travel.userId == '') {
         alert('로그인이 필요합니다.');
         return;
@@ -190,3 +207,33 @@ document.querySelector('#makeDec-btn').onclick = async function () {
 // travel.travelName = trvelName.value;
 
 // => travel을 넣어주면 됌
+
+var listUl = document.querySelector("#result-list");
+fetch("/destination/users/list")
+    .then(function(response) {
+        return response.json();
+    }).then(function(result) {
+    if (result.status == "fail") {
+        window.alert("서버 요청 오류!");
+        console.log(result.data);
+        return;
+    }
+    for (let i=0; i<3;i++){
+        console.log(result[i]);
+        var li = document.createElement("li");
+        li.classList.add('list-group');
+        li.innerHTML=`
+                <div class="travel-list">
+                                <figure class="img-con" style="background-image: url('/img/destination/userDesImg/${result[i].thumbNailImg}')"></figure>
+                                <div class ="travel-text-group">
+                                    <div class="travel-text-title">
+                                        <h5>${result[i].destinationName}</h5>
+                                    </div>
+                                    <div class="travel-text-text">
+                                        ${result[i].contents}
+                                    </div>
+                                </div>
+                            </div>`
+        listUl.appendChild(li);
+    }
+});

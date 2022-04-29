@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>어드민</title>
+    <link rel="stylesheet" type="text/css" href="myinfo2.css">
+</head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+
+<body>
+
+<div th:replace="/fixed/header :: header"></div>
+<a href="../memberList2.html" ><h1 id="imgtext1">ADMINSTRATOR 
+<nav>
+   <a href="../memberList2.html" ><span id="imgtext2">유저관리</span></a>
+                  <a href="../report.html"><span id="imgtext3">신고관리</span></a>
+                   <a href="../TravelBoard3.html"><span id="imgtext4">여행지관리</span></a>
+                    <a href="../../customorCenter/noticeBoard/noticeBoard.html"><span id="imgtext5"></span></a>
+                    <a href="../../../../indexPage/index.html"><span id="imgtext6">Home</span></a>
+                    </nav>
+</h1></a>
+
+                    </header>
+<hr>
+
+<h1 class ="maintitle">유저관리 l 유저 상세정보</h1>
+
+
+
+<div class="container">
+<div id="circle"><img class="profile_img"></div>
+
+<table class="type02">
+  <tr>
+    <th scope="row">이메일</th>
+   	<td class ="email"  ></td>
+  </tr>
+  <tr>
+    <th scope="row">작성한 게시글 수</th>
+    <td>8개</td>
+  </tr>
+  <tr>
+    <th scope="row">작성한 댓글 수</th>
+    <td>52개</td>
+  </tr>
+  <tr>
+    <th scope="row">받은 좋아요 수</th>
+    <td>72개</td>
+  </tr>
+    <tr>
+    <th scope="row">주소</th>
+     	<td class ="address"  ></td>
+  </tr>
+  
+  
+  
+  
+</table>
+</div>
+<button id = "btn3"><a href = "../memberList2.html">목록으로</a></button>
+</body>
+
+<script>
+			let a;
+
+			const b = document.querySelectorAll(".email")
+		
+
+
+
+		fetch("/user/admin/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 8; i++) {
+		        	b[i].innerHTML =result[i+2].email;
+		          }
+
+
+			})
+	
+		</script>
+		
+		<script>
+			let c;
+
+			const d = document.querySelectorAll(".address")
+		
+
+
+
+		fetch("/report/user/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 8; i++) {
+		        	d[i].innerHTML =result[i+2].address;
+		          }
+
+
+			})
+	
+		</script>
+		
+					<script>
+			let e;
+
+			const f = document.querySelectorAll(".profile_img")
+		
+
+
+
+		fetch("/user/admin/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 8; i++) {
+		        	f[i].src =result[i+2].profileImg;
+		          }
+
+
+			})
+	
+		</script>
+</html>

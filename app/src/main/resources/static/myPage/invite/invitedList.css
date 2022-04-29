@@ -205,7 +205,7 @@ li{
     font-weight: bold;
 }
 
-#tr-email {
+#tr-travel {
     width: 18.5vw;
     height: 6vh;
     background-color: #eaeaea;
@@ -227,7 +227,7 @@ li{
     text-align: center;
 }
 
-#td-email {
+#td-travel {
     width: 18.5vw;
     height: 6vh;
     text-align: center;
@@ -257,20 +257,21 @@ li{
 }
 
 .user_photo {
-    margin-top: 6vh;
-    margin-left: 1vw;
+    margin-top: 7vh;
+    margin-left: 1.3vw;
     width: 10vw;
-    height: 20vh;
+    height: 18vh;
     float:left;
-    background-image: url("../../img/profile.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;
     overflow: hidden;
+    border-radius: 70%;
 }
 
 .user_info {
-    margin-top: 5vh;
+    font-size: 1vw;
+    margin-top: 5.5vh;
     width: 8.5vw;
     height: 20vh;
     float:right;
@@ -279,13 +280,21 @@ li{
 }
 
 .user_info h5{
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     margin-top: 6vh;
+    font-size: 1.2vw;
 }
 
 .user_info h6{
     font-size: 0.7vw;
     margin-top: -1vh;
+    display: block;
     overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .logout {
@@ -346,7 +355,7 @@ li{
 
 #img2 {
     padding: 1vw, 4vh;
-    background-image: url("../../img/tag.png");
+    background-image: url("../../img/friendslist.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 20%;
@@ -448,7 +457,7 @@ li{
     width: 7vw;
     height: 5vh;
     float: right;
-    background-color: #f54748;
+    background-color: #fb9300;
     color: white;
     font-size: 1vw;
     font-weight: bold;
@@ -463,9 +472,9 @@ li{
     width: 7vw; 
     height: 5vh;
     margin-right: 1vw;
-    background-color: #fb9300;
+    background-color: #f54748;
     color: white;
-    font-size: 0.8vw;
+    font-size: 1vw;
     font-weight: bold;
     border-radius: 0.5em;
     float: right;

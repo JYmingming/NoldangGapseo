@@ -31,9 +31,12 @@ function getDirection() {
     return direction;
 }
 /*swiper end*/
-
+    
     var xInfoNick = document.querySelector("#x-infoNick");
     var xInfoEmail = document.querySelector("#x-infoEmail");
+    var xProfile = document.querySelector(".user_photo");
+    
+    var UBtn = document.querySelector("#View");
     
     fetch("/user/getLoginUser")
       .then(function(response) {
@@ -47,4 +50,73 @@ function getDirection() {
          
          xInfoNick.innerHTML = user.nickName;
          xInfoEmail.innerHTML = user.email;
+         xProfile.src = user.profileImg;
+         
+         
+         var no = user.userId
+         var name = user.nickName;
+         
+         
+ 
+       const WishListImg = document.querySelectorAll(".myImg")
+       
+       fetch(`/user/likesImg?userId=${no}`)
+        .then(function(response) {
+              return response.json();
+            })
+            .then(function(result) {
+              console.log(result);
+              
+              for (var i = 0; i < 5; i++) {
+                    WishListImg[i].src =result[i].img;
+                    var no1 = result[0].destinationId;
+                    var no2 = result[1].destinationId;
+                    var no3 = result[2].destinationId;
+                    var no4 = result[3].destinationId;
+                    var no5 = result[4].destinationId;
+                  $("#d-flex1").on("click", function(e) {
+
+                  location.href = `/userDestination/userDestinationDtl3.html?desId=${no1}`
+                  })
+                  $("#d-flex2").on("click", function(e) {
+
+                  location.href = `/userDestination/userDestinationDtl3.html?desId=${no2}`
+                  })
+                  $("#d-flex3").on("click", function(e) {
+
+                  location.href = `/userDestination/userDestinationDtl3.html?desId=${no3}`
+                  })
+                  $("#d-flex4").on("click", function(e) {
+
+                  location.href = `/userDestination/userDestinationDtl3.html?desId=${no4}`
+                  })
+                  $("#d-flex5").on("click", function(e) {
+
+                  location.href = `/userDestination/userDestinationDtl3.html?desId=${no5}`
+                  })
+                }
+               
+               $('#img4').on('click', function (e) {
+                  e.preventDefault();
+                  location.href = `../invite/invitedList.html?nickName=${name}`;
+              });
+                    
+            })
+            
+            
+            
+       
       })
+
+
+
+UBtn.onclick = function() { 
+  if (confirm("프로필 사진을 변경하시겠습니까??") == true) {    //확인
+      
+     } else{   
+
+         return false;
+
+     }
+     
+}

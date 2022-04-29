@@ -28,6 +28,7 @@ if (no == null) {
 var xNick = document.querySelector("#x-nick");
 var xInfoNick = document.querySelector("#x-infoNick");
 var xInfoEmail = document.querySelector("#x-infoEmail");
+var xProfile = document.querySelector(".user_photo");
     
 fetch(`/user/get?userId=${no}`)
   .then(function(response) {
@@ -45,7 +46,15 @@ fetch(`/user/get?userId=${no}`)
     xNick.innerHTML = user.nickName;
     xInfoNick.innerHTML = user.nickName;
     xInfoEmail.innerHTML = user.email;
+    xProfile.src = user.profileImg;
+    
+var name = user.nickName;
+
+$('#img2').on('click', function (e) {
+    e.preventDefault();
+    location.href = `../invite/invitedList.html?nickName=${name}`;
   });
+});
 
         // 비밀번호 재확인
       
@@ -90,5 +99,8 @@ fetch(`/user/delete?userId=${no}`)
       console.log(result.data);
       }
     });
+    
+
+
 };
 
