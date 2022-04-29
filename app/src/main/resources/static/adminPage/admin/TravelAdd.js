@@ -54,7 +54,7 @@ function findAddr() {
 // ---- 뒤로가기 화살표 -----
 $('.bi').on('click', function (e) {
     e.preventDefault();
-    location.href = '/adminPage/admin/TravelBoard3.html';
+    location.href = '/adminPage/admin/TravelBoard4.html';
 });
 
 // ===== 사진 올리기 =====s
@@ -195,7 +195,7 @@ $('.confirm-btn').on('click', async function (e) {
                 location.reload();
                 return;
             } else {
-                location.href = '/adminPage/admin/TravelBoard3.html';
+                location.href = '/adminPage/admin/TravelBoard4.html';
                 return;
             }
         });
