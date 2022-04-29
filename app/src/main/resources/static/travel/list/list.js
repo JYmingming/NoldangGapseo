@@ -3,11 +3,9 @@ import { travelList, getLoginUser } from '../../common/api/apiList.js';
 // ---- 화면 렌더링 ----
 (async function () {
     const session = await getLoginUser();
-    console.log(session);
     const response = await travelList(session.data.nickName, session.data.userId);
     response?.map((m) => {
         //console.log(m);
-        //m => arr[i].name
         let view = ` <div class="col-md-4 col-sm-6 content-card">
                     <div class="card-big-shadow">
                         <div

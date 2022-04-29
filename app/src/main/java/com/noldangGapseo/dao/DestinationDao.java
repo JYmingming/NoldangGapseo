@@ -50,4 +50,22 @@ public interface DestinationDao {
 
   Integer userDesCnt(Integer userId);
 
+  Integer checkLike(Integer desId);
+
+  Integer addNolComment(Comment comment);
+
+  Integer addUserComment(Comment comment);
+
+  Integer updateNolComment(Comment comment);
+
+  Integer updateUserComment(Comment comment);
+
+  String getNolCom(Integer commentId);
+
+  String getUserCom(Integer commentId);
+
+  Integer delNolCom(Integer commentId);
+
+  Integer delUserCom(Integer commentId);
+
 }

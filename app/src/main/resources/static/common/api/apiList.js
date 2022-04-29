@@ -13,6 +13,11 @@ export const PATH = {
         deleteImg: '/destination/delete/img',
         userDesCnt: '/destination/user/cnt',
         updateDes: '/destination/update/des',
+        checkLike: '/destination/check/like',
+        addComment: '/destination/add/comment',
+        getCom: '/destination/get/com',
+        deleteCom: '/destination/delete/com',
+        updateComment: '/destination/update/comment',
     },
     TRAVEL: {
         travelList: '/travel/travelList',
@@ -119,7 +124,7 @@ export async function userDesCnt(userId) {
     }
 }
 
-// ---- 여행 하나를 가지고 온다  ----
+// ---- 여행지 하나를 가지고 온다  ----
 // type : 놀당 여행지 = N , 유저 여행지 = U
 export async function getDes(id, type) {
     try {
@@ -189,6 +194,73 @@ export async function dleteImgs(id) {
         const response = await axios({
             method: 'DELETE',
             url: `${PATH.DESTINATION.deleteImg}?id=${id}`,
+        });
+        return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- like Check ----
+export async function checkLike(desId) {
+    try {
+        const response = await axios(`${PATH.DESTINATION.checkLike}?desId=${desId}`);
+        return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- 댓글 추가 ----
+// type : 놀당 여행지 = N , 유저 여행지 = U
+export async function addComment(comment = {}, type) {
+    try {
+        const resopnse = await axios({
+            method: 'POST',
+            url: `${PATH.DESTINATION.addComment}?type=${type}`,
+            data: comment,
+        });
+        return resopnse.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- 댓글 수정 ----
+// type : 놀당 여행지 = N , 유저 여행지 = U
+export async function updateComment(comment = {}, type) {
+    try {
+        const response = await axios({
+            method: 'POST',
+            url: `${PATH.DESTINATION.updateComment}?type=${type}`,
+            data: comment,
+        });
+        return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- 댓글 하나 가져오기 ----
+// type : 놀당 여행지 = N , 유저 여행지 = U
+export async function getCom(commentId, type) {
+    try {
+        const response = await axios(
+            `${PATH.DESTINATION.getCom}?commentId=${commentId}&type=${type}`
+        );
+        return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- 댓글 삭제 ----
+// type : 놀당 여행지 = N , 유저 여행지 = U
+export async function delCom(commentId, type) {
+    try {
+        const response = await axios({
+            method: 'DELETE',
+            url: `${PATH.DESTINATION.deleteCom}?commentId=${commentId}&type=${type}`,
         });
         return response.data;
     } catch (e) {

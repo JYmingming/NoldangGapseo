@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'SuncheonR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/SuncheonR.woff')
+        format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.container {
+    padding-top: 40px;
+}
+p {
+    font-family: 'SuncheonR';
+    font-weight: bold;
+    margin-left: 22%;
+}
+
+.d-box {
+    border: 1px solid #fb9300;
+    border-radius: 20px;
+    margin-bottom: 2em;
+    display: flex;
+    padding-top: 2%;
+}
+#d-contents {
+    justify-content: center;
+}
+.x-in {
+    background-color: white;
+    border: 0px;
+    font-size: 1.2em;
+}
+.x-in:focus {
+    outline: none;
+    background-color: white;
+    border: 0px;
+    font-size: 1.2em;
+}
+#in-contents {
+    text-align: left;
+    background-color: white;
+    border: 0px;
+    font-size: 1.2em;
+}
+
+#d-btn :hover {
+    background-color: #fb9300;
+    color: white;
+}
+
+#confirm-btn {
+    border: 1px solid #fb9300;
+    border-radius: 10px;
+    color: #fb9300;
+    font-size: 1.3em;
+    height: 3em;
+}

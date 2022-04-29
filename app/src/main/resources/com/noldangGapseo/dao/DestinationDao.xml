@@ -90,10 +90,10 @@
 		order by rand() limit 4;
 	</select>
 
-	<!-- 놀당 여행지의 댓글을 불러온다. -->
+	<!-- 놀당 여행지의 댓글들을 불러온다. -->
 	<select id="getNoldangCommentList" resultMap="comMap"
 		parameterType="Integer">
-		SELECT dc.comment_id, dc.contents , u.nick_name
+		SELECT dc.comment_id, dc.contents , u.nick_name, dc.reg_date
 		FROM
 		destination_comment dc , `user` u
 		where dc.destination_id = #{desId}
@@ -102,7 +102,7 @@
 	</select>
 
 
-	<!-- 유저가 작성한 여행지의 댓글을 불러온다. -->
+	<!-- 유저가 작성한 여행지의 댓글들을 불러온다. -->
 	<select id="getUserCommentList" resultMap="comMap"
 		parameterType="Integer">
 		SELECT ndc.new_destination_comment_id comment_id,
@@ -113,6 +113,62 @@
 		order by
 		ndc.reg_date desc;
 	</select>
+
+	<!-- 놀당 여행지 댓글 추가 -->
+	<insert id="addNolComment" parameterType="Comment">
+		INSERT
+		into 	destination_comment (destination_id, user_id, contents)
+		values 	(#{destinationId}, #{userId}, #{contents});
+	</insert>
+
+	<!-- 유저 여행지 댓글 추가 -->
+	<insert id="addUserComment" parameterType="Comment">
+		INSERT
+		into 	new_destination_comment (destination_id, user_id, contents)
+		values 	(#{destinationId}, #{userId}, #{contents});
+	</insert>
+
+	<!-- 놀당 여행지 댓글 수정 -->
+	<update id="updateNolComment" parameterType="Comment">
+		UPDATE 	destination_comment e
+		set 	contents = #{contents}
+		WHERE 	comment_id = #{commentId}
+	</update>
+
+	<!-- 유저 여행지 댓글 수정 -->
+	<update id="updateUserComment" parameterType="Comment">
+		UPDATE 	new_destination_comment e
+		set 	contents = #{contents}
+		WHERE 	comment_id = #{commentId}
+	</update>
+
+	<!-- 놀당 여행지 댓글 하나 가져온다. -->
+	<select id="getNolCom" parameterType="Integer" resultType="String">
+		SELECT 	dc.contents
+		FROM 	destination_comment dc
+		WHERE 	dc.comment_id  = #{commentId}
+	</select>
+
+	<!-- 유저 여행지 댓글 하나 가져온다. -->
+	<select id="getUserCom" parameterType="Integer" resultType="String">
+		SELECT 	dc.contents
+		FROM 	new_destination_comment dc
+		WHERE 	dc.comment_id  = #{commentId}
+	</select>
+
+	<!-- 놀당 여행지 삭제 -->
+	<delete id="delNolCom" parameterType="Integer">
+		DELETE
+		FROM 	destination_comment
+		WHERE 	comment_id  = #{commentId}
+	</delete>
+
+	<!-- 놀당 여행지 삭제 -->
+	<delete id="delUserCom" parameterType="Integer">
+		DELETE
+		FROM 	new_destination_comment
+		WHERE 	comment_id  = #{commentId}
+	</delete>
 
 	<!-- 이미지 리스트를 불러온다. -->
 	<select id="getImg" resultMap="imgMap" parameterType="Integer">
@@ -255,6 +311,12 @@
 		WHERE destination_img_id =
 		#{imgId}
 	</delete>
+
+	<select id="checkLike" resultType="Integer">
+		SELECT 	user_id
+		FROM 	likes
+		WHERE 	destination_id = #{desId}
+	</select>
 
 	<!-- 좋아요 추가 -->
 	<insert id="addLike">

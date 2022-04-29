@@ -36,27 +36,11 @@
             <!-- Img caruousel-->
             <div
                 id="carouselExampleInterval"
-                class="carousel slide w-50 align-self-center"
+                class="carousel slide w-75 align-self-center"
                 data-bs-ride="carousel"
                 style="border-radius: 10px"
             >
-                <div class="carousel-inner" style="display: flex">
-                    <button class="like-btn align-self-end">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="30"
-                            height="30"
-                            fill="currentColor"
-                            class="bi bi-heart"
-                            viewBox="0 0 16 16"
-                        >
-                            <path
-                                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"
-                            />
-                        </svg>
-                    </button>
-                    <span class="like-cnt align-self-end">2000</span>
-                </div>
+                <div class="carousel-inner" style="display: flex"></div>
                 <button
                     class="carousel-control-prev"
                     type="button"
@@ -76,22 +60,40 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
+            <div
+                class="like-box d-flex align-self-center w-75 justify-content-end"
+                style="margin-top: 20px"
+            >
+                <button class="like-btn align-self-end">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="30"
+                        height="30"
+                        fill="#DFDFDE"
+                        class="bi bi-heart-fill"
+                        viewBox="0 0 16 16"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
+                        />
+                    </svg>
+                </button>
+                <span class="like-cnt"></span>
+            </div>
             <div class="des-info align-self-center">
-                <div class="des-name">성산일출봉</div>
-                <div class="des-contetnts">
-                    바다위에 우뚝 솟아난 수성화산으로 유네스코 세계자연유산 제주에 처음이라면 필수
-                    코스
-                </div>
+                <div class="des-name"></div>
+                <div class="des-contetnts"></div>
             </div>
             <div class="des-detail align-self-center">
                 <div class="address-box">
                     <span class="des-detail-colum" style="margin-right: 60px">주소</span>
-                    <span>서귀포시 성산읍 일출로 284-12</span>
+                    <span id="d-address"></span>
                     <span style="margin-left: 5px; color: #4d96ff">복사</span>
                 </div>
                 <div class="phone-box">
                     <span class="des-detail-colum">전화번호</span>
-                    <span>064-783-0959</span>
+                    <span id="d-phone"></span>
                 </div>
             </div>
             <div class="review-box align-self-center flex-column">
@@ -101,17 +103,8 @@
                 </div>
             </div>
             <div class="line align-self-center"></div>
-            <div class="comment-container align-self-center">
-                <div class="comment-box d-flex flex-column">
-                    <div class="comment-user d-flex">
-                        <div class="c-profile-img"></div>
-                        <div class="user-nic align-self-center">전영민둥머리</div>
-                    </div>
-                    <div class="c-content">성산일출봉은 너무 좋지</div>
-                    <div class="c-regDate">2022-03-31</div>
-                    <div class="c-line align-self-center"></div>
-                </div>
-            </div>
+            <div class="comment-container align-self-center"></div>
+            <div class="add-comment">✏️</div>
         </div>
 
         <script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>

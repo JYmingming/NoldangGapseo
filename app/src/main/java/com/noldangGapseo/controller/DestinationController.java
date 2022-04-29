@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import com.noldangGapseo.domain.Comment;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -145,7 +146,7 @@ public class DestinationController {
 
     // 여행지를 업데이트 한다.
     @PutMapping("/update/des")
-    public ApiResponse updateDes(@RequestBody Destination destination){
+    public ApiResponse updateDes(@RequestBody Destination destination) {
         return service.updateDes(destination);
     }
 
@@ -171,6 +172,36 @@ public class DestinationController {
     @DeleteMapping("/deleteLike")
     public Integer deleteLike(Integer desId, Integer userId) {
         return service.deleteLike(desId, userId);
+    }
+
+    // 좋아요 체크
+    @GetMapping("check/like")
+    public ApiResponse checkLike(@RequestParam Integer desId) {
+        return new ApiResponse().setData(service.checkLike(desId));
+    }
+
+    // 댓글 추가
+    @PostMapping("add/comment")
+    public ApiResponse addComment(@RequestBody Comment comment, @RequestParam String type) {
+        return service.addComment(comment, type);
+    }
+
+    // 댓글 수정
+    @PostMapping("update/comment")
+    public ApiResponse updateComment(@RequestBody Comment comment, @RequestParam String type) {
+        return service.updateComment(comment, type);
+    }
+
+    // 댓글 하나를 가져온다.
+    @GetMapping("get/com")
+    public String getCom(@RequestParam Integer commentId, @RequestParam String type) {
+        return service.getCom(commentId, type);
+    }
+
+    // 댓글 삭제
+    @DeleteMapping("delete/com")
+    public ApiResponse delCom(@RequestParam Integer commentId, @RequestParam String type){
+        return service.delCom(commentId, type);
     }
 
     // 이미지 추가
