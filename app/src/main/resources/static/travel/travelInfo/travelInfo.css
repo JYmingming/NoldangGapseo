@@ -237,3 +237,21 @@
     font-weight: bold;
     font-family: 'SuncheonR';
 }
+
+.search-box {
+    margin-top: 24%;
+    margin-left: 22%;
+    position: absolute;
+    z-index: 9999999;
+    background-color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.s-nickName {
+    margin-top: 10px;
+    height: 5vh;
+    cursor: pointer;
+}
+.s-nickName:hover {
+    background-color: #eeee;
+}

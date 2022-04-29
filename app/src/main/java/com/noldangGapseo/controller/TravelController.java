@@ -87,6 +87,11 @@ public class TravelController {
     return service.deleteTravel(id);
   }
 
+  @PutMapping("/updateName")
+  public ApiResponse updateName(@RequestParam Integer id, @RequestParam String name){
+    return service.updateName(name,id);
+  }
+
   // 여행의 비용 항목을 불러온다.
   @GetMapping("/costList")
   public List<Cost> costList(@RequestParam Integer travelId) {

@@ -292,7 +292,7 @@ export async function getPeriod(id) {
     }
 }
 
-// ---- 여행 이름을 변경한다. ----
+// ---- 여행이름을 변경한다. ----
 export async function updateTravelName(id, name) {
     try {
         const response = await axios({

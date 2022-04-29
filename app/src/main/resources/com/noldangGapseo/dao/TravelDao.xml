@@ -197,7 +197,7 @@
     <select id="costList" resultMap="costMap" parameterType="Integer">
         SELECT      c.cost_id , c.name , c.cost
         from        cost c
-        WHERE       c.travel_id = 1
+        WHERE       c.travel_id = #{travelId}
         order by    c.reg_date desc;
     </select>
 

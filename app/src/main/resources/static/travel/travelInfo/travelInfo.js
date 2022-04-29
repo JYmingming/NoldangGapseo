@@ -40,9 +40,9 @@ let endDate;
         }
     });
     response.tagList?.map((m) => {
-        console.log(m);
+        //console.log(m);
         const tagView = `<div class="tag col-3">${m.tagName}</div>`;
-    $('.tagList').append(tagView);
+        $('.tagList').append(tagView);
     });
 })();
 
@@ -129,28 +129,31 @@ $('#name-input').on('keyup', function (key) {
 // ==== 닉네임 찾기 ====
 // ---- 닉네임 찾기 함수 ----
 const getUser = async (nickName) => {
+    $('.search-box').children().remove();
     const user = await findByNickName(nickName);
+    //console.log(user);
     let searchView;
     user?.map((m) => {
+        console.log('search::::', m);
         if (m?.nickName !== 'NoldangAdmin') {
-            searchView = `<div class="s-nickName">${m?.nickName}</div>`;
+            searchView = `<div class="s-nickName w-100" data-id=${m.userId}>🍊 ${m?.nickName}</div>`;
         }
+        $('.search-box').append(searchView);
     });
-    $('.search-box').append(searchView);
     //return user?.nickName;
 };
 // ---- 닉네임 찾기 이벤트 ----
 $('#invite-input').on('input', function (e) {
     let nickName = $(this).val();
-
-    getUser(nickName);
-
+    if ($('#invite-input').val() != '') {
+        getUser(nickName);
+    }
     //$('#invite-input').toggle();
 });
 
 const delTravel = async () => {
     const delRes = await deleteTravel(no);
-    console.log(delRes);
+    //console.log(delRes);
     if (delRes?.resCode == '0000') {
         location.href = '/travel/list/list.html';
         return;
@@ -170,14 +173,12 @@ $('.delete-btn').on('click', async function (e) {
     });
 });
 
-// ----뒤로가기 화살표-----
-$('.bi').on('click', function (e) {
-    e.preventDefault();
-    location.href = '/travel/list/list.html';
+$(document).on('click', '.s-nickName', function (e) {
+    let n = $(this).text().split(' ');
+    console.log(n[1], $(this).attr('data-id'));
 });
 
-
-$('#travel-reserve-btn').on('click',function (e){
+$('#travel-reserve-btn').on('click', function (e) {
     e.preventDefault();
     window.open(`/reserv/reserv.html?startDate=${startDate}&endDate=${endDate}&travelNo=${no}`);
 });
