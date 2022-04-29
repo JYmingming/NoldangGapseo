@@ -60,7 +60,6 @@ body{
     height: 13vh; 
     margin-top: 1vh;
     margin-left: 2vw;
-    background-image: url("../../img/profile.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 30%;
@@ -206,18 +205,15 @@ body{
     height: 33vh;
     margin-left: 0.5vw !important;
     margin-top: 3vh;
-    background-color: #e0e0e0;
     float: left;
     border-radius: 25px;
     display: flex;
     cursor: pointer;
-    background-image: url("../../img/wishlist.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 145%;
 }
 
-.wishList_box ul:hover {
+.wishList_box .d-flex:hover {
     opacity: 0.5;
 }
 

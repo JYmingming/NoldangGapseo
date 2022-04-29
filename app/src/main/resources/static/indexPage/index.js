@@ -19,6 +19,13 @@ fetch('/user/getLoginUser')
             console.log('어드민 로그인');
             css('.admin-login', 'display', '');
         }
+        var user = result.data;
+            var no = user.userId
+            
+            $('#myPage').on('click', function (e) {
+                e.preventDefault();
+                location.href = `../myPage/main/myPageMain.html?userId=${no}`;
+              });
     });
 
 document.querySelector('#logout-btn').onclick = function () {
@@ -164,7 +171,7 @@ document.querySelector('#datepicker_end').onchange = function () {
 
 document.querySelector('#thema-btn').onclick = function () {
     travel.travelName = document.querySelector('#thema-input').value;
-    console.log(travel.travelName);
+    $('#themaModal').modal("hide");
 };
 
 document.querySelector('#makeDec-btn').onclick = async function () {

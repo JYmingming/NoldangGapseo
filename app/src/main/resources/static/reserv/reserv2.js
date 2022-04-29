@@ -1,6 +1,21 @@
+var arr = location.href.split("?");
+if (arr.length == 1) {
+    alert("요청 형식이 옳바르지 않습니다.")
+    throw "URL 형식 오류!";
+}
+var qs = arr[1];
+console.log(qs);
+var params = new URLSearchParams(qs);
+var travelNo = params.get("travelNo");
+var startDate = params.get("startDate");
+var endDate = params.get("endDate");
+
+document.querySelector("#start-date").innerHTML = startDate;
+document.querySelector("#end-date").innerHTML = endDate;
+
 var listUl = document.querySelector(".result-list");
 document.querySelector("#search-btn").onclick =function (){
-    fetch("/reserve/get?startDate=2022-04-25&endDate=2022-04-26&link=L")
+    fetch(`/reserve/get?startDate=${startDate}&endDate=${endDate}&link=L`)
         .then(function(response) {
             return response.json();
         })
@@ -41,10 +56,10 @@ document.querySelector("#search-btn").onclick =function (){
     e.preventDefault();
     e.stopPropagation();
     const dataLink = $(this).attr('data-no');
-    location.href = `/reserv/reserv2_detail.html?startDate=2022-04-25&endDate=2022-04-26&link=${dataLink}`;
+    location.href = `/reserv/reserv2_detail.html?startDate=${startDate}&endDate=${endDate}&link=${dataLink}`;
 });
 
 
 document.querySelector("#air-link-btn").onclick = function (){
-    location.href="./reserv.html"
+    location.href=`./reserv.html?startDate=${startDate}&endDate=${endDate}&travelNo=${travelNo}`
 }

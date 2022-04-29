@@ -65,3 +65,12 @@
     border: 0px;
     margin-bottom: 3vh;
 }
+
+.nickName-check-ok,.email-check-ok,.phone-check-ok,.password-check-no{
+    color: forestgreen;
+    font-size: 0.7em;
+}
+.nickName-check-no,.email-check-no,.phone-check-no,.password-check-ok{
+    color: #E0475B;
+    font-size: 0.7em;
+}

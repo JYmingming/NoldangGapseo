@@ -56,6 +56,11 @@ $('#col4').on('click', function (e) {
     location.href = `withDrawal.html?userId=${no}`;
 });
 
+$('#img3').on('click', function (e) {
+    e.preventDefault();
+    location.href = `../wishList/wishList.html?userId=${no}`;
+});
+
 $('#img4').on('click', function (e) {
     e.preventDefault();
     location.href = `../invite/invitedList.html?nickName=${name}`;
