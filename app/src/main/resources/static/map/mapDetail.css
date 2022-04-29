@@ -9,15 +9,8 @@
     margin-bottom: 20px;
 }
 
-#carouselExampleInterval {
-    margin-top: 10%;
-    border-radius: 20px;
-}
-
 .carousel-item {
     height: 40vh;
-    overflow: hidden;
-    border-radius: 20px;
 }
 img {
     overflow: hidden;

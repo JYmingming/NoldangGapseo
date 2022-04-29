@@ -25,7 +25,7 @@ public class TravelService {
         return mapper.travelList(nickName);
     }
 
-    // 여행 하나늘 불러온다.
+    // 여행 하나를 불러온다.
     // 동행자와 투두리스트 3개를 불러온다.
     public TravelResponse getTravel(Integer travelId) {
         Travel travelOne = mapper.getTravel(travelId);
@@ -80,6 +80,20 @@ public class TravelService {
     // 여행의 루트를 날짜별로 가져온다.
     public List<Schedule> getRoute(Integer travelId, Integer day) {
         return mapper.getRoute(travelId, day);
+    }
+
+    // 루트 순서를 바꿔준다.
+    public ApiResponse updateRoute(List<Integer> idList){
+        Integer mapperRes = null;
+        for (int i = 0; i < idList.size(); i++) {
+            Integer routeIndex = i+1;
+            Integer id = idList.get(i);
+           mapperRes = mapper.updateRoute(routeIndex, id);
+        }
+        if(mapperRes == 0){
+            return new ApiResponse("1111","fali",null);
+        }
+        return new ApiResponse();
     }
 
     // 여행의 기간을 가져온다.

@@ -1,12 +1,24 @@
 package com.noldangGapseo.controller;
 
 
+import java.util.ArrayList;
 import java.util.List;
-
-import com.noldangGapseo.domain.*;
-import com.noldangGapseo.service.DestinationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import com.noldangGapseo.domain.ApiResponse;
+import com.noldangGapseo.domain.Cost;
+import com.noldangGapseo.domain.Schedule;
+import com.noldangGapseo.domain.Tag;
+import com.noldangGapseo.domain.Todo;
+import com.noldangGapseo.domain.Travel;
+import com.noldangGapseo.domain.TravelResponse;
 import com.noldangGapseo.service.TravelService;
 
 @RestController
@@ -15,7 +27,7 @@ public class TravelController {
 
   @Autowired
   TravelService service;
-  
+
   // 유저의 여행 리스트를 불러온다.
   @GetMapping("/travelList")
   public List<Travel> travelList(@RequestParam String nickName) {
@@ -50,6 +62,17 @@ public class TravelController {
   @GetMapping("/get/routes")
   public List<Schedule> getRoute(@RequestParam Integer id, @RequestParam Integer day){
     return service.getRoute(id, day);
+  }
+
+  // 루트 순서를 바꾼다. 
+  @PutMapping("/update/route")
+  public ApiResponse updateRoute(@RequestParam String ids){
+    ArrayList<Integer> idList = new ArrayList<>();
+    for (int i = 0; i < 4; i++) {
+      Integer id = Integer.parseInt(ids.split(",")[i]);
+      idList.add(id);
+    }
+    return service.updateRoute(idList);
   }
 
   // 여행 기간을 가져온다.

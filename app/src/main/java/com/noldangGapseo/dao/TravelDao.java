@@ -21,6 +21,8 @@ public interface TravelDao {
 
   public List<Schedule> getRoute(@Param("travelId") Integer travelId, @Param("day") Integer day);
 
+  public Integer updateRoute(@Param("routeIndex") Integer routeIndex, @Param("id") Integer id);
+
   public Integer getPeriod(Integer travelId);
 
   public Integer updateName(@Param("name") String name, @Param("id") Integer id);
