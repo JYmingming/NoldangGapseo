@@ -69,6 +69,7 @@
                 border-bottom-color: #eeeeee;
                 border-bottom-width: 1px;
                 border-bottom-style: solid;
+                font-size: small;
             }
 
           
@@ -1373,3 +1374,19 @@ th, td {
         
 	}
 	
+	#btn123{
+    width: 7vw;
+    height: 5vh;
+    background-color: #fb9300;
+    color: white;
+    font-size: 0.8vw;
+    font-weight: bold;
+    margin-left: 60.75vw;
+    margin-bottom : 20px;
+    border-radius: 0.5em;
+    border: 0;
+    outline: 0;
+    overflow: hidden;
+  cursor : pointer;
+    margin-left : 1200px;
+}

@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>어드민</title>
+    
+    <link rel="stylesheet" type="text/css" href="memberList3.css">
+
+ 
+  
+</head>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+
+<body>
+<header>
+<div th:replace="/fixed/header :: header"></div>
+<a href="memberList2.html" ><h1 id="imgtext1">ADMINSTRATOR 
+<nav>
+   <a href="memberList2.html" ><span id="imgtext2">유저관리</span></a>
+                  <a href="report.html"><span id="imgtext3">신고관리</span></a>
+                   <a href="TravelBoard3.html"><span id="imgtext4">여행지관리</span></a>
+                    <a href="../../customorCenter/noticeBoard/noticeBoard.html"><span id="imgtext5"></span></a>
+                    <a href="../../indexPage/index.html"><span id="imgtext6">Home</span></a>
+                    </nav>
+</h1></a>
+
+                    </header>
+<hr>
+<h1 class ="maintitle" >관리자 l 유저 관리</h1>
+
+
+<div id="input-form">
+<select name="catgo" style ="  float : left" >
+        <option value="userNum">이메일</option>
+        <option value="userID">닉네임</option>
+        <option value="userPhone">전화번호</option>
+      </select>
+   </div>  
+   <div>
+          <input type="text" id="keyword"  style ="width:10%;  float : left; margin-left: 5px;"  />
+        </div>
+        
+        
+        <div class="container" >
+       
+          <table id="products">
+         <form action="" id="setRows">
+      <span style=  "display: none; float : right; margin-bottom : 20px;" >
+        <input  type="text" name="rowPerPage" value="7" size ="1" > 
+        
+      </span>
+    </form>
+
+
+
+
+<thead>
+
+<th>회원번호</th>
+<th>이메일</th>
+<th>전화번호</th>
+<th>닉네임</th>
+<th>회원가입일</th>
+<th>회원탈퇴</th>
+
+</thead>
+
+<tbody>
+
+	<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+
+          <tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo9.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo3.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo4.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo5.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo6.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo7.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo8.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo8.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo8.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo8.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo8.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo8.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo8.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo8.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo8.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo8.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo8.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo8.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo8.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo8.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo8.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo8.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo8.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo8.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo8.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo8.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo8.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  class="user_id" a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo8.html'"></td>
+					
+							<td class ="email" ></td>
+							<td class= "phone" ></td>
+							<td class= "nick_name" ></td>
+							<td class = "reg_date"  ></td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+							<tr>
+							<td  a href="#" style="cursor:pointer" onclick="location.href='myinfo/myinfo8.html'">62</td>
+					
+							<td>right9090@naver.com</td>
+							<td >01096759116</td>
+							<td >right9090</td>
+							<td>2022-04-24 00:00:00</td>
+			<td>	<button id="btn2"  onclick="javascript: deleteRow(this); removeCheck();" > 탈퇴</button></td>					
+							
+							</tr>
+							
+						
+       
+         
+       
+       
+               </tbody>
+        </table>
+    
+    
+</div>
+   
+
+
+
+
+
+
+            
+<div>
+    
+   
+    
+</div>
+
+
+
+<div class="modal hidden">
+<div class="modal_overlay"></div>
+<div class="modal_content">
+<h1>탈퇴처리 되었습니다.</h1>
+<button class="button2">확인</button>
+</div>
+
+
+
+</div>
+<script>
+	const openButton=document.getElementById("open");
+	const modal = document.querySelector(".modal");
+	const overlay = modal.querySelector(".modal_overlay")
+	const closeBtn = modal.querySelector("button");
+	const openModal = () =>{
+		modal.classList.remove("hidden");
+	}
+	const closeModal = () =>{
+		modal.classList.add("hidden");
+	}
+	overlay.addEventListener("click", closeModal);
+	closeBtn.addEventListener("click", closeModal);
+	openButton.addEventListener("click", openModal);
+</script>
+
+
+
+<script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script type="text/javascript"> 
+        $(document).ready(function() {
+            $("#keyword").keyup(function() {
+                var k = $(this).val();
+                $("#products > tbody > tr").hide();
+                var temp = $("#products > tbody > tr > td:nth-child(n):contains('" + k + "')");
+                
+                $(temp).parent().show();
+            })
+        })
+        </script>
+        <script>
+var $setRows = $('#setRows');
+
+$setRows.submit(function (e) {
+  e.preventDefault();
+  var rowPerPage = $('[name="rowPerPage"]').val() * 1;// 1 을  곱하여 문자열을 숫자형로 변환
+
+//    console.log(typeof rowPerPage);
+
+  var zeroWarning = 'Sorry, but we cat\'t display "0" rows page. + \nPlease try again.'
+  if (!rowPerPage) {
+    alert(zeroWarning);
+    return;
+  }
+  $('#nav').remove();
+  var $products = $('#products');
+
+  $products.after('<div id="nav">');
+
+
+  var $tr = $($products).find('tbody tr');
+  var rowTotals = $tr.length;
+//  console.log(rowTotals);
+
+  var pageTotal = Math.ceil(rowTotals/ rowPerPage);
+  var i = 0;
+
+  for (; i < pageTotal; i++) {
+    $('<a href="#"></a>')
+        .attr('rel', i)
+        .html(i + 1)
+        .appendTo('#nav');
+  }
+
+  $tr.addClass('off-screen')
+      .slice(0, rowPerPage)
+      .removeClass('off-screen');
+
+  var $pagingLink = $('#nav a');
+  $pagingLink.on('click', function (evt) {
+    evt.preventDefault();
+    var $this = $(this);
+    if ($this.hasClass('active')) {
+      return;
+    }
+    $pagingLink.removeClass('active');
+    $this.addClass('active');
+
+    // 0 => 0(0*4), 4(0*4+4)
+    // 1 => 4(1*4), 8(1*4+4)
+    // 2 => 8(2*4), 12(2*4+4)
+    // 시작 행 = 페이지 번호 * 페이지당 행수
+    // 끝 행 = 시작 행 + 페이지당 행수
+
+    var currPage = $this.attr('rel');
+    var startItem = currPage * rowPerPage;
+    var endItem = startItem + rowPerPage;
+
+    $tr.css('opacity', '0.0')
+        .addClass('off-screen')
+        .slice(startItem, endItem)
+        .removeClass('off-screen')
+        .animate({opacity: 1}, 300);
+
+  });
+
+  $pagingLink.filter(':first').addClass('active');
+
+});
+
+
+$setRows.submit();
+
+
+
+
+
+
+</script>
+
+<script>
+			let a;
+
+			const b = document.querySelectorAll(".email")
+		
+
+
+
+		fetch("/user/admin/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 50; i++) {
+		        	b[i].innerHTML =result[i].email;
+		          }
+
+
+			})
+	
+		</script>
+		
+		<script>
+			let c;
+
+			const d = document.querySelectorAll(".phone")
+		
+
+
+
+		fetch("/user/admin/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 50; i++) {
+		        	d[i].innerHTML =result[i].phone;
+		          }
+
+
+			})
+			</script>
+			
+		
+		<script>
+			let e;
+
+			const f = document.querySelectorAll(".nick_name")
+		
+
+
+
+		fetch("/user/admin/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 50; i++) {
+		        	f[i].innerHTML =result[i].nickName;
+		          }
+
+
+			})
+	
+		</script>
+		
+		<script>
+			let g;
+
+			const h = document.querySelectorAll(".reg_date")
+		
+
+
+
+		fetch("/user/admin/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 50; i++) {
+		        	h[i].innerHTML =result[i].regDate;
+		          }
+
+
+			})
+	
+		</script>
+	<script>
+			let x;
+
+			const z = document.querySelectorAll(".user_id")
+		
+
+
+
+		fetch("/user/admin/list").then(function(response) {
+				return response.json();
+			}).then(function(result) {
+				console.log(result);
+				
+		        for (var i = 0; i < 50; i++) {
+		        	z[i].innerHTML =result[i].userId;
+		          }
+
+
+			})
+	
+		</script>
+		
+		<script>
+		function deleteRow(r) {
+		    var i = r.parentNode.parentNode.rowIndex;
+		    document.getElementById("products").deleteRow(i);
+		}</script>
+		
+		<script>
+	function removeCheck() {
+
+		 if (confirm("정말 탈퇴처리 하시겠습니까??") == true){    //확인
+
+		     document.removefrm.submit();
+
+		 }else{   //취소
+
+		     return false;
+
+		 }
+
+		}
+	</script>
+	        <script src="memberList2.js" type="module"></script>
+	        
+	        
+
+ 
+            <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+        <script src="memberList2.js" type="module"></script>
+        <script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+			
+
+
+</body>
+
+
+
+</html>
+//

@@ -1,40 +1,34 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>어드민</title>
-    <link rel="stylesheet" type="text/css" href="report.css">
-</head>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
-
-<body>
-
-<header>
+<html lang="en">
+    <head>
+      
+        <meta charset="UTF-8">
+        <link href="TravelBoard3.css" rel="stylesheet"/>
+ <body>      
+ <header>
 <div th:replace="/fixed/header :: header"></div>
-<a href="memberList2.html" ><h1 id="imgtext1">ADMINSTRATOR 
-<nav>
-   <a href="memberList2.html" ><span id="imgtext2">유저관리</span></a>
-                  <a href="report.html"><span id="imgtext3">신고관리</span></a>
-                   <a href="TravelBoard3.html"><span id="imgtext4">여행지관리</span></a>
-                    <a href="../../customorCenter/noticeBoard/noticeBoard.html"><span id="imgtext5"></span></a>
-                    <a href="../../indexPage/index.html"><span id="imgtext6">Home</span></a>
+        <a href="memberList2.html" ><h1 id="imgtext1">ADMINSTRATOR 
+	<nav></h1>
+	<h1 class = "nol">
+						<a class="btn" href="memberList2.html">유저관리 <span class="btn_txt_small">▶</span></a>
+            <a class="btn" href="report.html">신고관리 <span class="btn_txt_small">▶</span></a>
+            <a class="btn" href="TravelBoard3.html">여행관리 <span class="btn_txt_small">▶</span></a>
+            <a class="btn" href="../../indexPage/index.html">HOME <span class="btn_txt_small">▶</span></a>
                     </nav>
-</h1></a>
-
-                    </header>
-<hr>
-
-<h1 class ="maintitle">여행지 l 여행지 관리</h1>
+								</a></h1>
+        
+    </header>
+    
+    <h1 class ="maintitle" >Admin l Travel destination management </h1>
 
  <input type="button"  id ="btn123"  style="color: white " value="새 여행지 추가" onClick="location.href='TravelAdd.html'" />
 
 <div id="input-form">
 <select name="catgo" style ="  float : left" >
-        <option value="userNum">이름</option>
-       
-        <option value="userID">주소</option>
-        <option value="userEmail">전화번호</option>
-          <option value="userPhone">타입</option>
+        <option value="">이름</option>
+        <option value="">주소</option>
+        <option value="">전화번호</option>
+          <option value="">타입</option>
       </select>
    </div>  
    <div>
@@ -42,18 +36,16 @@
         </div>
         
          
-<div class="container" >
-
-
-  <table id="products">
- <form action="" id="setRows">
-         <span style=  "display: none; float : right; margin-bottom : 20px;" >
-        <input type="text" name="rowPerPage" value="20" size ="1"> 
+  <div class="container" >
+            <table class="products" id ="products">
+        <form action="" id="setRows">
+            <span style=  "display: none; float : right; margin-bottom : 20px;" >
+             <input  type="text" name="rowPerPage" value="20" size ="1" > 
         
-      </span>
-    </form>
-    </form>
-           <thead>
+           </span>
+        </form>
+                <caption>놀당갑서 유저관리 </caption>           
+                <thead class="head">
    <tr>
     <th >타입</th>
     <th >이름</th>
@@ -65,12 +57,9 @@
     <th>삭제</th>
   </tr>
 </thead>
-<tbody>
-<style>table {border: medium solid white;margin-top :60px; border-radius :20px; width:100%;}
-  th{font-family: Comic Sans MS;border: thin solid #6495ed;padding: 4px;background-color: #fb9300; border-radius :10px; color : white; }
- td{font-family: Comic Sans MS;border: thin solid white;padding: 4px;text-align: center;}.odd{background:white;}.odd{background:white;}
- img{padding:5px; border:solid; border-color: #dddddd #aaaaaa #aaaaaa #dddddd; border-width: 1px 2px 2px 1px; background-color:white;}</style>
- 
+   <tbody class ="body">
+
+
  <tr >
       <td><h5 class="destination_type_name" contenteditable="false"></h5></td>
       <td> <h5 class="destination_name"></h5></td>
@@ -940,16 +929,7 @@
       <td><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
   </tr>
   
-  <tr >
-      <td><h5 class="destination_type_name" contenteditable="false"></h5></td>
-      <td> <h5 class="destination_name"></h5></td>
-      <td> <h5 class="address"></h5></td>
-  	  <td> <h5 class="phone"></h5></td>
-    	 <td> <img class="destination_img_id" style ="width:200px;  height:100px;" ></img></td>
-      <td><h5 class="contents"></h5></td>
- 			<td><button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
-      <td><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
-  </tr>
+
   
   <tr >
       <td><h5 class="destination_type_name" contenteditable="false"></h5></td>
@@ -1280,6 +1260,18 @@
  			<td><button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
       <td><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
   </tr>
+  
+  <tr >
+      <td><h5 class="destination_type_name" contenteditable="false"></h5></td>
+      <td> <h5 class="destination_name"></h5></td>
+      <td> <h5 class="address"></h5></td>
+  	  <td> <h5 class="phone"></h5></td>
+    	 <td> <img class="destination_img_id" style ="width:200px;  height:100px;" ></img></td>
+      <td><h5 class="contents"></h5></td>
+ 			<td><button id="btn2" a onclick="alert('업데이트 되었습니다.');" style="cursor:pointer"  > 업데이트</button></td>
+      <td><button id="btn2" onclick="deleteRow(this);">삭제</button></td>
+  </tr>
+  
   <tr >
       <td><h5 class="destination_type_name" contenteditable="false"></h5></td>
       <td> <h5 class="destination_name"></h5></td>

@@ -1,55 +1,48 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>어드민</title>
-    <link rel="stylesheet" type="text/css" href="report.css">
-</head>
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
-
-<body>
-
-<header>
+<html lang="en">
+    <head>
+      
+        <meta charset="UTF-8">
+        <link href="report.css" rel="stylesheet"/>
+ <body>      
+ <header>
 <div th:replace="/fixed/header :: header"></div>
-<a href="memberList2.html" ><h1 id="imgtext1">ADMINSTRATOR 
-<nav>
-   <a href="memberList2.html" ><span id="imgtext2">유저관리</span></a>
-                  <a href="report.html"><span id="imgtext3">신고관리</span></a>
-                   <a href="TravelBoard3.html"><span id="imgtext4">여행지관리</span></a>
-                    <a href="../../customorCenter/noticeBoard/noticeBoard.html"><span id="imgtext5"></span></a>
-                    <a href="../../indexPage/index.html"><span id="imgtext6">Home</span></a>
+        <a href="memberList2.html" ><h1 id="imgtext1">ADMINSTRATOR 
+	<nav></h1>
+	<h1 class = "nol">
+						<a class="btn" href="memberList2.html">유저관리 <span class="btn_txt_small">▶</span></a>
+            <a class="btn" href="report.html">신고관리 <span class="btn_txt_small">▶</span></a>
+            <a class="btn" href="TravelBoard3.html">여행관리 <span class="btn_txt_small">▶</span></a>
+            <a class="btn" href="../../indexPage/index.html">HOME <span class="btn_txt_small">▶</span></a>
                     </nav>
-</h1></a>
-
-                    </header>
-<hr>
-
-<h1 class ="maintitle">관리자 l 신고 관리</h1>
+								</a></h1>
+        
+    </header>
+    
+    <h1 class ="maintitle" >Admin l User Report</h1>
 
 <div id="input-form">
-<select name="catgo" style ="  float : left" >
-        <option value="userNum">닉네임</option>
-        <option value="userID">이메일</option>
-        <option value="userEmail">타입</option>
+	<select name="catgo" style ="  float : left" >
+        <option value="">이메일</option>
+        <option value="">닉네임</option>
 
       </select>
-   </div>  
+   </div> 
    <div>
           <input type="text" id="keyword"  style ="width:10%;  float : left; margin-left: 5px;"  />
         </div>
         
          
 <div class="container" >
-
-
-  <table id="products">
-  <form action="" id="setRows">	
-         <span style=  "display: none; float : right; margin-bottom : 20px;" >
-        <input type="text" name="rowPerPage" value="7" size ="1"> 
+            <table class="products" id ="products">
+        <form action="" id="setRows">
+            <span style=  "display: none; float : right; margin-bottom : 20px;" >
+             <input  type="text" name="rowPerPage" value="7" size ="1" > 
         
-      </span>
-    </form>
-           <thead>
+           </span>
+        </form>
+                <caption>놀당갑서 유저관리 </caption>           
+                <thead class="head">
   <tr>
     <th >타입</th>
     <th>신고번호</th>
@@ -57,15 +50,12 @@
     <th >이메일</th>
     <th>신고사유</th>
     <th>신고날짜</th>
-        <th>게시글보기</th>
-              <th>삭제하기</th>
+    <th>게시글보기</th>
+    <th>삭제하기</th>
   </tr>
 </thead>
-<tbody>
-<style>table {border: medium solid white;margin-top :60px; border-radius :20px; width:100%;}
-  th{font-family: Comic Sans MS;border: thin solid #6495ed;padding: 4px;background-color: #fb9300; border-radius :10px; color : white; }
- td{font-family: Comic Sans MS;border: thin solid white;padding: 4px;text-align: center;}.odd{background:white;}.odd{background:white;}
- img{padding:5px; border:solid; border-color: #dddddd #aaaaaa #aaaaaa #dddddd; border-width: 1px 2px 2px 1px; background-color:white;}</style>
+      <tbody class ="body">
+
  <tr>
     <td class = "postType"></td>
 
