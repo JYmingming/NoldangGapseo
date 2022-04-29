@@ -56,7 +56,7 @@ fetch(`/user/get?userId=${no}`)
     xInfoNick.innerHTML = user.nickName;
     xInfoEmail.innerHTML = user.email;
     
-    $('#img4').on('click', function (e) {
+    $('#img2').on('click', function (e) {
     e.preventDefault();
     location.href = `../invite/invitedList.html?nickName=${name}`;
 });

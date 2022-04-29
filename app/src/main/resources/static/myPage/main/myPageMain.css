@@ -59,7 +59,7 @@ body{
     width: 9vw;
     height: 13vh; 
     margin-top: 1vh;
-    margin-left: 2vw;
+    margin-left: 5vw;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 30%;
@@ -77,13 +77,13 @@ body{
 
 .user_info h5{
     margin-top: 3.5vh;
-    margin-left: 2vw;
+    margin-left: 5vw;
     font-size: 1vw;
 }
 
 .user_info h6{
     margin-top: -1vh;
-    margin-left: 2vw;
+    margin-left: 5vw;
     font-size: 1vw;
 }
 
@@ -94,7 +94,7 @@ body{
 .logout button{
     width: 5vw;
     height: 3vh;
-    margin-left: 2vw;
+    margin-left: 5vw;
     background-color: #fb9300;
     color: white;
     font-size: 0.8vw;
