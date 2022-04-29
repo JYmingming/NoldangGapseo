@@ -54,7 +54,7 @@ fetch(`/user/inviteList?nickName=${no}`)
       .then(function(result) {
         console.log(result);
         
-            for (var i = 0; i < 5; i++) {
+            for (var i = 0; i < 8; i++) {
               inviteNick[i].innerHTML =result[i].invitedNickName;
               }
 })
@@ -70,7 +70,7 @@ fetch(`/user/inviteList?nickName=${no}`)
       .then(function(result) {
         console.log(result);
         
-            for (var i = 0; i < 5; i++) {
+            for (var i = 0; i < 8; i++) {
               InviteTravel[i].innerHTML =result[i].travelName;
               }
       })
