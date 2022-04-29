@@ -11,6 +11,8 @@ import { getLoginUser, findByNickName } from '../../common/api/apiList.js';
 var xProfile = document.querySelector(".user_photo");
 var xInfoNick = document.querySelector("#x-infoNick");
 var xInfoEmail = document.querySelector("#x-infoEmail");
+var xPassword = document.querySelector("#password2");
+var xPasswordCheck = document.querySelector("#password3");
 
 var UBtn = document.querySelector("#btn2");
 
@@ -55,6 +57,10 @@ $('#img2').on('click', function (e) {
 });
 
 UBtn.onclick = function() {
+  if (xPassword.value != xPasswordCheck.value ) {
+      window.alert("비밀번호를 다시 확인해주세요");
+      return;
+    }
       window.alert("비밀번호가 정상적으로 수정되었습니다! 다시 로그인해 주세요.");
       fetch("/user/signout").then(function(response) {
             location.href = "../../indexPage/index.html";

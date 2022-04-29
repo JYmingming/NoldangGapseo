@@ -56,7 +56,10 @@ function getDirection() {
          var no = user.userId
          var name = user.nickName;
          
-         
+         $('#img4').on('click', function (e) {
+                  e.preventDefault();
+                  location.href = `../invite/invitedList.html?nickName=${name}`;
+              });
  
        const WishListImg = document.querySelectorAll(".myImg")
        
@@ -67,13 +70,13 @@ function getDirection() {
             .then(function(result) {
               console.log(result);
               
-              for (var i = 0; i < 5; i++) {
-                    WishListImg[i].src =result[i].img;
+              for (var i = 0; i < 20; i++) {
+                    WishListImg[i].src =result[3*i].img;
                     var no1 = result[0].destinationId;
-                    var no2 = result[1].destinationId;
-                    var no3 = result[2].destinationId;
-                    var no4 = result[3].destinationId;
-                    var no5 = result[4].destinationId;
+                    var no2 = result[3].destinationId;
+                    var no3 = result[6].destinationId;
+                    var no4 = result[9].destinationId;
+                    var no5 = result[12].destinationId;
                   $("#d-flex1").on("click", function(e) {
 
                   location.href = `/userDestination/userDestinationDtl3.html?desId=${no1}`
@@ -96,10 +99,7 @@ function getDirection() {
                   })
                 }
                
-               $('#img4').on('click', function (e) {
-                  e.preventDefault();
-                  location.href = `../invite/invitedList.html?nickName=${name}`;
-              });
+               
                     
             })
             

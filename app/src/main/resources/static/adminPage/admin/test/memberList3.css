@@ -1,11 +1,5 @@
  .container {
      width: 1200px;
-     border-collapse:collapse;
-        justify-content: center;
-          border-radius :10px;
-          background-color: white;
- 					margin-top : 20px;
- 					  margin-left:100px;
  }
 
  h1, h2, h3, h4, h5, h6 {
@@ -23,7 +17,6 @@
                 border:0;
                 padding:0;
                 margin:0;
-                margin-top : 70px;
 
             }
 
@@ -50,9 +43,8 @@
               }
             
             .products th { 
-              
-                      border-color:#333333; 
-                background: #fb9300;
+                border-color:#333333; 
+                background: #fcfcfc;
                 padding:10px 0 10px 0; 
                 text-align:center; 
                 border-top-width: 2px;
@@ -63,7 +55,63 @@
                 font-weight: 400;
              }
 
-  .products .body td {
+            .products .checkbox {
+                  -ms-transform: scale(1.5); /* IE */
+                 -moz-transform: scale(1.5); /* FF */
+                -webkit-transform: scale(1.5); /* Safari and Chrome */
+                 -o-transform: scale(1.5); /* Opera */
+
+                -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+                -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+                box-shadow:inset 0px 1px 0px 0px #ffffff;
+                background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fff), color-stop(1, #fff) );
+                background:-moz-linear-gradient( center top, #fff 5%, #fff 100% );
+                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#fff');
+                background-color:#fff;
+             
+                text-indent:0;
+                border:1px solid #dcdcdc;
+                display:inline-block;
+                color:#000000;
+               
+                font-size:10px;
+                width:10px;
+                height:10px;
+                line-height:12px;
+
+                text-decoration:none;
+                text-align:center;
+                text-shadow:1px 1px 0px #ffffff;
+            }
+
+            .products .checkbox_checked {
+                -ms-transform: scale(1.5);
+                -moz-transform: scale(1.5);
+                -webkit-transform: scale(1.5);
+                -o-transform: scale(1.5);
+                -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
+                -webkit-box-shadow: inset 0px 1px 0px 0px #ffffff;
+                box-shadow: inset 0px 1px 0px 0px #ffffff;
+                background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fff), color-stop(1, #fff) );
+                background: -moz-linear-gradient( center top, #fff 5%, #fff 100% );
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#fff');
+                background-color: #fff;
+ 
+                text-indent: 0;
+                border: 1px solid #ffaa89;
+                display: inline-block;
+                color: #ea4d10;
+                font-size: 10px;
+                width: 10px;
+                height: 10px;
+                line-height: 10px;
+                text-decoration: none;
+                text-align: center;
+                text-shadow: 1px 1px 0px #ffffff;
+            }
+
+
+            .products .body td {
                 text-align: center;
                 padding:5px 9px 5px 9px; 
                 border-bottom-color: #eeeeee;
@@ -71,7 +119,6 @@
                 border-bottom-style: solid;
             }
 
-          
 
             .btn .txt_black {
                 color: #5d5d5d;
@@ -83,10 +130,10 @@
                 -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
                 -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
                 box-shadow:inset 0px 1px 0px 0px #ffffff;
-                background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #fb9300), color-stop(1, #fb9300) );
-                background:-moz-linear-gradient( center top, #ededed 5%, #fb9300 100% );
+                background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+                background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
                 filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
-                background-color:#fb9300;
+                background-color:#ededed;
                 -webkit-border-top-left-radius: 3px;
                 -moz-border-radius-topleft: 3px;
                 border-top-left-radius: 3px;
@@ -109,7 +156,7 @@
                 width:70px;
                 height:25px;
                 line-height:25px;
-						
+
                 text-decoration:none;
                 text-align:center;
                 text-shadow:1px 1px 0px #ffffff;
@@ -1256,120 +1303,8 @@
 
 
 
-
-
-	#nav {
-	margin-left :400px;
-	margin-top :50px;
-  width: 500px;
-  text-align: center;
-}
-
-
-#nav a {
-  display: inline-block;
-  padding: 3px 5px;
-  margin-right: 10px;	
-  font-family:Comic Sans MS;
-  background: #fb9300;
-  color: #000;
-  text-decoration: none;
-}
-#nav a.active {
-  background: #333;
-  color: #fff;
-}
             
-*{
-    padding:0;
-    margin:150;
-    text-decoration: none;
-}
 
 
-    thead{
- 
-        background-color : #fb9300;
-    }
-    .member{
-        border:1px solid;
-    }
-    .member:hover{
-        transition: all 0.3s;
-        background:#DED369;
-    }
-    #search{
-        border:1px solid lightgray;
-        
-    }
-    
-    .rowPerPage{
-    z-index : 1;
-    display: none;
-   
-    }
+
            
-
-form {
-  width: 500px;
-}
-table {
-  box-sizing :border-box;
-  margin-bottom: 10px;
-  border-radius : 20px;
-
-}
-th, td {
-  padding: 3px 10px;
-  text-align : center;
-}
-.off-screen {
-  display: none;
-}
-
-	#btn2{
-	  background-color: #fb9300;
-	  color: white;
-	}
-	
-	#imgtext1{
-  
-    margin-left:50px;
-   font-size : xx-large;
-    top: 30px;
-    color:  #fb9300;
-    font: bold;
-     font-family: "Comic Sans MS";
-      height: 75px;
-  padding: 1rem;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-   
-   
-}
-           
-   .nol
-   {
-   margin-left: 900px;
-   }
-           
-   .maintitle{
-  font-family: 'Comic Sans MS';
-  margin-left : 100px;
-   }
-   
-   	#catgo{
-	margin-left : 100px;
-	   width: 100px;
-            height: 1px;
-	}
-	
-	#input-form{
-	margin-left : 100px;
-	margin-top : 30px;
-	   width: 100px;
-        
-	}
-	

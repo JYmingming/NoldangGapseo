@@ -3,6 +3,7 @@ var xEmail = document.querySelector("input[name=email]");
 var xNickName = document.querySelector("input[name=nickName]");
 var xPhone = document.querySelector("input[name=phone]");
 var xPassword = document.querySelector("input[name=password]");
+var xEmailCheck = document.querySelector("input[name=email-checking-code]");
 
 document.querySelector("form[name=form2]").onsubmit = function() {
     if (xEmail.value == "" ||
@@ -11,7 +12,10 @@ document.querySelector("form[name=form2]").onsubmit = function() {
         xPassword.value == "") {
         window.alert("필수 입력 항목이 비어 있습니다.");
         return false;
-    }else if(
+    }else if(emailCheckflag==0){
+        window.alert("이메일 인증번호를 확인해주세요.");
+    }
+    else if(
         nickNameCheck == 1 ||
         phoneCheck == 1 ||
         emailCheck ==1 ||
@@ -41,13 +45,7 @@ document.querySelector("form[name=form2]").onsubmit = function() {
     return false;
 };
 
-$('.email-checking').on('click', function (e) {
-    Swal.fire({
-        icon: 'error',
-        title: '위의 항목들을 모두 입력해주세요',
-        text: 'something is missing',
-    });
-});
+
 //css 함수
 function css(selector, name, value) {
     var el = document.querySelectorAll(selector);
@@ -181,7 +179,32 @@ $('#password-c').keyup(function() {
         passwordCheck = 1;
     }
 })
-
+$('.email-checking').click(function() {
+    fetch(`/service/mail?userId=${xEmail.value}`, {
+        method: "POST"
+    })
+})
+$('.email-checking').click(function() {
+    fetch(`/service/mail?userId=${xEmail.value}`, {
+        method: "POST"
+    })
+})
+let emailCheckflag=0;
+$('.email-check-btn').click(function() {
+    fetch(`/service/verifyCode?code=${xEmailCheck.value}`, {
+        method: "POST"
+    }).then(function(response) {
+        return response.json()
+    }).then(function(result) {
+        if (result==1){
+            window.alert("인증이 확인되었습니다.")
+            emailCheckflag=1;
+        }else{
+            window.alert("인증번호가 올바르지 않습니다.")
+            emailCheckflag=0;
+        }
+    })
+})
 
 
 

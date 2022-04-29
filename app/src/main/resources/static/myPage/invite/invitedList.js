@@ -43,6 +43,13 @@ if (no == null) {
     throw '파라미터 오류!';
 }
 
+var name = user.nickName;
+
+$('#img2').on('click', function (e) {
+    e.preventDefault();
+    location.href = `../invite/invitedList.html?nickName=${name}`;
+  });
+
 let a;
 
 const inviteNick = document.querySelectorAll("#td-nick")
