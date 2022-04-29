@@ -22,13 +22,21 @@
     <resultMap id="tagMap" type="tag"></resultMap>
 
     <!-- 유저의 여행 리스트를 불러온다 -->
-    <select id="travelList" resultMap="travelMap" parameterType="String">
-        SELECT      t.travel_id , t.travel_name , CONCAT(t.start_date, '~' ,t.end_date) period,
-                    DATEDIFF(DATE_FORMAT(t.start_date , '%Y-%m-%d.') , DATE_FORMAT(now() ,'%Y-%m-%d.')) d_day,
+    <select id="travelList" resultMap="travelMap">
+        SELECT      t.travel_id , t.travel_name,
+                    CONCAT(t.start_date, '~' ,t.end_date) period,
+                    DATEDIFF(DATE_FORMAT(t.start_date , '%Y-%m-%d.'),
+                    DATE_FORMAT(now() ,'%Y-%m-%d.')) d_day,
                     t.color
-        FROM        travel t , `user` u
+        FROM        travel t,
+                    `user` u,
+                    companion c
         WHERE       t.user_id = u.user_id
         and         u.nick_name = #{nickName}
+        or          c.companion_id = #{companionId}
+        and         c.travel_id = t.travel_id
+        and         c.state = 'Y'
+        group by    t.travel_id
         ORDER BY    t.start_date ASC;
     </select>
 

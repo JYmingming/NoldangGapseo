@@ -3,8 +3,8 @@ import { travelList, getLoginUser } from '../../common/api/apiList.js';
 // ---- 화면 렌더링 ----
 (async function () {
     const session = await getLoginUser();
-    //console.log(session);
-    const response = await travelList(session.data.nickName);
+    console.log(session);
+    const response = await travelList(session.data.nickName, session.data.userId);
     response?.map((m) => {
         //console.log(m);
         //m => arr[i].name

@@ -21,8 +21,8 @@ public class TravelService {
     TagDao tagMapper;
 
     // 유저의 여행 리스틑 불러온다.
-    public List<Travel> travelList(String nickName) {
-        return mapper.travelList(nickName);
+    public List<Travel> travelList(String nickName, Integer companionId) {
+        return mapper.travelList(nickName, companionId);
     }
 
     // 여행 하나를 불러온다.

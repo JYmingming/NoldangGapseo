@@ -31,8 +31,8 @@ public class TravelController {
 
     // 유저의 여행 리스트를 불러온다.
     @GetMapping("/travelList")
-    public List<Travel> travelList(@RequestParam String nickName) {
-        return service.travelList(nickName);
+    public List<Travel> travelList(@RequestParam String nickName, @RequestParam Integer companionId) {
+        return service.travelList(nickName, companionId);
     }
 
     // 여행 정보를 불러온다.

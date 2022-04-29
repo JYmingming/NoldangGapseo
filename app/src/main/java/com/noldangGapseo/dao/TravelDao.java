@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface TravelDao {
 
-  public List<Travel> travelList(String nickName);
+  public List<Travel> travelList(@Param("nickName") String nickName,@Param("companionId") Integer companionId);
 
   public Travel getTravel(Integer travelId);
 

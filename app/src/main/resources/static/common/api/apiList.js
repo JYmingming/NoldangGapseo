@@ -198,9 +198,11 @@ export async function dleteImgs(id) {
 
 // ===== Travel =====
 // ---- 회원의 여행리스트 가져오기 ----
-export async function travelList(nickName) {
+export async function travelList(nickName, companionId) {
     try {
-        const response = await axios(`${PATH.TRAVEL.travelList}?nickName=${nickName}`);
+        const response = await axios(
+            `${PATH.TRAVEL.travelList}?nickName=${nickName}&companionId=${companionId}`
+        );
         return response.data;
     } catch (e) {
         console.log(e);
