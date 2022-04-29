@@ -300,7 +300,13 @@
 					//likes 버튼
 					$(".btn-like").click(function() {
 						$(this).toggleClass("done");
-						
+						if(btnLikeCnt.innerHTML == 0){
+		                     btnLikeCnt.innerHTML = "1"
+						}
+						else{
+		                    btnLikeCnt.innerHTML = "0"							
+						}
+
 					})
 				</script>
     <script>
