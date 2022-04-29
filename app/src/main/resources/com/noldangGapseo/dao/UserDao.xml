@@ -14,6 +14,9 @@
     
     <resultMap type="likes" id="likesMap" >
     </resultMap>
+    
+    <resultMap type="destination" id="desMap"></resultMap>
+    <resultMap id="imgMap" type="destinationImg"></resultMap>
 
     <insert id="insert" parameterType="user">
         insert into user(email,pwd,nick_name,phone)
@@ -114,10 +117,12 @@
     </select>
     
     <select id="likesImg" resultMap="likesMap">
-        SELECT      l.img, l.destination_id
-        FROM        likes l , user u
-        WHERE       l.user_id = u.user_id
-        and         u.user_id = #{userId}
+        SELECT d.destination_id , di.img 
+				FROM likes l , destination d, destination_img di 
+				WHERE l.destination_id = d.destination_id
+				and d.destination_id = di.destination_id
+				and d.user_id =1
+				and l.user_id = #{user_id}
     </select>
   
   <delete id="delete" parameterType="int">

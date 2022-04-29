@@ -146,7 +146,7 @@ body{
     background-image: url("../../img/id.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 15%;
+    background-size: 8%;
     cursor: pointer;
 }
 
@@ -154,7 +154,7 @@ body{
     background-image: url("../../img/tag.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 15%;
+    background-size: 8%;
     cursor: pointer;
 }
 
@@ -162,7 +162,7 @@ body{
     background-image: url("../../img/wishlist.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 15%;
+    background-size: 8%;
     cursor: pointer;
 }
 
@@ -170,7 +170,7 @@ body{
     background-image: url("../../img/friendslist.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 15%;
+    background-size: 8%;
     cursor: pointer;
 }
 
@@ -216,7 +216,6 @@ body{
 .myImg {
 	 width: 19vw;
     height: 33vh;
-    margin-left: 0.5vw !important;
     float: left;
     border-radius: 25px;
     display: flex;
