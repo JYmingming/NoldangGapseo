@@ -40,8 +40,8 @@
                 <div class="con1">
                   <img class="user_photo"></img>
                   <div class="user_info">
-                      <h5 id="x-infoNick">nick</h5>
-                      <h6 id="x-infoEmail">email@test.com</h6>
+                      <h5 id="x-infoNick"></h5>
+                      <h6 id="x-infoEmail"></h6>
                       <div class="logout">
                           <button id="btn1" a href="#" onclick="location.href='../../indexPage/index.html'">Logout</button>
                       </div>
@@ -117,7 +117,8 @@
           <div class="third_box2"></div>
           <div class="third_box3">
             <div class="btn_box">
-                <button id="btn2" onclick="javascript: deleteRow(this); removeCheck();" >삭제</button>
+                <button id="btn2" onclick="javascript: deleteRow(this); removeCheck();">수락</button>
+                <button id="btn3" onclick="javascript: deleteRow(this); removeCheck();">거절</button>
             </div>
             <div class="paging d-flex justify-content-center">
                 <nav aria-label="Page navigation example" class="paging">
@@ -150,5 +151,42 @@
 
   <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
   <script src="./invitedList.js" type="module"></script>
+  <script type="text/javascript">
+$('#btn3').click(function removeCheck() {
+
+   if (confirm("정말로 거절 하시겠습니까??") == true){    //확인
+
+       document.removefrm.submit();
+
+   }else{   //취소
+
+       return false;
+
+   }
+  }
+);
+$('#btn2').click(function removeCheck() {
+
+	   if (confirm("초대를 수락 하시겠습니까??") == true){    //확인
+
+		   window.alert("수락되었습니다!");
+
+	   }else{   //취소
+
+	       return false;
+
+	   }
+	   
+	  }
+	);
+  
+  </script>
+  <script type="text/javascript">
+  function deleteRow(r) {
+      var i = r.parentNode.parentNode.rowIndex;
+      document.getElementById("second_table").deleteRow(-1);
+  }
+
+  </script>
 </body>
 </html>

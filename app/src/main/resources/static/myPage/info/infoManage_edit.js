@@ -47,6 +47,7 @@ fetch(`/user/get?userId=${no}`)
     }
     
     var user = result.data;
+    var name = user.nickName;
      
     xNick.value = user.nickName;
     xPhoneNumber.value = user.phone;
@@ -54,6 +55,11 @@ fetch(`/user/get?userId=${no}`)
     xProfile.src = user.profileImg;
     xInfoNick.innerHTML = user.nickName;
     xInfoEmail.innerHTML = user.email;
+    
+    $('#img4').on('click', function (e) {
+    e.preventDefault();
+    location.href = `../invite/invitedList.html?nickName=${name}`;
+});
   });
   
 function css(selector, name, value) {
@@ -122,7 +128,7 @@ UBtn.onclick = function() {
             location.href = "../../indexPage/index.html";
         });
       } else {
-        window.alert("모든 항목을 입력해 주세요!");
+        window.alert("닉네임이 중복되었습니다! 다른 닉네임을 사용해주세요.");
         console.log(result.data);
         console.log(result.resStatus);
       }
@@ -136,4 +142,6 @@ $('#col4').on('click', function (e) {
     e.preventDefault();
     location.href = `withDrawal.html?userId=${no}`;
 });
+
+
       

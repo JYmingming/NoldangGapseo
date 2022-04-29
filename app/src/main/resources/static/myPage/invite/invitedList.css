@@ -291,7 +291,10 @@ li{
 .user_info h6{
     font-size: 0.7vw;
     margin-top: -1vh;
+    display: block;
     overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .logout {
@@ -454,7 +457,7 @@ li{
     width: 7vw;
     height: 5vh;
     float: right;
-    background-color: #f54748;
+    background-color: #fb9300;
     color: white;
     font-size: 1vw;
     font-weight: bold;
@@ -469,9 +472,9 @@ li{
     width: 7vw; 
     height: 5vh;
     margin-right: 1vw;
-    background-color: #fb9300;
+    background-color: #f54748;
     color: white;
-    font-size: 0.8vw;
+    font-size: 1vw;
     font-weight: bold;
     border-radius: 0.5em;
     float: right;

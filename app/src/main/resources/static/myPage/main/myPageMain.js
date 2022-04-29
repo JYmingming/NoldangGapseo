@@ -54,6 +54,9 @@ function getDirection() {
          
          
          var no = user.userId
+         var name = user.nickName;
+         
+         
  
        const WishListImg = document.querySelectorAll(".myImg")
        
@@ -93,6 +96,10 @@ function getDirection() {
                   })
                 }
                
+               $('#img4').on('click', function (e) {
+                  e.preventDefault();
+                  location.href = `../invite/invitedList.html?nickName=${name}`;
+              });
                     
             })
             

@@ -74,21 +74,8 @@ fetch(`/user/inviteList?nickName=${no}`)
               InviteTravel[i].innerHTML =result[i].travelName;
               }
       })
-
-$('#btn2').click(function removeCheck() {
-
-     if (confirm("정말로 삭제 하시겠습니까??") == true){    //확인
-
-         document.removefrm.submit();
-
-     }else{   //취소
-
-         return false;
-
-     }
-
-    }
-);
+      
+      
 
 
 });
