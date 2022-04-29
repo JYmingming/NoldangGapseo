@@ -16,3 +16,40 @@ let destinationId;
   let a = document.querySelector(".loginUser")
 a.innerHTML = user.data.nickName
 })();
+
+$('.btn-like').on('click', async function (e) {
+
+    console.log("userDestJs")
+    //formdata
+    var like = new FormData(document.forms.namedItem('form-d'));
+    const response = await addLike(like);
+    console.log(response);
+
+    if (1) {
+        then((result) => {
+            if (1) {
+                location.reload();
+                return;
+            } else {
+                location.href = '/travel/myboard/myboard.html';
+                return;
+            }
+        });
+    }
+
+});
+
+function addLike(like) {
+    try {
+        const response = await fetch(`destination/addLike`, {
+            method: 'POST',
+            body: like,
+        }).then(function (res) {
+            return res.json();
+        });
+        console.log(response);
+        return response;
+    } catch (e) {
+        console.log(e);
+    }
+}
