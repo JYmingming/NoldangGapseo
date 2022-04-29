@@ -1,4 +1,4 @@
-import { getRoutes, getPeriod } from '../../../common/api/apiList.js';
+import { getRoutes, getPeriod, updateRoute } from '../../../common/api/apiList.js';
 import { urlSearch } from '../../../common/urlSearchParam.js';
 
 const no = urlSearch('travelId');
@@ -145,7 +145,8 @@ function getDirection() {
 })();
 
 // ---- 여행지 sort ----
-//(function () {
+let idList;
+let ids = [];
 $('#des-container').sortable({
     items: '.des-box',
     start: function (event, ui) {
@@ -155,16 +156,27 @@ $('#des-container').sortable({
         //console.log('Index', ui.item.index());
         //console.log('start point : ' + ui.item.position().top);
     },
-    stop: function (event, ui) {
-        console.log('end point : ', ui.item.next().attr('data-routeIndex'));
+    stop: async function (event, ui) {
+        console.log('end point : ', ui.item.attr('data-routeIndex'));
+        ids.splice(0);
+        $('.des-box').each(function (i, tag) {
+            //console.log($(tag).attr('data-id'));
+            ids.push($(tag).attr('data-id'));
+        });
+        console.log('ids:::', ids);
+        idList = `${ids[0]},${ids[1]},${ids[2]},${ids[3]}`;
+        console.log('idList::::', idList);
+        const update = await updateRoute(idList);
+        console.log(update);
+        return;
     },
 });
-//})();
 
 function reportActivity() {
     console.log('The sort order has changed');
 }
 
+// ---- day Click Event ----
 $(document).on('click', '.swiper-slide', function (e) {
     console.log($(this).children('span').text());
     $('.swiper-slide').removeClass('dayNum');

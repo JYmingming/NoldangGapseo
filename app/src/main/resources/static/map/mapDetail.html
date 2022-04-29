@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="../node_modules/axios/dist/axios.js"></script>
         <title>mapDetail</title>
         <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css" />
         <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
@@ -17,7 +18,7 @@
     </head>
     <body>
         <div class="headers"></div>
-        <div class="container">
+        <div class="container d-flex flex-column">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"
@@ -40,30 +41,6 @@
                 style="border-radius: 10px"
             >
                 <div class="carousel-inner" style="display: flex">
-                    <div class="carousel-item active" data-bs-interval="2000">
-                        <img
-                            src="http://a.cdn-hotels.com/gdcs/production13/d298/6722a536-dc90-49b4-9987-4c0ce03105cc.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
-                            class="d-block h-auto w-100"
-                            alt="..."
-                            style="border-radius: 20px"
-                        />
-                    </div>
-                    <div class="carousel-item" data-bs-interval="2000">
-                        <img
-                            src="http://a.cdn-hotels.com/gdcs/production153/d1329/551a0385-f7e0-4f7c-a407-43bdecddd4d4.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
-                            class="d-block h-auto w-100"
-                            alt="..."
-                            style="border-radius: 20px"
-                        />
-                    </div>
-                    <div class="carousel-item" data-bs-interval="2000">
-                        <img
-                            src="http://a.cdn-hotels.com/gdcs/production18/d313/28d7ddb1-12c5-4b47-b355-515eb4db0870.jpg?impolicy=fcrop&w=1600&h=1066&q=medium"
-                            class="d-block h-auto w-100"
-                            alt="..."
-                            style="border-radius: 20px"
-                        />
-                    </div>
                     <button class="like-btn align-self-end">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -139,6 +116,6 @@
 
         <script src="../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
         <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script></script>
+        <script src="./mapDetail.js" type="module"></script>
     </body>
 </html>

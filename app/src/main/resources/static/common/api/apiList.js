@@ -21,6 +21,7 @@ export const PATH = {
         addTag: '/travel/add/tag',
         setRoute: '/travel/set/route',
         getRoutes: '/travel/get/routes',
+        updateRoute: '/travel/update/route',
         getPeriod: '/travel/get/period',
         updateName: '/travel/updateName',
         todoList: '/travel/todoList',
@@ -262,6 +263,19 @@ export async function setRoute(id, period, tags) {
 export async function getRoutes(id, day) {
     try {
         const response = await axios(`${PATH.TRAVEL.getRoutes}?id=${id}&day=${day}`);
+        return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- 루트 순서를 바꾼다. ----
+export async function updateRoute(id) {
+    try {
+        const response = await axios({
+            method: 'PUT',
+            url: `${PATH.TRAVEL.updateRoute}?ids=${id}`,
+        });
         return response.data;
     } catch (e) {
         console.log(e);
