@@ -55,6 +55,43 @@ fetch(`/user/get?userId=${no}`)
     xInfoNick.innerHTML = user.nickName;
     xInfoEmail.innerHTML = user.email;
   });
+  
+function css(selector, name, value) {
+    var el = document.querySelectorAll(selector);
+    for (var e of el) {
+        e.style[name] = value;
+    }
+}
+  
+css('.nickName-check-ok','visibility','hidden');
+css('.nickName-check-no',`visibility`,'hidden');
+let nickNameCheck = 0; //닉네임 중복 여부
+$('input[name=nickName]').keyup(function() {
+    let nickNameKeyup = $(this).val();
+    console.log(nickNameKeyup);
+    fetch("/user/search/nickNameCall?nickName="+nickNameKeyup)
+        .then(function (response) {
+            return response.json();
+        }).then(function (result) {
+        if (result.status == "fail") {
+            window.alert("서버 요청 오류!");
+            console.log(result.data);
+            return;
+        }
+        if(result.length==0){
+            css('.nickName-check-ok','display','');
+            css('.nickName-check-no','display','none');
+            css('.nickName-check-ok','visibility','');
+            css('.nickName-check-no','visibility','');
+            nickNameCheck = 0;
+        }else{
+            css('.nickName-check-ok','display','none');
+            css('.nickName-check-no',`display`,'');
+            nickNameCheck = 1;
+        }
+    })
+})
+  
      
 UBtn.onclick = function() {
   

@@ -12,6 +12,8 @@ var xProfile = document.querySelector(".user_photo");
 var xInfoNick = document.querySelector("#x-infoNick");
 var xInfoEmail = document.querySelector("#x-infoEmail");
 
+var UBtn = document.querySelector("#btn2");
+
 fetch("/user/getLoginUser")
   .then(function(response) {
     return response.json();
@@ -41,10 +43,6 @@ var name = user.nickName;
 
 console.log(no);
 
-$('#btn2').click(function (e) {
-    e.preventDefault();
-    window.location.href=`infoManage_edit.html?userId=${no}`;
-});
 
 $('#col4').on('click', function (e) {
     e.preventDefault();
@@ -55,5 +53,12 @@ $('#img4').on('click', function (e) {
     e.preventDefault();
     location.href = `../invite/invitedList.html?nickName=${name}`;
 });
+
+UBtn.onclick = function() {
+      window.alert("비밀번호가 정상적으로 수정되었습니다! 다시 로그인해 주세요.");
+      fetch("/user/signout").then(function(response) {
+            location.href = "../../indexPage/index.html";
+           });
+    }
 })
 

@@ -201,16 +201,29 @@ body{
 }
 
 .d-flex {
-    width: 19vw;
+	width: 19vw;
     height: 33vh;
     margin-left: 0.5vw !important;
-    margin-top: 3vh;
     float: left;
     border-radius: 25px;
     display: flex;
     cursor: pointer;
     background-repeat: no-repeat;
     background-position: center;
+    background-color: #faf3e5;
+}
+
+.myImg {
+	 width: 19vw;
+    height: 33vh;
+    margin-left: 0.5vw !important;
+    float: left;
+    border-radius: 25px;
+    display: flex;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fdf9f2;
 }
 
 .wishList_box .d-flex:hover {

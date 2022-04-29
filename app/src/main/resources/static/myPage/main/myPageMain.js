@@ -71,23 +71,23 @@ function getDirection() {
                     var no3 = result[2].destinationId;
                     var no4 = result[3].destinationId;
                     var no5 = result[4].destinationId;
-                  $(".d-flex1").on("click", function(e) {
+                  $("#d-flex1").on("click", function(e) {
 
                   location.href = `/userDestination/userDestinationDtl3.html?desId=${no1}`
                   })
-                  $(".d-flex2").on("click", function(e) {
+                  $("#d-flex2").on("click", function(e) {
 
                   location.href = `/userDestination/userDestinationDtl3.html?desId=${no2}`
                   })
-                  $(".d-flex3").on("click", function(e) {
+                  $("#d-flex3").on("click", function(e) {
 
                   location.href = `/userDestination/userDestinationDtl3.html?desId=${no3}`
                   })
-                  $(".d-flex4").on("click", function(e) {
+                  $("#d-flex4").on("click", function(e) {
 
                   location.href = `/userDestination/userDestinationDtl3.html?desId=${no4}`
                   })
-                  $(".d-flex5").on("click", function(e) {
+                  $("#d-flex5").on("click", function(e) {
 
                   location.href = `/userDestination/userDestinationDtl3.html?desId=${no5}`
                   })

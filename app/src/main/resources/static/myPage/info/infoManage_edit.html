@@ -30,7 +30,7 @@
                     <h5 id="col2"><a href="#">내 정보</a></h5>
                   </li>
                   <li class ="col-3">
-                    <h5 id="col3" a href="#" onclick="location.href='password.html'"><a href="#">비밀번호 변경</a></h5>
+                    <h5 id="col3" a href="#" onclick="location.href='password_change.html'"><a href="#">비밀번호 변경</a></h5>
                   </li>
                   <li class ="col-3">
                     <h5 id="col4" ><a href="#">회원탈퇴</a></h5>
@@ -49,8 +49,8 @@
                 <div class="con1">
                   <img class="user_photo"></img>
                   <div class="user_info">
-                      <h5 id="x-infoNick">nick</h5>
-                      <h6 id="x-infoEmail">email@test.com</h6>
+                      <h5 id="x-infoNick"></h5>
+                      <h6 id="x-infoEmail"></h6>
                       <div class="logout">
                           <button id="btn1" a href="#" onclick="location.href='../../indexPage/index.html'">Logout</button>
                       </div>
@@ -88,7 +88,8 @@
                   <tr>
                     <td id="td-1">닉네임</td>  
                     <td><input id="id_edit" type="text" name="nickName">
-                        <button id="check-btn">중복체크</button>
+                        <span class="nickName-check-ok" >사용가능한 닉네임입니다.</span>
+                        <span class="nickName-check-no" >사용중인 닉네임입니다.</span>
                     </td>
                   </tr>
                   <tr>
