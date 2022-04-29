@@ -74,3 +74,16 @@
     color: #E0475B;
     font-size: 0.7em;
 }
+
+.email-check-input{
+    width: 59%!important;
+}
+
+.email-check-btn{
+    width: 39% ;
+    height: 40px;
+    border-radius: 0.5vw;
+    border: 1px solid rgb(227,146,35);
+    background-color: rgba(227,146,35,20%);
+    float: right;
+}
