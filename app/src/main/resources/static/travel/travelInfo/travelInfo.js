@@ -39,6 +39,11 @@ let endDate;
             $('.travel-companion-box').append(companion);
         }
     });
+    response.tagList?.map((m) => {
+        console.log(m);
+        const tagView = `<div class="tag col-3">${m.tagName}</div>`;
+    $('.tagList').append(tagView);
+    });
 })();
 
 // ===== 모달 ======
@@ -169,4 +174,10 @@ $('.delete-btn').on('click', async function (e) {
 $('.bi').on('click', function (e) {
     e.preventDefault();
     location.href = '/travel/list/list.html';
+});
+
+
+$('#travel-reserve-btn').on('click',function (e){
+    e.preventDefault();
+    window.open(`/reserv/reserv.html?startDate=${startDate}&endDate=${endDate}&travelNo=${no}`);
 });

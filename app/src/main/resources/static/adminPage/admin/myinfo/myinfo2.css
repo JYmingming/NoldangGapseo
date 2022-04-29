@@ -202,7 +202,7 @@ color : black;
     width: 7vw;
     height: 5vh;
     background-color: #fb9300;
-		color :black;
+
     font-size: 0.8vw;
     font-weight: bold;
     margin-left: 40.75vw;
@@ -215,7 +215,5 @@ color : black;
 }
  
  	 a:link { color: black ;text-decoration: none;}
-
+ 
  a:hover { color:orange; text-decoration: underline;}
- 
- 

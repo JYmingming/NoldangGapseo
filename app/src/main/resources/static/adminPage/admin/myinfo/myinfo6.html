@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>어드민</title>
-    <link rel="stylesheet" type="text/css" href="myinfo.css">
+    <link rel="stylesheet" type="text/css" href="myinfo2.css">
 </head>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 
 <body>
 
-<header>
 <div th:replace="/fixed/header :: header"></div>
-<a href="memberList2.html" ><h1 id="imgtext1">ADMINSTRATOR 
+<a href="../memberList2.html" ><h1 id="imgtext1">ADMINSTRATOR 
 <nav>
-   <a href="memberList2.html" ><span id="imgtext2">유저관리</span></a>
-                  <a href="report.html"><span id="imgtext3">신고관리</span></a>
-                   <a href="TravelBoard3.html"><span id="imgtext4">여행지관리</span></a>
+   <a href="../memberList2.html" ><span id="imgtext2">유저관리</span></a>
+                  <a href="../report.html"><span id="imgtext3">신고관리</span></a>
+                   <a href="../TravelBoard3.html"><span id="imgtext4">여행지관리</span></a>
                     <a href="../../customorCenter/noticeBoard/noticeBoard.html"><span id="imgtext5"></span></a>
-                    <a href="../../indexPage/index.html"><span id="imgtext6">Home</span></a>
+                    <a href="../../../../indexPage/index.html"><span id="imgtext6">Home</span></a>
                     </nav>
 </h1></a>
 
@@ -38,15 +37,15 @@
   </tr>
   <tr>
     <th scope="row">작성한 게시글 수</th>
-    <td>4개</td>
+    <td>5개</td>
   </tr>
   <tr>
     <th scope="row">작성한 댓글 수</th>
-    <td>37개</td>
+    <td>21개</td>
   </tr>
   <tr>
     <th scope="row">받은 좋아요 수</th>
-    <td>961개</td>
+    <td>24개</td>
   </tr>
     <tr>
     <th scope="row">주소</th>
@@ -58,7 +57,7 @@
   
 </table>
 </div>
-<button id = "btn3"><a href = "memberList2.html">목록으로</a></button>
+<button id = "btn3"><a href = "../memberList2.html">목록으로</a></button>
 </body>
 
 <script>
@@ -69,13 +68,13 @@
 
 
 
-		fetch("/report/user/list").then(function(response) {
+		fetch("/user/admin/list").then(function(response) {
 				return response.json();
 			}).then(function(result) {
 				console.log(result);
 				
 		        for (var i = 0; i < 8; i++) {
-		        	b[i].innerHTML =result[i].email;
+		        	b[i].innerHTML =result[i+5].email;
 		          }
 
 
@@ -97,7 +96,7 @@
 				console.log(result);
 				
 		        for (var i = 0; i < 8; i++) {
-		        	d[i].innerHTML =result[i].address;
+		        	d[i].innerHTML =result[i+5].address;
 		          }
 
 
@@ -105,7 +104,7 @@
 	
 		</script>
 		
-				<script>
+					<script>
 			let e;
 
 			const f = document.querySelectorAll(".profile_img")
@@ -119,7 +118,7 @@
 				console.log(result);
 				
 		        for (var i = 0; i < 8; i++) {
-		        	f[i].src =result[i].profileImg;
+		        	f[i].src =result[i+5].profileImg;
 		          }
 
 

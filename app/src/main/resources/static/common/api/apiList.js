@@ -11,6 +11,8 @@ export const PATH = {
         addDestination: '/destination/add/destination',
         deleteDes: '/destination/delete/des',
         deleteImg: '/destination/delete/img',
+        userDesCnt: '/destination/user/cnt',
+        updateDes: '/destination/update/des',
     },
     TRAVEL: {
         travelList: '/travel/travelList',
@@ -94,9 +96,21 @@ export async function findByNickName(nickName) {
 
 // ===== Destination ====
 // ---- 회원이 작성한 여행지 리스트를 가져온다.----
-export async function getUserDesList(userId) {
+export async function getUserDesList(userId, limit, nextPage) {
     try {
-        const response = await axios(`${PATH.DESTINATION.userDesList}?userId=${userId}`);
+        const response = await axios(
+            `${PATH.DESTINATION.userDesList}?userId=${userId}&limit=${limit}&nextPage=${nextPage}`
+        );
+        return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- 회원이 작성한 여행지 리스트 갯수 ----
+export async function userDesCnt(userId) {
+    try {
+        const response = await axios(`${PATH.DESTINATION.userDesCnt}?userId=${userId}`);
         return response.data;
     } catch (e) {
         console.log(e);
@@ -135,6 +149,20 @@ export async function addDestination(destination) {
         });
         console.log(response);
         return response;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- 여행지 업데이트 ---
+export async function updateDes(destination = {}) {
+    try {
+        const response = await axios({
+            method: 'PUT',
+            url: PATH.DESTINATION.updateDes,
+            data: destination,
+        });
+        return response.data;
     } catch (e) {
         console.log(e);
     }

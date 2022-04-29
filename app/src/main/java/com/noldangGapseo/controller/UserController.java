@@ -100,6 +100,7 @@ public class UserController {
     return service.userList();
   }
 
+  // 닉네임으로 유저 찾기
   @GetMapping("/search/nickName")
   public List<User> search(String nickName) {
     return service.findNickname(nickName);
@@ -193,7 +194,7 @@ public class UserController {
   }
 
   @RequestMapping("/photo")
-  public ResponseEntity<Resource> photo(String filename) {
+  public ResponseEntity<Resource> profileImg(String filename) {
 
     try {
       // 다운로드할 파일의 입력 스트림 자원을 준비한다.
@@ -249,7 +250,7 @@ public class UserController {
       }
 
       // 파일을 지정된 폴더에 저장한다.
-      File photoFile = new File("./upload/book/" + filename); // App 클래스를 실행하는 프로젝트 폴더
+      File photoFile = new File("./upload/user/" + filename); // App 클래스를 실행하는 프로젝트 폴더
       file.transferTo(photoFile.getCanonicalFile()); // 프로젝트 폴더의 전체 경로를 전달한다.
 
       return filename;

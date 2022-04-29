@@ -44,7 +44,7 @@
 
     <select id="findAll"  resultMap="userMap">
        SELECT 
-       user_Id , email, phone, nick_name, reg_date 
+       user_Id , email, phone, nick_name, reg_date , profile_img
        FROM user 
         where not user_id = 1
         
