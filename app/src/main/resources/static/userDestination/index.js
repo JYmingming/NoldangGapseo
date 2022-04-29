@@ -4,7 +4,7 @@ var titleInput = $("#x-title-input");
 titleInput.css("display", "none");
 
 var tbody = $("#x-todo-table tbody");
-
+console.log(titleInput)
 $("#x-todo-input").keyup(function(e) {
 
   if (e.keyCode == 27) {
@@ -16,9 +16,51 @@ $("#x-todo-input").keyup(function(e) {
       Swal.fire("필수 입력 항목이 비어 있습니다.");
       return;
     }
+    
+              // 1) URL에서 쿼리스트링(query string)을 추출한다.
+          var arr = location.href.split("?");
+          console.log(arr);
 
-    fetch(`/todo/add?title=${e.target.value}`)
+          if (arr.length == 1) {
+            alert("요청 형식이 옳바르지 않습니다.")
+            throw "URL 형식 오류!";
+          }
+
+          var qs = arr[1];
+          console.log(qs);
+
+          //2) 쿼리 스트링에서 desId 값을 추출한다.
+          var params = new URLSearchParams(qs);
+          var no = params.get("desId");
+          console.log(no);
+
+          //동적으로 변화줄 elements 선택    
+          //제목
+          var title = document.querySelector(".title");
+          //아이디
+          var nickName = document.querySelector(".nickName");
+          //등록일  
+          var regDate = document.querySelector(".regDate");
+          //이미지 경로 1, 2, 3,
+          var img = document
+              .querySelectorAll(".d-block.h-auto.w-100");
+
+          var content = document.querySelector(".content");
+
+          //좋아요 수
+          var btnLikeCnt = document.querySelector(".btn-like-cnt");
+          console.log(btnLikeCnt)
+          //댓글 수   
+          var btnCommentCnt = document
+              .querySelector(".btnCommentCnt");
+          //주소
+          var address = document.querySelector(".address");
+
+          // 3) 서버에서 데이터 가져오기
+          fetch(`/destination/getDes?desId=${no}&type=N`)
+
       .then(function(response) {
+        console.log(response)
         return response.json();
       })
       .then(function(result) {
