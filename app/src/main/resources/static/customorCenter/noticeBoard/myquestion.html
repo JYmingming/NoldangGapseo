@@ -5,7 +5,7 @@
   <title>Noldang</title>
   <link rel="stylesheet" type="text/css" href="myquestion.css">
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="myquestion.js" type="text/javascript"></script>
   <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
@@ -28,7 +28,7 @@
     <div class="body-b">
         <div class="s-text">
           <p>ㆍ고객님이 고객센터에 등록하신 질문내역을 쉽게 확인해보시고
-          수정,삭제하실 수 있습니다.
+          수정,삭제하실 수 있습니다.</p>
         </div>
     </div>
     
@@ -37,32 +37,31 @@
     <div class= "body-e">
 
       <div id="view1">
-        <form class="view-box">
-       <p>전체<span style="color: orange;">5</span>건
-        <select name="view" >
-          <option value="ok" selected>완료된 답변순</option>
-          <option value="new date">최신 등록일</option>
-          <option value="old date">예전 등록일</option>
-        </select>
-       </form>
-        <table id="tb1">
-         <tbody>
-          <tr><th>No.</th><th>제목</th><th>작성자</th><th>등록일</th><th>답변상태</th></tr>
-         </tbody>
-        </table>
-        <button class="back" onclick="location.href='announcement.html'">뒤로가기</button>
+      
+      <form name="deleteForm" action="/notice/delete" method="post" id="delete" target='blankifr'>
+        
+            <div class="view-box">
+           <p>전체<span style="color: orange;">5</span>건</p>
+            <select class="view" >
+              <option value="ok" selected>완료된 답변순</option>
+              <option value="new date">최신 등록일</option>
+              <option value="old date">예전 등록일</option>
+            </select>
+           </div>
+            <table id="tb1">
+             <tbody>
+              <tr><th>No.</th><th>제목</th><th>작성자</th><th>등록일</th><th>답변상태</th><th>수정</th><th>삭제</th></tr>
+             </tbody>
+            </table>
+            <button class="back" onclick="location.href='announcement.html'">뒤로가기</button>
+            
+        </form>
+        <iframe name='blankifr' style='display:none;'></iframe>
         </div>
       
      </div>
     
     
-    
-    
-    <div class="page">
-      <a class=page-a href="" type="button">《</a>
-      <a class=page-a href="" type="button">1</a>
-      <a class=page-a href="" type="button">》</a>
-    </div>
     
     
     

@@ -7,7 +7,21 @@
 <mapper namespace="com.noldangGapseo.dao.NoticeBoardDao">
     <select id="getNoticeList" resultType="NoticeVO">
         select * from noldang.service_center a , noldang.user b 
-        where a.user_id = b.user_id and a.service_type = #{type} 
-        
+        where a.user_id = b.user_id and a.service_type = #{type}  
     </select>
+    
+    <insert id="regist" parameterType = "map"> <!-- 질문등록 -->    
+    insert into noldang.service_center (user_id, service_type, title, contents, view_count, reg_date, update_date)
+    values(5 , 'Q', #{title}, #{content} , 0 , now(), now())        
+    </insert>
+    
+    <update id="update"  parameterType="String"> <!-- 질문수정 -->
+    UPDATE noldang.service_center SET title = #{title}, contents = #{contents}  WHERE service_center_id = #{service_center_id}
+    </update>
+    
+    <delete id="delete" parameterType="Integer"> <!-- 질문삭제 -->
+    DELETE FROM  noldang.service_center  WHERE service_center_id = #{service_center_id}
+    </delete>
+    
+
 </mapper>

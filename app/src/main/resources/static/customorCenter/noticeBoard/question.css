@@ -5,60 +5,51 @@
     background:.000;
   }
   .body {
-    width:600px;
-    height:800px;
-    position:absolute;
-    left:50%;
-    top:50%;
-    margin-left:-300px;
-    margin-top:-200px;
+    width:70%;
+    height:600px;
+    margin: auto;
     background-color: white;  /** 작업 끝나면 흰색으로 **/
   }
   
   .body-a {                       /*질문창 머리*/
-    position:absolute;
-    width:500px;
-    height:50px;
+    margin: auto;
+    width: 70%;
+    height: 50px;
   }
   .question {
     position:absolute;
     font-size:20px;
     font-weight:bold;
+    padding: 10px;
   }
   
   .body-b {                                 /* 안내창 */
-  position: relative;
-  width: 600px;
+  width: 100%;
   height: 100px;
-  top: 5%;
+  margin: auto;
   }
   
   .s-text {
-  position: absolute;
-  width: 600px;
-  height: 80px;
   background-color: white;
-  margin: 10px;
+  margin: auto;
   border-style: solid;
   border-color: #c5c5c5;
   border-width: 8px;
   }
 
   .body-c {                           /* question 컨텐츠 몸통 */
-  position: relative;
-  width: 600px;
-  height: 400px;
-  top: 5%;
+  width: 100%;
+  margin: auto;
+  padding-top: 20px;
   background-color: #f9f9f9;
   }
   
   .c-1 {                 /* question 1번 폼*/
-  position:relative;
-  width: 520px;
+  width: 80%;
   height: 130px;
-  left: 6.5%;
-  top: 10px;
+  margin: auto;
   background-color: #eeeeee;
+  display: flex;
   }
   
   .img-1 {
@@ -69,10 +60,9 @@
   }
   
   .text-1{
-  position: relative;
   width: 400px;
   height: 80px;
-  top: 30px;
+  margin: auto;
   float: right;
   font-size: 1.2ex;
    text-align: left;
@@ -80,38 +70,37 @@
   
   
   .c-2 {                 /* question 2번 폼*/
-  position:relative;
-  width: 600px;
-  height: 250px;
+  width: 80%;
+  margin: auto;
   background-color: #f9f9f9;
   color: black;
-  top: 10%;
+  display: flex;
+  flex-direction: column;
   }
   
   .c-2-head {           /* c-2항목 머리 */
   position:relative;
-  width: 520px;
+  width: 100%;
   height: 40px;
-  left: 6.5%;
   top: 10px;
   background-color: #eeeeee;
   border-style: solid;
   border-width: 3px;
   border-bottom-style: none;
   border-color: #e9e9e9;
+  display: flex;
+  justify-content: flex-start;
   }
   .c-2-t {
-  position: relative;
-  bottom: 5px;
-  left: 10px;
+  width: 50px;
+  height: 25px;
+  margin: auto;
   }
   .title {
-  position: absolute;
   border: 1px solid #F1F1F1;
-  width: 400px;
-  height: 20px;
-  left: 80px;
-  top: 8px;
+  width: 80%;
+  height: 60%;
+  margin: auto;
   border-style: solid;
   border-width: 1px;
   border-color: #e9e9e9;
@@ -119,10 +108,11 @@
   
   .c-2-body {                   /* c-2항목 몸통 */
   position: relative;
-  width: 520px;
+  width: 100%;
   height: 180px;
-  left: 6.5%;
   top: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
   background-color: #f9f9f9;
   border-style: solid;
   border-width: 3px;
@@ -131,14 +121,20 @@
   }
   
   .content {
-  width:400px; 
-  height:90px; 
+  width:80%; 
+  height:50%; 
   font-size:30px;
   }
   
   .dbt {
   position: relative;
   top:20px;
+  }
+  
+  
+  .c-3{
+  width: 100%;
+  margin-top: 20px;
   }
   #registration {                       /*하단 등록*/
   position: relative;
@@ -154,7 +150,11 @@
   cursor:pointer;
   }
   
-  .cancel {
+  .sp{
+  display: flex;
+  justify-content: space-between;
+  }
+  #cancel {
   position: relative;
   float: right; 
   background-color: white;
@@ -203,3 +203,8 @@
   background:rgba(0, 0, 0, 0.5);
   z-index:-1;
 }
+.content{
+	font-size: 15px;
+	
+}
+
