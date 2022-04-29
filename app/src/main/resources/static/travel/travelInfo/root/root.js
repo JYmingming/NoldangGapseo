@@ -152,7 +152,7 @@ $('#des-container').sortable({
     start: function (event, ui) {
         //console.log('sortStart!');
         //ui.item.data('start_pos', ui.item.index());
-        console.log('start:::', ui.item.attr('data-routeIndex'));
+        console.log('start:::', day);
         //console.log('Index', ui.item.index());
         //console.log('start point : ' + ui.item.position().top);
     },
@@ -168,6 +168,10 @@ $('#des-container').sortable({
         console.log('idList::::', idList);
         const update = await updateRoute(idList);
         console.log(update);
+        if (update.resCode == '0000') {
+            getSchedule(day);
+            showMarker(routeList);
+        }
         return;
     },
 });
@@ -177,8 +181,10 @@ function reportActivity() {
 }
 
 // ---- day Click Event ----
+let day = 1;
 $(document).on('click', '.swiper-slide', function (e) {
-    console.log($(this).children('span').text());
+    //console.log($(this).children('span').text());
+    day = $(this).children('span').text();
     $('.swiper-slide').removeClass('dayNum');
     $(this).addClass('dayNum');
     getSchedule($(this).children('span').text());
