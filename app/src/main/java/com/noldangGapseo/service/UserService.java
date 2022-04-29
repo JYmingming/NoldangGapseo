@@ -7,6 +7,7 @@ import com.noldangGapseo.dao.UserDao;
 import com.noldangGapseo.domain.Invite;
 import com.noldangGapseo.domain.User;
 import com.noldangGapseo.domain.UserResponse;
+import com.noldangGapseo.domain.likes;
 @Service
 public class UserService {
 
@@ -21,16 +22,21 @@ public class UserService {
     return mapper.findByEmailAndPassword(email, password);
   }
 
-  public User get(String password) {
-    return mapper.findByPassword(password);
-  }
-
   public UserResponse userList() {
     return new UserResponse().setUserList(mapper.findAll());
   }
 
   public List<User> findNickname(String nickName) {
     return mapper.findNickname(nickName);
+  }
+  public List<User> findNicknameCall(String nickName) {
+    return mapper.findNicknameCall(nickName);
+  }
+  public List<User> findEmail(String email) {
+    return mapper.findEmail(email);
+  }
+  public List<User> findPhone(String phone) {
+    return mapper.findPhone(phone);
   }
 
 
@@ -62,6 +68,10 @@ public class UserService {
 
   public List<Invite> inviteList(String nickName) {
     return mapper.inviteList(nickName);
+  }
+
+  public List<likes> likesImg(int userId) {
+    return mapper.likesImg(userId);
   }
 
 }
