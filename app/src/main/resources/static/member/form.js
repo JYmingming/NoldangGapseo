@@ -14,6 +14,7 @@ document.querySelector("form[name=form2]").onsubmit = function() {
         return false;
     }else if(emailCheckflag==0){
         window.alert("이메일 인증번호를 확인해주세요.");
+        return false;
     }
     else if(
         nickNameCheck == 1 ||
