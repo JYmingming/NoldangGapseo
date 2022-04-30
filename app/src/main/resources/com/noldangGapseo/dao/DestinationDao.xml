@@ -225,7 +225,7 @@
 	<!-- 조원석: 유저여행지 객체 8개씩 받기 -->
 	<select id="find8" resultMap="desMap">
 		select
-    d.destination_id,
+   		 d.destination_id,
 		d.destination_name,
 		di.img
 		thumbNailImg,
@@ -240,13 +240,12 @@
 		from
 		destination_comment
 		where destination_id = d.destination_id) commentsCnt
-
-
 		from
 		destination d
 		inner join destination_img di on (d.destination_id =
 		di.destination_id)
-		where 0 = di.destination_img_id % 3
+		where not d.user_id = 1
+		group by d.destination_id
 		limit #{offset},
 		#{rowCount}
 	</select>
@@ -254,8 +253,9 @@
 
 	<!-- 조원석: 유저여행지 갯수 카운트 -->
 	<select id="countAll" resultType="int">
-		select count(*) from
-		destination
+		select 		count(*)
+		from 		destination
+		where not 	user_id = 1
 	</select>
 
 

@@ -277,15 +277,15 @@
 										img[0]
 												.setAttribute(
 														"src",
-														getDes.destinationImgList[0].img)
+														`/destination/img?filename=${getDes.destinationImgList[0].img}`)
 										img[1]
 												.setAttribute(
 														"src",
-														getDes.destinationImgList[1].img)
+														`/destination/img?filename=${getDes.destinationImgList[1].img}`)
 										img[2]
 												.setAttribute(
 														"src",
-														getDes.destinationImgList[2].img)
+														`/destination/img?filename=${getDes.destinationImgList[2].img}`)
 
 										content.innerHTML = getDes.destination.contents;
 										btnLikeCnt.innerHTML = getDes.destination.likesCnt

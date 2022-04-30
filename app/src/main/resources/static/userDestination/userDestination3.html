@@ -1,945 +1,1223 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<script src="../../node_modules/jquery/dist/jquery.min.js"></script>
-<title>Insert title here</title>
-<!--스위트 얼럿 -->
-<link rel="stylesheet"
-  href="../../node_modules/sweetalert2/dist/sweetalert2.min.css" />
-<!--부트 스트렙 -->
-<link rel="stylesheet"
-  href="../../node_modules/bootstrap/dist/css/bootstrap.css" />
-<script
-  src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<!--CSS 가져오기 -->
-<link rel="stylesheet" href="./userDestination.css" />
+    <head>
+        <meta charset="UTF-8" />
+        <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+        <title>Insert title here</title>
+        <!--스위트 얼럿 -->
+        <link rel="stylesheet" href="../../node_modules/sweetalert2/dist/sweetalert2.min.css" />
+        <!--부트 스트렙 -->
+        <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css" />
+        <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <!--CSS 가져오기 -->
+        <link rel="stylesheet" href="./userDestination.css" />
 
-<!--pagination 가져오기 -->
-<script
-  src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.min.js"></script>
+        <!--pagination 가져오기 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.min.js"></script>
 
-<link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css"
+        />
 
+        <!--헤더 가져오기 -->
+        <script>
+            $(document).ready(function () {
+                $('.headers').load('../../common/header/header.html');
+            });
+        </script>
+    </head>
+    <body>
+        <div class="headers"></div>
+        <br />
 
-<!--헤더 가져오기 -->
-<script>
-	$(document).ready(function() {
-		$('.headers').load('../../common/header/header.html');
-	});
-</script>
-
-</head>
-<body>
-  <div class="headers"></div>
-  <br>
-
-  <div class="board">
-    <div class="myBoard">My Board</div>
-  </div>
-
-
-  <div class="container">
-    <div class="row">
-
-      <div class="col-3">
-        <div class="card">
-          <img src="/img/SALON de LAVANT3.jpg" class="card-img-top"
-            alt="...">
-          <div class="card-body">
-            <h5 class="card-title">모뉴에트</h5>
-            <span>❤️</span> <span class="likesCnt">30</span> <span>🗨</span>
-            <span class="commentsCnt">20</span>
-
-          </div>
+        <div class="board">
+            <div class="myBoard">My Board</div>
         </div>
-      </div>
 
-      <div class="col-3">
-        <div class="card">
-          <img src="/img/SALON de LAVANT3.jpg" class="card-img-top"
-            alt="...">
-          <div class="card-body">
-            <h5 class="card-title">모뉴에트</h5>
-            <span>❤️</span> <span class="likesCnt">30</span> <span>🗨</span>
-            <span class="commentsCnt">20</span>
-          </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div class="card">
+                        <img src="/img/SALON de LAVANT3.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">모뉴에트</h5>
+                            <span>❤️</span> <span class="likesCnt">30</span> <span>🗨</span>
+                            <span class="commentsCnt">20</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="card">
+                        <img src="/img/SALON de LAVANT3.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">모뉴에트</h5>
+                            <span>❤️</span> <span class="likesCnt">30</span> <span>🗨</span>
+                            <span class="commentsCnt">20</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img src="/img/SALON de LAVANT3.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">모뉴에트</h5>
+                            <span>❤️</span> <span class="likesCnt">30</span> <span>🗨</span>
+                            <span class="commentsCnt">20</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img src="/img/SALON de LAVANT3.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">모뉴에트</h5>
+                            <span>❤️</span> <span class="likesCnt">30</span> <span>🗨</span>
+                            <span class="commentsCnt">20</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <div class="card">
+                        <img src="/img/SALON de LAVANT3.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">모뉴에트</h5>
+                            <span>❤️</span> <span class="likesCnt">30</span> <span>🗨</span>
+                            <span class="commentsCnt">20</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img src="/img/SALON de LAVANT3.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">모뉴에트</h5>
+                            <span>❤️</span> <span class="likesCnt">30</span> <span>🗨</span>
+                            <span class="commentsCnt">20</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img src="/img/SALON de LAVANT3.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">모뉴에트</h5>
+                            <span>❤️</span> <span class="likesCnt">30</span> <span>🗨</span>
+                            <span class="commentsCnt">20</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img src="/img/SALON de LAVANT3.jpg" class="card-img-top" alt="..." />
+                        <div class="card-body">
+                            <h5 class="card-title">모뉴에트</h5>
+                            <span>❤️</span> <span class="likesCnt">30</span> <span>🗨</span>
+                            <span class="commentsCnt">20</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <section>
+                    <div id="pagination"></div>
+                </section>
+            </div>
         </div>
-      </div>
-      <div class="col-3">
-        <div class="card">
-          <img src="/img/SALON de LAVANT3.jpg" class="card-img-top"
-            alt="...">
-          <div class="card-body">
-            <h5 class="card-title">모뉴에트</h5>
-            <span>❤️</span> <span class="likesCnt">30</span> <span>🗨</span>
-            <span class="commentsCnt">20</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="card">
-          <img src="/img/SALON de LAVANT3.jpg" class="card-img-top"
-            alt="...">
-          <div class="card-body">
-            <h5 class="card-title">모뉴에트</h5>
-            <span>❤️</span> <span class="likesCnt">30</span> <span>🗨</span>
-            <span class="commentsCnt">20</span>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col-3">
-        <div class="card">
-          <img src="/img/SALON de LAVANT3.jpg" class="card-img-top"
-            alt="...">
-          <div class="card-body">
-            <h5 class="card-title">모뉴에트</h5>
-            <span>❤️</span> <span class="likesCnt">30</span> <span>🗨</span>
-            <span class="commentsCnt">20</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="card">
-          <img src="/img/SALON de LAVANT3.jpg" class="card-img-top"
-            alt="...">
-          <div class="card-body">
-            <h5 class="card-title">모뉴에트</h5>
-            <span>❤️</span> <span class="likesCnt">30</span> <span>🗨</span>
-            <span class="commentsCnt">20</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="card">
-          <img src="/img/SALON de LAVANT3.jpg" class="card-img-top"
-            alt="...">
-          <div class="card-body">
-            <h5 class="card-title">모뉴에트</h5>
-            <span>❤️</span> <span class="likesCnt">30</span> <span>🗨</span>
-            <span class="commentsCnt">20</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="card">
-          <img src="/img/SALON de LAVANT3.jpg" class="card-img-top"
-            alt="...">
-          <div class="card-body">
-            <h5 class="card-title">모뉴에트</h5>
-            <span>❤️</span> <span class="likesCnt">30</span> <span>🗨</span>
-            <span class="commentsCnt">20</span>
-          </div>
-        </div>
-      </div>
-    </div>
+        <script>
+            $(function () {
+                let container = $('#pagination');
+                container.pagination({
+                    dataSource: [
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
 
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
 
-    <div class="pagination">
-      <section>
-        <div id="pagination"></div>
-      </section>
-    </div>
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
 
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
 
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
 
-  </div>
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
 
-  <script>
-			$(function() {
-				let container = $('#pagination');
-				container.pagination({
-					dataSource : [ {
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					}, {
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					}, {
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					}, {
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					}, {
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					}, {
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					}, {
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					}, {
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					}, {
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					}, {
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					},
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
 
-					{
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					},
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
 
-					{
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					},
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
 
-					{
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					},
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
 
-					{
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					},
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
 
-					{
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					},
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
 
-					{
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					},
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
 
-					{
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					},
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
 
-					{
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					},
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
 
-					{
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					},
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
 
-					{
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					},
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
 
-					{
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					},
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
 
-					{
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					},
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
 
-					{
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					},
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
 
-					{
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					},
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
 
-					{
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					},
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
 
-					{
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					},
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
 
-					{
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					},
+                        {
+                            name: 'hello1',
+                        },
+                        {
+                            name: 'hello2',
+                        },
+                        {
+                            name: 'hello3',
+                        },
+                        {
+                            name: 'hello4',
+                        },
+                        {
+                            name: 'hello5',
+                        },
+                        {
+                            name: 'hello6',
+                        },
+                        {
+                            name: 'hello7',
+                        },
+                        {
+                            name: 'hello8',
+                        },
+                        {
+                            name: 'hello9',
+                        },
+                        {
+                            name: 'hello10',
+                        },
+                    ],
+                    callback: function (data, pagination) {
+                        var dataHtml = '<ul>';
 
-					{
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					},
+                        $.each(data, function (index, item) {
+                            dataHtml += '<li>' + item.name + '</li>';
+                        });
 
-					{
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					},
+                        dataHtml += '</ul>';
 
-					{
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					},
+                        $('#data-container').html(dataHtml);
+                    },
+                });
+            });
+        </script>
 
-					{
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					},
+        <script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+        <script>
+            // myBoard 버튼 클릭시 발생 이벤트
+            $('.myBoard').click(function () {
+                location.href = '/travel/myboard/myboard.html';
+            });
 
-					{
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					},
+            //카드 클릭시 data-idx 값을 구한다.
+            $('.card').on('click', function (e) {
+                let a = e.target.parentNode.getAttribute('data-idx');
 
-					{
-						name : "hello1"
-					}, {
-						name : "hello2"
-					}, {
-						name : "hello3"
-					}, {
-						name : "hello4"
-					}, {
-						name : "hello5"
-					}, {
-						name : "hello6"
-					}, {
-						name : "hello7"
-					}, {
-						name : "hello8"
-					}, {
-						name : "hello9"
-					}, {
-						name : "hello10"
-					},
+                //              location.href = `/destination/getDes?desId=${a}&type=N`
+                location.href = `/userDestination/userDestinationDtl3.html?desId=${a}`;
+            });
 
-					],
-					callback : function(data, pagination) {
-						var dataHtml = '<ul>';
+            //하단에 페이지 번호 클릭시 발생 이벤트
+            $('body').on('click', '.paginationjs-page.J-paginationjs-page', function (e) {
+                a(e.target.innerText);
+            });
 
-						$.each(data, function(index, item) {
-							dataHtml += '<li>' + item.name + '</li>';
-						});
+            a(1); //userDestination.html이 로드 되면 우선 a(1) 함수(1 page를 로드 하는 기능)를 실행한다.
+            function a(dv) {
+                //각각의 카드에 업체명 요소 선택
+                const b = document.querySelectorAll('.card-title');
+                //각각의 카드에 이미지(사진) 요소 선택
+                const c = document.querySelectorAll('.card-img-top');
+                //각각의 카드에 좋아요 갯수 요소 선택
+                const d = document.querySelectorAll('.likesCnt');
+                //각각의 카드에 댓글 갯수 요소 선택
+                const e = document.querySelectorAll('.commentsCnt');
+                //각각의 카드에 data-idx 설정을 위해서 카드 요소 선택
+                const f = document.querySelectorAll('.card');
+                //console.log(c);
+                //console.log(d);
+                //console.log(e);
 
-						dataHtml += '</ul>';
+                //console.log(f[0]);
+                fetch(`/destination/admin/pagelist?pageNo=${dv}&pageSize=8`)
+                    .then(function (response) {
+                        return response.json();
+                    })
+                    .then(function (result) {
+                        console.log('result:::', result);
 
-						$("#data-container").html(dataHtml);
-					}
-				})
-			})
-		</script>
-
-
-
-  <script src="../../node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
-  <script>
-			// myBoard 버튼 클릭시 발생 이벤트
-			$(".myBoard").click(function() {
-				location.href = "/travel/myboard/myboard.html"
-			})
-
-			//카드 클릭시 data-idx 값을 구한다.
-			$(".card").on("click", function(e) {
-				let a =e.target.parentNode.getAttribute("data-idx");
-
-//              location.href = `/destination/getDes?desId=${a}&type=N`
-                  location.href = `/userDestination/userDestinationDtl3.html?desId=${a}`
-			})
-
-
-
-			//하단에 페이지 번호 클릭시 발생 이벤트 
-			$("body").on("click", ".paginationjs-page.J-paginationjs-page",
-					function(e) {
-						a(e.target.innerText)
-					})
-
-			a(1) //userDestination.html이 로드 되면 우선 a(1) 함수(1 page를 로드 하는 기능)를 실행한다.
-			function a(dv) {
-				//각각의 카드에 업체명 요소 선택
-				const b = document.querySelectorAll(".card-title")
-				//각각의 카드에 이미지(사진) 요소 선택
-				const c = document.querySelectorAll(".card-img-top")
-				//각각의 카드에 좋아요 갯수 요소 선택
-				const d = document.querySelectorAll(".likesCnt")
-				//각각의 카드에 댓글 갯수 요소 선택
-				const e = document.querySelectorAll(".commentsCnt")
-				//각각의 카드에 data-idx 설정을 위해서 카드 요소 선택
-				const f = document.querySelectorAll(".card");
-				console.log(c);
-				console.log(d);
-				console.log(e);
-
-				console.log(f[0]);
-				fetch(`/destination/admin/pagelist?pageNo=${dv}&pageSize=8`)
-
-				.then(function(response) {
-					return response.json();
-				}).then(function(result) {
-					console.log(result);
-
-					for (var i = 0; i < 8; i++) {
-						b[i].innerHTML = result[i].destinationName;
-						c[i].src = result[i].thumbNailImg;
-						d[i].innerHTML = result[i].likesCnt;
-						e[i].innerHTML = result[i].commentsCnt;
-						//클래스 이름 card라는 div 요소에 data-idx attribute에 destinationId를 부여하기
-						f[i].setAttribute("data-idx", result[i].destinationId);
-					}
-				})
-
-			}
-		</script>
-
-
-</body>
-
+                        for (var i = 0; i < result.length; i++) {
+                            b[i].innerHTML = result[i].destinationName;
+                            c[i].src = `/destination/img?filename=${result[i].thumbNailImg}`;
+                            d[i].innerHTML = result[i].likesCnt;
+                            e[i].innerHTML = result[i].commentsCnt;
+                            //클래스 이름 card라는 div 요소에 data-idx attribute에 destinationId를 부여하기
+                            f[i].setAttribute('data-idx', result[i].destinationId);
+                        }
+                    });
+            }
+        </script>
+    </body>
 </html>

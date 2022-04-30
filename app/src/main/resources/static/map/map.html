@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Map</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css" />
+        <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="../node_modules/axios/dist/axios.js"></script>
+        <link rel="stylesheet" href="map.css" />
+        <script>
+            $(document).ready(function () {
+                $('.headers').load('../../common/header/header.html');
+            });
+        </script>
+    </head>
+
+    <body>
+        <div class="headers"></div>
+        <!--상단부분-->
+
+        <div class="container d-flex" id="container">
+            <!-- 지도가 표시될 div -->
+            <div id="map"></div>
+        </div>
+        <script
+            type="text/javascript"
+            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=04d2370bb5a7c0451b3db7bbd723c9d1"
+        ></script>
+        <script src="./map.js" type="module"></script>
+    </body>
+</html>

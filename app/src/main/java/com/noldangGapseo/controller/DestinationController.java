@@ -45,7 +45,7 @@ public class DestinationController {
     //유저 여행지 페이징 관련
     @GetMapping("/admin/pagelist")
     List<Destination> getAdminDesList1(
-            @RequestParam(value = "pageNo", defaultValue = "1") int pageNo,
+            @RequestParam(value = "pageNo", defaultValue = "0") int pageNo,
             @RequestParam(value = "pageSize", defaultValue = "8") int pageSize,
             Map<String, Object> model) throws Exception {
 
@@ -70,7 +70,7 @@ public class DestinationController {
 
         try { // pageNo 파라미터 값이 있다면 기본 값을 변경한다.
             if (pageNo < 1 || pageNo > totalPageSize) {// pageNo 유효성 검증
-                pageNo = 1;
+                pageNo = 0;
             }
         } catch (Exception e) {
         }

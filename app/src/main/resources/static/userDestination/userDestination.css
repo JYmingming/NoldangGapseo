@@ -1,56 +1,54 @@
 .board {
-	width: 80%;
-	height: 60px;
-	display: block;
-	margin: auto;
+    width: 80%;
+    height: 60px;
+    display: block;
+    margin: auto;
 }
 
 .myBoard {
-	width: 200px;
-	height: 40px;
-	text-align: center;
-	float: right;
-	background-color: #f8941c;
-	color: white;
-	font-weight: bold;
-	border-radius: 8px;
-	background-color: #f8941c;
-	display: block;
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    float: right;
+    background-color: #f8941c;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: #f8941c;
+    display: block;
 }
 
 .container {
-	margin: 5px;
+    margin: 5px;
 }
 
 .row {
-	margin: 20px;
+    margin: 20px;
 }
 
 .card {
-	border-color: red;
-	border-style: solid;
-	border-width: 1px;
+    border-color: red;
+    border-style: solid;
+    border-width: 1px;
 }
 
 .card-img-top {
-	padding: 5px;
-	width: 300px;
-	height: 200px;
-	object-fit: cover;
+    padding: 5px;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
 }
 
 .card-title {
-	text-align: center
+    text-align: center;
 }
 
 .like {
-	height: 30px;
-	font-size: 1.0em;
-	color: red;
+    height: 30px;
+    font-size: 1em;
+    color: red;
 }
 
 .pagination {
-	margin-left: 500px
-
+    margin-left: 500px;
 }
-
