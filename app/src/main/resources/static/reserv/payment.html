@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://cdn.bootpay.co.kr/js/bootpay-3.3.1.min.js" type="application/javascript"></script>
-    <title>Title</title>
+    <title>결제창</title>
 </head>
 <body>
 <script th:inline="javascript">
+
     var order = {id:1234}   //서버의 주문 값
     var item = {
-        price:1000,
-        name: "시발비용",
+        price:100,
+        name: "놀당갑서 결제",
         id:1
     }    //주문한 상품
 
@@ -59,7 +60,8 @@
     }).done(function (data) {
         //결제가 정상적으로 완료되면 수행됩니다
         //비즈니스 로직을 수행하기 전에 결제 유효성 검증을 하시길 추천합니다.
-        location.replace("pay/confirm?receipt_id="+data.receipt_id);
+        //location.replace("pay/confirm?receipt_id="+data.receipt_id);
+        location.replace("confirm.html?receipt_id="+data.receipt_id);
         console.log(data);
     });
 

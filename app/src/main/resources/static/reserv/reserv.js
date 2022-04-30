@@ -203,3 +203,7 @@ function closeLoadingWithMask() {
 document.querySelector("#hotel-link-btn").onclick = function (){
     location.href=`./reserv2.html?startDate=${startDate}&endDate=${endDate}&travelNo=${travelNo}`
 }
+
+$('#payment-btn').click(function() {
+    window.open('./payment.html', '결제', 'width=820,height=600px,scrollbars=yes');
+})
