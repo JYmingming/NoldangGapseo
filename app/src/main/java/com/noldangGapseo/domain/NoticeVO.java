@@ -9,7 +9,7 @@ public class NoticeVO {
   Date regdate;
   Integer viewcount;
   String contents;
-  Integer sevice_center_id;
+  Integer servicecenterid;
   String title;
   String nickname;
 
@@ -37,11 +37,11 @@ public class NoticeVO {
     this.nickname = nickname;
   }
 
-  public Integer getSevice_senter_id() {
-    return sevice_center_id;
+  public Integer getServicecenterid() {
+    return servicecenterid;
   }
-  public void setSevice_senter_id(Integer sevice_center_id) {
-    this.sevice_center_id = sevice_center_id;
+  public void setSevicecenterid(Integer servicecenterid) {
+    this.servicecenterid = servicecenterid;
   }
   public String getTitle() {
     return title;
@@ -72,7 +72,7 @@ public class NoticeVO {
   @Override
   public String toString() {
     return "NoticeVO [regdate=" + regdate + ", viewcount=" + viewcount + ", contents=" + contents
-        + ", sevice_center_id=" + sevice_center_id + ", title=" + title + ", nickname=" + nickname
+        + ", servicecenterid=" + servicecenterid + ", title=" + title + ", nickname=" + nickname
         + "]";
   }
 

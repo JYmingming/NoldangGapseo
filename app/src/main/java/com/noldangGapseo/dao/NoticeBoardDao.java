@@ -13,10 +13,9 @@ public interface NoticeBoardDao {
 
   public void regist(HashMap<String, String> map);
 
-  public void update(String String) throws Exception;
+  public void update(HashMap<String, String> map);
 
+  public void delete(Integer service_center_id);
 
-  public void delete(Integer service_center_id) throws Exception;
-
-
+  public NoticeVO updateContent(String idx);
 }

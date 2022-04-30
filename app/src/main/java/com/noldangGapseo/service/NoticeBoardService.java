@@ -23,9 +23,16 @@ public class NoticeBoardService {
     mapper.regist(map);
   }
 
+  public void update(HashMap<String, String> map) {
+    mapper.update(map);
+  }
 
-  public void delete(Integer service_center_id) throws Exception {
+  public void delete(Integer service_center_id)  {
     mapper.delete(service_center_id);
+  }
+
+  public NoticeVO updateContent(String idx)  {
+    return mapper.updateContent(idx);
   }
 
 
