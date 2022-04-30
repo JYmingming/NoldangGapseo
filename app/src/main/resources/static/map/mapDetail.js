@@ -1,4 +1,11 @@
-import { getDes, getLoginUser, checkLike, delCom } from '../common/api/apiList.js';
+import {
+    getDes,
+    getLoginUser,
+    checkLike,
+    delCom,
+    addLike,
+    delLike,
+} from '../common/api/apiList.js';
 
 import { urlSearch } from '../common/urlSearchParam.js';
 
@@ -55,8 +62,11 @@ const commentView = (nickName, regDate, content, commentId) => {
     userId = id.data.userId;
     userNickName = id.data.nickName;
     // 좋아요 체크
+    console.log('frist::', $('.like-btn').attr('check'));
     if (userId == chLike.data) {
         $('.like-btn').addClass('l-check');
+        $('.like-btn').attr('check', 'true');
+        console.log('last::', $('.like-btn').attr('check'));
     }
     const response = await getDes(no, 'N');
     //console.log(response.commentList);
@@ -129,5 +139,28 @@ $(document).on('click', '.delete', async function (e) {
     const delRes = await delCom(commentId, 'N');
     if (delRes.resCode == '0000') {
         location.reload();
+    }
+});
+
+let like = $('.like-btn');
+let likeCnt = $('.like-cnt');
+// ---- 좋아요 추가 삭제 ----
+$('.like-btn').on('click', async function (e) {
+    console.log(typeof likeCnt.text());
+
+    if (like.attr('check') == 'false') {
+        const addRes = await addLike(no, userId);
+        if (addRes == 1) {
+            like.attr('check', 'true');
+            like.addClass('l-check');
+            likeCnt.html(Number(likeCnt.text()) + 1);
+        }
+    } else {
+        const dellRes = await delLike(no, userId);
+        if (dellRes == 1) {
+            like.attr('check', 'false');
+            like.removeClass('l-check');
+            likeCnt.html(Number(likeCnt.text()) - 1);
+        }
     }
 });

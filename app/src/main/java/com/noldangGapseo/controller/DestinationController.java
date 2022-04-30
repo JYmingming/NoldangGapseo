@@ -164,13 +164,13 @@ public class DestinationController {
 
     // 좋아요 추가
     @PostMapping("/addLike")
-    public Integer addLike(Integer desId, Integer userId) {
+    public Integer addLike(@RequestParam  Integer desId, @RequestParam Integer userId) {
         return service.addLike(desId, userId);
     }
 
     // 좋아요 삭제
     @DeleteMapping("/deleteLike")
-    public Integer deleteLike(Integer desId, Integer userId) {
+    public Integer deleteLike(@RequestParam Integer desId, @RequestParam Integer userId) {
         return service.deleteLike(desId, userId);
     }
 

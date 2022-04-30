@@ -18,6 +18,8 @@ export const PATH = {
         getCom: '/destination/get/com',
         deleteCom: '/destination/delete/com',
         updateComment: '/destination/update/comment',
+        addLike: '/destination/addLike',
+        delLike: '/destination/deleteLike',
     },
     TRAVEL: {
         travelList: '/travel/travelList',
@@ -261,6 +263,32 @@ export async function delCom(commentId, type) {
         const response = await axios({
             method: 'DELETE',
             url: `${PATH.DESTINATION.deleteCom}?commentId=${commentId}&type=${type}`,
+        });
+        return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- 좋아요 추가 ----
+export async function addLike(desId, userId) {
+    try {
+        const response = await axios({
+            method: 'POST',
+            url: `${PATH.DESTINATION.addLike}?desId=${desId}&userId=${userId}`,
+        });
+        return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+// ---- 좋아요 취소 ----
+export async function delLike(desId, userId) {
+    try {
+        const response = await axios({
+            method: 'DELETE',
+            url: `${PATH.DESTINATION.delLike}?desId=${desId}&userId=${userId}`,
         });
         return response.data;
     } catch (e) {
