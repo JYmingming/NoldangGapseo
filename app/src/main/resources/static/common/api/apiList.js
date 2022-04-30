@@ -5,6 +5,7 @@ export const PATH = {
         findByNickName: '/user/search/nickName',
     },
     DESTINATION: {
+        adminList: '/destination/admin/list',
         userDesList: '/destination/user/list',
         getDes: '/destination/getDes',
         get4Des: '/destination/get4Des',
@@ -104,6 +105,16 @@ export async function findByNickName(nickName) {
 }
 
 // ===== Destination ====
+// ---- 놀당 여행지 리스트를 가져온다. ----
+export async function getAdminList() {
+    try {
+        const response = await axios(`${PATH.DESTINATION.adminList}`);
+        return response.data;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
 // ---- 회원이 작성한 여행지 리스트를 가져온다.----
 export async function getUserDesList(userId, limit, nextPage) {
     try {
