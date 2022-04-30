@@ -181,6 +181,7 @@ public class DestinationController {
     }
 
     // 댓글 추가
+    // type : 놀당 여행지 = N , 유저 여행지 = U
     @PostMapping("add/comment")
     public ApiResponse addComment(@RequestBody Comment comment, @RequestParam String type) {
         return service.addComment(comment, type);
