@@ -57,3 +57,21 @@
     background-color: #0d6efd;
     color: white;
 }
+
+#imgs {
+    width: 0px;
+    height: 0px;
+}
+
+label {
+    border: 0px;
+    border-radius: 10px;
+    background-color: #fb9300;
+    color: white;
+    height: 40px;
+    width: 90px;
+    margin-bottom: 5px;
+    padding: 7px;
+    padding-left: 12px;
+    margin-left: 5px;
+}
