@@ -60,7 +60,8 @@ public class AirReserveService {
             airs.add(air);
         }
 
-        driver.findElement(By.xpath("//*[@id=\"__next\"]/div/div[1]/div[4]/div/div[2]/div[2]/div/button")).click();
+        sleep(1);
+        driver.findElement(By.xpath("//*[@id=\"__next\"]/div/div[1]/div[5]/div/div[2]/div[2]/div/button")).click();
         sleep(2);
 
         int cnt2 = driver.findElements(By.cssSelector("#__next > div > div.container > div.domestic_content__29ZnH > div > div.domestic_results__yNAgI > div")).size();

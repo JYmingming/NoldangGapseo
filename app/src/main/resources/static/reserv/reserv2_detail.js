@@ -87,3 +87,7 @@
 document.querySelector("#air-link-btn").onclick = function (){
         location.href="./reserv.html"
 }
+
+    $('#payment-btn').click(function() {
+        window.open('./payment.html', '결제', 'width=820,height=600px,scrollbars=yes');
+    })
