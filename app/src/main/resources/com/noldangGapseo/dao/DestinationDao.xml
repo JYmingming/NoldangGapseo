@@ -313,10 +313,12 @@
 		#{imgId}
 	</delete>
 
+	<!-- 좋아요 체크 -->
 	<select id="checkLike" resultType="Integer">
 		SELECT 	user_id
 		FROM 	likes
 		WHERE 	destination_id = #{desId}
+		and 	user_id = #{userId}
 	</select>
 
 	<!-- 좋아요 추가 -->

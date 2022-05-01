@@ -57,10 +57,10 @@ const commentView = (nickName, regDate, content, commentId) => {
 };
 
 (async function () {
-    const chLike = await checkLike(no);
     const id = await getLoginUser();
     userId = id.data.userId;
     userNickName = id.data.nickName;
+    const chLike = await checkLike(no, id.data.userId);
     // 좋아요 체크
     console.log('frist::', $('.like-btn').attr('check'));
     if (userId == chLike.data) {

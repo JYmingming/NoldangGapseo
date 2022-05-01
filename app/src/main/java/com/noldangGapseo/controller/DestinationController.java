@@ -176,8 +176,8 @@ public class DestinationController {
 
     // 좋아요 체크
     @GetMapping("check/like")
-    public ApiResponse checkLike(@RequestParam Integer desId) {
-        return new ApiResponse().setData(service.checkLike(desId));
+    public ApiResponse checkLike(@RequestParam Integer desId, @RequestParam Integer userId) {
+        return new ApiResponse().setData(service.checkLike(desId, userId));
     }
 
     // 댓글 추가
