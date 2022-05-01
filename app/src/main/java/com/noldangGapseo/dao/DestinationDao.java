@@ -50,7 +50,7 @@ public interface DestinationDao {
 
   Integer userDesCnt(Integer userId);
 
-  Integer checkLike(Integer desId);
+  Integer checkLike(@Param("desId") Integer desId, @Param("userId") Integer userId);
 
   Integer addNolComment(Comment comment);
 

@@ -215,9 +215,11 @@ export async function dleteImgs(id) {
 }
 
 // ---- like Check ----
-export async function checkLike(desId) {
+export async function checkLike(desId, userId) {
     try {
-        const response = await axios(`${PATH.DESTINATION.checkLike}?desId=${desId}`);
+        const response = await axios(
+            `${PATH.DESTINATION.checkLike}?desId=${desId}&userId=${userId}`
+        );
         return response.data;
     } catch (e) {
         console.log(e);

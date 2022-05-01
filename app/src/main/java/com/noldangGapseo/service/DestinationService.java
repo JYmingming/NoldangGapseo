@@ -132,8 +132,8 @@ public class DestinationService {
     }
 
     // 좋아요 체크
-    public Integer checkLike(Integer desId) {
-        return mapper.checkLike(desId);
+    public Integer checkLike(Integer desId, Integer userId) {
+        return mapper.checkLike(desId, userId);
     }
 
     // 댓글 추가

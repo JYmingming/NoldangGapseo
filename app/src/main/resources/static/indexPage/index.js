@@ -238,3 +238,7 @@ fetch('/destination/users/list')
             listUl.appendChild(li);
         }
     });
+
+$('#map').on('click', function (e) {
+    location.href = '/map/map.html';
+});
