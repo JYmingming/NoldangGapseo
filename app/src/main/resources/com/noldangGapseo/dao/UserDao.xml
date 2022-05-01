@@ -82,7 +82,7 @@
 
  <select id="UserList"  resultMap="userMap">
        SELECT 
-       user_Id , email, phone, nick_name, reg_date 
+       user_Id , email, phone, nick_name, reg_date
        FROM user u
         where not user_id = 1
         
