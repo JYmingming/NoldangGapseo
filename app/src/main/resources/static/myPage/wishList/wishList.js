@@ -48,23 +48,23 @@ fetch("/user/getLoginUser")
                     var no5 = result[12].destinationId;
                   $("#d-flex1").on("click", function(e) {
 
-                  location.href = `/userDestination/userDestinationDtl3.html?desId=${no1}`
+                  location.href = `/map/mapDetail.html?desId=${no1}`
                   })
                   $("#d-flex2").on("click", function(e) {
 
-                  location.href = `/userDestination/userDestinationDtl3.html?desId=${no2}`
+                  location.href = `/map/mapDetail.html?desId=${no2}`;
                   })
                   $("#d-flex3").on("click", function(e) {
 
-                  location.href = `/userDestination/userDestinationDtl3.html?desId=${no3}`
+                  location.href = `/map/mapDetail.html?desId=${no3}`;
                   })
                   $("#d-flex4").on("click", function(e) {
 
-                  location.href = `/userDestination/userDestinationDtl3.html?desId=${no4}`
+                  location.href = `/map/mapDetail.html?desId=${no4}`;
                   })
                   $("#d-flex5").on("click", function(e) {
 
-                  location.href = `/userDestination/userDestinationDtl3.html?desId=${no5}`
+                  location.href = `/map/mapDetail.html?desId=${no5}`;
                   })
                 }
       })
