@@ -5,7 +5,7 @@ import { travelList, getLoginUser } from '../../common/api/apiList.js';
     const session = await getLoginUser();
     const response = await travelList(session.data.nickName, session.data.userId);
     response?.map((m) => {
-        //console.log(m);
+        console.log(m);
         let view = ` <div class="col-md-4 col-sm-6 content-card">
                     <div class="card-big-shadow">
                         <div
