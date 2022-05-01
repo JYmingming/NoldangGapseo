@@ -25,6 +25,7 @@
 		d.destination_type_id = dt.destination_type_id
 		and d.destination_id = di.destination_id
 		and not d.user_id = 1
+		GROUP by d.destination_id
 		ORDER BY reg_date desc;
 	</select>
 

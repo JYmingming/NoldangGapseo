@@ -20,12 +20,12 @@ fetch('/user/getLoginUser')
             css('.admin-login', 'display', '');
         }
         var user = result.data;
-            var no = user.userId
-            
-            $('#myPage').on('click', function (e) {
-                e.preventDefault();
-                location.href = `../myPage/main/myPageMain.html?userId=${no}`;
-              });
+        var no = user.userId;
+
+        $('#myPage').on('click', function (e) {
+            e.preventDefault();
+            location.href = `../myPage/main/myPageMain.html?userId=${no}`;
+        });
     });
 
 document.querySelector('#logout-btn').onclick = function () {
@@ -171,7 +171,7 @@ document.querySelector('#datepicker_end').onchange = function () {
 
 document.querySelector('#thema-btn').onclick = function () {
     travel.travelName = document.querySelector('#thema-input').value;
-    $('#themaModal').modal("hide");
+    $('#themaModal').modal('hide');
 };
 
 document.querySelector('#makeDec-btn').onclick = async function () {
@@ -208,21 +208,22 @@ document.querySelector('#makeDec-btn').onclick = async function () {
 
 // => travel을 넣어주면 됌
 
-var listUl = document.querySelector("#result-list");
-fetch("/destination/users/list")
-    .then(function(response) {
+var listUl = document.querySelector('#result-list');
+fetch('/destination/users/list')
+    .then(function (response) {
         return response.json();
-    }).then(function(result) {
-    if (result.status == "fail") {
-        window.alert("서버 요청 오류!");
-        console.log(result.data);
-        return;
-    }
-    for (let i=0; i<3;i++){
-        console.log(result[i]);
-        var li = document.createElement("li");
-        li.classList.add('list-group');
-        li.innerHTML=`
+    })
+    .then(function (result) {
+        console.log('jjjjjjjj', result);
+        if (result.status == 'fail') {
+            window.alert('서버 요청 오류!');
+            return;
+        }
+        for (let i = 0; i < 3; i++) {
+            console.log(result[i]);
+            var li = document.createElement('li');
+            li.classList.add('list-group');
+            li.innerHTML = `
                 <div class="travel-list">
                                 <figure class="img-con" style="background-image: url('/img/destination/userDesImg/${result[i].thumbNailImg}')"></figure>
                                 <div class ="travel-text-group">
@@ -233,7 +234,7 @@ fetch("/destination/users/list")
                                         ${result[i].contents}
                                     </div>
                                 </div>
-                            </div>`
-        listUl.appendChild(li);
-    }
-});
+                            </div>`;
+            listUl.appendChild(li);
+        }
+    });
