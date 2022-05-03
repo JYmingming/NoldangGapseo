@@ -56,11 +56,13 @@ const commentView = (nickName, regDate, content, commentId) => {
     return view;
 };
 
+// ---- 데이터 불러오기 ----
 (async function () {
-    const chLike = await checkLike(no);
+    // ---- 로그인한 유저 정보 값을 가져온다. ----
     const id = await getLoginUser();
     userId = id.data.userId;
     userNickName = id.data.nickName;
+    const chLike = await checkLike(no, id.data.userId);
     // 좋아요 체크
     console.log('frist::', $('.like-btn').attr('check'));
     if (userId == chLike.data) {
@@ -69,7 +71,6 @@ const commentView = (nickName, regDate, content, commentId) => {
         console.log('last::', $('.like-btn').attr('check'));
     }
     const response = await getDes(no, 'N');
-    //console.log(response.commentList);
     const destination = response.destination;
     // ---- 사진 리스트 ----
     const imgList = response.destinationImgList;
