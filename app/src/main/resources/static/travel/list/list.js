@@ -28,6 +28,7 @@ import { travelList, getLoginUser } from '../../common/api/apiList.js';
                         </div>`;
         $('.row').append(view);
     });
+
     // --- 상세 페이지로 넘어가기 ----
     $('.card').on('click', function (e) {
         e.preventDefault();
