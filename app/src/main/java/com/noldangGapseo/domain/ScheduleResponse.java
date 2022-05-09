@@ -1,12 +1,11 @@
 package com.noldangGapseo.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
 @Data
+@EqualsAndHashCode(callSuper=false)
 @NoArgsConstructor
 @AllArgsConstructor
 public class ScheduleResponse extends ApiResponse{
