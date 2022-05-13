@@ -1,9 +1,15 @@
 package com.noldangGapseo.service;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.json.Json;
 import org.springframework.stereotype.Service;
 import com.noldangGapseo.domain.Hotel;
 import com.noldangGapseo.domain.ReserveResponse;
@@ -34,6 +40,9 @@ public class ReserveService {
     // type O == 호텔가져오기
     ArrayList hotels;
     Object hotel;
+    JSONArray oblist = new JSONArray();
+
+
 
     try {
       if (link.equals("L")) {
@@ -68,13 +77,13 @@ public class ReserveService {
     driver = new ChromeDriver();
     System.out.println("crawling start!!!!");
     ArrayList<ArrayList> hotels = new ArrayList<>(); // 호텔 여러개를 달는 배열 생성
+    JSONArray objlist = new JSONArray(); // 호텔 여러개를 담는 추가된 JSONArray 코드
+
     //크롤링 할 url 등록
     base_url = "https://www.goodchoice.kr/product/result?sel_date="+startDate+"&sel_date2="+endDate+"&keyword=%EC%A0%9C%EC%A3%BC%EB%8F%84";
     //크롤링 해올 url 가져오기
     driver.get(base_url);
     sleep(2);
-
-
     // 이미지를 불러오기위한 사전 스크롤 행위
     JavascriptExecutor je = (JavascriptExecutor) driver;
     for (int i = 1; i < 50; i++) {
@@ -107,6 +116,8 @@ public class ReserveService {
       } else {
         hotelOne.add(spt[1]);
       }
+
+      //반환 객체인 hotels에 반복적으로 hotel 한개의 데이터들을 담는 코드
       hotelOne.add(hotelScore.getText());
       hotelOne.add(hotelLocation.getText());
       hotelOne.add(hotelPrice.getText());
@@ -114,6 +125,15 @@ public class ReserveService {
       hotelOne.add(hotelUrl.getAttribute("data-ano"));
       hotels.add(hotelOne);
 
+
+      //추가 코드
+      JSONObject obj = new JSONObject();
+      obj.put("hotelScore",hotelScore.getText());
+      obj.put("hotelLocation",hotelLocation.getText());
+      obj.put("hotelPrice",hotelPrice.getText());
+      obj.put("hotelImg",hotelImg.getAttribute("src"));
+      obj.put("hotelUrl",hotelUrl.getAttribute("data-ano"));
+      objlist.add(obj);
     }
     //데이터 확인 - 전체출력
     /*for (int i = 0; i < hotels.size(); i++) {
@@ -123,6 +143,15 @@ public class ReserveService {
                 System.out.println("호텔 정보 : " + hotels.get(i).get(j));
             }
         }//end for*/
+    System.out.println("objlist = " + objlist);
+    try {
+      FileWriter file = new FileWriter("./.json");
+      file.write(objlist.toJSONString());
+      file.flush();
+      file.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
     return hotels;
   }
 
