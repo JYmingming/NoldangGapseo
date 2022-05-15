@@ -1,12 +1,17 @@
 package com.noldangGapseo.service;
 
+import java.awt.print.PrinterGraphics;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.json.Json;
@@ -42,8 +47,6 @@ public class ReserveService {
     Object hotel;
     JSONArray oblist = new JSONArray();
 
-
-
     try {
       if (link.equals("L")) {
         hotels = selTest.listCrawl(startDate, endDate);
@@ -68,10 +71,6 @@ public class ReserveService {
     return null;
   }
 
-
-  //한페이지 한페이지 크롤링을 할수있음
-
-
   //호텔 리스트를 크롤링하여 리스트 반환
   public ArrayList listCrawl(String startDate, String endDate) throws Exception {
     driver = new ChromeDriver();
@@ -80,7 +79,7 @@ public class ReserveService {
     JSONArray objlist = new JSONArray(); // 호텔 여러개를 담는 추가된 JSONArray 코드
 
     //크롤링 할 url 등록
-    base_url = "https://www.goodchoice.kr/product/result?sel_date="+startDate+"&sel_date2="+endDate+"&keyword=%EC%A0%9C%EC%A3%BC%EB%8F%84";
+    base_url = "https://www.goodchoice.kr/product/result?sel_date=" + startDate + "&sel_date2=" + endDate + "&keyword=%EC%A0%9C%EC%A3%BC%EB%8F%84";
     //크롤링 해올 url 가져오기
     driver.get(base_url);
     sleep(2);
@@ -99,7 +98,7 @@ public class ReserveService {
       WebElement hotelName = driver.findElement(By.cssSelector("#poduct_list_area > ul > li:nth-child(" + i + ") > a > div > div.name > strong:not(div)"));
       try {
         hotelScore = driver.findElement(By.cssSelector("#poduct_list_area > ul > li:nth-child(" + i + ") > a > div > div.name > p.score > span > em"));
-      }catch (Exception e){
+      } catch (Exception e) {
         hotelScore = driver.findElement(By.cssSelector("#poduct_list_area > ul > li:nth-child(1) > a > div > div.name > p.score > span > em"));
       }
 
@@ -128,24 +127,17 @@ public class ReserveService {
 
       //추가 코드
       JSONObject obj = new JSONObject();
-      obj.put("hotelScore",hotelScore.getText());
-      obj.put("hotelLocation",hotelLocation.getText());
-      obj.put("hotelPrice",hotelPrice.getText());
-      obj.put("hotelImg",hotelImg.getAttribute("src"));
-      obj.put("hotelUrl",hotelUrl.getAttribute("data-ano"));
+      obj.put("hotelScore", hotelScore.getText());
+      obj.put("hotelLocation", hotelLocation.getText());
+      obj.put("hotelPrice", hotelPrice.getText());
+      obj.put("hotelImg", hotelImg.getAttribute("src"));
+      obj.put("hotelUrl", hotelUrl.getAttribute("data-ano"));
       objlist.add(obj);
     }
-    //데이터 확인 - 전체출력
-    /*for (int i = 0; i < hotels.size(); i++) {
-            //Debug - 호텔 1개의 정보를 전부 출력
-            System.out.println(i + "번째 루프");
-            for (int j = 0; j < hotels.get(i).size(); j++) {
-                System.out.println("호텔 정보 : " + hotels.get(i).get(j));
-            }
-        }//end for*/
+
     System.out.println("objlist = " + objlist);
     try {
-      FileWriter file = new FileWriter("./.json");
+      FileWriter file = new FileWriter("./app/src/main/resources/static/asset/data/hotel.json");
       file.write(objlist.toJSONString());
       file.flush();
       file.close();
@@ -160,8 +152,6 @@ public class ReserveService {
     driver = new ChromeDriver();
     Hotel hotel = new Hotel();
     String real_url = "https://www.goodchoice.kr/product/detail?ano=" + hotel_url + "&adcno=2&sel_date=" + startDate + "&sel_date2=" + endDate;
-
-
     System.out.println("crawling start");
     //크롤링 해올 단일 url 가져오기
     driver.get(real_url);
@@ -175,12 +165,12 @@ public class ReserveService {
 
     //데이터 변환 및 도메인에 add  ex) 20,000원 -> 20000
     String strPrice = hotelPrice.getText()
-        .replace(",", "")
-        .replace("원", "")
-        .replace(" ", "")
-        .replace("/", "")
-        .replace("1박", "")
-        .replace("2박", "");
+            .replace(",", "")
+            .replace("원", "")
+            .replace(" ", "")
+            .replace("/", "")
+            .replace("1박", "")
+            .replace("2박", "");
 
     //이미지 개수를 세어 직접 로딩해줌
     int imgCnt = driver.findElements(By.cssSelector("#content > div.top > div.left > div.gallery_pc > div.swiper-container.gallery-thumbs.swiper-container-horizontal > ul > li")).size();
@@ -196,23 +186,41 @@ public class ReserveService {
       imgArray.add(item.getAttribute("src"));
     }
 
-    //숙소세부정보 정보 클릭 및 수집
-    /*driver.findElement(By.xpath("//*[@id=\"content\"]/div[2]/button[2]")).click();
-        List<WebElement> hotelPrecautions = driver.findElements(By.cssSelector("#content > article.detail_info.on > section.default_info > ul"));
-        for (WebElement item: hotelPrecautions) {
-            System.out.println(item.getText());
-        }*/
-
-    // 이미지 묶음
-
     //호텔 도메인 데이터셋
     hotel.setHotelName(hotelName.getText())
-    .setHotelLocation(hotelLocation.getText())
-    .setHotelComment(hotelComment.getText())
-    .setHotelPrice(Integer.parseInt(strPrice))
-    .setImgUrl(imgArray);
+            .setHotelLocation(hotelLocation.getText())
+            .setHotelComment(hotelComment.getText())
+            .setHotelPrice(Integer.parseInt(strPrice))
+            .setImgUrl(imgArray);
 
     return hotel;
+  }
+
+  public JSONArray hotelCrawlModel() throws IOException, ParseException {
+
+    JSONParser parser = new JSONParser();
+
+    Reader reader = new FileReader("./app/src/main/resources/static/asset/data/hotel.json");
+    //reader로 읽은 데이터를 JSONpaser가 제공하는 parse함수를 통해 JSONObject로 만들어준다.
+    JSONArray jsonArray = (JSONArray) parser.parse(reader);
+    listCrawl(jsonArray);
+
+    return jsonArray;
+
+  }
+
+  public void listCrawl(JSONArray hotels){
+    driver = new ChromeDriver();
+
+    String startDate = "2022-05-23";
+    String endDate = "2022-05-24";
+    for (int i = 0; i < hotels.toArray().length; i++) {
+      JSONObject hotel = (JSONObject) hotels.get(i);
+      System.out.println(hotel.get("hotelUrl"));
+      String real_url = "https://www.goodchoice.kr/product/detail?ano=" + hotel.get("hotelUrl") + "&adcno=2&sel_date=" + startDate + "&sel_date2=" + endDate;
+      driver.get(real_url);
+      sleep(2);
+    }
   }
 
 
