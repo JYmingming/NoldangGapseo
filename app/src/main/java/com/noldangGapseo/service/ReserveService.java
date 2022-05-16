@@ -54,10 +54,12 @@ public class ReserveService {
         System.out.println("리스트 크롤링 정상종료");
         return ReserveResponse.builder().hotels(hotels).build();
       } else {
-        hotel = selTest.hotelCrawl(link, startDate, endDate);
+        //hotel = selTest.hotelCrawl(link,startDate,endDate);
+        selTest.hotelCrawl(link,startDate,endDate);
         System.out.println("호텔 크롤링 정상종료");
         selTest.driver.close();
-        return ReserveResponse.builder().hotel(hotel).build();
+        //return ReserveResponse.builder().hotel(hotel).build();
+        return null;
       }
     } catch (Exception e) {
       // TODO Auto-generated catch block
@@ -187,8 +189,7 @@ public class ReserveService {
     }
 
     //호텔 도메인 데이터셋
-
-    return hotel;
+    //return hotel;
   }
 
 

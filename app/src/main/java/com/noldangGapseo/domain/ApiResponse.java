@@ -18,5 +18,5 @@ public class ApiResponse {
   // resStatus = "fail"
   private String resCode = "0000";
   private String resStatus = "success";
-  private  Object data;
+  private Object data;
 }
