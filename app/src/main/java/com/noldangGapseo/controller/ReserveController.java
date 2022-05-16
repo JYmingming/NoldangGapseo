@@ -31,8 +31,8 @@ public class ReserveController {
     }
 
     @GetMapping("getList")
-    public JSONArray listParser() throws Exception {
-        return hotelService.hotelCrawlModel();
+    public JSONArray listParser(String startDate,String endDate) throws Exception {
+        return hotelService.hotelCrawlModel(startDate,endDate);
     }
 
 
