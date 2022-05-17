@@ -25,24 +25,24 @@ public class ReserveController {
     @Autowired
     AirReserveService airService;
 
+
     @GetMapping("/get")
-    public ReserveResponse get(String startDate, String endDate , String link){
-        return hotelService.driverStarter(startDate, endDate, link);
+    public void get(String startDate, String endDate){
+        hotelService.driverStarter(startDate, endDate);
+        return;
     }
 
     @GetMapping("getList")
-    public JSONArray listParser(String startDate,String endDate) throws Exception {
-        return hotelService.hotelCrawlModel(startDate,endDate);
+    public void listParser(String startDate,String endDate) throws Exception {
+        hotelService.CrawlModel(startDate,endDate);
+        return;
     }
-
-
 
 
     @GetMapping("/getAir")
     public List<Air> getAir(String startDate, String endDate,String startLocation) throws Exception {
       return airService.airCrawl(startDate,endDate,startLocation);
     }
-
 
 
 }
