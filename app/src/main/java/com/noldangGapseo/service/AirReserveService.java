@@ -27,6 +27,7 @@ public class AirReserveService {
     public static List<Air> airCrawl(String startDate, String endDate,String startLocation) throws Exception {
         System.setProperty(WEB_DRIVER_ID, WEB_DRIVER_PATH);
         System.out.println("시작");
+
         driver = new ChromeDriver();
         System.out.println("crawling start!!!!");
         List<Air> airs =new ArrayList<>();
